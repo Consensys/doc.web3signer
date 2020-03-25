@@ -1,5 +1,5 @@
 ---
-description: Install EthSigner from binary distribution
+description: Install Eth2Signer from binary distribution
 ---
 
 # Install binary distribution
@@ -9,20 +9,20 @@ description: Install EthSigner from binary distribution
 * [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 !!!important
-    EthSigner requires Java 11 or later releases.
+    Eth2Signer requires Java 11 or later releases.
 
 ## Install binaries
 
-Download the EthSigner [packaged binaries](https://bintray.com/consensys/pegasys-repo/ethsigner/_latestVersion#files).
+Download the Eth2Signer [packaged binaries](https://bintray.com/consensys/pegasys-repo/eth2signer/_latestVersion#files).
 
-Unpack the downloaded files and change into the `ethsigner-<release>` directory.
+Unpack the downloaded files and change into the `eth2signer-<release>` directory.
 
-Display EthSigner command line help to confirm installation:
+Display Eth2Signer command line help to confirm installation:
 
 ```bash tab="Linux/macOS"
-$ bin/ethsigner --help
+$ bin/eth2signer --help
 ```
 
 ```bat tab="Windows"
-bin\ethsigner --help
+bin\eth2signer --help
 ```
