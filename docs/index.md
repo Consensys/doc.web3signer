@@ -1,13 +1,12 @@
 ---
-title: EthSigner Transaction Signer
-description: EthSigner is an open-source private transaction manager developed under the Apache 2.0 license and written in Java.
+title: Eth2Signer
+description: Eth2Signer is an open-source Ethereum 2.0 signer developed under the Apache 2.0 license and written in Java.
 ---
 
-# EthSigner Transaction Signer
+# Eth2hSigner
 
-## What is EthSigner?
+## What is Eth2Signer?
 
-EthSigner is an open-source, client-agnostic, Ethereum transaction signer developed under the Apache
-2.0 license and written in Java. EthSigner separates private key management from transaction
-validation by [signing transactions](Concepts/Overview.md) using a private key that can be secured
-in a variety of cloud providers, or encrypted on a local disk.
+Eth2Signer is an open-source, client-agnostic, Ethereum 2.0 signer developed under the Apache
+2.0 license and written in Java. Eth2Signer signs attestations and blocks using private keys
+stored in Hashicorp Vault, or encrypted on a disk.

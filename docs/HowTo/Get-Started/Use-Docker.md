@@ -29,7 +29,7 @@ docker run pegasyseng/eth2signer:latest --help
 ## Expose listening port
 
 To use the default listening port (`9000`) or the port specified using
-[`--http-listen-port`](../../Reference/CLI/CLI-Syntax.md#http-listen-port), you must expose the listening port.
+`--http-listen-port`, you must expose the listening port.
 
 To run Eth2Signer exposing listening port for access:
 
