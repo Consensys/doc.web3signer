@@ -27,6 +27,10 @@ git clone https://github.com/PegaSysEng/eth2signer.git
 
 After cloning, go to the `eth2signer` directory.
 
+```bash
+cd eth2signer
+```
+
 Build Eth2Signer with the Gradle wrapper `gradlew`:
 
 ```bash
