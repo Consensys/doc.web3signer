@@ -48,11 +48,11 @@ theme:
   name: material
   custom_dir: common/custom_theme
   palette:
-    primary: orange
+    primary: deep-orange
     accent: teal
   favicon: favicon.ico
   logo:
-    icon: vpn_key
+    icon: vpn_key vpn_key
 nav:
     - How to:
         - Get started with Eth2Signer:
@@ -68,6 +68,7 @@ nav:
     - Reference:
         - Eth2Signer command line: Reference/CLI/CLI-Syntax.md
         - Security disclosure policy: Reference/Responsible-Disclosure.md
+
 markdown_extensions:
   - toc:
       permalink: 
@@ -88,7 +89,11 @@ markdown_extensions:
   - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.superfences
+  # pymdownx.superfences is deprecated.
+  # It must be replaced with pymdownx.tabbed but it requires new CSS
+  # TODO with material 5 update
+  - pymdownx.superfences:
+      legacy_tab_classes: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
@@ -98,3 +103,10 @@ markdown_extensions:
 plugins:
   - search
   - markdownextradata
+  - redirects:
+      redirect_maps:
+        # Configure redirects using key:value pairs:
+        # old_path.md: new_path.md
+        # you can't use an already redirected path as an old_path.
+        # new_path can be a file inside the docs/ folder or any URL (http://...)
+        # Reference/EthSigner-CLI.md: Reference/CLI/CLI-Syntax.md
