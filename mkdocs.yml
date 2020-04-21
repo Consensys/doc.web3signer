@@ -68,6 +68,7 @@ nav:
         - Overview: Concepts/Overview.md
     - Reference:
         - Eth2Signer command line: Reference/CLI/CLI-Syntax.md
+        - Key Configuration file parameters: Reference/Key-Configuration-Files.md
         - Security disclosure policy: Reference/Responsible-Disclosure.md
 markdown_extensions:
   - toc:

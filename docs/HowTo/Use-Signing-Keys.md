@@ -18,9 +18,8 @@ The YAML files must be placed in a single directory specified using the
     Files can be added or removed from the directory without needing to
     restart Eth2Signer.
 
-The YAML file name must use the format `[<prefix>]<validatorPublicKeyAddress>.yaml`. The
-prefix can be anything you want. No two YAML files can have the same key address
-in the file name, even if the prefix differs.
+The YAML file name must use the format `<validatorPublicKeyAddress>.yaml`. No two YAML
+files can have the same key address in the file name.
 
 The `0x` portion of the validator's public key must be removed.
 For example,
