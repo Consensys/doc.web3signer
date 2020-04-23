@@ -3,7 +3,7 @@ title: Eth2Signer
 description: Eth2Signer is an open-source Ethereum 2.0 signer developed under the Apache 2.0 license and written in Java.
 ---
 
-# Eth2hSigner
+# Eth2Signer
 
 ## What is Eth2Signer?
 

@@ -1,10 +1,10 @@
 ---
-description: Run EthSigner from Docker image
+description: Run Eth2Signer from Docker image
 ---
 
-# Run EthSigner from Docker image
+# Run Eth2Signer from Docker image
 
-A Docker image is provided to run EthSigner in a Docker container.
+A Docker image is provided to run Eth2Signer in a Docker container.
 
 ## Prerequisites
 
@@ -17,22 +17,19 @@ A Docker image is provided to run EthSigner in a Docker container.
 
 ## Quickstart
 
-Display the EthSigner command line help using the Docker image:
+Display the Eth2Signer command line help using the Docker image:
 
-```bash tab="latest"
-docker run pegasyseng/ethsigner:latest --help
+```bash tab="develop"
+docker run pegasyseng/eth2signer:develop --help
 ```
-
-!!! note
-    `latest` runs the latest cached version. To pull the latest version, use `docker pull pegasyseng/ethsigner:latest`.
 
 ## Expose listening port
 
-To use the default listening port (`8545`) or the port specified using
-[`--http-listen-port`](../../Reference/CLI/CLI-Syntax.md#http-listen-port), you must expose the listening port.
+To use the default listening port (`9000`) or the port specified using
+`--http-listen-port`, you must expose the listening port.
 
-To run EthSigner exposing listening port for access:
+To run Eth2Signer exposing listening port for access:
 
 ```bash
-docker run -p <listenPort>:8545 pegasyseng/ethsigner:latest <options>
+docker run -p <listenPort>:9000 pegasyseng/eth2signer:develop <options>
 ```

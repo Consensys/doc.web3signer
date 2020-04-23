@@ -1,5 +1,5 @@
 ---
-description: Building EthSigner from source code
+description: Building Eth2Signer from source code
 ---
 
 # Build from source
@@ -9,25 +9,29 @@ description: Building EthSigner from source code
 * [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 !!!important
-    EthSigner requires Java 11 or later releases.
+    Eth2Signer requires Java 11 or later releases.
 
 * [Git](https://git-scm.com/downloads) or [GitHub Desktop](https://desktop.github.com/)
 
 ## Installation on Linux / Unix / macOS
 
-### Clone the EthSigner Repository
+### Clone the Eth2Signer Repository
 
-Clone the `PegaSysEng/ethsigner` repository:
+Clone the `PegaSysEng/eth2signer` repository:
 
 ```bash
-git clone https://github.com/PegaSysEng/ethsigner.git
+git clone https://github.com/PegaSysEng/eth2signer.git
 ```
 
-### Build EthSigner
+### Build Eth2Signer
 
-After cloning, go to the `ethsigner` directory.
+After cloning, go to the `eth2signer` directory.
 
-Build EthSigner with the Gradle wrapper `gradlew`:
+```bash
+cd eth2signer
+```
+
+Build Eth2Signer with the Gradle wrapper `gradlew`:
 
 ```bash
 ./gradlew build
@@ -42,35 +46,35 @@ cd build/distributions/
 Expand the distribution archive:
 
 ```bash
-tar -xzf ethsigner-<version>.tar.gz
+tar -xzf eth2signer-<version>.tar.gz
 ```
 
-Move to the expanded folder and display the EthSigner help to confirm installation.
+Move to the expanded folder and display the Eth2Signer help to confirm installation.
 
 ````bash
-cd ethsigner-<version>/
-bin/ethsigner --help
+cd eth2signer-<version>/
+bin/eth2signer --help
 ````
 
 ## Installation on Windows
 
-### Install EthSigner
+### Install Eth2Signer
 
-Clone the `PegaSysEng/ethsigner` repository:
-
-```bat
-git clone https://github.com/PegaSysEng/ethsigner.git
-```
-
-### Build EthSigner
-
-Go to the `ethsigner` directory:
+Clone the `PegaSysEng/eth2signer` repository:
 
 ```bat
-cd ethsigner
+git clone https://github.com/PegaSysEng/eth2signer.git
 ```
 
-Build EthSigner with the Gradle wrapper `gradlew`:
+### Build Eth2Signer
+
+Go to the `eth2signer` directory:
+
+```bat
+cd eth2signer
+```
+
+Build Eth2Signer with the Gradle wrapper `gradlew`:
 
 ```bat
 .\gradlew build
@@ -89,12 +93,12 @@ cd build\distributions
 Expand the distribution archive:
 
 ```bat
-tar -xzf ethsigner-<version>.tar.gz
+tar -xzf eth2signer-<version>.tar.gz
 ```
 
-Go to the expanded folder and display the EthSigner help to confirm installation.
+Go to the expanded folder and display the Eth2Signer help to confirm installation.
 
 ```bat
-cd ethsigner-<version>
-bin\ethsigner --help
+cd eth2signer-<version>
+bin\eth2signer --help
 ```
