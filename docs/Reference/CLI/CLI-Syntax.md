@@ -4,6 +4,17 @@ description: Eth2Signer command line interface reference
 
 # Eth2Signer command line
 
+This reference describes the syntax of the Eth2Signer Command Line Interface (CLI) options.
+
+## Specifying Options
+
+Eth2Signer options can be specified:
+
+* On the command line
+* In a YAML configuration file.
+
+The order of priority is command line, then configuration file.
+
 ## Options
 
 ### data-path
@@ -12,8 +23,12 @@ description: Eth2Signer command line interface reference
 --data-path=<PATH>
 ```
 
-```bash tab="Example"
+```bash tab="Command Line"
 --data-path=/Users/me/my_node/data
+```
+
+```bash tab="Configuration File"
+data-path: "/Users/me/my_node/data"
 ```
 
 Directory in which to store temporary files.
@@ -24,8 +39,12 @@ Directory in which to store temporary files.
 --key-store-path=<PATH>
 ```
 
-```bash tab="Example"
+```bash tab=""
 --key-store-path=/Users/me/keys
+```
+
+```bash tab="Configuration File"
+key-store-path: "/Users/me/keys"
 ```
 
 Path to the directory containing the YAML files required to access keys.
@@ -36,8 +55,12 @@ Path to the directory containing the YAML files required to access keys.
 --key-cache-limit=<LONG>
 ```
 
-```bash tab="Example"
+```bash tab="Command Line"
 --key-cache-limit=1500
+```
+
+```bash tab="Configuration File"
+key-cache-limit: 1500
 ```
 
 Maximum number of keys to cache in memory.
@@ -48,8 +71,12 @@ Maximum number of keys to cache in memory.
 -l, --logging=<LEVEL>
 ```
 
-```bash tab="Example"
+```bash tab="Command Line"
 --logging=DEBUG
+```
+
+```bash tab="Configuration File"
+logging: "DEBUG"
 ```
 
 Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, `TRACE`,
@@ -61,8 +88,12 @@ Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, 
 --http-listen-host=<httpListenHost>
 ```
 
-```bash tab="Example"
+```bash tab="Command Line"
 --http-listen-host=8.8.8.8
+```
+
+```bash tab="Configuration File"
+http-listen-host: "8.8.8.8"
 ```
 
 Host on which HTTP listens. Default is `localhost`.
@@ -73,8 +104,12 @@ Host on which HTTP listens. Default is `localhost`.
 --http-listen-port=<httpListenPort>
 ```
 
-```bash tab="Example"
---http-lisentport=6174
+```bash tab="Command Line"
+--http-listen-port=6174
+```
+
+```bash tab="Configuration File"
+http-listen-port: 6174
 ```
 
 Port on which HTTP listens. Default is 9000.
@@ -85,8 +120,12 @@ Port on which HTTP listens. Default is 9000.
 --metrics-enabled
 ```
 
-```bash tab="Example"
+```bash tab="Command Line"
 --metrics-enabled=true
+```
+
+```bash tab="Configuration File"
+metrics-enabled: true
 ```
 
 Enables the metrics exporter. The default is `false`.
@@ -97,8 +136,12 @@ Enables the metrics exporter. The default is `false`.
 --metrics-host=<HOST>
 ```
 
-```bash tab="Example"
+```bash tab="Command Line"
 --metrics-host=127.0.0.1
+```
+
+```bash tab="Configuration File"
+metrics-host: "127.0.0.1"
 ```
 
 The host on which [Prometheus](https://prometheus.io/) accesses metrics.
@@ -110,8 +153,12 @@ The default is `127.0.0.1`.
 --metrics-port=<PORT>
 ```
 
-```bash tab="Example"
+```bash tab="Command Line"
 --metrics-port=6174
+```
+
+```bash tab="Configuration File"
+metrics-port: 6174
 ```
 
 The port (TCP) on which [Prometheus](https://prometheus.io/) accesses
@@ -120,11 +167,15 @@ metrics. The default is `9001`.
 ### metrics-category
 
 ```bash tab="Syntax"
---metrics-category=<metrics-category>[,metrics-category...]...
+--metrics-categories=<metrics-category>[,metrics-category...]...
 ```
 
 ```bash tab="Syntax"
---metrics-category=BLOCKCHAIN,PEERS,PROCESS
+--metrics-categories=HTTP,SIGNING,JVM
+```
+
+```bash tab="Configuration File"
+metrics-categories: ["HTTP", "SIGNING", "JVM"]
 ```
 
 A comma-separated list of categories for which to track metrics. The defaults are `HTTP`, `SIGNING`, `JVM`, `PROCESS`.
