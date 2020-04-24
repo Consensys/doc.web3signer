@@ -11,9 +11,21 @@ This reference describes the syntax of the Eth2Signer Command Line Interface (CL
 Eth2Signer options can be specified:
 
 * On the command line
+* As an [environment variable](#eth2signer-environment-variables)
 * In a YAML configuration file.
 
-The order of priority is command line, then configuration file.
+If you specify an option in more than one place, the order of priority is command line, environment
+variable, configuration file.
+
+### Eth2Signer environment variables
+
+For each command line option, the equivalent environment variable is:
+
+* Upper-case
+* `_` replaces `-`
+* Has an `ETH2SIGNER_` prefix
+
+For example, set `--data-path` using the `ETH2SIGNER_DATA_PATH` environment variable.
 
 ## Options
 
@@ -29,6 +41,10 @@ The order of priority is command line, then configuration file.
 
 ```bash tab="Configuration File"
 data-path: "/Users/me/my_node/data"
+```
+
+```bash tab="Environment Variable"
+ETH2SIGNER_DATA_PATH=/Users/me/my_node/data
 ```
 
 Directory in which to store temporary files.
@@ -47,6 +63,10 @@ Directory in which to store temporary files.
 key-store-path: "/Users/me/keys"
 ```
 
+```bash tab="Environment Variable"
+ETH2SIGNER_KEY_STORE_PATH=/Users/me/keys
+```
+
 Path to the directory containing the YAML files required to access keys.
 
 ### key-cache-limit
@@ -63,6 +83,10 @@ Path to the directory containing the YAML files required to access keys.
 key-cache-limit: 1500
 ```
 
+```bash tab="Environment Variable"
+ETH2SIGNER_KEY_CACHE_LIMIT=1500
+```
+
 Maximum number of keys to cache in memory.
 
 ### logging
@@ -77,6 +101,10 @@ Maximum number of keys to cache in memory.
 
 ```bash tab="Configuration File"
 logging: "DEBUG"
+```
+
+```bash tab="Environment Variable"
+ETH2SIGNER_LOGGING=DEBUG
 ```
 
 Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, `TRACE`,
@@ -96,6 +124,10 @@ Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, 
 http-listen-host: "8.8.8.8"
 ```
 
+```bash tab="Environment Variable"
+ETH2SIGNER_HTTP_LISTEN_HOST=8.8.8.8
+```
+
 Host on which HTTP listens. Default is `localhost`.
 
 ### http-listen-port
@@ -110,6 +142,10 @@ Host on which HTTP listens. Default is `localhost`.
 
 ```bash tab="Configuration File"
 http-listen-port: 6174
+```
+
+```bash tab="Environment Variable"
+ETH2SIGNER_HTTP_LISTEN_PORT=6174
 ```
 
 Port on which HTTP listens. Default is 9000.
@@ -128,6 +164,10 @@ Port on which HTTP listens. Default is 9000.
 metrics-enabled: true
 ```
 
+```bash tab="Environment Variable"
+ETH2SIGNER_METRICS_ENABLED=true
+```
+
 Enables the metrics exporter. The default is `false`.
 
 ### metrics-host
@@ -142,6 +182,10 @@ Enables the metrics exporter. The default is `false`.
 
 ```bash tab="Configuration File"
 metrics-host: "127.0.0.1"
+```
+
+```bash tab="Environment Variable"
+ETH2SIGNER_METRICS_HOST=127.0.0.1
 ```
 
 The host on which [Prometheus](https://prometheus.io/) accesses metrics.
@@ -161,6 +205,10 @@ The default is `127.0.0.1`.
 metrics-port: 6174
 ```
 
+```bash tab="Environment Variable"
+ETH2SIGNER_METRICS_PORT=6174
+```
+
 The port (TCP) on which [Prometheus](https://prometheus.io/) accesses
 metrics. The default is `9001`. 
 
@@ -176,6 +224,10 @@ metrics. The default is `9001`.
 
 ```bash tab="Configuration File"
 metrics-categories: ["HTTP", "SIGNING", "JVM"]
+```
+
+```bash tab="Environment Variable"
+ETH2SIGNER_METRICS_CATEGORIES=HTTP,SIGNING,JVM
 ```
 
 A comma-separated list of categories for which to track metrics. The defaults are `HTTP`, `SIGNING`, `JVM`, `PROCESS`.
