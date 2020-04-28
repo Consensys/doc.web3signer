@@ -177,15 +177,15 @@ Enables the metrics exporter. The default is `false`.
 ```
 
 ```bash tab="Command Line"
---metrics-host=127.0.0.1
+--metrics-host=186.10.10.1
 ```
 
 ```bash tab="Configuration File"
-metrics-host: "127.0.0.1"
+metrics-host: "186.10.10.1"
 ```
 
 ```bash tab="Environment Variable"
-ETH2SIGNER_METRICS_HOST=127.0.0.1
+ETH2SIGNER_METRICS_HOST=186.10.10.1
 ```
 
 The host on which [Prometheus](https://prometheus.io/) accesses metrics.
