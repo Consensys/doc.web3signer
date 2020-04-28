@@ -87,7 +87,7 @@ key-cache-limit: 1500
 ETH2SIGNER_KEY_CACHE_LIMIT=1500
 ```
 
-Maximum number of keys to cache in memory.
+Maximum number of keys to cache in memory. The defaults is 1000.
 
 ### logging
 
@@ -148,7 +148,7 @@ http-listen-port: 6174
 ETH2SIGNER_HTTP_LISTEN_PORT=6174
 ```
 
-Port on which HTTP listens. Default is 9000.
+Port on which HTTP listens. The default is 9000.
 
 ### metrics-enabled
 

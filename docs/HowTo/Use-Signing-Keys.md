@@ -21,9 +21,10 @@ The YAML files must be placed in a single directory specified using the
 The YAML file name must use the format `<validatorPublicKeyAddress>.yaml`. No two YAML
 files can have the same key address in the file name.
 
-The `0x` portion of the validator's public key must be removed.
-For example,
-`b65c2a1dc6a8eaadae03d5849dd6ac614b32dc5f8af37e2eb4ced0c72fd69fabe90fc783b0435f5a36ff1338385ef837.yaml`.
+!!! note
+    The `0x` portion of the validator's public key is optional. For example,
+    `b65c2a1dc6a8eaadae03d5849dd6ac614b32dc5f8af37e2eb4ced0c72fd69fabe90fc783b0435f5a36ff1338385ef83.yaml`
+    is also acceptable.
 
 <!-- Link -->
 [Each key requires a separate YAML configuration file]: ../Reference/Key-Configuration-Files.md

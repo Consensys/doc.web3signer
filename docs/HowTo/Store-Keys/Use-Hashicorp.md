@@ -2,7 +2,7 @@
 description: Using Eth2Signer with Hashicorp Vault
 ---
 
-# Using Eth2Signer with Hashicorp Vault
+# Using Eth2Signer and Teku with Hashicorp Vault
 
 Eth2Signer supports storing the signing key in [Hashicorp Vault](https://www.hashicorp.com/products/vault/).
 
@@ -63,7 +63,6 @@ and [`--validators-external-signer-url`](https://docs.teku.pegasys.tech/en/lates
     ```bash
     teku --eth1-deposit-contract-address=dddddddddddddddddddddddddddddddddddddddd \
     --eth1-endpoint=http://localhost:8545 --validators-key-file=validator_keys \
-    --p2p-port=9000 --rest-api-enabled=true \
     --validators-external-signer-public-keys=0xa99a...e44c,0xb89b...4a0b \
     --validators-external-signer-url=http://localhost:9000
     ```
