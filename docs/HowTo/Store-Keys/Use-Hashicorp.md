@@ -32,11 +32,11 @@ After installing [Hashicorp Vault](https://learn.hashicorp.com/vault/getting-sta
 
 ## Create the Known Servers File
 
-The file is required if TLS is enabled, to disable TLS set [`tlsEnabled`](../../Reference/Key-Configuration-Files.md#hashicorp-vault)
+The known servers file is required if TLS is enabled, to disable TLS set [`tlsEnabled`](../../Reference/Key-Configuration-Files.md#hashicorp-vault)
 to `false`. 
 
-Specify the file location in the [`tlsKnownServersPath`](../../Reference/Key-Configuration-Files.md#hashicorp-vault)
-option.
+Specify the location of the known servers file in the [`tlsKnownServersPath`](../../Reference/Key-Configuration-Files.md#hashicorp-vault)
+option of the [signing key configuration file].
 
 The file contents use the format `<hostame>:<port> <hex-string>` where:
 
@@ -51,18 +51,9 @@ The file contents use the format `<hostame>:<port> <hex-string>` where:
     127.0.0.1:8200 7C:B3:3E:F9:98:43:5E:62:69:9F:A9:9D:41:14:03:BA:83:24:AC:04:CE:BD:92:49:1B:8D:B2:A4:86:39:4C:BB
     ```
 
-## Start Eth2Signer
-
-Start Eth2Signer and specify the location of the signing key configuration files
-with the [`--key-store-path`](../../Reference/CLI/CLI-Syntax.md#key-store-path) option.
-
-!!! example
-
-    ```bash
-    eth2signer --key-store-path=/Users/me/keyFiles/
-    ```
-    
-[Start Teku] by specifying the Eth2Signer details.
+[Start Eth2Signer and specify the location of the signing key configuration file]. 
 
 <!-- Links -->
+[signing key configuration file]: ../Use-Signing-Keys.md
 [Start Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/Get-Started/Register-Validators/#start-teku
+[Start Eth2Signer and specify the location of the signing key configuration file]: ../Get-Started/Start-Eth2Signer.md

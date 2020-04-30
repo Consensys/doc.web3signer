@@ -6,7 +6,7 @@ description: Getting started with Eth2Signer
 
 **Prerequisites**:
 
-* [Signing key configuration files]
+* [Signing key configuration files] for the required validators.
 
 Start Eth2Signer and specify the location of the signing key configuration files
 with the [`--key-store-path`](../../Reference/CLI/CLI-Syntax.md#key-store-path) option.
@@ -21,4 +21,4 @@ with the [`--key-store-path`](../../Reference/CLI/CLI-Syntax.md#key-store-path) 
 
 <!-- Links -->
 [Signing key configuration files]: ../Use-Signing-Keys.md
-[Start Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/Get-Started/Register-Validators/#start-teku
+[Start Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/Get-Started/Use-External-Signer/
