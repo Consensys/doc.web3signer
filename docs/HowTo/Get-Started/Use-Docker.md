@@ -15,7 +15,7 @@ A Docker image is provided to run Eth2Signer in a Docker container.
     !!! important
         The Docker image does not run on Windows.
 
-## Quickstart
+## Run Docker image
 
 Display the Eth2Signer command line help using the Docker image:
 
