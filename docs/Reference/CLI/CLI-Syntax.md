@@ -215,19 +215,19 @@ metrics. The default is `9001`.
 ### metrics-category
 
 ```bash tab="Syntax"
---metrics-categories=<metrics-category>[,metrics-category...]...
+--metrics-category=<metrics-category>[,metrics-category...]...
 ```
 
 ```bash tab="Syntax"
---metrics-categories=HTTP,SIGNING,JVM
+--metrics-category=HTTP,SIGNING,JVM
 ```
 
 ```bash tab="Configuration File"
-metrics-categories: ["HTTP", "SIGNING", "JVM"]
+metrics-category: ["HTTP", "SIGNING", "JVM"]
 ```
 
 ```bash tab="Environment Variable"
-ETH2SIGNER_METRICS_CATEGORIES=HTTP,SIGNING,JVM
+ETH2SIGNER_METRICS_CATEGORY=HTTP,SIGNING,JVM
 ```
 
 A comma-separated list of categories for which to track metrics. The defaults are `HTTP`, `SIGNING`, `JVM`, `PROCESS`.
