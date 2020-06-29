@@ -65,8 +65,6 @@ nav:
             - Use Hashicorp Vault: HowTo/Store-Keys/Use-Hashicorp.md
         - Monitor Nodes:
             - Use Metrics: HowTo/Monitor/Metrics.md
-    - Concepts:
-        - Overview: Concepts/Overview.md
     - Reference:
         - Eth2Signer command line: Reference/CLI/CLI-Syntax.md
         - Key Configuration file parameters: Reference/Key-Configuration-Files.md
