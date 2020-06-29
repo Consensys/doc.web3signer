@@ -65,8 +65,6 @@ nav:
             - Use Hashicorp Vault: HowTo/Store-Keys/Use-Hashicorp.md
         - Monitor Nodes:
             - Use Metrics: HowTo/Monitor/Metrics.md
-    - Concepts:
-        - Overview: Concepts/Overview.md
     - Reference:
         - Command line: Reference/CLI/CLI-Syntax.md
         - REST API methods: Reference/Rest.md
