@@ -63,6 +63,7 @@ nav:
         - Use signing keys: HowTo/Use-Signing-Keys.md
         - Store keys externally:
             - Use Hashicorp Vault: HowTo/Store-Keys/Use-Hashicorp.md
+        - Configure TLS: HowTo/Configure-TLS.md
         - Monitor Nodes:
             - Use Metrics: HowTo/Monitor/Metrics.md
     - Reference:
