@@ -150,6 +150,32 @@ ETH2SIGNER_HTTP_LISTEN_PORT=6174
 
 Port on which HTTP listens. The default is 9000.
 
+### http-host-allowlist
+
+```bash tab="Syntax"
+--http-host-allowlist=<hostname>[,<hostname>...]... or "*"
+```
+
+```bash tab="Command Line"
+--http-host-allowlist=medomain.com,meotherdomain.com
+```
+
+```bash tab="Configuration File"
+http-host-allowlist: ["medomain.com", "meotherdomain.com"]
+```
+
+```bash tab="Environment Variable"
+ETH2SIGNER_HTTP_HOST_ALLOWLIST=medomain.com,meotherdomain.com
+```
+
+A comma-separated list of hostnames to allow access to the REST APIs. By default, Eth2Signer
+accepts access from `localhost` and `127.0.0.1`.
+
+!!! tip
+
+    To allow all hostnames, use `"*"`. We don't recommend allowing all hostnames for production
+    environments.
+
 ### metrics-enabled
 
 ```bash tab="Syntax"
@@ -232,6 +258,32 @@ ETH2SIGNER_METRICS_CATEGORY=HTTP,SIGNING,JVM
 
 A comma-separated list of categories for which to track metrics. The defaults are `HTTP`, `SIGNING`, `JVM`, `PROCESS`.
 
+### metrics-host-allowlist
+
+```bash tab="Syntax"
+--metrics-host-allowlist=<hostname>[,<hostname>...]... or "*"
+```
+
+```bash tab="Command Line"
+--metrics-host-allowlist=medomain.com,meotherdomain.com
+```
+
+```bash tab="Configuration File"
+metrics-host-allowlist: ["medomain.com", "meotherdomain.com"]
+```
+
+```bash tab="Environment Variable"
+ETH2SIGNER_METRICS_HOST_ALLOWLIST=medomain.com,meotherdomain.com
+```
+
+A comma-separated list of hostnames to allow access to the [Eth2Signer metrics]. By
+default, Eth2Signer accepts access from `localhost` and `127.0.0.1`.
+
+!!! tip
+
+    To allow all hostnames, use `"*"`. We don't recommend allowing all hostnames for production
+    environments.
+    
 ### tls-keystore-file
 
 ```bash tab="Syntax"
@@ -329,7 +381,7 @@ ETH2SIGNER_TLS_ALLOW_CA_CLIENTS
 
 Allows clients signed with trusted CA certificates to connect.
 
-### `help`
+### help
 
 ```bash tab="Syntax"
 -h, --help
@@ -337,7 +389,7 @@ Allows clients signed with trusted CA certificates to connect.
 
 Displays the help and exits.
 
-### `version`
+### version
 
 ```bash tab="Syntax"
 -V, --version
@@ -347,3 +399,4 @@ Displays the version and exits.
 
 <!-- links -->
 [YAML files required to access keys]: ../Key-Configuration-Files.md
+[Eth2Signer metrics]: ../../HowTo/Monitor/Metrics.md
