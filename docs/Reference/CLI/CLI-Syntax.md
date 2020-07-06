@@ -67,7 +67,7 @@ key-store-path: "/Users/me/keys"
 ETH2SIGNER_KEY_STORE_PATH=/Users/me/keys
 ```
 
-Path to the directory containing the YAML files required to access keys.
+Path to the directory containing the [YAML files required to access keys].
 
 ### key-cache-limit
 
@@ -153,7 +153,7 @@ Port on which HTTP listens. The default is 9000.
 ### metrics-enabled
 
 ```bash tab="Syntax"
---metrics-enabled
+--metrics-enabled[=<BOOLEAN>]
 ```
 
 ```bash tab="Command Line"
@@ -218,7 +218,7 @@ metrics. The default is `9001`.
 --metrics-category=<metrics-category>[,metrics-category...]...
 ```
 
-```bash tab="Syntax"
+```bash tab="Command"
 --metrics-category=HTTP,SIGNING,JVM
 ```
 
@@ -231,6 +231,103 @@ ETH2SIGNER_METRICS_CATEGORY=HTTP,SIGNING,JVM
 ```
 
 A comma-separated list of categories for which to track metrics. The defaults are `HTTP`, `SIGNING`, `JVM`, `PROCESS`.
+
+### tls-keystore-file
+
+```bash tab="Syntax"
+--tls-keystore-file=<keystoreFile>
+```
+
+```bash tab="Command"
+--tls-keystore-file=/Users/me/my_node/certificate.pfx
+```
+
+```bash tab="Configuration File"
+tls-keystore-file: "/Users/me/my_node/certificate.pfx"
+```
+
+```bash tab="Environment Variable"
+ETH2SIGNER_TLS_KEYSTORE_FILE=/Users/me/my_node/certificate.pfx
+```
+
+PKCS #12 formatted keystore. Used to enable TLS for [client connections](../../HowTo/Configure-TLS.md).
+
+### tls-keystore-password-file
+
+```bash tab="Syntax"
+--tls-keystore-password-file=<passwordFile>
+```
+
+```bash tab="Command"
+--tls-keystore-password-file=/Users/me/my_node/password.txt
+```
+
+```bash tab="Configuration File"
+tls-keystore-password-file: "/Users/me/my_node/password.txt"
+```
+
+```bash tab="Environment Variable"
+ETH2SIGNER_TLS_KEYSTORE_PASSWORD_FILE=/Users/me/my_node/password.txt
+```
+
+Password file used to decrypt the keystore.
+
+### tls-allow-any-client
+
+```bash tab="Syntax"
+--tls-allow-any-client
+```
+
+```bash tab="Configuration File"
+tls-allow-any-client
+```
+
+```bash tab="Environment Variable"
+ETH2SIGNER_TLS_ALLOW_ANY_CLIENT
+```
+
+Allows any client to connect.
+
+!!! important
+    Cannot be used with [`--tls-allow-ca-clients`](#tls-allow-ca-clients)
+    and [`--tls-known-clients-file`](#tls-known-clients-file)
+
+### tls-known-clients-file
+
+```bash tab="Syntax"
+--tls-known-clients-file=<clientsFile>
+```
+
+```bash tab="Command"
+--tls-known-clients-file=/Users/me/my_node/knownClients.txt
+```
+
+```bash tab="Configuration File"
+tls-known-clients-file: "/Users/me/my_node/knownClients.txt"
+```
+
+```bash tab="Environment Variable"
+ETH2SIGNER_TLS_KNOWN_CLIENTS_FILE=/Users/me/my_node/knownClients.txt
+```
+
+File containing the Common Names and SHA-256 fingerprints
+of [authorized clients](../../HowTo/Configure-TLS.md#create-the-known-clients-file).
+
+### tls-allow-ca-clients
+
+```bash tab="Syntax"
+--tls-allow-ca-clients
+```
+
+```bash tab="Configuration File"
+tls-allow-ca-clients
+```
+
+```bash tab="Environment Variable"
+ETH2SIGNER_TLS_ALLOW_CA_CLIENTS
+```
+
+Allows clients signed with trusted CA certificates to connect.
 
 ### `help`
 
@@ -247,3 +344,6 @@ Displays the help and exits.
 ```
 
 Displays the version and exits.
+
+<!-- links -->
+[YAML files required to access keys]: ../Key-Configuration-Files.md
