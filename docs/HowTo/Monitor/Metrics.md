@@ -80,5 +80,5 @@ The following Eth2Signer metrics are available.
 |`signing_private_key_retrieval_time` | Time taken to retrieve the signing key from a [raw unencrypted or keystore] file. |
 
 <!-- Links -->
-[Start Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/Get-Started/Use-External-Signer/
+[Start Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/External-Signer/Use-External-Signer/
 [raw unencrypted or keystore]: ../Use-Signing-Keys.md
