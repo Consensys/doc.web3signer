@@ -14,12 +14,10 @@ site_name: Eth2Signer
 site_url: https://docs.eth2signer.pegasys.tech/en/latest/
 site_description: Eth2Signer documentation.
 site_author: Eth2Signer community
-copyright: Eth2Signer and its documentation are licensed under Apache 2.0 license /
-  This <a href="https://readthedocs.org/">Readthedocs.org</a> documentation is maintained with love by <a href="https://pegasys.tech/">PegaSys</a>.
+copyright: Eth2Signer and its documentation are licensed under Apache 2.0 license
 
 #extra project info and template customisation
 extra:
-  doc_site_edit_url: https://github.com/PegaSysEng/doc.eth2signer/
   versions:
     stable: '0.1.1'
   latest_version_warning:
@@ -28,16 +26,15 @@ extra:
     some displayed features may not be available in the stable release.
     You can switch to stable version using the version box at screen bottom.'
   support:
-    gitter: https://gitter.im/PegaSysEng/Eth2Signer
+    tool: Discord
+    channel: https://discord.gg/EA7WGzA
     email: support@pegasys.tech
-    pegasys_website: https://pegasys.tech/
+    website: https://pegasys.tech/
+    company: Pegasys
     issues: https://github.com/PegaSysEng/eth2signer/issues
   google:
     site_verification: 'za1cLzyS6LXDGO-pMzvfQdYTZ0Zc67uZtY0asA4YXZ0'
     tag_manager: 'GTM-5FCWH9Q'
-  search:
-    language: 'en'
-    tokenizer: '[\s]+'
 
 
 # Software Repository
@@ -50,9 +47,8 @@ theme:
   palette:
     primary: deep-orange
     accent: teal
-  favicon: favicon.ico
-  logo:
-    icon: vpn_key vpn_key
+  logo: 'images/logo.svg'
+  favicon: 'images/favicon.svg'
 nav:
     - How to:
         - Get started with Eth2Signer:
@@ -77,6 +73,8 @@ markdown_extensions:
       permalink: 
       toc_depth: 3
   - codehilite
+  - pymdownx.tabbed
+  - pymdownx.superfences
   - markdown_include.include:
       base_path: docs
   - admonition
@@ -92,11 +90,6 @@ markdown_extensions:
   - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
-  # pymdownx.superfences is deprecated.
-  # It must be replaced with pymdownx.tabbed but it requires new CSS
-  # TODO with material 5 update
-  - pymdownx.superfences:
-      legacy_tab_classes: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
@@ -104,7 +97,9 @@ markdown_extensions:
   - smarty
 
 plugins:
-  - search
+  - search:
+      lang: 'en'
+      separator: '[\s]+'
   - markdownextradata
   - redirects:
       redirect_maps:
