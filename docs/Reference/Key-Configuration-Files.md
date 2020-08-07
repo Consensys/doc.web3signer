@@ -61,7 +61,7 @@ Use the private key stored in Hashicorp Vault.
     timeout: "10000"
     token: "s.MuZwBqZ0iE1HzvD64v3HMlhT”
     ```
-    
+
 | Key                     | Description                           |
 |-------------------------|---------------------------------------|
 | **type**                | Type of key signing. Use `hashicorp`.|

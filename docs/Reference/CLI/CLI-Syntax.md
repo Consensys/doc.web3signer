@@ -236,7 +236,7 @@ ETH2SIGNER_METRICS_PORT=6174
 ```
 
 The port (TCP) on which [Prometheus](https://prometheus.io/) accesses
-metrics. The default is `9001`. 
+metrics. The default is `9001`.
 
 ### metrics-category
 
@@ -283,7 +283,7 @@ default, Eth2Signer accepts access from `localhost` and `127.0.0.1`.
 
     To allow all hostnames, use `"*"`. We don't recommend allowing all hostnames for production
     environments.
-    
+
 ### tls-keystore-file
 
 ```bash tab="Syntax"

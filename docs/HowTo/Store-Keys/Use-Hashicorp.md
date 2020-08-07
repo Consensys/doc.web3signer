@@ -6,7 +6,6 @@ description: Using Eth2Signer with Hashicorp Vault
 
 Eth2Signer supports storing the signing key in [Hashicorp Vault](https://www.hashicorp.com/products/vault/).
 
-
 ## Storing a private key in Hashicorp Vault
 
 After installing [Hashicorp Vault](https://learn.hashicorp.com/vault/getting-started/install) and
@@ -33,7 +32,7 @@ After installing [Hashicorp Vault](https://learn.hashicorp.com/vault/getting-sta
 ## Create the Known Servers File
 
 The known servers file is required if TLS is enabled, to disable TLS set [`tlsEnabled`](../../Reference/Key-Configuration-Files.md#hashicorp-vault)
-to `false`. 
+to `false`.
 
 Specify the location of the known servers file in the [`tlsKnownServersPath`](../../Reference/Key-Configuration-Files.md#hashicorp-vault)
 option of the [signing key configuration file].
@@ -51,7 +50,7 @@ The file contents use the format `<hostame>:<port> <hex-string>` where:
     127.0.0.1:8200 7C:B3:3E:F9:98:43:5E:62:69:9F:A9:9D:41:14:03:BA:83:24:AC:04:CE:BD:92:49:1B:8D:B2:A4:86:39:4C:BB
     ```
 
-[Start Eth2Signer and specify the location of the signing key configuration file]. 
+[Start Eth2Signer and specify the location of the signing key configuration file].
 
 <!-- Links -->
 [signing key configuration file]: ../Use-Signing-Keys.md
