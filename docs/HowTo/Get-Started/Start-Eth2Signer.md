@@ -21,4 +21,4 @@ with the [`--key-store-path`](../../Reference/CLI/CLI-Syntax.md#key-store-path) 
 
 <!-- Links -->
 [Signing key configuration files]: ../Use-Signing-Keys.md
-[Start Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/Get-Started/Use-External-Signer/
+[Start Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/External-Signer/Use-External-Signer/

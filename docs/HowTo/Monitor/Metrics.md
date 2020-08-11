@@ -44,15 +44,15 @@ To configure Prometheus and run with Eth2Signer:
 
 1. Start Eth2Signer with the
    [`--metrics-enabled`](../../Reference/CLI/CLI-Syntax.md#metrics-enabled) option.
-   
-     ```bash
-     eth2signer --key-store-path=/Users/me/keyFiles/ --metrics-enabled
-     ```
-     
+
+   ```bash
+   eth2signer --key-store-path=/Users/me/keyFiles/ --metrics-enabled
+   ```
+
      The `HTTP`, `SIGNING`, `JVM`, and `PROCESS` metrics categories are enabled by default.
      Use the [`--metrics-category`](../../Reference/CLI/CLI-Syntax.md#metrics-category)
      command line option to update the available categories.
-     
+
 1. In another terminal, run Prometheus specifying the `prometheus.yml` file:
 
     ```bash tab="Example"
@@ -71,7 +71,6 @@ To configure Prometheus and run with Eth2Signer:
    `http_server_request_time` or `client_request_time` and click **Execute**. The
    values display.
 
-
 The following Eth2Signer metrics are available.
 
 | Name                       | Definition                                         |
@@ -80,7 +79,6 @@ The following Eth2Signer metrics are available.
 | `http_server_request_time` | Time taken to process incoming HTTP requests. For example, from Teku. |
 |`signing_private_key_retrieval_time` | Time taken to retrieve the signing key from a [raw unencrypted or keystore] file. |
 
-         
 <!-- Links -->
-[Start Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/Get-Started/Use-External-Signer/
+[Start Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/External-Signer/Use-External-Signer/
 [raw unencrypted or keystore]: ../Use-Signing-Keys.md

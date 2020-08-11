@@ -11,7 +11,7 @@ Eth2Signer supports using validator signing keys stored in:
 * [Hashicorp Vault](../HowTo/Store-Keys/Use-Hashicorp.md).
 
 [Each key requires a separate YAML configuration file] that defines how to access it.
-The YAML files must be placed in a single directory specified using the 
+The YAML files must be placed in a single directory specified using the
 [`--key-store-path`](../Reference/CLI/CLI-Syntax.md#key-store-path) option.
 
 !!! tip
