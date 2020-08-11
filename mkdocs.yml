@@ -46,8 +46,8 @@ theme:
   palette:
     primary: deep-orange
     accent: teal
-  logo: 'images/logo.svg'
-  favicon: 'images/favicon.svg'
+  logo: 'Images/logo.svg'
+  favicon: 'Images/favicon.svg'
 nav:
     - How to:
         - Get started with Eth2Signer:
