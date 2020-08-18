@@ -74,6 +74,31 @@ Use the private key stored in Hashicorp Vault.
 | **timeout**             | Timeout in milliseconds for requests to the Hashicorp Vault server. |
 | **token**               | The root token displayed by the Hashicorp Vault server. |
 
+
+## Azure Key Vault
+
+Use the private key stored in Azure Key Vault.
+
+!!! example
+
+    ```
+    type: "azure"
+    clientId: "47efee5c-8079-4b48-31bb4f2e9a22"
+    clientSecret: "0DgK4V_YA84RPk7.f_1op0-em_a46wSe.Z"
+    tenantId: 17255fb0-373b-4a1a-bd47-d211ab86df81
+    vaultName: "AzureKeyVault"
+    secretName: "3ee2224386c82ffea477e2adf28a2929f5c349165a4196158c7f3a2ecca40f35"
+    ```
+
+| Key                     | Description                           |
+|-------------------------|---------------------------------------|
+| **type**                | Type of key signing. Use `azure`.|
+| **clientId**            | ID used to authenticate with Azure Key Vault.  |
+| **clientSecret**        | Secret used to access the vault. |
+| **tenantId**            | The tenant ID used to authenticate with Azure Key Vault. |
+| **vaultName**           | Name of the vault to access. Sub-domain of vault.azure.net. |
+| **secretName**          | Name of the key stored in the Azure Key Vault.  |
+
 <!-- Links -->
 [signing key configuration file]: ../HowTo/Use-Signing-Keys.md
 [keystore file]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md

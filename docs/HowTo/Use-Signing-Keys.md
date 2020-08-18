@@ -8,7 +8,8 @@ Eth2Signer supports using validator signing keys stored in:
 
 * Raw unencrypted files
 * [Keystore files](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md)
-* [Hashicorp Vault](../HowTo/Store-Keys/Use-Hashicorp.md).
+* [Hashicorp Vault](../HowTo/Store-Keys/Use-Hashicorp.md)
+* [Azure Key Vault](../HowTo/Store-Keys/Use-Azure.md).
 
 [Each key requires a separate YAML configuration file] that defines how to access it.
 The YAML files must be placed in a single directory specified using the

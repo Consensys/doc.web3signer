@@ -1,0 +1,57 @@
+---
+description: Signing transactions with key stored in Azure Key Vault
+---
+
+# Using Eth2Signer with Azure Key Vault
+
+Eth2Signer supports storing the signing key in [Azure Key Vault](https://azure.microsoft.com/en-au/services/key-vault/).
+
+## Storing the private key in Azure Key Vault
+
+Create a BLS12-381 key in [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/)
+and register Eth2Signer as an application for the key.
+
+Take note of the following to specify when [configuring the signing key configuration file]:
+
+* Key vault name
+* Key name
+* Client ID
+* File containing client secret for the client ID
+* Tenant ID
+
+## Configure the signing key file
+
+Configure the [signing key configuration file] with the parameters to access the private key in
+Azure Key Vault.
+
+## Start Teku
+
+[Start Teku with the external signer options]: 
+
+!!! example
+
+    ```bash
+    teku --network=medalla \
+    --eth1-endpoint=http://localhost:8545 \
+    --validators-external-signer-public-keys=0xa99a...e44c,0xb89b...4a0b \
+    --validators-external-signer-url=http://localhost:9000
+    ```
+
+
+## Start Eth2Signer
+
+Start Eth2Signer and ensure the signing key file is located in the directory specified in the
+[`--key-store-path`](../../Reference/CLI/CLI-Syntax.md#key-store-path).
+
+!!! example
+
+    ```bash
+    eth2signer --key-store-path=/Users/me/keyFiles/
+    ```
+
+You can now use Eth2Signer to sign transactions with the key stored in the Azure Key Vault.
+
+<!-- links -->
+[Start Teku with the external signer options]: https://docs.teku.pegasys.tech/en/latest/HowTo/External-Signer/Use-External-Signer/
+[signing key configuration file]: ../Use-Signing-Keys.md
+[configuring the signing key configuration file]: #configure-the-signing-key-file
