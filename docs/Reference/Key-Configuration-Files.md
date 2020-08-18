@@ -82,7 +82,7 @@ Use the private key stored in Azure Key Vault.
 !!! example
 
     ```
-    type: "azure"
+    type: "azure-secret"
     clientId: "47efee5c-8079-4b48-31bb4f2e9a22"
     clientSecret: "0DgK4V_YA84RPk7.f_1op0-em_a46wSe.Z"
     tenantId: 17255fb0-373b-4a1a-bd47-d211ab86df81
@@ -92,7 +92,7 @@ Use the private key stored in Azure Key Vault.
 
 | Key                     | Description                           |
 |-------------------------|---------------------------------------|
-| **type**                | Type of key signing. Use `azure`.|
+| **type**                | Type of key signing. Use `azure-secret`.|
 | **clientId**            | ID used to authenticate with Azure Key Vault.  |
 | **clientSecret**        | Secret used to access the vault. |
 | **tenantId**            | The tenant ID used to authenticate with Azure Key Vault. |
