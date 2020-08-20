@@ -13,11 +13,14 @@ and register Eth2Signer as an application for the key.
 
 Take note of the following to specify when [configuring the signing key configuration file]:
 
-* Key vault name
-* Key name
-* Client ID
-* File containing client secret for the client ID
-* Tenant ID
+* Vault name, which is part of the URL (for example `https://<vaultname>.vault.azure.net`)
+* Client secret credentials, which includes:
+
+    - Client ID
+    - Client secret
+    - Tenant ID
+
+* Key name, which is the name of the secret.
 
 ## Configure the signing key file
 
