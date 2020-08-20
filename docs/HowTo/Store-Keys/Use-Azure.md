@@ -16,9 +16,9 @@ Take note of the following to specify when [configuring the signing key configur
 * Vault name, which is part of the URL (for example `https://<vaultname>.vault.azure.net`)
 * Client secret credentials, which includes:
 
-    - Client ID
-    - Client secret
-    - Tenant ID
+    * Client ID
+    * Client secret
+    * Tenant ID
 
 * Key name, which is the name of the secret.
 
@@ -29,7 +29,7 @@ Azure Key Vault.
 
 ## Start Teku
 
-[Start Teku with the external signer options]: 
+[Start Teku with the external signer options]:
 
 !!! example
 
@@ -39,7 +39,6 @@ Azure Key Vault.
     --validators-external-signer-public-keys=0xa99a...e44c,0xb89b...4a0b \
     --validators-external-signer-url=http://localhost:9000
     ```
-
 
 ## Start Eth2Signer
 
