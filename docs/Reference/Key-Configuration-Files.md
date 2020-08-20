@@ -74,7 +74,6 @@ Use the private key stored in Hashicorp Vault.
 | **timeout**             | Timeout in milliseconds for requests to the Hashicorp Vault server. |
 | **token**               | The root token displayed by the Hashicorp Vault server. |
 
-
 ## Azure Key Vault
 
 Use the private key stored in Azure Key Vault.
