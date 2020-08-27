@@ -6,7 +6,7 @@ description: Getting started with Eth2Signer
 
 **Prerequisites**:
 
-* [Signing key configuration files] for the required validators.
+* [Signing key configuration files] to access the required signing keys.
 
 Start Eth2Signer and specify the location of the signing key configuration files
 with the [`--key-store-path`](../../Reference/CLI/CLI-Syntax.md#key-store-path) option.
