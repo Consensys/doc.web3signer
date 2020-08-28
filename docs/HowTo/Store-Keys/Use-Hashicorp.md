@@ -21,13 +21,17 @@ After installing [Hashicorp Vault](https://learn.hashicorp.com/vault/getting-sta
 
 1. Put your signing key into the Hashicorp Vault:
 
-    ```bash tab="Command"
-    vault kv put secret/eth2signerSigningKey value=<Private Key without 0x prefix>
-    ```
+    === "Command"
 
-    ```bash tab="Example"
-    vault kv put secret/eth2signerSigningKey value=17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
-    ```
+        ```bash
+        vault kv put secret/eth2signerSigningKey value=<Private Key without 0x prefix>
+        ```
+
+    === "Example"
+
+        ```bash
+        vault kv put secret/eth2signerSigningKey value=17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
+        ```
 
 ## Create the Known Servers File
 

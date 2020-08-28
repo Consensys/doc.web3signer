@@ -31,142 +31,196 @@ For example, set `--data-path` using the `ETH2SIGNER_DATA_PATH` environment vari
 
 ### data-path
 
-```bash tab="Syntax"
---data-path=<PATH>
-```
+=== "Syntax"
 
-```bash tab="Command Line"
---data-path=/Users/me/my_node/data
-```
+    ```bash
+    --data-path=<PATH>
+    ```
 
-```bash tab="Configuration File"
-data-path: "/Users/me/my_node/data"
-```
+=== "Command Line"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_DATA_PATH=/Users/me/my_node/data
-```
+    ```bash
+    --data-path=/Users/me/my_node/data
+    ```
 
-Directory in which to store temporary files.
+=== "Configuration File"
+
+    ```bash
+    data-path: "/Users/me/my_node/data"
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_DATA_PATH=/Users/me/my_node/data
+    ```Directory in which to store temporary files.
 
 ### key-store-path
 
-```bash tab="Syntax"
---key-store-path=<PATH>
-```
+=== "Syntax"
 
-```bash tab=""
---key-store-path=/Users/me/keys
-```
+    ```bash
+    --key-store-path=<PATH>
+    ```
 
-```bash tab="Configuration File"
-key-store-path: "/Users/me/keys"
-```
+=== "Command Line"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_KEY_STORE_PATH=/Users/me/keys
-```
+    ```bash
+    --key-store-path=/Users/me/keys
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    key-store-path: "/Users/me/keys"
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_KEY_STORE_PATH=/Users/me/keys
+    ```
 
 Path to the directory containing the [YAML files required to access keys].
 
 ### key-cache-limit
 
-```bash tab="Syntax"
---key-cache-limit=<LONG>
-```
+=== "Syntax"
 
-```bash tab="Command Line"
---key-cache-limit=1500
-```
+    ```bash
+    --key-cache-limit=<LONG>
+    ```
 
-```bash tab="Configuration File"
-key-cache-limit: 1500
-```
+=== "Command Line"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_KEY_CACHE_LIMIT=1500
-```
+    ```bash
+    --key-cache-limit=1500
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    key-cache-limit: 1500
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_KEY_CACHE_LIMIT=1500
+    ```
 
 Maximum number of keys to cache in memory. The defaults is 1000.
 
 ### logging
 
-```bash tab="Syntax"
--l, --logging=<LEVEL>
-```
+=== "Syntax"
 
-```bash tab="Command Line"
---logging=DEBUG
-```
+    ```bash
+    -l, --logging=<LEVEL>
+    ```
 
-```bash tab="Configuration File"
-logging: "DEBUG"
-```
+=== "Command Line"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_LOGGING=DEBUG
-```
+    ```bash
+    --logging=DEBUG
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    logging: "DEBUG"
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_LOGGING=DEBUG
+    ```
 
 Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, `TRACE`,
 `ALL`. The default is `INFO`.
 
 ### http-listen-host
 
-```bash tab="Syntax"
---http-listen-host=<httpListenHost>
-```
+=== "Syntax"
 
-```bash tab="Command Line"
---http-listen-host=8.8.8.8
-```
+    ```bash
+    --http-listen-host=<httpListenHost>
+    ```
 
-```bash tab="Configuration File"
-http-listen-host: "8.8.8.8"
-```
+=== "Command Line"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_HTTP_LISTEN_HOST=8.8.8.8
-```
+    ```bash
+    --http-listen-host=8.8.8.8
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    http-listen-host: "8.8.8.8"
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_HTTP_LISTEN_HOST=8.8.8.8
+    ```
 
 Host on which HTTP listens. Default is `localhost`.
 
 ### http-listen-port
 
-```bash tab="Syntax"
---http-listen-port=<httpListenPort>
-```
+=== "Syntax"
 
-```bash tab="Command Line"
---http-listen-port=6174
-```
+    ```bash
+    --http-listen-port=<httpListenPort>
+    ```
 
-```bash tab="Configuration File"
-http-listen-port: 6174
-```
+=== "Command Line"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_HTTP_LISTEN_PORT=6174
-```
+    ```bash
+    --http-listen-port=6174
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    http-listen-port: 6174
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_HTTP_LISTEN_PORT=6174
+    ```
 
 Port on which HTTP listens. The default is 9000.
 
 ### http-host-allowlist
 
-```bash tab="Syntax"
---http-host-allowlist=<hostname>[,<hostname>...]... or "*"
-```
+=== "Syntax"
 
-```bash tab="Command Line"
---http-host-allowlist=medomain.com,meotherdomain.com
-```
+    ```bash
+    --http-host-allowlist=<hostname>[,<hostname>...]... or "*"
+    ```
 
-```bash tab="Configuration File"
-http-host-allowlist: ["medomain.com", "meotherdomain.com"]
-```
+=== "Command Line"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_HTTP_HOST_ALLOWLIST=medomain.com,meotherdomain.com
-```
+    ```bash
+    --http-host-allowlist=medomain.com,meotherdomain.com
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    http-host-allowlist: ["medomain.com", "meotherdomain.com"]
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_HTTP_HOST_ALLOWLIST=medomain.com,meotherdomain.com
+    ```
 
 A comma-separated list of hostnames to allow access to the REST APIs. By default, Eth2Signer
 accepts access from `localhost` and `127.0.0.1`.
@@ -178,103 +232,143 @@ accepts access from `localhost` and `127.0.0.1`.
 
 ### metrics-enabled
 
-```bash tab="Syntax"
---metrics-enabled[=<BOOLEAN>]
-```
+=== "Syntax"
 
-```bash tab="Command Line"
---metrics-enabled=true
-```
+    ```bash
+    --metrics-enabled[=<BOOLEAN>]
+    ```
 
-```bash tab="Configuration File"
-metrics-enabled: true
-```
+=== "Command Line"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_METRICS_ENABLED=true
-```
+    ```bash
+    --metrics-enabled=true
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    metrics-enabled: true
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_METRICS_ENABLED=true
+    ```
 
 Enables the metrics exporter. The default is `false`.
 
 ### metrics-host
 
-```bash tab="Syntax"
---metrics-host=<HOST>
-```
+=== "Syntax"
 
-```bash tab="Command Line"
---metrics-host=186.10.10.1
-```
+    ```bash
+    --metrics-host=<HOST>
+    ```
 
-```bash tab="Configuration File"
-metrics-host: "186.10.10.1"
-```
+=== "Command Line"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_METRICS_HOST=186.10.10.1
-```
+    ```bash
+    --metrics-host=186.10.10.1
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    metrics-host: "186.10.10.1"
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_METRICS_HOST=186.10.10.1
+    ```
 
 The host on which [Prometheus](https://prometheus.io/) accesses metrics.
 The default is `127.0.0.1`.
 
 ### metrics-port
 
-```bash tab="Syntax"
---metrics-port=<PORT>
-```
+=== "Syntax"
 
-```bash tab="Command Line"
---metrics-port=6174
-```
+    ```bash
+    --metrics-port=<PORT>
+    ```
 
-```bash tab="Configuration File"
-metrics-port: 6174
-```
+=== "Command Line"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_METRICS_PORT=6174
-```
+    ```bash
+    --metrics-port=6174
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    metrics-port: 6174
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_METRICS_PORT=6174
+    ```
 
 The port (TCP) on which [Prometheus](https://prometheus.io/) accesses
 metrics. The default is `9001`.
 
 ### metrics-category
 
-```bash tab="Syntax"
---metrics-category=<metrics-category>[,metrics-category...]...
-```
+=== "Syntax"
 
-```bash tab="Command"
---metrics-category=HTTP,SIGNING,JVM
-```
+    ```bash
+    --metrics-category=<metrics-category>[,metrics-category...]...
+    ```
 
-```bash tab="Configuration File"
-metrics-category: ["HTTP", "SIGNING", "JVM"]
-```
+=== "Command"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_METRICS_CATEGORY=HTTP,SIGNING,JVM
-```
+    ```bash
+    --metrics-category=HTTP,SIGNING,JVM
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    metrics-category: ["HTTP", "SIGNING", "JVM"]
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_METRICS_CATEGORY=HTTP,SIGNING,JVM
+    ```
 
 A comma-separated list of categories for which to track metrics. The defaults are `HTTP`, `SIGNING`, `JVM`, `PROCESS`.
 
 ### metrics-host-allowlist
 
-```bash tab="Syntax"
---metrics-host-allowlist=<hostname>[,<hostname>...]... or "*"
-```
+=== "Syntax"
 
-```bash tab="Command Line"
---metrics-host-allowlist=medomain.com,meotherdomain.com
-```
+    ```bash
+    --metrics-host-allowlist=<hostname>[,<hostname>...]... or "*"
+    ```
 
-```bash tab="Configuration File"
-metrics-host-allowlist: ["medomain.com", "meotherdomain.com"]
-```
+=== "Command Line"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_METRICS_HOST_ALLOWLIST=medomain.com,meotherdomain.com
-```
+    ```bash
+    --metrics-host-allowlist=medomain.com,meotherdomain.com
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    metrics-host-allowlist: ["medomain.com", "meotherdomain.com"]
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_METRICS_HOST_ALLOWLIST=medomain.com,meotherdomain.com
+    ```
 
 A comma-separated list of hostnames to allow access to the [Eth2Signer metrics]. By
 default, Eth2Signer accepts access from `localhost` and `127.0.0.1`.
@@ -286,59 +380,79 @@ default, Eth2Signer accepts access from `localhost` and `127.0.0.1`.
 
 ### tls-keystore-file
 
-```bash tab="Syntax"
---tls-keystore-file=<keystoreFile>
-```
+=== "Syntax"
 
-```bash tab="Command"
---tls-keystore-file=/Users/me/my_node/certificate.pfx
-```
+    ```bash
+    --tls-keystore-file=<keystoreFile>
+    ```
 
-```bash tab="Configuration File"
-tls-keystore-file: "/Users/me/my_node/certificate.pfx"
-```
+=== "Command"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_TLS_KEYSTORE_FILE=/Users/me/my_node/certificate.pfx
-```
+    ```bash
+    --tls-keystore-file=/Users/me/my_node/certificate.pfx
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    tls-keystore-file: "/Users/me/my_node/certificate.pfx"
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_TLS_KEYSTORE_FILE=/Users/me/my_node/certificate.pfx
+    ```
 
 PKCS #12 formatted keystore. Used to enable TLS for [client connections](../../HowTo/Configure-TLS.md).
 
 ### tls-keystore-password-file
 
-```bash tab="Syntax"
---tls-keystore-password-file=<passwordFile>
-```
+=== "Syntax"
 
-```bash tab="Command"
---tls-keystore-password-file=/Users/me/my_node/password.txt
-```
+    ```bash
+    --tls-keystore-password-file=<passwordFile>
+    ```
 
-```bash tab="Configuration File"
-tls-keystore-password-file: "/Users/me/my_node/password.txt"
-```
+=== "Command"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_TLS_KEYSTORE_PASSWORD_FILE=/Users/me/my_node/password.txt
-```
+    ```bash
+    --tls-keystore-password-file=/Users/me/my_node/password.txt
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    tls-keystore-password-file: "/Users/me/my_node/password.txt"
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_TLS_KEYSTORE_PASSWORD_FILE=/Users/me/my_node/password.txt
+    ```
 
 Password file used to decrypt the keystore.
 
 ### tls-allow-any-client
 
-```bash tab="Syntax"
---tls-allow-any-client
-```
+=== "Syntax"
 
-```bash tab="Configuration File"
-tls-allow-any-client
-```
+    ```bash
+    --tls-allow-any-client
+    ```
 
-```bash tab="Environment Variable"
-ETH2SIGNER_TLS_ALLOW_ANY_CLIENT
-```
+=== "Configuration File"
 
-Allows any client to connect.
+    ```bash
+    tls-allow-any-client
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_TLS_ALLOW_ANY_CLIENT
+    ```Allows any client to connect.
 
 !!! important
     Cannot be used with [`--tls-allow-ca-clients`](#tls-allow-ca-clients)
@@ -346,54 +460,72 @@ Allows any client to connect.
 
 ### tls-known-clients-file
 
-```bash tab="Syntax"
---tls-known-clients-file=<clientsFile>
-```
+=== "Syntax"
 
-```bash tab="Command"
---tls-known-clients-file=/Users/me/my_node/knownClients.txt
-```
+    ```bash
+    --tls-known-clients-file=<clientsFile>
+    ```
 
-```bash tab="Configuration File"
-tls-known-clients-file: "/Users/me/my_node/knownClients.txt"
-```
+=== "Command"
 
-```bash tab="Environment Variable"
-ETH2SIGNER_TLS_KNOWN_CLIENTS_FILE=/Users/me/my_node/knownClients.txt
-```
+    ```bash
+    --tls-known-clients-file=/Users/me/my_node/knownClients.txt
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    tls-known-clients-file: "/Users/me/my_node/knownClients.txt"
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_TLS_KNOWN_CLIENTS_FILE=/Users/me/my_node/knownClients.txt
+    ```
 
 File containing the Common Names and SHA-256 fingerprints
 of [authorized clients](../../HowTo/Configure-TLS.md#create-the-known-clients-file).
 
 ### tls-allow-ca-clients
 
-```bash tab="Syntax"
---tls-allow-ca-clients
-```
+=== "Syntax"
 
-```bash tab="Configuration File"
-tls-allow-ca-clients
-```
+    ```bash
+    --tls-allow-ca-clients
+    ```
 
-```bash tab="Environment Variable"
-ETH2SIGNER_TLS_ALLOW_CA_CLIENTS
-```
+=== "Configuration File"
+
+    ```bash
+    tls-allow-ca-clients
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    ETH2SIGNER_TLS_ALLOW_CA_CLIENTS
+    ```
 
 Allows clients signed with trusted CA certificates to connect.
 
 ### help
 
-```bash tab="Syntax"
--h, --help
-```
+=== "Syntax"
+
+    ```bash
+    -h, --help
+    ```
 
 Displays the help and exits.
 
 ### version
 
-```bash tab="Syntax"
--V, --version
-```
+=== "Syntax"
+
+    ```bash
+    -V, --version
+    ```
 
 Displays the version and exits.
 

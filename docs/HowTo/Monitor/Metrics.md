@@ -25,7 +25,9 @@ To configure Prometheus and run with Eth2Signer:
 1. Configure Prometheus to poll Eth2Signer. For example, add the following yaml fragment to the
    `scrape_configs` block of the `prometheus.yml` file:
 
-    ```yml tab="Example"
+!!! example "Example configuration"
+
+    ```yml
     global:
       scrape_interval: 15s
     scrape_configs:
@@ -55,7 +57,7 @@ To configure Prometheus and run with Eth2Signer:
 
 1. In another terminal, run Prometheus specifying the `prometheus.yml` file:
 
-    ```bash tab="Example"
+    ```bash
     prometheus --config.file=prometheus.yml
     ```
 
