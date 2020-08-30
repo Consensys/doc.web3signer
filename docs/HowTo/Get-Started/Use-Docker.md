@@ -19,9 +19,11 @@ A Docker image is provided to run Eth2Signer in a Docker container.
 
 Display the Eth2Signer command line help using the Docker image:
 
-```bash tab="develop"
-docker run pegasyseng/eth2signer:develop --help
-```
+=== "develop"
+
+    ```bash
+    docker run pegasyseng/eth2signer:develop --help
+    ```
 
 ## Expose listening port
 

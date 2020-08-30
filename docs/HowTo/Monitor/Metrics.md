@@ -25,37 +25,39 @@ To configure Prometheus and run with Eth2Signer:
 1. Configure Prometheus to poll Eth2Signer. For example, add the following yaml fragment to the
    `scrape_configs` block of the `prometheus.yml` file:
 
-    ```yml tab="Example"
-    global:
-      scrape_interval: 15s
-    scrape_configs:
-      - job_name: "prometheus"
-        static_configs:
-        - targets: ["localhost:9090"]
-      - job_name: "eth2signer-dev"
-        scrape_timeout: 10s
-        metrics_path: /metrics
-        scheme: http
-        static_configs:
-        - targets: ["localhost:9001"]
-    ```
+    !!! example "Example configuration"
+
+        ```yml
+        global:
+          scrape_interval: 15s
+        scrape_configs:
+          - job_name: "prometheus"
+            static_configs:
+            - targets: ["localhost:9090"]
+          - job_name: "eth2signer-dev"
+            scrape_timeout: 10s
+            metrics_path: /metrics
+            scheme: http
+            static_configs:
+            - targets: ["localhost:9001"]
+        ```
 
 1. [Start Teku] by specifying the Eth2Signer details.
 
 1. Start Eth2Signer with the
-   [`--metrics-enabled`](../../Reference/CLI/CLI-Syntax.md#metrics-enabled) option.
+    [`--metrics-enabled`](../../Reference/CLI/CLI-Syntax.md#metrics-enabled) option.
 
-   ```bash
-   eth2signer --key-store-path=/Users/me/keyFiles/ --metrics-enabled
-   ```
+    ```bash
+    eth2signer --key-store-path=/Users/me/keyFiles/ --metrics-enabled
+    ```
 
-     The `HTTP`, `SIGNING`, `JVM`, and `PROCESS` metrics categories are enabled by default.
-     Use the [`--metrics-category`](../../Reference/CLI/CLI-Syntax.md#metrics-category)
-     command line option to update the available categories.
+    The `HTTP`, `SIGNING`, `JVM`, and `PROCESS` metrics categories are enabled by default.
+    Use the [`--metrics-category`](../../Reference/CLI/CLI-Syntax.md#metrics-category)
+    command line option to update the available categories.
 
-1. In another terminal, run Prometheus specifying the `prometheus.yml` file:
+1. In another terminal, run Psrometheus specifying the `prometheus.yml` file:
 
-    ```bash tab="Example"
+    ```bash
     prometheus --config.file=prometheus.yml
     ```
 
