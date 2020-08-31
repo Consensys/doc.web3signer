@@ -8,7 +8,7 @@ Eth2Signer supports storing the signing key in [Azure Key Vault](https://azure.m
 
 ## Storing the private key in Azure Key Vault
 
-Create a BLS12-381 key in [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/)
+Create a signing key in [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/)
 and register Eth2Signer as an application for the key.
 
 Take note of the following to specify when [configuring the signing key configuration file]:
