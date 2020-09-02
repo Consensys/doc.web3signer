@@ -22,7 +22,7 @@ Stores the private key as an unencrypted value directly in the key configuration
 | Key                  | Description                           |
 |----------------------|---------------------------------------|
 | **type**             | Type of configuration file. Use `file-raw`.|
-| **keyType**         | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `BLS`. |
+| **keyType**          | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `BLS`. |
 | **privateKey**       | Hexadecimal encoded private key string.|
 
 ## Keystore file
@@ -41,7 +41,7 @@ Use the private key stored in a [keystore file].
 | Key                      | Description                           |
 |--------------------------|---------------------------------------|
 | **type**                 | Type of configuration file. Use `file-keystore`.|
-| **keyType**             | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `BLS`. |
+| **keyType**              | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `BLS`. |
 | **keystoreFile**         | Location of the keystore file. |
 | **keystorePasswordFile** | Text file containing the password to decrypt the keystore file. |
 
@@ -67,7 +67,7 @@ Use the private key stored in Hashicorp Vault.
 | Key                     | Description                           |
 |-------------------------|---------------------------------------|
 | **type**                | Type of configuration file. Use `hashicorp`.|
-| **keyType**            | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `BLS`. |
+| **keyType**             | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `BLS`. |
 | **tlsEnabled**          | Enable or disable TLS. Defaults to `true` |
 | **keyPath**             | Path to secret in the Hashicorp Vault containing the private key. |
 | **keyName**             | Name of the key storing the private key in the vault.|
@@ -79,7 +79,11 @@ Use the private key stored in Hashicorp Vault.
 
 ## Azure Key Vault
 
-Use the private key stored in Azure Key Vault.
+Use the private key stored in Azure Key Vault. Supports two signing options:
+
+* `azure-key` - Performs the signing in Azure Key Vault. Supports SECP256K1 signing keys only.
+* `azure-secret` - Eth2Signer fetches the keys from the vault and signs locally. Supports SECP256K1
+    and BLS12-381 signing keys.
 
 !!! example
 
@@ -95,8 +99,8 @@ Use the private key stored in Azure Key Vault.
 
 | Key                     | Description                           |
 |-------------------------|---------------------------------------|
-| **type**                | Type of configuration file. Use `azure-secret`.|
-| **keyType**            | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `SECP256K1`. |
+| **type**                | Type of configuration file. Use `azure-secret` or `azure-key`.|
+| **keyType**             | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `SECP256K1`. |
 | **clientId**            | ID used to authenticate with Azure Key Vault.  |
 | **clientSecret**        | Secret used to access the vault. |
 | **tenantId**            | The tenant ID used to authenticate with Azure Key Vault. |

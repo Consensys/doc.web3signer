@@ -55,5 +55,5 @@ You can now use Eth2Signer to sign transactions with the key stored in the Azure
 
 <!-- links -->
 [Start Teku with the external signer options]: https://docs.teku.pegasys.tech/en/latest/HowTo/External-Signer/Use-External-Signer/
-[signing key configuration file]: ../Use-Signing-Keys.md
+[signing key configuration file]: ../../Reference/Key-Configuration-Files.md
 [configuring the signing key configuration file]: #configure-the-signing-key-file
