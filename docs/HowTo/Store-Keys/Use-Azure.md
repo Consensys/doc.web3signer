@@ -8,7 +8,7 @@ Eth2Signer supports storing the signing key in [Azure Key Vault](https://azure.m
 
 ## Storing the private key in Azure Key Vault
 
-Create a BLS12-381 key in [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/)
+Create a signing key in [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/)
 and register Eth2Signer as an application for the key.
 
 Take note of the following to specify when [configuring the signing key configuration file]:
@@ -55,5 +55,5 @@ You can now use Eth2Signer to sign transactions with the key stored in the Azure
 
 <!-- links -->
 [Start Teku with the external signer options]: https://docs.teku.pegasys.tech/en/latest/HowTo/External-Signer/Use-External-Signer/
-[signing key configuration file]: ../Use-Signing-Keys.md
+[signing key configuration file]: ../../Reference/Key-Configuration-Files.md
 [configuring the signing key configuration file]: #configure-the-signing-key-file

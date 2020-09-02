@@ -7,9 +7,6 @@ title: Signing key configuration file parameters
 A [signing key configuration file] is a YAML file that defines the parameters to access the
 signing key.
 
-The YAML file name must use the format `<validatorPublicKeyAddress>.yaml`. For example
-`b65c2a1dc6a8eaadae03d5849dd6ac614b32dc5f8af37e2eb4ced0c72fd69fabe90fc783b0435f5a36ff1338385ef837.yaml`
-
 ## Raw unencrypted files
 
 Stores the private key as an unencrypted value directly in the key configuration file.
@@ -18,12 +15,14 @@ Stores the private key as an unencrypted value directly in the key configuration
 
     ```
     type: "file-raw"
+    keyType: "SECP256K1"
     privateKey: "0x25b1166a43c109cb330af8945d364722757c65ed2bfed5444b5a2f057f82d391"
     ```
 
 | Key                  | Description                           |
 |----------------------|---------------------------------------|
-| **type**             | Type of key signing. Use `file-raw`.|
+| **type**             | Type of configuration file. Use `file-raw`.|
+| **keyType**          | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `BLS`. |
 | **privateKey**       | Hexadecimal encoded private key string.|
 
 ## Keystore file
@@ -34,13 +33,15 @@ Use the private key stored in a [keystore file].
 
     ```
     type: "file-keystore"
+    keyType: "SECP256K1"
     keystoreFile: "95e57532ede3c1dd879061153f9cfdcdefa9dc5fb9c954a6677bc6641b8d26e39f70b660bbaa732c47277c0096e11400.json"
     keystorePasswordFile: "95e57532ede3c1dd879061153f9cfdcdefa9dc5fb9c954a6677bc6641b8d26e39f70b660bbaa732c47277c0096e11400.password”
     ```
 
 | Key                      | Description                           |
 |--------------------------|---------------------------------------|
-| **type**                 | Type of key signing. Use `file-keystore`.|
+| **type**                 | Type of configuration file. Use `file-keystore`.|
+| **keyType**              | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `BLS`. |
 | **keystoreFile**         | Location of the keystore file. |
 | **keystorePasswordFile** | Text file containing the password to decrypt the keystore file. |
 
@@ -52,6 +53,7 @@ Use the private key stored in Hashicorp Vault.
 
     ```
     type: "hashicorp"
+    keyType: "SECP256K1"
     tlsEnabled: "true"
     keyPath: "/v1/secret/data/secretPath"
     keyName: "secretName"
@@ -64,7 +66,8 @@ Use the private key stored in Hashicorp Vault.
 
 | Key                     | Description                           |
 |-------------------------|---------------------------------------|
-| **type**                | Type of key signing. Use `hashicorp`.|
+| **type**                | Type of configuration file. Use `hashicorp`.|
+| **keyType**             | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `BLS`. |
 | **tlsEnabled**          | Enable or disable TLS. Defaults to `true` |
 | **keyPath**             | Path to secret in the Hashicorp Vault containing the private key. |
 | **keyName**             | Name of the key storing the private key in the vault.|
@@ -76,12 +79,17 @@ Use the private key stored in Hashicorp Vault.
 
 ## Azure Key Vault
 
-Use the private key stored in Azure Key Vault.
+Use the private key stored in Azure Key Vault. Supports two signing options:
+
+* `azure-key` - Performs the signing in Azure Key Vault. Supports SECP256K1 signing keys only.
+* `azure-secret` - Eth2Signer fetches the keys from the vault and signs locally. Supports SECP256K1
+    and BLS12-381 signing keys.
 
 !!! example
 
     ```
     type: "azure-secret"
+    keyType: "BLS"
     clientId: "65efaa5b-4029-4b54-98bb2e2e8a11"
     clientSecret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
     tenantId: 34255fb0-379b-4a1a-bd47-d211ab86df81
@@ -91,7 +99,8 @@ Use the private key stored in Azure Key Vault.
 
 | Key                     | Description                           |
 |-------------------------|---------------------------------------|
-| **type**                | Type of key signing. Use `azure-secret`.|
+| **type**                | Type of configuration file. Use `azure-secret` or `azure-key`.|
+| **keyType**             | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `SECP256K1`. |
 | **clientId**            | ID used to authenticate with Azure Key Vault.  |
 | **clientSecret**        | Secret used to access the vault. |
 | **tenantId**            | The tenant ID used to authenticate with Azure Key Vault. |
