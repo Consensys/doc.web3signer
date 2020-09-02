@@ -19,10 +19,14 @@ Unpack the downloaded files and change into the `eth2signer-<release>` directory
 
 Display Eth2Signer command line help to confirm installation:
 
-```bash tab="Linux/macOS"
-bin/eth2signer --help
-```
+=== "Linux/macOS"
 
-```bat tab="Windows"
-bin\eth2signer --help
-```
+    ```bash
+    bin/eth2signer --help
+    ```
+
+=== "Windows"
+
+    ```bat
+    bin\eth2signer --help
+    ```
