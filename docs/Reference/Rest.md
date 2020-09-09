@@ -17,6 +17,6 @@ The default location is `http://localhost:9000/swagger-ui`.
 You can also use tools such as [Postman] or [cURL] to interact with Eth2Signer APIs.
 
 <!-- Links -->
-[Eth2Signer REST API documentation]:https://pegasyseng.github.io/eth2signer/#stable/
+[Eth2Signer REST API documentation]: https://pegasyseng.github.io/web3signer/
 [Postman]: https://www.postman.com/
 [cURL]: https://curl.haxx.se/
