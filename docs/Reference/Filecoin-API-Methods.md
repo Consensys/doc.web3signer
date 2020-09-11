@@ -15,11 +15,11 @@ The default location is `http://127.0.0.1:9000/rpc/v1/filecoin`.
 
 Indicates whether an address exists in the wallet.
 
-**Parameters**
+#### Parameters
 
 `String` : Filecoin address
 
-**Returns**
+#### Returns
 
 `result` : _Boolean_ - `true` if the address exists in the wallet; otherwise `false`.
 
@@ -47,11 +47,11 @@ Lists all the addresses in the wallet.
 
 Addresses can be based on secp256k1 or BLS12-381 signing keys.
 
-**Parameters**
+#### Parameters
 
 None
 
-**Returns**
+#### Returns
 
 `result`: Array of Filecoin addresses.
 
@@ -80,13 +80,13 @@ None
 
 Signs the provided data using the private key belonging to the supplied Filecoin address.
 
-**Parameters**
+#### Parameters
 
 `String` : Filecoin address
 
 `String` : Data to sign
 
-**Returns**
+#### Returns
 
 `result`: Object containing:
 
@@ -119,13 +119,13 @@ Signs the provided data using the private key belonging to the supplied Filecoin
 
 Signs a [message] using the private key belonging to the supplied Filecoin address.
 
-**Parameters**
+#### Parameters
 
 `String` : Filecoin address
 
 _Object_: [Unsigned message object]
 
-**Returns**
+#### Returns
 
 `result`: Object containing the sent unsigned [`Message`](https://filecoin-project.github.io/specs/#systems__filecoin_vm__message)
 object, and the [`Signature`](https://filecoin-project.github.io/specs/#message-semantic-validation) object.
@@ -164,13 +164,14 @@ object, and the [`Signature`](https://filecoin-project.github.io/specs/#message-
             "jsonrpc": "2.0"
         }
         ```
+
 ## Filecoin.WalletVerify
 
 Indicates whether a signature is valid.
 
 The supplied address does not need to exist in the wallet.
 
-**Parameters**
+#### Parameters
 
 `String` : Filecoin address
 
@@ -182,7 +183,7 @@ _Object_ : Signature object containing:
     `1` is secp256k1 and `2` is BLS12-381.
 * `Data`: Signature.
 
-**Returns**
+#### Returns
 
 !!! example
 
@@ -201,6 +202,7 @@ _Object_ : Signature object containing:
             "jsonrpc": "2.0"
         }
         ```
+
 <!-- links -->
 [message]: https://filecoin-project.github.io/specs/#systems__filecoin_vm__message
 [Unsigned message object]: https://filecoin-project.github.io/specs/#systems__filecoin_vm__message
