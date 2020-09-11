@@ -6,8 +6,8 @@ title: Filecoin JSON RPC Methods
 
 The Filecoin JSON RPC methods can be accessed at `http://<HOST>:<PORT>/rpc/v1/filecoin`, where:
 
-* `HOST` is specified using [`--http-listen-host`](CLI/CLI-Syntax.md#http-listen-host)
-* `PORT` is specified using [`--http-listen-port`](CLI/CLI-Syntax.md#http-listen-port)
+* `<HOST>` is specified using [`--http-listen-host`](CLI/CLI-Syntax.md#http-listen-host)
+* `<PORT>` is specified using [`--http-listen-port`](CLI/CLI-Syntax.md#http-listen-port).
 
 The default location is `http://127.0.0.1:9000/rpc/v1/filecoin`.
 
@@ -17,7 +17,7 @@ Indicates whether an address exists in the wallet.
 
 **Parameters**
 
-`DATA` : Filecoin address
+`String` : Filecoin address
 
 **Returns**
 
@@ -40,12 +40,12 @@ Indicates whether an address exists in the wallet.
             "jsonrpc": "2.0"
         }
         ```
-        
+
 ## Filecoin.WalletList
-  
+
 Lists all the addresses in the wallet.
 
-Addresses can be based on secp256k1 and BLS12-381 signing keys.
+Addresses can be based on secp256k1 or BLS12-381 signing keys.
 
 **Parameters**
 
@@ -53,7 +53,7 @@ None
 
 **Returns**
 
-`result`: Array of addresses.
+`result`: Array of Filecoin addresses.
 
 !!! example
 
@@ -78,13 +78,13 @@ None
 
 ## Filecoin.WalletSign
 
-Signs data using the supplied address.
+Signs the provided data using the private key belonging to the supplied Filecoin address.
 
 **Parameters**
 
-`DATA` : Filecoin address
+`String` : Filecoin address
 
-`DATA` : Data to sign
+`String` : Data to sign
 
 **Returns**
 
@@ -92,7 +92,7 @@ Signs data using the supplied address.
 
 * `Type`: Integer identifying the type of key used to sign the data;
     `1` is secp256k1 and `2` is BLS12-381.
-* `Data`: Signed data.
+* `Data`: Signature.
 
 !!! example
 
@@ -117,18 +117,18 @@ Signs data using the supplied address.
 
 ## Filecoin.WalletSignMessage
 
-Signs a [message] using the supplied address.
+Signs a [message] using the private key belonging to the supplied Filecoin address.
 
 **Parameters**
 
-`DATA` : Filecoin address
+`String` : Filecoin address
 
 _Object_: [Unsigned message object]
 
 **Returns**
 
-`result`: Object contain the sent unsigned [`Message`](https://filecoin-project.github.io/specs/#systems__filecoin_vm__message)
-object, and the signed [`Signature`](https://filecoin-project.github.io/specs/#message-semantic-validation) object.
+`result`: Object containing the sent unsigned [`Message`](https://filecoin-project.github.io/specs/#systems__filecoin_vm__message)
+object, and the [`Signature`](https://filecoin-project.github.io/specs/#message-semantic-validation) object.
 
 !!! example
 
@@ -172,15 +172,15 @@ The supplied address does not need to exist in the wallet.
 
 **Parameters**
 
-`DATA` : Filecoin address
+`String` : Filecoin address
 
-`DATA` : Unsigned data
+`String` : Unsigned data
 
 _Object_ : Signature object containing:
 
 * `Type`: Integer identifying the type of key used to sign the data;
     `1` is secp256k1 and `2` is BLS12-381.
-* `Data`: Signed data.
+* `Data`: Signature.
 
 **Returns**
 
