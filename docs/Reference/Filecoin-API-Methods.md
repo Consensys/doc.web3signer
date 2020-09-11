@@ -11,7 +11,9 @@ The Filecoin JSON RPC methods can be accessed at `http://<HOST>:<PORT>/rpc/v1/fi
 
 The default location is `http://127.0.0.1:9000/rpc/v1/filecoin`.
 
-## Filecoin.WalletHas
+## Filecoin Wallet APIs
+
+### `Filecoin.WalletHas`
 
 Indicates whether an address exists in the wallet.
 
@@ -41,7 +43,7 @@ Indicates whether an address exists in the wallet.
         }
         ```
 
-## Filecoin.WalletList
+### `Filecoin.WalletList`
 
 Lists all the addresses in the wallet.
 
@@ -76,7 +78,7 @@ None
         }
         ```
 
-## Filecoin.WalletSign
+### `Filecoin.WalletSign`
 
 Signs the provided data using the private key belonging to the supplied Filecoin address.
 
@@ -115,7 +117,7 @@ Signs the provided data using the private key belonging to the supplied Filecoin
         }
         ```
 
-## Filecoin.WalletSignMessage
+### `Filecoin.WalletSignMessage`
 
 Signs a [message] using the private key belonging to the supplied Filecoin address.
 
@@ -165,7 +167,7 @@ object, and the [`Signature`](https://filecoin-project.github.io/specs/#message-
         }
         ```
 
-## Filecoin.WalletVerify
+### `Filecoin.WalletVerify`
 
 Indicates whether a signature is valid.
 
