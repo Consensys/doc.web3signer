@@ -5,9 +5,9 @@ description: Secure communication using TLS
 # Configure TLS
 
 Configure TLS communication from the command line to allow clients (for example a dApp, or curl)
-and Eth2Signer to communicate securely.
+and Web3Signer to communicate securely.
 
-Eth2Signer provides multiple options to configure client TLS access:
+Web3Signer provides multiple options to configure client TLS access:
 
 * Specify one or more authorized clients using a [known clients file](#create-the-known-clients-file).
 * [Allow all clients with trusted CA certificates to connect].
@@ -17,9 +17,9 @@ This example uses a known clients file to limit access to specified clients.
 
 ## Prerequisites
 
-**Eth2Signer prerequisites**:
+**Web3Signer prerequisites**:
 
-* Eth2Signer's password-protected PKCS #12 keystore.
+* Web3Signer's password-protected PKCS #12 keystore.
 * File containing the keystore password.
 
 **Client prerequisites**:
@@ -30,7 +30,7 @@ This example uses a known clients file to limit access to specified clients.
 ## Create the known clients file
 
 Create a file (in this example, `knownClients.txt`) that lists one or more clients
-that are trusted to connect to Eth2Signer. The file can contain clients that use trusted CA
+that are trusted to connect to Web3Signer. The file can contain clients that use trusted CA
 or self-signed certificates.
 
 The file contents use the format `<common_name> <hex-string>` where:
@@ -54,11 +54,11 @@ to display the client's Common Name and fingerprint. For example:
     keytool -list -v -keystore <keystore> -storetype PKCS12 -storepass <password>
     ```
 
-## Start Eth2Signer
+## Start Web3Signer
 
 ```bash
-eth2signer --key-store-path=/Users/me/keyFiles/ \
---tls-keystore-file=/Users/me/certs/eth2signerKeystore.p12 \
+web3signer --key-store-path=/Users/me/keyFiles/ \
+--tls-keystore-file=/Users/me/certs/web3signerKeystore.p12 \
 --tls-keystore-password-file=/Users/me/certs/password.txt \
 --tls-known-clients-file=/Users/me/certs/knownClients.txt
 ```
@@ -67,11 +67,11 @@ The command line:
 
 * Specifies the location of the signing key configuration files
     with the [`--key-store-path`](../Reference/CLI/CLI-Syntax.md#key-store-path) options
-* Specifies the Eth2Signer keystore using the
+* Specifies the Web3Signer keystore using the
     [`--tls-keystore-file`](../Reference/CLI/CLI-Syntax.md#tls-keystore-file) option.
 * Specifies the file that contains the password to decrypt the keystore using the
     [`--tls-keystore-password-file`](../Reference/CLI/CLI-Syntax.md#tls-keystore-password-file) option.
-* [Specifies the clients](#create-the-known-clients-file) that are trusted to connect to Eth2Signer
+* [Specifies the clients](#create-the-known-clients-file) that are trusted to connect to Web3Signer
     using the [`tls-known-clients-file`](../Reference/CLI/CLI-Syntax.md#tls-known-clients-file) option.
 
 !!! note

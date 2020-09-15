@@ -1,5 +1,5 @@
 ---
-description: Install Eth2Signer from binary distribution
+description: Install Web3Signer from binary distribution
 ---
 
 # Install binary distribution
@@ -9,24 +9,24 @@ description: Install Eth2Signer from binary distribution
 * [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 !!!important
-    Eth2Signer requires Java 11 or later releases.
+    Web3Signer requires Java 11 or later releases.
 
 ## Install binaries
 
-Download the Eth2Signer [packaged binaries](https://bintray.com/consensys/pegasys-repo/eth2signer/_latestVersion#files).
+Download the Web3Signer [packaged binaries](https://bintray.com/consensys/pegasys-repo/web3signer/_latestVersion#files).
 
-Unpack the downloaded files and change into the `eth2signer-<release>` directory.
+Unpack the downloaded files and change into the `web3signer-<release>` directory.
 
-Display Eth2Signer command line help to confirm installation:
+Display Web3Signer command line help to confirm installation:
 
 === "Linux/macOS"
 
     ```bash
-    bin/eth2signer --help
+    bin/web3signer --help
     ```
 
 === "Windows"
 
     ```bat
-    bin\eth2signer --help
+    bin\web3signer --help
     ```

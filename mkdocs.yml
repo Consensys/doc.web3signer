@@ -10,18 +10,18 @@
 # specific language governing permissions and limitations under the License.
 
 # Project information
-site_name: Eth2Signer
+site_name: Web3Signer
 site_url: https://docs.eth2signer.consensys.net/
-site_description: Eth2Signer documentation.
-site_author: Eth2Signer community
-copyright: Eth2Signer and its documentation are licensed under Apache 2.0 license
+site_description: Web3Signer documentation.
+site_author: Web3Signer community
+copyright: Web3Signer and its documentation are licensed under Apache 2.0 license
 
 #extra project info and template customisation
 extra:
   logo_is_text: true
   latest_version_warning:
     url_contains: /latest/
-    text: 'You are reading Eth2Signer development version documentation and
+    text: 'You are reading Web3Signer development version documentation and
     some displayed features may not be available in the stable release.
     You can switch to stable version using the version box at screen bottom.'
   support:
@@ -30,14 +30,14 @@ extra:
     email: support@pegasys.tech
     website: https://pegasys.tech/
     company: Pegasys
-    issues: https://github.com/PegaSysEng/eth2signer/issues
+    issues: https://github.com/PegaSysEng/web3signer/issues
   google:
     site_verification: 'za1cLzyS6LXDGO-pMzvfQdYTZ0Zc67uZtY0asA4YXZ0'
     tag_manager: 'GTM-5FCWH9Q'
 
 
 # Software Repository
-repo_name: PegaSysEng/Eth2Signer
+repo_name: PegaSysEng/Web3Signer
 repo_url: https://github.com/PegaSysEng/eth2signer
 
 theme:
@@ -50,11 +50,11 @@ theme:
   favicon: 'Images/favicon.svg'
 nav:
     - How to:
-        - Get started with Eth2Signer:
+        - Get started with Web3Signer:
             - Install binary distribution: HowTo/Get-Started/Install-Binaries.md
-            - Run Eth2Signer from Docker image: HowTo/Get-Started/Use-Docker.md
+            - Run Web3Signer from Docker image: HowTo/Get-Started/Use-Docker.md
             - Build from source: HowTo/Get-Started/Build-From-Source.md
-            - Start Eth2Signer: HowTo/Get-Started/Start-Eth2Signer.md
+            - Start Web3Signer: HowTo/Get-Started/Start-Web3Signer.md
         - Use signing keys: HowTo/Use-Signing-Keys.md
         - Store keys externally:
             - Use Hashicorp Vault: HowTo/Store-Keys/Use-Hashicorp.md

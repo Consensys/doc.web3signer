@@ -1,5 +1,5 @@
 ---
-description: Building Eth2Signer from source code
+description: Building Web3Signer from source code
 ---
 
 # Build from source
@@ -9,29 +9,29 @@ description: Building Eth2Signer from source code
 * [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 !!!important
-    Eth2Signer requires Java 11 or later releases.
+    Web3Signer requires Java 11 or later releases.
 
 * [Git](https://git-scm.com/downloads) or [GitHub Desktop](https://desktop.github.com/)
 
 ## Installation on Linux / Unix / macOS
 
-### Clone the Eth2Signer Repository
+### Clone the Web3Signer Repository
 
-Clone the `PegaSysEng/eth2signer` repository:
-
-```bash
-git clone https://github.com/PegaSysEng/eth2signer.git
-```
-
-### Build Eth2Signer
-
-After cloning, go to the `eth2signer` directory.
+Clone the `PegaSysEng/web3signer` repository:
 
 ```bash
-cd eth2signer
+git clone https://github.com/PegaSysEng/web3signer.git
 ```
 
-Build Eth2Signer with the Gradle wrapper `gradlew`:
+### Build Web3Signer
+
+After cloning, go to the `web3signer` directory.
+
+```bash
+cd web3signer
+```
+
+Build Web3Signer with the Gradle wrapper `gradlew`:
 
 ```bash
 ./gradlew build
@@ -46,35 +46,35 @@ cd build/distributions/
 Expand the distribution archive:
 
 ```bash
-tar -xzf eth2signer-<version>.tar.gz
+tar -xzf web3signer-<version>.tar.gz
 ```
 
-Move to the expanded folder and display the Eth2Signer help to confirm installation.
+Move to the expanded folder and display the Web3Signer help to confirm installation.
 
 ````bash
-cd eth2signer-<version>/
-bin/eth2signer --help
+cd web3signer-<version>/
+bin/web3signer --help
 ````
 
 ## Installation on Windows
 
-### Install Eth2Signer
+### Install Web3Signer
 
-Clone the `PegaSysEng/eth2signer` repository:
-
-```bat
-git clone https://github.com/PegaSysEng/eth2signer.git
-```
-
-### Build Eth2Signer
-
-Go to the `eth2signer` directory:
+Clone the `PegaSysEng/web3signer` repository:
 
 ```bat
-cd eth2signer
+git clone https://github.com/PegaSysEng/web3signer.git
 ```
 
-Build Eth2Signer with the Gradle wrapper `gradlew`:
+### Build Web3Signer
+
+Go to the `web3signer` directory:
+
+```bat
+cd web3signer
+```
+
+Build Web3Signer with the Gradle wrapper `gradlew`:
 
 ```bat
 .\gradlew build
@@ -93,12 +93,12 @@ cd build\distributions
 Expand the distribution archive:
 
 ```bat
-tar -xzf eth2signer-<version>.tar.gz
+tar -xzf web3signer-<version>.tar.gz
 ```
 
-Go to the expanded folder and display the Eth2Signer help to confirm installation.
+Go to the expanded folder and display the Web3Signer help to confirm installation.
 
 ```bat
-cd eth2signer-<version>
-bin\eth2signer --help
+cd web3signer-<version>
+bin\web3signer --help
 ```

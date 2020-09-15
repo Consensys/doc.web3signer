@@ -1,10 +1,10 @@
 ---
-description: Using Eth2Signer with Hashicorp Vault
+description: Using Web3Signer with Hashicorp Vault
 ---
 
-# Using Eth2Signer with Hashicorp Vault
+# Using Web3Signer with Hashicorp Vault
 
-Eth2Signer supports storing the signing key in [Hashicorp Vault](https://www.hashicorp.com/products/vault/).
+Web3Signer supports storing the signing key in [Hashicorp Vault](https://www.hashicorp.com/products/vault/).
 
 ## Storing a private key in Hashicorp Vault
 
@@ -24,13 +24,13 @@ After installing [Hashicorp Vault](https://learn.hashicorp.com/vault/getting-sta
     === "Command"
 
         ```bash
-        vault kv put secret/eth2signerSigningKey value=<Private Key without 0x prefix>
+        vault kv put secret/web3signerSigningKey value=<Private Key without 0x prefix>
         ```
 
     === "Example"
 
         ```bash
-        vault kv put secret/eth2signerSigningKey value=17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
+        vault kv put secret/web3signerSigningKey value=17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
         ```
 
 ## Create the Known Servers File
@@ -54,9 +54,9 @@ The file contents use the format `<hostame>:<port> <hex-string>` where:
     127.0.0.1:8200 7C:B3:3E:F9:98:43:5E:62:69:9F:A9:9D:41:14:03:BA:83:24:AC:04:CE:BD:92:49:1B:8D:B2:A4:86:39:4C:BB
     ```
 
-[Start Eth2Signer and specify the location of the signing key configuration file].
+[Start Web3Signer and specify the location of the signing key configuration file].
 
 <!-- Links -->
 [signing key configuration file]: ../Use-Signing-Keys.md
 [Start Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/Get-Started/Register-Validators/#start-teku
-[Start Eth2Signer and specify the location of the signing key configuration file]: ../Get-Started/Start-Eth2Signer.md
+[Start Web3Signer and specify the location of the signing key configuration file]: ../Get-Started/Start-Web3Signer.md
