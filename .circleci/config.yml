@@ -80,10 +80,6 @@ jobs:
           keys:
             - deps-{{ checksum "./common/build_tools/package.json" }}
       - run:
-          name: test url
-          command: |
-            curl -v https://filecoin.io/ -o /dev/null
-      - run:
           name: Install dependencies
           command: |
             npm install

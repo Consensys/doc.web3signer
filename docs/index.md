@@ -16,4 +16,4 @@ platforms:
 
 * Ethereum 1.0
 * Ethereum 2.0
-* [Filecoin](https://filecoin.io/)
+* <!-- markdown-link-check-disable -->[Filecoin](https://filecoin.io/)<!-- markdown-link-check-enable -->
