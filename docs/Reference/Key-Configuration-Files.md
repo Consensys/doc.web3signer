@@ -82,7 +82,7 @@ Use the private key stored in Hashicorp Vault.
 Use the private key stored in Azure Key Vault. Supports two signing options:
 
 * `azure-key` - Performs the signing in Azure Key Vault. Supports SECP256K1 signing keys only.
-* `azure-secret` - Eth2Signer fetches the keys from the vault and signs locally. Supports SECP256K1
+* `azure-secret` - Web3Signer fetches the keys from the vault and signs locally. Supports SECP256K1
     and BLS12-381 signing keys.
 
 !!! example

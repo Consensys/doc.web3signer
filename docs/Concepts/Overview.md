@@ -1,5 +1,5 @@
 ---
-description: Eth2Signer overview
+description: Web3Signer overview
 ---
 
 # Overview

@@ -1,19 +1,19 @@
 ---
-title: Eth2Signer
-description: Eth2Signer is an open-source signer developed under the Apache 2.0 license and written in Java.
+title: Web3Signer
+description: Web3Signer is an open-source signer developed under the Apache 2.0 license and written in Java.
 ---
 
-# Eth2Signer
+# Web3Signer
 
-## What is Eth2Signer?
+## What is Web3Signer?
 
-Eth2Signer is an open-source signing service developed under the Apache 2.0 license and written in
+Web3Signer is an open-source signing service developed under the Apache 2.0 license and written in
 Java. EthSigner is capable of signing on multiple platforms using private keys stored in an external
 vault, or encrypted on a disk.
 
-Eth2Signer can sign blocks using secp256k1 and BLS12-381 signing keys, and supports the following
+Web3Signer can sign blocks using secp256k1 and BLS12-381 signing keys, and supports the following
 platforms:
 
 * Ethereum 1.0
 * Ethereum 2.0
-* [Filecoin](https://filecoin.io/)
+* <!-- markdown-link-check-disable -->[Filecoin](https://filecoin.io/)<!-- markdown-link-check-enable -->

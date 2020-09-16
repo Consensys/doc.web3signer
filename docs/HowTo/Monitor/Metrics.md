@@ -5,12 +5,12 @@ description: Monitoring and metrics
 # Use metrics to monitor performance
 
 Enable the [Prometheus](https://prometheus.io/) monitoring and alerting service for
-Eth2Signer metrics using the [`--metrics-enabled`](../../Reference/CLI/CLI-Syntax.md#metrics-enabled)
+Web3Signer metrics using the [`--metrics-enabled`](../../Reference/CLI/CLI-Syntax.md#metrics-enabled)
 option.
 
 ## Install Prometheus
 
-To use Prometheus with Eth2Signer, install the
+To use Prometheus with Web3Signer, install the
 [Prometheus main component](https://prometheus.io/download/). On MacOS, install with
 [Homebrew](https://formulae.brew.sh/formula/prometheus):
 
@@ -18,11 +18,11 @@ To use Prometheus with Eth2Signer, install the
  brew install prometheus
  ```
 
-## Setting up and running Prometheus with Eth2Signer
+## Setting up and running Prometheus with Web3Signer
 
-To configure Prometheus and run with Eth2Signer:
+To configure Prometheus and run with Web3Signer:
 
-1. Configure Prometheus to poll Eth2Signer. For example, add the following yaml fragment to the
+1. Configure Prometheus to poll Web3Signer. For example, add the following yaml fragment to the
    `scrape_configs` block of the `prometheus.yml` file:
 
     !!! example "Example configuration"
@@ -34,7 +34,7 @@ To configure Prometheus and run with Eth2Signer:
           - job_name: "prometheus"
             static_configs:
             - targets: ["localhost:9090"]
-          - job_name: "eth2signer-dev"
+          - job_name: "web3signer-dev"
             scrape_timeout: 10s
             metrics_path: /metrics
             scheme: http
@@ -42,13 +42,13 @@ To configure Prometheus and run with Eth2Signer:
             - targets: ["localhost:9001"]
         ```
 
-1. [Start Teku] by specifying the Eth2Signer details.
+1. [Start Teku] by specifying the Web3Signer details.
 
-1. Start Eth2Signer with the
+1. Start Web3Signer with the
     [`--metrics-enabled`](../../Reference/CLI/CLI-Syntax.md#metrics-enabled) option.
 
     ```bash
-    eth2signer --key-store-path=/Users/me/keyFiles/ --metrics-enabled
+    web3signer --key-store-path=/Users/me/keyFiles/ --metrics-enabled
     ```
 
     The `HTTP`, `SIGNING`, `JVM`, and `PROCESS` metrics categories are enabled by default.
@@ -73,7 +73,7 @@ To configure Prometheus and run with Eth2Signer:
    `http_server_request_time` or `client_request_time` and click **Execute**. The
    values display.
 
-The following Eth2Signer metrics are available.
+The following Web3Signer metrics are available.
 
 | Name                       | Definition                                         |
 |----------------------------|----------------------------------------------------|

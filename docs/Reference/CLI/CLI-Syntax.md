@@ -1,31 +1,31 @@
 ---
-description: Eth2Signer command line interface reference
+description: Web3Signer command line interface reference
 ---
 
-# Eth2Signer command line
+# Web3Signer command line
 
-This reference describes the syntax of the Eth2Signer Command Line Interface (CLI) options.
+This reference describes the syntax of the Web3Signer Command Line Interface (CLI) options.
 
 ## Specifying Options
 
-Eth2Signer options can be specified:
+Web3Signer options can be specified:
 
 * On the command line
-* As an [environment variable](#eth2signer-environment-variables)
+* As an [environment variable](#web3signer-environment-variables)
 * In a YAML configuration file.
 
 If you specify an option in more than one place, the order of priority is command line, environment
 variable, configuration file.
 
-### Eth2Signer environment variables
+### Web3Signer environment variables
 
 For each command line option, the equivalent environment variable is:
 
 * Upper-case
 * `_` replaces `-`
-* Has an `ETH2SIGNER_` prefix
+* Has an `WEB3SIGNER_` prefix
 
-For example, set `--data-path` using the `ETH2SIGNER_DATA_PATH` environment variable.
+For example, set `--data-path` using the `WEB3SIGNER_DATA_PATH` environment variable.
 
 ## Options
 
@@ -52,8 +52,10 @@ For example, set `--data-path` using the `ETH2SIGNER_DATA_PATH` environment vari
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_DATA_PATH=/Users/me/my_node/data
-    ```Directory in which to store temporary files.
+    WEB3SIGNER_DATA_PATH=/Users/me/my_node/data
+    ```
+
+Directory in which to store temporary files.
 
 ### key-store-path
 
@@ -78,7 +80,7 @@ For example, set `--data-path` using the `ETH2SIGNER_DATA_PATH` environment vari
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_KEY_STORE_PATH=/Users/me/keys
+    WEB3SIGNER_KEY_STORE_PATH=/Users/me/keys
     ```
 
 Path to the directory containing the [YAML files required to access keys].
@@ -106,7 +108,7 @@ Path to the directory containing the [YAML files required to access keys].
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_KEY_CACHE_LIMIT=1500
+    WEB3SIGNER_KEY_CACHE_LIMIT=1500
     ```
 
 Maximum number of keys to cache in memory. The defaults is 1000.
@@ -134,7 +136,7 @@ Maximum number of keys to cache in memory. The defaults is 1000.
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_LOGGING=DEBUG
+    WEB3SIGNER_LOGGING=DEBUG
     ```
 
 Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, `TRACE`,
@@ -163,7 +165,7 @@ Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, 
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_HTTP_LISTEN_HOST=8.8.8.8
+    WEB3SIGNER_HTTP_LISTEN_HOST=8.8.8.8
     ```
 
 Host on which HTTP listens. Default is `localhost`.
@@ -191,7 +193,7 @@ Host on which HTTP listens. Default is `localhost`.
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_HTTP_LISTEN_PORT=6174
+    WEB3SIGNER_HTTP_LISTEN_PORT=6174
     ```
 
 Port on which HTTP listens. The default is 9000.
@@ -219,10 +221,10 @@ Port on which HTTP listens. The default is 9000.
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_HTTP_HOST_ALLOWLIST=medomain.com,meotherdomain.com
+    WEB3SIGNER_HTTP_HOST_ALLOWLIST=medomain.com,meotherdomain.com
     ```
 
-A comma-separated list of hostnames to allow access to the REST APIs. By default, Eth2Signer
+A comma-separated list of hostnames to allow access to the REST APIs. By default, Web3Signer
 accepts access from `localhost` and `127.0.0.1`.
 
 !!! tip
@@ -253,7 +255,7 @@ accepts access from `localhost` and `127.0.0.1`.
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_METRICS_ENABLED=true
+    WEB3SIGNER_METRICS_ENABLED=true
     ```
 
 Enables the metrics exporter. The default is `false`.
@@ -281,7 +283,7 @@ Enables the metrics exporter. The default is `false`.
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_METRICS_HOST=186.10.10.1
+    WEB3SIGNER_METRICS_HOST=186.10.10.1
     ```
 
 The host on which [Prometheus](https://prometheus.io/) accesses metrics.
@@ -310,7 +312,7 @@ The default is `127.0.0.1`.
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_METRICS_PORT=6174
+    WEB3SIGNER_METRICS_PORT=6174
     ```
 
 The port (TCP) on which [Prometheus](https://prometheus.io/) accesses
@@ -339,7 +341,7 @@ metrics. The default is `9001`.
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_METRICS_CATEGORY=HTTP,SIGNING,JVM
+    WEB3SIGNER_METRICS_CATEGORY=HTTP,SIGNING,JVM
     ```
 
 A comma-separated list of categories for which to track metrics. The defaults are `HTTP`, `SIGNING`, `JVM`, `PROCESS`.
@@ -367,11 +369,11 @@ A comma-separated list of categories for which to track metrics. The defaults ar
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_METRICS_HOST_ALLOWLIST=medomain.com,meotherdomain.com
+    WEB3SIGNER_METRICS_HOST_ALLOWLIST=medomain.com,meotherdomain.com
     ```
 
-A comma-separated list of hostnames to allow access to the [Eth2Signer metrics]. By
-default, Eth2Signer accepts access from `localhost` and `127.0.0.1`.
+A comma-separated list of hostnames to allow access to the [Web3Signer metrics]. By
+default, Web3Signer accepts access from `localhost` and `127.0.0.1`.
 
 !!! tip
 
@@ -401,7 +403,7 @@ default, Eth2Signer accepts access from `localhost` and `127.0.0.1`.
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_TLS_KEYSTORE_FILE=/Users/me/my_node/certificate.pfx
+    WEB3SIGNER_TLS_KEYSTORE_FILE=/Users/me/my_node/certificate.pfx
     ```
 
 PKCS #12 formatted keystore. Used to enable TLS for [client connections](../../HowTo/Configure-TLS.md).
@@ -429,7 +431,7 @@ PKCS #12 formatted keystore. Used to enable TLS for [client connections](../../H
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_TLS_KEYSTORE_PASSWORD_FILE=/Users/me/my_node/password.txt
+    WEB3SIGNER_TLS_KEYSTORE_PASSWORD_FILE=/Users/me/my_node/password.txt
     ```
 
 Password file used to decrypt the keystore.
@@ -451,7 +453,7 @@ Password file used to decrypt the keystore.
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_TLS_ALLOW_ANY_CLIENT
+    WEB3SIGNER_TLS_ALLOW_ANY_CLIENT
     ```Allows any client to connect.
 
 !!! important
@@ -481,7 +483,7 @@ Password file used to decrypt the keystore.
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_TLS_KNOWN_CLIENTS_FILE=/Users/me/my_node/knownClients.txt
+    WEB3SIGNER_TLS_KNOWN_CLIENTS_FILE=/Users/me/my_node/knownClients.txt
     ```
 
 File containing the Common Names and SHA-256 fingerprints
@@ -504,7 +506,7 @@ of [authorized clients](../../HowTo/Configure-TLS.md#create-the-known-clients-fi
 === "Environment Variable"
 
     ```bash
-    ETH2SIGNER_TLS_ALLOW_CA_CLIENTS
+    WEB3SIGNER_TLS_ALLOW_CA_CLIENTS
     ```
 
 Allows clients signed with trusted CA certificates to connect.
@@ -531,4 +533,4 @@ Displays the version and exits.
 
 <!-- links -->
 [YAML files required to access keys]: ../Key-Configuration-Files.md
-[Eth2Signer metrics]: ../../HowTo/Monitor/Metrics.md
+[Web3Signer metrics]: ../../HowTo/Monitor/Metrics.md

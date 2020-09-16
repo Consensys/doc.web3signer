@@ -4,7 +4,7 @@ description: Using signing keys
 
 # Signing keys
 
-Eth2Signer supports BLS12-381 or secp256k1 signing keys stored in:
+Web3Signer supports BLS12-381 or secp256k1 signing keys stored in:
 
 * Raw unencrypted files
 * [Keystore files](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md)
@@ -18,7 +18,7 @@ use any naming format.
 
 !!! tip
     Files can be added or removed from the directory without needing to
-    restart Eth2Signer.
+    restart Web3Signer.
 
 <!-- Link -->
 [Each key requires a separate YAML configuration file]: ../Reference/Key-Configuration-Files.md

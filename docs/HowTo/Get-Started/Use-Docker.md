@@ -1,10 +1,10 @@
 ---
-description: Run Eth2Signer from Docker image
+description: Run Web3Signer from Docker image
 ---
 
-# Run Eth2Signer from Docker image
+# Run Web3Signer from Docker image
 
-A Docker image is provided to run Eth2Signer in a Docker container.
+A Docker image is provided to run Web3Signer in a Docker container.
 
 ## Prerequisites
 
@@ -17,12 +17,12 @@ A Docker image is provided to run Eth2Signer in a Docker container.
 
 ## Run Docker image
 
-Display the Eth2Signer command line help using the Docker image:
+Display the Web3Signer command line help using the Docker image:
 
 === "develop"
 
     ```bash
-    docker run pegasyseng/eth2signer:develop --help
+    docker run pegasyseng/web3signer:develop --help
     ```
 
 ## Expose listening port
@@ -30,8 +30,8 @@ Display the Eth2Signer command line help using the Docker image:
 To use the default listening port (`9000`) or the port specified using
 `--http-listen-port`, you must expose the listening port.
 
-To run Eth2Signer exposing listening port for access:
+To run Web3Signer exposing listening port for access:
 
 ```bash
-docker run -p <listenPort>:9000 pegasyseng/eth2signer:develop <options>
+docker run -p <listenPort>:9000 pegasyseng/web3signer:develop <options>
 ```
