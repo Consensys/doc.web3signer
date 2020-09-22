@@ -8,6 +8,8 @@ Enable the [Prometheus](https://prometheus.io/) monitoring and alerting service 
 Web3Signer metrics using the [`--metrics-enabled`](../../Reference/CLI/CLI-Syntax.md#metrics-enabled)
 option.
 
+Web3Signer provides metrics for secp256k1 and BLS12-381 key types.
+
 ## Install Prometheus
 
 To use Prometheus with Web3Signer, install the
@@ -55,7 +57,7 @@ To configure Prometheus and run with Web3Signer:
     Use the [`--metrics-category`](../../Reference/CLI/CLI-Syntax.md#metrics-category)
     command line option to update the available categories.
 
-1. In another terminal, run Psrometheus specifying the `prometheus.yml` file:
+1. In another terminal, run Prometheus specifying the `prometheus.yml` file:
 
     ```bash
     prometheus --config.file=prometheus.yml
@@ -69,18 +71,33 @@ To configure Prometheus and run with Web3Signer:
 
 1. Choose **Graph** from the menu bar and click the **Console** tab below.
 
-1. From the **Insert metric at cursor** drop-down, select a metric such as
-   `http_server_request_time` or `client_request_time` and click **Execute**. The
+1. From the **Insert metric at cursor** drop-down, select a metric and click **Execute**. The
    values display.
 
 The following Web3Signer metrics are available.
 
-| Name                       | Definition                                         |
-|----------------------------|----------------------------------------------------|
-| `client_request_time`      | Time taken to process client HTTP requests. For example, from Hashicorp Vault. |
-| `http_server_request_time` | Time taken to process incoming HTTP requests. For example, from Teku. |
-|`signing_private_key_retrieval_time` | Time taken to retrieve the signing key from a [raw unencrypted or keystore] file. |
+**Filecoin JSON RPC metrics**
+
+| Name                            | Definition                                         |
+|---------------------------------|----------------------------------------------------|
+|`<keytype>_signing_request_count`| Number of signing requests made for the key type.  |
+|`wallet_list_count`              | Number of `Filecoin.WalletList` API requests received.  |
+|`wallet_has_count`               | Number of `Filecoin.WalletHas` API requests received.  |
+|`wallet_sign_message_count`      | Number of `Filecoin.WalletSignMessage` API requests received.  |
+|`wallet_sign_duration`           | The duration of signing operations.  |
+|`total_request_count`            | Total number of Filecoin requests received.  |
+
+
+**HTTP API metrics**
+
+| Name                               | Definition                                         |
+|------------------------------------|----------------------------------------------------|
+|`<keytype>_malformed_request_count` | Number of requests received which had illegally formatted body.  |
+|`<keytype>_signing_duration`        | Duration of a signing event.  |
+|`<keytype>_missing_identifier_count`| Number of signing requests for which no keys were available.  |
+|`signers_loaded_count`              | Total number of SECP256k1 and BLS12-381 keys loaded.  |
+|`signing_private_key_retrieval_time`| Time taken to retrieve [BLS signing keys].  |
 
 <!-- Links -->
 [Start Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/External-Signer/Use-External-Signer/
-[raw unencrypted or keystore]: ../Use-Signing-Keys.md
+[BLS signing keys]: ../Use-Signing-Keys.md
