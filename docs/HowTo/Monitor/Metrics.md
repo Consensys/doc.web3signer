@@ -76,7 +76,7 @@ To configure Prometheus and run with Web3Signer:
 
 The following Web3Signer metrics are available.
 
-**Filecoin JSON RPC metrics**
+Filecoin JSON RPC metrics:
 
 | Name                            | Definition                                         |
 |---------------------------------|----------------------------------------------------|
@@ -87,8 +87,7 @@ The following Web3Signer metrics are available.
 |`wallet_sign_duration`           | The duration of signing operations.  |
 |`total_request_count`            | Total number of Filecoin requests received.  |
 
-
-**HTTP API metrics**
+HTTP API metrics:
 
 | Name                               | Definition                                         |
 |------------------------------------|----------------------------------------------------|
