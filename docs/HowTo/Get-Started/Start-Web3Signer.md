@@ -22,7 +22,11 @@ In the command line:
 * Use the [`--key-store-path`](../../Reference/CLI/CLI-Syntax.md#key-store-path) option to specify
     the location of the signing key configuration files.
 * Specify the [subcommand] to indicate which platform to use. Valid commands are `eth1`, `eth2`, and
-    `filecoin`. You can only specify one platform when starting Web3Signer. 
+    `filecoin`. You can only specify one platform when starting Web3Signer.
+
+!!! note
+
+     Web3Signer also allows you to [bulk load Ethereum 2.0 signing keys] stored in Azure Key Vault.
 
 Start the client, for example [Teku] by specifying the Web3Signer details.
 
@@ -30,3 +34,4 @@ Start the client, for example [Teku] by specifying the Web3Signer details.
 [Signing key configuration files]: ../Use-Signing-Keys.md
 [Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/External-Signer/Use-External-Signer/
 [subcommand]: ../../Reference/CLI/CLI-Subcommands.md
+[bulk load Ethereum 2.0 signing keys]: ../Use-Signing-Keys.md#bulk-loading-ethereum-20-keys

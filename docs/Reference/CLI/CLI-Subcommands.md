@@ -49,7 +49,6 @@ To view the command line help for the subcommands:
 * [`web3signer help eth2`](#eth2)
 * [`web3signer help filecoin`](#filecoin)
 
-
 ## Options
 
 ### eth1
