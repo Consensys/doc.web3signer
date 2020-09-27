@@ -4,7 +4,7 @@ description: Signing transactions with key stored in Azure Key Vault
 
 # Using Web3Signer with Azure Key Vault
 
-Web3Signer supports storing signing keys in [Azure Key Vault](https://azure.microsoft.com/en-au/services/key-vault/).
+Web3Signer supports signing keys and secrets in [Azure Key Vault](https://azure.microsoft.com/en-au/services/key-vault/).
 
 ## Storing the private key in Azure Key Vault
 

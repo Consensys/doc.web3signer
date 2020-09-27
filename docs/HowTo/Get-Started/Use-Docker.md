@@ -33,5 +33,5 @@ To use the default listening port (`9000`) or the port specified using
 To run Web3Signer exposing listening port for access:
 
 ```bash
-docker run -p <listenPort>:9000 pegasyseng/web3signer:develop [options] [command]
+docker run -p <listenPort>:9000 pegasyseng/web3signer:develop [options] [subcommand] [options]
 ```
