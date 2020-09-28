@@ -29,6 +29,29 @@ For example, set `--data-path` using the `WEB3SIGNER_DATA_PATH` environment vari
 
 ## Options
 
+### config-file
+
+The path to the [YAML configuration file](../../HowTo/Use-Configuration-File.md).
+The default is `none`.
+
+=== "Syntax"
+
+    ```bash
+    --config-file=<FILE>
+    ```
+
+=== "Example"
+
+    ```bash
+    --config-file=/home/me/me_node/config.yaml
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_CONFIG_FILE=/home/me/me_node/config.yaml
+    ```
+
 ### data-path
 
 === "Syntax"

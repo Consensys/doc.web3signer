@@ -11,7 +11,7 @@ Web3Signer is an open-source signing service developed under the Apache 2.0 lice
 Java. EthSigner is capable of signing on multiple platforms using private keys stored in an external
 vault, or encrypted on a disk.
 
-Web3Signer can sign blocks using secp256k1 and BLS12-381 signing keys, and supports the following
+Web3Signer can sign payloads using secp256k1 and BLS12-381 signing keys, and supports the following
 platforms:
 
 * Ethereum 1.0

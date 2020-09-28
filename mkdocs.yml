@@ -59,11 +59,14 @@ nav:
         - Store keys externally:
             - Use Hashicorp Vault: HowTo/Store-Keys/Use-Hashicorp.md
             - Use Azure Key Vault: HowTo/Store-Keys/Use-Azure.md
+        - Use a configuration file: HowTo/Use-Configuration-File.md
         - Configure TLS: HowTo/Configure-TLS.md
         - Monitor Nodes:
             - Use Metrics: HowTo/Monitor/Metrics.md
     - Reference:
-        - Command line: Reference/CLI/CLI-Syntax.md
+        - Command Line:
+            - Options: Reference/CLI/CLI-Syntax.md
+            - Subcommands: Reference/CLI/CLI-Subcommands.md
         - REST API methods: Reference/Rest.md
         - Filecoin JSON API methods: Reference/Filecoin-API-Methods.md
         - Key Configuration file parameters: Reference/Key-Configuration-Files.md
