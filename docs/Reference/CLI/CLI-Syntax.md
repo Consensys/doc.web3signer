@@ -108,34 +108,6 @@ Directory in which to store temporary files.
 
 Path to the directory containing the [YAML files required to access keys].
 
-### key-cache-limit
-
-=== "Syntax"
-
-    ```bash
-    --key-cache-limit=<LONG>
-    ```
-
-=== "Command Line"
-
-    ```bash
-    --key-cache-limit=1500
-    ```
-
-=== "Configuration File"
-
-    ```bash
-    key-cache-limit: 1500
-    ```
-
-=== "Environment Variable"
-
-    ```bash
-    WEB3SIGNER_KEY_CACHE_LIMIT=1500
-    ```
-
-Maximum number of keys to cache in memory. The defaults is 1000.
-
 ### logging
 
 === "Syntax"
