@@ -107,6 +107,34 @@ Use the private key stored in Azure Key Vault. Supports two signing options:
 | **vaultName**           | Name of the vault to access. Sub-domain of vault.azure.net. |
 | **secretName**          | Name of the key stored in the Azure Key Vault.  |
 
+## YubiHSM 2
+
+Use the private key stored in the YubiHSM 2 hardware security module.
+
+| Key                | Description                           |
+|--------------------|---------------------------------------|
+| **type**           | Type of configuration file. Use `yubihsm2`.|
+| **keyType**        | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `SECP256K1`. |
+| **connectorUrl**   | URL of the YubiHSM service. Accepts a URL (http://host:12345) or USB URL (yhusb://serial=13201047). |
+| **authKey**        | The YubiHSM user session to open. |
+| **password**       | The password for the YubiHSM user session. |
+| **opaqueObjId**    | The object ID of the stored key. |
+| **outputFormat**   | The ouput format for the stored key. Use either `ASCII` or `hex`.|
+| **caCertPath**     | Optional. Path to the certificate if using a TLS connection to the YubiHSM connector. |
+| **proxyUrl**       | Optional. Proxy server being use for the YubiHSM connector. |
+
+!!! example
+
+   ```
+   type: yubihsm2
+   connectorUrl: http://localhost:12345
+   authKey: 1
+   password: password
+   opaqueObjId: 5
+   keyType: BLS
+   outputFormat: ASCII
+   ```
+
 <!-- Links -->
 [signing key configuration file]: ../HowTo/Use-Signing-Keys.md
 [keystore file]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md
