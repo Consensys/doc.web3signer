@@ -51,11 +51,11 @@ To view the command line help for the subcommands:
 
 ## Options
 
-### eth1
+### `eth1`
 
-### eth2
+### `eth2`
 
-#### azure-vault-enabled
+#### `azure-vault-enabled`
 
 === "Syntax"
 
@@ -83,7 +83,7 @@ To view the command line help for the subcommands:
 
 Allow Web3Signer to bulk load all keys from the specified Azure Vault.
 
-#### azure-client-id
+#### `azure-client-id`
 
 === "Syntax"
 
@@ -111,7 +111,7 @@ Allow Web3Signer to bulk load all keys from the specified Azure Vault.
 
 ID used to authenticate with Azure Key Vault.
 
-#### azure-client-secret
+#### `azure-client-secret`
 
 === "Syntax"
 
@@ -139,7 +139,7 @@ ID used to authenticate with Azure Key Vault.
 
 The secret used to access the vault along with the ID specified in [`azure-client-id`](#azure-client-id).
 
-#### azure-tenant-id
+#### `azure-tenant-id`
 
 === "Syntax"
 
@@ -167,7 +167,7 @@ The secret used to access the vault along with the ID specified in [`azure-clien
 
 The tenant ID of the Azure Portal instance being used.
 
-#### azure-vault-name
+#### `azure-vault-name`
 
 === "Syntax"
 
@@ -195,9 +195,9 @@ The tenant ID of the Azure Portal instance being used.
 
 Name of the vault to access. Sub-domain of vault.azure.net.
 
-### filecoin
+### `filecoin`
 
-#### network
+#### `network`
 
 === "Syntax"
 

@@ -24,7 +24,7 @@ To use Prometheus with Web3Signer, install the
 
 To configure Prometheus and run with Web3Signer:
 
-1. Configure Prometheus to poll Web3Signer. For example, add the following yaml fragment to the
+1. Configure Prometheus to poll Web3Signer. For example, add the following YAML fragment to the
    `scrape_configs` block of the `prometheus.yml` file:
 
     !!! example "Example configuration"
