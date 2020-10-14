@@ -125,7 +125,7 @@ Use the private key stored in the YubiHSM 2 hardware security module.
 
 !!! example
 
-   ```
+   ```yaml
    type: yubihsm2
    connectorUrl: http://localhost:12345
    authKey: 2
