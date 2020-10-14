@@ -31,7 +31,7 @@ but must have the `.yaml` extension.
 
 Place the key configuration files in a single directory which you specify when starting Web3Signer.
 
-Ue the [`--key-store-path`](../Reference/CLI/CLI-Syntax.md#key-store-path) option
+Use the [`--key-store-path`](../Reference/CLI/CLI-Syntax.md#key-store-path) option
 to specify the location of the key configuration files.
 
 !!! example
