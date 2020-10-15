@@ -4,7 +4,9 @@ title: Configure Web3Signer to use a YubiHSM 2 device
 
 # Using Web3Signer with YubiHSM 2
 
-Web3Signer supports using private keys stored in the [YubiHSM 2 hardware security module].
+Web3Signer can sign payloads using private keys stored in the [YubiHSM 2 hardware security module].
+
+Web3Signer supports using the device as a secure key storage only.
 
 **Prerequisites**:
 
@@ -14,9 +16,9 @@ Web3Signer supports using private keys stored in the [YubiHSM 2 hardware securit
 
 !!! important
 
-    Web3Signer requires access to [`yubihsm-shell`](https://developers.yubico.com/yubihsm-shell/yubihsm-shell.html)
-    in the SDK. Ensure that the `WEB3SIGNER_YUBIHSM_SHELL_PATH` environment variable points to
-    the shell.
+    Web3Signer requires access to the [`yubihsm-shell`](https://developers.yubico.com/yubihsm-shell/yubihsm-shell.html)
+    binary in the SDK. Ensure that the `WEB3SIGNER_YUBIHSM_SHELL_PATH` or `PATH` environment
+    variable points to the binary.
 
     For example:
 
