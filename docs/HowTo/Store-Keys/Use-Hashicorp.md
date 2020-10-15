@@ -1,14 +1,14 @@
 ---
-description: Using Web3Signer with Hashicorp Vault
+description: Using Web3Signer with HashiCorp Vault
 ---
 
-# Using Web3Signer with Hashicorp Vault
+# Using Web3Signer with HashiCorp Vault
 
-Web3Signer supports storing the signing key in [Hashicorp Vault](https://www.hashicorp.com/products/vault/).
+Web3Signer supports storing the signing key in [HashiCorp Vault](https://www.hashicorp.com/products/vault/).
 
-## Storing a private key in Hashicorp Vault
+## Storing a private key in HashiCorp Vault
 
-After installing [Hashicorp Vault](https://learn.hashicorp.com/vault/getting-started/install) and
+After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-started/install) and
 [starting the server](https://learn.hashicorp.com/vault/getting-started/dev-server):
 
 1. Set the `VAULT_ADDR` environment variable using the command displayed after starting the server:
@@ -19,7 +19,7 @@ After installing [Hashicorp Vault](https://learn.hashicorp.com/vault/getting-sta
 
 1. Copy or save the root token displayed after starting the server in a file.
 
-1. Put your signing key into the Hashicorp Vault:
+1. Put your signing key into the HashiCorp Vault:
 
     === "Command"
 
