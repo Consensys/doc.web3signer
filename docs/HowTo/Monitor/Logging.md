@@ -16,8 +16,6 @@ logging verbosity. The [`--logging`](../../Reference/CLI/CLI-Syntax.md#logging) 
 volume of events displayed in the log. Valid log levels are `OFF`, `FATAL`, `ERROR`, `WARN`,
 `INFO`, `DEBUG`, `TRACE`, `ALL`. The default level is `INFO`.
 
-For most use-cases, the basic method provides enough configurability.
-
 ## Advanced custom logging
 
 You can provide your own logging configuration using the standard Log4J2 configuration mechanisms.
