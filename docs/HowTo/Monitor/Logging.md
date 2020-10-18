@@ -69,10 +69,10 @@ location of your configuration file.
   
 !!! example
     ```bash
-    JAVA_OPTS="-Dlog4j.configurationFile=<path_to_file>"
+    export JAVA_OPTS="-Dlog4j.configurationFile=<path_to_file>"
     ```
 
-If you have more specific requirements, you can create your own
+The above is an example, you can tune your requirements and create your own
 [log4j2 configuration](https://logging.apache.org/log4j/2.x/manual/configuration.html).
 
 For Bash-based executions, you can set the variable for only the scope of the program execution by
