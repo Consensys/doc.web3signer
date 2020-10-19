@@ -227,6 +227,34 @@ accepts access from `localhost` and `127.0.0.1`.
     To allow all hostnames, use `"*"`. We don't recommend allowing all hostnames for production
     environments.
 
+### idle-connection-timeout-seconds
+
+=== "Syntax"
+
+    ```bash
+    --idle-connection-timeout-seconds=<TIMEOUT>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --idle-connection-timeout-seconds=60
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    idle-connection-timeout-seconds: 60
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_IDLE_CONNECTION_TIMEOUT_SECONDS=60
+    ```
+
+Number of seconds to wait before terminating an idle connection. Defaults to 30.
+
 ### metrics-enabled
 
 === "Syntax"
