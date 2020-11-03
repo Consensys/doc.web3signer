@@ -35,6 +35,6 @@ Start the client, for example [Teku] by specifying the Web3Signer details.
 
 <!-- Links -->
 [Signing key configuration files]: ../Use-Signing-Keys.md
-[Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/External-Signer/Use-External-Signer/
+[Teku]: https://docs.teku.consensys.net/en/latest/HowTo/External-Signer/Use-External-Signer/
 [subcommand]: ../../Reference/CLI/CLI-Subcommands.md
 [bulk load Ethereum 2.0 signing keys]: ../Use-Signing-Keys.md#bulk-loading-ethereum-20-keys

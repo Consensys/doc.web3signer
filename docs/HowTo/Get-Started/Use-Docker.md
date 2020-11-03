@@ -22,7 +22,7 @@ Display the Web3Signer command line help using the Docker image:
 === "develop"
 
     ```bash
-    docker run pegasyseng/web3signer:develop --help
+    docker run consensys/web3signer:develop --help
     ```
 
 ## Expose listening port
@@ -33,5 +33,5 @@ To use the default listening port (`9000`) or the port specified using
 To run Web3Signer exposing listening port for access:
 
 ```bash
-docker run -p <listenPort>:9000 pegasyseng/web3signer:develop [options] [subcommand] [options]
+docker run -p <listenPort>:9000 consensys/web3signer:develop [options] [subcommand] [options]
 ```
