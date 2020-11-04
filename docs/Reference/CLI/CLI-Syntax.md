@@ -108,34 +108,6 @@ Directory in which to store temporary files.
 
 Path to the directory containing the [YAML files required to access keys].
 
-### key-cache-limit
-
-=== "Syntax"
-
-    ```bash
-    --key-cache-limit=<LONG>
-    ```
-
-=== "Command Line"
-
-    ```bash
-    --key-cache-limit=1500
-    ```
-
-=== "Configuration File"
-
-    ```bash
-    key-cache-limit: 1500
-    ```
-
-=== "Environment Variable"
-
-    ```bash
-    WEB3SIGNER_KEY_CACHE_LIMIT=1500
-    ```
-
-Maximum number of keys to cache in memory. The defaults is 1000.
-
 ### logging
 
 === "Syntax"
@@ -254,6 +226,34 @@ accepts access from `localhost` and `127.0.0.1`.
 
     To allow all hostnames, use `"*"`. We don't recommend allowing all hostnames for production
     environments.
+
+### idle-connection-timeout-seconds
+
+=== "Syntax"
+
+    ```bash
+    --idle-connection-timeout-seconds=<TIMEOUT>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --idle-connection-timeout-seconds=60
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    idle-connection-timeout-seconds: 60
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_IDLE_CONNECTION_TIMEOUT_SECONDS=60
+    ```
+
+Number of seconds to wait before terminating an idle connection. Defaults to 30.
 
 ### metrics-enabled
 

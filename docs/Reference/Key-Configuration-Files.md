@@ -45,9 +45,9 @@ Use the private key stored in a [keystore file].
 | **keystoreFile**         | Location of the keystore file. |
 | **keystorePasswordFile** | Text file containing the password to decrypt the keystore file. |
 
-## Hashicorp Vault
+## HashiCorp Vault
 
-Use the private key stored in Hashicorp Vault.
+Use the private key stored in HashiCorp Vault.
 
 !!! example
 
@@ -69,13 +69,13 @@ Use the private key stored in Hashicorp Vault.
 | **type**                | Type of configuration file. Use `hashicorp`.|
 | **keyType**             | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `BLS`. |
 | **tlsEnabled**          | Enable or disable TLS. Defaults to `true` |
-| **keyPath**             | Path to secret in the Hashicorp Vault containing the private key. |
+| **keyPath**             | Path to secret in the HashiCorp Vault containing the private key. |
 | **keyName**             | Name of the key storing the private key in the vault.|
-| **tlsKnownServersPath** | Path to the file containing a list of trusted Hashicorp Vault servers.|
-| **serverHost**          | Host of the Hashicorp Vault server.  |
-| **serverPort**          | Port of the Hashicorp Vault server.  |
-| **timeout**             | Timeout in milliseconds for requests to the Hashicorp Vault server. |
-| **token**               | The root token displayed by the Hashicorp Vault server. |
+| **tlsKnownServersPath** | Path to the file containing a list of trusted HashiCorp Vault servers.|
+| **serverHost**          | Host of the HashiCorp Vault server.  |
+| **serverPort**          | Port of the HashiCorp Vault server.  |
+| **timeout**             | Timeout in milliseconds for requests to the HashiCorp Vault server. |
+| **token**               | The root token displayed by the HashiCorp Vault server. |
 
 ## Azure Key Vault
 

@@ -17,6 +17,6 @@ The default location is `http://localhost:9000/swagger-ui`.
 You can also use tools such as [Postman] or [cURL] to interact with Web3Signer APIs.
 
 <!-- Links -->
-[Web3Signer REST API documentation]: https://pegasyseng.github.io/web3signer/
+[Web3Signer REST API documentation]: https://consensys.github.io/web3signer/
 [Postman]: https://www.postman.com/
 [cURL]: https://curl.haxx.se/
