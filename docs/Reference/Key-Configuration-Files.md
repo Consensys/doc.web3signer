@@ -114,10 +114,10 @@ Use the private key stored in the YubiHSM 2 hardware security module.
 | Key                | Description                           |
 |--------------------|---------------------------------------|
 | **type**           | Type of configuration file. Use `yubihsm2`.|
-| **keyType**        | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `SECP256K1`. |
+| **keyType**        | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `BLS`. |
 | **connectorUrl**   | URL of the YubiHSM service. Accepts a URL (`http://host:12345`) or USB URL (`yhusb://serial=13201047`). |
 | **authKey**        | Authentication key ID used to open a user session, in decimal format. |
-| **password**       | The password for the user session. |
+| **password**       | The password for the authentication key. |
 | **opaqueObjId**    | The object ID of the stored key, in decimal format. |
 | **outputFormat**   | The output format for the stored key. Accepts either `ASCII` or `hex`.|
 | **caCertPath**     | Optional. Path to the certificate if using a TLS connection to the YubiHSM connector. |
