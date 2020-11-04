@@ -8,7 +8,7 @@ Web3Signer supports BLS12-381 or secp256k1 signing keys stored in:
 
 * Raw unencrypted files
 * [Keystore files](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md)
-* [Hashicorp Vault](../HowTo/Store-Keys-Vaults/Use-Hashicorp.md)
+* [HashiCorp Vault](../HowTo/Store-Keys-Vaults/Use-Hashicorp.md)
 * [Azure Key Vault](../HowTo/Store-Keys-Vaults/Use-Azure.md).
 * [YubiHSM 2](../HowTo/Store-Keys-HSM/Use-YubiHSM2.md) hardware security module.
 
