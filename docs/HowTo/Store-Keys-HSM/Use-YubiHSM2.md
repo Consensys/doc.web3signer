@@ -11,22 +11,17 @@ Web3Signer supports using the device as a secure key storage only.
 **Prerequisites**:
 
 * Install the  [YubiHSM 2 SDK] on the Web3Signer machine.
-* [Store private keys in the device] using the `opaque-data` algorithm in either the `ASCII` or
-    `hex` format.
+* [Store private keys in the device] using the `opaque-data` algorithm in `hex` format.
+* All private keys on the device must be stored using the same Authentication Key ID and password.
 
 !!! important
 
-    Web3Signer requires access to the [`yubihsm-shell`](https://developers.yubico.com/yubihsm-shell/yubihsm-shell.html)
-    binary in the SDK. Ensure that the `WEB3SIGNER_YUBIHSM_SHELL_PATH` or `PATH` environment
-    variable points to the binary.
+    If using multiple YubiHSM devices, then you must install the [YubiHSM 2 SDK] in a different path
+    for each device. This is because Web3Signer requires access to the SDKs [PKCS#11 module] which
+    can only load keys from one device.
 
-    For example:
-
-    ```bash
-    export WEB3SIGNER_YUBIHSM_SHELL_PATH=/usr/bin/yubihsm2-sdk/bin/yubihsm-shell
-    ```
-
-[Configure a signing key configuration file] with the details to access a stored key.
+[Configure a signing key configuration file] for each signing key that Web3Signer requires access
+to.
 
 <!-- links -->
 [YubiHSM 2 hardware security module]: https://developers.yubico.com/YubiHSM2/
@@ -34,3 +29,5 @@ Web3Signer supports using the device as a secure key storage only.
 [YubiHSM 2 SDK]: https://developers.yubico.com/YubiHSM2/Releases/
 [Opaque Data algorithm]: https://developers.yubico.com/YubiHSM2/Concepts/Algorithms.html
 [Configure a signing key configuration file]: ../Use-Signing-Keys.md
+[YubiHSM connector]: https://developers.yubico.com/yubihsm-connector/
+[PKCS#11 module]: https://developers.yubico.com/YubiHSM2/Component_Reference/PKCS_11/

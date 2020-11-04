@@ -115,26 +115,30 @@ Use the private key stored in the YubiHSM 2 hardware security module.
 |--------------------|---------------------------------------|
 | **type**           | Type of configuration file. Use `yubihsm2`.|
 | **keyType**        | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `BLS`. |
-| **connectorUrl**   | URL of the YubiHSM service. Accepts a URL (`http://host:12345`) or USB URL (`yhusb://serial=13201047`). |
+| **connectorUrl**   | URL of the YubiHSM service. Accepts a URL (`http://host:12345`) or USB URL (`yhusb://serial=13201047`) You need a running [connector service] if you specify an HTTP address. If you specify `yhusb://`, then Web3Signer picks the first YubiHSM device automatically.|
 | **authKey**        | Authentication key ID used to open a user session, in decimal format. |
 | **password**       | The password for the authentication key. |
 | **opaqueObjId**    | The object ID of the stored key, in decimal format. |
-| **outputFormat**   | The output format for the stored key. Accepts either `ASCII` or `hex`.|
+| **pkcs11ModulePath** | Path the [PKCS#11 module]. |
+| **additionalInitConfig** | Optional. Configuration options for the [PKCS#11 module]. |
 | **caCertPath**     | Optional. Path to the certificate if using a TLS connection to the YubiHSM connector. |
 | **proxyUrl**       | Optional. Proxy server being use for the YubiHSM connector. |
 
 !!! example
 
-   ```yaml
-   type: yubihsm2
-   connectorUrl: http://localhost:12345
-   authKey: 2
-   password: changeme
-   opaqueObjId: 5
-   keyType: BLS
-   outputFormat: ASCII
-   ```
+     ```yaml
+     type: yubihsm2
+     keyType: SECP256K1
+     connectorUrl: http://localhost:12345
+     authKey: 2
+     password: changeme
+     opaqueObjId: 5
+     pkcs11ModulePath: /usr/bin/yubihsm-sdk/lib/pkcs11/yubihsm_pkcs11.so
+     additionalInitConfig: debug libdebug timeout=5
+     ```
 
 <!-- Links -->
 [signing key configuration file]: ../HowTo/Use-Signing-Keys.md
 [keystore file]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md
+[PKCS#11 module]: https://developers.yubico.com/YubiHSM2/Component_Reference/PKCS_11/
+[connector service]: https://developers.yubico.com/yubihsm-connector/
