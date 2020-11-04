@@ -1,5 +1,5 @@
 ---
-description: Ethsigner responsible disclosure statement.
+description: Web3Signer responsible disclosure statement.
 ---
 
 # Responsible disclosure policy
