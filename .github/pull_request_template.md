@@ -4,5 +4,5 @@
 ## Pull Request Description
 
 ## Fixed Issue(s)
-<!-- Please link to fixed issue(s) here using format: fixes #<GithHub issue number> -->
+<!-- Please link to fixed issue(s) here using format: fixes #<GitHub issue number> -->
 <!-- Example: "fixes #123" -->
