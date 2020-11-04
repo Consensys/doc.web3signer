@@ -1,5 +1,5 @@
 ---
-description: Ethsigner responsible disclosure statement.
+description: Web3Signer responsible disclosure statement.
 ---
 
 # Responsible disclosure policy
@@ -11,7 +11,7 @@ quickly as possible. You can help us better protect our clients and our systems.
 
 Please do the following:
 
-* E-mail your findings to security@pegasys.tech. Provide sufficient information to reproduce the
+* E-mail your findings to <mailto:security-quorum@consensys.net>. Provide sufficient information to reproduce the
   problem, so we can resolve it as quickly as possible.
 * Do not take advantage of the vulnerability you have discovered.
 * Practice responsible disclosure. That is, don’t reveal the problem to others until either:

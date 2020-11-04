@@ -26,19 +26,19 @@ extra:
     You can switch to stable version using the version box at screen bottom.'
   support:
     tool: Discord
-    channel: https://discord.gg/EA7WGzA
-    email: support@pegasys.tech
-    website: https://pegasys.tech/
-    company: Pegasys
-    issues: https://github.com/PegaSysEng/web3signer/issues
+    channel: https://discord.gg/5U9Jwp7
+    email: quorum@consensys.net
+    website: https://consensys.net/quorum/developers
+    company: Consensys
+    issues: https://github.com/Consensys/web3signer/issues
   google:
     site_verification: 'za1cLzyS6LXDGO-pMzvfQdYTZ0Zc67uZtY0asA4YXZ0'
     tag_manager: 'GTM-5FCWH9Q'
 
 
 # Software Repository
-repo_name: PegaSysEng/Web3Signer
-repo_url: https://github.com/PegaSysEng/eth2signer
+repo_name: Consensys/Web3Signer
+repo_url: https://github.com/Consensys/web3signer
 
 theme:
   name: material
@@ -65,6 +65,7 @@ nav:
         - Configure TLS: HowTo/Configure-TLS.md
         - Monitor Nodes:
             - Use Metrics: HowTo/Monitor/Metrics.md
+            - Configure Logging: HowTo/Monitor/Logging.md
     - Reference:
         - Command Line:
             - Options: Reference/CLI/CLI-Syntax.md
