@@ -56,9 +56,11 @@ nav:
             - Build from source: HowTo/Get-Started/Build-From-Source.md
             - Start Web3Signer: HowTo/Get-Started/Start-Web3Signer.md
         - Use signing keys: HowTo/Use-Signing-Keys.md
-        - Store keys externally:
-            - Use Hashicorp Vault: HowTo/Store-Keys/Use-Hashicorp.md
-            - Use Azure Key Vault: HowTo/Store-Keys/Use-Azure.md
+        - Store keys in external vaults:
+            - Use Hashicorp Vault: HowTo/Store-Keys-Vaults/Use-Hashicorp.md
+            - Use Azure Key Vault: HowTo/Store-Keys-Vaults/Use-Azure.md
+        - Store keys in HSM devices:
+            - Use YubiHSM2: HowTo/Store-Keys-HSM/Use-YubiHSM2.md
         - Use a configuration file: HowTo/Use-Configuration-File.md
         - Configure TLS: HowTo/Configure-TLS.md
         - Monitor Nodes:
