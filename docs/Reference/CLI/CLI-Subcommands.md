@@ -195,6 +195,121 @@ The tenant ID of the Azure Portal instance being used.
 
 Name of the vault to access. Sub-domain of vault.azure.net.
 
+#### `slashing-protection-db-password`
+
+=== "Syntax"
+
+    ```bash
+    --slashing-protection-db-password=<PASSWORD>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --slashing-protection-db-password=changeme
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_PASSWORD=change
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    eth2.slashing-protection-db-password: "changeme"
+    ```
+
+The password to connect to the slashing protection database.
+
+#### `slashing-protection-db-url`
+
+=== "Syntax"
+
+    ```bash
+    --slashing-protection-db-url=<JDBC_URL>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --slashing-protection-db-url=jdbc:postgresql://localhost/web3signer
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_URL=jdbc:postgresql://localhost/web3signer
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    eth2.slashing-protection-db-url: "jdbc:postgresql://localhost/web3signer"
+    ```
+
+The Java Database Connectivity (JDBC) URL of the slashing protection database.
+
+#### `slashing-protection-db-username`
+
+=== "Syntax"
+
+    ```bash
+    --slashing-protection-db-username=<USERNAME>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --slashing-protection-db-username=postgres
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_USERNAME=postgres
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    eth2.slashing-protection-db-username: "postgres"
+    ```
+
+The username to use when connecting to the slashing protection database.
+
+#### `slashing-protection-enabled`
+
+=== "Syntax"
+
+    ```bash
+    --slashing-protection-db-enabled=<BOOLEAN>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --slashing-protection-db-enabled=false
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_ENABLED=false
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    eth2.slashing-protection-db-enabled: false
+    ```
+
+Enables Web3Signer slashing protection. If `true`, then all signing operations are validated against
+historical data before signing.
+
+The default is `true`.
+
 ### `filecoin`
 
 #### `network`

@@ -66,6 +66,8 @@ nav:
         - Monitor Nodes:
             - Use Metrics: HowTo/Monitor/Metrics.md
             - Configure Logging: HowTo/Monitor/Logging.md
+    - Concepts:
+        - Slashing protection: Concepts/Slashing-Protection.md
     - Reference:
         - Command Line:
             - Options: Reference/CLI/CLI-Syntax.md
