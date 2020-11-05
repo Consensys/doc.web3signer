@@ -121,8 +121,6 @@ Use the private key stored in the YubiHSM 2 hardware security module.
 | **opaqueObjId**    | The object ID of the stored key, in decimal format. |
 | **pkcs11ModulePath** | Path the [PKCS#11 module]. |
 | **additionalInitConfig** | Optional. Configuration options for the [PKCS#11 module]. |
-| **caCertPath**     | Optional. Path to the certificate if using a TLS connection to the YubiHSM connector. |
-| **proxyUrl**       | Optional. Proxy server being use for the YubiHSM connector. |
 
 !!! example
 

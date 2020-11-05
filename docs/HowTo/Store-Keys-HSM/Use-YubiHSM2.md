@@ -12,13 +12,22 @@ Web3Signer supports using the device as a secure key storage only.
 
 * Install the  [YubiHSM 2 SDK] on the Web3Signer machine.
 * [Store private keys in the device] using the `opaque-data` algorithm in `hex` format.
-* All private keys on the device must be stored using the same Authentication Key ID and password.
+* All private keys on the device must be accessible using the same authentication key ID and
+    password.
+
+To communicate with the YubiHSM 2device, Web3Signer uses the PKCS#11 driver to load the
+[PKCS#11 module] in the SDK.
 
 !!! important
 
-    If using multiple YubiHSM devices, then you must install the [YubiHSM 2 SDK] in a different path
-    for each device. This is because Web3Signer requires access to the SDKs [PKCS#11 module] which
-    can only load keys from one device.
+    A limitation of the PKCS#11 driver is that it communicates with only one device by loading
+    one instance of the PKCS#11 module. If using multiple YubiHSM 2 devices then you must have
+    additional copies of the SDK installation.
+
+    Additionally, the loaded PKCS#11 module can open only one session when communicating with a
+    YubiHSM 2 device. Because [key configuration files] are parsed in parallel, the same 
+    authentication key ID and password must be specified in the [key configuration files] for a
+    given device.
 
 [Configure a signing key configuration file] for each signing key that Web3Signer requires access
 to.
@@ -31,3 +40,4 @@ to.
 [Configure a signing key configuration file]: ../Use-Signing-Keys.md
 [YubiHSM connector]: https://developers.yubico.com/yubihsm-connector/
 [PKCS#11 module]: https://developers.yubico.com/YubiHSM2/Component_Reference/PKCS_11/
+[key configuration files]: ../../Reference/Key-Configuration-Files.md#yubihsm-2
