@@ -107,6 +107,36 @@ Use the private key stored in Azure Key Vault. Supports two signing options:
 | **vaultName**           | Name of the vault to access. Sub-domain of vault.azure.net. |
 | **secretName**          | Name of the key stored in the Azure Key Vault.  |
 
+## YubiHSM 2
+
+Use the private key stored in the YubiHSM 2 hardware security module.
+
+| Key                | Description                           |
+|--------------------|---------------------------------------|
+| **type**           | Type of configuration file. Use `yubihsm2`.|
+| **keyType**        | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `BLS`. |
+| **connectorUrl**   | URL of the YubiHSM service. Accepts a URL (`http://host:12345`) or USB URL (`yhusb://serial=13201047`) You need a running [connector service] if you specify an HTTP address. If you specify `yhusb://`, then Web3Signer picks the first YubiHSM device automatically.|
+| **authKey**        | Authentication key ID used to open a user session, in decimal format. |
+| **password**       | The password for the authentication key. |
+| **opaqueObjId**    | The object ID of the stored key, in decimal format. |
+| **pkcs11ModulePath** | Path the [PKCS#11 module]. |
+| **additionalInitConfig** | Optional. Configuration options for the [PKCS#11 module]. |
+
+!!! example
+
+     ```yaml
+     type: yubihsm2
+     keyType: SECP256K1
+     connectorUrl: http://localhost:12345
+     authKey: 2
+     password: changeme
+     opaqueObjId: 5
+     pkcs11ModulePath: /usr/bin/yubihsm-sdk/lib/pkcs11/yubihsm_pkcs11.so
+     additionalInitConfig: debug libdebug timeout=5
+     ```
+
 <!-- Links -->
 [signing key configuration file]: ../HowTo/Use-Signing-Keys.md
 [keystore file]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md
+[PKCS#11 module]: https://developers.yubico.com/YubiHSM2/Component_Reference/PKCS_11/
+[connector service]: https://developers.yubico.com/yubihsm-connector/

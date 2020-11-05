@@ -1,4 +1,4 @@
-# Web3Signer documentation [![Documentation Status](https://readthedocs.com/projects/pegasys-eth2signer/badge/?version=latest)](https://docs.web3signer.consensys.net/en/latest/?badge=latest)
+# Web3Signer documentation[![Documentation Status](https://readthedocs.com/projects/pegasys-web3signer/badge/?version=latest)](https://docs.web3signer.consensys.net/en/latest/?badge=latest)
 
 [Web3Signer] is a transaction signing application to be used with a web3 provider.
 
