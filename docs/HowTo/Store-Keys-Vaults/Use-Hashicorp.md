@@ -58,5 +58,5 @@ The file contents use the format `<hostame>:<port> <hex-string>` where:
 
 <!-- Links -->
 [signing key configuration file]: ../Use-Signing-Keys.md
-[Start Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/Get-Started/Register-Validators/#start-teku
+[Start Teku]: https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Register-Validators/#start-teku
 [Start Web3Signer and specify the location of the signing key configuration file]: ../Get-Started/Start-Web3Signer.md

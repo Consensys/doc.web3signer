@@ -17,10 +17,10 @@ description: Building Web3Signer from source code
 
 ### Clone the Web3Signer Repository
 
-Clone the `PegaSysEng/web3signer` repository:
+Clone the `Consensys/web3signer` repository:
 
 ```bash
-git clone https://github.com/PegaSysEng/web3signer.git
+git clone https://github.com/Consensys/web3signer.git
 ```
 
 ### Build Web3Signer
@@ -60,10 +60,10 @@ bin/web3signer --help
 
 ### Install Web3Signer
 
-Clone the `PegaSysEng/web3signer` repository:
+Clone the `Consensys/web3signer` repository:
 
 ```bat
-git clone https://github.com/PegaSysEng/web3signer.git
+git clone https://github.com/Consensys/web3signer.git
 ```
 
 ### Build Web3Signer
