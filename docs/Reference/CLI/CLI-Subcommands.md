@@ -251,6 +251,11 @@ The password to connect to the slashing protection database.
 
 The Java Database Connectivity (JDBC) URL of the slashing protection database.
 
+!!! note
+
+    If using a non-default port number for your PostgreSQL database, then
+    [include the port number in the database URL].
+
 #### `slashing-protection-db-username`
 
 === "Syntax"
@@ -305,7 +310,7 @@ The username to use when connecting to the slashing protection database.
     eth2.slashing-protection-db-enabled: false
     ```
 
-Enables Web3Signer slashing protection. If `true`, then all signing operations are validated against
+Enables Web3Signer [slashing protection]. If `true`, then all signing operations are validated against
 historical data before signing.
 
 The default is `true`.
@@ -339,3 +344,7 @@ The default is `true`.
     ```
 
 Predefined network configuration. Accepts a predefined network name. The default is `TESTNET`.
+
+<!-- links -->
+[include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
+[slashing protection]: ../../Concepts/Slashing-Protection.md

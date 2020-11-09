@@ -56,12 +56,13 @@ nav:
             - Build from source: HowTo/Get-Started/Build-From-Source.md
             - Start Web3Signer: HowTo/Get-Started/Start-Web3Signer.md
         - Use signing keys: HowTo/Use-Signing-Keys.md
-        - Store keys in external vaults:
+        - Store keys in an external vault:
             - Use Hashicorp Vault: HowTo/Store-Keys-Vaults/Use-Hashicorp.md
             - Use Azure Key Vault: HowTo/Store-Keys-Vaults/Use-Azure.md
-        - Store keys in HSM devices:
+        - Store keys in an HSM device:
             - Use YubiHSM2: HowTo/Store-Keys-HSM/Use-YubiHSM2.md
         - Use a configuration file: HowTo/Use-Configuration-File.md
+        - Configure slashing protection: HowTo/Configure-Slashing-Protection.md
         - Configure TLS: HowTo/Configure-TLS.md
         - Monitor Nodes:
             - Use Metrics: HowTo/Monitor/Metrics.md
@@ -80,7 +81,7 @@ nav:
 markdown_extensions:
   - toc:
       permalink: 
-      toc_depth: 3
+      toc_depth: 4
   - codehilite
   - pymdownx.tabbed
   - pymdownx.superfences

@@ -14,10 +14,22 @@ signing mode to use when starting Web3Signer.
 Start Web3Signer by specifying the signing mode to use, and the location of the signing key
 configuration files.
 
-!!! example
+=== "Ethereum 1.0"
 
     ```bash
-    web3signer --key-store-path=/Users/me/keyFiles/ eth2
+    web3signer --key-store-path=/Users/me/keyFiles/ eth1
+    ```
+
+=== "Ethereum 2.0"
+
+    ```bash
+    web3signer --key-store-path=/Users/me/keyFiles/ eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
+    ```
+
+=== "Filecoin"
+
+    ```bash
+    web3signer --key-store-path=/Users/me/keyFiles/ filecoin
     ```
 
 In the command line:
