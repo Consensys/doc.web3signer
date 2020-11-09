@@ -7,8 +7,15 @@ description: Configure Ethereum 2.0 slashing protection
 Configure [slashing protection] to prevent Ethereum 2.0 validators from being penalized for signing
 conflicting blocks or attestations.
 
-You need to install and manage the PostgreSQL database that stores the validator signing history for
+Install and manage the PostgreSQL database that stores the validator signing history for
 one or more Web3Signer instances.
+
+!!! note
+
+    Ethereum 2.0 [slashing protection] is enabled by default. You therefore must configure a
+    slashing protection database, or disable slashing protection using the
+    [`--slashing-protection-db-enabled`](../../Reference/CLI/CLI-Subcommands.md#slashing-protection-enabled)
+    command line option.
 
 The steps to configure slashing protection are:
 
@@ -21,6 +28,10 @@ The steps to configure slashing protection are:
 [Install the PostgreSQL database], or use [Docker] to [run the PostgreSQL database in a container].
 The following example uses a Docker container.
 
+!!! note
+
+    Web3Signer only supports PostgreSQL for creating the slashing protection database.
+
 Create the database with the default `postgres` user, and specify the password and database name.
 
 ```no-lang
@@ -29,7 +40,9 @@ docker run -e POSTGRES_PASSWORD=password -e POSTGRES_USER=postgres -e POSTGRES_D
 
 !!! note
 
-    Use `-p 5432:5432` to bind the default Postgres database port to the host's port. 
+    In the example we use `-p 5432:5432` to bind the default Postgres database port to the host's
+    port. This allows you to [connect to the database] using the
+    `jdbc:postgresql://localhost/web3signer` URL.
 
 ## Load the database schema
 
@@ -69,6 +82,8 @@ web3signer --key-store-path=/Users/me/keys eth2 --slashing-protection-db-url="jd
     If using a non-default port number for your PostgreSQL database, then
     [include the port number in the database URL].
 
+Start the client, for example [Teku] by specifying the Web3Signer details.
+
 <!-- links -->
 [slashing protection]: ../Concepts/Slashing-Protection.md
 [Install the PostgreSQL database]: https://www.postgresql.org/download/
@@ -76,3 +91,5 @@ web3signer --key-store-path=/Users/me/keys eth2 --slashing-protection-db-url="jd
 [run the PostgreSQL database in a container]: https://hub.docker.com/_/postgres/
 [Flyway]: https://flywaydb.org/documentation/
 [include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
+[Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/External-Signer/Use-External-Signer/
+[connect to the database]: https://jdbc.postgresql.org/documentation/head/connect.html

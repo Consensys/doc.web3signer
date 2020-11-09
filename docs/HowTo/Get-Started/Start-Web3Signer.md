@@ -4,15 +4,12 @@ description: Getting started with Web3Signer
 
 # Start Web3Signer
 
-Web3Signer supports the Ethereum 1, Ethereum 2, and Filecoin platforms, so you must specify the
-signing mode to use when starting Web3Signer.
-
 **Prerequisites**:
 
 * [Signing key configuration files] to access the required signing keys.
 
-Start Web3Signer by specifying the signing mode to use, and the location of the signing key
-configuration files.
+Web3Signer supports the Ethereum 1, Ethereum 2, and Filecoin platforms, so you must specify the
+signing mode, and the location of the signing key configuration files when starting Web3Signer.
 
 === "Ethereum 1.0"
 
@@ -39,6 +36,12 @@ In the command line:
 * Specify the [subcommand] to indicate which signing mode to use. Valid subcommands are `eth1`,
     `eth2`, and `filecoin`. You can only specify one signing mode when starting Web3Signer.
 
+
+Ethereum 2.0 [slashing protection] is enabled by default. You therefore must specify
+the details the [slashing protection database], or disable slashing protection using the
+[`--slashing-protection-db-enabled`](../../Reference/CLI/CLI-Subcommands.md#slashing-protection-enabled)
+command line option.
+
 !!! note
 
      Web3Signer also allows you to [bulk load Ethereum 2.0 signing keys] stored in Azure Key Vault.
@@ -50,3 +53,5 @@ Start the client, for example [Teku] by specifying the Web3Signer details.
 [Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/External-Signer/Use-External-Signer/
 [subcommand]: ../../Reference/CLI/CLI-Subcommands.md
 [bulk load Ethereum 2.0 signing keys]: ../Use-Signing-Keys.md#bulk-loading-ethereum-20-keys
+[slashing protection]: ../../Concepts/Slashing-Protection.md
+[slashing protection database]: ../../HowTo/Configure-Slashing-Protection.md
