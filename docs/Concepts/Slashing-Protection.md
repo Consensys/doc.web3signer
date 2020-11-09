@@ -20,8 +20,9 @@ to `false`.
 
     Web3Signer only supports PostgreSQL for creating the slashing protection database.
 
-Multiple Web3Signer instances can connect to the slashing protection database to ensure
-the same validator key is not used by more than one Web3Signer instance.
+Multiple Web3Signer instances can connect to the same slashing protection database. Database locking
+ensures that if Web3signer instances load the same keys, only one Web3signer instance actually
+signs.
 
 <!--links-->
 [creating and maintaining]: ../HowTo/Configure-Slashing-Protection.md
