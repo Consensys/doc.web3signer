@@ -98,5 +98,5 @@ HTTP API metrics:
 |`signing_private_key_retrieval_time`| Time taken to retrieve [BLS signing keys].  |
 
 <!-- Links -->
-[Start Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/External-Signer/Use-External-Signer/
+[Start Teku]: https://docs.teku.consensys.net/en/latest/HowTo/External-Signer/Use-External-Signer/
 [BLS signing keys]: ../Use-Signing-Keys.md
