@@ -36,7 +36,6 @@ In the command line:
 * Specify the [subcommand] to indicate which signing mode to use. Valid subcommands are `eth1`,
     `eth2`, and `filecoin`. You can only specify one signing mode when starting Web3Signer.
 
-
 Ethereum 2.0 [slashing protection] is enabled by default. You therefore must specify
 the details the [slashing protection database], or disable slashing protection using the
 [`--slashing-protection-db-enabled`](../../Reference/CLI/CLI-Subcommands.md#slashing-protection-enabled)

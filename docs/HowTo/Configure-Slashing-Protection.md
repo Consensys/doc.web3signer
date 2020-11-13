@@ -32,7 +32,8 @@ The following example uses a Docker container.
 
     Web3Signer only supports PostgreSQL for creating the slashing protection database.
 
-Create the database with the default `postgres` user, and specify the password and database name.
+As an example, create the database with the default `postgres` user, and specify the password and
+database name.
 
 ```no-lang
 docker run -e POSTGRES_PASSWORD=password -e POSTGRES_USER=postgres -e POSTGRES_DB=web3signer -p 5432:5432 postgres
@@ -46,11 +47,17 @@ docker run -e POSTGRES_PASSWORD=password -e POSTGRES_USER=postgres -e POSTGRES_D
 
 ## Load the database schema
 
-Web3Signer provides a database schema to configure the database. Find the schema in
+Web3Signer provides a database schemas to configure the database. Find the schemas in
 `/migrations/postgresql/` in the Web3Signer installation directory.
 
 The following examples show how to load the schema using the [Flyway] database migration tool or
 the PostgreSQL command line tool.
+
+!!! note
+
+    If loading each schema individually, then ensure you load them in order. For example
+    `V1_initial.sql`, `V2__removeUniqueConstraints.sql`, then `V3__addLowWatermark.sql`. Use the
+    [Flyway] migration tool to automatically load them in order.
 
 === "Flyway DB migration tool"
 
