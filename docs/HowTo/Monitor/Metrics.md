@@ -102,7 +102,7 @@ Eth2 Slashing protection metrics:
 | Name               | Definition                                         |
 |--------------------|----------------------------------------------------|
 |`permitted_signings`| The number of slashing checks which have reported 'safe to sign'. |
-|`prevented_signings`| The number of slashing checks which have been prevented due violation of slashing conditions. |
+|`prevented_signings`| The number of prevented signings due to violation of slashing conditions. |
 
 <!-- Links -->
 [Start Teku]: https://docs.teku.consensys.net/en/latest/HowTo/External-Signer/Use-External-Signer/
