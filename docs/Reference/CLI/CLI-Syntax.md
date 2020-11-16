@@ -367,7 +367,7 @@ metrics. The default is `9001`.
     WEB3SIGNER_METRICS_CATEGORY=HTTP,SIGNING,JVM
     ```
 
-A comma-separated list of categories for which to track metrics. The defaults are `HTTP`, `SIGNING`, `JVM`, `PROCESS`.
+A comma-separated list of categories for which to track metrics. The defaults are `HTTP`, `SIGNING`, `FILECOIN`, `ETH2_SLASHING_PROTECTION`, `JVM`, `PROCESS`.
 
 ### metrics-host-allowlist
 

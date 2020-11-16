@@ -97,6 +97,13 @@ HTTP API metrics:
 |`signers_loaded_count`              | Total number of SECP256k1 and BLS12-381 keys loaded.  |
 |`signing_private_key_retrieval_time`| Time taken to retrieve [BLS signing keys].  |
 
+Eth2 Slashing protection metrics:
+
+| Name               | Definition                                         |
+|--------------------|----------------------------------------------------|
+|`permitted_signings`| The number of slashing checks which have reported 'safe to sign'. |
+|`prevented_signings`| The number of prevented signings due to violation of slashing conditions. |
+
 <!-- Links -->
 [Start Teku]: https://docs.teku.consensys.net/en/latest/HowTo/External-Signer/Use-External-Signer/
 [BLS signing keys]: ../Use-Signing-Keys.md
