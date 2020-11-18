@@ -13,7 +13,7 @@ Web3Signer supports BLS12-381 or secp256k1 signing keys stored in:
     * [Azure Key Vault](../HowTo/Store-Keys-Vaults/Use-Azure.md).
 * Hardware Security Modules (HSMs):
     * [YubiHSM 2](../HowTo/Store-Keys-HSM/Use-YubiHSM2.md)
-    * USB Armory Mk II.
+    * [USB Armory Mk II](../HowTo/Store-Keys-HSM/Use-USB-Armory.md).
 
 You can configure access to the signing key by:
 

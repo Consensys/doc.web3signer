@@ -61,6 +61,7 @@ nav:
             - Use Azure Key Vault: HowTo/Store-Keys-Vaults/Use-Azure.md
         - Store keys in an HSM device:
             - Use YubiHSM2: HowTo/Store-Keys-HSM/Use-YubiHSM2.md
+            - Use USB Armory Mk II: HowTo/Store-Keys-HSM/Use-USB-Armory.md
         - Use a configuration file: HowTo/Use-Configuration-File.md
         - Configure slashing protection: HowTo/Configure-Slashing-Protection.md
         - Configure TLS: HowTo/Configure-TLS.md
