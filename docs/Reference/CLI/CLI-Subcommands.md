@@ -7,6 +7,8 @@ description: Web3Signer command line interface subcommands
 The Web3Signer subcommands are used to specify the platform being used:
 
 * `web3signer [Options] eth2 [Eth2 Options]`
+* `web3signer [Options] eth2 export [Eth2 Export Options]`
+* `web3signer [Options] eth2 import [Eth2 Import Options]`
 * `web3signer [Options] eth1`
 * `web3signer [Options] filecoin [Filecoin Options]`
 
@@ -314,6 +316,66 @@ Enables Web3Signer [slashing protection]. If `true`, then all signing operations
 historical data before signing.
 
 The default is `true`.
+
+### `eth2 export`
+
+#### `to`
+
+=== "Syntax"
+
+    ```bash
+    --to=<FILE>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --to=/Users/me/my_node/interchange.json
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_EXPORT_TO=/Users/me/my_node/interchange.json
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    eth2.export.to: /Users/me/my_node/interchange.json
+    ```
+
+File to export the slashing protection database to in the interchange format.
+
+### `eth2 import`
+
+#### `from`
+
+=== "Syntax"
+
+    ```bash
+    --from=<FILE>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --from=/Users/me/my_node/interchange.json
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_IMPORT_FROM=/Users/me/my_node/interchange.json
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    eth2.import.from: /Users/me/my_node/interchange.json
+    ```
+
+File to import the slashing protection database from in the interchange format.
 
 ### `filecoin`
 
