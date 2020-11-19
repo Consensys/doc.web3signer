@@ -319,6 +319,8 @@ The default is `true`.
 
 ### `eth2 export`
 
+Exports the slashing protection database to a file.
+
 #### `to`
 
 === "Syntax"
@@ -345,9 +347,12 @@ The default is `true`.
     eth2.export.to: /Users/me/my_node/interchange.json
     ```
 
-File to export the slashing protection database to in the interchange format.
+The file to export the slashing protection database to. The exported file uses the [Complete]
+interchange format
 
 ### `eth2 import`
+
+Import a slashing protection database from a file.
 
 #### `from`
 
@@ -375,7 +380,8 @@ File to export the slashing protection database to in the interchange format.
     eth2.import.from: /Users/me/my_node/interchange.json
     ```
 
-File to import the slashing protection database from in the interchange format.
+The file to import the slashing protection database from. The file must be formatted in the
+[Complete] interchange format.
 
 ### `filecoin`
 
@@ -410,3 +416,4 @@ Predefined network configuration. Accepts a predefined network name. The default
 <!-- links -->
 [include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
 [slashing protection]: ../../Concepts/Slashing-Protection.md
+[Complete]: https://hackmd.io/@sproul/Bk0Y0qdGD#Format-1-Complete
