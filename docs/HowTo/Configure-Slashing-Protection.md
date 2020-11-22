@@ -117,7 +117,7 @@ To export the Postgres database to a file run:
     ```
 
 You must supply the Postgres database connection details when importing or exporting the slashing
-protection database. 
+protection database.
 <!-- links -->
 [slashing protection]: ../Concepts/Slashing-Protection.md
 [Install the PostgreSQL database]: https://www.postgresql.org/download/
