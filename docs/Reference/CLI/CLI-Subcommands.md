@@ -347,8 +347,8 @@ Exports the slashing protection database to a file.
     eth2.export.to: /Users/me/my_node/interchange.json
     ```
 
-The file to export the slashing protection database to. The exported file uses the [Complete]
-interchange format
+The file to export the slashing protection database to. The exported file uses the
+[validator client interchange format].
 
 ### `eth2 import`
 
@@ -381,7 +381,7 @@ Import a slashing protection database from a file.
     ```
 
 The file to import the slashing protection database from. The file must be formatted in the
-[Complete] interchange format.
+[validator client interchange format]
 
 ### `filecoin`
 
@@ -416,4 +416,4 @@ Predefined network configuration. Accepts a predefined network name. The default
 <!-- links -->
 [include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
 [slashing protection]: ../../Concepts/Slashing-Protection.md
-[Complete]: https://hackmd.io/@sproul/Bk0Y0qdGD#Format-1-Complete
+[validator client interchange format]: https://eips.ethereum.org/EIPS/eip-3076
