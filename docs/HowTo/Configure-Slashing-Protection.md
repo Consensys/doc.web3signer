@@ -91,6 +91,33 @@ web3signer --key-store-path=/Users/me/keys eth2 --slashing-protection-db-url="jd
 
 Start the client, for example [Teku] by specifying the Web3Signer details.
 
+## Import or export a slashing protection database
+
+You can import or export the slashing protection database. When importing, additional entries are
+added to the existing database.
+
+Web3Signer supports importing or exporting using the [validator client interchange format]. Use the
+[`eth2 import`](../Reference/CLI/CLI-Subcommands.md#eth2-import) and
+[`eth2 export`](../Reference/CLI/CLI-Subcommands.md#eth2-export) to import or export files.
+
+To import a slashing protection database file into the Postgres database, run:
+
+!!! example
+
+    ```bash
+    web3signer eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password import --from=/Users/me/my_node/interchange.json
+    ```
+
+To export the Postgres database to a file run:
+
+!!! example
+
+    ```bash
+    web3signer eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password export --to=/Users/me/my_node/interchange.json
+    ```
+
+You must supply the Postgres database connection details when importing or exporting the slashing
+protection database.
 <!-- links -->
 [slashing protection]: ../Concepts/Slashing-Protection.md
 [Install the PostgreSQL database]: https://www.postgresql.org/download/
@@ -100,3 +127,4 @@ Start the client, for example [Teku] by specifying the Web3Signer details.
 [include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
 [Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/External-Signer/Use-External-Signer/
 [connect to the database]: https://jdbc.postgresql.org/documentation/head/connect.html
+[validator client interchange format]: https://eips.ethereum.org/EIPS/eip-3076
