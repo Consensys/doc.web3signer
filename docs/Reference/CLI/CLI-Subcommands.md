@@ -7,6 +7,8 @@ description: Web3Signer command line interface subcommands
 The Web3Signer subcommands are used to specify the platform being used:
 
 * `web3signer [Options] eth2 [Eth2 Options]`
+* `web3signer [Options] eth2 export [Eth2 Export Options]`
+* `web3signer [Options] eth2 import [Eth2 Import Options]`
 * `web3signer [Options] eth1`
 * `web3signer [Options] filecoin [Filecoin Options]`
 
@@ -315,6 +317,72 @@ historical data before signing.
 
 The default is `true`.
 
+### `eth2 export`
+
+Exports the slashing protection database to a file.
+
+#### `to`
+
+=== "Syntax"
+
+    ```bash
+    --to=<FILE>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --to=/Users/me/my_node/interchange.json
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_EXPORT_TO=/Users/me/my_node/interchange.json
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    eth2.export.to: /Users/me/my_node/interchange.json
+    ```
+
+The file to export the slashing protection database to. The exported file uses the
+[validator client interchange format].
+
+### `eth2 import`
+
+Import a slashing protection database from a file.
+
+#### `from`
+
+=== "Syntax"
+
+    ```bash
+    --from=<FILE>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --from=/Users/me/my_node/interchange.json
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_IMPORT_FROM=/Users/me/my_node/interchange.json
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    eth2.import.from: /Users/me/my_node/interchange.json
+    ```
+
+The file to import the slashing protection database from. The file must be formatted in the
+[validator client interchange format]
+
 ### `filecoin`
 
 #### `network`
@@ -348,3 +416,4 @@ Predefined network configuration. Accepts a predefined network name. The default
 <!-- links -->
 [include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
 [slashing protection]: ../../Concepts/Slashing-Protection.md
+[validator client interchange format]: https://eips.ethereum.org/EIPS/eip-3076
