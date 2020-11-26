@@ -28,14 +28,15 @@ Perform the following steps to use USB Armory to store signing keys:
 
     The [USB Armory Mk II device] only allows one connection at a time. Ensure you log out of the
     web-based file manager before using the device with Web3Signer.
-    
-    Use the `INTERLOCK_CLIENT_TIMEOUT_MS` environment variable to override the Interlock connection
-    timeout . Defaults to 5000 ms.
+
+    Use the `INTERLOCK_CLIENT_TIMEOUT_MS` environment variable to override the Interlock timeout
+    from Web3Signer. Defaults to 5000 ms.
 
 ## Known server file
 
-The Interlock application uses a self-signed certificate. Web3Signer automatically creates a
-known server file to trust the Interlock certificate.
+The Interlock application by default uses a self-signed certificate. Web3Signer automatically
+creates a known server file to trust the Interlock certificate on first connection to the Interlock
+application, and uses the file on subsequent connections.
 
 !!! important
 
