@@ -69,7 +69,7 @@ Use the private key stored in HashiCorp Vault.
 | **type**                | Type of configuration file. Use `hashicorp`.|
 | **keyType**             | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `BLS`. |
 | **tlsEnabled**          | Enable or disable TLS. Defaults to `true` |
-| **keyPath**             | Path to secret in the HashiCorp Vault containing the private key. |
+| **keyPath**             | Path to secret in the HashiCorp Vault containing the private key. Syntax is the same as the path used in [Hashicorp KV Secrets Engine Version 2 HTTP API](https://www.vaultproject.io/api-docs/secret/kv/kv-v2#read-secret-version)|
 | **keyName**             | Name of the key storing the private key in the vault.|
 | **tlsKnownServersPath** | Path to the file containing a list of trusted HashiCorp Vault servers.|
 | **serverHost**          | Host of the HashiCorp Vault server.  |
