@@ -19,7 +19,54 @@ After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-sta
 
 1. Copy or save the root token displayed after starting the server in a file.
 
-1. Put your signing key into the HashiCorp Vault:
+1. Enable the secret mount point using [KV v2 engine](https://www.vaultproject.io/docs/secrets/kv/kv-v2):
+
+    !!! example
+        Using Vault CLI, enable the KV v2 `secret` mount point:
+
+        ```bash
+        vault secrets enable -path=secret kv-v2
+        ```
+
+    !!! note
+
+        Use `kv-v2` type as indicated in KV v2 doc. Web3Signer only works with v2 secrets.
+
+        ??? example "Example Vault command to check if an existing secret is v1 or v2"
+
+            If the engine used is V2, the secret is versioned and you can see the metadata with version field:
+
+            ```bash
+            vault kv get /secret/web3signerSigningKey
+            ```
+
+            === "Result if v2 (with metadata)"
+
+                ```text
+                ====== Metadata ======
+                Key              Value
+                ---              -----
+                created_time     2020-11-27T10:15:59.91752Z
+                deletion_time    n/a
+                destroyed        false
+                version          1
+
+                ==== Data ====
+                Key      Value
+                ---      -----
+                value    17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
+                ```
+
+            === "Result if v1"
+
+                ```text
+                ==== Data ====
+                Key      Value
+                ---      -----
+                value    17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
+                ```
+
+1. [Write the key in HashiCorp Vault](https://learn.hashicorp.com/vault/getting-started/first-secret) as a hex string (without `0x` prefix):
 
     === "Command"
 
