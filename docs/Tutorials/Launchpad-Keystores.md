@@ -9,7 +9,7 @@ proof-of-stake network. The tool generates an encrypted keystore file containing
 details. Load this keystore into Web3Signer to sign attestations and blocks with the validator
 details.
 
-This tutorial uses Teku and Web3Signer to run validators created on the Pyrmont testnet.
+This tutorial uses Teku and Web3Signer to run validators created on the `pyrmont` testnet.
 
 **Prerequisites**:
 
@@ -29,7 +29,8 @@ teku --network=pyrmont --metrics-enabled --rest-api-enabled
 
 ## 2. Generate validators
 
-This step generates a validator on the Pyrmont testnet. Use the [ETH 2.0 Pyrmont launchpad] and
+This step generates a validator on the `pyrmont` testnet. Use the
+[ETH 2.0 `pyrmont` launchpad](https://pyrmont.launchpad.ethereum.org/) and
 follow the step-by-step process to deposit your funds and generate the keystore.
 
 The process includes installing the ETH 2.0 deposit CLI tool, to generate your validator keystores
@@ -102,5 +103,4 @@ teku --network=pyrmont \
 <!-- links -->
 [Teku installed]: https://docs.teku.pegasys.tech/en/latest/HowTo/Get-Started/Installation-Options/Install-Binaries/
 [Web3Signer installed]: ../HowTo/Get-Started/Install-Binaries.md
-[ETH 2.0 Pyrmont launchpad]: https://pyrmont.launchpad.ethereum.org/
 [slashing protection database]: ../HowTo/Configure-Slashing-Protection.md
