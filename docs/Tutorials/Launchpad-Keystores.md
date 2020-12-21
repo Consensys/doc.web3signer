@@ -10,7 +10,7 @@ details. Load this keystore into Web3Signer to sign attestations and blocks with
 details.
 
 This tutorial uses Teku and Web3Signer to run validators created on the Pyrmont testnet.
- 
+
 **Prerequisites**:
 
 * [Teku installed].
@@ -46,7 +46,7 @@ Create a plain text file that stores the password to decrypt the keystore.
 In this example we create the `keystore-m_12381_3600_0_0_0-1606109670.txt` file in
 the `eth2deposit-cli-<version>/validator_keys` directory.
 
-!!! example "keystore-m_12381_3600_0_0_0-1606109670.txt"
+!!! example "`keystore-m_12381_3600_0_0_0-1606109670.txt`"
 
     ```none
     validatorPassword
@@ -63,7 +63,7 @@ single directory. In his example `Users/me/keys`
     The configuration files must be YAML-formatted, and can use any naming format, but must have
     the `.yaml` extension.
 
-!!! example "validator.yaml"
+!!! example "`validator.yaml`"
 
     ```yaml
     type: "file-keystore"
@@ -104,6 +104,3 @@ teku --network=pyrmont \
 [Web3Signer installed]: ../HowTo/Get-Started/Install-Binaries.md
 [ETH 2.0 Pyrmont launchpad]: https://pyrmont.launchpad.ethereum.org/
 [slashing protection database]: ../HowTo/Configure-Slashing-Protection.md
-
-
-
