@@ -33,7 +33,7 @@ This step generates a validator on the Pyrmont testnet. Use the [ETH 2.0 Pyrmont
 follow the step-by-step process to deposit your funds and generate the keystore.
 
 The process includes installing the ETH 2.0 deposit CLI tool, to generate your validator keystores
-locally. Keystores are generated in the `eth2.0-deposit-cli/validator_keys` folder. In this example
+locally. Keystores are generated in the `eth2deposit-cli-<version>/validator_keys` folder. In this example
 we generated a keystore named `keystore-m_12381_3600_0_0_0-1606109670.json`
 
 !!! important
@@ -42,9 +42,9 @@ we generated a keystore named `keystore-m_12381_3600_0_0_0-1606109670.json`
 
 ## 3. Create password file
 
-You must create a plain text file that stores the password to decrypt the keystore.
+Create a plain text file that stores the password to decrypt the keystore.
 In this example we create the `keystore-m_12381_3600_0_0_0-1606109670.txt` file in
-the `eth2.0-deposit-cli/validator_keys` directory.
+the `eth2deposit-cli-<version>/validator_keys` directory.
 
 !!! example "keystore-m_12381_3600_0_0_0-1606109670.txt"
 
@@ -54,22 +54,23 @@ the `eth2.0-deposit-cli/validator_keys` directory.
 
 ## 4. Create the key configuration file
 
-Create a separate key configuration file for each keystore file. The key configuration file defines
-the type of signing key being used, and access details.
+Create a key configuration file for each keystore file. The key configuration file defines
+the type of signing key being used, and access details. Store all key configuration files in a
+single directory. In his example `Users/me/keys`
 
 !!! important
 
     The configuration files must be YAML-formatted, and can use any naming format, but must have
     the `.yaml` extension.
 
-```yaml
-type: "file-keystore"
-keyType: "BLS"
-keystoreFile: "/Users/me/eth2.0-deposit-cli/validator_keys/keystore-m_12381_3600_0_0_0-1606109670.file"
-keystorePasswordFile: "/Users/me/eth2.0-deposit-cli/validator_keys/keystore-m_12381_3600_0_0_0-1606109670.txt"
-```
+!!! example "validator.yaml"
 
-Store all key configuration files in a single directory. In his example `Users/me/keys`
+    ```yaml
+    type: "file-keystore"
+    keyType: "BLS"
+    keystoreFile: "/Users/me/eth2deposit-cli-ed5a6d3-darwin-amd64/validator_keys/validator_keys/keystore-m_12381_3600_0_0_0-1606109670.json"
+    keystorePasswordFile: "/Users/me/eth2deposit-cli-ed5a6d3-darwin-amd64/validator_keys/validator_keys/keystore-m_12381_3600_0_0_0-1606109670.txt"
+    ```
 
 ## 5. Start Web3Signer
 
@@ -80,7 +81,24 @@ Start Web3Signer and specify the location of the key configuration files and
 web3signer --key-store-path=/Users/me/keys eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
 ```
 
+!!! note
+
+    Set the [`--slashing-protection-enabled`](../Reference/CLI/CLI-Subcommands.md#slashing-protection-enabled)
+    `eth2` subcommand option to `false` to disable slashing protection. However, this is not
+    recommended on Mainnet.
+
 ## 5. Start Teku
+
+Start Teku and specify the public keys of the validators that Web3Signer signs attestations and
+block for, and specify the Web3Signer address.
+
+```bash
+teku --network=pyrmont \
+--eth1-endpoint=http://localhost:8545 \
+--validators-external-signer-public-keys=0xa99a...e44c,0xb89b...4a0b \
+--validators-external-signer-url=http://localhost:9000
+```
+
 <!-- links -->
 [Teku installed]: https://docs.teku.pegasys.tech/en/latest/HowTo/Get-Started/Installation-Options/Install-Binaries/
 [Web3Signer installed]: ../HowTo/Get-Started/Install-Binaries.md
