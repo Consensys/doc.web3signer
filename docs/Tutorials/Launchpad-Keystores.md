@@ -53,9 +53,14 @@ the `eth2deposit-cli-<version>/validator_keys` directory.
     validatorPassword
     ```
 
+!!! note
+
+    If using Linux or macOS, we recommend setting the file ownership and permission to `400` for
+    the user running Web3Signer. 
+
 ## 4. Create the key configuration file
 
-Create a key configuration file for each keystore file. The key configuration file defines
+Create a [key configuration file] for each keystore file. The key configuration file defines
 the type of signing key being used, and access details. Store all key configuration files in a
 single directory. In his example `Users/me/keys`
 
@@ -68,7 +73,6 @@ single directory. In his example `Users/me/keys`
 
     ```yaml
     type: "file-keystore"
-    keyType: "BLS"
     keystoreFile: "/Users/me/eth2deposit-cli-ed5a6d3-darwin-amd64/validator_keys/validator_keys/keystore-m_12381_3600_0_0_0-1606109670.json"
     keystorePasswordFile: "/Users/me/eth2deposit-cli-ed5a6d3-darwin-amd64/validator_keys/validator_keys/keystore-m_12381_3600_0_0_0-1606109670.txt"
     ```
@@ -104,3 +108,4 @@ teku --network=pyrmont \
 [Teku installed]: https://docs.teku.pegasys.tech/en/latest/HowTo/Get-Started/Installation-Options/Install-Binaries/
 [Web3Signer installed]: ../HowTo/Get-Started/Install-Binaries.md
 [slashing protection database]: ../HowTo/Configure-Slashing-Protection.md
+[key configuration file]: ../Reference/Key-Configuration-Files.md
