@@ -70,6 +70,8 @@ nav:
             - Configure Logging: HowTo/Monitor/Logging.md
     - Concepts:
         - Slashing protection: Concepts/Slashing-Protection.md
+    - Tutorials:
+        - Load ETH 2.0 keystores: Tutorials/Launchpad-Keystores.md
     - Reference:
         - Command Line:
             - Options: Reference/CLI/CLI-Syntax.md
