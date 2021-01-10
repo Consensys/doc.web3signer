@@ -85,11 +85,24 @@ Use the private key stored in Azure Key Vault. Supports two signing options:
 * `azure-secret` - Web3Signer fetches the keys from the vault and signs locally. Supports SECP256K1
     and BLS12-381 signing keys.
 
-!!! example
+=== "azure-secret example"
 
     ```
     type: "azure-secret"
     keyType: "BLS"
+    authenticationMode: "USER_ASSIGNED_MANAGED_IDENTITY"
+    clientId: "950faa5b-b029-3b23-28ee2b2e8a11"
+    tenantId: "34255fb0-379b-4a1a-bd47-d211ab86df81"
+    vaultName: "AzureKeyVault"
+    secretName: "3ff2254386c82ffea989e2adf28a2929f5c853165a4196158c7f3a2ecca40f35"
+    ```
+
+=== "azure-key example"
+
+    ```
+    type: "azure-key"
+    keyType: "BLS"
+    authenticationMode: "CLIENT_SECRET"
     clientId: "65efaa5b-4029-4b54-98bb2e2e8a11"
     clientSecret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
     tenantId: "34255fb0-379b-4a1a-bd47-d211ab86df81"
@@ -100,9 +113,10 @@ Use the private key stored in Azure Key Vault. Supports two signing options:
 | Key                     | Description                           |
 |-------------------------|---------------------------------------|
 | **type**                | Type of configuration file. Use `azure-secret` or `azure-key`.|
+| **authenticationMode**  | Authentication type being used. Valid options are `CLIENT_SECRET`, `SYSTEM_ASSIGNED_MANAGED_IDENTITY`, and `USER_ASSIGNED_MANAGED_IDENTITY`. Defaults to `CLIENT_SECRET`. | 
 | **keyType**             | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `SECP256K1`. |
-| **clientId**            | ID used to authenticate with Azure Key Vault.  |
-| **clientSecret**        | Secret used to access the vault. |
+| **clientId**            | ID used to authenticate with Azure Key Vault. Required for the `CLIENT_SECRET` and `USER_ASSIGNED_MANAGED_IDENTITY` authentication modes. |
+| **clientSecret**        | Secret used to access the vault. Required for the `CLIENT_SECRET` authentication mode.|
 | **tenantId**            | The tenant ID used to authenticate with Azure Key Vault. |
 | **vaultName**           | Name of the vault to access. Sub-domain of vault.azure.net. |
 | **secretName**          | Name of the key stored in the Azure Key Vault.  |
