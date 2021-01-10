@@ -113,7 +113,7 @@ Use the private key stored in Azure Key Vault. Supports two signing options:
 | Key                     | Description                           |
 |-------------------------|---------------------------------------|
 | **type**                | Type of configuration file. Use `azure-secret` or `azure-key`.|
-| **authenticationMode**  | Authentication type being used. Valid options are `CLIENT_SECRET`, `SYSTEM_ASSIGNED_MANAGED_IDENTITY`, and `USER_ASSIGNED_MANAGED_IDENTITY`. Defaults to `CLIENT_SECRET`. | 
+| **authenticationMode**  | Authentication type being used. Valid options are `CLIENT_SECRET`, `SYSTEM_ASSIGNED_MANAGED_IDENTITY`, and `USER_ASSIGNED_MANAGED_IDENTITY`. Defaults to `CLIENT_SECRET`. |
 | **keyType**             | Signing key type. Valid options are `BLS` or `SECP256K1`. Defaults to `SECP256K1`. |
 | **clientId**            | ID used to authenticate with Azure Key Vault. Required for the `CLIENT_SECRET` and `USER_ASSIGNED_MANAGED_IDENTITY` authentication modes. |
 | **clientSecret**        | Secret used to access the vault. Required for the `CLIENT_SECRET` authentication mode.|

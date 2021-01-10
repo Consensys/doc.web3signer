@@ -30,7 +30,7 @@ loading Ethereum 2.0 signing keys]:
     * Client ID
     * Client secret
     * Tenant ID
-    
+
         !!! note
             Depending on the authentication mode, not all client credentials will be available.
 
