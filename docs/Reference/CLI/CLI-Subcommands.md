@@ -113,6 +113,9 @@ Allow Web3Signer to bulk load all keys from the specified Azure Vault.
 
 ID used to authenticate with Azure Key Vault.
 
+Required when [`--azure-vault-auth-mode`](#azure-vault-auth-mode) is `CLIENT_SECRET` or
+`USER_ASSIGNED_MANAGED_IDENTITY`.
+
 #### `azure-client-secret`
 
 === "Syntax"
@@ -168,6 +171,38 @@ The secret used to access the vault along with the ID specified in [`azure-clien
     ```
 
 The tenant ID of the Azure Portal instance being used.
+
+#### `azure-vault-auth-mode`
+
+=== "Syntax"
+
+    ```bash
+    --azure-vault-auth-mode=<STRING>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --azure-vault-auth-mode=USER_ASSIGNED_MANAGED_IDENTITY
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_AZURE_VAULT_AUTH_MODE=USER_ASSIGNED_MANAGED_IDENTITY
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    eth2.azure-vault-auth-mode: "USER_ASSIGNED_MANAGED_IDENTITY"
+    ```
+
+Authentication mode for Azure Vault. Options are `CLIENT_SECRET`, `SYSTEM_ASSIGNED_MANAGED_IDENTITY`,
+and `USER_ASSIGNED_MANAGED_IDENTITY`. Defaults to `CLIENT_SECRET`.
+
+Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or
+`USER_ASSIGNED_MANAGED_IDENTITY`.
 
 #### `azure-vault-name`
 

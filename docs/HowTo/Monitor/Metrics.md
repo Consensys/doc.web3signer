@@ -104,6 +104,13 @@ Eth2 Slashing protection metrics:
 |`permitted_signings`| The number of slashing checks which have reported 'safe to sign'. |
 |`prevented_signings`| The number of prevented signings due to violation of slashing conditions. |
 
+## Visualize collected data
+
+Use
+[Grafana] to visualize the collected data. See the sample
+[Web3Signer Grafana dashboard](https://grafana.com/grafana/dashboards/13687).
+
 <!-- Links -->
 [Start Teku]: https://docs.teku.consensys.net/en/latest/HowTo/External-Signer/Use-External-Signer/
 [BLS signing keys]: ../Use-Signing-Keys.md
+[Grafana]: https://grafana.com/docs/grafana/latest/guides/getting_started/
