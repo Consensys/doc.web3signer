@@ -17,6 +17,11 @@ Web3Signer supports the following authentication modes:
     * User-assigned identities
 * [Client secret].
 
+!!! important
+
+    The Azure Active Directory managed identity authentication modes can only be used when
+    fetching keys from Azure Key Vault and signing locally with Web3Signer.
+
 ## Storing the private key in Azure Key Vault
 
 [Register Web3Signer as an application] and [add a signing key in Azure Key Vault].
