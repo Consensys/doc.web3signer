@@ -477,7 +477,9 @@ Password file used to decrypt the keystore.
 
     ```bash
     WEB3SIGNER_TLS_ALLOW_ANY_CLIENT
-    ```Allows any client to connect.
+    ```
+
+Allows any client to connect.
 
 !!! important
     Cannot be used with [`--tls-allow-ca-clients`](#tls-allow-ca-clients)
