@@ -4,8 +4,8 @@ description: Secure communication using TLS
 
 # Configure TLS
 
-Configure TLS communication from the command line to allow clients (for example a dApp, or curl)
-and Web3Signer to communicate securely.
+Configure TLS communication from the command line to allow clients
+(for example [Teku], a dApp, or curl) and Web3Signer to communicate securely.
 
 Web3Signer provides multiple options to configure client TLS access:
 
@@ -14,6 +14,11 @@ Web3Signer provides multiple options to configure client TLS access:
 * [Allow any client to connect].
 
 This example uses a known clients file to limit access to specified clients.
+
+!!! info
+
+    The [Teku tutorial] provides step-by-step instructions to configure the Teku client and Web3Signer
+    for TLS communication, including creating the required keystores and truststore.
 
 ## Prerequisites
 
@@ -84,3 +89,5 @@ The command line:
 <!-- links -->
 [Allow all clients with trusted CA certificates to connect]: ../Reference/CLI/CLI-Syntax.md#tls-allow-ca-clients
 [Allow any client to connect]: ../Reference/CLI/CLI-Syntax.md#tls-allow-any-client
+[Teku]: https://docs.teku.consensys.net/en/stable/
+[Teku tutorial]: https://docs.teku.consensys.net/en/stable/Tutorials/Configure-External-Signer-TLS/
