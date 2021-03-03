@@ -43,11 +43,6 @@ to specify the location of the key configuration files.
     web3signer --key-store-path=/Users/me/keyFiles/ eth2
     ```
 
-!!! tip
-
-    Files can be added or removed from the directory without needing to
-    restart Web3Signer.
-
 ## Bulk loading Ethereum 2.0 keys
 
 You can bulk load Ethereum 2.0 keys that are stored in Azure Key Vault. To do this use the
