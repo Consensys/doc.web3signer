@@ -468,9 +468,10 @@ The default is 24.
     eth2.slashing-protection-pruning-slots-per-epoch: 20
     ```
 
-Number of slots per epoch to use when calculating the number of slots to prune in the slashing protection database.
+Number of slots per epoch.
+This number multiplied by the number of epochs to keep determines what blocks to keep when pruning the slashing protection database.
 
-This typically does not need changing and defaults to 32, the value used on mainnet.
+The default is 32 as defined on MainNet.
 
 ### `eth2 export`
 
