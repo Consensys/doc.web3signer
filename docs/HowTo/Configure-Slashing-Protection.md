@@ -132,7 +132,7 @@ To enable and configure pruning, run:
     ```bash
     web3signer eth2 --slashing-protection-pruning-enabled=true --slashing-protection-pruning-epochs-to-keep=5000 --slashing-protection-pruning-interval=18
     ```
-The additional configuration options are optional when enabling slashing protection databse pruning.
+The additional configuration options are optional when enabling slashing protection database pruning.
 
 <!-- links -->
 [slashing protection]: ../Concepts/Slashing-Protection.md
