@@ -35,9 +35,9 @@ The following example uses a Docker container.
 As an example, create the database with the default `postgres` user, and specify the password and
 database name.
 
-```no-lang
-docker run -e POSTGRES_PASSWORD=password -e POSTGRES_USER=postgres -e POSTGRES_DB=web3signer -p 5432:5432 postgres
-```
+    ```no-lang
+    docker run -e POSTGRES_PASSWORD=password -e POSTGRES_USER=postgres -e POSTGRES_DB=web3signer -p 5432:5432 postgres
+    ```
 
 !!! note
 
@@ -80,14 +80,16 @@ the PostgreSQL command line tool.
 
 Start Web3Signer and specify the PostgreSQL connection options.
 
-```bash
-web3signer --key-store-path=/Users/me/keys eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
-```
+    ```bash
+    web3signer --key-store-path=/Users/me/keys eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password --slashing-protection-pruning-enabled=true
+    ```
 
 !!! note
 
     If using a non-default port number for your PostgreSQL database, then
     [include the port number in the database URL].
+
+Including [`--slashing-protection-pruning-enabled=true`] enables [slashing protection database pruning].
 
 Start the client, for example [Teku] by specifying the Web3Signer details.
 
@@ -118,8 +120,25 @@ To export the Postgres database to a file run:
 
 You must supply the Postgres database connection details when importing or exporting the slashing
 protection database.
+
+## Prune the slashing protection database
+
+You can enable periodic pruning of the slashing protection database to manage its size.
+Pruning is disabled by default.
+
+To enable and configure pruning, run:
+
+!!! example
+
+    ```bash
+    web3signer eth2 --slashing-protection-pruning-enabled=true --slashing-protection-pruning-epochs-to-keep=5000 --slashing-protection-pruning-interval=18
+    ```
+The additional configuration options are optional when enabling slashing protection database pruning.
+
 <!-- links -->
 [slashing protection]: ../Concepts/Slashing-Protection.md
+[`--slashing-protection-pruning-enabled=true`]: ../Reference/CLI/CLI-Subcommands.md#slashing-protection-pruning-enabled
+[slashing protection database pruning]: #prune-the-slashing-protection-database
 [Install the PostgreSQL database]: https://www.postgresql.org/download/
 [Docker]: https://docs.docker.com/install/
 [run the PostgreSQL database in a container]: https://hub.docker.com/_/postgres/
