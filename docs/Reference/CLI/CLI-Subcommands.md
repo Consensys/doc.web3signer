@@ -352,6 +352,126 @@ historical data before signing.
 
 The default is `true`.
 
+#### `slashing-protection-pruning-enabled`
+
+=== "Syntax"
+
+    ```bash
+    --slashing-protection-pruning-enabled=<BOOLEAN>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --slashing-protection-pruning-enabled=true
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_ENABLED=true
+    ```
+
+=== "Configuration File"
+
+    ```yaml
+    eth2.slashing-protection-pruning-enabled: true
+    ```
+
+Enables [slashing protection database pruning](../../HowTo/Configure-Slashing-Protection.md#prune-the-slashing-protection-database).
+
+The default is `false`.
+
+#### `slashing-protection-pruning-epochs-to-keep`
+
+=== "Syntax"
+
+    ```bash
+    --slashing-protection-pruning-epochs-to-keep=<LONG>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --slashing-protection-pruning-epochs-to-keep=12000
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_EPOCHS_TO_KEEP=12000
+    ```
+
+=== "Configuration File"
+
+    ```yaml
+    eth2.slashing-protection-pruning-epochs-to-keep: 12000
+    ```
+
+Number of epochs to keep when pruning the slashing protection database.
+
+The default is 10000.
+
+#### `slashing-protection-pruning-interval`
+
+=== "Syntax"
+
+    ```bash
+    --slashing-protection-pruning-interval=<LONG>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --slashing-protection-pruning-interval=48
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_INTERVAL=48
+    ```
+
+=== "Configuration File"
+
+    ```yaml
+    eth2.slashing-protection-pruning-interval: 48
+    ```
+
+Hours between slashing protection database pruning operations.
+
+The default is 24.
+
+#### `slashing-protection-pruning-slots-per-epoch`
+
+=== "Syntax"
+
+    ```bash
+    --slashing-protection-pruning-slots-per-epoch=<LONG>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --slashing-protection-pruning-slots-per-epoch=20
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_SLOTS_PER_EPOCH=20
+    ```
+
+=== "Configuration File"
+
+    ```yaml
+    eth2.slashing-protection-pruning-slots-per-epoch: 20
+    ```
+
+Number of slots per epoch to use when calculating the number of slots to prune in the slashing protection database.
+
+This typically does not need changing and defaults to 32, the value used on mainnet.
+
 ### `eth2 export`
 
 Exports the slashing protection database to a file.
