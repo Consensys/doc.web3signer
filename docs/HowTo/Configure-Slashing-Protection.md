@@ -35,7 +35,7 @@ The following example uses a Docker container.
 As an example, create the database with the default `postgres` user, and specify the password and
 database name.
 
-```no-lang
+```bash
 docker run -e POSTGRES_PASSWORD=password -e POSTGRES_USER=postgres -e POSTGRES_DB=web3signer -p 5432:5432 postgres
 ```
 
