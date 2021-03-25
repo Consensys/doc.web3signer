@@ -68,6 +68,7 @@ nav:
         - Monitor Nodes:
             - Use Metrics: HowTo/Monitor/Metrics.md
             - Configure Logging: HowTo/Monitor/Logging.md
+        - Deploy with Kubernetes: HowTo/Deploy-with-Kubernetes.md
     - Concepts:
         - Slashing protection: Concepts/Slashing-Protection.md
     - Tutorials:
