@@ -403,6 +403,41 @@ default, Web3Signer accepts access from `localhost` and `127.0.0.1`.
     To allow all hostnames, use `"*"`. We don't recommend allowing all hostnames for production
     environments.
 
+### swagger-ui-enabled
+
+=== "Syntax"
+
+    ```bash
+    --swagger-ui-enabled[=<BOOLEAN>]
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --swagger-ui-enabled
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    swagger-ui-enabled: true
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_SWAGGER-UI_ENABLED=true
+    ```
+
+Set to true to interact with APIs using [Swagger UI]. The default is `false`.
+
+Access Swagger UI at `http:<interface>:<port>/swagger-ui` where:
+
+* `interface` is specified using [`--http-listen-host`](#http-listen-host)
+* `port` is specified using [`http-listen-port`](#http-listen-port)
+
+The default location is `http://localhost:9000/swagger-ui`.
+
 ### tls-keystore-file
 
 === "Syntax"
@@ -559,3 +594,4 @@ Displays the version and exits.
 <!-- links -->
 [YAML files required to access keys]: ../Key-Configuration-Files.md
 [Web3Signer metrics]: ../../HowTo/Monitor/Metrics.md
+[Swagger UI]: https://swagger.io/tools/swagger-ui/
