@@ -6,14 +6,14 @@ description: Install Web3Signer from binary distribution
 
 ## Prerequisites
 
-* [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
 
 !!!important
     Web3Signer requires Java 11 or later releases.
 
 ## Install binaries
 
-Download the Web3Signer [packaged binaries](https://bintray.com/consensys/pegasys-repo/web3signer/_latestVersion#files).
+Download the Web3Signer [packaged binaries](https://cloudsmith.io/~consensys/repos/web3signer/packages/?q=tag%3Alatest).
 
 Unpack the downloaded files and change into the `web3signer-<release>` directory.
 

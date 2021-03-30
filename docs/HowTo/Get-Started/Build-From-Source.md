@@ -6,7 +6,7 @@ description: Building Web3Signer from source code
 
 ## Prerequisites
 
-* [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
 
 !!!important
     Web3Signer requires Java 11 or later releases.

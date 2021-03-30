@@ -499,22 +499,22 @@ Password file used to decrypt the keystore.
 === "Syntax"
 
     ```bash
-    --tls-allow-any-client
+    --tls-allow-any-client=<BOOLEAN>
     ```
 
 === "Configuration File"
 
     ```bash
-    tls-allow-any-client
+    tls-allow-any-client: true
     ```
 
 === "Environment Variable"
 
     ```bash
-    WEB3SIGNER_TLS_ALLOW_ANY_CLIENT
+    WEB3SIGNER_TLS_ALLOW_ANY_CLIENT=true
     ```
 
-Allows any client to connect.
+Allows any client to connect. The default is `false`.
 
 !!! important
     Cannot be used with [`--tls-allow-ca-clients`](#tls-allow-ca-clients)
