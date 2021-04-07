@@ -56,7 +56,7 @@ the `eth2deposit-cli-<version>/validator_keys` directory.
 !!! note
 
     If using Linux or macOS, we recommend setting the file ownership and permission to `400` for
-    the user running Web3Signer. 
+    the user running Web3Signer.
 
 ## 4. Create the key configuration file
 
@@ -105,7 +105,7 @@ teku --network=pyrmont \
 ```
 
 <!-- links -->
-[Teku installed]: https://docs.teku.pegasys.tech/en/latest/HowTo/Get-Started/Installation-Options/Install-Binaries/
+[Teku installed]: https://docs.teku.consensys.net/HowTo/Get-Started/Installation-Options/Install-Binaries/
 [Web3Signer installed]: ../HowTo/Get-Started/Install-Binaries.md
 [slashing protection database]: ../HowTo/Configure-Slashing-Protection.md
 [key configuration file]: ../Reference/Key-Configuration-Files.md

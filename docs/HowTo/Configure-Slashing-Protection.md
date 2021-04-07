@@ -147,6 +147,6 @@ Web3Signer prunes the database on startup, and then after each pruning interval.
 [run the PostgreSQL database in a container]: https://hub.docker.com/_/postgres/
 [Flyway]: https://flywaydb.org/documentation/
 [include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
-[Teku]: https://docs.teku.pegasys.tech/en/latest/HowTo/External-Signer/Use-External-Signer/
+[Teku]: https://docs.teku.consensys.net/HowTo/External-Signer/Use-External-Signer/
 [connect to the database]: https://jdbc.postgresql.org/documentation/head/connect.html
 [validator client interchange format]: https://eips.ethereum.org/EIPS/eip-3076
