@@ -129,8 +129,8 @@ _Object_: [Unsigned message object]
 
 #### Returns
 
-`result`: Object containing the sent unsigned [`Message`]
-object, and the [`Signature`] object.
+`result`: Object containing the sent unsigned [`Message`](https://spec.filecoin.io/#section-systems.filecoin_vm.message)
+object, and the [`Signature`](https://spec.filecoin.io/#section-systems.filecoin_vm.message.message-semantic-validation) object.
 
 !!! example
 
@@ -207,6 +207,4 @@ _Object_ : Signature object containing:
 
 <!-- links -->
 [message]: https://spec.filecoin.io/#section-systems.filecoin_vm.message
-[`message`]: https://spec.filecoin.io/#section-systems.filecoin_vm.message
 [Unsigned message object]: https://spec.filecoin.io/#section-systems.filecoin_vm.message
-[`Signature`]: https://spec.filecoin.io/#section-systems.filecoin_vm.message.message-semantic-validation
