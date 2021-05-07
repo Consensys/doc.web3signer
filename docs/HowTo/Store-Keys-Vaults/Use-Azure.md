@@ -44,7 +44,7 @@ loading Ethereum 2.0 signing keys]:
 <!-- links -->
 [configuring the signing key configuration file]: ../Use-Signing-Keys.md#using-key-configuration-files
 [bulk loading Ethereum 2.0 signing keys]: ../Use-Signing-Keys.md#bulk-loading-ethereum-20-keys
-[Register Web3Signer as an application]: https://docs.microsoft.com/en-us/azure/key-vault/general/authentication-fundamentals
+[Register Web3Signer as an application]: https://docs.microsoft.com/en-us/azure/key-vault/general/authentication
 [add a signing key in Azure Key Vault]: https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal#add-a-secret-to-key-vault
 [Client secret]: https://docs.microsoft.com/en-us/azure/key-vault/secrets/about-secrets
 [Azure Active Directory managed identity]: https://docs.microsoft.com/en-us/azure/app-service/overview-managed-identity?tabs=dotnet
