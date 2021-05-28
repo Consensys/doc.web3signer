@@ -57,7 +57,7 @@ see #{your issue number} -->
 <!-- Steps to follow to review and test your changes.
 Add links to preview the pages changes here.
 Link format is https://pegasys-web3signer--{your PR number}.org.readthedocs.build/en/{your PR number}/
-Where {your PR number} must be replaced by the number of this PR, for instance 123
+where {your PR number} must be replaced by the number of this PR (for example, 123).
 -->
 
 ## Screenshots / recording
