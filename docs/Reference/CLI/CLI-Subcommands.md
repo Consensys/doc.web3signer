@@ -232,6 +232,52 @@ Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or
 
 Name of the vault to access. Sub-domain of vault.azure.net.
 
+#### network
+
+=== "Syntax"
+
+    ```bash
+    --network=<NETWORK>
+    ```
+
+=== "Command Line"
+
+    ```bash
+    --network=mainnet
+    ```
+
+=== "Environment Variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_NETWORK=mainnet
+    ```
+
+=== "Configuration File"
+
+    ```bash
+    network: "mainnet"
+    ```
+
+Predefined network configuration.
+Accepts a predefined network name, or file path or URL to a YAML configuration file. See the
+[Ethereum 2.0 specification] for examples.
+
+The default is `mainnet`.
+
+!!! important
+
+    If Teku connects to a network other than `mainnet`, then this option must be specified, and it
+    must match the [`--network` value of the connected Teku client](https://docs.teku.consensys.net/HowTo/External-Signer/Use-External-Signer/).
+
+Possible values are:
+
+| Network   | Chain   | Type       | Description                                      |
+|:----------|:--------|:-----------|:-------------------------------------------------|
+| `mainnet` | Eth 2.0 | Production | Main network.                                    |
+| `minimal` | Eth 2.0 | Test       | Used for local testing and development networks. |
+| `pyrmont` | Eth 2.0 | Test       | Multi-client testnet.                            |
+| `prater`  | Eth 2.0 | Test       | Multi-client testnet.                            |
+
 #### `slashing-protection-db-password`
 
 === "Syntax"
@@ -573,3 +619,4 @@ Predefined network configuration. Accepts a predefined network name. The default
 [include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
 [slashing protection]: ../../Concepts/Slashing-Protection.md
 [validator client interchange format]: https://eips.ethereum.org/EIPS/eip-3076
+[Ethereum 2.0 specification]: https://github.com/ethereum/eth2.0-specs/tree/master/configs

@@ -36,7 +36,9 @@ In the command line:
 * Specify the [subcommand] to indicate which signing mode to use. Valid subcommands are `eth1`,
     `eth2`, and `filecoin`. You can only specify one signing mode when starting Web3Signer.
 
-Ethereum 2.0 [slashing protection] is enabled by default. You therefore must specify
+## Ethereum 2.0 considerations
+
+Ethereum 2.0 [slashing protection] is enabled by default, and you must specify
 the details the [slashing protection database], or disable slashing protection using the
 [`--slashing-protection-db-enabled`](../../Reference/CLI/CLI-Subcommands.md#slashing-protection-enabled)
 command line option.
@@ -46,6 +48,12 @@ command line option.
      Web3Signer also allows you to [bulk load Ethereum 2.0 signing keys] stored in Azure Key Vault.
 
 Start the client, for example [Teku] by specifying the Web3Signer details.
+
+!!! important
+
+    If Teku connects to a network other than `mainnet`, then the
+    [`--network`](../../Reference/CLI/CLI-Subcommands.md#network) option must be specified, and it
+    must match the network used by the Teku client.
 
 <!-- Links -->
 [Signing key configuration files]: ../Use-Signing-Keys.md
