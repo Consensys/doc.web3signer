@@ -266,10 +266,8 @@ The default is `mainnet`.
 
 !!! important
 
-    This option must match the
-    [`--network` value of the connected Teku client](https://docs.teku.consensys.net/HowTo/External-Signer/Use-External-Signer/).
-
-    If Teku connects to a network other than `mainnet`, then this option must be specified.
+    If Teku connects to a network other than `mainnet`, then this option must be specified, and it
+    must match the [`--network` value of the connected Teku client](https://docs.teku.consensys.net/HowTo/External-Signer/Use-External-Signer/).
 
 Possible values are:
 

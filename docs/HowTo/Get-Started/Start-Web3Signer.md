@@ -51,11 +51,9 @@ Start the client, for example [Teku] by specifying the Web3Signer details.
 
 !!! important
 
-    The [`--network`](../../Reference/CLI/CLI-Subcommands.md#network) option must match the
-    network used by the Teku client.
-
     If Teku connects to a network other than `mainnet`, then the
-    [`--network`](../../Reference/CLI/CLI-Subcommands.md#network) option must be specified.
+    [`--network`](../../Reference/CLI/CLI-Subcommands.md#network) option must be specified, and it
+    must match the network used by the Teku client.
 
 <!-- Links -->
 [Signing key configuration files]: ../Use-Signing-Keys.md
