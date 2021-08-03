@@ -56,8 +56,8 @@ the PostgreSQL command line tool.
 !!! note
 
     If loading each schema individually, then ensure you load them in order. For example
-    `V1_initial.sql`, `V2__removeUniqueConstraints.sql`, then `V3__addLowWatermark.sql`. Use the
-    [Flyway] migration tool to automatically load them in order.
+    `V1_initial.sql`, `V2__removeUniqueConstraints.sql`, then `V3__addLowWatermark.sql` (followed by all Vx__.sql files).
+    Use the [Flyway] migration tool to automatically load them in order.
 
 === "Flyway DB migration tool"
 
