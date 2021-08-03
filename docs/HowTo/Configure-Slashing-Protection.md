@@ -44,7 +44,7 @@ This example uses `-p 5432:5432` to bind the default Postgres database port to t
 
 !!! tip
 
-    Web3Signer uses HikariCP to manage database connections, and uses the default configuration values. The defaults perform
+    Web3Signer uses [HikariCP] to manage database connections, and uses the default configuration values. The defaults perform
     well in most deployments, but you can be override them with the
     [`slashing-protection-db-pool-configuration-file`](../Reference/CLI/CLI-Subcommands.md#slashing-protection-db-pool-configuration-file) option.
 
@@ -153,3 +153,4 @@ Web3Signer prunes the database on startup, and then after each pruning interval.
 [Teku]: https://docs.teku.consensys.net/HowTo/External-Signer/Use-External-Signer/
 [connect to the database]: https://jdbc.postgresql.org/documentation/head/connect.html
 [validator client interchange format]: https://eips.ethereum.org/EIPS/eip-3076
+[HikariCP]: https://github.com/brettwooldridge/HikariCP

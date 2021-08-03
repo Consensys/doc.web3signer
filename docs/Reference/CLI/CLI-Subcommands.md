@@ -332,7 +332,7 @@ The password to connect to the slashing protection database.
     eth2.slashing-protection-db-pool-configuration-file: "/Users/me/config/HikariConfig"
     ```
 
-[Hikari connection pool configuration file](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby).
+[HikariCP connection pool configuration file](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby).
 
 Web3Signer uses HikariCP to manage database connections, and uses the default configuration values. The defaults perform
 well in most deployments, but you can be override them with this option.
