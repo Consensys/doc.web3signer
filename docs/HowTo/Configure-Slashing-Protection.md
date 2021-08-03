@@ -28,7 +28,7 @@ The steps to configure slashing protection are:
 [Install the PostgreSQL database], or use [Docker] to [run the PostgreSQL database in a container].
 The following example uses a Docker container.
 
-!!! note
+!!! important
 
     Web3Signer only supports PostgreSQL for creating the slashing protection database.
 
@@ -39,11 +39,14 @@ database name.
 docker run -e POSTGRES_PASSWORD=password -e POSTGRES_USER=postgres -e POSTGRES_DB=web3signer -p 5432:5432 postgres
 ```
 
-!!! note
+This example uses `-p 5432:5432` to bind the default Postgres database port to the host's port. This allows you to
+[connect to the database] using the `jdbc:postgresql://localhost/web3signer` URL.
 
-    In the example we use `-p 5432:5432` to bind the default Postgres database port to the host's
-    port. This allows you to [connect to the database] using the
-    `jdbc:postgresql://localhost/web3signer` URL.
+!!! tip
+
+    Web3Signer uses HikariCP to manage database connections, and uses the default configuration values. The defaults perform
+    well in most deployments, but you can be override them with the
+    [`slashing-protection-db-pool-configuration-file`](../Reference/CLI/CLI-Subcommands.md#slashing-protection-db-pool-configuration-file) option.
 
 ## Load the database schema
 
