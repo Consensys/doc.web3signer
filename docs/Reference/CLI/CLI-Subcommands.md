@@ -317,19 +317,19 @@ The password to connect to the slashing protection database.
 === "Command Line"
 
     ```bash
-    --slashing-protection-db-pool-configuration-file=/Users/me/config/HikariConfig
+    --slashing-protection-db-pool-configuration-file=/Users/me/config/HikariConfig.properties
     ```
 
 === "Environment Variable"
 
     ```bash
-    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_POOL_CONFIGURATION_FILE=/Users/me/config/HikariConfig
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_POOL_CONFIGURATION_FILE=/Users/me/config/HikariConfig.properties
     ```
 
 === "Configuration File"
 
     ```bash
-    eth2.slashing-protection-db-pool-configuration-file: "/Users/me/config/HikariConfig"
+    eth2.slashing-protection-db-pool-configuration-file: "/Users/me/config/HikariConfig.properties"
     ```
 
 [HikariCP connection pool configuration file](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby).
