@@ -91,22 +91,21 @@ Use the private key stored in Azure Key Vault. Supports two signing options:
     type: "azure-secret"
     keyType: "BLS"
     authenticationMode: "USER_ASSIGNED_MANAGED_IDENTITY"
-    clientId: "950faa5b-b029-3b23-28ee2b2e8a11"
-    tenantId: "34255fb0-379b-4a1a-bd47-d211ab86df81"
+    clientId: "***"
+    tenantId: "***"
     vaultName: "AzureKeyVault"
-    secretName: "3ff2254386c82ffea989e2adf28a2929f5c853165a4196158c7f3a2ecca40f35"
+    secretName: "SecretName"
     ```
 
 === "azure-key example"
 
     ```
     type: "azure-key"
-    keyType: "BLS"
-    clientId: "65efaa5b-4029-4b54-98bb2e2e8a11"
-    clientSecret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
-    tenantId: "34255fb0-379b-4a1a-bd47-d211ab86df81"
+    clientId: "***"
+    clientSecret: "***"
+    tenantId: "***"
     vaultName: "AzureKeyVault"
-    secretName: "3ff2254386c82ffea989e2adf28a2929f5c853165a4196158c7f3a2ecca40f35"
+    keyName: "KeyName"
     ```
 
 | Key                     | Description                           |
@@ -118,7 +117,8 @@ Use the private key stored in Azure Key Vault. Supports two signing options:
 | **clientSecret**        | Secret used to access the vault. Required for the `CLIENT_SECRET` authentication mode.|
 | **tenantId**            | The tenant ID used to authenticate with Azure Key Vault. |
 | **vaultName**           | Name of the vault to access. Sub-domain of vault.azure.net. |
-| **secretName**          | Name of the key stored in the Azure Key Vault.  |
+| **secretName**          | Name of the key stored in the Azure Key Vault under Secrets settings. Required when using the `azure-secret` type. |
+| **keyName**             | Name of the key stored in the Azure Key Vault under Keys settings. Required when using the `azure-key` type. |
 
 ## YubiHSM 2
 
