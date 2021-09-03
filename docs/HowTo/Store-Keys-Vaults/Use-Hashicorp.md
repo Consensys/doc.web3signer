@@ -80,7 +80,7 @@ After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-sta
         vault kv put secret/web3signerSigningKey value=17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
         ```
 
-## Create the Known Servers File
+## Create the known servers file
 
 The known servers file is required if TLS is enabled, to disable TLS set [`tlsEnabled`](../../Reference/Key-Configuration-Files.md#hashicorp-vault)
 to `false`.

@@ -1,5 +1,5 @@
 ---
-title: Filecoin JSON RPC Methods
+title: Filecoin JSON RPC methods
 ---
 
 # Filecoin API methods
@@ -11,7 +11,7 @@ The Filecoin JSON RPC methods can be accessed at `http://<HOST>:<PORT>/rpc/v1/fi
 
 The default location is `http://127.0.0.1:9000/rpc/v1/filecoin`.
 
-## Filecoin Wallet APIs
+## Filecoin wallet APIs
 
 ### `Filecoin.WalletHas`
 
