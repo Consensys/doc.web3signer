@@ -6,7 +6,7 @@ description: Web3Signer command line interface reference
 
 This reference describes the syntax of the Web3Signer Command Line Interface (CLI) options.
 
-## Specifying Options
+## Specifying options
 
 Web3Signer options can be specified:
 

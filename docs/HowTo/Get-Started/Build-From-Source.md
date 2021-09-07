@@ -15,7 +15,7 @@ description: Building Web3Signer from source code
 
 ## Installation on Linux / Unix / macOS
 
-### Clone the Web3Signer Repository
+### Clone the Web3Signer repository
 
 Clone the `Consensys/web3signer` repository:
 

@@ -65,21 +65,21 @@ nav:
         - Use a configuration file: HowTo/Use-Configuration-File.md
         - Configure slashing protection: HowTo/Configure-Slashing-Protection.md
         - Configure TLS: HowTo/Configure-TLS.md
-        - Monitor Nodes:
-            - Use Metrics: HowTo/Monitor/Metrics.md
-            - Configure Logging: HowTo/Monitor/Logging.md
+        - Monitor nodes:
+            - Use metrics: HowTo/Monitor/Metrics.md
+            - Configure logging: HowTo/Monitor/Logging.md
         - Deploy with Kubernetes: HowTo/Deploy-with-Kubernetes.md
     - Concepts:
         - Slashing protection: Concepts/Slashing-Protection.md
     - Tutorials:
         - Load ETH 2.0 keystores: Tutorials/Launchpad-Keystores.md
     - Reference:
-        - Command Line:
+        - Command line:
             - Options: Reference/CLI/CLI-Syntax.md
             - Subcommands: Reference/CLI/CLI-Subcommands.md
         - REST API methods: Reference/Rest.md
         - Filecoin JSON API methods: Reference/Filecoin-API-Methods.md
-        - Key Configuration file parameters: Reference/Key-Configuration-Files.md
+        - Key configuration file parameters: Reference/Key-Configuration-Files.md
         - Security disclosure policy: Reference/Responsible-Disclosure.md
 
 markdown_extensions:
