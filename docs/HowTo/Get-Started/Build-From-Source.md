@@ -20,7 +20,7 @@ description: Building Web3Signer from source code
 Clone the `Consensys/web3signer` repository:
 
 ```bash
-git clone https://github.com/Consensys/web3signer.git
+git clone --recursive https://github.com/Consensys/web3signer.git
 ```
 
 ### Build Web3Signer
@@ -63,7 +63,7 @@ bin/web3signer --help
 Clone the `Consensys/web3signer` repository:
 
 ```bat
-git clone https://github.com/Consensys/web3signer.git
+git clone --recursive https://github.com/Consensys/web3signer.git
 ```
 
 ### Build Web3Signer
