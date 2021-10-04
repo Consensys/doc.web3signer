@@ -429,7 +429,6 @@ default, Web3Signer accepts access from `localhost` and `127.0.0.1`.
     swagger-ui-enabled: true
     ```
 
-
 Set to true to interact with APIs using [Swagger UI]. The default is `false`.
 
 Access Swagger UI at `http:<interface>:<port>/swagger-ui` where:
