@@ -13,7 +13,7 @@ and attestation signed by a validator.
 
 Slashing protection is enabled by default, and you are responsible for [creating and maintaining]
 the required PostgreSQL database, or you can disable slashing protection by setting
-[`--slashing-protection-db-enabled`](../Reference/CLI/CLI-Subcommands.md#slashing-protection-enabled)
+[`--slashing-protection-enabled`](../Reference/CLI/CLI-Subcommands.md#slashing-protection-enabled)
 to `false`.
 
 !!! note

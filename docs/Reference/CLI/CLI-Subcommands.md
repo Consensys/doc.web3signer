@@ -65,19 +65,19 @@ To view the command line help for the subcommands:
     --azure-vault-enabled=<BOOLEAN>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --azure-vault-enabled=true
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_AZURE_VAULT_ENABLED=true
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
     eth2.azure-vault-enabled: true
@@ -93,19 +93,19 @@ Allow Web3Signer to bulk load all keys from the specified Azure Vault.
     --azure-client-id=<STRING>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --azure-client-id=87efaa5b-4029-4b54-98bb2e2e8a11
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_AZURE_CLIENT_ID=87efaa5b-4029-4b54-98bb2e2e8a11
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
     eth2.azure-client-id: "87efaa5b-4029-4b54-98bb2e2e8a11"
@@ -124,19 +124,19 @@ Required when [`--azure-vault-auth-mode`](#azure-vault-auth-mode) is `CLIENT_SEC
     --azure-client-secret=<STRING>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --azure-client-secret=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_AZURE_CLIENT_SECRET=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
     eth2.azure-client-secret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
@@ -152,19 +152,19 @@ The secret used to access the vault along with the ID specified in [`azure-clien
     --azure-tenant-id=<STRING>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --azure-tenant-id=34255fb0-379b-4a1a-bd47-d211ab86df81
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_AZURE_TENANT_ID=34255fb0-379b-4a1a-bd47-d211ab86df81
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
     eth2.azure-tenant-id: "34255fb0-379b-4a1a-bd47-d211ab86df81"
@@ -180,19 +180,19 @@ The tenant ID of the Azure Portal instance being used.
     --azure-vault-auth-mode=<STRING>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --azure-vault-auth-mode=USER_ASSIGNED_MANAGED_IDENTITY
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_AZURE_VAULT_AUTH_MODE=USER_ASSIGNED_MANAGED_IDENTITY
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
     eth2.azure-vault-auth-mode: "USER_ASSIGNED_MANAGED_IDENTITY"
@@ -212,19 +212,19 @@ Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or
     --azure-vault-name=<STRING>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --azure-vault-name=AzureKeyVault
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_AZURE_VAULT_NAME=AzureKeyVault
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
     eth2.azure-vault-name: "AzureKeyVault"
@@ -240,19 +240,19 @@ Name of the vault to access. Sub-domain of vault.azure.net.
     --network=<NETWORK>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --network=mainnet
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_NETWORK=mainnet
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
     network: "mainnet"
@@ -286,19 +286,19 @@ Possible values are:
     --slashing-protection-db-password=<PASSWORD>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --slashing-protection-db-password=changeme
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_PASSWORD=change
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
     eth2.slashing-protection-db-password: "changeme"
@@ -314,19 +314,19 @@ The password to connect to the slashing protection database.
     --slashing-protection-db-pool-configuration-file=<FILE>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --slashing-protection-db-pool-configuration-file=/Users/me/config/HikariConfig.properties
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_POOL_CONFIGURATION_FILE=/Users/me/config/HikariConfig.properties
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
     eth2.slashing-protection-db-pool-configuration-file: "/Users/me/config/HikariConfig.properties"
@@ -345,19 +345,19 @@ well in most deployments, but you can be override them with this option.
     --slashing-protection-db-url=<JDBC_URL>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --slashing-protection-db-url=jdbc:postgresql://localhost/web3signer
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_URL=jdbc:postgresql://localhost/web3signer
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
     eth2.slashing-protection-db-url: "jdbc:postgresql://localhost/web3signer"
@@ -378,19 +378,19 @@ The Java Database Connectivity (JDBC) URL of the slashing protection database.
     --slashing-protection-db-username=<USERNAME>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --slashing-protection-db-username=postgres
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_USERNAME=postgres
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
     eth2.slashing-protection-db-username: "postgres"
@@ -403,25 +403,25 @@ The username to use when connecting to the slashing protection database.
 === "Syntax"
 
     ```bash
-    --slashing-protection-db-enabled=<BOOLEAN>
+    --slashing-protection-enabled=<BOOLEAN>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
-    --slashing-protection-db-enabled=false
+    --slashing-protection-enabled=false
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
-    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_ENABLED=false
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_ENABLED=false
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
-    eth2.slashing-protection-db-enabled: false
+    eth2.slashing-protection-enabled: false
     ```
 
 Enables Web3Signer [slashing protection]. If `true`, then all signing operations are validated against
@@ -437,19 +437,19 @@ The default is `true`.
     --slashing-protection-pruning-enabled=<BOOLEAN>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --slashing-protection-pruning-enabled=true
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_ENABLED=true
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```yaml
     eth2.slashing-protection-pruning-enabled: true
@@ -467,19 +467,19 @@ The default is `false`.
     --slashing-protection-pruning-epochs-to-keep=<LONG>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --slashing-protection-pruning-epochs-to-keep=12000
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_EPOCHS_TO_KEEP=12000
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```yaml
     eth2.slashing-protection-pruning-epochs-to-keep: 12000
@@ -497,19 +497,19 @@ The default is 10000.
     --slashing-protection-pruning-interval=<LONG>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --slashing-protection-pruning-interval=48
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_INTERVAL=48
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```yaml
     eth2.slashing-protection-pruning-interval: 48
@@ -527,19 +527,19 @@ The default is 24.
     --slashing-protection-pruning-slots-per-epoch=<LONG>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --slashing-protection-pruning-slots-per-epoch=20
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_SLOTS_PER_EPOCH=20
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```yaml
     eth2.slashing-protection-pruning-slots-per-epoch: 20
@@ -562,19 +562,19 @@ Exports the slashing protection database to a file.
     --to=<FILE>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --to=/Users/me/my_node/interchange.json
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_EXPORT_TO=/Users/me/my_node/interchange.json
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
     eth2.export.to: /Users/me/my_node/interchange.json
@@ -595,19 +595,19 @@ Import a slashing protection database from a file.
     --from=<FILE>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --from=/Users/me/my_node/interchange.json
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_ETH2_IMPORT_FROM=/Users/me/my_node/interchange.json
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
     eth2.import.from: /Users/me/my_node/interchange.json
@@ -626,19 +626,19 @@ The file to import the slashing protection database from. The file must be forma
     --network=<NETWORK>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --network=TESTNET
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_FILECOIN_NETWORK=TESTNET
     ```
 
-=== "Configuration File"
+=== "Configuration file"
 
     ```bash
     filecoin.network: "TESTNET"
