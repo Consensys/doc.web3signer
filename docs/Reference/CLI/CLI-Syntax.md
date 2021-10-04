@@ -46,7 +46,7 @@ The default is `none`.
     --config-file=/home/me/me_node/config.yaml
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_CONFIG_FILE=/home/me/me_node/config.yaml
@@ -60,22 +60,22 @@ The default is `none`.
     --data-path=<PATH>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --data-path=/Users/me/my_node/data
     ```
 
-=== "Configuration File"
-
-    ```bash
-    data-path: "/Users/me/my_node/data"
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_DATA_PATH=/Users/me/my_node/data
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    data-path: "/Users/me/my_node/data"
     ```
 
 Directory in which to store temporary files.
@@ -88,22 +88,22 @@ Directory in which to store temporary files.
     --key-store-path=<PATH>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --key-store-path=/Users/me/keys
     ```
 
-=== "Configuration File"
-
-    ```bash
-    key-store-path: "/Users/me/keys"
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_KEY_STORE_PATH=/Users/me/keys
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    key-store-path: "/Users/me/keys"
     ```
 
 Path to the directory containing the [YAML files required to access keys].
@@ -116,22 +116,22 @@ Path to the directory containing the [YAML files required to access keys].
     -l, --logging=<LEVEL>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --logging=DEBUG
     ```
 
-=== "Configuration File"
-
-    ```bash
-    logging: "DEBUG"
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_LOGGING=DEBUG
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    logging: "DEBUG"
     ```
 
 Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, `TRACE`,
@@ -145,22 +145,22 @@ Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, 
     --http-listen-host=<httpListenHost>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --http-listen-host=8.8.8.8
     ```
 
-=== "Configuration File"
-
-    ```bash
-    http-listen-host: "8.8.8.8"
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_HTTP_LISTEN_HOST=8.8.8.8
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    http-listen-host: "8.8.8.8"
     ```
 
 Host on which HTTP listens. Default is `localhost`.
@@ -173,22 +173,22 @@ Host on which HTTP listens. Default is `localhost`.
     --http-listen-port=<httpListenPort>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --http-listen-port=6174
     ```
 
-=== "Configuration File"
-
-    ```bash
-    http-listen-port: 6174
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_HTTP_LISTEN_PORT=6174
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    http-listen-port: 6174
     ```
 
 Port on which HTTP listens. The default is 9000.
@@ -201,22 +201,22 @@ Port on which HTTP listens. The default is 9000.
     --http-host-allowlist=<hostname>[,<hostname>...]... or "*"
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --http-host-allowlist=medomain.com,meotherdomain.com
     ```
 
-=== "Configuration File"
-
-    ```bash
-    http-host-allowlist: ["medomain.com", "meotherdomain.com"]
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_HTTP_HOST_ALLOWLIST=medomain.com,meotherdomain.com
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    http-host-allowlist: ["medomain.com", "meotherdomain.com"]
     ```
 
 A comma-separated list of hostnames to allow access to the REST APIs. By default, Web3Signer
@@ -235,22 +235,22 @@ accepts access from `localhost` and `127.0.0.1`.
     --idle-connection-timeout-seconds=<TIMEOUT>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --idle-connection-timeout-seconds=60
     ```
 
-=== "Configuration File"
-
-    ```bash
-    idle-connection-timeout-seconds: 60
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_IDLE_CONNECTION_TIMEOUT_SECONDS=60
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    idle-connection-timeout-seconds: 60
     ```
 
 Number of seconds to wait before terminating an idle connection. Defaults to 30.
@@ -263,22 +263,22 @@ Number of seconds to wait before terminating an idle connection. Defaults to 30.
     --metrics-enabled[=<BOOLEAN>]
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --metrics-enabled=true
     ```
 
-=== "Configuration File"
-
-    ```bash
-    metrics-enabled: true
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_METRICS_ENABLED=true
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    metrics-enabled: true
     ```
 
 Enables the metrics exporter. The default is `false`.
@@ -291,22 +291,22 @@ Enables the metrics exporter. The default is `false`.
     --metrics-host=<HOST>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --metrics-host=186.10.10.1
     ```
 
-=== "Configuration File"
-
-    ```bash
-    metrics-host: "186.10.10.1"
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_METRICS_HOST=186.10.10.1
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    metrics-host: "186.10.10.1"
     ```
 
 The host on which [Prometheus](https://prometheus.io/) accesses metrics.
@@ -320,22 +320,22 @@ The default is `127.0.0.1`.
     --metrics-port=<PORT>
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --metrics-port=6174
     ```
 
-=== "Configuration File"
-
-    ```bash
-    metrics-port: 6174
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_METRICS_PORT=6174
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    metrics-port: 6174
     ```
 
 The port (TCP) on which [Prometheus](https://prometheus.io/) accesses
@@ -349,22 +349,22 @@ metrics. The default is `9001`.
     --metrics-category=<metrics-category>[,metrics-category...]...
     ```
 
-=== "Command"
+=== "Example"
 
     ```bash
     --metrics-category=HTTP,SIGNING,JVM
     ```
 
-=== "Configuration File"
-
-    ```bash
-    metrics-category: ["HTTP", "SIGNING", "JVM"]
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_METRICS_CATEGORY=HTTP,SIGNING,JVM
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    metrics-category: ["HTTP", "SIGNING", "JVM"]
     ```
 
 A comma-separated list of categories for which to track metrics. The defaults are `HTTP`, `SIGNING`, `FILECOIN`, `ETH2_SLASHING_PROTECTION`, `JVM`, `PROCESS`.
@@ -377,22 +377,22 @@ A comma-separated list of categories for which to track metrics. The defaults ar
     --metrics-host-allowlist=<hostname>[,<hostname>...]... or "*"
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --metrics-host-allowlist=medomain.com,meotherdomain.com
     ```
 
-=== "Configuration File"
-
-    ```bash
-    metrics-host-allowlist: ["medomain.com", "meotherdomain.com"]
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_METRICS_HOST_ALLOWLIST=medomain.com,meotherdomain.com
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    metrics-host-allowlist: ["medomain.com", "meotherdomain.com"]
     ```
 
 A comma-separated list of hostnames to allow access to the [Web3Signer metrics]. By
@@ -411,22 +411,22 @@ default, Web3Signer accepts access from `localhost` and `127.0.0.1`.
     --swagger-ui-enabled[=<BOOLEAN>]
     ```
 
-=== "Command Line"
+=== "Example"
 
     ```bash
     --swagger-ui-enabled
     ```
 
-=== "Configuration File"
-
-    ```bash
-    swagger-ui-enabled: true
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_SWAGGER-UI_ENABLED=true
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    swagger-ui-enabled: true
     ```
 
 Set to true to interact with APIs using [Swagger UI]. The default is `false`.
@@ -446,22 +446,22 @@ The default location is `http://localhost:9000/swagger-ui`.
     --tls-keystore-file=<keystoreFile>
     ```
 
-=== "Command"
+=== "Example"
 
     ```bash
     --tls-keystore-file=/Users/me/my_node/certificate.pfx
     ```
 
-=== "Configuration File"
-
-    ```bash
-    tls-keystore-file: "/Users/me/my_node/certificate.pfx"
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_TLS_KEYSTORE_FILE=/Users/me/my_node/certificate.pfx
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    tls-keystore-file: "/Users/me/my_node/certificate.pfx"
     ```
 
 PKCS #12 formatted keystore. Used to enable TLS for [client connections](../../HowTo/Configure-TLS.md).
@@ -474,22 +474,22 @@ PKCS #12 formatted keystore. Used to enable TLS for [client connections](../../H
     --tls-keystore-password-file=<passwordFile>
     ```
 
-=== "Command"
+=== "Example"
 
     ```bash
     --tls-keystore-password-file=/Users/me/my_node/password.txt
     ```
 
-=== "Configuration File"
-
-    ```bash
-    tls-keystore-password-file: "/Users/me/my_node/password.txt"
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_TLS_KEYSTORE_PASSWORD_FILE=/Users/me/my_node/password.txt
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    tls-keystore-password-file: "/Users/me/my_node/password.txt"
     ```
 
 Password file used to decrypt the keystore.
@@ -502,16 +502,22 @@ Password file used to decrypt the keystore.
     --tls-allow-any-client=<BOOLEAN>
     ```
 
-=== "Configuration File"
+=== "Example"
 
     ```bash
-    tls-allow-any-client: true
+    --tls-allow-any-client=true
     ```
 
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_TLS_ALLOW_ANY_CLIENT=true
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    tls-allow-any-client: true
     ```
 
 Allows any client to connect. The default is `false`.
@@ -528,22 +534,22 @@ Allows any client to connect. The default is `false`.
     --tls-known-clients-file=<clientsFile>
     ```
 
-=== "Command"
+=== "Example"
 
     ```bash
     --tls-known-clients-file=/Users/me/my_node/knownClients.txt
     ```
 
-=== "Configuration File"
-
-    ```bash
-    tls-known-clients-file: "/Users/me/my_node/knownClients.txt"
-    ```
-
-=== "Environment Variable"
+=== "Environment variable"
 
     ```bash
     WEB3SIGNER_TLS_KNOWN_CLIENTS_FILE=/Users/me/my_node/knownClients.txt
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    tls-known-clients-file: "/Users/me/my_node/knownClients.txt"
     ```
 
 File containing the Common Names and SHA-256 fingerprints
@@ -557,16 +563,16 @@ of [authorized clients](../../HowTo/Configure-TLS.md#create-the-known-clients-fi
     --tls-allow-ca-clients
     ```
 
-=== "Configuration File"
-
-    ```bash
-    tls-allow-ca-clients
-    ```
-
 === "Environment Variable"
 
     ```bash
     WEB3SIGNER_TLS_ALLOW_CA_CLIENTS
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    tls-allow-ca-clients
     ```
 
 Allows clients signed with trusted CA certificates to connect.
