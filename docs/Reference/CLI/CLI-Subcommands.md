@@ -429,6 +429,37 @@ historical data before signing.
 
 The default is `true`.
 
+#### `slashing-protection-pruning-at-boot-enabled`
+
+=== "Syntax"
+
+    ```bash
+    --slashing-protection-pruning-at-boot-enabled=<BOOLEAN>
+    ```
+
+=== "Example"
+
+    ```bash
+    --slashing-protection-pruning-at-boot-enabled=false
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_AT_BOOT_ENABLED=false
+    ```
+
+=== "Configuration file"
+
+    ```yaml
+    eth2.slashing-protection-pruning-at-boot-enabled: false
+    ```
+
+When set to `false`, [slashing protection database pruning](../../HowTo/Configure-Slashing-Protection.md#prune-the-slashing-protection-database)
+is disabled at boot and only takes place at the scheduled [pruning intervals](#slashing-protection-pruning-interval).
+
+The default is `true`.
+
 #### `slashing-protection-pruning-enabled`
 
 === "Syntax"
