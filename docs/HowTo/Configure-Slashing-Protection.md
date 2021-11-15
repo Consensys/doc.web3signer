@@ -129,20 +129,13 @@ protection database.
 You can enable periodic pruning of the slashing protection database to manage its size.
 
 Enable pruning by setting [`--slashing-protection-pruning-enabled`](../Reference/CLI/CLI-Subcommands.md#slashing-protection-pruning-enabled) to `true`.
+
+By default, Web3Signer prunes the database on startup, and then after each pruning interval.
+You can disable pruning at startup and start pruning after the pruning interval by setting [`--slashing-protection-pruning-at-boot-enabled`](../Reference/CLI/CLI-Subcommands.md#slashing-protection-pruning-at-boot-enabled) to `false`.
+
 You can include additional optional pruning configuration options. For example, run:
 
 !!! example
-
-    ```bash
-    web3signer eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password --slashing-protection-pruning-enabled=true --slashing-protection-pruning-epochs-to-keep=5000 --slashing-protection-pruning-interval=18
-    ```
-Web3Signer prunes the database on startup, and then after each pruning interval.
-
-You can also have Web3Signer not prune the database on startup, but start pruning after each pruning interval
-by setting [`--slashing-protection-pruning-at-boot-enabled`](../Reference/CLI/CLI-Subcommands.md#slashing-protection-pruning-at-boot-enabled) to `false`.
-
-!!! example
-
     ```bash
     web3signer eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password --slashing-protection-pruning-enabled=true --slashing-protection-pruning-at-boot-enabled=false --slashing-protection-pruning-epochs-to-keep=5000 --slashing-protection-pruning-interval=18
     ```
