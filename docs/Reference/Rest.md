@@ -34,7 +34,7 @@ Signs data for the ETH2 BLS public key specified as part of the URL and returns 
 
 ### `/eth/v1/keystores`
 
-Lists all validating public keys known to and decrypted by this keymanager binary.
+Lists all validating public keys known to and decrypted by this keystore binary.
 
 ### `/reload`
 
