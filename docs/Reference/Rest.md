@@ -162,7 +162,7 @@ EIP-3076: Slashing Protection Interchange Format
 
 #### Delete keys
 
-Deletes all keys from `request.pubkeys` that are known to the keymanager and exist in its persistent storage.
+Deletes all keys from `request.pubkeys` that are known to the key manager and exist in its persistent storage.
 
 ##### Parameters
 
