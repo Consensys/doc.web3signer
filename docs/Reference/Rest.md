@@ -91,6 +91,9 @@ Refer to the [API documentation](https://consensys.github.io/web3signer/web3sign
 
 ### `/eth/v1/keystores` methods
 
+These methods are specific to the key manager API.
+To use the methods, first run Web3Signer with the [`--key-manager-api-enabled` subcommand](CLI/CLI-Subcommands.md#key-manager-api-enabled).
+
 #### List keys
 
 Lists all validating public keys known to and decrypted by this keystore binary.

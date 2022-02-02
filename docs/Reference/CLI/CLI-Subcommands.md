@@ -232,7 +232,35 @@ Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or
 
 Name of the vault to access. Sub-domain of vault.azure.net.
 
-#### network
+#### `key-manager-api-enabled`
+
+=== "Syntax"
+
+    ```bash
+    --key-manager-api-enabled=<BOOLEAN>
+    ```
+
+=== "Example"
+
+    ```bash
+    --key-manager-api-enabled=true
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_KEY_MANAGER_API_ENABLED=true
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.key-manager-api-enabled: true
+    ```
+
+Enables the [key-manager-api methods](../Rest.md#ethv1keystores-methods) when set to `true`. The default is `false`.
+
+#### `network`
 
 === "Syntax"
 
