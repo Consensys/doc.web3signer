@@ -1,10 +1,10 @@
 ---
-description: Configure Ethereum 2.0 slashing protection
+description: Configure consensus layer slashing protection
 ---
 
-# Configure Ethereum 2.0 slashing protection
+# Configure consensus layer slashing protection
 
-Configure [slashing protection] to prevent Ethereum 2.0 validators from being penalized for signing
+Configure [slashing protection] to prevent consensus layer validators from being penalized for signing
 conflicting blocks or attestations.
 
 Install and manage the PostgreSQL database that stores the validator signing history for
@@ -12,7 +12,7 @@ one or more Web3Signer instances.
 
 !!! note
 
-    Ethereum 2.0 [slashing protection] is enabled by default. You therefore must configure a
+    Consensus layer [slashing protection] is enabled by default. You therefore must configure a
     slashing protection database, or disable slashing protection using the
     [`--slashing-protection-db-enabled`](../Reference/CLI/CLI-Subcommands.md#slashing-protection-enabled)
     command line option.

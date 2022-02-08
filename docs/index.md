@@ -16,6 +16,6 @@ vault, or encrypted on a disk.
 Web3Signer can sign payloads using secp256k1 and BLS12-381 signing keys, and supports the following
 platforms:
 
-* Ethereum 1.0
-* Ethereum 2.0
+* Execution layer (formerly called Ethereum 1.0)
+* Consensus layer (formerly called Ethereum 2.0)
 * [Filecoin](https://filecoin.io/)

@@ -19,11 +19,11 @@ You can configure access to the signing key by:
 
 * [Creating a separate key configuration file] for each signing key.
 * Using the [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2) to bulk load
-    Ethereum 2.0 signing keys stored in Azure Key Vault.
+    consensus layer signing keys stored in Azure Key Vault.
 
 !!! note
 
-    Bulk-loading is only available when using the Ethereum 2.0 platform with keys stored in
+    Bulk-loading is only available when using the consensus layer platform with keys stored in
     Azure Key Vault, and can be used in combination with key configuration files.
 
 ## Using key configuration files
@@ -43,9 +43,9 @@ to specify the location of the key configuration files.
     web3signer --key-store-path=/Users/me/keyFiles/ eth2
     ```
 
-## Bulk loading Ethereum 2.0 keys
+## Bulk loading consensus layer keys
 
-You can bulk load Ethereum 2.0 keys that are stored in Azure Key Vault. To do this use the
+You can bulk load consensus layer keys that are stored in Azure Key Vault. To do this use the
 Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2).
 
 !!! example

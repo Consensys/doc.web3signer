@@ -4,7 +4,7 @@ description: Describe how slashing protection works in Web3Signer
 
 # Slashing protection
 
-Slashing refers to penalties that are applied to Ethereum 2.0 validators that sign conflicting
+Slashing refers to penalties that are applied to consensus layer validators that sign conflicting
 blocks or attestations.
 
 Web3Signer provides slashing protection to prevent validators from signing blocks and attestations

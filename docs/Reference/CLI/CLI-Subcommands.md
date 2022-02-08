@@ -12,6 +12,12 @@ The Web3Signer subcommands are used to specify the platform being used:
 * `web3signer [Options] eth1`
 * `web3signer [Options] filecoin [Filecoin Options]`
 
+!!! note
+
+    The execution layer was formerly called Ethereum 1.0. The consensus layer was formerly called Ethereum 2.0.
+    The subcommands for the execution layer and the consensus layer are still `eth1` and `eth2` respectively.
+    For more information on the name change, refer to the [Ethereum Foundation update](https://blog.ethereum.org/2022/01/24/the-great-eth2-renaming/).
+
 ## Specifying subcommand options
 
 The subcommand must be specified on the command line, but the subcommand options can be specified:
@@ -260,7 +266,7 @@ Name of the vault to access. Sub-domain of vault.azure.net.
 
 Predefined network configuration.
 Accepts a predefined network name, or file path or URL to a YAML configuration file. See the
-[Ethereum 2.0 specification] for examples.
+[consensus specification] for examples.
 
 The default is `mainnet`.
 
@@ -271,12 +277,12 @@ The default is `mainnet`.
 
 Possible values are:
 
-| Network   | Chain   | Type       | Description                                      |
-|:----------|:--------|:-----------|:-------------------------------------------------|
-| `mainnet` | Eth 2.0 | Production | Main network.                                    |
-| `minimal` | Eth 2.0 | Test       | Used for local testing and development networks. |
-| `pyrmont` | Eth 2.0 | Test       | Multi-client testnet.                            |
-| `prater`  | Eth 2.0 | Test       | Multi-client testnet.                            |
+| Network   | Chain           | Type       | Description                                      |
+|:----------|:----------------|:-----------|:-------------------------------------------------|
+| `mainnet` | Consensus layer | Production | Main network.                                    |
+| `minimal` | Consensus layer | Test       | Used for local testing and development networks. |
+| `pyrmont` | Consensus layer | Test       | Multi-client testnet.                            |
+| `prater`  | Consensus layer | Test       | Multi-client testnet.                            |
 
 #### `slashing-protection-db-password`
 
@@ -681,4 +687,4 @@ Predefined network configuration. Accepts a predefined network name. The default
 [include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
 [slashing protection]: ../../Concepts/Slashing-Protection.md
 [validator client interchange format]: https://eips.ethereum.org/EIPS/eip-3076
-[Ethereum 2.0 specification]: https://github.com/ethereum/eth2.0-specs/tree/master/configs
+[consensus specification]: https://github.com/ethereum/consensus-specs/tree/master/configs
