@@ -137,7 +137,6 @@ You can [list keys](#list-keys), [import keystores](#import-keystores), and [del
 
 Enable the key manager API by running Web3Signer with the [`--key-manager-api-enabled` subcommand](CLI/CLI-Subcommands.md#key-manager-api-enabled).
 
-
 ### List keys
 
 Lists all validating public keys known to and decrypted by this keystore binary.
