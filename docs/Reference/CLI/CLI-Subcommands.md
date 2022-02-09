@@ -14,9 +14,8 @@ The Web3Signer subcommands are used to specify the platform being used:
 
 !!! note
 
-    The execution layer was formerly called Ethereum 1.0. The consensus layer was formerly called Ethereum 2.0.
-    The subcommands for the execution layer and the consensus layer are still `eth1` and `eth2` respectively.
-    For more information on the name change, refer to the [Ethereum Foundation update](https://blog.ethereum.org/2022/01/24/the-great-eth2-renaming/).
+    This documentation has been updated in line with the name changes recommended by the [recommended by the Ethereum Foundation](https://blog.ethereum.org/2022/01/24/the-great-eth2-renaming/)..
+    The `eth1` subcommands relate to the execution layer, formally called “Ethereum 1.0.” The `eth2` subcommands relate to the consensus layer formally called “Ethereum 2.0.”
 
 ## Specifying subcommand options
 

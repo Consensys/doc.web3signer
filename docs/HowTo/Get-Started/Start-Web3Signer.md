@@ -4,20 +4,25 @@ description: Getting started with Web3Signer
 
 # Start Web3Signer
 
+!!! note
+
+    This documentation has been updated in line with the name changes [recommended by the Ethereum Foundation](https://blog.ethereum.org/2022/01/24/the-great-eth2-renaming/).
+    The execution layer is formerly "Ethereum 1.0." The consensus layer is formerly "Ethereum 2.0."
+
 **Prerequisites**:
 
 * [Signing key configuration files] to access the required signing keys.
 
-Web3Signer supports the execution layer (formerly Ethereum 1.0), consensus layer (Ethereum 2.0), and Filecoin platforms, so you must specify the
+Web3Signer supports execution layer clients, consensus layer clients, and Filecoin platforms, so you must specify the
 signing mode, and the location of the signing key configuration files when starting Web3Signer.
 
-=== "Execution layer"
+=== "Execution layer client"
 
     ```bash
     web3signer --key-store-path=/Users/me/keyFiles/ eth1
     ```
 
-=== "Consensus layer"
+=== "Consensus layer client"
 
     ```bash
     web3signer --key-store-path=/Users/me/keyFiles/ eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
