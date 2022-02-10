@@ -55,6 +55,24 @@ Start the client, for example [Teku] by specifying the Web3Signer details.
     [`--network`](../../Reference/CLI/CLI-Subcommands.md#network) option must be specified, and it
     must match the network used by the Teku client.
 
+## Confirm Web3Signer is running
+
+Use the [`upcheck`](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Server-Status) endpoint to confirm Web3Signer is connected and running.
+
+!!! example
+
+    === "curl request"
+
+        ```bash
+        curl -X GET http://localhost:9000/upcheck
+        ```
+
+    === "Result"
+
+        ```json
+        200 OK
+        ```
+
 <!-- Links -->
 [Signing key configuration files]: ../Use-Signing-Keys.md
 [Teku]: https://docs.teku.consensys.net/en/latest/HowTo/External-Signer/Use-External-Signer/
