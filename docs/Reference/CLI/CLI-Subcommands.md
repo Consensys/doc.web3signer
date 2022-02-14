@@ -258,7 +258,11 @@ Name of the vault to access. Sub-domain of vault.azure.net.
     eth2.key-manager-api-enabled: true
     ```
 
-Enables the [key-manager-api](../Rest.md#key-manager-api) when set to `true`. The default is `false`.
+Enables the [key manager API](../../HowTo/Use-Signing-Keys.md#managing-your-keys) when set to `true`. The default is `false`.
+
+!!! caution
+
+    The key manager API is an early access feature and is still in development.
 
 #### `network`
 
