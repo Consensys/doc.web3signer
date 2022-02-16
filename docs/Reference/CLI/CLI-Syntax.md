@@ -137,6 +137,46 @@ Path to the directory containing the [YAML files required to access keys].
 Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, `TRACE`,
 `ALL`. The default is `INFO`.
 
+### `http-cors-origins`
+
+A list of domain URLs for CORS validation. You must enclose the URLs in double quotes and separate
+them with commas.
+
+Listed domains can access the node using JSON-RPC. If your client interacts with Web3Signer using a
+browser app, you must allow the client domains.
+
+The default value is `none`. If you do not allow any domains, browser apps cannot interact with your
+Web3Signer node.
+
+!!! tip
+
+    For testing and development purposes, use `"all"` or `"*"` to accept requests from any domain.
+    We don't recommend accepting requests from any domain for production environments.
+
+=== "Syntax"
+
+    ```bash
+    --http-cors-origins=<httpListenHost>
+    ```
+
+=== "Example"
+
+    ```bash
+    --http-cors-origins=""http://medomain.com"
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_HTTP_CORS_ORIGINS=""http://medomain.com"
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    http-cors-origins=["https://meotherdomain.com"]
+    ```
+
 ### http-listen-host
 
 === "Syntax"
