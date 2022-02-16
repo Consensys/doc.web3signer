@@ -137,7 +137,7 @@ Path to the directory containing the [YAML files required to access keys].
 Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, `TRACE`,
 `ALL`. The default is `INFO`.
 
-### `http-cors-origins`
+### http-cors-origins
 
 A list of domain URLs for CORS validation. You must enclose the URLs in double quotes and separate
 them with commas.
