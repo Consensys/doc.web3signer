@@ -142,7 +142,7 @@ Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, 
 A list of domain URLs for CORS validation. You must enclose the URLs in double quotes and separate
 them with commas.
 
-Listed domains can access the node using JSON-RPC. If your client interacts with Web3Signer using a
+Listed domains can access the node using REST API. If your client interacts with Web3Signer using a
 browser app, you must allow the client domains.
 
 The default value is `none`. If you do not allow any domains, browser apps cannot interact with your
