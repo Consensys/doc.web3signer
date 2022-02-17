@@ -1,10 +1,10 @@
 ---
-title: Load keystores generated using the Eth 2.0 Launchpad tool
+title: Load keystores generated using the consensus layer Launchpad tool
 ---
 
 # Load Launchpad keystores
 
-The Launchpad tool is used to create validators that participate in the Ethereum 2.0
+The Staking Launchpad tool is used to create validators that participate in the consensus layer
 proof-of-stake network. The tool generates an encrypted keystore file containing the validator
 details. Load this keystore into Web3Signer to sign attestations and blocks with the validator
 details.
@@ -30,10 +30,10 @@ teku --network=pyrmont --metrics-enabled --rest-api-enabled
 ## 2. Generate validators
 
 This step generates a validator on the `pyrmont` testnet. Use the
-[ETH 2.0 `pyrmont` launchpad](https://pyrmont.launchpad.ethereum.org/) and
+[`pyrmont` staking launchpad](https://pyrmont.launchpad.ethereum.org/) and
 follow the step-by-step process to deposit your funds and generate the keystore.
 
-The process includes installing the ETH 2.0 deposit CLI tool, to generate your validator keystores
+The process includes installing the consensus layer deposit CLI tool, to generate your validator keystores
 locally. Keystores are generated in the `eth2deposit-cli-<version>/validator_keys` folder. In this example
 we generated a keystore named `keystore-m_12381_3600_0_0_0-1606109670.json`
 

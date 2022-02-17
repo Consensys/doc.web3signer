@@ -72,7 +72,7 @@ nav:
     - Concepts:
         - Slashing protection: Concepts/Slashing-Protection.md
     - Tutorials:
-        - Load ETH 2.0 keystores: Tutorials/Launchpad-Keystores.md
+        - Load consensus layer keystores: Tutorials/Launchpad-Keystores.md
     - Reference:
         - Command line:
             - Options: Reference/CLI/CLI-Syntax.md
