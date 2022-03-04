@@ -34,7 +34,7 @@ For content changes:
 For tool changes:
 
 - [ ] CircleCI workflow
-- [ ] Build and QA tools (e.g., lint or vale)
+- [ ] Build and QA tools (for example, lint or vale)
 - [ ] MkDocs templates
 - [ ] MkDocs configuration
 - [ ] Python dependencies
