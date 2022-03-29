@@ -2,7 +2,7 @@
 title: Configure Web3Signer to use a USB Armory Mk II device
 ---
 
-# Using Web3Signer with USB Armory Mk II
+# Use Web3Signer with USB Armory Mk II
 
 Web3Signer can sign payloads using private keys stored in a [USB Armory Mk II device]. Users must
 install the [Interlock application] on the device to enable communication with Web3Signer.
