@@ -123,7 +123,7 @@ Supports two signing options:
 
 ## AWS Secrets Manager
 
-Use the private key stored in AWS Secrets Manager.
+Use the private key stored in [AWS Secrets Manager](../HowTo/Store-Keys-Vaults/Use-AWS.md).
 
 !!! example
 

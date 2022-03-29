@@ -38,7 +38,7 @@ loading consensus layer signing keys]:
 
     !!! note
 
-        Depending on the authentication mode, not all client credentials will be available.
+        Depending on the authentication mode, not all client credentials are available.
 
 * Key name, which is the name of the secret.
 
