@@ -4,7 +4,8 @@ description: How to store keys in AWS Secrets Manager
 
 # Use Web3Signer with AWS Secrets Manager
 
-Web3Signer supports storing BLS signing keys in [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/).
+Web3Signer supports signing with BLS private keys stored as secrets in
+[AWS Secrets Manager](https://aws.amazon.com/secrets-manager/).
 
 The [AWS Secrets Manager documentation](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html) provides
 the information you need to get started.
@@ -16,20 +17,29 @@ You need an AWS profile to use AWS Secrets Manager.
 Use the [Create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html)
 guide to store a new key in AWS Secrets Manager.
 
+The following is an example of creating and storing a BLS private key in AWS Secrets Manager, using Java:
+
+!!! example
+
+    ```java
+    final SecretsManagerClient secretsManagerClient =
+          SecretsManagerClient.builder()
+              .region(Region.of(AWS_REGION))
+              .build();
+    final String secretNamePrefix = "web3signer-aws-integration/";
+    final String secretName = secretNamePrefix + UUID.randomUUID();
+    final CreateSecretRequest secretRequest =
+          CreateSecretRequest.builder().name(secretName).secretString(SECRET_VALUE).build();
+    secretsManagerClient.createSecret(secretRequest);
+    ```
+
 Specify the following when
 [configuring the signing key configuration file](../Use-Signing-Keys.md#using-key-configuration-files):
 
 * Authentication mode.
   Valid options are `ENVIRONMENT` and `SPECIFIED`.
-  If using `ENVIRONMENT`, specify the authentication credentials using the following environment variables:
-
-    * `AWS_ACCESS_KEY_ID` - your access key ID
-    * `AWS_SECRET_ACCESS_KEY` - your secret access key
-
-    !!! note
-
-        You can get the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` for a particular user from the
-        [AWS IAM Management Console](https://console.aws.amazon.com/iam).
+  If using `ENVIRONMENT`, credentials are authenticated using the
+  [default credential provider chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default)
 
 * Secret name.
 

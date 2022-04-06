@@ -140,7 +140,7 @@ Use the private key stored in [AWS Secrets Manager](../HowTo/Store-Keys-Vaults/U
 | Key                    | Description                                   |
 |------------------------|-----------------------------------------------|
 | **type**               | Type of configuration file. Use `aws-secret`. |
-| **authenticationMode** | Authentication type being used. Valid options are `ENVIRONMENT` and `SPECIFIED`. If using `ENVIRONMENT`, specify the access key ID and the secret access key as the environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. The default authentication type is `SPECIFIED`. |
+| **authenticationMode** | Authentication type being used. Valid options are `ENVIRONMENT` and `SPECIFIED`. If using `ENVIRONMENT`, credentials are authenticated using the [default credential provider chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default). The default authentication type is `SPECIFIED`. |
 | **keyType**            | Signing key type. Use `BLS`.                  |
 | **accessKeyId**        | Your access key ID.                           |
 | **secretAccessKey**    | Your secret access key.                       |
