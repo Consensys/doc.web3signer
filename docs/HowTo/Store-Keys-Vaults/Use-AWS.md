@@ -39,7 +39,7 @@ Specify the following when
 * Authentication mode.
   Valid options are `ENVIRONMENT` and `SPECIFIED`.
   If using `ENVIRONMENT`, credentials are authenticated using the
-  [default credential provider chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default)
+  [default credential provider chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default).
 
 * Secret name.
 
