@@ -10,10 +10,11 @@ Web3Signer supports BLS12-381 or secp256k1 signing keys stored in:
 * [Keystore files](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md)
 * Vaults:
     * [HashiCorp Vault](../HowTo/Store-Keys-Vaults/Use-Hashicorp.md)
-    * [Azure Key Vault](../HowTo/Store-Keys-Vaults/Use-Azure.md).
+    * [Azure Key Vault](../HowTo/Store-Keys-Vaults/Use-Azure.md)
+    * [AWS Secrets Manager](../HowTo/Store-Keys-Vaults/Use-AWS.md)
 * Hardware Security Modules (HSMs):
     * [YubiHSM 2](../HowTo/Store-Keys-HSM/Use-YubiHSM2.md)
-    * [USB Armory Mk II](../HowTo/Store-Keys-HSM/Use-USB-Armory.md).
+    * [USB Armory Mk II](../HowTo/Store-Keys-HSM/Use-USB-Armory.md)
 
 You can configure access to the signing key by:
 

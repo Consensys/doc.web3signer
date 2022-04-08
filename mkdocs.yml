@@ -59,6 +59,7 @@ nav:
         - Store keys in an external vault:
             - Use Hashicorp Vault: HowTo/Store-Keys-Vaults/Use-Hashicorp.md
             - Use Azure Key Vault: HowTo/Store-Keys-Vaults/Use-Azure.md
+            - Use AWS Secrets Manager: HowTo/Store-Keys-Vaults/Use-AWS.md
         - Store keys in an HSM device:
             - Use YubiHSM2: HowTo/Store-Keys-HSM/Use-YubiHSM2.md
             - Use USB Armory Mk II: HowTo/Store-Keys-HSM/Use-USB-Armory.md

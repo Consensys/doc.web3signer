@@ -2,11 +2,11 @@
 description: Using Web3Signer with HashiCorp Vault
 ---
 
-# Using Web3Signer with HashiCorp Vault
+# Use Web3Signer with HashiCorp Vault
 
 Web3Signer supports storing the signing key in [HashiCorp Vault](https://www.hashicorp.com/products/vault/).
 
-## Storing a private key in HashiCorp Vault
+## Store a private key in HashiCorp Vault
 
 After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-started/install) and
 [starting the server](https://learn.hashicorp.com/vault/getting-started/dev-server):
