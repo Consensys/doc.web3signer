@@ -22,6 +22,8 @@ The following is an example of creating and storing a BLS private key in AWS Sec
 !!! example
 
     ```java
+    final String AWS_REGION = "us-east-2";
+    final String SECRET_VALUE = "secret-name";
     final SecretsManagerClient secretsManagerClient =
           SecretsManagerClient.builder()
               .region(Region.of(AWS_REGION))
