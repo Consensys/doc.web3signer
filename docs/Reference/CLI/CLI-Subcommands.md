@@ -81,7 +81,7 @@ To view the command line help for the subcommands:
 
 When
 [loading multiple keys from AWS Secrets Manager](../../HowTo/Store-Keys-Vaults/Use-AWS.md#cache-aws-secrets-manager-when-loading-multiple-keys),
-set to the maximum number of cacheable connections.
+set to the maximum number of connections to cache.
 The default is 1.
 
 #### `azure-vault-enabled`

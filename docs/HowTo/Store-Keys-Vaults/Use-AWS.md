@@ -54,5 +54,5 @@ You can improve performance by caching and reusing the same AWS Secrets Manager 
 key ID and region.
 
 Set the [`eth2 --aws-connection-cache-size`](../../Reference/CLI/CLI-Subcommands.md#aws-connection-cache-size) option to
-the maximum number of cacheable AWS Secrets Manager connections.
+the maximum number of AWS Secrets Manager connections to cache.
 The default is 1.
