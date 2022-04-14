@@ -4,49 +4,40 @@ description: Web3Signer command line interface subcommands
 
 # Subcommands
 
-The Web3Signer subcommands are used to specify the platform being used:
+Use the Web3Signer subcommands to specify the platform being used:
 
-* `web3signer [Options] eth2 [Eth2 Options]`
-* `web3signer [Options] eth2 export [Eth2 Export Options]`
-* `web3signer [Options] eth2 import [Eth2 Import Options]`
-* `web3signer [Options] eth1`
-* `web3signer [Options] filecoin [Filecoin Options]`
+* `web3signer [options] eth2 [Eth2 options]`
+* `web3signer [options] eth2 export [Eth2 export options]`
+* `web3signer [options] eth2 import [Eth2 import options]`
+* `web3signer [options] eth1`
+* `web3signer [options] filecoin [Filecoin options]`
 
 !!! note
 
-    This documentation has been updated in line with the name changes recommended by the [recommended by the Ethereum Foundation](https://blog.ethereum.org/2022/01/24/the-great-eth2-renaming/)..
-    The `eth1` subcommands relate to the execution layer, formally called “Ethereum 1.0.” The `eth2` subcommands relate to the consensus layer formally called “Ethereum 2.0.”
+    This documentation has been updated in line with the name changes [recommended by the Ethereum Foundation](https://blog.ethereum.org/2022/01/24/the-great-eth2-renaming/).
+    The `eth1` subcommands relate to the execution layer, previously called “Ethereum 1.0.”
+    The `eth2` subcommands relate to the consensus layer, previously called “Ethereum 2.0.”
 
-## Specifying subcommand options
+## Specify subcommand options
 
 The subcommand must be specified on the command line, but the subcommand options can be specified:
 
-* On the command line
-* As [environment variables](#environment-variables)
+* On the command line.
+* As environment variables.
+  For each subcommand option, the equivalent environment variable is:
+    * Uppercase.
+    * `_` replaces `-`.
+    * Has a `WEB3SIGNER_` + `<SIGNING_OPTION>_` prefix.
 * In a YAML configuration file.
 
-For example, you can set the options for the `filecoin` subcommand in an environment variables
-`export WEB3SIGNER_FILECOIN_NETWORK=TESTNET`, but the subcommand must be specified in the command line
+For example, you can set the `--network` option for the `filecoin` subcommand in an environment variable
+`export WEB3SIGNER_FILECOIN_NETWORK=TESTNET`, but the subcommand must be specified in the command line.
 
 !!! example
 
     ```bash
     web3signer --key-store-path=/Users/me/keyFiles/ filecoin
     ```
-
-## Environment variables
-
-For each subcommand option, the equivalent environment variable is:
-
-* Upper-case
-* `_` replaces `-`
-* Has a `WEB3SIGNER_` + `<SIGNING_OPTION>_` prefix. For example set `filecoin --network`
-    using the `WEB3SIGNER_FILECOIN_NETWORK` environment variable.
-
-!!! note
-
-    Only subcommand options can be set in environment variables. The actual subcommand must be
-    specified in the command line.
 
 ## View help
 
@@ -61,6 +52,37 @@ To view the command line help for the subcommands:
 ### `eth1`
 
 ### `eth2`
+
+#### `aws-connection-cache-size`
+
+=== "Syntax"
+
+    ```bash
+    --aws-connection-cache-size=<LONG>
+    ```
+
+=== "Example"
+
+    ```bash
+    --aws-connection-cache-size=5
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_AWS_CONNECTION_CACHE_SIZE=5
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.aws-connection-cache-size: 5
+    ```
+
+When
+[loading multiple keys from AWS Secrets Manager](../../HowTo/Store-Keys-Vaults/Use-AWS.md#cache-aws-secrets-manager-when-loading-multiple-keys),
+set to the maximum number of cacheable connections.
+The default is 1.
 
 #### `azure-vault-enabled`
 
@@ -235,7 +257,7 @@ Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or
     eth2.azure-vault-name: "AzureKeyVault"
     ```
 
-Name of the vault to access. Sub-domain of vault.azure.net.
+Name of the vault to access. Sub-domain of `vault.azure.net`.
 
 #### `key-manager-api-enabled`
 
@@ -332,7 +354,7 @@ Possible values are:
 === "Environment variable"
 
     ```bash
-    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_PASSWORD=change
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_PASSWORD=changeme
     ```
 
 === "Configuration file"
