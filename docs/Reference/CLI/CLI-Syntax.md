@@ -6,32 +6,26 @@ description: Web3Signer command line interface reference
 
 This reference describes the syntax of the Web3Signer Command Line Interface (CLI) options.
 
-## Specifying options
+## Specify options
 
 Web3Signer options can be specified:
 
-* On the command line
-* As an [environment variable](#web3signer-environment-variables)
+* On the command line.
+* As an environment variable.
+  For each command line option, the equivalent environment variable is:
+    * Upper-case.
+    * `_` replaces `-`.
+    * Has a `WEB3SIGNER_` prefix.
 * In a YAML configuration file.
 
 If you specify an option in more than one place, the order of priority is command line, environment
 variable, configuration file.
 
-### Web3Signer environment variables
-
-For each command line option, the equivalent environment variable is:
-
-* Upper-case
-* `_` replaces `-`
-* Has an `WEB3SIGNER_` prefix
-
-For example, set `--data-path` using the `WEB3SIGNER_DATA_PATH` environment variable.
-
 ## Options
 
-### config-file
+### `config-file`
 
-The path to the [YAML configuration file](../../HowTo/Use-Configuration-File.md).
+Path to the [YAML configuration file](../../HowTo/Use-Configuration-File.md).
 The default is `none`.
 
 === "Syntax"
@@ -52,7 +46,7 @@ The default is `none`.
     WEB3SIGNER_CONFIG_FILE=/home/me/me_node/config.yaml
     ```
 
-### data-path
+### `data-path`
 
 === "Syntax"
 
@@ -80,7 +74,7 @@ The default is `none`.
 
 Directory in which to store temporary files.
 
-### key-store-path
+### `key-store-path`
 
 === "Syntax"
 
@@ -108,7 +102,7 @@ Directory in which to store temporary files.
 
 Path to the directory containing the [YAML files required to access keys].
 
-### logging
+### `logging`
 
 === "Syntax"
 
@@ -137,7 +131,7 @@ Path to the directory containing the [YAML files required to access keys].
 Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, `TRACE`,
 `ALL`. The default is `INFO`.
 
-### http-cors-origins
+### `http-cors-origins`
 
 A list of domain URLs for CORS validation. You must enclose the URLs in double quotes and separate
 them with commas.
@@ -177,7 +171,7 @@ Web3Signer node.
     http-cors-origins=["https://meotherdomain.com"]
     ```
 
-### http-listen-host
+### `http-listen-host`
 
 === "Syntax"
 
@@ -203,9 +197,9 @@ Web3Signer node.
     http-listen-host: "8.8.8.8"
     ```
 
-Host on which HTTP listens. Default is `localhost`.
+Host on which HTTP listens. The default is `localhost`.
 
-### http-listen-port
+### `http-listen-port`
 
 === "Syntax"
 
@@ -233,7 +227,7 @@ Host on which HTTP listens. Default is `localhost`.
 
 Port on which HTTP listens. The default is 9000.
 
-### http-host-allowlist
+### `http-host-allowlist`
 
 === "Syntax"
 
@@ -267,7 +261,7 @@ accepts access from `localhost` and `127.0.0.1`.
     To allow all hostnames, use `"*"`. We don't recommend allowing all hostnames for production
     environments.
 
-### idle-connection-timeout-seconds
+### `idle-connection-timeout-seconds`
 
 === "Syntax"
 
@@ -293,9 +287,9 @@ accepts access from `localhost` and `127.0.0.1`.
     idle-connection-timeout-seconds: 60
     ```
 
-Number of seconds to wait before terminating an idle connection. Defaults to 30.
+Number of seconds to wait before terminating an idle connection. The default is 30.
 
-### metrics-enabled
+### `metrics-enabled`
 
 === "Syntax"
 
@@ -323,7 +317,7 @@ Number of seconds to wait before terminating an idle connection. Defaults to 30.
 
 Enables the metrics exporter. The default is `false`.
 
-### metrics-host
+### `metrics-host`
 
 === "Syntax"
 
@@ -352,7 +346,7 @@ Enables the metrics exporter. The default is `false`.
 The host on which [Prometheus](https://prometheus.io/) accesses metrics.
 The default is `127.0.0.1`.
 
-### metrics-port
+### `metrics-port`
 
 === "Syntax"
 
@@ -381,7 +375,7 @@ The default is `127.0.0.1`.
 The port (TCP) on which [Prometheus](https://prometheus.io/) accesses
 metrics. The default is `9001`.
 
-### metrics-category
+### `metrics-category`
 
 === "Syntax"
 
@@ -409,7 +403,7 @@ metrics. The default is `9001`.
 
 A comma-separated list of categories for which to track metrics. The defaults are `HTTP`, `SIGNING`, `FILECOIN`, `ETH2_SLASHING_PROTECTION`, `JVM`, `PROCESS`.
 
-### metrics-host-allowlist
+### `metrics-host-allowlist`
 
 === "Syntax"
 
@@ -443,7 +437,7 @@ default, Web3Signer accepts access from `localhost` and `127.0.0.1`.
     To allow all hostnames, use `"*"`. We don't recommend allowing all hostnames for production
     environments.
 
-### swagger-ui-enabled
+### `swagger-ui-enabled`
 
 === "Syntax"
 
@@ -478,7 +472,7 @@ Access Swagger UI at `http:<interface>:<port>/swagger-ui` where:
 
 The default location is `http://localhost:9000/swagger-ui`.
 
-### tls-keystore-file
+### `tls-keystore-file`
 
 === "Syntax"
 
@@ -506,7 +500,7 @@ The default location is `http://localhost:9000/swagger-ui`.
 
 PKCS #12 formatted keystore. Used to enable TLS for [client connections](../../HowTo/Configure-TLS.md).
 
-### tls-keystore-password-file
+### `tls-keystore-password-file`
 
 === "Syntax"
 
@@ -534,7 +528,7 @@ PKCS #12 formatted keystore. Used to enable TLS for [client connections](../../H
 
 Password file used to decrypt the keystore.
 
-### tls-allow-any-client
+### `tls-allow-any-client`
 
 === "Syntax"
 
@@ -563,10 +557,11 @@ Password file used to decrypt the keystore.
 Allows any client to connect. The default is `false`.
 
 !!! important
-    Cannot be used with [`--tls-allow-ca-clients`](#tls-allow-ca-clients)
-    and [`--tls-known-clients-file`](#tls-known-clients-file)
 
-### tls-known-clients-file
+    You can't use this option with [`--tls-allow-ca-clients`](#tls-allow-ca-clients)
+    and [`--tls-known-clients-file`](#tls-known-clients-file).
+
+### `tls-known-clients-file`
 
 === "Syntax"
 
@@ -595,7 +590,7 @@ Allows any client to connect. The default is `false`.
 File containing the Common Names and SHA-256 fingerprints
 of [authorized clients](../../HowTo/Configure-TLS.md#create-the-known-clients-file).
 
-### tls-allow-ca-clients
+### `tls-allow-ca-clients`
 
 === "Syntax"
 
@@ -617,7 +612,7 @@ of [authorized clients](../../HowTo/Configure-TLS.md#create-the-known-clients-fi
 
 Allows clients signed with trusted CA certificates to connect.
 
-### help
+### `help`
 
 === "Syntax"
 
@@ -627,7 +622,7 @@ Allows clients signed with trusted CA certificates to connect.
 
 Displays the help and exits.
 
-### version
+### `version`
 
 === "Syntax"
 

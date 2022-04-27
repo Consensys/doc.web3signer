@@ -22,12 +22,12 @@ You can configure access to the signing key by:
 * Using the [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2) to bulk load
     consensus layer signing keys stored in Azure Key Vault.
 
-!!! note
+    !!! note
 
-    Bulk-loading is only available when using the consensus layer platform with keys stored in
-    Azure Key Vault, and can be used in combination with key configuration files.
+        Bulk-loading is only available when using the consensus layer platform with keys stored in
+        Azure Key Vault, and can be used in combination with key configuration files.
 
-## Using key configuration files
+## Use key configuration files
 
 For each signing key, [configure a separate key configuration file] that defines the parameters
 to access the key. The configuration files must be YAML-formatted, and can use any naming format,
@@ -44,7 +44,7 @@ to specify the location of the key configuration files.
     web3signer --key-store-path=/Users/me/keyFiles/ eth2
     ```
 
-## Bulk loading consensus layer keys
+## Bulk load consensus layer keys
 
 You can bulk load consensus layer keys that are stored in Azure Key Vault. To do this use the
 Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2).
@@ -58,7 +58,7 @@ Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2)
     --azure-vault-name=AzureKeyVault
     ```
 
-## Reloading new keys
+## Reload new keys
 
 If you add new keys to an existing set of validators, reload the keys to ensure Web3Signer registers the new keys.
 Use the [`reload`](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Reload-Signer-Keys) endpoint to reload the keys in Web3Signer.
@@ -77,7 +77,7 @@ Use the [`reload`](https://consensys.github.io/web3signer/web3signer-eth2.html#t
         200 Call is successful
         ```
 
-## Managing your keys
+## Manage keys
 
 You can manage your keys using the [key manager API endpoints](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Keymanager).
 You can [list keys](#list-keys), [import keystores](#import-keystores), and [delete keys](#delete-keys).
