@@ -291,6 +291,112 @@ Enables the [key manager API](../../HowTo/Use-Signing-Keys.md#managing-your-keys
 
     The key manager API is an early access feature and is still in development.
 
+#### `keystores-password-file`
+
+=== "Syntax"
+
+    ```bash
+    --keystores-password-file=<FILE>
+    ```
+
+=== "Example"
+
+    ```bash
+    --keystores-password-file=/Users/me/passwds/keystore_passwords.txt
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_KEYSTORES_PASSWORD_FILE=/Users/me/passwds/keystore_passwords.txt
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.keystores-password-file: "/Users/me/passwds/keystore_passwords.txt"
+    ```
+
+File that contains the password used by all keystores. Cannot be set if [`--keystores-passwords-path`](#keystores-passwords-path)
+is also specified.
+
+!!! note
+
+    Use [`--keystores-passwords-path`](#keystores-passwords-path) when specifying passwords on
+    individual keystores.
+
+#### `keystores-passwords-path`
+
+=== "Syntax"
+
+    ```bash
+    --keystores-password-path=<PATH>
+    ```
+
+=== "Example"
+
+    ```bash
+    --keystores-password-file=/Users/me/passwds
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_KEYSTORES_PASSWORD_FILE=/Users/me/passwds
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.keystores-password-file: "/Users/me/passwds"
+    ```
+
+Directory containing password files for corresponding keystores. Each password file name must
+match the corresponding keystore filename, but with a `.txt` extension.
+
+Cannot be set if [`--keystores-password-file`](#keystores-password-file) is also specified.
+
+!!! note
+
+    Use [`--keystores-password-file`](#keystores-password-file) to specify a file that contains the
+    password used by all keystores.
+
+#### `keystores-path`
+
+=== "Syntax"
+
+    ```bash
+    --keystores-password-file=<PATH>
+    ```
+
+=== "Example"
+
+    ```bash
+    --keystores-password-file=/Users/me/keystores
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_KEYSTORES_PASSWORD_FILE=/Users/me/keystores
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.keystores-password-file: "/Users/me/keystores"
+    ```
+
+Directory that stores the keystore files. Keystore files must use a `.json` file extension.
+
+Use [`--keystores-password-file`](#keystores-password-file) or [`--keystores-passwords-path`](#keystores-passwords-path)
+to specify keystore passwords.
+
+!!! important
+
+    Restart Web3Signer if you want to pick up new keystores added to the directory since Web3Signer
+    started.
+
 #### `network`
 
 === "Syntax"
