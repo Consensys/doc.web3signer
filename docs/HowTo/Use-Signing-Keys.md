@@ -20,7 +20,8 @@ You can configure access to the signing key by:
 
 * [Creating a separate key configuration file] for each signing key.
 * Using the [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2) to bulk load
-    consensus layer signing keys stored in Azure Key Vault or [keystore files](../Reference/CLI/CLI-Subcommands.md#keystores-path).
+    consensus layer signing keys stored in [Azure Key Vault](#azure-key-vault) or
+    [keystore files](#keystore-files).
 
     !!! note
 
@@ -194,4 +195,4 @@ Delete keys with the [`delete keys` endpoint](https://consensys.github.io/web3si
 
 <!-- Link -->
 [configure a separate key configuration file]: ../Reference/Key-Configuration-Files.md
-[Creating a separate key configuration file]: #using-key-configuration-files
+[Creating a separate key configuration file]: #use-key-configuration-files
