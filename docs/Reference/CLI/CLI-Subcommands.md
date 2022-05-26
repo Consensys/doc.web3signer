@@ -322,33 +322,33 @@ is also specified.
 
 !!! note
 
-    Use [`--keystores-passwords-path`](#keystores-passwords-path) when specifying passwords on
-    individual keystores.
+    Alternatively, use [`--keystores-passwords-path`](#keystores-passwords-path) to specify a directory
+    containing a separate password file for each keystore.
 
 #### `keystores-passwords-path`
 
 === "Syntax"
 
     ```bash
-    --keystores-password-path=<PATH>
+    --keystores-passwords-path=<PATH>
     ```
 
 === "Example"
 
     ```bash
-    --keystores-password-file=/Users/me/passwds
+    --keystores-passwords-path=/Users/me/passwds
     ```
 
 === "Environment variable"
 
     ```bash
-    WEB3SIGNER_ETH2_KEYSTORES_PASSWORD_FILE=/Users/me/passwds
+    WEB3SIGNER_ETH2_KEYSTORES_PASSWORDS_PATH=/Users/me/passwds
     ```
 
 === "Configuration file"
 
     ```bash
-    eth2.keystores-password-file: "/Users/me/passwds"
+    eth2.keystores-passwords-path: "/Users/me/passwds"
     ```
 
 Directory containing password files for corresponding keystores. Each password file name must
@@ -358,33 +358,33 @@ Cannot be set if [`--keystores-password-file`](#keystores-password-file) is also
 
 !!! note
 
-    Use [`--keystores-password-file`](#keystores-password-file) to specify a file that contains the
-    password used by all keystores.
+    Alternatively, use [`--keystores-password-file`](#keystores-password-file) to specify single
+    password file that contains the password used by all keystores.
 
 #### `keystores-path`
 
 === "Syntax"
 
     ```bash
-    --keystores-password-file=<PATH>
+    --keystores-path=<PATH>
     ```
 
 === "Example"
 
     ```bash
-    --keystores-password-file=/Users/me/keystores
+    --keystores-path=/Users/me/keystores
     ```
 
 === "Environment variable"
 
     ```bash
-    WEB3SIGNER_ETH2_KEYSTORES_PASSWORD_FILE=/Users/me/keystores
+    WEB3SIGNER_ETH2_KEYSTORES_PATH=/Users/me/keystores
     ```
 
 === "Configuration file"
 
     ```bash
-    eth2.keystores-password-file: "/Users/me/keystores"
+    eth2.keystores-path: "/Users/me/keystores"
     ```
 
 Directory that stores the keystore files. Keystore files must use a `.json` file extension.
