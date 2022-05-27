@@ -358,7 +358,7 @@ Cannot be set if [`--keystores-password-file`](#keystores-password-file) is also
 
 !!! note
 
-    Alternatively, use [`--keystores-password-file`](#keystores-password-file) to specify single
+    Alternatively, use [`--keystores-password-file`](#keystores-password-file) to specify a single
     password file that contains the password used by all keystores.
 
 #### `keystores-path`
