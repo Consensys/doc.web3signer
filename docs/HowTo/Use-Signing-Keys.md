@@ -71,7 +71,7 @@ Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2)
     ```bash
     web3signer eth2 --keystores-path=/Users/me/keystores \
     --keystores-passwords-path=/Users/me/passwds
-   ```
+    ```
 
 Use [`--keystores-password-file`](../Reference/CLI/CLI-Subcommands.md#keystores-password-file) or
 [`--keystores-passwords-path`](../Reference/CLI/CLI-Subcommands.md#keystores-passwords-path) to
