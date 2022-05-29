@@ -20,12 +20,13 @@ You can configure access to the signing key by:
 
 * [Creating a separate key configuration file] for each signing key.
 * Using the [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2) to bulk load
-    consensus layer signing keys stored in Azure Key Vault.
+    consensus layer signing keys stored in [Azure Key Vault](#azure-key-vault) or
+    [keystore files](#keystore-files).
 
     !!! note
 
         Bulk-loading is only available when using the consensus layer platform with keys stored in
-        Azure Key Vault, and can be used in combination with key configuration files.
+        Azure Key Vault or keystore files, and can be used in combination with key configuration files.
 
 ## Use key configuration files
 
@@ -46,6 +47,8 @@ to specify the location of the key configuration files.
 
 ## Bulk load consensus layer keys
 
+### Azure Key Vault
+
 You can bulk load consensus layer keys that are stored in Azure Key Vault. To do this use the
 Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2).
 
@@ -57,6 +60,22 @@ Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2)
     --azure-tenant-id=34255fb0-379b-4a1a-bd47-d211ab86df81 \
     --azure-vault-name=AzureKeyVault
     ```
+
+### Keystore files
+
+You can bulk load consensus layer keys that are stored as keystore files. To do this use the
+Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2).
+
+!!! example
+
+    ```bash
+    web3signer eth2 --keystores-path=/Users/me/keystores \
+    --keystores-passwords-path=/Users/me/passwds
+    ```
+
+Use [`--keystores-password-file`](../Reference/CLI/CLI-Subcommands.md#keystores-password-file) or
+[`--keystores-passwords-path`](../Reference/CLI/CLI-Subcommands.md#keystores-passwords-path) to
+specify keystore passwords.
 
 ## Reload new keys
 
@@ -176,4 +195,4 @@ Delete keys with the [`delete keys` endpoint](https://consensys.github.io/web3si
 
 <!-- Link -->
 [configure a separate key configuration file]: ../Reference/Key-Configuration-Files.md
-[Creating a separate key configuration file]: #using-key-configuration-files
+[Creating a separate key configuration file]: #use-key-configuration-files
