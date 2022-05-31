@@ -442,8 +442,8 @@ Possible values are:
 | `minimal` | Consensus layer | Test       | Used for local testing and development networks. |
 | `pyrmont` | Consensus layer | Test       | Multi-client testnet.                            |
 | `prater`  | Consensus layer | Test       | Multi-client testnet.                            |
-| `kiln`    | Consensus layer | Test       | Multi-client [Merge](https://blog.ethereum.org/2022/03/14/kiln-merge-testnet/) testnet. |
-| `ropsten` | Consensus layer | Test       | Multi-client [Merge](https://blog.ethereum.org/2022/05/30/ropsten-merge-announcement/) testnet. |
+| `kiln`    | Consensus layer | Test       | Multi-client testnet.                            |
+| `ropsten` | Consensus layer | Test       | Multi-client testnet.                            |
 
 #### `slashing-protection-db-password`
 
