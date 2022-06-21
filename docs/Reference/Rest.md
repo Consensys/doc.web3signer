@@ -22,12 +22,6 @@ The default location is `http://localhost:9000/swagger-ui`.
 
 You can also use tools such as [Postman] or [cURL] to interact with Web3Signer APIs.
 
-## Key manager API
-
-The [key manager API](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Keymanager) is a subset of API methods used to [manage the keys](../HowTo/Use-Signing-Keys.md#managing-your-keys) in Web3Signer.
-
-Enable the key manager API by running Web3Signer with the [`--key-manager-api-enabled` subcommand](CLI/CLI-Subcommands.md#key-manager-api-enabled).
-
 <!-- Links -->
 [REST API documentation]: https://consensys.github.io/web3signer/
 [Postman]: https://www.postman.com/

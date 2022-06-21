@@ -10,23 +10,25 @@ Web3Signer supports BLS12-381 or secp256k1 signing keys stored in:
 * [Keystore files](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md)
 * Vaults:
     * [HashiCorp Vault](../HowTo/Store-Keys-Vaults/Use-Hashicorp.md)
-    * [Azure Key Vault](../HowTo/Store-Keys-Vaults/Use-Azure.md).
+    * [Azure Key Vault](../HowTo/Store-Keys-Vaults/Use-Azure.md)
+    * [AWS Secrets Manager](../HowTo/Store-Keys-Vaults/Use-AWS.md)
 * Hardware Security Modules (HSMs):
     * [YubiHSM 2](../HowTo/Store-Keys-HSM/Use-YubiHSM2.md)
-    * [USB Armory Mk II](../HowTo/Store-Keys-HSM/Use-USB-Armory.md).
+    * [USB Armory Mk II](../HowTo/Store-Keys-HSM/Use-USB-Armory.md)
 
 You can configure access to the signing key by:
 
 * [Creating a separate key configuration file] for each signing key.
 * Using the [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2) to bulk load
-    Ethereum 2.0 signing keys stored in Azure Key Vault.
+    consensus layer signing keys stored in [Azure Key Vault](#azure-key-vault) or
+    [keystore files](#keystore-files).
 
-!!! note
+    !!! note
 
-    Bulk-loading is only available when using the Ethereum 2.0 platform with keys stored in
-    Azure Key Vault, and can be used in combination with key configuration files.
+        Bulk-loading is only available when using the consensus layer platform with keys stored in
+        Azure Key Vault or keystore files, and can be used in combination with key configuration files.
 
-## Using key configuration files
+## Use key configuration files
 
 For each signing key, [configure a separate key configuration file] that defines the parameters
 to access the key. The configuration files must be YAML-formatted, and can use any naming format,
@@ -43,9 +45,11 @@ to specify the location of the key configuration files.
     web3signer --key-store-path=/Users/me/keyFiles/ eth2
     ```
 
-## Bulk loading Ethereum 2.0 keys
+## Bulk load consensus layer keys
 
-You can bulk load Ethereum 2.0 keys that are stored in Azure Key Vault. To do this use the
+### Azure Key Vault
+
+You can bulk load consensus layer keys that are stored in Azure Key Vault. To do this use the
 Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2).
 
 !!! example
@@ -57,7 +61,23 @@ Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2)
     --azure-vault-name=AzureKeyVault
     ```
 
-## Reloading new keys
+### Keystore files
+
+You can bulk load consensus layer keys that are stored as keystore files. To do this use the
+Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2).
+
+!!! example
+
+    ```bash
+    web3signer eth2 --keystores-path=/Users/me/keystores \
+    --keystores-passwords-path=/Users/me/passwds
+    ```
+
+Use [`--keystores-password-file`](../Reference/CLI/CLI-Subcommands.md#keystores-password-file) or
+[`--keystores-passwords-path`](../Reference/CLI/CLI-Subcommands.md#keystores-passwords-path) to
+specify keystore passwords.
+
+## Reload new keys
 
 If you add new keys to an existing set of validators, reload the keys to ensure Web3Signer registers the new keys.
 Use the [`reload`](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Reload-Signer-Keys) endpoint to reload the keys in Web3Signer.
@@ -76,12 +96,16 @@ Use the [`reload`](https://consensys.github.io/web3signer/web3signer-eth2.html#t
         200 Call is successful
         ```
 
-## Managing your keys
+## Manage keys
 
 You can manage your keys using the [key manager API endpoints](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Keymanager).
 You can [list keys](#list-keys), [import keystores](#import-keystores), and [delete keys](#delete-keys).
 
 Enable the key manager API by running Web3Signer with the [`--key-manager-api-enabled` subcommand](../Reference/CLI/CLI-Subcommands.md#key-manager-api-enabled).
+
+!!! caution
+
+    The key manager API is an early access feature and is still in development.
 
 ### List keys
 
@@ -171,4 +195,4 @@ Delete keys with the [`delete keys` endpoint](https://consensys.github.io/web3si
 
 <!-- Link -->
 [configure a separate key configuration file]: ../Reference/Key-Configuration-Files.md
-[Creating a separate key configuration file]: #using-key-configuration-files
+[Creating a separate key configuration file]: #use-key-configuration-files

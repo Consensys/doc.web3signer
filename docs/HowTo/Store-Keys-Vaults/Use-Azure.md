@@ -2,7 +2,7 @@
 description: Signing transactions with key stored in Azure Key Vault
 ---
 
-# Using Web3Signer with Azure Key Vault
+# Use Web3Signer with Azure Key Vault
 
 Web3Signer supports using [Azure Key Vault](https://azure.microsoft.com/en-au/services/key-vault/)
 to sign payloads in the following ways:
@@ -22,28 +22,29 @@ Web3Signer supports the following authentication modes:
     The Azure Active Directory managed identity authentication modes can only be used when
     fetching keys from Azure Key Vault and signing locally with Web3Signer.
 
-## Storing the private key in Azure Key Vault
+## Store a private key in Azure Key Vault
 
 [Register Web3Signer as an application] and [add a signing key in Azure Key Vault].
 
 Take note of the following to specify when [configuring the signing key configuration file] or [bulk
-loading Ethereum 2.0 signing keys]:
+loading consensus layer signing keys]:
 
-* Vault name, which is part of the URL (for example `https://<vaultname>.vault.azure.net`)
+* Vault name, which is part of the URL (for example `https://<vaultname>.vault.azure.net`).
 * Client credentials, which can include:
 
     * Client ID
     * Client secret
     * Tenant ID
 
-        !!! note
-            Depending on the authentication mode, not all client credentials will be available.
+    !!! note
+
+        Depending on the authentication mode, not all client credentials are available.
 
 * Key name, which is the name of the secret.
 
 <!-- links -->
 [configuring the signing key configuration file]: ../Use-Signing-Keys.md#using-key-configuration-files
-[bulk loading Ethereum 2.0 signing keys]: ../Use-Signing-Keys.md#bulk-loading-ethereum-20-keys
+[bulk loading consensus layer signing keys]: ../Use-Signing-Keys.md#bulk-loading-consensus-layer-keys
 [Register Web3Signer as an application]: https://docs.microsoft.com/en-us/azure/key-vault/general/authentication
 [add a signing key in Azure Key Vault]: https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal#add-a-secret-to-key-vault
 [Client secret]: https://docs.microsoft.com/en-us/azure/key-vault/secrets/about-secrets

@@ -2,7 +2,7 @@
 title: Configure Web3Signer to use a YubiHSM 2 device
 ---
 
-# Using Web3Signer with YubiHSM 2
+# Use Web3Signer with YubiHSM 2
 
 Web3Signer can sign payloads using private keys stored in the [YubiHSM 2 hardware security module].
 
@@ -25,7 +25,7 @@ To communicate with the YubiHSM 2device, Web3Signer uses the PKCS#11 driver to l
     additional copies of the SDK installation.
 
     Additionally, the loaded PKCS#11 module can open only one session when communicating with a
-    YubiHSM 2 device. Because [key configuration files] are parsed in parallel, the same 
+    YubiHSM 2 device. Because [key configuration files] are parsed in parallel, the same
     authentication key ID and password must be specified in the [key configuration files] for a
     given device.
 

@@ -2,7 +2,7 @@
 description: Using the Web3Signer configuration file
 ---
 
-# Using the Web3Signer configuration file
+# Use the Web3Signer configuration file
 
 Use a YAML configuration file to specify command line options in a file.
 

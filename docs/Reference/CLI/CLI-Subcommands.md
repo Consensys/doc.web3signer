@@ -4,44 +4,40 @@ description: Web3Signer command line interface subcommands
 
 # Subcommands
 
-The Web3Signer subcommands are used to specify the platform being used:
+Use the Web3Signer subcommands to specify the platform being used:
 
-* `web3signer [Options] eth2 [Eth2 Options]`
-* `web3signer [Options] eth2 export [Eth2 Export Options]`
-* `web3signer [Options] eth2 import [Eth2 Import Options]`
-* `web3signer [Options] eth1`
-* `web3signer [Options] filecoin [Filecoin Options]`
+* `web3signer [options] eth2 [Eth2 options]`
+* `web3signer [options] eth2 export [Eth2 export options]`
+* `web3signer [options] eth2 import [Eth2 import options]`
+* `web3signer [options] eth1`
+* `web3signer [options] filecoin [Filecoin options]`
 
-## Specifying subcommand options
+!!! note
+
+    This documentation has been updated in line with the name changes [recommended by the Ethereum Foundation](https://blog.ethereum.org/2022/01/24/the-great-eth2-renaming/).
+    The `eth1` subcommands relate to the execution layer, previously called “Ethereum 1.0.”
+    The `eth2` subcommands relate to the consensus layer, previously called “Ethereum 2.0.”
+
+## Specify subcommand options
 
 The subcommand must be specified on the command line, but the subcommand options can be specified:
 
-* On the command line
-* As [environment variables](#environment-variables)
+* On the command line.
+* As environment variables.
+  For each subcommand option, the equivalent environment variable is:
+    * Uppercase.
+    * `_` replaces `-`.
+    * Has a `WEB3SIGNER_` + `<SIGNING_OPTION>_` prefix.
 * In a YAML configuration file.
 
-For example, you can set the options for the `filecoin` subcommand in an environment variables
-`export WEB3SIGNER_FILECOIN_NETWORK=TESTNET`, but the subcommand must be specified in the command line
+For example, you can set the `--network` option for the `filecoin` subcommand in an environment variable
+`export WEB3SIGNER_FILECOIN_NETWORK=TESTNET`, but the subcommand must be specified in the command line.
 
 !!! example
 
     ```bash
     web3signer --key-store-path=/Users/me/keyFiles/ filecoin
     ```
-
-## Environment variables
-
-For each subcommand option, the equivalent environment variable is:
-
-* Upper-case
-* `_` replaces `-`
-* Has a `WEB3SIGNER_` + `<SIGNING_OPTION>_` prefix. For example set `filecoin --network`
-    using the `WEB3SIGNER_FILECOIN_NETWORK` environment variable.
-
-!!! note
-
-    Only subcommand options can be set in environment variables. The actual subcommand must be
-    specified in the command line.
 
 ## View help
 
@@ -56,6 +52,37 @@ To view the command line help for the subcommands:
 ### `eth1`
 
 ### `eth2`
+
+#### `aws-connection-cache-size`
+
+=== "Syntax"
+
+    ```bash
+    --aws-connection-cache-size=<LONG>
+    ```
+
+=== "Example"
+
+    ```bash
+    --aws-connection-cache-size=5
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_AWS_CONNECTION_CACHE_SIZE=5
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.aws-connection-cache-size: 5
+    ```
+
+When
+[loading multiple keys from AWS Secrets Manager](../../HowTo/Store-Keys-Vaults/Use-AWS.md#cache-aws-secrets-manager-when-loading-multiple-keys),
+set to the maximum number of connections to cache.
+The default is 1.
 
 #### `azure-vault-enabled`
 
@@ -230,7 +257,7 @@ Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or
     eth2.azure-vault-name: "AzureKeyVault"
     ```
 
-Name of the vault to access. Sub-domain of vault.azure.net.
+Name of the vault to access. Sub-domain of `vault.azure.net`.
 
 #### `key-manager-api-enabled`
 
@@ -258,7 +285,117 @@ Name of the vault to access. Sub-domain of vault.azure.net.
     eth2.key-manager-api-enabled: true
     ```
 
-Enables the [key-manager-api](../Rest.md#key-manager-api) when set to `true`. The default is `false`.
+Enables the [key manager API](../../HowTo/Use-Signing-Keys.md#managing-your-keys) when set to `true`. The default is `false`.
+
+!!! caution
+
+    The key manager API is an early access feature and is still in development.
+
+#### `keystores-password-file`
+
+=== "Syntax"
+
+    ```bash
+    --keystores-password-file=<FILE>
+    ```
+
+=== "Example"
+
+    ```bash
+    --keystores-password-file=/Users/me/passwds/keystore_passwords.txt
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_KEYSTORES_PASSWORD_FILE=/Users/me/passwds/keystore_passwords.txt
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.keystores-password-file: "/Users/me/passwds/keystore_passwords.txt"
+    ```
+
+File that contains the password used by all keystores. Cannot be set if [`--keystores-passwords-path`](#keystores-passwords-path)
+is also specified.
+
+!!! note
+
+    Alternatively, use [`--keystores-passwords-path`](#keystores-passwords-path) to specify a directory
+    containing a separate password file for each keystore.
+
+#### `keystores-passwords-path`
+
+=== "Syntax"
+
+    ```bash
+    --keystores-passwords-path=<PATH>
+    ```
+
+=== "Example"
+
+    ```bash
+    --keystores-passwords-path=/Users/me/passwds
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_KEYSTORES_PASSWORDS_PATH=/Users/me/passwds
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.keystores-passwords-path: "/Users/me/passwds"
+    ```
+
+Directory containing password files for corresponding keystores. Each password file name must
+match the corresponding keystore filename, but with a `.txt` extension.
+
+Cannot be set if [`--keystores-password-file`](#keystores-password-file) is also specified.
+
+!!! note
+
+    Alternatively, use [`--keystores-password-file`](#keystores-password-file) to specify a single
+    password file that contains the password used by all keystores.
+
+#### `keystores-path`
+
+=== "Syntax"
+
+    ```bash
+    --keystores-path=<PATH>
+    ```
+
+=== "Example"
+
+    ```bash
+    --keystores-path=/Users/me/keystores
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_KEYSTORES_PATH=/Users/me/keystores
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.keystores-path: "/Users/me/keystores"
+    ```
+
+Directory that stores the keystore files. Keystore files must use a `.json` file extension.
+
+Use [`--keystores-password-file`](#keystores-password-file) or [`--keystores-passwords-path`](#keystores-passwords-path)
+to specify keystore passwords.
+
+!!! important
+
+    Restart Web3Signer if you want to pick up new keystores added to the directory since Web3Signer
+    started.
 
 #### `network`
 
@@ -288,7 +425,7 @@ Enables the [key-manager-api](../Rest.md#key-manager-api) when set to `true`. Th
 
 Predefined network configuration.
 Accepts a predefined network name, or file path or URL to a YAML configuration file. See the
-[Ethereum 2.0 specification] for examples.
+[consensus specification] for examples.
 
 The default is `mainnet`.
 
@@ -299,12 +436,15 @@ The default is `mainnet`.
 
 Possible values are:
 
-| Network   | Chain   | Type       | Description                                      |
-|:----------|:--------|:-----------|:-------------------------------------------------|
-| `mainnet` | Eth 2.0 | Production | Main network.                                    |
-| `minimal` | Eth 2.0 | Test       | Used for local testing and development networks. |
-| `pyrmont` | Eth 2.0 | Test       | Multi-client testnet.                            |
-| `prater`  | Eth 2.0 | Test       | Multi-client testnet.                            |
+| Network      | Chain           | Type       | Description                                      |
+|:-------------|:----------------|:-----------|:-------------------------------------------------|
+| `mainnet`    | Consensus layer | Production | Main network.                                    |
+| `minimal`    | Consensus layer | Test       | Used for local testing and development networks. |
+| `pyrmont`    | Consensus layer | Test       | Multi-client testnet.                            |
+| `prater`     | Consensus layer | Test       | Multi-client testnet.                            |
+| `kiln`       | Consensus layer | Test       | Multi-client testnet.                            |
+| `ropsten`    | Consensus layer | Test       | Multi-client testnet.                            |
+| `gnosis`     | Consensus layer | Test       | Multi-client testnet.                            |
 
 #### `slashing-protection-db-password`
 
@@ -323,7 +463,7 @@ Possible values are:
 === "Environment variable"
 
     ```bash
-    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_PASSWORD=change
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_PASSWORD=changeme
     ```
 
 === "Configuration file"
@@ -709,4 +849,4 @@ Predefined network configuration. Accepts a predefined network name. The default
 [include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
 [slashing protection]: ../../Concepts/Slashing-Protection.md
 [validator client interchange format]: https://eips.ethereum.org/EIPS/eip-3076
-[Ethereum 2.0 specification]: https://github.com/ethereum/eth2.0-specs/tree/master/configs
+[consensus specification]: https://github.com/ethereum/consensus-specs/tree/master/configs
