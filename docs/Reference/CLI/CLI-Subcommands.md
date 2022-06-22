@@ -125,19 +125,19 @@ Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`
 === "Example"
 
     ```bash
-    --aws-secrets-enabled=ENVIRONMENT
+    --aws-secrets-auth-mode=ENVIRONMENT
     ```
 
 === "Environment variable"
 
     ```bash
-    WEB3SIGNER_ETH2_AWS_SECRETS_ENABLED=ENVIRONMENT
+    WEB3SIGNER_ETH2_AWS_SECRETS_AUTH_MODE=ENVIRONMENT
     ```
 
 === "Configuration file"
 
     ```bash
-    eth2.aws-secrets-enabled: "ENVIRONMENT"
+    eth2.aws-secrets-auth-mode: "ENVIRONMENT"
     ```
 
 Authentication mode for AWS Secrets Manager.
