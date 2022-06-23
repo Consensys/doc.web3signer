@@ -84,35 +84,34 @@ When
 set to the maximum number of connections to cache.
 The default is 1.
 
-#### `aws-secrets-access-key-id`
+#### `aws-secrets-enabled`
 
 === "Syntax"
 
     ```bash
-    --aws-secrets-access-key-id=<STRING>
+    --aws-secrets-enabled=<BOOLEAN>
     ```
 
 === "Example"
 
     ```bash
-    --aws-secrets-access-key-id=AKIAIOSFODNN7EXAMPLE
+    --aws-secrets-enabled=true
     ```
 
 === "Environment variable"
 
     ```bash
-    WEB3SIGNER_ETH2_AWS_SECRETS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+    WEB3SIGNER_ETH2_AWS_SECRETS_ENABLED=true
     ```
 
 === "Configuration file"
 
     ```bash
-    eth2.aws-secrets-access-key-id: "AKIAIOSFODNN7EXAMPLE"
+    eth2.aws-secrets-enabled: true
     ```
 
-AWS access key ID to authenticate AWS Secrets Manager.
-
-Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`.
+Enables [bulk loading keys from AWS Secrets Manager](../../HowTo/Use-Signing-Keys.md#aws-secrets-manager).
+The default is `false`.
 
 #### `aws-secrets-auth-mode`
 
@@ -145,94 +144,36 @@ Options are `SPECIFIED` and `ENVIRONMENT`.
 The default is `SPECIFIED`.
 
 Set [`--aws-secrets-access-key-id`](#aws-secrets-access-key-id),
-[`--aws-secrets-secret-access-key`](#aws-secrets-access-key-id), and
+[`--aws-secrets-secret-access-key`](#aws-secrets-secret-access-key), and
 [`--aws-secrets-region`](#aws-secrets-region) if using `SPECIFIED`.
 
-#### `aws-secrets-enabled`
+#### `aws-secrets-access-key-id`
 
 === "Syntax"
 
     ```bash
-    --aws-secrets-enabled=<BOOLEAN>
+    --aws-secrets-access-key-id=<STRING>
     ```
 
 === "Example"
 
     ```bash
-    --aws-secrets-enabled=true
+    --aws-secrets-access-key-id=AKIAIOSFODNN7EXAMPLE
     ```
 
 === "Environment variable"
 
     ```bash
-    WEB3SIGNER_ETH2_AWS_SECRETS_ENABLED=true
+    WEB3SIGNER_ETH2_AWS_SECRETS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
     ```
 
 === "Configuration file"
 
     ```bash
-    eth2.aws-secrets-enabled: true
+    eth2.aws-secrets-access-key-id: "AKIAIOSFODNN7EXAMPLE"
     ```
 
-Enables [bulk loading keys from AWS Secrets Manager](../../HowTo/Use-Signing-Keys.md#aws-secrets-manager).
-The default is `false`.
-
-#### `aws-secrets-prefixes-filter`
-
-=== "Syntax"
-
-    ```bash
-    --aws-secrets-prefixes-filter=<STRING>[,<STRING>,...]
-    ```
-
-=== "Example"
-
-    ```bash
-    --aws-secrets-prefixes-filter=prefix1,prefix2
-    ```
-
-=== "Environment variable"
-
-    ```bash
-    WEB3SIGNER_ETH2_AWS_SECRETS_PREFIXES_FILTER=prefix1,prefix2
-    ```
-
-=== "Configuration file"
-
-    ```bash
-    eth2.aws-secrets-prefixes-filter: ["prefix1","prefix2"]
-    ```
-
-Optional comma-separated list of secret name prefixes filter to apply while fetching secrets from
-AWS Secrets Manager.
-
-#### `aws-secrets-region`
-
-=== "Syntax"
-
-    ```bash
-    --aws-secrets-region=<STRING>
-    ```
-
-=== "Example"
-
-    ```bash
-    --aws-secrets-region=us-east-2
-    ```
-
-=== "Environment variable"
-
-    ```bash
-    WEB3SIGNER_ETH2_AWS_SECRETS_REGION=us-east-2
-    ```
-
-=== "Configuration file"
-
-    ```bash
-    eth2.aws-secrets-region: "us-east-2"
-    ```
-
-AWS region where AWS Secrets Manager is available.
+AWS access key ID to authenticate AWS Secrets Manager.
 
 Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`.
 
@@ -266,6 +207,66 @@ AWS secret access key to authenticate AWS Secrets Manager.
 
 Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`.
 
+#### `aws-secrets-region`
+
+=== "Syntax"
+
+    ```bash
+    --aws-secrets-region=<STRING>
+    ```
+
+=== "Example"
+
+    ```bash
+    --aws-secrets-region=us-east-2
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_AWS_SECRETS_REGION=us-east-2
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.aws-secrets-region: "us-east-2"
+    ```
+
+AWS region where AWS Secrets Manager is available.
+
+Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`.
+
+#### `aws-secrets-prefixes-filter`
+
+=== "Syntax"
+
+    ```bash
+    --aws-secrets-prefixes-filter=<STRING>[,<STRING>,...]
+    ```
+
+=== "Example"
+
+    ```bash
+    --aws-secrets-prefixes-filter=prefix1,prefix2
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_AWS_SECRETS_PREFIXES_FILTER=prefix1,prefix2
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.aws-secrets-prefixes-filter: ["prefix1","prefix2"]
+    ```
+
+Optional comma-separated list of secret name prefixes filter to apply while fetching secrets from
+AWS Secrets Manager.
+Applied as AND operation with other filters.
+
 #### `aws-secrets-tag-names-filter`
 
 === "Syntax"
@@ -295,6 +296,7 @@ Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`
 
 Optional comma-separated list of tag names filter to apply while fetching secrets from AWS Secrets
 Manager.
+Applied as AND operation with other filters.
 
 #### `aws-secrets-tag-values-filter`
 
@@ -324,6 +326,7 @@ Manager.
 
 Optional comma-separated list of tag values filter to apply while fetching secrets from AWS Secrets
 Manager.
+Applied as AND operation with other filters.
 
 #### `azure-vault-enabled`
 
