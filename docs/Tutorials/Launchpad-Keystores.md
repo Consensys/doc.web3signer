@@ -9,7 +9,7 @@ proof-of-stake network. The tool generates an encrypted keystore file containing
 details. Load this keystore into Web3Signer to sign attestations and blocks with the validator
 details.
 
-This tutorial uses Teku and Web3Signer to run validators created on the `pyrmont` testnet.
+This tutorial uses Teku and Web3Signer to run validators created on the `prater` testnet.
 
 **Prerequisites**:
 
@@ -24,13 +24,13 @@ penalties if the validator is unable to perform its duties when the deposit is p
 activated.
 
 ```bash
-teku --network=pyrmont --metrics-enabled --rest-api-enabled
+teku --network=prater --metrics-enabled --rest-api-enabled
 ```
 
 ## 2. Generate validators
 
-This step generates a validator on the `pyrmont` testnet. Use the
-[`pyrmont` staking launchpad](https://pyrmont.launchpad.ethereum.org/) and
+This step generates a validator on the `prater` testnet. Use the
+[`prater` staking launchpad](https://prater.launchpad.ethereum.org/) and
 follow the step-by-step process to deposit your funds and generate the keystore.
 
 The process includes installing the consensus layer deposit CLI tool, to generate your validator keystores
@@ -98,7 +98,7 @@ Start Teku and specify the public keys of the validators that Web3Signer signs a
 block for, and specify the Web3Signer address.
 
 ```bash
-teku --network=pyrmont \
+teku --network=prater \
 --eth1-endpoint=http://localhost:8545 \
 --validators-external-signer-public-keys=0xa99a...e44c,0xb89b...4a0b \
 --validators-external-signer-url=http://localhost:9000
