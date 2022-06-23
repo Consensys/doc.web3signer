@@ -440,7 +440,6 @@ Possible values are:
 |:-------------|:----------------|:-----------|:-------------------------------------------------|
 | `mainnet`    | Consensus layer | Production | Main network.                                    |
 | `minimal`    | Consensus layer | Test       | Used for local testing and development networks. |
-| `pyrmont`    | Consensus layer | Test       | Multi-client testnet.                            |
 | `prater`     | Consensus layer | Test       | Multi-client testnet.                            |
 | `kiln`       | Consensus layer | Test       | Multi-client testnet.                            |
 | `ropsten`    | Consensus layer | Test       | Multi-client testnet.                            |
