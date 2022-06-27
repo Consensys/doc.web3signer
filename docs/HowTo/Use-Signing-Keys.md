@@ -20,13 +20,14 @@ You can configure access to the signing key by:
 
 * [Creating a separate key configuration file] for each signing key.
 * Using the [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2) to bulk load
-    consensus layer signing keys stored in [Azure Key Vault](#azure-key-vault) or
-    [keystore files](#keystore-files).
+  consensus layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Secrets
+  Manager](#aws-secrets-manager), or [keystore files](#keystore-files).
 
     !!! note
 
-        Bulk-loading is only available when using the consensus layer platform with keys stored in
-        Azure Key Vault or keystore files, and can be used in combination with key configuration files.
+        Bulk loading is only available when using the consensus layer platform with keys stored in
+        Azure Key Vault, AWS Secrets Manager, or keystore files, and can be used in combination with
+        key configuration files.
 
 ## Use key configuration files
 
@@ -49,8 +50,8 @@ to specify the location of the key configuration files.
 
 ### Azure Key Vault
 
-You can bulk load consensus layer keys that are stored in Azure Key Vault. To do this use the
-Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2).
+You can bulk load consensus layer keys that are stored in Azure Key Vault using the Web3Signer
+[`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2).
 
 !!! example
 
@@ -61,10 +62,23 @@ Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2)
     --azure-vault-name=AzureKeyVault
     ```
 
+### AWS Secrets Manager
+
+You can bulk load consensus layer keys that are stored in AWS Secrets Manager using the Web3Signer
+[`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2).
+
+!!! example
+
+    ```bash
+    web3signer eth2 --aws-secrets-enabled=true --aws-secrets-access-key-id=AKIAIOSFODNN7EXAMPLE \
+    --aws-secrets-secret-access-key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY \
+    --aws-secrets-region=us-east-2
+    ```
+
 ### Keystore files
 
-You can bulk load consensus layer keys that are stored as keystore files. To do this use the
-Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2).
+You can bulk load consensus layer keys that are stored as keystore files using the Web3Signer
+[`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2).
 
 !!! example
 
