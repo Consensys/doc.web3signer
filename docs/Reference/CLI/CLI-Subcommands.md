@@ -265,7 +265,7 @@ Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`
 
 Optional comma-separated list of secret name prefixes filter to apply while fetching secrets from
 AWS Secrets Manager.
-Applied as AND operation with other filters.
+Applied as `AND` operation with other filters.
 
 #### `aws-secrets-tag-names-filter`
 
@@ -296,7 +296,7 @@ Applied as AND operation with other filters.
 
 Optional comma-separated list of tag names filter to apply while fetching secrets from AWS Secrets
 Manager.
-Applied as AND operation with other filters.
+Applied as `AND` operation with other filters.
 
 #### `aws-secrets-tag-values-filter`
 
@@ -326,7 +326,7 @@ Applied as AND operation with other filters.
 
 Optional comma-separated list of tag values filter to apply while fetching secrets from AWS Secrets
 Manager.
-Applied as AND operation with other filters.
+Applied as `AND` operation with other filters.
 
 #### `azure-vault-enabled`
 
