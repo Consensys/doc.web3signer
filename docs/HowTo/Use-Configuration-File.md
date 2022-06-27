@@ -49,7 +49,7 @@ differences between the command line and the YAML file format are:
     data-path: "~/web3signerdata" # Path
 
     # Signing key locations
-    key-files-path: "/Users/me/keys"
+    key-store-path: "/Users/me/keys"
 
     # Filecoin network
     filecoin.network: "TESTNET"
