@@ -104,6 +104,14 @@ Eth2 Slashing protection metrics:
 |`permitted_signings`| The number of slashing checks which have reported 'safe to sign'. |
 |`prevented_signings`| The number of prevented signings due to violation of slashing conditions. |
 
+Process metrics:
+
+| Name              | Definition                                 |
+|-------------------|--------------------------------------------|
+| `process_release` | The number of the release version running. |
+
+
+
 ## Visualize collected data
 
 Use
