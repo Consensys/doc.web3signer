@@ -110,8 +110,6 @@ Process metrics:
 |-------------------|--------------------------------------------|
 | `process_release` | The number of the release version running. |
 
-
-
 ## Visualize collected data
 
 Use
