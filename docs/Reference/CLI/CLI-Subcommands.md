@@ -702,7 +702,7 @@ Possible values are:
 === "Example"
 
     ```bash
-    ----slashing-protection-db-health-check-interval-milliseconds=20000
+    --slashing-protection-db-health-check-interval-milliseconds=20000
     ```
 
 === "Environment variable"
@@ -732,7 +732,7 @@ The service responds with a `200` message if healthy, and `503` if unhealthy.
 === "Example"
 
     ```bash
-    ----slashing-protection-db-health-check-timeout-milliseconds=2000
+    --slashing-protection-db-health-check-timeout-milliseconds=2000
     ```
 
 === "Environment variable"
