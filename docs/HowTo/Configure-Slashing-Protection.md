@@ -144,6 +144,17 @@ You can include additional optional pruning configuration options. For example, 
 
     Do not use slashing protection database pruning while [importing or exporting the database](#import-or-export-a-slashing-protection-database).
 
+## Health checks
+
+By default Web3Signer performs a health check on the slashing protection database every 30000 milliseconds.
+To change the default value, configure the [--slashing-protection-db-health-check-interval-milliseconds](../Reference/CLI/CLI-Subcommands.md#slashing-protection-db-health-check-interval-milliseconds)
+command line option.
+
+The service responds with a `200` message if healthy, and `503` if unhealthy.
+
+You can also configure the health check timeout with the [--slashing-protection-db-health-check-timeout-milliseconds](../Reference/CLI/CLI-Subcommands.md#slashing-protection-db-health-check-timeout-milliseconds)
+command line option. The timeout defaults to 3000 milliseconds.
+
 <!-- links -->
 [slashing protection]: ../Concepts/Slashing-Protection.md
 [slashing protection database pruning]: #prune-the-slashing-protection-database
