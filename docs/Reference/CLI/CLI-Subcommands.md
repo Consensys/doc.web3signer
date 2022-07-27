@@ -717,7 +717,7 @@ Possible values are:
     eth2.slashing-protection-db-health-check-interval-milliseconds: 20000
     ```
 
-Milliseconds between slashing database health checks. The default is 30000.
+Milliseconds between the slashing protection database health checks. The default is 30000.
 
 The service responds with a `200` message if healthy, and `503` if unhealthy.
 
