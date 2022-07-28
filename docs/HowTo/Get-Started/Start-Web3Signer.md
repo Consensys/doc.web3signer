@@ -62,7 +62,8 @@ Start the client, for example [Teku] by specifying the Web3Signer details.
 
 ## Confirm Web3Signer is running
 
-Use the [`upcheck`](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Server-Status) endpoint to confirm Web3Signer is connected and running.
+Use the [`upcheck`](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Server-Status) endpoint
+to confirm Web3Signer is connected and running.
 
 !!! example
 
@@ -77,6 +78,9 @@ Use the [`upcheck`](https://consensys.github.io/web3signer/web3signer-eth2.html#
         ```json
         200 OK
         ```
+
+Web3Signer by default also performs a health check on the
+[slashing protection database](../../HowTo/Configure-Slashing-Protection.md#slashing-protection-health-check).
 
 <!-- Links -->
 [Signing key configuration files]: ../Use-Signing-Keys.md

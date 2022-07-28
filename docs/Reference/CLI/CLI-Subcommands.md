@@ -691,6 +691,67 @@ Possible values are:
 | `ropsten`    | Consensus layer | Test       | Multi-client testnet.                            |
 | `gnosis`     | Consensus layer | Test       | Multi-client testnet.                            |
 
+#### `slashing-protection-db-health-check-interval-milliseconds`
+
+=== "Syntax"
+
+    ```bash
+    --slashing-protection-db-health-check-interval-milliseconds=<INTERVAL>
+    ```
+
+=== "Example"
+
+    ```bash
+    --slashing-protection-db-health-check-interval-milliseconds=20000
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_HEALTH_CHECK_INTERVAL_MILLISECONDS=20000
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.slashing-protection-db-health-check-interval-milliseconds: 20000
+    ```
+
+Milliseconds between the slashing protection database health checks. The default is 30000.
+
+The service responds with a `200` message if healthy, and `503` if unhealthy.
+
+#### `slashing-protection-db-health-check-timeout-milliseconds`
+
+=== "Syntax"
+
+    ```bash
+    --slashing-protection-db-health-check-timeout-milliseconds=<INTERVAL>
+    ```
+
+=== "Example"
+
+    ```bash
+    --slashing-protection-db-health-check-timeout-milliseconds=2000
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_HEALTH_CHECK_TIMEOUT_MILLISECONDS=2000
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.slashing-protection-db-health-check-timeout-milliseconds: 2000
+    ```
+
+Milliseconds after which to fail the database health check. For example, if the health check
+connects to the slashing protection database, but does not report back in a timely manner.
+
+The default is 3000.
+
 #### `slashing-protection-db-password`
 
 === "Syntax"
