@@ -80,7 +80,7 @@ to confirm Web3Signer is connected and running.
         ```
 
 Web3Signer by default also performs a health check on the
-[slashing protection database](../../HowTo/Configure-Slashing-Protection.md).
+[slashing protection database](../../HowTo/Configure-Slashing-Protection.md#slashing-protection-health-check).
 
 <!-- Links -->
 [Signing key configuration files]: ../Use-Signing-Keys.md
