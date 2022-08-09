@@ -84,6 +84,250 @@ When
 set to the maximum number of connections to cache.
 The default is 1.
 
+#### `aws-secrets-enabled`
+
+=== "Syntax"
+
+    ```bash
+    --aws-secrets-enabled=<BOOLEAN>
+    ```
+
+=== "Example"
+
+    ```bash
+    --aws-secrets-enabled=true
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_AWS_SECRETS_ENABLED=true
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.aws-secrets-enabled: true
+    ```
+
+Enables [bulk loading keys from AWS Secrets Manager](../../HowTo/Use-Signing-Keys.md#aws-secrets-manager).
+The default is `false`.
+
+#### `aws-secrets-auth-mode`
+
+=== "Syntax"
+
+    ```bash
+    --aws-secrets-auth-mode=<STRING>
+    ```
+
+=== "Example"
+
+    ```bash
+    --aws-secrets-auth-mode=ENVIRONMENT
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_AWS_SECRETS_AUTH_MODE=ENVIRONMENT
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.aws-secrets-auth-mode: "ENVIRONMENT"
+    ```
+
+Authentication mode for AWS Secrets Manager.
+Options are `SPECIFIED` and `ENVIRONMENT`.
+The default is `SPECIFIED`.
+
+Set [`--aws-secrets-access-key-id`](#aws-secrets-access-key-id),
+[`--aws-secrets-secret-access-key`](#aws-secrets-secret-access-key), and
+[`--aws-secrets-region`](#aws-secrets-region) if using `SPECIFIED`.
+
+#### `aws-secrets-access-key-id`
+
+=== "Syntax"
+
+    ```bash
+    --aws-secrets-access-key-id=<STRING>
+    ```
+
+=== "Example"
+
+    ```bash
+    --aws-secrets-access-key-id=AKIAIOSFODNN7EXAMPLE
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_AWS_SECRETS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.aws-secrets-access-key-id: "AKIAIOSFODNN7EXAMPLE"
+    ```
+
+AWS access key ID to authenticate AWS Secrets Manager.
+
+Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`.
+
+#### `aws-secrets-secret-access-key`
+
+=== "Syntax"
+
+    ```bash
+    --aws-secrets-secret-access-key=<STRING>
+    ```
+
+=== "Example"
+
+    ```bash
+    --aws-secrets-secret-access-key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_AWS_SECRETS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.aws-secrets-secret-access-key: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+    ```
+
+AWS secret access key to authenticate AWS Secrets Manager.
+
+Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`.
+
+#### `aws-secrets-region`
+
+=== "Syntax"
+
+    ```bash
+    --aws-secrets-region=<STRING>
+    ```
+
+=== "Example"
+
+    ```bash
+    --aws-secrets-region=us-east-2
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_AWS_SECRETS_REGION=us-east-2
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.aws-secrets-region: "us-east-2"
+    ```
+
+AWS region where AWS Secrets Manager is available.
+
+Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`.
+
+#### `aws-secrets-prefixes-filter`
+
+=== "Syntax"
+
+    ```bash
+    --aws-secrets-prefixes-filter=<STRING>[,<STRING>,...]
+    ```
+
+=== "Example"
+
+    ```bash
+    --aws-secrets-prefixes-filter=prefix1,prefix2
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_AWS_SECRETS_PREFIXES_FILTER=prefix1,prefix2
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.aws-secrets-prefixes-filter: ["prefix1","prefix2"]
+    ```
+
+Optional comma-separated list of secret name prefixes filter to apply while fetching secrets from
+AWS Secrets Manager.
+Applied as `AND` operation with other filters.
+
+#### `aws-secrets-tag-names-filter`
+
+=== "Syntax"
+
+    ```bash
+    --aws-secrets-tag-names-filter=<STRING>[,<STRING>,...]
+    ```
+
+=== "Example"
+
+    ```bash
+    --aws-secrets-tag-names-filter=tagName1,tagName2
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_AWS_SECRETS_TAG_NAMES_FILTER=tagName1,tagName2
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.aws-secrets-tag-names-filter: ["tagName1","tagName2"]
+
+    ```
+
+Optional comma-separated list of tag names filter to apply while fetching secrets from AWS Secrets
+Manager.
+Applied as `AND` operation with other filters.
+
+#### `aws-secrets-tag-values-filter`
+
+=== "Syntax"
+
+    ```bash
+    --aws-secrets-tag-values-filter=<STRING>[,<STRING>,...]
+    ```
+
+=== "Example"
+
+    ```bash
+    --aws-secrets-tag-values-filter=tagValue1,tagValue2
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_AWS_SECRETS_TAG_VALUES_FILTER=tagValue1,tagValue2
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.aws-secrets-tag-values-filter: ["tagValue1","tagValue2"]
+    ```
+
+Optional comma-separated list of tag values filter to apply while fetching secrets from AWS Secrets
+Manager.
+Applied as `AND` operation with other filters.
+
 #### `azure-vault-enabled`
 
 === "Syntax"
@@ -110,7 +354,8 @@ The default is 1.
     eth2.azure-vault-enabled: true
     ```
 
-Allow Web3Signer to bulk load all keys from the specified Azure Vault.
+Enables [bulk loading keys from Azure Key Vault](../../HowTo/Use-Signing-Keys.md#azure-key-vault).
+The default is `false`.
 
 #### `azure-client-id`
 
@@ -226,7 +471,7 @@ The tenant ID of the Azure Portal instance being used.
     ```
 
 Authentication mode for Azure Vault. Options are `CLIENT_SECRET`, `SYSTEM_ASSIGNED_MANAGED_IDENTITY`,
-and `USER_ASSIGNED_MANAGED_IDENTITY`. Defaults to `CLIENT_SECRET`.
+and `USER_ASSIGNED_MANAGED_IDENTITY`. The default is `CLIENT_SECRET`.
 
 Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or
 `USER_ASSIGNED_MANAGED_IDENTITY`.
@@ -285,7 +530,8 @@ Name of the vault to access. Sub-domain of `vault.azure.net`.
     eth2.key-manager-api-enabled: true
     ```
 
-Enables the [key manager API](../../HowTo/Use-Signing-Keys.md#managing-your-keys) when set to `true`. The default is `false`.
+Enables the [key manager API](../../HowTo/Use-Signing-Keys.md#manage-keys).
+The default is `false`.
 
 !!! caution
 
@@ -440,11 +686,71 @@ Possible values are:
 |:-------------|:----------------|:-----------|:-------------------------------------------------|
 | `mainnet`    | Consensus layer | Production | Main network.                                    |
 | `minimal`    | Consensus layer | Test       | Used for local testing and development networks. |
-| `pyrmont`    | Consensus layer | Test       | Multi-client testnet.                            |
 | `prater`     | Consensus layer | Test       | Multi-client testnet.                            |
 | `kiln`       | Consensus layer | Test       | Multi-client testnet.                            |
 | `ropsten`    | Consensus layer | Test       | Multi-client testnet.                            |
 | `gnosis`     | Consensus layer | Test       | Multi-client testnet.                            |
+
+#### `slashing-protection-db-health-check-interval-milliseconds`
+
+=== "Syntax"
+
+    ```bash
+    --slashing-protection-db-health-check-interval-milliseconds=<INTERVAL>
+    ```
+
+=== "Example"
+
+    ```bash
+    --slashing-protection-db-health-check-interval-milliseconds=20000
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_HEALTH_CHECK_INTERVAL_MILLISECONDS=20000
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.slashing-protection-db-health-check-interval-milliseconds: 20000
+    ```
+
+Milliseconds between the slashing protection database health checks. The default is 30000.
+
+The service responds with a `200` message if healthy, and `503` if unhealthy.
+
+#### `slashing-protection-db-health-check-timeout-milliseconds`
+
+=== "Syntax"
+
+    ```bash
+    --slashing-protection-db-health-check-timeout-milliseconds=<INTERVAL>
+    ```
+
+=== "Example"
+
+    ```bash
+    --slashing-protection-db-health-check-timeout-milliseconds=2000
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_HEALTH_CHECK_TIMEOUT_MILLISECONDS=2000
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.slashing-protection-db-health-check-timeout-milliseconds: 2000
+    ```
+
+Milliseconds after which to fail the database health check. For example, if the health check
+connects to the slashing protection database, but does not report back in a timely manner.
+
+The default is 3000.
 
 #### `slashing-protection-db-password`
 
@@ -655,7 +961,6 @@ The default is `true`.
     ```
 
 Enables [slashing protection database pruning](../../HowTo/Configure-Slashing-Protection.md#prune-the-slashing-protection-database).
-
 The default is `false`.
 
 #### `slashing-protection-pruning-epochs-to-keep`
