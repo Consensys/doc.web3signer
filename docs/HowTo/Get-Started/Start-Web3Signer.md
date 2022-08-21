@@ -67,6 +67,8 @@ It is important that this network matches the one you have setup for your valida
 For example, if you have [teku set up to run on goerli](https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Connect/Connect-To-Testnet/#sync-the-execution-layer-network),
 then you must configure Web3Signer with the goerli network under the eth2 subcommand like so:
 
+=== "Example"
+
     ```bash
     web3signer --key-store-path=/Users/me/keyFiles/ eth2 --network=goerli --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
     ```
