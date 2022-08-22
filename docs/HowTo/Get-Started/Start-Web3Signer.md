@@ -63,7 +63,7 @@ Start the client, for example [Teku] by specifying the Web3Signer details.
 ### Public testnets
 
 If you are running Web3Signer `eth2` mode on a public testnet, then you must specify the `network` option.
-It is important that this network matches the one you have setup for your validator client.
+It's important that this network matches the one you set up for your validator client.
 For example, if you have [Teku set up to run on Goerli](https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Connect/Connect-To-Testnet/#sync-the-execution-layer-network)
 then you must configure Web3Signer with the Goerli network under the eth2 subcommand as in the example below.
 
