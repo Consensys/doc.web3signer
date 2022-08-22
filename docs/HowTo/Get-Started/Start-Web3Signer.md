@@ -13,19 +13,19 @@ description: Getting started with Web3Signer
 
 * [Signing key configuration files] to access the required signing keys.
 
-Web3Signer supports execution layer clients, consensus layer clients, and Filecoin platforms, so you must specify the
+Web3Signer supports consensus layer clients, execution layer clients, and Filecoin platforms, so you must specify the
 signing mode, and the location of the signing key configuration files when starting Web3Signer.
-
-=== "Execution layer client"
-
-    ```bash
-    web3signer --key-store-path=/Users/me/keyFiles/ eth1
-    ```
 
 === "Consensus layer client"
 
     ```bash
     web3signer --key-store-path=/Users/me/keyFiles/ eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
+    ```
+
+=== "Execution layer client"
+
+    ```bash
+    web3signer --key-store-path=/Users/me/keyFiles/ eth1
     ```
 
 === "Filecoin"
@@ -38,8 +38,8 @@ In the command line:
 
 * Use the [`--key-store-path`](../../Reference/CLI/CLI-Syntax.md#key-store-path) option to specify
     the location of the signing key configuration files.
-* Specify the [subcommand] to indicate which signing mode to use. Valid subcommands are `eth1`,
-    `eth2`, and `filecoin`. You can only specify one signing mode when starting Web3Signer.
+* Specify the [subcommand] to indicate which signing mode to use. Valid subcommands are `eth2`, `eth1`,
+    and `filecoin`. You can only specify one signing mode when starting Web3Signer.
 
 ## Consensus layer considerations
 
@@ -59,6 +59,21 @@ Start the client, for example [Teku] by specifying the Web3Signer details.
     If Teku connects to a network other than `mainnet`, then the
     [`--network`](../../Reference/CLI/CLI-Subcommands.md#network) option must be specified, and it
     must match the network used by the Teku client.
+
+### Public testnets
+
+If you are running Web3Signer eth2 mode on a public testnet then you must specify the `network` option.
+It is important that this network matches the one you have setup for your validator client.
+For example, if you have [teku set up to run on goerli](https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Connect/Connect-To-Testnet/#sync-the-execution-layer-network)
+then you must configure Web3Signer with the goerli network under the eth2 subcommand as in the example below.
+
+=== "Example"
+
+    ```bash
+    web3signer --key-store-path=/Users/me/keyFiles/ eth2 --network=goerli --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
+    ```
+
+See the [`--network` documentation](../../Reference/CLI/CLI-Subcommands.md#network) for more information about this option and the supported networks.
 
 ## Confirm Web3Signer is running
 
