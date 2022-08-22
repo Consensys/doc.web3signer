@@ -83,7 +83,7 @@ Start Web3Signer and specify the location of the key configuration files and
 [slashing protection database].
 
 ```bash
-web3signer --key-store-path=/Users/me/keys eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
+web3signer --key-store-path=/Users/me/keys eth2 --network=goerli --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
 ```
 
 !!! note
