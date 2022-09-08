@@ -162,8 +162,8 @@ command line option. The timeout defaults to 3000 milliseconds.
 [Docker]: https://docs.docker.com/install/
 [run the PostgreSQL database in a container]: https://hub.docker.com/_/postgres/
 [Flyway]: https://flywaydb.org/documentation/
-[include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
+[include the port number in the database URL]: https://jdbc.postgresql.org/documentation/use/#connecting-to-the-database
 [Teku]: https://docs.teku.consensys.net/HowTo/External-Signer/Use-External-Signer/
-[connect to the database]: https://jdbc.postgresql.org/documentation/head/connect.html
+[connect to the database]: https://jdbc.postgresql.org/documentation/use/#connecting-to-the-database
 [validator client interchange format]: https://eips.ethereum.org/EIPS/eip-3076
 [HikariCP]: https://github.com/brettwooldridge/HikariCP
