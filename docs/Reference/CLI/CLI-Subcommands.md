@@ -809,7 +809,7 @@ The password to connect to the slashing protection database.
 [HikariCP connection pool configuration file](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby).
 
 Web3Signer uses HikariCP to manage database connections, and uses the default configuration values. The defaults perform
-well in most deployments, but you can be override them with this option.
+well in most deployments, but you can override them using this option.
 
 #### `slashing-protection-db-url`
 
@@ -933,6 +933,38 @@ When set to `false`, [slashing protection database pruning](../../HowTo/Configur
 is disabled at boot and only takes place at the scheduled [pruning intervals](#slashing-protection-pruning-interval).
 
 The default is `true`.
+
+#### `slashing-protection-pruning-db-pool-configuration-file`
+
+=== "Syntax"
+
+    ```bash
+    --slashing-protection-pruning-db-pool-configuration-file=<FILE>
+    ```
+
+=== "Example"
+
+    ```bash
+    --slashing-protection-pruning-db-pool-configuration-file=/Users/me/config/HikariConfig.properties
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_DB_POOL_CONFIGURATION_FILE=/Users/me/config/HikariConfig.properties
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    eth2.slashing-protection-pruning-db-pool-configuration-file: "/Users/me/config/HikariConfig.properties"
+    ```
+
+[HikariCP connection pool configuration file](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby)
+used by the pruning process.
+
+Web3Signer uses HikariCP to manage database connections, and uses the default configuration values.
+The defaults perform well in most deployments, but you can override them using this option.
 
 #### `slashing-protection-pruning-enabled`
 
