@@ -11,6 +11,7 @@ Use the Web3Signer subcommands to specify the platform being used:
 * `web3signer [options] eth2 import [Eth2 import options]`
 * `web3signer [options] eth1`
 * `web3signer [options] filecoin [Filecoin options]`
+* `web3signer [options] watermark-repair [watermark repair options]`
 
 !!! note
 
@@ -46,6 +47,7 @@ To view the command line help for the subcommands:
 * [`web3signer help eth1`](#eth1)
 * [`web3signer help eth2`](#eth2)
 * [`web3signer help filecoin`](#filecoin)
+* [`web3signer help watermark-repair`](#watermark-repair)
 
 ## Options
 
@@ -1089,7 +1091,7 @@ The file to export the slashing protection database to. The exported file uses t
 
 ### `eth2 import`
 
-Import a slashing protection database from a file.
+Imports a slashing protection database from a file.
 
 #### `from`
 
@@ -1149,6 +1151,96 @@ The file to import the slashing protection database from. The file must be forma
     ```
 
 Predefined network configuration. Accepts a predefined network name. The default is `TESTNET`.
+
+### `watermark-repair`
+
+Updates the slashing protection low watermark for validators.
+You can only increase the low watermark, not decrease it.
+
+#### `epoch`
+
+=== "Syntax"
+
+    ```bash
+    --epoch=<LONG>
+    ```
+
+=== "Example"
+
+    ```bash
+    --epoch=30000
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_WATERMARK_REPAIR_EPOCH=30000
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    watermark-repair.epoch: 30000
+    ```
+
+Low watermark to set the attestation source and target to.
+
+#### `slot`
+
+=== "Syntax"
+
+    ```bash
+    --slot=<LONG>
+    ```
+
+=== "Example"
+
+    ```bash
+    --slot=20000
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_WATERMARK_REPAIR_SLOT=20000
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    watermark-repair.slot: 20000
+    ```
+
+Low watermark to set the block slot to.
+
+#### `validator-ids`
+
+=== "Syntax"
+
+    ```bash
+    --validator-ids=<KEY>[,<KEY>,...]
+    ```
+
+=== "Example"
+
+    ```bash
+    --validator-ids=0x8f3f44b74d316c3293cced0c48c72e021ef8d145d136f2908931090e7181c3b777498128a348d07b0b9cd3921b5ca537,0x98d083489b3b06b8740da2dfec5cc3c01b2086363fe023a9d7dc1f907633b1ff11f7b99b19e0533e969862270061d884
+    ```
+
+=== "Environment variable"
+
+    ```bash
+    WEB3SIGNER_WATERMARK_REPAIR_VALIDATOR_IDS=0x8f3f44b74d316c3293cced0c48c72e021ef8d145d136f2908931090e7181c3b777498128a348d07b0b9cd3921b5ca537,0x98d083489b3b06b8740da2dfec5cc3c01b2086363fe023a9d7dc1f907633b1ff11f7b99b19e0533e969862270061d884
+    ```
+
+=== "Configuration file"
+
+    ```bash
+    watermark-repair.validator-ids: ["0x8f3f44b74d316c3293cced0c48c72e021ef8d145d136f2908931090e7181c3b777498128a348d07b0b9cd3921b5ca537", "0x98d083489b3b06b8740da2dfec5cc3c01b2086363fe023a9d7dc1f907633b1ff11f7b99b19e0533e969862270061d884"]
+    ```
+
+List of validator public keys as hexadecimal to apply low watermark update to.
+If none are specified, the low watermark is updated for all validators.
 
 <!-- links -->
 [include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
