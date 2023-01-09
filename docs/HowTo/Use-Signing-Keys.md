@@ -33,7 +33,7 @@ You can configure access to the signing key by:
 
 For each signing key, define the parameters to access the key in a [key configuration file].
 You can create a separate configuration file for each key, or specify multiple configurations in a
-single file, adding a triple-dash separator (`---`) between configurations.
+single file by adding a triple-dash separator (`---`) between configurations.
 
 The configuration file must be YAML-formatted, and can use any naming format, but must have the
 `.yaml` extension.
