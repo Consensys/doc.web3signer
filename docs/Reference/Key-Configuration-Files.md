@@ -4,8 +4,13 @@ title: Signing key configuration file parameters
 
 # Signing key configuration file parameters
 
-A [signing key configuration file] is a YAML file that defines the parameters to access the
-signing key.
+A [signing key configuration file] is a YAML file that defines the parameters to access one or more
+signing keys.
+
+!!! note
+
+    You can specify multiple key configurations in a single configuration file by adding a
+    triple-dash separator (`---`) between configurations.
 
 ## Raw unencrypted files
 
