@@ -18,7 +18,7 @@ Web3Signer supports BLS12-381 or secp256k1 signing keys stored in:
 
 You can configure access to the signing key by:
 
-* [Creating a separate key configuration file] for each signing key.
+* [Creating a key configuration file].
 * Using the [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2) to bulk load
   consensus layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Secrets
   Manager](#aws-secrets-manager), or [keystore files](#keystore-files).
@@ -31,12 +31,15 @@ You can configure access to the signing key by:
 
 ## Use key configuration files
 
-For each signing key, [configure a separate key configuration file] that defines the parameters
-to access the key. The configuration files must be YAML-formatted, and can use any naming format,
-but must have the `.yaml` extension.
+For each signing key, define the parameters to access the key in a [key configuration file].
+You can create a separate configuration file for each key, or specify multiple configurations in a
+single file by adding a triple-dash separator (`---`) between configurations.
 
-Place the key configuration files in a single directory which you specify when starting Web3Signer.
+The configuration file must be YAML-formatted, and can use any naming format, but must have the
+`.yaml` extension.
 
+Place one or more key configuration files in a single directory which you specify when starting
+Web3Signer.
 Use the [`--key-store-path`](../Reference/CLI/CLI-Syntax.md#key-store-path) option
 to specify the location of the key configuration files.
 
@@ -93,7 +96,8 @@ specify keystore passwords.
 
 ## Reload new keys
 
-If you add new keys to an existing set of validators, reload the keys to ensure Web3Signer registers the new keys.
+If you add new keys to an existing set of validators, or modify the key configuration files, reload
+the keys to ensure Web3Signer registers the new or modified keys.
 Use the [`reload`](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Reload-Signer-Keys) endpoint to reload the keys in Web3Signer.
 
 !!! example
@@ -208,5 +212,5 @@ Delete keys with the [`delete keys` endpoint](https://consensys.github.io/web3si
         ```
 
 <!-- Link -->
-[configure a separate key configuration file]: ../Reference/Key-Configuration-Files.md
-[Creating a separate key configuration file]: #use-key-configuration-files
+[key configuration file]: ../Reference/Key-Configuration-Files.md
+[Creating a key configuration file]: #use-key-configuration-files
