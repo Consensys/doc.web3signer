@@ -1154,7 +1154,7 @@ Predefined network configuration. Accepts a predefined network name. The default
 
 ### `watermark-repair`
 
-Updates the slashing protection low watermark for validators.
+Updates the [slashing protection low watermark](https://eips.ethereum.org/EIPS/eip-3076) for validators.
 You can only increase the low watermark, not decrease it.
 
 #### `epoch`
