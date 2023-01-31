@@ -1,0 +1,8 @@
+{
+  "label": "Monitor Nodes",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "Monitor Nodes"
+  }
+}
