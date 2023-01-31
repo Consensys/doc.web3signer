@@ -6,12 +6,12 @@ description: Web3Signer command line interface subcommands
 
 Use the Web3Signer subcommands to specify the platform being used:
 
-* `web3signer [options] eth2 [Eth2 options]`
-* `web3signer [options] eth2 export [Eth2 export options]`
-* `web3signer [options] eth2 import [Eth2 import options]`
-* `web3signer [options] eth1`
-* `web3signer [options] filecoin [Filecoin options]`
-* `web3signer [options] watermark-repair [watermark repair options]`
+- `web3signer [options] eth2 [Eth2 options]`
+- `web3signer [options] eth2 export [Eth2 export options]`
+- `web3signer [options] eth2 import [Eth2 import options]`
+- `web3signer [options] eth1`
+- `web3signer [options] filecoin [Filecoin options]`
+- `web3signer [options] watermark-repair [watermark repair options]`
 
 !!! note
 
@@ -23,16 +23,14 @@ Use the Web3Signer subcommands to specify the platform being used:
 
 The subcommand must be specified on the command line, but the subcommand options can be specified:
 
-* On the command line.
-* As environment variables.
-  For each subcommand option, the equivalent environment variable is:
-    * Uppercase.
-    * `_` replaces `-`.
-    * Has a `WEB3SIGNER_` + `<SIGNING_OPTION>_` prefix.
-* In a YAML configuration file.
+- On the command line.
+- As environment variables. For each subcommand option, the equivalent environment variable is:
+  - Uppercase.
+  - `_` replaces `-`.
+  - Has a `WEB3SIGNER_` + `<SIGNING_OPTION>_` prefix.
+- In a YAML configuration file.
 
-For example, you can set the `--network` option for the `filecoin` subcommand in an environment variable
-`export WEB3SIGNER_FILECOIN_NETWORK=TESTNET`, but the subcommand must be specified in the command line.
+For example, you can set the `--network` option for the `filecoin` subcommand in an environment variable `export WEB3SIGNER_FILECOIN_NETWORK=TESTNET`, but the subcommand must be specified in the command line.
 
 !!! example
 
@@ -44,10 +42,10 @@ For example, you can set the `--network` option for the `filecoin` subcommand in
 
 To view the command line help for the subcommands:
 
-* [`web3signer help eth1`](#eth1)
-* [`web3signer help eth2`](#eth2)
-* [`web3signer help filecoin`](#filecoin)
-* [`web3signer help watermark-repair`](#watermark-repair)
+- [`web3signer help eth1`](#eth1)
+- [`web3signer help eth2`](#eth2)
+- [`web3signer help filecoin`](#filecoin)
+- [`web3signer help watermark-repair`](#watermark-repair)
 
 ## Options
 
@@ -81,10 +79,7 @@ To view the command line help for the subcommands:
     eth2.aws-connection-cache-size: 5
     ```
 
-When
-[loading multiple keys from AWS Secrets Manager](../../HowTo/Store-Keys-Vaults/Use-AWS.md#cache-aws-secrets-manager-when-loading-multiple-keys),
-set to the maximum number of connections to cache.
-The default is 1.
+When [loading multiple keys from AWS Secrets Manager](../../HowTo/Store-Keys-Vaults/Use-AWS.md#cache-aws-secrets-manager-when-loading-multiple-keys), set to the maximum number of connections to cache. The default is 1.
 
 #### `aws-secrets-enabled`
 
@@ -112,8 +107,7 @@ The default is 1.
     eth2.aws-secrets-enabled: true
     ```
 
-Enables [bulk loading keys from AWS Secrets Manager](../../HowTo/Use-Signing-Keys.md#aws-secrets-manager).
-The default is `false`.
+Enables [bulk loading keys from AWS Secrets Manager](../../HowTo/Use-Signing-Keys.md#aws-secrets-manager). The default is `false`.
 
 #### `aws-secrets-auth-mode`
 
@@ -141,13 +135,9 @@ The default is `false`.
     eth2.aws-secrets-auth-mode: "ENVIRONMENT"
     ```
 
-Authentication mode for AWS Secrets Manager.
-Options are `SPECIFIED` and `ENVIRONMENT`.
-The default is `SPECIFIED`.
+Authentication mode for AWS Secrets Manager. Options are `SPECIFIED` and `ENVIRONMENT`. The default is `SPECIFIED`.
 
-Set [`--aws-secrets-access-key-id`](#aws-secrets-access-key-id),
-[`--aws-secrets-secret-access-key`](#aws-secrets-secret-access-key), and
-[`--aws-secrets-region`](#aws-secrets-region) if using `SPECIFIED`.
+Set [`--aws-secrets-access-key-id`](#aws-secrets-access-key-id), [`--aws-secrets-secret-access-key`](#aws-secrets-secret-access-key), and [`--aws-secrets-region`](#aws-secrets-region) if using `SPECIFIED`.
 
 #### `aws-secrets-access-key-id`
 
@@ -160,19 +150,19 @@ Set [`--aws-secrets-access-key-id`](#aws-secrets-access-key-id),
 === "Example"
 
     ```bash
-    --aws-secrets-access-key-id=AKIAIOSFODNN7EXAMPLE
+    --aws-secrets-access-key-id=AKIA...EXAMPLE
     ```
 
 === "Environment variable"
 
     ```bash
-    WEB3SIGNER_ETH2_AWS_SECRETS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+    WEB3SIGNER_ETH2_AWS_SECRETS_ACCESS_KEY_ID=AKIA...EXAMPLE
     ```
 
 === "Configuration file"
 
     ```bash
-    eth2.aws-secrets-access-key-id: "AKIAIOSFODNN7EXAMPLE"
+    eth2.aws-secrets-access-key-id: "AKIA...EXAMPLE"
     ```
 
 AWS access key ID to authenticate AWS Secrets Manager.
@@ -190,19 +180,19 @@ Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`
 === "Example"
 
     ```bash
-    --aws-secrets-secret-access-key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    --aws-secrets-secret-access-key=sk...EXAMPLE
     ```
 
 === "Environment variable"
 
     ```bash
-    WEB3SIGNER_ETH2_AWS_SECRETS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    WEB3SIGNER_ETH2_AWS_SECRETS_SECRET_ACCESS_KEY=sk...EXAMPLE
     ```
 
 === "Configuration file"
 
     ```bash
-    eth2.aws-secrets-secret-access-key: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+    eth2.aws-secrets-secret-access-key: "sk...EXAMPLE"
     ```
 
 AWS secret access key to authenticate AWS Secrets Manager.
@@ -265,9 +255,7 @@ Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`
     eth2.aws-secrets-prefixes-filter: ["prefix1","prefix2"]
     ```
 
-Optional comma-separated list of secret name prefixes filter to apply while fetching secrets from
-AWS Secrets Manager.
-Applied as `AND` operation with other filters.
+Optional comma-separated list of secret name prefixes filter to apply while fetching secrets from AWS Secrets Manager. Applied as `AND` operation with other filters.
 
 #### `aws-secrets-tag-names-filter`
 
@@ -296,9 +284,7 @@ Applied as `AND` operation with other filters.
 
     ```
 
-Optional comma-separated list of tag names filter to apply while fetching secrets from AWS Secrets
-Manager.
-Applied as `AND` operation with other filters.
+Optional comma-separated list of tag names filter to apply while fetching secrets from AWS Secrets Manager. Applied as `AND` operation with other filters.
 
 #### `aws-secrets-tag-values-filter`
 
@@ -326,9 +312,7 @@ Applied as `AND` operation with other filters.
     eth2.aws-secrets-tag-values-filter: ["tagValue1","tagValue2"]
     ```
 
-Optional comma-separated list of tag values filter to apply while fetching secrets from AWS Secrets
-Manager.
-Applied as `AND` operation with other filters.
+Optional comma-separated list of tag values filter to apply while fetching secrets from AWS Secrets Manager. Applied as `AND` operation with other filters.
 
 #### `azure-vault-enabled`
 
@@ -356,8 +340,7 @@ Applied as `AND` operation with other filters.
     eth2.azure-vault-enabled: true
     ```
 
-Enables [bulk loading keys from Azure Key Vault](../../HowTo/Use-Signing-Keys.md#azure-key-vault).
-The default is `false`.
+Enables [bulk loading keys from Azure Key Vault](../../HowTo/Use-Signing-Keys.md#azure-key-vault). The default is `false`.
 
 #### `azure-client-id`
 
@@ -387,8 +370,7 @@ The default is `false`.
 
 ID used to authenticate with Azure Key Vault.
 
-Required when [`--azure-vault-auth-mode`](#azure-vault-auth-mode) is `CLIENT_SECRET` or
-`USER_ASSIGNED_MANAGED_IDENTITY`.
+Required when [`--azure-vault-auth-mode`](#azure-vault-auth-mode) is `CLIENT_SECRET` or `USER_ASSIGNED_MANAGED_IDENTITY`.
 
 #### `azure-client-secret`
 
@@ -472,11 +454,9 @@ The tenant ID of the Azure Portal instance being used.
     eth2.azure-vault-auth-mode: "USER_ASSIGNED_MANAGED_IDENTITY"
     ```
 
-Authentication mode for Azure Vault. Options are `CLIENT_SECRET`, `SYSTEM_ASSIGNED_MANAGED_IDENTITY`,
-and `USER_ASSIGNED_MANAGED_IDENTITY`. The default is `CLIENT_SECRET`.
+Authentication mode for Azure Vault. Options are `CLIENT_SECRET`, `SYSTEM_ASSIGNED_MANAGED_IDENTITY`, and `USER_ASSIGNED_MANAGED_IDENTITY`. The default is `CLIENT_SECRET`.
 
-Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or
-`USER_ASSIGNED_MANAGED_IDENTITY`.
+Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or `USER_ASSIGNED_MANAGED_IDENTITY`.
 
 #### `azure-vault-name`
 
@@ -532,8 +512,7 @@ Name of the vault to access. Sub-domain of `vault.azure.net`.
     eth2.key-manager-api-enabled: true
     ```
 
-Enables the [key manager API](../../HowTo/Use-Signing-Keys.md#manage-keys).
-The default is `false`.
+Enables the [key manager API](../../HowTo/Use-Signing-Keys.md#manage-keys). The default is `false`.
 
 !!! caution
 
@@ -565,8 +544,7 @@ The default is `false`.
     eth2.keystores-password-file: "/Users/me/passwds/keystore_passwords.txt"
     ```
 
-File that contains the password used by all keystores. Cannot be set if [`--keystores-passwords-path`](#keystores-passwords-path)
-is also specified.
+File that contains the password used by all keystores. Cannot be set if [`--keystores-passwords-path`](#keystores-passwords-path) is also specified.
 
 !!! note
 
@@ -599,8 +577,7 @@ is also specified.
     eth2.keystores-passwords-path: "/Users/me/passwds"
     ```
 
-Directory containing password files for corresponding keystores. Each password file name must
-match the corresponding keystore filename, but with a `.txt` extension.
+Directory containing password files for corresponding keystores. Each password file name must match the corresponding keystore filename, but with a `.txt` extension.
 
 Cannot be set if [`--keystores-password-file`](#keystores-password-file) is also specified.
 
@@ -637,8 +614,7 @@ Cannot be set if [`--keystores-password-file`](#keystores-password-file) is also
 
 Directory that stores the keystore files. Keystore files must use a `.json` file extension.
 
-Use [`--keystores-password-file`](#keystores-password-file) or [`--keystores-passwords-path`](#keystores-passwords-path)
-to specify keystore passwords.
+Use [`--keystores-password-file`](#keystores-password-file) or [`--keystores-passwords-path`](#keystores-passwords-path) to specify keystore passwords.
 
 !!! important
 
@@ -671,9 +647,7 @@ to specify keystore passwords.
     network: "mainnet"
     ```
 
-Predefined network configuration.
-Accepts a predefined network name, or file path or URL to a YAML configuration file. See the
-[consensus specification] for examples.
+Predefined network configuration. Accepts a predefined network name, or file path or URL to a YAML configuration file. See the [consensus specification] for examples.
 
 The default is `mainnet`.
 
@@ -684,14 +658,14 @@ The default is `mainnet`.
 
 Possible values are:
 
-| Network      | Chain           | Type       | Description                                      |
-|:-------------|:----------------|:-----------|:-------------------------------------------------|
-| `mainnet`    | Consensus layer | Production | Main network.                                    |
-| `minimal`    | Consensus layer | Test       | Used for local testing and development networks. |
-| `goerli`     | Consensus layer | Test       | Multi-client testnet.                            |
-| `kiln`       | Consensus layer | Test       | Multi-client testnet.                            |
-| `ropsten`    | Consensus layer | Test       | Multi-client testnet.                            |
-| `gnosis`     | Consensus layer | Test       | Multi-client testnet.                            |
+| Network | Chain | Type | Description |
+| :-- | :-- | :-- | :-- |
+| `mainnet` | Consensus layer | Production | Main network. |
+| `minimal` | Consensus layer | Test | Used for local testing and development networks. |
+| `goerli` | Consensus layer | Test | Multi-client testnet. |
+| `kiln` | Consensus layer | Test | Multi-client testnet. |
+| `ropsten` | Consensus layer | Test | Multi-client testnet. |
+| `gnosis` | Consensus layer | Test | Multi-client testnet. |
 
 #### `slashing-protection-db-health-check-interval-milliseconds`
 
@@ -749,8 +723,7 @@ The service responds with a `200` message if healthy, and `503` if unhealthy.
     eth2.slashing-protection-db-health-check-timeout-milliseconds: 2000
     ```
 
-Milliseconds after which to fail the database health check. For example, if the health check
-connects to the slashing protection database, but does not report back in a timely manner.
+Milliseconds after which to fail the database health check. For example, if the health check connects to the slashing protection database, but does not report back in a timely manner.
 
 The default is 3000.
 
@@ -810,8 +783,7 @@ The password to connect to the slashing protection database.
 
 [HikariCP connection pool configuration file](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby).
 
-Web3Signer uses HikariCP to manage database connections, and uses the default configuration values. The defaults perform
-well in most deployments, but you can override them using this option.
+Web3Signer uses HikariCP to manage database connections, and uses the default configuration values. The defaults perform well in most deployments, but you can override them using this option.
 
 #### `slashing-protection-db-url`
 
@@ -900,8 +872,7 @@ The username to use when connecting to the slashing protection database.
     eth2.slashing-protection-enabled: false
     ```
 
-Enables Web3Signer [slashing protection]. If `true`, then all signing operations are validated against
-historical data before signing.
+Enables Web3Signer [slashing protection]. If `true`, then all signing operations are validated against historical data before signing.
 
 The default is `true`.
 
@@ -931,8 +902,7 @@ The default is `true`.
     eth2.slashing-protection-pruning-at-boot-enabled: false
     ```
 
-When set to `false`, [slashing protection database pruning](../../HowTo/Configure-Slashing-Protection.md#prune-the-slashing-protection-database)
-is disabled at boot and only takes place at the scheduled [pruning intervals](#slashing-protection-pruning-interval).
+When set to `false`, [slashing protection database pruning](../../HowTo/Configure-Slashing-Protection.md#prune-the-slashing-protection-database) is disabled at boot and only takes place at the scheduled [pruning intervals](#slashing-protection-pruning-interval).
 
 The default is `true`.
 
@@ -962,11 +932,9 @@ The default is `true`.
     eth2.slashing-protection-pruning-db-pool-configuration-file: "/Users/me/config/HikariConfig.properties"
     ```
 
-[HikariCP connection pool configuration file](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby)
-used by the pruning process.
+[HikariCP connection pool configuration file](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby) used by the pruning process.
 
-Web3Signer uses HikariCP to manage database connections, and uses the default configuration values.
-The defaults perform well in most deployments, but you can override them using this option.
+Web3Signer uses HikariCP to manage database connections, and uses the default configuration values. The defaults perform well in most deployments, but you can override them using this option.
 
 #### `slashing-protection-pruning-enabled`
 
@@ -994,8 +962,7 @@ The defaults perform well in most deployments, but you can override them using t
     eth2.slashing-protection-pruning-enabled: true
     ```
 
-Enables [slashing protection database pruning](../../HowTo/Configure-Slashing-Protection.md#prune-the-slashing-protection-database).
-The default is `false`.
+Enables [slashing protection database pruning](../../HowTo/Configure-Slashing-Protection.md#prune-the-slashing-protection-database). The default is `false`.
 
 #### `slashing-protection-pruning-epochs-to-keep`
 
@@ -1083,8 +1050,7 @@ The default is 24.
     eth2.slashing-protection-pruning-slots-per-epoch: 20
     ```
 
-Number of slots per epoch.
-This number multiplied by the number of epochs to keep determines what blocks to keep when pruning the slashing protection database.
+Number of slots per epoch. This number multiplied by the number of epochs to keep determines what blocks to keep when pruning the slashing protection database.
 
 The default is 32 as defined on MainNet.
 
@@ -1118,8 +1084,7 @@ Exports the slashing protection database to a file.
     eth2.export.to: /Users/me/my_node/interchange.json
     ```
 
-The file to export the slashing protection database to. The exported file uses the
-[validator client interchange format].
+The file to export the slashing protection database to. The exported file uses the [validator client interchange format].
 
 ### `eth2 import`
 
@@ -1151,8 +1116,7 @@ Imports a slashing protection database from a file.
     eth2.import.from: /Users/me/my_node/interchange.json
     ```
 
-The file to import the slashing protection database from. The file must be formatted in the
-[validator client interchange format]
+The file to import the slashing protection database from. The file must be formatted in the [validator client interchange format]
 
 ### `filecoin`
 
@@ -1186,8 +1150,7 @@ Predefined network configuration. Accepts a predefined network name. The default
 
 ### `watermark-repair`
 
-Updates the [slashing protection low watermark](https://eips.ethereum.org/EIPS/eip-3076) for validators.
-You can only increase the low watermark, not decrease it.
+Updates the [slashing protection low watermark](https://eips.ethereum.org/EIPS/eip-3076) for validators. You can only increase the low watermark, not decrease it.
 
 #### `epoch`
 
@@ -1271,10 +1234,10 @@ Low watermark to set the block slot to.
     watermark-repair.validator-ids: ["0x8f3f44b74d316c3293cced0c48c72e021ef8d145d136f2908931090e7181c3b777498128a348d07b0b9cd3921b5ca537", "0x98d083489b3b06b8740da2dfec5cc3c01b2086363fe023a9d7dc1f907633b1ff11f7b99b19e0533e969862270061d884"]
     ```
 
-List of validator public keys as hexadecimal to apply low watermark update to.
-If none are specified, the low watermark is updated for all validators.
+List of validator public keys as hexadecimal to apply low watermark update to. If none are specified, the low watermark is updated for all validators.
 
 <!-- links -->
+
 [include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
 [slashing protection]: ../../Concepts/Slashing-Protection.md
 [validator client interchange format]: https://eips.ethereum.org/EIPS/eip-3076

@@ -1,17 +1,22 @@
 ---
+title: Build from source
 description: Building Web3Signer from source code
+sidebar_position: 3
 ---
 
 # Build from source
 
 ## Prerequisites
 
-* [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
 
-!!!important
-    Web3Signer requires Java 11 or later releases.
+:::tip Important
 
-* [Git](https://git-scm.com/downloads) or [GitHub Desktop](https://desktop.github.com/)
+Web3Signer requires Java 11 or later releases.
+
+:::
+
+- [Git](https://git-scm.com/downloads) or [GitHub Desktop](https://desktop.github.com/)
 
 ## Installation on Linux / Unix / macOS
 
@@ -51,10 +56,10 @@ tar -xzf web3signer-<version>.tar.gz
 
 Move to the expanded folder and display the Web3Signer help to confirm installation.
 
-````bash
+```bash
 cd web3signer-<version>/
 bin/web3signer --help
-````
+```
 
 ## Installation on Windows
 
@@ -77,17 +82,19 @@ cd web3signer
 Build Web3Signer with the Gradle wrapper `gradlew`:
 
 ```bat
-.\gradlew build
+./gradlew build
 ```
 
-!!!note
-    To run `gradlew`, you must have the **JAVA_HOME** system variable set to the Java installation directory.
-    For example: `JAVA_HOME = C:\Program Files\Java\jdk1.8.0_181`.
+:::note
+
+To run `gradlew`, you must have the **JAVA_HOME** system variable set to the Java installation directory. For example: `JAVA_HOME = C:\Program Files\Java\jdk1.8.0_181`.
+
+:::
 
 Go to the distribution directory:
 
 ```bat
-cd build\distributions
+cd build/distributions
 ```
 
 Expand the distribution archive:
@@ -100,5 +107,5 @@ Go to the expanded folder and display the Web3Signer help to confirm installatio
 
 ```bat
 cd web3signer-<version>
-bin\web3signer --help
+bin/web3signer --help
 ```
