@@ -2,6 +2,7 @@
 title: Web3Signer signing service
 description: Web3Signer is an open-source signing service developed under the Apache 2.0 license and written in Java.
 sidebar_position: 1
+slug: overview
 ---
 
 # Web3Signer

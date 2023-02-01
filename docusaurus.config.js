@@ -2,7 +2,7 @@ const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 const isDev = process.env.NODE_ENV === "development";
-const baseUrl = isDev ? "/" : "/doc.web3signer";
+const baseUrl = isDev ? "/" : "/";
 
 /**
  * @type {import('redocusaurus').PresetEntry}
@@ -72,7 +72,8 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Set a base path separate from default /docs
           editUrl: "https://github.com/ConsenSys/doc.web3signer/tree/main/",
-          routeBasePath: "/docs",
+          path: "docs",
+          routeBasePath: "/",
           // @ts-ignore
           // eslint-disable-next-line global-require
           remarkPlugins: [require("remark-docusaurus-tabs")],
@@ -190,19 +191,19 @@ const config = {
             items: [
               {
                 label: "How To",
-                to: "/docs/category/how-to",
+                to: "/category/how-to",
               },
               {
                 label: "Concepts",
-                to: "/docs/category/concepts",
+                to: "/category/concepts",
               },
               {
                 label: "Tutorials",
-                to: "/docs/category/tutorials",
+                to: "/category/tutorials",
               },
               {
                 label: "Reference",
-                to: "/docs/category/reference",
+                to: "/category/reference",
               },
             ],
           },
