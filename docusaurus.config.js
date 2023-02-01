@@ -2,7 +2,41 @@ const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 const isDev = process.env.NODE_ENV === "development";
-const baseUrl = isDev ? "/" : "/doc.ethsigner";
+const baseUrl = isDev ? "/" : "/doc.web3signer";
+
+/**
+ * @type {import('redocusaurus').PresetEntry}
+ */
+const redocusaurus = [
+  "redocusaurus",
+  {
+    specs: [
+      {
+        id: "using-remote-url",
+        // Remote File
+        spec: "https://raw.githubusercontent.com/rohit-gohri/redocusaurus/main/website/openapi/single-file/openapi.yaml",
+        route: "/api/",
+      },
+    ],
+    theme: {
+      /**
+       * Highlight color for docs
+       */
+      primaryColor: "#3655d5",
+      primaryColorDark: "#a2aeec",
+      /**
+       * Options to pass to redoc
+       * @see https://github.com/redocly/redoc#redoc-options-object
+       */
+      options: { disableSearch: true },
+      /**
+       * Options to pass to override RedocThemeObject
+       * @see https://github.com/Redocly/redoc#redoc-theme-object
+       */
+      theme: {},
+    },
+  },
+];
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -56,12 +90,9 @@ const config = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-        // gtag: {
-        //   trackingID: "G-999X9XX9XX",
-        //   anonymizeIP: true,
-        // },
       },
     ],
+    redocusaurus,
   ],
 
   themeConfig:
@@ -90,13 +121,13 @@ const config = {
 
         // ... other Algolia params
       },
-      announcementBar: {
-        id: "announcement_bar",
-        content: "⛔️ This documentation site is still under construction! 🚧",
-        backgroundColor: "#fafbfc",
-        textColor: "#091E42",
-        isCloseable: false,
-      },
+      // announcementBar: {
+      //   id: "announcement_bar",
+      //   content: "Consensys Web3Signer documentation",
+      //   backgroundColor: "#fafbfc",
+      //   textColor: "#091E42",
+      //   isCloseable: false,
+      // },
       colorMode: {
         defaultMode: "light",
         disableSwitch: false,
@@ -158,8 +189,8 @@ const config = {
             title: "Learn",
             items: [
               {
-                label: "Get Started",
-                to: "/docs/category/get-started",
+                label: "How To",
+                to: "/docs/category/how-to",
               },
               {
                 label: "Concepts",
@@ -180,11 +211,11 @@ const config = {
             items: [
               {
                 label: "Discord",
-                href: "https://discord.gg/jCk2XuYtrp",
+                href: "https://discord.com/channels/697535391594446898/725135157652226060",
               },
               {
                 label: "Issues",
-                href: "https://github.com/ConsenSys/ethsigner/issues",
+                href: "https://github.com/ConsenSys/web3signer/issues",
               },
             ],
           },
@@ -193,7 +224,7 @@ const config = {
             items: [
               {
                 label: "Documentation on GitHub",
-                href: "https://github.com/ConsenSys/doc.ethsigner",
+                href: "https://github.com/ConsenSys/doc.web3signer",
               },
               {
                 label: "ConsenSys",
@@ -246,7 +277,21 @@ const config = {
         // },
       ],
     }),
-  plugins: [],
+  plugins: [
+    [
+      "@docusaurus/plugin-google-gtag",
+      {
+        trackingID: "G-N5TSH1NV4Q",
+        anonymizeIP: true,
+      },
+    ],
+    [
+      "@docusaurus/plugin-google-tag-manager",
+      {
+        containerId: "GTM-PJ8HNLB",
+      },
+    ],
+  ],
   themes: [],
 };
 

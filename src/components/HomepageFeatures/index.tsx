@@ -1,67 +1,99 @@
 import React from "react";
 import clsx from "clsx";
-import styles from "./styles.module.css";
+import Link from "@docusaurus/Link";
+// import styles from "./styles.module.css";
 
-type FeatureItem = {
+type CardItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<"svg">>;
+  link: string;
   description: JSX.Element;
+  buttonName: string;
+  buttonType:
+    | "primary"
+    | "secondary"
+    | "success"
+    | "info"
+    | "warning"
+    | "danger"
+    | "link";
 };
 
-const FeatureList: FeatureItem[] = [
+const CardList: CardItem[] = [
   {
-    title: "Easy to Use",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    title: "🏁 Getting Started",
+    link: "/category/get-started-with-web3signer",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Get started with Web3Signer by installing as binary, Docker, or
+        Kubernetes. Hit the ground running in less than 5 minutes!
       </>
     ),
+    buttonName: "Go to installation",
+    buttonType: "success",
   },
   {
-    title: "Focus on What Matters",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    title: "💭 Use Signing Keys",
+    link: "/HowTo/Use-Signing-Keys",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Check out the various ways you can use signing keys such as raw files,
+        keystores, vaults or via a HSM (Hardware Security Modules).
       </>
     ),
+    buttonName: "Use signing keys",
+    buttonType: "secondary",
   },
   {
-    title: "Powered by React",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    title: "👨‍💻 Reference",
+    link: "/Reference/CLI/CLI-Subcommands",
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Find command line arguments, API methods through JSON-RPC, and general
+        configuration in the References section.
       </>
     ),
+    buttonName: "Go to reference",
+    buttonType: "info",
   },
 ];
 
-function Feature({ title, Svg, description }: FeatureItem) {
+function Card({ title, link, description, buttonName, buttonType }: CardItem) {
   return (
-    <div className={clsx("col col--4")}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
+    <div className={clsx("col", "col--4", "margin-top--md")}>
+      <div className="card-demo">
+        <div className="card">
+          <div className="card__header">
+            <h3>{title}</h3>
+          </div>
+          <div className="card__body">
+            <p>{description}</p>
+          </div>
+          <div className="card__footer">
+            <Link
+              className={clsx(
+                "button",
+                "button--" + buttonType,
+                "button--block",
+              )}
+              to={link}>
+              {buttonName}
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-export default function HomepageFeatures(): JSX.Element {
+export default function HomepageCards(): JSX.Element {
   return (
-    <section className={styles.features}>
+    <section className={clsx("margin-top--lg", "margin-bottom--lg")}>
       <div className="container">
+        <h1>Quick Links</h1>
+        <hr />
         <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+          {CardList.map((props, idx) => (
+            <Card key={idx} {...props} />
           ))}
         </div>
       </div>
