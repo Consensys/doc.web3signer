@@ -10,9 +10,9 @@ sidebar_position: 1
 
 - [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
 
-:::tip Important
+:::caution Important
 
-    Web3Signer requires Java 11 or later releases.
+Web3Signer requires Java 11 or later releases.
 
 :::
 

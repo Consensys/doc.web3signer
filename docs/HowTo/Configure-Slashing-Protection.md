@@ -26,7 +26,7 @@ The steps to configure slashing protection are:
 
 [Install the PostgreSQL database], or use [Docker] to [run the PostgreSQL database in a container]. The following example uses a Docker container.
 
-:::tip Important
+:::caution Important
 
 Web3Signer only supports PostgreSQL for creating the slashing protection database.
 

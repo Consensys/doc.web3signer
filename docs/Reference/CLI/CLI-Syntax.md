@@ -247,6 +247,8 @@ WEB3SIGNER_HTTP_LISTEN_PORT=6174
 http-listen-port: 6174
 ```
 
+<!--/tabs-->
+
 Port on which HTTP listens. The default is 9000.
 
 ### `http-host-allowlist`
@@ -686,29 +688,17 @@ Allows clients signed with trusted CA certificates to connect.
 
 ### `help`
 
-<!--tabs-->
-
-# Syntax
-
-```bash
+```bash title="Syntax"
 -h, --help
 ```
-
-<!--/tabs-->
 
 Displays the help and exits.
 
 ### `version`
 
-<!--tabs-->
-
-# Syntax
-
-```bash
+```bash title="Syntax"
 -V, --version
 ```
-
-<!--/tabs-->
 
 Displays the version and exits.
 

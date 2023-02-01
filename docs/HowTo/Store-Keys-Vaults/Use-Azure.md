@@ -37,6 +37,8 @@ Take note of the following to specify when [configuring the signing key configur
   - Client secret
   - Tenant ID
 
+  <br />
+
   :::note
 
   Depending on the authentication mode, not all client credentials are available.

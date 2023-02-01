@@ -14,9 +14,9 @@ A Docker image is provided to run Web3Signer in a Docker container.
 
 - MacOS or Linux
 
-:::info important
+:::caution Important
 
-        The Docker image does not run on Windows.
+The Docker image does not run on Windows.
 
 :::
 

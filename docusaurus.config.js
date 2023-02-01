@@ -260,21 +260,6 @@ const config = {
           language: "nodejs",
           logoClass: "nodejs",
         },
-        // {
-        //  highlight: "ruby",
-        //  language: "ruby",
-        //  logoClass: "ruby",
-        // },
-        // {
-        //   highlight: "csharp",
-        //   language: "csharp",
-        //   logoClass: "csharp",
-        // },
-        // {
-        //   highlight: "php",
-        //   language: "php",
-        //   logoClass: "php",
-        // },
       ],
     }),
   plugins: [
