@@ -42,7 +42,7 @@ const redocusaurus = [
 const config = {
   title: "ConsenSys Web3Signer",
   tagline:
-    "An open-source, client-agnostic, Ethereum signing service developed under the Apache 2.0 license and written in Java. Web3Signer is capable of signing on multiple platforms using private keys stored in an external vault, or encrypted on a disk.",
+    "An open-source, client-agnostic, Ethereum signing service written in Java that is capable of signing on multiple platforms..",
   url: "https://consensys.github.io",
   baseUrl,
   onBrokenLinks: "throw",
