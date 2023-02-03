@@ -43,7 +43,7 @@ const config = {
   title: "ConsenSys Web3Signer",
   tagline:
     "An open-source, client-agnostic, Ethereum signing service written in Java that is capable of signing on multiple platforms..",
-  url: "https://consensys.github.io",
+  url: "https://doc-web3signer.vercel.app",
   baseUrl,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
