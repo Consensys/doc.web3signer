@@ -225,11 +225,11 @@ html[data-theme="dark"] .header-dockerhub-link::before {
 /* Algolia Search Styling */
 
 .DocSearch-Logo {
-  display: none !important;
+  display: show !important;
 }
 
 .DocSearch-Footer {
-  justify-content: flex-start !important;
+  justify-content: space-between !important;
 }
 
 [data-theme="light"] .DocSearch {
