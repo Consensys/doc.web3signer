@@ -277,22 +277,6 @@ const config = {
         containerId: "GTM-PJ8HNLB",
       },
     ],
-    [
-      "@docusaurus/plugin-client-redirects",
-      {
-        fromExtensions: [],
-        toExtensions: [],
-        redirects: [
-          {
-            to: "/",
-            from: "/en/latest/",
-          },
-        ],
-        createRedirects() {
-          return undefined; // Return a falsy value: no redirect created
-        },
-      },
-    ],
   ],
   themes: [],
 };
