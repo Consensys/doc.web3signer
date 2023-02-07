@@ -1,6 +1,8 @@
 {
   "cleanUrls": true,
   "redirects": [
-    { "source": "/en/latest/", "destination": "/", "permanent": true }
+    { "source": "/en/latest", "destination": "/", "permanent": true },
+    { "source": "/en/latest/", "destination": "/", "permanent": true },
+    { "source": "/en/latest/(.*)", "destination": "/(.*)", "permanent": true }
   ]
 }
