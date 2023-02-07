@@ -284,8 +284,8 @@ const config = {
         toExtensions: [],
         redirects: [
           {
-            to: "/en/latest/",
-            from: "/",
+            to: "/",
+            from: "/en/latest/",
           },
         ],
         createRedirects() {
