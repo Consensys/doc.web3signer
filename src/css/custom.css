@@ -224,14 +224,6 @@ html[data-theme="dark"] .header-dockerhub-link::before {
 
 /* Algolia Search Styling */
 
-.DocSearch-Logo {
-  display: show !important;
-}
-
-.DocSearch-Footer {
-  justify-content: space-between !important;
-}
-
 [data-theme="light"] .DocSearch {
   /* --docsearch-primary-color: var(--ifm-color-primary); */
   /* --docsearch-text-color: var(--ifm-font-color-base); */
