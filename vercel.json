@@ -2,7 +2,7 @@
   "cleanUrls": true,
   "redirects": [
     { "source": "/en/latest", "destination": "/", "permanent": true },
-    { "source": "/en/latest/", "destination": "/", "permanent": true },
-    { "source": "/en/latest/(.*)", "destination": "/(.*)", "permanent": true }
-  ]
+    { "source": "/en/latest/", "destination": "/", "permanent": true }
+  ],
+  "rewrites": [{ "source": "/en/latest/:match*", "destination": "/:match*" }]
 }
