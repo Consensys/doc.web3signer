@@ -267,14 +267,14 @@ const config = {
     [
       "@docusaurus/plugin-google-gtag",
       {
-        trackingID: "G-N5TSH1NV4Q",
+        trackingID: "G-159G82NNKS",
         anonymizeIP: true,
       },
     ],
     [
       "@docusaurus/plugin-google-tag-manager",
       {
-        containerId: "GTM-PJ8HNLB",
+        containerId: "GTM-NCL964V",
       },
     ],
   ],
