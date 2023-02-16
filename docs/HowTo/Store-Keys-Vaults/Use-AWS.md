@@ -32,10 +32,12 @@ final CreateSecretRequest secretRequest =
 secretsManagerClient.createSecret(secretRequest);
 ```
 
-You can also store multiple BLS private keys under same secret name when using [AWS bulk loading mode](../Use-Signing-Keys.md#aws-secrets-manager). 
+You can also store multiple BLS private keys under same secret name when using
+[AWS bulk loading mode](../Use-Signing-Keys.md#aws-secrets-manager).
 
-The keys must be seperated with a line terminating character such as `\n`. This saves cost when dealing with a large number of keys. 
-Up to 200 keys can be stored under same secret name. 
+The keys must be separated with a line terminating character such as `\n`. This
+saves cost when dealing with a large number of keys. Up to 200 keys can be stored
+under same secret name.
 
 Following Java program is a modification of above program to store two BLS keys under same secret name:
 
@@ -68,4 +70,3 @@ Specify the following when [configuring the signing key configuration file](../U
 When loading multiple keys from AWS Secrets Manager, the AWS client is created each time. You can improve performance by caching and reusing the same AWS Secrets Manager for each key that uses the same access key ID and region.
 
 Set the [`eth2 --aws-connection-cache-size`](../../Reference/CLI/CLI-Subcommands.md#aws-connection-cache-size) option to the maximum number of AWS Secrets Manager connections to cache. The default is 1.
-
