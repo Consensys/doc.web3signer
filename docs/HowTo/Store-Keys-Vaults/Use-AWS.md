@@ -20,7 +20,32 @@ The following is an example of creating and storing a BLS private key in AWS Sec
 
 ```java
 final String AWS_REGION = "us-east-2";
-final String SECRET_VALUE = "secret-name";
+final String SECRET_VALUE = "0x60b420####################################################25f41d";
+final SecretsManagerClient secretsManagerClient =
+      SecretsManagerClient.builder()
+          .region(Region.of(AWS_REGION))
+          .build();
+final String secretNamePrefix = "web3signer-aws-integration/";
+final String secretName = secretNamePrefix + UUID.randomUUID();
+final CreateSecretRequest secretRequest =
+      CreateSecretRequest.builder().name(secretName).secretString(SECRET_VALUE).build();
+secretsManagerClient.createSecret(secretRequest);
+```
+
+You can also store multiple BLS private keys under same secret name when using
+[AWS bulk loading mode](../Use-Signing-Keys.md#aws-secrets-manager).
+
+The keys must be separated with a line terminating character such as `\n`. This
+saves cost when dealing with a large number of keys. Up to 200 keys can be stored
+under same secret name.
+
+Following Java program is a modification of above program to store two BLS keys under same secret name:
+
+```java
+
+final String AWS_REGION = "us-east-2";
+final String SECRET_VALUE = "0x60b420####################################################25f41d\n" +
+           "0x73d51a####################################################85aba8";
 final SecretsManagerClient secretsManagerClient =
       SecretsManagerClient.builder()
           .region(Region.of(AWS_REGION))
