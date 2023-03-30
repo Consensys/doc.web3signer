@@ -56,13 +56,9 @@ web3signer eth2 --azure-vault-enabled=true --azure-client-id=87efaa5b-4029-4b54-
 
 ### AWS Secrets Manager
 
-You can bulk load consensus layer keys that are stored in AWS Secrets Manager using
-the Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2).
+You can bulk load consensus layer keys that are stored in AWS Secrets Manager using the Web3Signer [`eth2` subcommand options](../Reference/CLI/CLI-Subcommands.md#eth2).
 
-The AWS bulk load mode supports loading multiple consensus layer keys from the same
-secret, if keys are stored with a line terminating character such as `\n`.
-This saves cost when dealing with a large number of keys. Up to 200
-keys can be stored under a secret name.
+The AWS bulk load mode supports loading multiple consensus layer keys from the same secret, if keys are stored with a line terminating character such as `\n`. This saves cost when dealing with a large number of keys. Up to 200 keys can be stored under a secret name.
 
 ```bash
 web3signer eth2 --aws-secrets-enabled=true --aws-secrets-access-key-id=AKIA...EXAMPLE \

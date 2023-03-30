@@ -32,12 +32,9 @@ final CreateSecretRequest secretRequest =
 secretsManagerClient.createSecret(secretRequest);
 ```
 
-You can also store multiple BLS private keys under same secret name when using
-[AWS bulk loading mode](../Use-Signing-Keys.md#aws-secrets-manager).
+You can also store multiple BLS private keys under same secret name when using [AWS bulk loading mode](../Use-Signing-Keys.md#aws-secrets-manager).
 
-The keys must be separated with a line terminating character such as `\n`. This
-saves cost when dealing with a large number of keys. Up to 200 keys can be stored
-under same secret name.
+The keys must be separated with a line terminating character such as `\n`. This saves cost when dealing with a large number of keys. Up to 200 keys can be stored under same secret name.
 
 Following Java program is a modification of above program to store two BLS keys under same secret name:
 
