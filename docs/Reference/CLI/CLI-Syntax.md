@@ -143,7 +143,7 @@ key-store-config-file-max-size: 158000000
 
 <!--/tabs-->
 
-The signing key configuration file size in bytes. Useful when you're loading a large number of [signing key configurations from a single file](../Key-Configuration-Files.md).
+The maximum signing key configuration file size in bytes. Useful when you're loading a large number of [signing key configurations from a single file](../Key-Configuration-Files.md).
 
 The default size is 104857600 bytes (100 MB).
 
