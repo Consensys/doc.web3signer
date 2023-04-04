@@ -1,5 +1,5 @@
 ---
-description: Describe how slashing protection works in Web3Signer
+description: Learn how slashing protection works in Web3Signer
 sidebar_position: 1
 ---
 

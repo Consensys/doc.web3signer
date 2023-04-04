@@ -1,8 +1,8 @@
 {
-  "label": "Store Keys in an external Vault",
+  "label": "Store keys in an external vault",
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "Store Keys in an external Vault"
+    "description": "Store your keys in an external vault."
   }
 }

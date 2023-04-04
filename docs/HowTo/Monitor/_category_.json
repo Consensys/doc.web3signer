@@ -1,8 +1,8 @@
 {
-  "label": "Monitor Nodes",
+  "label": "Monitor nodes",
   "position": 8,
   "link": {
     "type": "generated-index",
-    "description": "Monitor Nodes"
+    "description": "Monitor nodes and configure logging."
   }
 }

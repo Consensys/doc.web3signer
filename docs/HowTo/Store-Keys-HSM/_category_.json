@@ -1,8 +1,8 @@
 {
-  "label": "Store Keys in a HSM device",
-  "position": 4,
+  "label": "Store keys in an HSM device",
+  "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "Store Keys in a HSM device"
+    "description": "Store keys in an HSM device."
   }
 }

@@ -1,6 +1,6 @@
 ---
 title: Use HashiCorp Vault
-description: Using Web3Signer with HashiCorp Vault
+description: Use Web3Signer with HashiCorp Vault
 sidebar_position: 1
 ---
 
