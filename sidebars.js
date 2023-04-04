@@ -6,7 +6,7 @@ const sidebars = {
     {
       type: "doc",
       id: "index",
-      label: "Home",
+      label: "Introduction",
     },
     {
       type: "category",
