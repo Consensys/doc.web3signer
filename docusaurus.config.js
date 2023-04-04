@@ -155,13 +155,6 @@ const config = {
         },
         items: [
           {
-            type: "docSidebar",
-            sidebarId: "docSidebar",
-            docId: "index",
-            position: "left",
-            label: "Docs",
-          },
-          {
             href: "https://github.com/ConsenSys/web3signer",
             className: "header-github-link",
             position: "right",

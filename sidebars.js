@@ -6,11 +6,11 @@ const sidebars = {
     {
       type: "doc",
       id: "index",
-      label: "Overview",
+      label: "Introduction",
     },
     {
       type: "category",
-      label: "How To",
+      label: "How to",
       link: {
         type: "generated-index",
       },

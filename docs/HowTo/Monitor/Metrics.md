@@ -1,6 +1,6 @@
 ---
 title: Monitoring metrics
-description: Monitoring  metrics
+description: Monitor metrics using Prometheus
 sidebar_position: 1
 ---
 

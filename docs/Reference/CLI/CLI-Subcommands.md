@@ -1,7 +1,7 @@
 ---
 title: Subcommands
 description: Web3Signer command line interface subcommands
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Subcommands

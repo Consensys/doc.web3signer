@@ -1,6 +1,6 @@
 ---
 title: Use AWS Secrets Manager
-description: Signing transactions with key stored in AWS Secrets Manager
+description: Sign transactions with key stored in AWS Secrets Manager
 sidebar_position: 3
 ---
 

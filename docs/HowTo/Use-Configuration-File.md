@@ -1,6 +1,6 @@
 ---
 title: Use a configuration file
-description: Using the Web3Signer configuration file
+description: Use the Web3Signer configuration file
 sidebar_position: 5
 ---
 

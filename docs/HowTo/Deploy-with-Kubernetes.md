@@ -1,6 +1,6 @@
 ---
 title: Deploy with Kubernetes
-description: Deploying Web3Signer with Kubernetes
+description: Deploy Web3Signer with Kubernetes
 sidebar_position: 10
 ---
 
