@@ -1,6 +1,6 @@
 ---
 title: Build from source
-description: Building Web3Signer from source code
+description: Build Web3Signer from the source code
 sidebar_position: 3
 ---
 

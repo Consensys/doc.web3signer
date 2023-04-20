@@ -1,6 +1,6 @@
 ---
 title: Configure Logging
-description: Web3Signer log level setting and log formatting
+description: Web3Signer log settings and formatting
 sidebar_position: 2
 ---
 

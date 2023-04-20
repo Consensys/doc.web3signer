@@ -1,6 +1,6 @@
 ---
 title: Install binary distribution
-description: Install Web3Signer from binary distribution
+description: Install Web3Signer from a binary distribution
 sidebar_position: 1
 ---
 

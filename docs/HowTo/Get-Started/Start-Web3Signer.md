@@ -1,6 +1,6 @@
 ---
 title: Start Web3Signer
-description: Getting started with Web3Signer
+description: Start Web3Signer
 sidebar_position: 4
 ---
 
