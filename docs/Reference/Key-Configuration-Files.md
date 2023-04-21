@@ -12,6 +12,8 @@ A [signing key configuration file] is a YAML file that defines the parameters to
 
 You can specify multiple key configurations in a single configuration file by adding a triple-dash separator (`---`) between configurations.
 
+Specify a maximum file size limit for your signing key configuration file with the [`--key-store-config-file-max-size`](../Reference/CLI/CLI-Syntax.md#key-store-config-file-max-size) command line option. The default size is 100 MB.
+
 :::
 
 ## Raw unencrypted files
