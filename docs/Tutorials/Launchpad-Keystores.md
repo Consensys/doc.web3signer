@@ -1,5 +1,5 @@
 ---
-title: Launchpad Keystores
+title: Load Launchpad keystores
 description: Load keystores generated using the consensus layer Launchpad tool
 sidebar_position: 1
 ---

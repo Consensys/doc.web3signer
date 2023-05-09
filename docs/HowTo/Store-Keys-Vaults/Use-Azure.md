@@ -1,6 +1,6 @@
 ---
 title: Use Azure Key Vault
-description: Signing transactions with key stored in Azure Key Vault
+description: Sign transactions with keys stored in Azure Key Vault
 sidebar_position: 2
 ---
 

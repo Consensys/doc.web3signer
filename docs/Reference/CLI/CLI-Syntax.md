@@ -113,6 +113,40 @@ key-store-path: "/Users/me/keys"
 
 Path to the directory containing the [YAML files required to access keys].
 
+### `key-store-config-file-max-size`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--key-store-config-file-max-size=<INTEGER>
+```
+
+# Example
+
+```bash
+--key-store-config-file-max-size=158000000
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_KEY_STORE_CONFIG_FILE_MAX_SIZE=158000000
+```
+
+# Configuration file
+
+```bash
+key-store-config-file-max-size: 158000000
+```
+
+<!--/tabs-->
+
+The maximum signing key configuration file size in bytes. Useful when you're loading a large number of [signing key configurations from a single file](../Key-Configuration-Files.md).
+
+The default size is 104857600 bytes (100 MB).
+
 ### `logging`
 
 <!--tabs-->
