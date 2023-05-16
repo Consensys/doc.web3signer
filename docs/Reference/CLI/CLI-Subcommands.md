@@ -85,6 +85,39 @@ eth2.aws-connection-cache-size: 5
 
 When [loading multiple keys from AWS Secrets Manager](../../HowTo/Store-Keys-Vaults/Use-AWS.md#cache-aws-secrets-manager-when-loading-multiple-keys), set to the maximum number of connections to cache. The default is 1.
 
+#### `aws-endpoint-override`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-endpoint-override=<ENDPOINT_URL>
+```
+
+# Example
+
+```bash
+--aws-endpoint-override=http://localstack:4566
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AWS_ENDPOINT_OVERRIDE=http://localstack:4566
+```
+
+# Configuration file
+
+```bash
+eth2.aws-endpoint-override="http://localstack:4566"
+```
+
+<!--/tabs-->
+
+Endpoint override for AWS Secrets Manager.
+Useful for local testing against LocalStack.
+
 #### `aws-secrets-enabled`
 
 <!--tabs-->
@@ -378,6 +411,8 @@ WEB3SIGNER_ETH2_AZURE_VAULT_ENABLED=true
 eth2.azure-vault-enabled: true
 ```
 
+<!--/tabs-->
+
 Enables [bulk loading keys from Azure Key Vault](../../HowTo/Use-Signing-Keys.md#azure-key-vault). The default is `false`.
 
 #### `azure-client-id`
@@ -445,6 +480,38 @@ eth2.azure-client-secret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
 <!--/tabs-->
 
 The secret used to access the vault along with the ID specified in [`azure-client-id`](#azure-client-id).
+
+#### `azure-secrets-tags`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--azure-secrets-tags=<TAG_NAME=TAG_VALUE>
+```
+
+# Example
+
+```bash
+--azure-secrets-tags=ENV=prod
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AZURE_SECRETS_TAGS=ENV=prod
+```
+
+# Configuration file
+
+```bash
+eth2.azure-secrets-tags: "ENV=prod"
+```
+
+<!--/tabs-->
+
+Tags to filter secrets from Azure Key Vault.
 
 #### `azure-tenant-id`
 
@@ -576,7 +643,7 @@ eth2.key-manager-api-enabled: true
 
 Enables the [key manager API](../../HowTo/Use-Signing-Keys.md#manage-keys). The default is `false`.
 
-!!!caution WArning
+:::caution Warning
 
 The key manager API is an early access feature and is still in development.
 
