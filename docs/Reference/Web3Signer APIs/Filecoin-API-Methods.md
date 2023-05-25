@@ -25,33 +25,6 @@ Indicates whether an address exists in the wallet.
 
 #### Returns
 
----
-
-title: Filecoin JSON API methods description: Filecoin JSON RPC methods sidebar_position: 3
-
----
-
-# Filecoin API methods
-
-The Filecoin JSON RPC methods can be accessed at `http://<HOST>:<PORT>/rpc/v1/filecoin`, where:
-
-- `<HOST>` is specified using [`--http-listen-host`](../CLI/CLI-Syntax.md#http-listen-host)
-- `<PORT>` is specified using [`--http-listen-port`](../CLI/CLI-Syntax.md#http-listen-port).
-
-The default location is `http://127.0.0.1:9000/rpc/v1/filecoin`.
-
-## Filecoin wallet APIs
-
-### `Filecoin.WalletHas`
-
-Indicates whether an address exists in the wallet.
-
-#### Parameters
-
-`String` : Filecoin address
-
-#### Returns
-
 `result` : _Boolean_ - `true` if the address exists in the wallet; otherwise `false`.
 
 <!--tabs-->
@@ -249,15 +222,9 @@ curl -X POST --data '{"jsonrpc": "2.0", "method": "Filecoin.WalletVerify", "para
 
 # curl HTTP request
 
-<<<<<<< HEAD
-
 ```bash
 curl -X POST --data '{"jsonrpc": "2.0", "method": "Filecoin.WalletHas", "params": ["t1m...fvy"], "id": 1}' http://127.0.0.1:9000/rpc/v1/filecoin
 ```
-
-======= `bash curl -X POST --data '{"jsonrpc": "2.0", "method": "Filecoin.WalletHas", "params": ["t1m...fvy"], "id": 1}' http://127.0.0.1:9000/rpc/v1/filecoin `
-
-> > > > > > > c98a715780d0a2c5dea9d03e4be17559b2e4275b
 
 # JSON result
 
@@ -295,8 +262,6 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"Filecoin.WalletList","params":[]
 
 # JSON result
 
-<<<<<<< HEAD
-
 ```json
 {
   "id": 1,
@@ -306,19 +271,6 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"Filecoin.WalletList","params":[]
 ```
 
 # <!--/tabs-->
-
-        ```json
-        {
-            "id": 1,
-            "result": [
-                "t1m...fvy",
-                "t3u...aja"
-            ],
-            "jsonrpc": "2.0"
-        }
-        ```
-
-> > > > > > > c98a715780d0a2c5dea9d03e4be17559b2e4275b
 
 ### `Filecoin.WalletSign`
 
@@ -341,15 +293,9 @@ Signs the provided data using the private key belonging to the supplied Filecoin
 
 # curl HTTP request
 
-<<<<<<< HEAD
-
 ```bash
 curl -X POST --data '{"jsonrpc": "2.0", "method": "Filecoin.WalletSign", "params": ["t1m...fvy", "NDI="], "id": 1}' http://127.0.0.1:9000/rpc/v1/filecoin
 ```
-
-======= `bash curl -X POST --data '{"jsonrpc": "2.0", "method": "Filecoin.WalletSign", "params": ["t1m...fvy", "NDI="], "id": 1}' http://127.0.0.1:9000/rpc/v1/filecoin `
-
-> > > > > > > c98a715780d0a2c5dea9d03e4be17559b2e4275b
 
 # JSON result
 
@@ -384,15 +330,9 @@ _Object_: [Unsigned message object]
 
 # curl HTTP Request
 
-<<<<<<< HEAD
-
 ```bash
 curl -X POST --data '{"jsonrpc": "2.0", "method": "Filecoin.WalletSignMessage", "params": ["t1m...fvy", {"Version": 9, "To": "t01234", "From": "t01234", "Nonce": 42, "Value": "0", "GasLimit": 9, "GasFeeCap": "0", "GasPremium": "0", "Method": 1, "Params": "Ynl0ZSBhcnJheQ=="}], "id": 1}' http://127.0.0.1:9000/rpc/v1/filecoin
 ```
-
-======= `bash curl -X POST --data '{"jsonrpc": "2.0", "method": "Filecoin.WalletSignMessage", "params": ["t1m...fvy", {"Version": 9, "To": "t01234", "From": "t01234", "Nonce": 42, "Value": "0", "GasLimit": 9, "GasFeeCap": "0", "GasPremium": "0", "Method": 1, "Params": "Ynl0ZSBhcnJheQ=="}], "id": 1}' http://127.0.0.1:9000/rpc/v1/filecoin `
-
-> > > > > > > c98a715780d0a2c5dea9d03e4be17559b2e4275b
 
 # JSON result
 
@@ -446,15 +386,9 @@ _Object_ : Signature object containing:
 
 # curl HTTP Request
 
-<<<<<<< HEAD
-
 ```bash
 curl -X POST --data '{"jsonrpc": "2.0", "method": "Filecoin.WalletVerify", "params": ["t1m...fvy", "NDI=", {"Type":1,"Data":"5vEDqBPUTQA44p51Qaclwih+b2WVND7gp12yNXFBrtwsZFuwqQYc7A8CZjocrn6NVPjMLpqvJjGxWY2lXb6a3wE="}], "id": 1}' http://127.0.0.1:9000/rpc/v1/filecoin
 ```
-
-======= `bash curl -X POST --data '{"jsonrpc": "2.0", "method": "Filecoin.WalletVerify", "params": ["t1m...fvy", "NDI=", {"Type":1,"Data":"5vEDqBPUTQA44p51Qaclwih+b2WVND7gp12yNXFBrtwsZFuwqQYc7A8CZjocrn6NVPjMLpqvJjGxWY2lXb6a3wE="}], "id": 1}' http://127.0.0.1:9000/rpc/v1/filecoin `
-
-> > > > > > > c98a715780d0a2c5dea9d03e4be17559b2e4275b
 
 # JSON result
 
