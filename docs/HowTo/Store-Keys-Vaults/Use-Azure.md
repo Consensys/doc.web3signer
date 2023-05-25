@@ -1,48 +1,54 @@
 ---
-description: Signing transactions with key stored in Azure Key Vault
+title: Use Azure Key Vault
+description: Sign transactions with keys stored in Azure Key Vault
+sidebar_position: 2
 ---
 
 # Use Web3Signer with Azure Key Vault
 
-Web3Signer supports using [Azure Key Vault](https://azure.microsoft.com/en-au/services/key-vault/)
-to sign payloads in the following ways:
+Web3Signer supports using [Azure Key Vault](https://azure.microsoft.com/en-au/services/key-vault/) to sign payloads in the following ways:
 
-* Using Azure Key Vault to perform the signing operation. Supports SECP256K1 signing keys only.
-* Fetching the keys from Azure Key Vault and signing locally.
+- Using Azure Key Vault to perform the signing operation. Supports SECP256K1 signing keys only.
+- Fetching the keys from Azure Key Vault and signing locally.
 
 Web3Signer supports the following authentication modes:
 
-* [Azure Active Directory managed identity]:
-    * System-assigned identities
-    * User-assigned identities
-* [Client secret].
+- [Azure Active Directory managed identity]:
+  - System-assigned identities
+  - User-assigned identities
+- [Client secret].
 
-!!! important
+:::info Important
 
-    The Azure Active Directory managed identity authentication modes can only be used when
-    fetching keys from Azure Key Vault and signing locally with Web3Signer.
+The Azure Active Directory managed identity authentication modes can only be used when fetching keys from Azure Key Vault and signing locally with Web3Signer.
+
+:::
 
 ## Store a private key in Azure Key Vault
 
 [Register Web3Signer as an application] and [add a signing key in Azure Key Vault].
 
-Take note of the following to specify when [configuring the signing key configuration file] or [bulk
-loading consensus layer signing keys]:
+Take note of the following to specify when [configuring the signing key configuration file] or [bulk loading consensus layer signing keys]:
 
-* Vault name, which is part of the URL (for example `https://<vaultname>.vault.azure.net`).
-* Client credentials, which can include:
+- Vault name, which is part of the URL (for example `https://<vaultname>.vault.azure.net`).
+- Client credentials, which can include:
 
-    * Client ID
-    * Client secret
-    * Tenant ID
+  - Client ID
+  - Client secret
+  - Tenant ID
 
-    !!! note
+  <br />
 
-        Depending on the authentication mode, not all client credentials are available.
+  :::note
 
-* Key name, which is the name of the secret.
+  Depending on the authentication mode, not all client credentials are available.
+
+  :::
+
+- Key name, which is the name of the secret.
 
 <!-- links -->
+
 [configuring the signing key configuration file]: ../Use-Signing-Keys.md#using-key-configuration-files
 [bulk loading consensus layer signing keys]: ../Use-Signing-Keys.md#bulk-loading-consensus-layer-keys
 [Register Web3Signer as an application]: https://docs.microsoft.com/en-us/azure/key-vault/general/authentication
