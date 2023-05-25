@@ -5,7 +5,7 @@ description: Web3Signer JSON-RPC API methods reference
 
 # Web3Signer JSON-RPC API methods
 
-:::caution
+:::info
 
 - All JSON-RPC HTTP examples use the default host and port endpoint `http://127.0.0.1:8545`.
 - The examples use Hyperledger Besu, but any Ethereum client can be used.
