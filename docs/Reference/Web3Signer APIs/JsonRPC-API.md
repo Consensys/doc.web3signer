@@ -1,5 +1,5 @@
 ---
-title: API methods
+title: JSON-RPC API methods
 description: Web3Signer JSON-RPC API methods reference
 ---
 
