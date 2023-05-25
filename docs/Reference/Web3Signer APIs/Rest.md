@@ -12,12 +12,12 @@ View the [REST API documentation] for more information about the available APIs.
 
 ## Enable Swagger UI
 
-You can also interact with APIs using [Swagger UI]. To do this, set [`--swagger-ui-enabled`](CLI/CLI-Syntax.md#swagger-ui-enabled) to `true`.
+You can also interact with APIs using [Swagger UI]. To do this, set [`--swagger-ui-enabled`](../CLI/CLI-Syntax.md#swagger-ui-enabled) to `true`.
 
 Access Swagger UI at `http:<interface>:<port>/swagger-ui` where:
 
-- `interface` is specified using [`--http-listen-host`](CLI/CLI-Syntax.md#http-listen-host)
-- `port` is specified using [`http-listen-port`](CLI/CLI-Syntax.md#http-listen-port)
+- `interface` is specified using [`--http-listen-host`](../CLI/CLI-Syntax.md#http-listen-host)
+- `port` is specified using [`http-listen-port`](../CLI/CLI-Syntax.md#http-listen-port)
 
 The default location is `http://localhost:9000/swagger-ui`.
 

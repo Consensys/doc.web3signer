@@ -8,8 +8,8 @@ sidebar_position: 3
 
 The Filecoin JSON RPC methods can be accessed at `http://<HOST>:<PORT>/rpc/v1/filecoin`, where:
 
-- `<HOST>` is specified using [`--http-listen-host`](CLI/CLI-Syntax.md#http-listen-host)
-- `<PORT>` is specified using [`--http-listen-port`](CLI/CLI-Syntax.md#http-listen-port).
+- `<HOST>` is specified using [`--http-listen-host`](../CLI/CLI-Syntax.md#http-listen-host)
+- `<PORT>` is specified using [`--http-listen-port`](../CLI/CLI-Syntax.md#http-listen-port).
 
 The default location is `http://127.0.0.1:9000/rpc/v1/filecoin`.
 
@@ -35,8 +35,8 @@ title: Filecoin JSON API methods description: Filecoin JSON RPC methods sidebar_
 
 The Filecoin JSON RPC methods can be accessed at `http://<HOST>:<PORT>/rpc/v1/filecoin`, where:
 
-- `<HOST>` is specified using [`--http-listen-host`](CLI/CLI-Syntax.md#http-listen-host)
-- `<PORT>` is specified using [`--http-listen-port`](CLI/CLI-Syntax.md#http-listen-port).
+- `<HOST>` is specified using [`--http-listen-host`](../CLI/CLI-Syntax.md#http-listen-host)
+- `<PORT>` is specified using [`--http-listen-port`](../CLI/CLI-Syntax.md#http-listen-port).
 
 The default location is `http://127.0.0.1:9000/rpc/v1/filecoin`.
 
