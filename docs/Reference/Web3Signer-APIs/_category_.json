@@ -3,6 +3,6 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Web3Signer available APIs (REST, JSONRPC, Filecoin)."
+    "description": "Web3Signer API reference."
   }
 }

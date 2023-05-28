@@ -1,9 +1,9 @@
 ---
 title: JSON-RPC API methods
-description: Web3Signer JSON-RPC API methods reference
+description: Web3Signer JSON-RPC API methods.
 ---
 
-# Web3Signer JSON-RPC API methods
+# JSON-RPC API methods
 
 :::info
 
@@ -12,7 +12,7 @@ description: Web3Signer JSON-RPC API methods reference
 
 :::
 
-## Eth methods
+## ETH methods
 
 ### `eth_accounts`
 
