@@ -77,13 +77,11 @@ Use the [`--tls-allow-any-client`](../Reference/CLI/CLI-Syntax.md#tls-allow-any-
 
 :::
 
-:::
-
 ## Server TLS connection
 
 Allow Web3Signer to send and receive secure HTTP JSON-RPCs from the server (for example Besu).
 
-::: note
+:::note
 
 This can only be used when Web3Signer is eth1 mode.
 
