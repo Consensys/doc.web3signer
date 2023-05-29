@@ -136,5 +136,5 @@ The [`--downstream-http-tls-ca-auth-enabled`](../Reference/CLI/CLI-Syntax.md#dow
 
 [Allow all clients with trusted CA certificates to connect]: ../Reference/CLI/CLI-Syntax.md#tls-allow-ca-clients
 [Allow any client to connect]: ../Reference/CLI/CLI-Syntax.md#tls-allow-any-client
-[Teku]: https://docs.teku.consensys.net/en/stable/
-[Teku tutorial]: https://docs.teku.consensys.net/en/stable/Tutorials/Configure-External-Signer-TLS/
+[Teku]: https://docs.teku.consensys.net/
+[Teku tutorial]: https://docs.teku.consensys.net/tutorials/configure-external-signer-tls

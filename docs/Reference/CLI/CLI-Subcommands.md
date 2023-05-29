@@ -53,307 +53,355 @@ To view the command line help for the subcommands:
 
 #### `downstream-http-host`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --downstream-http-host=<downstreamHttpHost>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--downstream-http-host=<downstreamHttpHost>
+```
 
-    ```bash
-    --downstream-http-host=192.168.05.14
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--downstream-http-host=192.168.05.14
+```
 
-    ```bash
-    WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_HOST=192.168.05.14
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_HOST=192.168.05.14
+```
 
-    ```bash
-    eth1.downstream-http-host="192.168.05.14"
-    ```
+# Configuration file
+
+```bash
+eth1.downstream-http-host="192.168.05.14"
+```
+
+<!--/tabs-->
 
 Host to which received requests are forwarded. Default is `localhost`.
 
 #### `downstream-http-path`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --downstream-http-path=<downstreamHttpPath>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--downstream-http-path=<downstreamHttpPath>
+```
 
-    ```bash
-    --downstream-http-path=/v3/d0e63ca5bb1e4eef2284422efbc51a56
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--downstream-http-path=/v3/d0e63ca5bb1e4eef2284422efbc51a56
+```
 
-    ```bash
-    WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PATH=/v3/d0e63ca5bb1e4eef2284422efbc51a56
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PATH=/v3/d0e63ca5bb1e4eef2284422efbc51a56
+```
 
-    ```bash
-    eth1.downstream-http-path="/v3/d0e63ca5bb1e4eef2284422efbc51a56"
-    ```
+# Configuration file
+
+```bash
+eth1.downstream-http-path="/v3/d0e63ca5bb1e4eef2284422efbc51a56"
+```
+
+<!--/tabs-->
 
 Path to which received requests are forwarded. Default is `/`.
 
-Might be required if [connecting to a cloud-based Ethereum client] such as [Infura].
+Might be required if connecting to a cloud-based Ethereum client such as [Infura](https://infura.io/).
 
 #### `downstream-http-port`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --downstream-http-port=<downstreamHttpPort>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--downstream-http-port=<downstreamHttpPort>
+```
 
-    ```bash
-    --downstream-http-port=6174
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--downstream-http-port=6174
+```
 
-    ```bash
-    WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PORT=6174
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PORT=6174
+```
 
-    ```bash
-    eth1.downstream-http-port: 6174
-    ```
+# Configuration file
+
+```bash
+eth1.downstream-http-port: 6174
+```
+
+<!--/tabs-->
 
 Port to which received requests are forwarded.
 
 #### `downstream-http-proxy-host`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --downstream-http-proxy-host=<HOST>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--downstream-http-proxy-host=<HOST>
+```
 
-    ```bash
-    --downstream-http-proxy-host=192.168.05.14
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--downstream-http-proxy-host=192.168.05.14
+```
 
-    ```bash
-    WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PROXY_HOST=192.168.05.14
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PROXY_HOST=192.168.05.14
+```
 
-    ```bash
-    eth1.downstream-http-proxy-host: "192.168.05.14"
+# Configuration file
+
+```bash
+eth1.downstream-http-proxy-host: "192.168.05.14"
+```
+
+<!--/tabs-->
 
 Hostname for proxy. No proxy if null. Default is null.
 
 #### `downstream-http-proxy-port`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --downstream-http-proxy-port=<PORT>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--downstream-http-proxy-port=<PORT>
+```
 
-    ```bash
-    --downstream-http-proxy-port=8545
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--downstream-http-proxy-port=8545
+```
 
-    ```bash
-    WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PROXY_PORT=8545
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PROXY_PORT=8545
+```
 
-    ```bash
-    eth1.downstream-http-proxy-port: 8545
+# Configuration file
+
+```bash
+eth1.downstream-http-proxy-port: 8545
+```
+
+<!--/tabs-->
 
 Port for proxy. Default is 80.
 
 #### `downstream-http-proxy-username`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --downstream-http-proxy-username=<username>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--downstream-http-proxy-username=<username>
+```
 
-    ```bash
-    --downstream-http-proxy-username=user
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--downstream-http-proxy-username=user
+```
 
-    ```bash
-    WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PROXY_USERNAME=user
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PROXY_USERNAME=user
+```
 
-    ```bash
-    eth1.downstream-http-proxy-username: "user"
+# Configuration file
+
+```bash
+eth1.downstream-http-proxy-username: "user"
+```
+
+<!--/tabs-->
 
 Username for proxy, no authentication if null. Default is null.
 
 #### `downstream-http-proxy-password`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --downstream-http-proxy-password=<password>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--downstream-http-proxy-password=<password>
+```
 
-    ```bash
-    --downstream-http-proxy-password=password
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--downstream-http-proxy-password=password
+```
 
-    ```bash
-    WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PROXY_PASSWORD=password
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PROXY_PASSWORD=password
+```
 
-    ```bash
-    eth1.downstream-http-proxy-password: "password"
+# Configuration file
+
+```bash
+eth1.downstream-http-proxy-password: "password"
+```
+
+<!--/tabs-->
 
 Password for proxy, no authentication if null. Default is null.
 
 #### `downstream-http-request-timeout`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --downstream-http-request-timeout=<downstreamHttpRequestTimeout>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--downstream-http-request-timeout=<downstreamHttpRequestTimeout>
+```
 
-    ```bash
-    --downstream-http-request-timeout=3000
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--downstream-http-request-timeout=3000
+```
 
-    ```bash
-    WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_REQUEST_TIMEOUT=3000
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_REQUEST_TIMEOUT=3000
+```
 
-    ```bash
-    eth1.downstream-http-request-timeout: 3000
-    ```
+# Configuration file
+
+```bash
+eth1.downstream-http-request-timeout: 3000
+```
+
+<!--/tabs-->
 
 Timeout period (in milliseconds) for downstream requests. Default is 5000.
 
 #### `downstream-http-tls-enabled`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --downstream-http-tls-enabled=<BOOLEAN>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--downstream-http-tls-enabled=<BOOLEAN>
+```
 
-    ```bash
-    --downstream-http-tls-enabled=true
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--downstream-http-tls-enabled=true
+```
 
-    ```bash
-    WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_TLS_ENABLED=true
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_TLS_ENABLED=true
+```
 
-    ```bash
-    eth1.downstream-http-tls-enabled: true
-    ```
+# Configuration file
+
+```bash
+eth1.downstream-http-tls-enabled: true
+```
+
+<!--/tabs-->
 
 Enable or disable [TLS for server connections](../../Concepts/TLS.md). Defaults to `false`.
 
 #### `downstream-http-tls-known-servers-file`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --downstream-http-tls-known-servers-file=<FILE>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--downstream-http-tls-known-servers-file=<FILE>
+```
 
-    ```bash
-    --downstream-http-tls-known-servers-file=/Users/me/my_node/knownServers
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--downstream-http-tls-known-servers-file=/Users/me/my_node/knownServers
+```
 
-    ```bash
-    WEB3SIGNER_DOWNSTREAM_HTTP_TLS_KNOWN_SERVERS_FILE=/Users/me/my_node/knownServers
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_DOWNSTREAM_HTTP_TLS_KNOWN_SERVERS_FILE=/Users/me/my_node/knownServers
+```
 
-    ```bash
-    eth1.downstream-http-tls-known-servers-file=/Users/me/my_node/knownServers
-    ```
+# Configuration file
+
+```bash
+eth1.downstream-http-tls-known-servers-file=/Users/me/my_node/knownServers
+```
+
+<!--/tabs-->
 
 File containing the hostnames, ports, and SHA256 certificate fingerprints of [trusted servers](../../HowTo/Configure-TLS.md#create-the-known-servers-file).
 
 #### `downstream-http-tls-ca-auth-enabled`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --downstream-http-tls-ca-auth-enabled=<BOOLEAN>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--downstream-http-tls-ca-auth-enabled=<BOOLEAN>
+```
 
-    ```bash
-    --downstream-http-tls-ca-auth-enabled=false
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--downstream-http-tls-ca-auth-enabled=false
+```
 
-    ```bash
-    WEB3SIGNER_ETH1_HTTP_TLS_CA_AUTH_ENABLED=false
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH1_HTTP_TLS_CA_AUTH_ENABLED=false
+```
 
-    ```bash
-    eth1.downstream-http-tls-ca-auth-enabled: false
-    ```
+# Configuration file
+
+```bash
+eth1.downstream-http-tls-ca-auth-enabled: false
+```
+
+<!--/tabs-->
 
 Allow connections to servers with trusted CAs. Defaults to `true`.
 
@@ -421,8 +469,7 @@ eth2.aws-endpoint-override="http://localstack:4566"
 
 <!--/tabs-->
 
-Endpoint override for AWS Secrets Manager.
-Useful for local testing against LocalStack.
+Endpoint override for AWS Secrets Manager. Useful for local testing against LocalStack.
 
 #### `aws-secrets-enabled`
 
