@@ -1,55 +1,51 @@
 ---
+title: Subcommands
 description: Web3Signer command line interface subcommands
+sidebar_position: 2
 ---
 
 # Subcommands
 
-The Web3Signer subcommands are used to specify the platform being used:
+Use the Web3Signer subcommands to specify the platform being used:
 
-* `web3signer [Options] eth2 [Eth2 Options]`
-* `web3signer [Options] eth2 export [Eth2 Export Options]`
-* `web3signer [Options] eth2 import [Eth2 Import Options]`
-* `web3signer [Options] eth1`
-* `web3signer [Options] filecoin [Filecoin Options]`
+- `web3signer [options] eth2 [Eth2 options]`
+- `web3signer [options] eth2 export [Eth2 export options]`
+- `web3signer [options] eth2 import [Eth2 import options]`
+- `web3signer [options] eth1`
+- `web3signer [options] filecoin [Filecoin options]`
+- `web3signer [options] watermark-repair [watermark repair options]`
 
-## Specifying subcommand options
+:::note
+
+This documentation has been updated in line with the name changes [recommended by the Ethereum Foundation](https://blog.ethereum.org/2022/01/24/the-great-eth2-renaming/). The `eth1` subcommands relate to the execution layer, previously called “Ethereum 1.0.” The `eth2` subcommands relate to the consensus layer, previously called “Ethereum 2.0.”
+
+:::
+
+## Specify subcommand options
 
 The subcommand must be specified on the command line, but the subcommand options can be specified:
 
-* On the command line
-* As [environment variables](#environment-variables)
-* In a YAML configuration file.
+- On the command line.
+- As environment variables. For each subcommand option, the equivalent environment variable is:
+  - Uppercase.
+  - `_` replaces `-`.
+  - Has a `WEB3SIGNER_` + `<SIGNING_OPTION>_` prefix.
+- In a YAML configuration file.
 
-For example, you can set the options for the `filecoin` subcommand in an environment variables
-`export WEB3SIGNER_FILECOIN_NETWORK=TESTNET`, but the subcommand must be specified in the command line
+For example, you can set the `--network` option for the `filecoin` subcommand in an environment variable `export WEB3SIGNER_FILECOIN_NETWORK=TESTNET`, but the subcommand must be specified in the command line.
 
-!!! example
-
-    ```bash
-    web3signer --key-store-path=/Users/me/keyFiles/ filecoin
-    ```
-
-## Environment variables
-
-For each subcommand option, the equivalent environment variable is:
-
-* Upper-case
-* `_` replaces `-`
-* Has a `WEB3SIGNER_` + `<SIGNING_OPTION>_` prefix. For example set `filecoin --network`
-    using the `WEB3SIGNER_FILECOIN_NETWORK` environment variable.
-
-!!! note
-
-    Only subcommand options can be set in environment variables. The actual subcommand must be
-    specified in the command line.
+```bash
+web3signer --key-store-path=/Users/me/keyFiles/ filecoin
+```
 
 ## View help
 
 To view the command line help for the subcommands:
 
-* [`web3signer help eth1`](#eth1)
-* [`web3signer help eth2`](#eth2)
-* [`web3signer help filecoin`](#filecoin)
+- [`web3signer help eth1`](#eth1)
+- [`web3signer help eth2`](#eth2)
+- [`web3signer help filecoin`](#filecoin)
+- [`web3signer help watermark-repair`](#watermark-repair)
 
 ## Options
 
@@ -363,464 +359,1138 @@ Allow connections to servers with trusted CAs. Defaults to `true`.
 
 ### `eth2`
 
+#### `aws-connection-cache-size`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-connection-cache-size=<LONG>
+```
+
+# Example
+
+```bash
+--aws-connection-cache-size=5
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AWS_CONNECTION_CACHE_SIZE=5
+```
+
+# Configuration file
+
+```bash
+eth2.aws-connection-cache-size: 5
+```
+
+<!--/tabs-->
+
+When [loading multiple keys from AWS Secrets Manager](../../HowTo/Store-Keys-Vaults/Use-AWS.md#cache-aws-secrets-manager-when-loading-multiple-keys), set to the maximum number of connections to cache. The default is 1.
+
+#### `aws-endpoint-override`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-endpoint-override=<ENDPOINT_URL>
+```
+
+# Example
+
+```bash
+--aws-endpoint-override=http://localstack:4566
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AWS_ENDPOINT_OVERRIDE=http://localstack:4566
+```
+
+# Configuration file
+
+```bash
+eth2.aws-endpoint-override="http://localstack:4566"
+```
+
+<!--/tabs-->
+
+Endpoint override for AWS Secrets Manager.
+Useful for local testing against LocalStack.
+
+#### `aws-secrets-enabled`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-secrets-enabled=<BOOLEAN>
+```
+
+# Example
+
+```bash
+--aws-secrets-enabled=true
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AWS_SECRETS_ENABLED=true
+```
+
+# Configuration file
+
+```bash
+eth2.aws-secrets-enabled: true
+```
+
+<!--/tabs-->
+
+Enables [bulk loading keys from AWS Secrets Manager](../../HowTo/Use-Signing-Keys.md#aws-secrets-manager). The default is `false`.
+
+#### `aws-secrets-auth-mode`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-secrets-auth-mode=<STRING>
+```
+
+# Example
+
+```bash
+--aws-secrets-auth-mode=ENVIRONMENT
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AWS_SECRETS_AUTH_MODE=ENVIRONMENT
+```
+
+# Configuration file
+
+```bash
+eth2.aws-secrets-auth-mode: "ENVIRONMENT"
+```
+
+<!--/tabs-->
+
+Authentication mode for AWS Secrets Manager. Options are `SPECIFIED` and `ENVIRONMENT`. The default is `SPECIFIED`.
+
+Set [`--aws-secrets-access-key-id`](#aws-secrets-access-key-id), [`--aws-secrets-secret-access-key`](#aws-secrets-secret-access-key), and [`--aws-secrets-region`](#aws-secrets-region) if using `SPECIFIED`.
+
+#### `aws-secrets-access-key-id`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-secrets-access-key-id=<STRING>
+```
+
+# Example
+
+```bash
+--aws-secrets-access-key-id=AKIA...EXAMPLE
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AWS_SECRETS_ACCESS_KEY_ID=AKIA...EXAMPLE
+```
+
+# Configuration file
+
+```bash
+eth2.aws-secrets-access-key-id: "AKIA...EXAMPLE"
+```
+
+<!--/tabs-->
+
+AWS access key ID to authenticate AWS Secrets Manager.
+
+Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`.
+
+#### `aws-secrets-secret-access-key`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-secrets-secret-access-key=<STRING>
+```
+
+# Example
+
+```bash
+--aws-secrets-secret-access-key=sk...EXAMPLE
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AWS_SECRETS_SECRET_ACCESS_KEY=sk...EXAMPLE
+```
+
+# Configuration file
+
+```bash
+eth2.aws-secrets-secret-access-key: "sk...EXAMPLE"
+```
+
+<!--/tabs-->
+
+AWS secret access key to authenticate AWS Secrets Manager.
+
+Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`.
+
+#### `aws-secrets-region`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-secrets-region=<STRING>
+```
+
+# Example
+
+```bash
+--aws-secrets-region=us-east-2
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AWS_SECRETS_REGION=us-east-2
+```
+
+# Configuration file
+
+```bash
+eth2.aws-secrets-region: "us-east-2"
+```
+
+<!--/tabs-->
+
+AWS region where AWS Secrets Manager is available.
+
+Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`.
+
+#### `aws-secrets-prefixes-filter`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-secrets-prefixes-filter=<STRING>[,<STRING>,...]
+```
+
+# Example
+
+```bash
+--aws-secrets-prefixes-filter=prefix1,prefix2
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AWS_SECRETS_PREFIXES_FILTER=prefix1,prefix2
+```
+
+# Configuration file
+
+```bash
+eth2.aws-secrets-prefixes-filter: ["prefix1","prefix2"]
+```
+
+<!--/tabs-->
+
+Optional comma-separated list of secret name prefixes filter to apply while fetching secrets from AWS Secrets Manager. Applied as `AND` operation with other filters.
+
+#### `aws-secrets-tag-names-filter`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-secrets-tag-names-filter=<STRING>[,<STRING>,...]
+```
+
+# Example
+
+```bash
+--aws-secrets-tag-names-filter=tagName1,tagName2
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AWS_SECRETS_TAG_NAMES_FILTER=tagName1,tagName2
+```
+
+# Configuration file
+
+```bash
+eth2.aws-secrets-tag-names-filter: ["tagName1","tagName2"]
+
+```
+
+<!--/tabs-->
+
+Optional comma-separated list of tag names filter to apply while fetching secrets from AWS Secrets Manager. Applied as `AND` operation with other filters.
+
+#### `aws-secrets-tag-values-filter`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-secrets-tag-values-filter=<STRING>[,<STRING>,...]
+```
+
+# Example
+
+```bash
+--aws-secrets-tag-values-filter=tagValue1,tagValue2
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AWS_SECRETS_TAG_VALUES_FILTER=tagValue1,tagValue2
+```
+
+# Configuration file
+
+```bash
+eth2.aws-secrets-tag-values-filter: ["tagValue1","tagValue2"]
+```
+
+<!--/tabs-->
+
+Optional comma-separated list of tag values filter to apply while fetching secrets from AWS Secrets Manager. Applied as `AND` operation with other filters.
+
 #### `azure-vault-enabled`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --azure-vault-enabled=<BOOLEAN>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--azure-vault-enabled=<BOOLEAN>
+```
 
-    ```bash
-    --azure-vault-enabled=true
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--azure-vault-enabled=true
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_AZURE_VAULT_ENABLED=true
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_AZURE_VAULT_ENABLED=true
+```
 
-    ```bash
-    eth2.azure-vault-enabled: true
-    ```
+# Configuration file
 
-Allow Web3Signer to bulk load all keys from the specified Azure Vault.
+```bash
+eth2.azure-vault-enabled: true
+```
+
+<!--/tabs-->
+
+Enables [bulk loading keys from Azure Key Vault](../../HowTo/Use-Signing-Keys.md#azure-key-vault). The default is `false`.
 
 #### `azure-client-id`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --azure-client-id=<STRING>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--azure-client-id=<STRING>
+```
 
-    ```bash
-    --azure-client-id=87efaa5b-4029-4b54-98bb2e2e8a11
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--azure-client-id=87efaa5b-4029-4b54-98bb2e2e8a11
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_AZURE_CLIENT_ID=87efaa5b-4029-4b54-98bb2e2e8a11
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_AZURE_CLIENT_ID=87efaa5b-4029-4b54-98bb2e2e8a11
+```
 
-    ```bash
-    eth2.azure-client-id: "87efaa5b-4029-4b54-98bb2e2e8a11"
-    ```
+# Configuration file
+
+```bash
+eth2.azure-client-id: "87efaa5b-4029-4b54-98bb2e2e8a11"
+```
+
+<!--/tabs-->
 
 ID used to authenticate with Azure Key Vault.
 
-Required when [`--azure-vault-auth-mode`](#azure-vault-auth-mode) is `CLIENT_SECRET` or
-`USER_ASSIGNED_MANAGED_IDENTITY`.
+Required when [`--azure-vault-auth-mode`](#azure-vault-auth-mode) is `CLIENT_SECRET` or `USER_ASSIGNED_MANAGED_IDENTITY`.
 
 #### `azure-client-secret`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --azure-client-secret=<STRING>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--azure-client-secret=<STRING>
+```
 
-    ```bash
-    --azure-client-secret=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--azure-client-secret=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_AZURE_CLIENT_SECRET=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_AZURE_CLIENT_SECRET=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
+```
 
-    ```bash
-    eth2.azure-client-secret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
-    ```
+# Configuration file
+
+```bash
+eth2.azure-client-secret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
+```
+
+<!--/tabs-->
 
 The secret used to access the vault along with the ID specified in [`azure-client-id`](#azure-client-id).
 
+#### `azure-secrets-tags`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--azure-secrets-tags=<TAG_NAME=TAG_VALUE>
+```
+
+# Example
+
+```bash
+--azure-secrets-tags=ENV=prod
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AZURE_SECRETS_TAGS=ENV=prod
+```
+
+# Configuration file
+
+```bash
+eth2.azure-secrets-tags: "ENV=prod"
+```
+
+<!--/tabs-->
+
+Tags to filter secrets from Azure Key Vault.
+
 #### `azure-tenant-id`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --azure-tenant-id=<STRING>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--azure-tenant-id=<STRING>
+```
 
-    ```bash
-    --azure-tenant-id=34255fb0-379b-4a1a-bd47-d211ab86df81
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--azure-tenant-id=34255fb0-379b-4a1a-bd47-d211ab86df81
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_AZURE_TENANT_ID=34255fb0-379b-4a1a-bd47-d211ab86df81
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_AZURE_TENANT_ID=34255fb0-379b-4a1a-bd47-d211ab86df81
+```
 
-    ```bash
-    eth2.azure-tenant-id: "34255fb0-379b-4a1a-bd47-d211ab86df81"
-    ```
+# Configuration file
+
+```bash
+eth2.azure-tenant-id: "34255fb0-379b-4a1a-bd47-d211ab86df81"
+```
+
+<!--/tabs-->
 
 The tenant ID of the Azure Portal instance being used.
 
 #### `azure-vault-auth-mode`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --azure-vault-auth-mode=<STRING>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--azure-vault-auth-mode=<STRING>
+```
 
-    ```bash
-    --azure-vault-auth-mode=USER_ASSIGNED_MANAGED_IDENTITY
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--azure-vault-auth-mode=USER_ASSIGNED_MANAGED_IDENTITY
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_AZURE_VAULT_AUTH_MODE=USER_ASSIGNED_MANAGED_IDENTITY
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_AZURE_VAULT_AUTH_MODE=USER_ASSIGNED_MANAGED_IDENTITY
+```
 
-    ```bash
-    eth2.azure-vault-auth-mode: "USER_ASSIGNED_MANAGED_IDENTITY"
-    ```
+# Configuration file
 
-Authentication mode for Azure Vault. Options are `CLIENT_SECRET`, `SYSTEM_ASSIGNED_MANAGED_IDENTITY`,
-and `USER_ASSIGNED_MANAGED_IDENTITY`. Defaults to `CLIENT_SECRET`.
+```bash
+eth2.azure-vault-auth-mode: "USER_ASSIGNED_MANAGED_IDENTITY"
+```
 
-Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or
-`USER_ASSIGNED_MANAGED_IDENTITY`.
+<!--/tabs-->
+
+Authentication mode for Azure Vault. Options are `CLIENT_SECRET`, `SYSTEM_ASSIGNED_MANAGED_IDENTITY`, and `USER_ASSIGNED_MANAGED_IDENTITY`. The default is `CLIENT_SECRET`.
+
+Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or `USER_ASSIGNED_MANAGED_IDENTITY`.
 
 #### `azure-vault-name`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --azure-vault-name=<STRING>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--azure-vault-name=<STRING>
+```
 
-    ```bash
-    --azure-vault-name=AzureKeyVault
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--azure-vault-name=AzureKeyVault
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_AZURE_VAULT_NAME=AzureKeyVault
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_AZURE_VAULT_NAME=AzureKeyVault
+```
 
-    ```bash
-    eth2.azure-vault-name: "AzureKeyVault"
-    ```
+# Configuration file
 
-Name of the vault to access. Sub-domain of vault.azure.net.
+```bash
+eth2.azure-vault-name: "AzureKeyVault"
+```
 
-#### network
+<!--/tabs-->
 
-=== "Syntax"
+Name of the vault to access. Sub-domain of `vault.azure.net`.
 
-    ```bash
-    --network=<NETWORK>
-    ```
+#### `key-manager-api-enabled`
 
-=== "Example"
+<!--tabs-->
 
-    ```bash
-    --network=mainnet
-    ```
+# Syntax
 
-=== "Environment variable"
+```bash
+--key-manager-api-enabled=<BOOLEAN>
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_NETWORK=mainnet
-    ```
+# Example
 
-=== "Configuration file"
+```bash
+--key-manager-api-enabled=true
+```
 
-    ```bash
-    network: "mainnet"
-    ```
+# Environment variable
 
-Predefined network configuration.
-Accepts a predefined network name, or file path or URL to a YAML configuration file. See the
-[Ethereum 2.0 specification] for examples.
+```bash
+WEB3SIGNER_ETH2_KEY_MANAGER_API_ENABLED=true
+```
+
+# Configuration file
+
+```bash
+eth2.key-manager-api-enabled: true
+```
+
+<!--/tabs-->
+
+Enables the [key manager API](../../HowTo/Use-Signing-Keys.md#manage-keys). The default is `false`.
+
+:::caution Warning
+
+The key manager API is an early access feature and is still in development.
+
+:::
+
+#### `keystores-password-file`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--keystores-password-file=<FILE>
+```
+
+# Example
+
+```bash
+--keystores-password-file=/Users/me/passwds/keystore_passwords.txt
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_KEYSTORES_PASSWORD_FILE=/Users/me/passwds/keystore_passwords.txt
+```
+
+# Configuration file
+
+```bash
+eth2.keystores-password-file: "/Users/me/passwds/keystore_passwords.txt"
+```
+
+<!--/tabs-->
+
+File that contains the password used by all keystores. Cannot be set if [`--keystores-passwords-path`](#keystores-passwords-path) is also specified.
+
+:::note
+
+Alternatively, use [`--keystores-passwords-path`](#keystores-passwords-path) to specify a directory containing a separate password file for each keystore.
+
+:::
+
+#### `keystores-passwords-path`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--keystores-passwords-path=<PATH>
+```
+
+# Example
+
+```bash
+--keystores-passwords-path=/Users/me/passwds
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_KEYSTORES_PASSWORDS_PATH=/Users/me/passwds
+```
+
+# Configuration file
+
+```bash
+eth2.keystores-passwords-path: "/Users/me/passwds"
+```
+
+<!--/tabs-->
+
+Directory containing password files for corresponding keystores. Each password file name must match the corresponding keystore filename, but with a `.txt` extension.
+
+Cannot be set if [`--keystores-password-file`](#keystores-password-file) is also specified.
+
+:::note
+
+Alternatively, use [`--keystores-password-file`](#keystores-password-file) to specify a single password file that contains the password used by all keystores.
+
+:::
+
+#### `keystores-path`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--keystores-path=<PATH>
+```
+
+# Example
+
+```bash
+--keystores-path=/Users/me/keystores
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_KEYSTORES_PATH=/Users/me/keystores
+```
+
+# Configuration file
+
+```bash
+eth2.keystores-path: "/Users/me/keystores"
+```
+
+<!--/tabs-->
+
+Directory that stores the keystore files. Keystore files must use a `.json` file extension.
+
+Use [`--keystores-password-file`](#keystores-password-file) or [`--keystores-passwords-path`](#keystores-passwords-path) to specify keystore passwords.
+
+:::caution Important
+
+Restart Web3Signer if you want to pick up new keystores added to the directory since Web3Signer started.
+
+:::
+
+#### `network`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--network=<NETWORK>
+```
+
+# Example
+
+```bash
+--network=mainnet
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_NETWORK=mainnet
+```
+
+# Configuration file
+
+```bash
+network: "mainnet"
+```
+
+<!--/tabs-->
+
+Predefined network configuration. Accepts a predefined network name, or file path or URL to a YAML configuration file. See the [consensus specification] for examples.
 
 The default is `mainnet`.
 
-!!! important
+:::caution Important
 
-    If Teku connects to a network other than `mainnet`, then this option must be specified, and it
-    must match the [`--network` value of the connected Teku client](https://docs.teku.consensys.net/HowTo/External-Signer/Use-External-Signer/).
+If Teku connects to a network other than `mainnet`, then this option must be specified, and it must match the [`--network` value of the connected Teku client](https://docs.teku.consensys.net/HowTo/External-Signer/Use-External-Signer/).
+
+:::
 
 Possible values are:
 
-| Network   | Chain   | Type       | Description                                      |
-|:----------|:--------|:-----------|:-------------------------------------------------|
-| `mainnet` | Eth 2.0 | Production | Main network.                                    |
-| `minimal` | Eth 2.0 | Test       | Used for local testing and development networks. |
-| `pyrmont` | Eth 2.0 | Test       | Multi-client testnet.                            |
-| `prater`  | Eth 2.0 | Test       | Multi-client testnet.                            |
+| Network | Chain | Type | Description |
+| :-- | :-- | :-- | :-- |
+| `mainnet` | Consensus layer | Production | Main network. |
+| `minimal` | Consensus layer | Test | Used for local testing and development networks. |
+| `goerli` | Consensus layer | Test | Multi-client testnet. |
+| `kiln` | Consensus layer | Test | Multi-client testnet. |
+| `ropsten` | Consensus layer | Test | Multi-client testnet. |
+| `gnosis` | Consensus layer | Test | Multi-client testnet. |
+
+#### `slashing-protection-db-health-check-interval-milliseconds`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--slashing-protection-db-health-check-interval-milliseconds=<INTERVAL>
+```
+
+# Example
+
+```bash
+--slashing-protection-db-health-check-interval-milliseconds=20000
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_HEALTH_CHECK_INTERVAL_MILLISECONDS=20000
+```
+
+# Configuration file
+
+```bash
+eth2.slashing-protection-db-health-check-interval-milliseconds: 20000
+```
+
+<!--/tabs-->
+
+Milliseconds between the slashing protection database health checks. The default is 30000.
+
+The service responds with a `200` message if healthy, and `503` if unhealthy.
+
+#### `slashing-protection-db-health-check-timeout-milliseconds`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--slashing-protection-db-health-check-timeout-milliseconds=<INTERVAL>
+```
+
+# Example
+
+```bash
+--slashing-protection-db-health-check-timeout-milliseconds=2000
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_HEALTH_CHECK_TIMEOUT_MILLISECONDS=2000
+```
+
+# Configuration file
+
+```bash
+eth2.slashing-protection-db-health-check-timeout-milliseconds: 2000
+```
+
+<!--/tabs-->
+
+Milliseconds after which to fail the database health check. For example, if the health check connects to the slashing protection database, but does not report back in a timely manner.
+
+The default is 3000.
 
 #### `slashing-protection-db-password`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --slashing-protection-db-password=<PASSWORD>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--slashing-protection-db-password=<PASSWORD>
+```
 
-    ```bash
-    --slashing-protection-db-password=changeme
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--slashing-protection-db-password=changeme
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_PASSWORD=change
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_PASSWORD=changeme
+```
 
-    ```bash
-    eth2.slashing-protection-db-password: "changeme"
-    ```
+# Configuration file
+
+```bash
+eth2.slashing-protection-db-password: "changeme"
+```
+
+<!--/tabs-->
 
 The password to connect to the slashing protection database.
 
 #### `slashing-protection-db-pool-configuration-file`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --slashing-protection-db-pool-configuration-file=<FILE>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--slashing-protection-db-pool-configuration-file=<FILE>
+```
 
-    ```bash
-    --slashing-protection-db-pool-configuration-file=/Users/me/config/HikariConfig.properties
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--slashing-protection-db-pool-configuration-file=/Users/me/config/HikariConfig.properties
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_POOL_CONFIGURATION_FILE=/Users/me/config/HikariConfig.properties
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_POOL_CONFIGURATION_FILE=/Users/me/config/HikariConfig.properties
+```
 
-    ```bash
-    eth2.slashing-protection-db-pool-configuration-file: "/Users/me/config/HikariConfig.properties"
-    ```
+# Configuration file
+
+```bash
+eth2.slashing-protection-db-pool-configuration-file: "/Users/me/config/HikariConfig.properties"
+```
+
+<!--/tabs-->
 
 [HikariCP connection pool configuration file](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby).
 
-Web3Signer uses HikariCP to manage database connections, and uses the default configuration values. The defaults perform
-well in most deployments, but you can be override them with this option.
+Web3Signer uses HikariCP to manage database connections, and uses the default configuration values. The defaults perform well in most deployments, but you can override them using this option.
 
 #### `slashing-protection-db-url`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --slashing-protection-db-url=<JDBC_URL>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--slashing-protection-db-url=<JDBC_URL>
+```
 
-    ```bash
-    --slashing-protection-db-url=jdbc:postgresql://localhost/web3signer
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--slashing-protection-db-url=jdbc:postgresql://localhost/web3signer
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_URL=jdbc:postgresql://localhost/web3signer
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_URL=jdbc:postgresql://localhost/web3signer
+```
 
-    ```bash
-    eth2.slashing-protection-db-url: "jdbc:postgresql://localhost/web3signer"
-    ```
+# Configuration file
+
+```bash
+eth2.slashing-protection-db-url: "jdbc:postgresql://localhost/web3signer"
+```
+
+<!--/tabs-->
 
 The Java Database Connectivity (JDBC) URL of the slashing protection database.
 
-!!! note
+:::note
 
-    If using a non-default port number for your PostgreSQL database, then
-    [include the port number in the database URL].
+If using a non-default port number for your PostgreSQL database, then [include the port number in the database URL].
+
+:::
 
 #### `slashing-protection-db-username`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --slashing-protection-db-username=<USERNAME>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--slashing-protection-db-username=<USERNAME>
+```
 
-    ```bash
-    --slashing-protection-db-username=postgres
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--slashing-protection-db-username=postgres
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_USERNAME=postgres
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_USERNAME=postgres
+```
 
-    ```bash
-    eth2.slashing-protection-db-username: "postgres"
-    ```
+# Configuration file
+
+```bash
+eth2.slashing-protection-db-username: "postgres"
+```
+
+<!--/tabs-->
 
 The username to use when connecting to the slashing protection database.
 
 #### `slashing-protection-enabled`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --slashing-protection-enabled=<BOOLEAN>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--slashing-protection-enabled=<BOOLEAN>
+```
 
-    ```bash
-    --slashing-protection-enabled=false
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--slashing-protection-enabled=false
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_SLASHING_PROTECTION_ENABLED=false
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_ENABLED=false
+```
 
-    ```bash
-    eth2.slashing-protection-enabled: false
-    ```
+# Configuration file
 
-Enables Web3Signer [slashing protection]. If `true`, then all signing operations are validated against
-historical data before signing.
+```bash
+eth2.slashing-protection-enabled: false
+```
+
+<!--/tabs-->
+
+Enables Web3Signer [slashing protection]. If `true`, then all signing operations are validated against historical data before signing.
 
 The default is `true`.
 
 #### `slashing-protection-pruning-at-boot-enabled`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --slashing-protection-pruning-at-boot-enabled=<BOOLEAN>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--slashing-protection-pruning-at-boot-enabled=<BOOLEAN>
+```
 
-    ```bash
-    --slashing-protection-pruning-at-boot-enabled=false
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--slashing-protection-pruning-at-boot-enabled=false
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_AT_BOOT_ENABLED=false
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_AT_BOOT_ENABLED=false
+```
 
-    ```yaml
-    eth2.slashing-protection-pruning-at-boot-enabled: false
-    ```
+# Configuration file
 
-When set to `false`, [slashing protection database pruning](../../HowTo/Configure-Slashing-Protection.md#prune-the-slashing-protection-database)
-is disabled at boot and only takes place at the scheduled [pruning intervals](#slashing-protection-pruning-interval).
+```yaml
+eth2.slashing-protection-pruning-at-boot-enabled: false
+```
+
+<!--/tabs-->
+
+When set to `false`, [slashing protection database pruning](../../HowTo/Configure-Slashing-Protection.md#prune-the-slashing-protection-database) is disabled at boot and only takes place at the scheduled [pruning intervals](#slashing-protection-pruning-interval).
 
 The default is `true`.
 
+#### `slashing-protection-pruning-db-pool-configuration-file`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--slashing-protection-pruning-db-pool-configuration-file=<FILE>
+```
+
+# Example
+
+```bash
+--slashing-protection-pruning-db-pool-configuration-file=/Users/me/config/HikariConfig.properties
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_DB_POOL_CONFIGURATION_FILE=/Users/me/config/HikariConfig.properties
+```
+
+# Configuration file
+
+```bash
+eth2.slashing-protection-pruning-db-pool-configuration-file: "/Users/me/config/HikariConfig.properties"
+```
+
+<!--/tabs-->
+
+[HikariCP connection pool configuration file](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby) used by the pruning process.
+
+Web3Signer uses HikariCP to manage database connections, and uses the default configuration values. The defaults perform well in most deployments, but you can override them using this option.
+
 #### `slashing-protection-pruning-enabled`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --slashing-protection-pruning-enabled=<BOOLEAN>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--slashing-protection-pruning-enabled=<BOOLEAN>
+```
 
-    ```bash
-    --slashing-protection-pruning-enabled=true
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--slashing-protection-pruning-enabled=true
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_ENABLED=true
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_ENABLED=true
+```
 
-    ```yaml
-    eth2.slashing-protection-pruning-enabled: true
-    ```
+# Configuration file
 
-Enables [slashing protection database pruning](../../HowTo/Configure-Slashing-Protection.md#prune-the-slashing-protection-database).
+```yaml
+eth2.slashing-protection-pruning-enabled: true
+```
 
-The default is `false`.
+<!--/tabs-->
+
+Enables [slashing protection database pruning](../../HowTo/Configure-Slashing-Protection.md#prune-the-slashing-protection-database). The default is `false`.
 
 #### `slashing-protection-pruning-epochs-to-keep`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --slashing-protection-pruning-epochs-to-keep=<LONG>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--slashing-protection-pruning-epochs-to-keep=<LONG>
+```
 
-    ```bash
-    --slashing-protection-pruning-epochs-to-keep=12000
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--slashing-protection-pruning-epochs-to-keep=12000
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_EPOCHS_TO_KEEP=12000
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_EPOCHS_TO_KEEP=12000
+```
 
-    ```yaml
-    eth2.slashing-protection-pruning-epochs-to-keep: 12000
-    ```
+# Configuration file
+
+```yaml
+eth2.slashing-protection-pruning-epochs-to-keep: 12000
+```
+
+<!--/tabs-->
 
 Number of epochs to keep when pruning the slashing protection database.
 
@@ -828,29 +1498,33 @@ The default is 10000.
 
 #### `slashing-protection-pruning-interval`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --slashing-protection-pruning-interval=<LONG>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--slashing-protection-pruning-interval=<LONG>
+```
 
-    ```bash
-    --slashing-protection-pruning-interval=48
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--slashing-protection-pruning-interval=48
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_INTERVAL=48
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_INTERVAL=48
+```
 
-    ```yaml
-    eth2.slashing-protection-pruning-interval: 48
-    ```
+# Configuration file
+
+```yaml
+eth2.slashing-protection-pruning-interval: 48
+```
+
+<!--/tabs-->
 
 Hours between slashing protection database pruning operations.
 
@@ -858,32 +1532,35 @@ The default is 24.
 
 #### `slashing-protection-pruning-slots-per-epoch`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --slashing-protection-pruning-slots-per-epoch=<LONG>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--slashing-protection-pruning-slots-per-epoch=<LONG>
+```
 
-    ```bash
-    --slashing-protection-pruning-slots-per-epoch=20
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--slashing-protection-pruning-slots-per-epoch=20
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_SLOTS_PER_EPOCH=20
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_SLOTS_PER_EPOCH=20
+```
 
-    ```yaml
-    eth2.slashing-protection-pruning-slots-per-epoch: 20
-    ```
+# Configuration file
 
-Number of slots per epoch.
-This number multiplied by the number of epochs to keep determines what blocks to keep when pruning the slashing protection database.
+```yaml
+eth2.slashing-protection-pruning-slots-per-epoch: 20
+```
+
+<!--/tabs-->
+
+Number of slots per epoch. This number multiplied by the number of epochs to keep determines what blocks to keep when pruning the slashing protection database.
 
 The default is 32 as defined on MainNet.
 
@@ -893,98 +1570,209 @@ Exports the slashing protection database to a file.
 
 #### `to`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --to=<FILE>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--to=<FILE>
+```
 
-    ```bash
-    --to=/Users/me/my_node/interchange.json
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--to=/Users/me/my_node/interchange.json
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_EXPORT_TO=/Users/me/my_node/interchange.json
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_EXPORT_TO=/Users/me/my_node/interchange.json
+```
 
-    ```bash
-    eth2.export.to: /Users/me/my_node/interchange.json
-    ```
+# Configuration file
 
-The file to export the slashing protection database to. The exported file uses the
-[validator client interchange format].
+```bash
+eth2.export.to: /Users/me/my_node/interchange.json
+```
+
+<!--/tabs-->
+
+The file to export the slashing protection database to. The exported file uses the [validator client interchange format].
 
 ### `eth2 import`
 
-Import a slashing protection database from a file.
+Imports a slashing protection database from a file.
 
 #### `from`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --from=<FILE>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--from=<FILE>
+```
 
-    ```bash
-    --from=/Users/me/my_node/interchange.json
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--from=/Users/me/my_node/interchange.json
+```
 
-    ```bash
-    WEB3SIGNER_ETH2_IMPORT_FROM=/Users/me/my_node/interchange.json
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_ETH2_IMPORT_FROM=/Users/me/my_node/interchange.json
+```
 
-    ```bash
-    eth2.import.from: /Users/me/my_node/interchange.json
-    ```
+# Configuration file
 
-The file to import the slashing protection database from. The file must be formatted in the
-[validator client interchange format]
+```bash
+eth2.import.from: /Users/me/my_node/interchange.json
+```
+
+<!--/tabs-->
+
+The file to import the slashing protection database from. The file must be formatted in the [validator client interchange format]
 
 ### `filecoin`
 
 #### `network`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --network=<NETWORK>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--network=<NETWORK>
+```
 
-    ```bash
-    --network=TESTNET
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--network=TESTNET
+```
 
-    ```bash
-    WEB3SIGNER_FILECOIN_NETWORK=TESTNET
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_FILECOIN_NETWORK=TESTNET
+```
 
-    ```bash
-    filecoin.network: "TESTNET"
-    ```
+# Configuration file
+
+```bash
+filecoin.network: "TESTNET"
+```
+
+<!--/tabs-->
 
 Predefined network configuration. Accepts a predefined network name. The default is `TESTNET`.
 
+### `watermark-repair`
+
+Updates the [slashing protection low watermark](https://eips.ethereum.org/EIPS/eip-3076) for validators. You can only increase the low watermark, not decrease it.
+
+#### `epoch`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--epoch=<LONG>
+```
+
+# Example
+
+```bash
+--epoch=30000
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_WATERMARK_REPAIR_EPOCH=30000
+```
+
+# Configuration file
+
+```bash
+watermark-repair.epoch: 30000
+```
+
+<!--/tabs-->
+
+Low watermark to set the attestation source and target to.
+
+#### `slot`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--slot=<LONG>
+```
+
+# Example
+
+```bash
+--slot=20000
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_WATERMARK_REPAIR_SLOT=20000
+```
+
+# Configuration file
+
+```bash
+watermark-repair.slot: 20000
+```
+
+<!--/tabs-->
+
+Low watermark to set the block slot to.
+
+#### `validator-ids`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--validator-ids=<KEY>[,<KEY>,...]
+```
+
+# Example
+
+```bash
+--validator-ids=0x8f3f44b74d316c3293cced0c48c72e021ef8d145d136f2908931090e7181c3b777498128a348d07b0b9cd3921b5ca537,0x98d083489b3b06b8740da2dfec5cc3c01b2086363fe023a9d7dc1f907633b1ff11f7b99b19e0533e969862270061d884
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_WATERMARK_REPAIR_VALIDATOR_IDS=0x8f3f44b74d316c3293cced0c48c72e021ef8d145d136f2908931090e7181c3b777498128a348d07b0b9cd3921b5ca537,0x98d083489b3b06b8740da2dfec5cc3c01b2086363fe023a9d7dc1f907633b1ff11f7b99b19e0533e969862270061d884
+```
+
+# Configuration file
+
+```bash
+watermark-repair.validator-ids: ["0x8f3f44b74d316c3293cced0c48c72e021ef8d145d136f2908931090e7181c3b777498128a348d07b0b9cd3921b5ca537", "0x98d083489b3b06b8740da2dfec5cc3c01b2086363fe023a9d7dc1f907633b1ff11f7b99b19e0533e969862270061d884"]
+```
+
+<!--/tabs-->
+
+List of validator public keys as hexadecimal to apply low watermark update to. If none are specified, the low watermark is updated for all validators.
+
 <!-- links -->
+
 [include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
 [slashing protection]: ../../Concepts/Slashing-Protection.md
 [validator client interchange format]: https://eips.ethereum.org/EIPS/eip-3076
-[Ethereum 2.0 specification]: https://github.com/ethereum/eth2.0-specs/tree/master/configs
+[consensus specification]: https://github.com/ethereum/consensus-specs/tree/master/configs

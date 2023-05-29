@@ -1,5 +1,7 @@
 ---
-description: Run Web3Signer from Docker image
+title: Run Web3Signer from Docker
+description: Run Web3Signer from Docker
+sidebar_position: 2
 ---
 
 # Run Web3Signer from Docker image
@@ -8,27 +10,27 @@ A Docker image is provided to run Web3Signer in a Docker container.
 
 ## Prerequisites
 
-* [Docker](https://docs.docker.com/install/)
+- [Docker](https://docs.docker.com/install/)
 
-* MacOS or Linux
+- MacOS or Linux
 
-    !!! important
-        The Docker image does not run on Windows.
+:::caution Important
+
+The Docker image does not run on Windows.
+
+:::
 
 ## Run Docker image
 
 Display the Web3Signer command line help using the Docker image:
 
-=== "develop"
-
-    ```bash
-    docker run consensys/web3signer:develop --help
-    ```
+```bash
+docker run consensys/web3signer:develop --help
+```
 
 ## Expose listening port
 
-To use the default listening port (`9000`) or the port specified using
-`--http-listen-port`, you must expose the listening port.
+To use the default listening port (`9000`) or the port specified using `--http-listen-port`, you must expose the listening port.
 
 To run Web3Signer exposing listening port for access:
 

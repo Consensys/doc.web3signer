@@ -1,15 +1,20 @@
 ---
-description: Install Web3Signer from binary distribution
+title: Install binary distribution
+description: Install Web3Signer from a binary distribution
+sidebar_position: 1
 ---
 
 # Install binary distribution
 
 ## Prerequisites
 
-* [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
 
-!!!important
-    Web3Signer requires Java 11 or later releases.
+:::caution Important
+
+Web3Signer requires Java 11 or later releases.
+
+:::
 
 ## Install binaries
 
@@ -19,14 +24,18 @@ Unpack the downloaded files and change into the `web3signer-<release>` directory
 
 Display Web3Signer command line help to confirm installation:
 
-=== "Linux/macOS"
+<!--tabs-->
 
-    ```bash
-    bin/web3signer --help
-    ```
+# Linux or MacOS
 
-=== "Windows"
+```bash
+bin/web3signer --help
+```
 
-    ```bat
-    bin\web3signer --help
-    ```
+# Windows
+
+```bat
+bin\web3signer --help
+```
+
+<!--/tabs-->

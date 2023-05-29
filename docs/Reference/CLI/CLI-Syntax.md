@@ -1,603 +1,743 @@
 ---
+title: Options
 description: Web3Signer command line interface reference
+sidebar_position: 1
 ---
 
 # Web3Signer command line
 
 This reference describes the syntax of the Web3Signer Command Line Interface (CLI) options.
 
-## Specifying options
+## Specify options
 
 Web3Signer options can be specified:
 
-* On the command line
-* As an [environment variable](#web3signer-environment-variables)
-* In a YAML configuration file.
+- On the command line.
+- As an environment variable. For each command line option, the equivalent environment variable is:
+  - Upper-case.
+  - `_` replaces `-`.
+  - Has a `WEB3SIGNER_` prefix.
+- In a YAML configuration file.
 
-If you specify an option in more than one place, the order of priority is command line, environment
-variable, configuration file.
-
-### Web3Signer environment variables
-
-For each command line option, the equivalent environment variable is:
-
-* Upper-case
-* `_` replaces `-`
-* Has an `WEB3SIGNER_` prefix
-
-For example, set `--data-path` using the `WEB3SIGNER_DATA_PATH` environment variable.
+If you specify an option in more than one place, the order of priority is command line, environment variable, configuration file.
 
 ## Options
 
-### config-file
+### `config-file`
 
-The path to the [YAML configuration file](../../HowTo/Use-Configuration-File.md).
-The default is `none`.
+Path to the [YAML configuration file](../../HowTo/Use-Configuration-File.md). The default is `none`.
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --config-file=<FILE>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--config-file=<FILE>
+```
 
-    ```bash
-    --config-file=/home/me/me_node/config.yaml
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--config-file=/home/me/me_node/config.yaml
+```
 
-    ```bash
-    WEB3SIGNER_CONFIG_FILE=/home/me/me_node/config.yaml
-    ```
+# Environment variable
 
-### data-path
+```bash
+WEB3SIGNER_CONFIG_FILE=/home/me/me_node/config.yaml
+```
 
-=== "Syntax"
+<!--/tabs-->
 
-    ```bash
-    --data-path=<PATH>
-    ```
+### `data-path`
 
-=== "Example"
+<!--tabs-->
 
-    ```bash
-    --data-path=/Users/me/my_node/data
-    ```
+# Syntax
 
-=== "Environment variable"
+```bash
+--data-path=<PATH>
+```
 
-    ```bash
-    WEB3SIGNER_DATA_PATH=/Users/me/my_node/data
-    ```
+# Example
 
-=== "Configuration file"
+```bash
+--data-path=/Users/me/my_node/data
+```
 
-    ```bash
-    data-path: "/Users/me/my_node/data"
-    ```
+# Environment variable
+
+```bash
+WEB3SIGNER_DATA_PATH=/Users/me/my_node/data
+```
+
+# Configuration file
+
+```bash
+data-path: "/Users/me/my_node/data"
+```
+
+<!--/tabs-->
 
 Directory in which to store temporary files.
 
-### key-store-path
+### `key-store-path`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --key-store-path=<PATH>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--key-store-path=<PATH>
+```
 
-    ```bash
-    --key-store-path=/Users/me/keys
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--key-store-path=/Users/me/keys
+```
 
-    ```bash
-    WEB3SIGNER_KEY_STORE_PATH=/Users/me/keys
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_KEY_STORE_PATH=/Users/me/keys
+```
 
-    ```bash
-    key-store-path: "/Users/me/keys"
-    ```
+# Configuration file
+
+```bash
+key-store-path: "/Users/me/keys"
+```
+
+<!--/tabs-->
 
 Path to the directory containing the [YAML files required to access keys].
 
-### logging
+### `key-store-config-file-max-size`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    -l, --logging=<LEVEL>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--key-store-config-file-max-size=<INTEGER>
+```
 
-    ```bash
-    --logging=DEBUG
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--key-store-config-file-max-size=158000000
+```
 
-    ```bash
-    WEB3SIGNER_LOGGING=DEBUG
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_KEY_STORE_CONFIG_FILE_MAX_SIZE=158000000
+```
 
-    ```bash
-    logging: "DEBUG"
-    ```
+# Configuration file
 
-Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, `TRACE`,
-`ALL`. The default is `INFO`.
+```bash
+key-store-config-file-max-size: 158000000
+```
 
-### http-listen-host
+<!--/tabs-->
 
-=== "Syntax"
+The maximum signing key configuration file size in bytes. Useful when you're loading a large number of [signing key configurations from a single file](../Key-Configuration-Files.md).
 
-    ```bash
-    --http-listen-host=<httpListenHost>
-    ```
+The default size is 104857600 bytes (100 MB).
 
-=== "Example"
+### `logging`
 
-    ```bash
-    --http-listen-host=8.8.8.8
-    ```
+<!--tabs-->
 
-=== "Environment variable"
+# Syntax
 
-    ```bash
-    WEB3SIGNER_HTTP_LISTEN_HOST=8.8.8.8
-    ```
+```bash
+-l, --logging=<LEVEL>
+```
 
-=== "Configuration file"
+# Example
 
-    ```bash
-    http-listen-host: "8.8.8.8"
-    ```
+```bash
+--logging=DEBUG
+```
 
-Host on which HTTP listens. Default is `localhost`.
+# Environment variable
 
-### http-listen-port
+```bash
+WEB3SIGNER_LOGGING=DEBUG
+```
 
-=== "Syntax"
+# Configuration file
 
-    ```bash
-    --http-listen-port=<httpListenPort>
-    ```
+```bash
+logging: "DEBUG"
+```
 
-=== "Example"
+<!--/tabs-->
 
-    ```bash
-    --http-listen-port=6174
-    ```
+Sets logging verbosity. Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, `TRACE`, `ALL`. The default is `INFO`.
 
-=== "Environment variable"
+### `http-cors-origins`
 
-    ```bash
-    WEB3SIGNER_HTTP_LISTEN_PORT=6174
-    ```
+A list of domain URLs for CORS validation. You must enclose the URLs in double quotes and separate them with commas.
 
-=== "Configuration file"
+Listed domains can access the node using REST API. If your client interacts with Web3Signer using a browser app, you must allow the client domains.
 
-    ```bash
-    http-listen-port: 6174
-    ```
+The default value is `none`. If you do not allow any domains, browser apps cannot interact with your Web3Signer node.
+
+:::tip
+
+For testing and development purposes, use `"all"` or `"*"` to accept requests from any domain. We don't recommend accepting requests from any domain for production environments.
+
+:::
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--http-cors-origins=<httpListenHost>
+```
+
+# Example
+
+```bash
+--http-cors-origins=""http://medomain.com"
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_HTTP_CORS_ORIGINS=""http://medomain.com"
+```
+
+# Configuration file
+
+```bash
+http-cors-origins=["https://meotherdomain.com"]
+```
+
+<!--/tabs-->
+
+### `http-listen-host`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--http-listen-host=<httpListenHost>
+```
+
+# Example
+
+```bash
+--http-listen-host=8.8.8.8
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_HTTP_LISTEN_HOST=8.8.8.8
+```
+
+# Configuration file
+
+```bash
+http-listen-host: "8.8.8.8"
+```
+
+<!--/tabs-->
+
+Host on which HTTP listens. The default is `localhost`.
+
+### `http-listen-port`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--http-listen-port=<httpListenPort>
+```
+
+# Example
+
+```bash
+--http-listen-port=6174
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_HTTP_LISTEN_PORT=6174
+```
+
+# Configuration file
+
+```bash
+http-listen-port: 6174
+```
+
+<!--/tabs-->
 
 Port on which HTTP listens. The default is 9000.
 
-### http-host-allowlist
+### `http-host-allowlist`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --http-host-allowlist=<hostname>[,<hostname>...]... or "*"
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--http-host-allowlist=<hostname>[,<hostname>...]... or "*"
+```
 
-    ```bash
-    --http-host-allowlist=medomain.com,meotherdomain.com
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--http-host-allowlist=medomain.com,meotherdomain.com
+```
 
-    ```bash
-    WEB3SIGNER_HTTP_HOST_ALLOWLIST=medomain.com,meotherdomain.com
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_HTTP_HOST_ALLOWLIST=medomain.com,meotherdomain.com
+```
 
-    ```bash
-    http-host-allowlist: ["medomain.com", "meotherdomain.com"]
-    ```
+# Configuration file
 
-A comma-separated list of hostnames to allow access to the REST APIs. By default, Web3Signer
-accepts access from `localhost` and `127.0.0.1`.
+```bash
+http-host-allowlist: ["medomain.com", "meotherdomain.com"]
+```
 
-!!! tip
+<!--/tabs-->
 
-    To allow all hostnames, use `"*"`. We don't recommend allowing all hostnames for production
-    environments.
+A comma-separated list of hostnames to allow access to the REST APIs. By default, Web3Signer accepts access from `localhost` and `127.0.0.1`.
 
-### idle-connection-timeout-seconds
+:::tip
 
-=== "Syntax"
+To allow all hostnames, use `"*"`. We don't recommend allowing all hostnames for production environments.
 
-    ```bash
-    --idle-connection-timeout-seconds=<TIMEOUT>
-    ```
+:::
 
-=== "Example"
+### `idle-connection-timeout-seconds`
 
-    ```bash
-    --idle-connection-timeout-seconds=60
-    ```
+<!--tabs-->
 
-=== "Environment variable"
+# Syntax
 
-    ```bash
-    WEB3SIGNER_IDLE_CONNECTION_TIMEOUT_SECONDS=60
-    ```
+```bash
+--idle-connection-timeout-seconds=<TIMEOUT>
+```
 
-=== "Configuration file"
+# Example
 
-    ```bash
-    idle-connection-timeout-seconds: 60
-    ```
+```bash
+--idle-connection-timeout-seconds=60
+```
 
-Number of seconds to wait before terminating an idle connection. Defaults to 30.
+# Environment variable
 
-### metrics-enabled
+```bash
+WEB3SIGNER_IDLE_CONNECTION_TIMEOUT_SECONDS=60
+```
 
-=== "Syntax"
+# Configuration file
 
-    ```bash
-    --metrics-enabled[=<BOOLEAN>]
-    ```
+```bash
+idle-connection-timeout-seconds: 60
+```
 
-=== "Example"
+<!--/tabs-->
 
-    ```bash
-    --metrics-enabled=true
-    ```
+Number of seconds to wait before terminating an idle connection. The default is 30.
 
-=== "Environment variable"
+### `metrics-enabled`
 
-    ```bash
-    WEB3SIGNER_METRICS_ENABLED=true
-    ```
+<!--tabs-->
 
-=== "Configuration file"
+# Syntax
 
-    ```bash
-    metrics-enabled: true
-    ```
+```bash
+--metrics-enabled[=<BOOLEAN>]
+```
+
+# Example
+
+```bash
+--metrics-enabled=true
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_METRICS_ENABLED=true
+```
+
+# Configuration file
+
+```bash
+metrics-enabled: true
+```
+
+<!--/tabs-->
 
 Enables the metrics exporter. The default is `false`.
 
-### metrics-host
+### `metrics-host`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --metrics-host=<HOST>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--metrics-host=<HOST>
+```
 
-    ```bash
-    --metrics-host=186.10.10.1
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--metrics-host=186.10.10.1
+```
 
-    ```bash
-    WEB3SIGNER_METRICS_HOST=186.10.10.1
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_METRICS_HOST=186.10.10.1
+```
 
-    ```bash
-    metrics-host: "186.10.10.1"
-    ```
+# Configuration file
 
-The host on which [Prometheus](https://prometheus.io/) accesses metrics.
-The default is `127.0.0.1`.
+```bash
+metrics-host: "186.10.10.1"
+```
 
-### metrics-port
+<!--/tabs-->
 
-=== "Syntax"
+The host on which [Prometheus](https://prometheus.io/) accesses metrics. The default is `127.0.0.1`.
 
-    ```bash
-    --metrics-port=<PORT>
-    ```
+### `metrics-port`
 
-=== "Example"
+<!--tabs-->
 
-    ```bash
-    --metrics-port=6174
-    ```
+# Syntax
 
-=== "Environment variable"
+```bash
+--metrics-port=<PORT>
+```
 
-    ```bash
-    WEB3SIGNER_METRICS_PORT=6174
-    ```
+# Example
 
-=== "Configuration file"
+```bash
+--metrics-port=6174
+```
 
-    ```bash
-    metrics-port: 6174
-    ```
+# Environment variable
 
-The port (TCP) on which [Prometheus](https://prometheus.io/) accesses
-metrics. The default is `9001`.
+```bash
+WEB3SIGNER_METRICS_PORT=6174
+```
 
-### metrics-category
+# Configuration file
 
-=== "Syntax"
+```bash
+metrics-port: 6174
+```
 
-    ```bash
-    --metrics-category=<metrics-category>[,metrics-category...]...
-    ```
+<!--/tabs-->
 
-=== "Example"
+The port (TCP) on which [Prometheus](https://prometheus.io/) accesses metrics. The default is `9001`.
 
-    ```bash
-    --metrics-category=HTTP,SIGNING,JVM
-    ```
+### `metrics-category`
 
-=== "Environment variable"
+<!--tabs-->
 
-    ```bash
-    WEB3SIGNER_METRICS_CATEGORY=HTTP,SIGNING,JVM
-    ```
+# Syntax
 
-=== "Configuration file"
+```bash
+--metrics-category=<metrics-category>[,metrics-category...]...
+```
 
-    ```bash
-    metrics-category: ["HTTP", "SIGNING", "JVM"]
-    ```
+# Example
+
+```bash
+--metrics-category=HTTP,SIGNING,JVM
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_METRICS_CATEGORY=HTTP,SIGNING,JVM
+```
+
+# Configuration file
+
+```bash
+metrics-category: ["HTTP", "SIGNING", "JVM"]
+```
+
+<!--/tabs-->
 
 A comma-separated list of categories for which to track metrics. The defaults are `HTTP`, `SIGNING`, `FILECOIN`, `ETH2_SLASHING_PROTECTION`, `JVM`, `PROCESS`.
 
-### metrics-host-allowlist
+### `metrics-host-allowlist`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --metrics-host-allowlist=<hostname>[,<hostname>...]... or "*"
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--metrics-host-allowlist=<hostname>[,<hostname>...]... or "*"
+```
 
-    ```bash
-    --metrics-host-allowlist=medomain.com,meotherdomain.com
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--metrics-host-allowlist=medomain.com,meotherdomain.com
+```
 
-    ```bash
-    WEB3SIGNER_METRICS_HOST_ALLOWLIST=medomain.com,meotherdomain.com
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_METRICS_HOST_ALLOWLIST=medomain.com,meotherdomain.com
+```
 
-    ```bash
-    metrics-host-allowlist: ["medomain.com", "meotherdomain.com"]
-    ```
+# Configuration file
 
-A comma-separated list of hostnames to allow access to the [Web3Signer metrics]. By
-default, Web3Signer accepts access from `localhost` and `127.0.0.1`.
+```bash
+metrics-host-allowlist: ["medomain.com", "meotherdomain.com"]
+```
 
-!!! tip
+<!--/tabs-->
 
-    To allow all hostnames, use `"*"`. We don't recommend allowing all hostnames for production
-    environments.
+A comma-separated list of hostnames to allow access to the [Web3Signer metrics]. By default, Web3Signer accepts access from `localhost` and `127.0.0.1`.
 
-### swagger-ui-enabled
+:::tip
 
-=== "Syntax"
+To allow all hostnames, use `"*"`. We don't recommend allowing all hostnames for production environments.
 
-    ```bash
-    --swagger-ui-enabled[=<BOOLEAN>]
-    ```
+:::
 
-=== "Example"
+### `swagger-ui-enabled`
 
-    ```bash
-    --swagger-ui-enabled
-    ```
+<!--tabs-->
 
-=== "Environment variable"
+# Syntax
 
-    ```bash
-    WEB3SIGNER_SWAGGER-UI_ENABLED=true
-    ```
+```bash
+--swagger-ui-enabled[=<BOOLEAN>]
+```
 
-=== "Configuration file"
+# Example
 
-    ```bash
-    swagger-ui-enabled: true
-    ```
+```bash
+--swagger-ui-enabled
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_SWAGGER-UI_ENABLED=true
+```
+
+# Configuration file
+
+```bash
+swagger-ui-enabled: true
+```
+
+<!--/tabs-->
 
 Set to true to interact with APIs using [Swagger UI]. The default is `false`.
 
 Access Swagger UI at `http:<interface>:<port>/swagger-ui` where:
 
-* `interface` is specified using [`--http-listen-host`](#http-listen-host)
-* `port` is specified using [`http-listen-port`](#http-listen-port)
+- `interface` is specified using [`--http-listen-host`](#http-listen-host)
+- `port` is specified using [`http-listen-port`](#http-listen-port)
 
 The default location is `http://localhost:9000/swagger-ui`.
 
-### tls-keystore-file
+### `tls-keystore-file`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --tls-keystore-file=<keystoreFile>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--tls-keystore-file=<keystoreFile>
+```
 
-    ```bash
-    --tls-keystore-file=/Users/me/my_node/certificate.pfx
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--tls-keystore-file=/Users/me/my_node/certificate.pfx
+```
 
-    ```bash
-    WEB3SIGNER_TLS_KEYSTORE_FILE=/Users/me/my_node/certificate.pfx
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_TLS_KEYSTORE_FILE=/Users/me/my_node/certificate.pfx
+```
 
-    ```bash
-    tls-keystore-file: "/Users/me/my_node/certificate.pfx"
-    ```
+# Configuration file
+
+```bash
+tls-keystore-file: "/Users/me/my_node/certificate.pfx"
+```
+
+<!--/tabs-->
 
 PKCS #12 formatted keystore. Used to enable TLS for [client connections](../../HowTo/Configure-TLS.md).
 
-### tls-keystore-password-file
+### `tls-keystore-password-file`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --tls-keystore-password-file=<passwordFile>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--tls-keystore-password-file=<passwordFile>
+```
 
-    ```bash
-    --tls-keystore-password-file=/Users/me/my_node/password.txt
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--tls-keystore-password-file=/Users/me/my_node/password.txt
+```
 
-    ```bash
-    WEB3SIGNER_TLS_KEYSTORE_PASSWORD_FILE=/Users/me/my_node/password.txt
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_TLS_KEYSTORE_PASSWORD_FILE=/Users/me/my_node/password.txt
+```
 
-    ```bash
-    tls-keystore-password-file: "/Users/me/my_node/password.txt"
-    ```
+# Configuration file
+
+```bash
+tls-keystore-password-file: "/Users/me/my_node/password.txt"
+```
+
+<!--/tabs-->
 
 Password file used to decrypt the keystore.
 
-### tls-allow-any-client
+### `tls-allow-any-client`
 
-=== "Syntax"
+<!--tabs-->
 
-    ```bash
-    --tls-allow-any-client=<BOOLEAN>
-    ```
+# Syntax
 
-=== "Example"
+```bash
+--tls-allow-any-client=<BOOLEAN>
+```
 
-    ```bash
-    --tls-allow-any-client=true
-    ```
+# Example
 
-=== "Environment variable"
+```bash
+--tls-allow-any-client=true
+```
 
-    ```bash
-    WEB3SIGNER_TLS_ALLOW_ANY_CLIENT=true
-    ```
+# Environment variable
 
-=== "Configuration file"
+```bash
+WEB3SIGNER_TLS_ALLOW_ANY_CLIENT=true
+```
 
-    ```bash
-    tls-allow-any-client: true
-    ```
+# Configuration file
+
+```bash
+tls-allow-any-client: true
+```
+
+<!--/tabs-->
 
 Allows any client to connect. The default is `false`.
 
-!!! important
-    Cannot be used with [`--tls-allow-ca-clients`](#tls-allow-ca-clients)
-    and [`--tls-known-clients-file`](#tls-known-clients-file)
+:::caution Warning
 
-### tls-known-clients-file
+You can't use this option with [`--tls-allow-ca-clients`](#tls-allow-ca-clients) and [`--tls-known-clients-file`](#tls-known-clients-file).
 
-=== "Syntax"
+:::
 
-    ```bash
-    --tls-known-clients-file=<clientsFile>
-    ```
+### `tls-known-clients-file`
 
-=== "Example"
+<!--tabs-->
 
-    ```bash
-    --tls-known-clients-file=/Users/me/my_node/knownClients.txt
-    ```
+# Syntax
 
-=== "Environment variable"
+```bash
+--tls-known-clients-file=<clientsFile>
+```
 
-    ```bash
-    WEB3SIGNER_TLS_KNOWN_CLIENTS_FILE=/Users/me/my_node/knownClients.txt
-    ```
+# Example
 
-=== "Configuration file"
+```bash
+--tls-known-clients-file=/Users/me/my_node/knownClients.txt
+```
 
-    ```bash
-    tls-known-clients-file: "/Users/me/my_node/knownClients.txt"
-    ```
+# Environment variable
 
-File containing the Common Names and SHA-256 fingerprints
-of [authorized clients](../../HowTo/Configure-TLS.md#create-the-known-clients-file).
+```bash
+WEB3SIGNER_TLS_KNOWN_CLIENTS_FILE=/Users/me/my_node/knownClients.txt
+```
 
-### tls-allow-ca-clients
+# Configuration file
 
-=== "Syntax"
+```bash
+tls-known-clients-file: "/Users/me/my_node/knownClients.txt"
+```
 
-    ```bash
-    --tls-allow-ca-clients
-    ```
+<!--/tabs-->
 
-=== "Environment Variable"
+File containing the Common Names and SHA-256 fingerprints of [authorized clients](../../HowTo/Configure-TLS.md#create-the-known-clients-file).
 
-    ```bash
-    WEB3SIGNER_TLS_ALLOW_CA_CLIENTS
-    ```
+### `tls-allow-ca-clients`
 
-=== "Configuration file"
+<!--tabs-->
 
-    ```bash
-    tls-allow-ca-clients
-    ```
+# Syntax
+
+```bash
+--tls-allow-ca-clients
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_TLS_ALLOW_CA_CLIENTS
+```
+
+# Configuration file
+
+```bash
+tls-allow-ca-clients
+```
+
+<!--/tabs-->
 
 Allows clients signed with trusted CA certificates to connect.
 
-### help
+### `help`
 
-=== "Syntax"
-
-    ```bash
-    -h, --help
-    ```
+```bash title="Syntax"
+-h, --help
+```
 
 Displays the help and exits.
 
-### version
+### `version`
 
-=== "Syntax"
-
-    ```bash
-    -V, --version
-    ```
+```bash title="Syntax"
+-V, --version
+```
 
 Displays the version and exits.
 
 <!-- links -->
+
 [YAML files required to access keys]: ../Key-Configuration-Files.md
 [Web3Signer metrics]: ../../HowTo/Monitor/Metrics.md
 [Swagger UI]: https://swagger.io/tools/swagger-ui/
