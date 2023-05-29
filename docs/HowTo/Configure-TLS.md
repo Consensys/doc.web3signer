@@ -86,6 +86,61 @@ The command line:
 
     [`--tls-allow-any-client`](../Reference/CLI/CLI-Syntax.md#tls-allow-any-client) cannot be used with [`tls-known-clients-file`](../Reference/CLI/CLI-Syntax.md#tls-known-clients-file) or [`--tls-allow-ca-clients`](../Reference/CLI/CLI-Syntax.md#tls-allow-ca-clients).
 
+:::
+
+## Server TLS connection
+
+Allow Web3Signer to send and receive secure HTTP JSON-RPCs from the server (for example Besu).
+
+::: note
+
+This can only be used when Web3Signer is eth1 mode.
+
+:::
+
+**Server prerequisites**:
+
+- [The server must be configured to allow TLS communication](https://besu.hyperledger.org/en/latest/HowTo/Configure/Configure-TLS/).
+- Server's password-protected PKCS #12 keystore information.
+
+### Create the known servers file
+
+Create a file (in this example, `knownServers`) that lists one or more trusted servers. The file contents use the format `<hostname>:<port> <hex-string>` where:
+
+- `<hostname>` is the server hostname
+- `<port>` is the port used for communication
+- `<hex-string>` is the SHA-256 fingerprint of the server's certificate.
+
+```
+localhost:8590 6C:B2:3E:F9:88:43:5E:62:69:9F:A9:9D:41:14:03:BA:83:24:AC:04:CE:BD:92:49:1B:8D:B2:A4:86:39:4C:BB
+127.0.0.1:8590 6C:B2:3E:F9:88:43:5E:62:69:9F:A9:9D:41:14:03:BA:83:24:AC:04:CE:BD:92:49:1B:8D:B2:A4:86:39:4C:BB
+```
+
+:::note
+
+Specify both hostname and IP address in the file if unsure which is used in requests.
+
+:::
+
+### Start Web3Signer
+
+```bash
+web3signer eth1 --downstream-http-tls-enabled --downstream-http-tls-keystore-file=/Users/me/my_node/keystore.pfx --downstream-http-tls-keystore-password-file=/Users/me/my_node/keyPassword --downstream-http-tls-known-servers-file=/Users/me/my_node/knownServers
+```
+
+The command line:
+
+- Enables TLS using the [`--downstream-http-tls-enabled`](../Reference/CLI/CLI-Syntax.md#downstream-http-tls-enabled) option.
+- Specifies the keystore to present during authentication using the [`--downstream-http-tls-keystore-file`](../Reference/CLI/CLI-Syntax.md#downstream-http-tls-keystore-file) option.
+- Specifies the file that contains the password to decrypt the keystore using the [`--downstream-http-tls-keystore-password-file`](../Reference/CLI/CLI-Syntax.md#downstream-http-tls-keystore-password-file) option.
+- [Specifies the servers](#create-the-known-servers-file) to connect to using the [`--downstream-http-tls-known-servers-file`](../Reference/CLI/CLI-Syntax.md#downstream-http-tls-known-servers-file) option.
+
+:::note
+
+The [`--downstream-http-tls-ca-auth-enabled`](../Reference/CLI/CLI-Syntax.md#downstream-http-tls-ca-auth-enabled) option is `true` by default and allows connections to servers with trusted root CAs.
+
+:::
+
 <!-- links -->
 [Allow all clients with trusted CA certificates to connect]: ../Reference/CLI/CLI-Syntax.md#tls-allow-ca-clients
 [Allow any client to connect]: ../Reference/CLI/CLI-Syntax.md#tls-allow-any-client
