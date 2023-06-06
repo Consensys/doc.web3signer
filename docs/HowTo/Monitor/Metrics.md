@@ -101,14 +101,6 @@ The following Web3Signer metrics are available.
 | ----------------- | ------------------------------------------ |
 | `process_release` | The number of the release version running. |
 
-Process metrics:
-
-| Name              | Definition                                 |
-|-------------------|--------------------------------------------|
-| `process_release` | The number of the release version running. |
-
-
-
 ## Visualize collected data
 
 Use [Grafana] to visualize the collected data. See the sample [Web3Signer Grafana dashboard](https://grafana.com/grafana/dashboards/13687).

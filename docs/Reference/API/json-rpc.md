@@ -1,30 +1,28 @@
 ---
-title: API methods
-description: Web3Signer JSON-RPC API methods reference
+description: Web3Signer JSON-RPC API reference
+sidebar_position: 1
 ---
 
-# Web3Signer JSON-RPC API methods
+# Web3Signer JSON-RPC API
 
-:::caution
+:::note
 
 - All JSON-RPC HTTP examples use the default host and port endpoint `http://127.0.0.1:8545`.
 - The examples use Hyperledger Besu, but any Ethereum client can be used.
 
 :::
 
-## Eth methods
-
-### `eth_accounts`
+## `eth_accounts`
 
 Returns the account address with which Web3Signer is signing transactions.
 
 Returns multiple accounts if multiple signers are configured.
 
-#### Parameters
+### Parameters
 
 None
 
-#### Returns
+### Returns
 
 `Array of data` : Account address with which Web3Signer is signing transactions.
 
