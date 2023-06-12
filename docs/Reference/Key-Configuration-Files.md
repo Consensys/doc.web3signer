@@ -1,7 +1,7 @@
 ---
 title: Key configuration file parameters
 description: Signing key configuration file parameters
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Signing key configuration file parameters
