@@ -1,7 +1,7 @@
 ---
 title: Security disclosure policy
 description: Web3Signer responsible disclosure statement.
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 # Responsible disclosure policy
