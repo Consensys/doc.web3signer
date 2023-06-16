@@ -48,19 +48,19 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1
 
 :::
 
-### `eth_sign`
+## `eth_sign`
 
 Calculates an Ethereum specific signature using `sign(keccak256("\x19Ethereum Signed Message:\n" + len(message) + message)))."`
 
 Adds a prefix to the message that makes the calculated signature recognizable as an Ethereum specific signature. This prevents misuse where a malicious DApp signs arbitrary data (for example a transaction) and uses the signature to impersonate the victim.
 
-#### Parameters
+### Parameters
 
 `DATA` : 20-byte account address
 
 `DATA` : data string to sign
 
-#### Returns
+### Returns
 
 `DATA` : Signature
 
