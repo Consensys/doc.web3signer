@@ -6,10 +6,8 @@ sidebar_position: 1
 # Web3Signer JSON-RPC API
 
 :::note
-
 - All JSON-RPC HTTP examples use the default host and port endpoint `http://127.0.0.1:8545`.
 - The examples use Hyperledger Besu, but any Ethereum client can be used.
-
 :::
 
 ## `eth_accounts`
@@ -24,7 +22,7 @@ None
 
 ### Returns
 
-`Array of data` : Account address with which Web3Signer is signing transactions.
+`Array of data` - Account address with which Web3Signer is signing transactions
 
 <!--tabs-->
 
@@ -48,21 +46,23 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1
 
 ## `eth_sign`
 
-Calculates an Ethereum specific signature using `sign(keccak256("\x19Ethereum Signed Message:\n" + len(message) + message)))."`
+Calculates an Ethereum specific signature using `sign(keccak256("\x19Ethereum Signed Message:\n" +
+len(message) + message)))."`
 
-Adds a prefix to the message that makes the calculated signature recognizable as an Ethereum specific signature. This prevents misuse where a malicious DApp signs arbitrary data (for example a transaction) and uses the signature to impersonate the victim.
+Adds a prefix to the message that makes the calculated signature recognizable as an Ethereum
+specific signature.
+This prevents malicious dapps from signing arbitrary data (for example, a transaction) and using the
+signature to impersonate the victim.
 
 ### Parameters
 
-`DATA` : 20-byte account address
+`DATA` - 20-byte account address
 
-`DATA` : data string to sign
+`DATA` - Data string to sign
 
 ### Returns
 
-`DATA` : Signature
-
-:::info
+`DATA` - Signature
 
 <!--tabs-->
 
