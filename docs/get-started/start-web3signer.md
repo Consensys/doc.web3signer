@@ -106,7 +106,7 @@ curl -X GET http://localhost:9000/upcheck
 <!--/tabs-->
 
 Web3Signer by default also performs a health check on the [slashing protection
-database](../how-to/Configure-Slashing-Protection).
+database](../how-to/configure-slashing-protection.md).
 
 <!-- Links -->
 
@@ -115,4 +115,4 @@ database](../how-to/Configure-Slashing-Protection).
 [subcommand]: ../Reference/CLI/subcommands.md
 [bulk load consensus layer signing keys]: ../how-to/use-signing-keys.md#bulk-load-consensus-layer-keys
 [slashing protection]: ../Concepts/Slashing-Protection.md
-[slashing protection database]: ../how-to/Configure-Slashing-Protection.md
+[slashing protection database]: ../how-to/configure-slashing-protection.md
