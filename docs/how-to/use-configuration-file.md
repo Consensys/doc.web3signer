@@ -9,10 +9,10 @@ sidebar_position: 5
 Use a YAML configuration file to specify command line options in a file.
 
 Save the configuration file and reuse it across node startups. Use the
-[`--config-file`](../reference/cli/options.md#config-file) option to specify the configuration file location.
+[`--config-file`](../Reference/CLI/options.md#config-file) option to specify the configuration file location.
 
 To override an option specified in the configuration file, either specify the same option on the
-command line or as an [environment variable](../reference/cli/options.md#specify-options).
+command line or as an [environment variable](../Reference/CLI/options.md#specify-options).
 For options specified in more than one place, the order of precedence is command line, environment
 variable, configuration file.
 
@@ -36,7 +36,7 @@ Specific differences between the command line and the YAML file format are:
 - Enclose file paths, hexadecimal numbers, URLs, and &lt;host:port> values in quotes.
 
 :::tip
-The [command line reference](../reference/cli/options.md) includes configuration file examples for each option.
+The [command line reference](../Reference/CLI/options.md) includes configuration file examples for each option.
 :::
 
 ```yaml title="Sample YAML configuration file"
@@ -61,4 +61,4 @@ web3signer --config-file=/home/me/me_node/config.yaml filecoin
 
 <!-- links -->
 
-[subcommand options]: ../reference/cli/subcommands.md
+[subcommand options]: ../Reference/CLI/subcommands.md
