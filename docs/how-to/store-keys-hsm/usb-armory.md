@@ -55,4 +55,4 @@ Alternatively you can manually create the file and add the certificate details i
 [USB Armory Mk II device]: https://www.f-secure.com/en/consulting/foundry/usb-armory
 [Interlock application]: https://github.com/f-secure-foundry/interlock/blob/master/README.md
 [Configure a signing key configuration file]: ../use-signing-keys.md
-[key configuration file]: ../../reference/key-config-file-params.md#usb-armory-mk-ii
+[key configuration file]: ../../Reference/key-config-file-params.md#usb-armory-mk-ii

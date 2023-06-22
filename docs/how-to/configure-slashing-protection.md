@@ -15,7 +15,7 @@ Web3Signer instances.
 :::note
 Consensus layer [slashing protection] is enabled by default.
 You therefore must configure a slashing protection database, or disable slashing protection using
-the [`--slashing-protection-enabled`](../reference/cli/subcommands.md#slashing-protection-enabled)
+the [`--slashing-protection-enabled`](../Reference/CLI/subcommands.md#slashing-protection-enabled)
 command line option.
 :::
 
@@ -47,7 +47,7 @@ This allows you to [connect to the database] using the `jdbc:postgresql://localh
 :::tip
 Web3Signer uses [HikariCP] to manage database connections, and uses the default configuration values.
 The defaults perform well in most deployments, but you can be override them with the
-[`slashing-protection-db-pool-configuration-file`](../reference/cli/subcommands.md#slashing-protection-db-pool-configuration-file)
+[`slashing-protection-db-pool-configuration-file`](../Reference/CLI/subcommands.md#slashing-protection-db-pool-configuration-file)
 option.
 :::
 
@@ -101,7 +101,7 @@ the database URL].
 :::
 
 Including
-[`--slashing-protection-pruning-enabled=true`](../reference/cli/subcommands.md#slashing-protection-pruning-enabled)
+[`--slashing-protection-pruning-enabled=true`](../Reference/CLI/subcommands.md#slashing-protection-pruning-enabled)
 enables [slashing protection database pruning].
 
 Start the client, for example [Teku] by specifying the Web3Signer details.
@@ -112,8 +112,8 @@ You can import or export the slashing protection database.
 When importing, additional entries are added to the existing database.
 
 Web3Signer supports importing or exporting using the [validator client interchange format].
-Use the [`eth2 import`](../reference/cli/subcommands.md#eth2-import) and
-[`eth2 export`](../reference/cli/subcommands.md#eth2-export) to import or export files.
+Use the [`eth2 import`](../Reference/CLI/subcommands.md#eth2-import) and
+[`eth2 export`](../Reference/CLI/subcommands.md#eth2-export) to import or export files.
 
 To import a slashing protection database file into the Postgres database, run:
 
@@ -135,12 +135,12 @@ protection database.
 You can enable periodic pruning of the slashing protection database to manage its size.
 
 Enable pruning by setting
-[`--slashing-protection-pruning-enabled`](../reference/cli/subcommands.md#slashing-protection-pruning-enabled)
+[`--slashing-protection-pruning-enabled`](../Reference/CLI/subcommands.md#slashing-protection-pruning-enabled)
 to `true`.
 
 By default, Web3Signer prunes the database on startup, and then after each pruning interval.
 You can disable pruning at startup and start pruning after the pruning interval by setting
-[`--slashing-protection-pruning-at-boot-enabled`](../reference/cli/subcommands.md#slashing-protection-pruning-at-boot-enabled)
+[`--slashing-protection-pruning-at-boot-enabled`](../Reference/CLI/subcommands.md#slashing-protection-pruning-at-boot-enabled)
 to `false`.
 
 You can include additional optional pruning configuration options.
@@ -159,13 +159,13 @@ database](#import-or-export-a-slashing-protection-database).
 
 By default, Web3Signer performs a health check on the slashing protection database every 30000 milliseconds.
 To change the default value, configure the
-[`--slashing-protection-db-health-check-interval-milliseconds`](../reference/cli/subcommands.md#slashing-protection-db-health-check-interval-milliseconds)
+[`--slashing-protection-db-health-check-interval-milliseconds`](../Reference/CLI/subcommands.md#slashing-protection-db-health-check-interval-milliseconds)
 command line option.
 
 The service responds with a `200` message if healthy, and `503` if unhealthy.
 
 You can also configure the health check timeout with the
-[`--slashing-protection-db-health-check-timeout-milliseconds`](../reference/cli/subcommands.md#slashing-protection-db-health-check-timeout-milliseconds)
+[`--slashing-protection-db-health-check-timeout-milliseconds`](../Reference/CLI/subcommands.md#slashing-protection-db-health-check-timeout-milliseconds)
 command line option.
 The default timeout is 3000 milliseconds.
 

@@ -352,7 +352,7 @@ eth1.downstream-http-tls-enabled: true
 
 <!--/tabs-->
 
-Enables or disables [TLS for server connections](../../concepts/tls.md).
+Enables or disables [TLS for server connections](../../Concepts/TLS.md).
 The default is `false`.
 
 #### `downstream-http-tls-known-servers-file`

@@ -41,4 +41,4 @@ password must be specified in the [key configuration files] for a given device.
 [Configure a signing key configuration file]: ../use-signing-keys.md
 [YubiHSM connector]: https://developers.yubico.com/yubihsm-connector/
 [PKCS#11 module]: https://developers.yubico.com/YubiHSM2/Component_Reference/PKCS_11/
-[key configuration files]: ../../reference/key-config-file-params.md#yubihsm-2
+[key configuration files]: ../../Reference/key-config-file-params.md#yubihsm-2

@@ -21,7 +21,7 @@ Web3Signer supports BLS12-381 or secp256k1 signing keys stored in:
 You can configure access to the signing key by:
 
 - [Creating a key configuration file].
-- Using the [`eth2` subcommand options](../reference/cli/subcommands.md#eth2) to bulk load consensus
+- Using the [`eth2` subcommand options](../Reference/CLI/subcommands.md#eth2) to bulk load consensus
   layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Secrets Manager](#aws-secrets-manager),
   or [keystore files](#keystore-files).
 
@@ -39,7 +39,7 @@ single file by adding a triple-dash separator (`---`) between configurations.
 The configuration file must be YAML-formatted, and can use any naming format, but must have the `.yaml` extension.
 
 Place one or more key configuration files in a single directory which you specify when starting Web3Signer.
-Use the [`--key-store-path`](../reference/cli/options.md#key-store-path) option to specify the
+Use the [`--key-store-path`](../Reference/CLI/options.md#key-store-path) option to specify the
 location of the key configuration files.
 
 ```bash
@@ -51,7 +51,7 @@ web3signer --key-store-path=/Users/me/keyFiles/ eth2
 ### Azure Key Vault
 
 You can bulk load consensus layer keys that are stored in Azure Key Vault using the Web3Signer
-[`eth2` subcommand options](../reference/cli/subcommands.md#eth2).
+[`eth2` subcommand options](../Reference/CLI/subcommands.md#eth2).
 
 ```bash
 web3signer eth2 --azure-vault-enabled=true --azure-client-id=87efaa5b-4029-4b54-98bb2e2e8a11 \
@@ -63,7 +63,7 @@ web3signer eth2 --azure-vault-enabled=true --azure-client-id=87efaa5b-4029-4b54-
 ### AWS Secrets Manager
 
 You can bulk load consensus layer keys that are stored in AWS Secrets Manager using the Web3Signer
-[`eth2` subcommand options](../reference/cli/subcommands.md#eth2).
+[`eth2` subcommand options](../Reference/CLI/subcommands.md#eth2).
 
 The AWS bulk load mode supports loading multiple consensus layer keys from the same secret, if keys
 are stored with a line terminating character such as `\n`.
@@ -79,15 +79,15 @@ web3signer eth2 --aws-secrets-enabled=true --aws-secrets-access-key-id=AKIA...EX
 ### Keystore files
 
 You can bulk load consensus layer keys that are stored as keystore files using the Web3Signer
-[`eth2` subcommand options](../reference/cli/subcommands.md#eth2).
+[`eth2` subcommand options](../Reference/CLI/subcommands.md#eth2).
 
 ```bash
 web3signer eth2 --keystores-path=/Users/me/keystores \
 --keystores-passwords-path=/Users/me/passwds
 ```
 
-Use [`--keystores-password-file`](../reference/cli/subcommands.md#keystores-password-file) or
-[`--keystores-passwords-path`](../reference/cli/subcommands.md#keystores-passwords-path) to specify
+Use [`--keystores-password-file`](../Reference/CLI/subcommands.md#keystores-password-file) or
+[`--keystores-passwords-path`](../Reference/CLI/subcommands.md#keystores-passwords-path) to specify
 keystore passwords.
 
 ## Reload new keys
@@ -120,7 +120,7 @@ endpoints](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Keyma
 You can [list keys](#list-keys), [import keystores](#import-keystores), and [delete keys](#delete-keys).
 
 Enable the key manager API by running Web3Signer using the
-[`--key-manager-api-enabled`](../reference/cli/subcommands.md#key-manager-api-enabled) subcommand option.
+[`--key-manager-api-enabled`](../Reference/CLI/subcommands.md#key-manager-api-enabled) subcommand option.
 
 :::caution warning
 The key manager API is an early access feature and is still in development.
@@ -223,5 +223,5 @@ curl -X DELETE http://localhost:9000/eth/v1/keystores --data '{"pubkeys": ["0x93
 
 <!-- Link -->
 
-[key configuration file]: ../reference/key-config-file-params.md
+[key configuration file]: ../Reference/key-config-file-params.md
 [Creating a key configuration file]: #use-key-configuration-files
