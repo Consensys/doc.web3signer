@@ -171,7 +171,7 @@ The default timeout is 3000 milliseconds.
 
 <!-- links -->
 
-[slashing protection]: ../concepts/slashing-protection.md
+[slashing protection]: ../Concepts/Slashing-Protection.md
 [slashing protection database pruning]: #prune-the-slashing-protection-database
 [Install the PostgreSQL database]: https://www.postgresql.org/download/
 [Docker]: https://docs.docker.com/install/
