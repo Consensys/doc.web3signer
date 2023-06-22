@@ -342,19 +342,19 @@ const config = {
           },
           {
             from: "/Reference/CLI/CLI-Syntax",
-            to: "/reference/cli/options",
+            to: "/Reference/CLI/options",
           },
           {
             from: "/Reference/CLI/CLI-Subcommands",
-            to: "/reference/cli/subcommands",
+            to: "/Reference/CLI/subcommands",
           },
           {
             from: "/Reference/Key-Configuration-Files",
-            to: "/reference/key-config-file-params",
+            to: "/Reference/key-config-file-params",
           },
           {
             from: "/Reference/Responsible-Disclosure",
-            to: "/reference/security-disclosure",
+            to: "/Reference/security-disclosure",
           },
           {
             from: "/Tutorials/Launchpad-Keystores",
