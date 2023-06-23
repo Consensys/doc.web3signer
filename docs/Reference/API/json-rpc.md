@@ -82,7 +82,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sign","params":["0x78e6e2365
 
 ## `eth_signTransaction`
 
-Signs a transaction that can be submitted to Besu at a later time using [`eth_sendRawTransaction`](https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_sendrawtransaction).
+Signs a transaction that can be submitted to Besu at a later time using [`eth_sendRawTransaction`](https://besu.hyperledger.org/stable/public-networks/reference/api#eth_sendrawtransaction).
 
 ### Parameters
 
