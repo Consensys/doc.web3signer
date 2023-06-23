@@ -83,3 +83,47 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sign","params":["0x78e6e2365
 ```
 
 <!--/tabs-->
+
+### `eth_signTransaction`
+
+Signs a transaction that can be submitted to Besu at a later time using [`eth_sendRawTransaction`](https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_sendrawtransaction).
+
+#### Parameters
+
+Transaction object:
+
+| Key | Type | Required/Optional | Value |
+| --- | :-- | --- | --- |
+| **from** | Data, 20&nbsp;bytes | Required | Address of the sender. |
+| **to** | Data, 20&nbsp;bytes | Optional for contract creation | Address of the receiver. `null` if a contract creation transaction. |
+| **gas** | Quantity | Optional | Gas provided by the sender. Default is `90000`. |
+| **gasPrice** | Quantity | Optional | Gas price provided by the sender in Wei. Default is `0`. |
+| **nonce** | Quantity | Optional | Number of transactions made by the sender before this one. Must be specified if using [GoQuorum](https://consensys.net/docs/goquorum/). |
+| **value** | Quantity | Optional | Value transferred in Wei. |
+| **data** | Quantity | Optional | Compiled contract code or hash of the invoked method signature and encoded parameters. |
+
+#### Returns
+
+`result` : `data` - The signed transaction object.
+
+:::info
+
+<!--tabs-->
+
+# curl HTTP request
+
+```bash
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_signTransaction","params":[{"from": "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73","to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567","gas": "0x7600","gasPrice": "0x9184e72a000","value": "0x9184e72a", "nonce":"0x46"}], "id":1}' http://127.0.0.1:8545
+```
+
+# JSON result
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0xa3f20717a250c2b0b729b7e5becbff67fdaef7e0699da4de7ca5895b02a170a12d887fd3b17bfdce3481f10bea41f45ba9f709d39ce8325427b57afcfc994cee1b"
+}
+```
+
+<!--/tabs-->
