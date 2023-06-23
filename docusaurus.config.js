@@ -160,18 +160,8 @@ const config = {
             position: "right",
           },
           {
-            href: "https://discord.com/channels/697535391594446898/725135157652226060",
+            href: "https://discord.com/invite/consensys",
             className: "header-discord-link",
-            position: "right",
-          },
-          {
-            href: "https://twitter.com/consensys",
-            className: "header-twitter-link",
-            position: "right",
-          },
-          {
-            href: "https://hub.docker.com/r/consensys/web3signer",
-            className: "header-dockerhub-link",
             position: "right",
           },
         ],
@@ -180,23 +170,44 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Learn",
+            title: "Docs",
             items: [
               {
-                label: "How To",
-                to: "/category/how-to",
+                label: "Introduction",
+                to: "/",
+              },
+              {
+                label: "How to",
+                to: "/how-to",
               },
               {
                 label: "Concepts",
-                to: "/category/concepts",
+                to: "/concepts",
               },
               {
                 label: "Tutorials",
-                to: "/category/tutorials",
+                to: "/tutorials",
+              },
+            ],
+          },
+          {
+            title: "Reference",
+            items: [
+              {
+                label: "Command line options",
+                to: "/reference/cli/options",
               },
               {
-                label: "Reference",
-                to: "/category/reference",
+                label: "Subcommands",
+                to: "/reference/cli/subcommands",
+              },
+              {
+                label: "JSON-RPC API",
+                to: "/reference/api/json-rpc",
+              },
+              {
+                label: "REST API",
+                to: "/reference/api/rest",
               },
             ],
           },
@@ -204,30 +215,21 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Discord",
-                href: "https://discord.com/channels/697535391594446898/725135157652226060",
+                label: "ConsenSys Discord",
+                href: "https://discord.com/invite/consensys",
               },
               {
-                label: "Issues",
-                href: "https://github.com/ConsenSys/web3signer/issues",
+                label: "Web3Signer GitHub",
+                href: "https://github.com/ConsenSys/web3signer",
               },
-            ],
-          },
-          {
-            title: "More",
-            items: [
               {
-                label: "Documentation on GitHub",
+                label: "Web3Signer documentation GitHub",
                 href: "https://github.com/ConsenSys/doc.web3signer",
-              },
-              {
-                label: "ConsenSys",
-                href: "https://consensys.net",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} ConsenSys, Inc. Built with Docusaurus.`,
+        copyright: `© ${new Date().getFullYear()} ConsenSys, Inc.`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -268,6 +270,133 @@ const config = {
       "@docusaurus/plugin-google-tag-manager",
       {
         containerId: "GTM-PJ8HNLB",
+      },
+    ],
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            from: "/HowTo/Get-Started/Install-Binaries",
+            to: "/get-started/install-binaries",
+          },
+          {
+            from: "/HowTo/Get-Started/Build-From-Source",
+            to: "/get-started/build-from-source",
+          },
+          {
+            from: "/HowTo/Get-Started/Use-Docker",
+            to: "/get-started/use-docker",
+          },
+          {
+            from: "/HowTo/Get-Started/Start-Web3Signer",
+            to: "/get-started/start-web3signer",
+          },
+          {
+            from: "/HowTo/Monitor/Logging",
+            to: "/how-to/monitor/logging",
+          },
+          {
+            from: "/HowTo/Monitor/Metrics",
+            to: "/how-to/monitor/metrics",
+          },
+          {
+            from: "/HowTo/Store-Keys-HSM/Use-USB-Armory",
+            to: "/how-to/store-keys-hsm/usb-armory",
+          },
+          {
+            from: "/HowTo/Store-Keys-HSM/Use-YubiHSM2",
+            to: "/how-to/store-keys-hsm/yubihsm2",
+          },
+          {
+            from: "/HowTo/Store-Keys-Vaults/Use-AWS",
+            to: "/how-to/store-keys-vaults/aws",
+          },
+          {
+            from: "/HowTo/Store-Keys-Vaults/Use-Azure",
+            to: "/how-to/store-keys-vaults/azure",
+          },
+          {
+            from: "/HowTo/Store-Keys-Vaults/Use-Hashicorp",
+            to: "/how-to/store-keys-vaults/hashicorp",
+          },
+          {
+            from: "/HowTo/Configure-Slashing-Protection",
+            to: "/how-to/configure-slashing-protection",
+          },
+          {
+            from: "/HowTo/Configure-TLS",
+            to: "/how-to/configure-tls",
+          },
+          {
+            from: "/HowTo/Deploy-With-Kubernetes",
+            to: "/how-to/deploy-with-kubernetes",
+          },
+          {
+            from: "/HowTo/Use-Configuration-File",
+            to: "/how-to/use-configuration-file",
+          },
+          {
+            from: "/HowTo/Use-Signing-Keys",
+            to: "/how-to/use-signing-keys",
+          },
+          {
+            from: "/Reference/CLI/CLI-Syntax",
+            to: "/Reference/CLI/options",
+          },
+          {
+            from: "/Reference/CLI/CLI-Subcommands",
+            to: "/Reference/CLI/subcommands",
+          },
+          {
+            from: "/Reference/Key-Configuration-Files",
+            to: "/Reference/key-config-file-params",
+          },
+          {
+            from: "/Reference/Responsible-Disclosure",
+            to: "/Reference/security-disclosure",
+          },
+          {
+            from: "/Tutorials/Launchpad-Keystores",
+            to: "/tutorials/load-launchpad-keystores",
+          },
+          {
+            from: "/category/get-started",
+            to: "/get-started",
+          },
+          {
+            from: "/category/how-to",
+            to: "/how-to",
+          },
+          {
+            from: "/category/tutorials",
+            to: "/tutorials",
+          },
+          {
+            from: "/category/reference",
+            to: "/reference",
+          },
+          {
+            from: "/category/monitor-nodes",
+            to: "/how-to/monitor",
+          },
+          {
+            from: "/category/store-keys-in-an-hsm-device",
+            to: "/how-to/store-keys-hsm",
+          },
+          {
+            from: "/category/store-keys-in-an-external-vault",
+            to: "/how-to/store-keys-vaults",
+          },
+          {
+            from: "/category/apis",
+            to: "/reference/api",
+          },
+          {
+            from: "/category/command-line",
+            to: "/reference/cli",
+          },
+        ],
       },
     ],
   ],

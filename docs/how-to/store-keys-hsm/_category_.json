@@ -1,0 +1,8 @@
+{
+  "label": "Store keys in an HSM device",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "slug": "/how-to/store-keys-hsm"
+  }
+}
