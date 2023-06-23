@@ -6,9 +6,9 @@ sidebar_position: 1
 # Web3Signer JSON-RPC API
 
 :::note
-
 - All JSON-RPC HTTP examples use the default host and port endpoint `http://127.0.0.1:8545`.
-- The examples use Hyperledger Besu, but any Ethereum client can be used. :::
+- The examples use Hyperledger Besu, but you can use any Ethereum execution client.
+:::
 
 ## `eth_accounts`
 
@@ -46,9 +46,13 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1
 
 ## `eth_sign`
 
-Calculates an Ethereum specific signature using `sign(keccak256("\x19Ethereum Signed Message:\n" + len(message) + message)))."`
+Calculates an Ethereum specific signature using
+`sign(keccak256("\x19Ethereum Signed Message:\n" + len(message) + message)))."`
 
-Adds a prefix to the message that makes the calculated signature recognizable as an Ethereum specific signature. This prevents malicious dapps from signing arbitrary data (for example, a transaction) and using the signature to impersonate the victim.
+Adds a prefix to the message that makes the calculated signature recognizable as an Ethereum
+specific signature.
+This prevents malicious dapps from signing arbitrary data (for example, a transaction) and using the
+signature to impersonate the victim.
 
 ### Parameters
 
@@ -82,7 +86,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sign","params":["0x78e6e2365
 
 ## `eth_signTransaction`
 
-Signs a transaction that can be submitted to Besu at a later time using [`eth_sendRawTransaction`](https://besu.hyperledger.org/stable/public-networks/reference/api#eth_sendrawtransaction).
+Signs a transaction that you can submit to Besu at a later time using
+[`eth_sendRawTransaction`](https://besu.hyperledger.org/stable/public-networks/reference/api#eth_sendrawtransaction).
 
 ### Parameters
 
@@ -90,13 +95,13 @@ Transaction object:
 
 | Key | Type | Required/Optional | Value |
 | --- | :-- | --- | --- |
-| **from** | Data, 20&nbsp;bytes | Required | Address of the sender. |
-| **to** | Data, 20&nbsp;bytes | Optional for contract creation | Address of the receiver. `null` if a contract creation transaction. |
-| **gas** | Quantity | Optional | Gas provided by the sender. Default is `90000`. |
-| **gasPrice** | Quantity | Optional | Gas price provided by the sender in Wei. Default is `0`. |
-| **nonce** | Quantity | Optional | Number of transactions made by the sender before this one. Must be specified if using [GoQuorum](https://consensys.net/docs/goquorum/). |
-| **value** | Quantity | Optional | Value transferred in Wei. |
-| **data** | Quantity | Optional | Compiled contract code or hash of the invoked method signature and encoded parameters. |
+| `from` | Data, 20&nbsp;bytes | Required | Address of the sender. |
+| `to` | Data, 20&nbsp;bytes | Optional for contract creation | Address of the receiver. `null` if this is a contract creation transaction. |
+| `gas` | Quantity | Optional | Gas provided by the sender. The default is `90000`. |
+| `gasPrice` | Quantity | Optional | Gas price provided by the sender in Wei. The default is `0`. |
+| `nonce` | Quantity | Optional | Number of transactions made by the sender before this one. Must be specified if using [GoQuorum](https://docs.goquorum.consensys.net/). |
+| `value` | Quantity | Optional | Value transferred in Wei. |
+| `data` | Quantity | Optional | Compiled contract code or hash of the invoked method signature and encoded parameters. |
 
 ### Returns
 
