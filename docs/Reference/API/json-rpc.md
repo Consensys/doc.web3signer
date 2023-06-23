@@ -80,11 +80,11 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sign","params":["0x78e6e2365
 
 <!--/tabs-->
 
-### `eth_signTransaction`
+## `eth_signTransaction`
 
 Signs a transaction that can be submitted to Besu at a later time using [`eth_sendRawTransaction`](https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_sendrawtransaction).
 
-#### Parameters
+### Parameters
 
 Transaction object:
 
@@ -98,7 +98,7 @@ Transaction object:
 | **value** | Quantity | Optional | Value transferred in Wei. |
 | **data** | Quantity | Optional | Compiled contract code or hash of the invoked method signature and encoded parameters. |
 
-#### Returns
+### Returns
 
 `result` : `data` - The signed transaction object.
 
