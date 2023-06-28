@@ -81,6 +81,7 @@ token: "s.MuZwBqZ0iE1HzvD64v3HMlhT”
 | **serverPort** | Port of the HashiCorp Vault server. |
 | **timeout** | Timeout in milliseconds for requests to the HashiCorp Vault server. |
 | **token** | The root token displayed by the HashiCorp Vault server. |
+| **httpProtocolVersion** | Override HTTP protocol version that is used to connect to HashiCorp Vault. Valid values are `HTTP_2` and `HTTP_1_1`. The default is `HTTP_2`. |
 
 ## Azure Key Vault
 
