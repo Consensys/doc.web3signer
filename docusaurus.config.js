@@ -396,6 +396,10 @@ const config = {
             from: "/category/command-line",
             to: "/reference/cli",
           },
+          {
+            from: "how-to/deploy-with-kubernetes",
+            to: "/how-to",
+          },
         ],
       },
     ],
