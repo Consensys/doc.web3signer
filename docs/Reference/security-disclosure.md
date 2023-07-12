@@ -1,11 +1,11 @@
 ---
-description: Web3Signer security disclosure policy statement
+description: Web3signer security disclosure policy statement
 sidebar_position: 4
 ---
 
 # Security disclosure policy
 
-At ConsenSys, security is a priority. But regardless of how much effort we put into system security, there may still be vulnerabilities present. If you discover a vulnerability, we want to know about it so we can take steps to address it as quickly as possible. You can help us better protect our clients and our systems.
+At Consensys, security is a priority. But regardless of how much effort we put into system security, there may still be vulnerabilities present. If you discover a vulnerability, we want to know about it so we can take steps to address it as quickly as possible. You can help us better protect our clients and our systems.
 
 Please do the following:
 
