@@ -83,7 +83,7 @@ data-path: "/Users/me/my_node/data"
 
 Directory in which to store temporary files.
 
-### `key-store-path`
+### `key-store-path`, `key-config-path`
 
 <!--tabs-->
 
