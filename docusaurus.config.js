@@ -397,7 +397,7 @@ const config = {
             to: "/reference/cli",
           },
           {
-            from: "how-to/deploy-with-kubernetes",
+            from: "/how-to/deploy-with-kubernetes",
             to: "/how-to",
           },
         ],
