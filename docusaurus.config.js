@@ -330,7 +330,7 @@ const config = {
           },
           {
             from: "/HowTo/Deploy-With-Kubernetes",
-            to: "/how-to/deploy-with-kubernetes",
+            to: "/how-to",
           },
           {
             from: "/HowTo/Use-Configuration-File",
