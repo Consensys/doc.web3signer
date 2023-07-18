@@ -1565,26 +1565,26 @@ The default is `false`.
 # Example
 
 ```bash
---slashing-protection-pruning-epochs-to-keep=12000
+--slashing-protection-pruning-epochs-to-keep=64
 ```
 
 # Environment variable
 
 ```bash
-WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_EPOCHS_TO_KEEP=12000
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_EPOCHS_TO_KEEP=64
 ```
 
 # Configuration file
 
 ```yaml
-eth2.slashing-protection-pruning-epochs-to-keep: 12000
+eth2.slashing-protection-pruning-epochs-to-keep: 64
 ```
 
 <!--/tabs-->
 
 Number of epochs to keep when pruning the slashing protection database.
 
-The default is 10000.
+The default is 250.
 
 #### `slashing-protection-pruning-interval`
 
