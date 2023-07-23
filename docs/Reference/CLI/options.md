@@ -83,32 +83,32 @@ data-path: "/Users/me/my_node/data"
 
 Directory in which to store temporary files.
 
-### `key-store-path`, `key-config-path`
+### `key-config-path`, `key-store-path`
 
 <!--tabs-->
 
 # Syntax
 
 ```bash
---key-store-path=<PATH>
+--key-config-path=<PATH>
 ```
 
 # Example
 
 ```bash
---key-store-path=/Users/me/keys
+--key-config-path=/Users/me/keys
 ```
 
 # Environment variable
 
 ```bash
-WEB3SIGNER_KEY_STORE_PATH=/Users/me/keys
+WEB3SIGNER_KEY_CONFIG_PATH=/Users/me/keys
 ```
 
 # Configuration file
 
 ```bash
-key-store-path: "/Users/me/keys"
+key-config-path: "/Users/me/keys"
 ```
 
 <!--/tabs-->
