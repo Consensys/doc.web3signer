@@ -57,7 +57,7 @@ Consensus layer [slashing protection] is enabled by default, and you must specif
 command line option.
 
 :::note
-Web3Signer also allows you to [bulk load consensus layer signing keys] stored in Azure Key Vault.
+Web3Signer also allows you to [bulk load signing keys] stored in Azure Key Vault.
 :::
 
 Start the client, for example [Teku] by specifying the Web3Signer details.
@@ -113,6 +113,6 @@ database](../how-to/configure-slashing-protection.md).
 [Signing key configuration files]: ../how-to/use-signing-keys.md
 [Teku]: https://docs.teku.consensys.net/how-to/use-external-signer/use-web3signer
 [subcommand]: ../Reference/CLI/subcommands.md
-[bulk load consensus layer signing keys]: ../how-to/use-signing-keys.md#bulk-load-consensus-layer-keys
+[bulk load signing keys]: ../how-to/use-signing-keys.md#bulk-load-keys
 [slashing protection]: ../Concepts/Slashing-Protection.md
 [slashing protection database]: ../how-to/configure-slashing-protection.md

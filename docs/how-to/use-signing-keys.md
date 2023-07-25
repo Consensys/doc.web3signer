@@ -24,10 +24,12 @@ You can configure access to the signing key by:
 - Using the [`eth2` subcommand options](../Reference/CLI/subcommands.md#eth2) to bulk load consensus
   layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Secrets Manager](#aws-secrets-manager),
   or [keystore files](#keystore-files).
+- Using the [`eth1` subcommand options](../Reference/CLI/subcommands.md#eth1) to bulk load execution
+    layer signing keys stored in [Azure Key Vault](#azure-key-vault).
 
 :::note
-Bulk loading is only available when using the consensus layer platform with keys stored in Azure Key
-Vault, AWS Secrets Manager, or keystore files, and can be used in combination with key configuration files.
+Bulk loading is only available when using keys stored in Azure Key Vault, AWS Secrets Manager,
+or keystore files, and can be used in combination with key configuration files.
 :::
 
 ## Use key configuration files
@@ -46,12 +48,16 @@ location of the key configuration files.
 web3signer --key-store-path=/Users/me/keyFiles/ eth2
 ```
 
-## Bulk load consensus layer keys
+## Bulk load keys
 
 ### Azure Key Vault
 
 You can bulk load consensus layer keys that are stored in Azure Key Vault using the Web3Signer
 [`eth2` subcommand options](../Reference/CLI/subcommands.md#eth2).
+
+<!--tabs-->
+
+# Consensus layer client
 
 ```bash
 web3signer eth2 --azure-vault-enabled=true --azure-client-id=87efaa5b-4029-4b54-98bb2e2e8a11 \
@@ -59,6 +65,17 @@ web3signer eth2 --azure-vault-enabled=true --azure-client-id=87efaa5b-4029-4b54-
 --azure-tenant-id=34255fb0-379b-4a1a-bd47-d211ab86df81 \
 --azure-vault-name=AzureKeyVault
 ```
+
+# Execution layer client
+
+```bash
+web3signer eth1 --azure-vault-enabled=true --azure-client-id=87efaa5b-4029-4b54-98bb2e2e8a11 \
+--azure-client-secret=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z \
+--azure-tenant-id=34255fb0-379b-4a1a-bd47-d211ab86df81 \
+--azure-vault-name=AzureKeyVault
+```
+
+<!--/tabs-->
 
 ### AWS Secrets Manager
 
