@@ -52,7 +52,8 @@ web3signer --key-store-path=/Users/me/keyFiles/ eth2
 
 ### Azure Key Vault
 
-You can bulk load consensus layer keys that are stored in Azure Key Vault using the Web3Signer
+You can bulk load keys that are stored in Azure Key Vault using the Web3Signer
+[`eth1` subcommand options](../Reference/CLI/subcommands.md#eth1) or
 [`eth2` subcommand options](../Reference/CLI/subcommands.md#eth2).
 
 <!--tabs-->
