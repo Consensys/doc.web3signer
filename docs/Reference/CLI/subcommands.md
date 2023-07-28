@@ -154,37 +154,37 @@ eth2.azure-client-secret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
 
 The secret used to access the vault along with the ID specified in [`azure-client-id`](#azure-client-id).
 
-#### `azure-secrets-tags`
+#### `azure-tags`
 
 <!--tabs-->
 
 # Syntax
 
 ```bash
---azure-secrets-tags=<TAG_NAME=TAG_VALUE>
+--azure-tags=<TAG_NAME=TAG_VALUE>
 ```
 
 # Example
 
 ```bash
---azure-secrets-tags=ENV=prod
+--azure-tags=ENV=prod
 ```
 
 # Environment variable
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_SECRETS_TAGS=ENV=prod
+WEB3SIGNER_ETH2_AZURE_TAGS=ENV=prod
 ```
 
 # Configuration file
 
 ```bash
-eth2.azure-secrets-tags: "ENV=prod"
+eth2.azure-tags: "ENV=prod"
 ```
 
 <!--/tabs-->
 
-Tags to filter secrets from Azure Key Vault.
+Tags to filter on with Azure Key Vault.
 
 #### `azure-tenant-id`
 
@@ -1099,37 +1099,37 @@ eth2.azure-client-secret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
 
 The secret used to access the vault along with the ID specified in [`azure-client-id`](#azure-client-id).
 
-#### `azure-secrets-tags`
+#### `azure-tags`
 
 <!--tabs-->
 
 # Syntax
 
 ```bash
---azure-secrets-tags=<TAG_NAME=TAG_VALUE>
+--azure-tags=<TAG_NAME=TAG_VALUE>
 ```
 
 # Example
 
 ```bash
---azure-secrets-tags=ENV=prod
+--azure-tags=ENV=prod
 ```
 
 # Environment variable
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_SECRETS_TAGS=ENV=prod
+WEB3SIGNER_ETH2_AZURE_TAGS=ENV=prod
 ```
 
 # Configuration file
 
 ```bash
-eth2.azure-secrets-tags: "ENV=prod"
+eth2.azure-tags: "ENV=prod"
 ```
 
 <!--/tabs-->
 
-Tags to filter secrets from Azure Key Vault.
+Tags to filter on using Azure Key Vault.
 
 #### `azure-tenant-id`
 
