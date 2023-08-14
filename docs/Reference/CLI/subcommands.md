@@ -54,6 +54,239 @@ To view the command line help for the subcommands:
 
 ### `eth1`
 
+#### `azure-vault-enabled`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--azure-vault-enabled=<BOOLEAN>
+```
+
+# Example
+
+```bash
+--azure-vault-enabled=true
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AZURE_VAULT_ENABLED=true
+```
+
+# Configuration file
+
+```bash
+eth2.azure-vault-enabled: true
+```
+
+<!--/tabs-->
+
+Enables [bulk loading keys from Azure Key Vault](../../how-to/use-signing-keys.md#azure-key-vault).
+The default is `false`.
+
+#### `azure-client-id`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--azure-client-id=<STRING>
+```
+
+# Example
+
+```bash
+--azure-client-id=87efaa5b-4029-4b54-98bb2e2e8a11
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AZURE_CLIENT_ID=87efaa5b-4029-4b54-98bb2e2e8a11
+```
+
+# Configuration file
+
+```bash
+eth2.azure-client-id: "87efaa5b-4029-4b54-98bb2e2e8a11"
+```
+
+<!--/tabs-->
+
+ID used to authenticate with Azure Key Vault.
+
+Required when [`--azure-vault-auth-mode`](#azure-vault-auth-mode) is `CLIENT_SECRET` or
+`USER_ASSIGNED_MANAGED_IDENTITY`.
+
+#### `azure-client-secret`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--azure-client-secret=<STRING>
+```
+
+# Example
+
+```bash
+--azure-client-secret=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AZURE_CLIENT_SECRET=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
+```
+
+# Configuration file
+
+```bash
+eth2.azure-client-secret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
+```
+
+<!--/tabs-->
+
+The secret used to access the vault along with the ID specified in [`azure-client-id`](#azure-client-id).
+
+#### `azure-tags`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--azure-tags=<TAG_NAME=TAG_VALUE>
+```
+
+# Example
+
+```bash
+--azure-tags=ENV=prod
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AZURE_TAGS=ENV=prod
+```
+
+# Configuration file
+
+```bash
+eth2.azure-tags: "ENV=prod"
+```
+
+<!--/tabs-->
+
+Tags to filter on with Azure Key Vault.
+
+#### `azure-tenant-id`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--azure-tenant-id=<STRING>
+```
+
+# Example
+
+```bash
+--azure-tenant-id=34255fb0-379b-4a1a-bd47-d211ab86df81
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AZURE_TENANT_ID=34255fb0-379b-4a1a-bd47-d211ab86df81
+```
+
+# Configuration file
+
+```bash
+eth2.azure-tenant-id: "34255fb0-379b-4a1a-bd47-d211ab86df81"
+```
+
+<!--/tabs-->
+
+The tenant ID of the Azure Portal instance being used.
+
+#### `azure-vault-auth-mode`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--azure-vault-auth-mode=<STRING>
+```
+
+# Example
+
+```bash
+--azure-vault-auth-mode=USER_ASSIGNED_MANAGED_IDENTITY
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AZURE_VAULT_AUTH_MODE=USER_ASSIGNED_MANAGED_IDENTITY
+```
+
+# Configuration file
+
+```bash
+eth2.azure-vault-auth-mode: "USER_ASSIGNED_MANAGED_IDENTITY"
+```
+
+<!--/tabs-->
+
+Authentication mode for Azure Vault.
+Options are `CLIENT_SECRET`, `SYSTEM_ASSIGNED_MANAGED_IDENTITY`, and `USER_ASSIGNED_MANAGED_IDENTITY`.
+The default is `CLIENT_SECRET`.
+
+Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or `USER_ASSIGNED_MANAGED_IDENTITY`.
+
+#### `azure-vault-name`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--azure-vault-name=<STRING>
+```
+
+# Example
+
+```bash
+--azure-vault-name=AzureKeyVault
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AZURE_VAULT_NAME=AzureKeyVault
+```
+
+# Configuration file
+
+```bash
+eth2.azure-vault-name: "AzureKeyVault"
+```
+
+<!--/tabs-->
+
+Name of the vault to access.
+Subdomain of `vault.azure.net`.
+
 #### `downstream-http-host`
 
 <!--tabs-->
@@ -866,37 +1099,37 @@ eth2.azure-client-secret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
 
 The secret used to access the vault along with the ID specified in [`azure-client-id`](#azure-client-id).
 
-#### `azure-secrets-tags`
+#### `azure-tags`
 
 <!--tabs-->
 
 # Syntax
 
 ```bash
---azure-secrets-tags=<TAG_NAME=TAG_VALUE>
+--azure-tags=<TAG_NAME=TAG_VALUE>
 ```
 
 # Example
 
 ```bash
---azure-secrets-tags=ENV=prod
+--azure-tags=ENV=prod
 ```
 
 # Environment variable
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_SECRETS_TAGS=ENV=prod
+WEB3SIGNER_ETH2_AZURE_TAGS=ENV=prod
 ```
 
 # Configuration file
 
 ```bash
-eth2.azure-secrets-tags: "ENV=prod"
+eth2.azure-tags: "ENV=prod"
 ```
 
 <!--/tabs-->
 
-Tags to filter secrets from Azure Key Vault.
+Tags to filter on using Azure Key Vault.
 
 #### `azure-tenant-id`
 

@@ -29,7 +29,7 @@ from Azure Key Vault and signing locally with Web3Signer.
 [Register Web3Signer as an application] and [add a signing key in Azure Key Vault].
 
 Take note of the following to specify when [configuring the signing key configuration file] or
-[bulk loading consensus layer signing keys]:
+[bulk loading signing keys]:
 
 - Vault name, which is part of the URL (for example `https://<vaultname>.vault.azure.net`).
 - Client credentials, which can include:
@@ -46,7 +46,7 @@ Depending on the authentication mode, not all client credentials are available.
 <!-- links -->
 
 [configuring the signing key configuration file]: ../use-signing-keys.md#azure-key-vault
-[bulk loading consensus layer signing keys]: ../use-signing-keys.md#bulk-loading-consensus-layer-keys
+[bulk loading signing keys]: ../use-signing-keys.md#bulk-load-keys
 [Register Web3Signer as an application]: https://docs.microsoft.com/en-us/azure/key-vault/general/authentication
 [add a signing key in Azure Key Vault]: https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal#add-a-secret-to-key-vault
 [Client secret]: https://docs.microsoft.com/en-us/azure/key-vault/secrets/about-secrets

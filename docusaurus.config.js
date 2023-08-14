@@ -40,7 +40,7 @@ const redocusaurus = [
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "ConsenSys Web3Signer",
+  title: "Consensys Web3Signer",
   tagline:
     "An open-source, client-agnostic, Ethereum signing service written in Java that is capable of signing on multiple platforms..",
   url: "https://docs.web3signer.consensys.net",
@@ -52,7 +52,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "ConsenSys", // Usually your GitHub org/user name.
+  organizationName: "Consensys", // Usually your GitHub org/user name.
   projectName: "doc.web3signer", // Usually your repo name.
   deploymentBranch: "gh-pages", // Github Pages deploying branch
 
@@ -71,7 +71,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Set a base path separate from default /docs
-          editUrl: "https://github.com/ConsenSys/doc.web3signer/tree/main/",
+          editUrl: "https://github.com/Consensys/doc.web3signer/tree/main/",
           path: "docs",
           routeBasePath: "/",
           // @ts-ignore
@@ -155,7 +155,7 @@ const config = {
         },
         items: [
           {
-            href: "https://github.com/ConsenSys/web3signer",
+            href: "https://github.com/Consensys/web3signer",
             className: "header-github-link",
             position: "right",
           },
@@ -215,21 +215,21 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "ConsenSys Discord",
+                label: "Consensys Discord",
                 href: "https://discord.com/invite/consensys",
               },
               {
                 label: "Web3Signer GitHub",
-                href: "https://github.com/ConsenSys/web3signer",
+                href: "https://github.com/Consensys/web3signer",
               },
               {
                 label: "Web3Signer documentation GitHub",
-                href: "https://github.com/ConsenSys/doc.web3signer",
+                href: "https://github.com/Consensys/doc.web3signer",
               },
             ],
           },
         ],
-        copyright: `© ${new Date().getFullYear()} ConsenSys, Inc.`,
+        copyright: `© ${new Date().getFullYear()} Consensys, Inc.`,
       },
       prism: {
         theme: lightCodeTheme,
