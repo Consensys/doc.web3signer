@@ -129,6 +129,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_signTransaction","params":[{
 
 <!--/tabs-->
 
+:::
+
 ## `eth_sendTransaction`
 
 Creates and signs a transaction using the signing key.
