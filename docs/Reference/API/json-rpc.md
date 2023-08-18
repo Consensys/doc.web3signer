@@ -107,8 +107,6 @@ Transaction object:
 
 `result` : `data` - The signed transaction object.
 
-:::info
-
 <!--tabs-->
 
 # curl HTTP request
@@ -158,8 +156,6 @@ Submitting a transaction with the same nonce as a pending transaction and a high
 ### Returns
 
 `result` : `data` - 32-byte transaction hash
-
-:::info
 
 <!--tabs-->
 
