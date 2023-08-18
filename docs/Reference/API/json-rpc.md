@@ -157,8 +157,6 @@ Submitting a transaction with the same nonce as a pending transaction and a high
 
 `result` : `data` - 32-byte transaction hash
 
-:::info
-
 <!--tabs-->
 
 # curl HTTP request
