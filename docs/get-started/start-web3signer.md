@@ -43,7 +43,7 @@ web3signer --key-store-path=/Users/me/keyFiles/ filecoin
 
 In the command line:
 
-- Use the [`--key-store-path`](../Reference/CLI/options.md#key-store-path) option to specify the
+- Use the [`--key-store-path`](../reference/cli/options.md#key-store-path) option to specify the
   location of the signing key configuration files.
 - Specify the [subcommand] to indicate which signing mode to use.
   Valid subcommands are `eth2`, `eth1`, and `filecoin`.
@@ -53,7 +53,7 @@ In the command line:
 
 Consensus layer [slashing protection] is enabled by default, and you must specify the details the
 [slashing protection database], or disable slashing protection using the
-[`--slashing-protection-db-enabled`](../Reference/CLI/subcommands.md#slashing-protection-enabled)
+[`--slashing-protection-db-enabled`](../reference/cli/subcommands.md#slashing-protection-enabled)
 command line option.
 
 :::note
@@ -64,7 +64,7 @@ Start the client, for example [Teku] by specifying the Web3Signer details.
 
 :::important
 If Teku connects to a network other than `mainnet`, then the
-[`--network`](../Reference/CLI/subcommands.md#network) option must be specified, and it must match
+[`--network`](../reference/cli/subcommands.md#network) option must be specified, and it must match
 the network used by the Teku client.
 :::
 
@@ -81,7 +81,7 @@ following example.
 web3signer --key-store-path=/Users/me/keyFiles/ eth2 --network=goerli --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
 ```
 
-See the [`--network` documentation](../Reference/CLI/subcommands.md#network) for more information
+See the [`--network` documentation](../reference/cli/subcommands.md#network) for more information
 about this option and the supported networks.
 
 ## Confirm Web3Signer is running
@@ -112,7 +112,7 @@ database](../how-to/configure-slashing-protection.md).
 
 [Signing key configuration files]: ../how-to/use-signing-keys.md
 [Teku]: https://docs.teku.consensys.net/how-to/use-external-signer/use-web3signer
-[subcommand]: ../Reference/CLI/subcommands.md
+[subcommand]: ../reference/cli/subcommands.md
 [bulk load signing keys]: ../how-to/use-signing-keys.md#bulk-load-keys
-[slashing protection]: ../Concepts/Slashing-Protection.md
+[slashing protection]: ../concepts/slashing-protection.md
 [slashing protection database]: ../how-to/configure-slashing-protection.md

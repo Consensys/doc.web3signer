@@ -70,22 +70,22 @@ web3signer --key-store-path=/Users/me/keyFiles/ \
 The command line:
 
 - Specifies the location of the signing key configuration files using the
-  [`--key-store-path`](../Reference/CLI/options.md#key-store-path) option.
+  [`--key-store-path`](../reference/cli/options.md#key-store-path) option.
 - Specifies the Web3Signer keystore using the
-  [`--tls-keystore-file`](../Reference/CLI/options.md#tls-keystore-file) option.
+  [`--tls-keystore-file`](../reference/cli/options.md#tls-keystore-file) option.
 - Specifies the file that contains the password to decrypt the keystore using the
-  [`--tls-keystore-password-file`](../Reference/CLI/options.md#tls-keystore-password-file) option.
+  [`--tls-keystore-password-file`](../reference/cli/options.md#tls-keystore-password-file) option.
 - [Specifies the clients](#create-the-known-clients-file) that are trusted to connect to Web3Signer
-  using the [`tls-known-clients-file`](../Reference/CLI/options.md#tls-known-clients-file) option.
+  using the [`tls-known-clients-file`](../reference/cli/options.md#tls-known-clients-file) option.
 
 :::note
-Use the [`--tls-allow-any-client`](../Reference/CLI/options.md#tls-allow-any-client) option to allow
-access to any client, or [`--tls-allow-ca-clients`](../Reference/CLI/options.md#tls-allow-ca-clients)
+Use the [`--tls-allow-any-client`](../reference/cli/options.md#tls-allow-any-client) option to allow
+access to any client, or [`--tls-allow-ca-clients`](../reference/cli/options.md#tls-allow-ca-clients)
 to allow access to any client with a trusted CA certificate.
 
-You can't use [`--tls-allow-any-client`](../Reference/CLI/options.md#tls-allow-any-client) with
-[`tls-known-clients-file`](../Reference/CLI/options.md#tls-known-clients-file) or
-[`--tls-allow-ca-clients`](../Reference/CLI/options.md#tls-allow-ca-clients).
+You can't use [`--tls-allow-any-client`](../reference/cli/options.md#tls-allow-any-client) with
+[`tls-known-clients-file`](../reference/cli/options.md#tls-known-clients-file) or
+[`--tls-allow-ca-clients`](../reference/cli/options.md#tls-allow-ca-clients).
 :::
 
 ## Server TLS connection
@@ -128,22 +128,22 @@ web3signer eth1 --downstream-http-tls-enabled --downstream-http-tls-keystore-fil
 The command line:
 
 - Enables TLS using the
-  [`--downstream-http-tls-enabled`](../Reference/CLI/subcommands.md#downstream-http-tls-enabled) option.
+  [`--downstream-http-tls-enabled`](../reference/cli/subcommands.md#downstream-http-tls-enabled) option.
 - Specifies the keystore to present during authentication using the
-  [`--downstream-http-tls-keystore-file`](../Reference/CLI/subcommands.md#downstream-http-tls-keystore-file) option.
+  [`--downstream-http-tls-keystore-file`](../reference/cli/subcommands.md#downstream-http-tls-keystore-file) option.
 - Specifies the file that contains the password to decrypt the keystore using the
-  [`--downstream-http-tls-keystore-password-file`](../Reference/CLI/subcommands.md#downstream-http-tls-keystore-password-file) option.
+  [`--downstream-http-tls-keystore-password-file`](../reference/cli/subcommands.md#downstream-http-tls-keystore-password-file) option.
 - [Specifies the servers](#create-the-known-servers-file) to connect to using the
-  [`--downstream-http-tls-known-servers-file`](../Reference/CLI/subcommands.md#downstream-http-tls-known-servers-file) option.
+  [`--downstream-http-tls-known-servers-file`](../reference/cli/subcommands.md#downstream-http-tls-known-servers-file) option.
 
 :::note
-The [`--downstream-http-tls-ca-auth-enabled`](../Reference/CLI/subcommands.md#downstream-http-tls-ca-auth-enabled)
+The [`--downstream-http-tls-ca-auth-enabled`](../reference/cli/subcommands.md#downstream-http-tls-ca-auth-enabled)
 option is `true` by default and allows connections to servers with trusted root CAs.
 :::
 
 <!-- links -->
 
-[Allow all clients with trusted CA certificates to connect]: ../Reference/CLI/options.md#tls-allow-ca-clients
-[Allow any client to connect]: ../Reference/CLI/options.md#tls-allow-any-client
+[Allow all clients with trusted CA certificates to connect]: ../reference/cli/options.md#tls-allow-ca-clients
+[Allow any client to connect]: ../reference/cli/options.md#tls-allow-any-client
 [Teku]: https://docs.teku.consensys.net/
 [Teku tutorial]: https://docs.teku.consensys.net/tutorials/configure-external-signer-tls
