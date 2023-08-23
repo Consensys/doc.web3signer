@@ -90,10 +90,10 @@ After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-sta
 ## Create the known servers file
 
 The known servers file is required if TLS is enabled, to disable TLS set
-[`tlsEnabled`](../../Reference/key-config-file-params.md#hashicorp-vault) to `false`.
+[`tlsEnabled`](../../reference/key-config-file-params.md#hashicorp-vault) to `false`.
 
 Specify the location of the known servers file in the
-[`tlsKnownServersPath`](../../Reference/key-config-file-params.md#hashicorp-vault) option of the
+[`tlsKnownServersPath`](../../reference/key-config-file-params.md#hashicorp-vault) option of the
 [signing key configuration file].
 
 The file contents use the format `<hostname>:<port> <hex-string>` where:

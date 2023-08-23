@@ -585,7 +585,7 @@ eth1.downstream-http-tls-enabled: true
 
 <!--/tabs-->
 
-Enables or disables [TLS for server connections](../../Concepts/TLS.md).
+Enables or disables [TLS for server connections](../../concepts/tls.md).
 The default is `false`.
 
 #### `downstream-http-tls-known-servers-file`
@@ -2104,6 +2104,6 @@ If none are specified, the low watermark is updated for all validators.
 <!-- links -->
 
 [include the port number in the database URL]: https://jdbc.postgresql.org/documentation/head/connect.html
-[slashing protection]: ../../Concepts/Slashing-Protection.md
+[slashing protection]: ../../concepts/slashing-protection.md
 [validator client interchange format]: https://eips.ethereum.org/EIPS/eip-3076
 [consensus specification]: https://github.com/ethereum/consensus-specs/tree/master/configs

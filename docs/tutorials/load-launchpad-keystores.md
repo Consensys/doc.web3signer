@@ -84,7 +84,7 @@ web3signer --key-store-path=/Users/me/keys eth2 --network=goerli --slashing-prot
 ```
 
 :::note
-Set the [`--slashing-protection-enabled`](../Reference/CLI/subcommands.md#slashing-protection-enabled)
+Set the [`--slashing-protection-enabled`](../reference/cli/subcommands.md#slashing-protection-enabled)
 `eth2` subcommand option to `false` to disable slashing protection.
 However, we don't recommend this on Mainnet.
 :::
@@ -106,4 +106,4 @@ teku --network=goerli \
 [Teku installed]: https://docs.teku.consensys.net/get-started/install/install-binaries
 [Web3Signer installed]: ../get-started/install-binaries.md
 [slashing protection database]: ../how-to/configure-slashing-protection.md
-[key configuration file]: ../Reference/key-config-file-params.md
+[key configuration file]: ../reference/key-config-file-params.md
