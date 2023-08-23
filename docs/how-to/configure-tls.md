@@ -98,7 +98,7 @@ This can only be used when Web3Signer is eth1 mode.
 
 **Server prerequisites**:
 
-- [The server must be configured to allow TLS communication](https://besu.hyperledger.org/en/latest/HowTo/Configure/Configure-TLS/).
+- [The server must be configured to allow TLS communication](https://besu.hyperledger.org/private-networks/how-to/configure/tls/client-and-server).
 - Server's password-protected PKCS #12 keystore information.
 
 ### Create the known servers file
