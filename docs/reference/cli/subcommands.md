@@ -1693,28 +1693,28 @@ The default is `true`.
 # Example
 
 ```bash
---slashing-protection-pruning-at-boot-enabled=false
+--slashing-protection-pruning-at-boot-enabled=true
 ```
 
 # Environment variable
 
 ```bash
-WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_AT_BOOT_ENABLED=false
+WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_AT_BOOT_ENABLED=true
 ```
 
 # Configuration file
 
 ```yaml
-eth2.slashing-protection-pruning-at-boot-enabled: false
+eth2.slashing-protection-pruning-at-boot-enabled: true
 ```
 
 <!--/tabs-->
 
-When set to `false`, [slashing protection database
+When set to `true`, [slashing protection database
 pruning](../../how-to/configure-slashing-protection.md#prune-the-slashing-protection-database) is
-disabled at boot and only takes place at the scheduled [pruning intervals](#slashing-protection-pruning-interval).
+enabled at startup and at the defined [pruning intervals](#slashing-protection-pruning-interval).
 
-The default is `true`.
+The default is `false`.
 
 #### `slashing-protection-pruning-db-pool-configuration-file`
 
