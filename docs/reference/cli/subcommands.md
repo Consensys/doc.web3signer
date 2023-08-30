@@ -1712,7 +1712,7 @@ eth2.slashing-protection-pruning-at-boot-enabled: true
 
 When set to `true`, [slashing protection database
 pruning](../../how-to/configure-slashing-protection.md#prune-the-slashing-protection-database) is
-enabled at boot as well as in the defined interval [pruning intervals](#slashing-protection-pruning-interval).
+enabled at startup and at the defined [pruning intervals](#slashing-protection-pruning-interval).
 
 The default is `false`.
 
