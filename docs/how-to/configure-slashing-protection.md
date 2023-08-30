@@ -139,7 +139,7 @@ Enable pruning by setting
 to `true`.
 
 Web3Signer can prune the database on startup, and then after each pruning interval.
-By default, this feature is disable. You can enable pruning at startup and start pruning after the pruning interval by setting
+By default, this feature is disabled. You can enable pruning at startup and start pruning after the pruning interval by setting
 [`--slashing-protection-pruning-at-boot-enabled`](../reference/cli/subcommands.md#slashing-protection-pruning-at-boot-enabled)
 to `true`.
 
