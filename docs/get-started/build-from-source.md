@@ -12,7 +12,7 @@ sidebar_position: 3
 
 :::caution Important
 
-Web3Signer requires Java 11 or later releases.
+Web3Signer requires Java 17 or later releases.
 
 :::
 
