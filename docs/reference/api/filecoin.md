@@ -6,6 +6,14 @@ toc_max_heading_level: 2
 
 # Filecoin JSON-RPC API
 
+:::caution "Filecoin deprecation notice"
+
+Web3Signer has deprecated Filecoin and will remove it in a future release. If you still require this feature, we encourage
+community members to maintain the code by creating a fork and submitting pull requests. Alternatively, you can continue
+using an older version of Web3Signer that still supports Filecoin.
+
+:::
+
 Access Filecoin JSON-RPC API methods at `http://<HOST>:<PORT>/rpc/v1/filecoin`, where:
 
 - `<HOST>` is specified using [`--http-listen-host`](../cli/options.md#http-listen-host).
