@@ -97,6 +97,7 @@ web3signer eth2 --aws-secrets-enabled=true --aws-secrets-access-key-id=AKIA...EX
 ### Keystore files
 
 You can bulk load consensus layer or execution layer keys that are stored as keystore files using the Web3Signer
+[`eth1` subcommand options](../reference/cli/subcommands.md#eth1) or
 [`eth2` subcommand options](../reference/cli/subcommands.md#eth2).
 
 <!--tabs-->
@@ -117,8 +118,7 @@ web3signer eth1 --keystores-path=/Users/me/keystores \
 
 <!--/tabs-->
 
-Use [`--keystores-password-file`](../reference/cli/subcommands.md#keystores-password-file) or
-[`--keystores-passwords-path`](../reference/cli/subcommands.md#keystores-passwords-path) to specify
+Use the `eth1` or `eth2` `--keystores-password-file` or `--keystores-passwords-path` command line option to specify
 keystore passwords.
 
 ## Reload new keys
