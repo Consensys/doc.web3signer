@@ -25,7 +25,7 @@ You can configure access to the signing key by:
   layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Secrets Manager](#aws-secrets-manager),
   or [keystore files](#keystore-files).
 - Using the [`eth1` subcommand options](../reference/cli/subcommands.md#eth1) to bulk load execution
-    layer signing keys stored in [Azure Key Vault](#azure-key-vault).
+    layer signing keys stored in [Azure Key Vault](#azure-key-vault) or [keystore files](#keystore-files).
 
 :::note
 Bulk loading is only available when using keys stored in Azure Key Vault, AWS Secrets Manager,
@@ -96,13 +96,26 @@ web3signer eth2 --aws-secrets-enabled=true --aws-secrets-access-key-id=AKIA...EX
 
 ### Keystore files
 
-You can bulk load consensus layer keys that are stored as keystore files using the Web3Signer
+You can bulk load consensus layer or execution layer keys that are stored as keystore files using the Web3Signer
 [`eth2` subcommand options](../reference/cli/subcommands.md#eth2).
+
+<!--tabs-->
+
+# Consensys layeer client
 
 ```bash
 web3signer eth2 --keystores-path=/Users/me/keystores \
 --keystores-passwords-path=/Users/me/passwds
 ```
+
+# Execution layer client
+
+```bash
+web3signer eth2 --keystores-path=/Users/me/keystores \
+--keystores-passwords-path=/Users/me/passwds
+```
+
+<!--/tabs-->
 
 Use [`--keystores-password-file`](../reference/cli/subcommands.md#keystores-password-file) or
 [`--keystores-passwords-path`](../reference/cli/subcommands.md#keystores-passwords-path) to specify

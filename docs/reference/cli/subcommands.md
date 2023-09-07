@@ -654,6 +654,124 @@ eth1.downstream-http-tls-ca-auth-enabled: false
 Enables or disables connections to servers with trusted CAs.
 The default is `true`.
 
+#### `keystores-password-file`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--keystores-password-file=<FILE>
+```
+
+# Example
+
+```bash
+--keystores-password-file=/Users/me/passwds/keystore_passwords.txt
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_KEYSTORES_PASSWORD_FILE=/Users/me/passwds/keystore_passwords.txt
+```
+
+# Configuration file
+
+```bash
+eth1.keystores-password-file: "/Users/me/passwds/keystore_passwords.txt"
+```
+
+<!--/tabs-->
+
+File that contains the password used by all keystores.
+Cannot be set if [`--keystores-passwords-path`](#keystores-passwords-path) is also specified.
+
+:::note
+Alternatively, use [`--keystores-passwords-path`](#keystores-passwords-path) to specify a directory
+containing a separate password file for each keystore.
+:::
+
+#### `keystores-passwords-path`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--keystores-passwords-path=<PATH>
+```
+
+# Example
+
+```bash
+--keystores-passwords-path=/Users/me/passwds
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_KEYSTORES_PASSWORDS_PATH=/Users/me/passwds
+```
+
+# Configuration file
+
+```bash
+eth1.keystores-passwords-path: "/Users/me/passwds"
+```
+
+<!--/tabs-->
+
+Directory containing password files for corresponding keystores.
+Each password file name must match the corresponding keystore filename, but with a `.txt` extension.
+
+Cannot be set if [`--keystores-password-file`](#keystores-password-file) is also specified.
+
+:::note
+Alternatively, use [`--keystores-password-file`](#keystores-password-file) to specify a single
+password file that contains the password used by all keystores.
+:::
+
+#### `keystores-path`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--keystores-path=<PATH>
+```
+
+# Example
+
+```bash
+--keystores-path=/Users/me/keystores
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_KEYSTORES_PATH=/Users/me/keystores
+```
+
+# Configuration file
+
+```bash
+eth1.keystores-path: "/Users/me/keystores"
+```
+
+<!--/tabs-->
+
+Directory that stores the keystore files.
+Keystore files must use a `.json` file extension.
+
+Use [`--keystores-password-file`](#keystores-password-file) or
+[`--keystores-passwords-path`](#keystores-passwords-path) to specify keystore passwords.
+
+:::caution Important
+Restart Web3Signer if you want to pick up new keystores added to the directory since Web3Signer started.
+:::
+
 ### `eth2`
 
 #### `aws-connection-cache-size`
