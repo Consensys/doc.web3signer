@@ -111,7 +111,7 @@ web3signer eth2 --keystores-path=/Users/me/keystores \
 # Execution layer client
 
 ```bash
-web3signer eth2 --keystores-path=/Users/me/keystores \
+web3signer eth1 --keystores-path=/Users/me/keystores \
 --keystores-passwords-path=/Users/me/passwds
 ```
 
