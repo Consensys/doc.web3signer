@@ -101,7 +101,7 @@ You can bulk load consensus layer or execution layer keys that are stored as key
 
 <!--tabs-->
 
-# Consensys layeer client
+# Consensus layer client
 
 ```bash
 web3signer eth2 --keystores-path=/Users/me/keystores \
