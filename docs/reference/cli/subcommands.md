@@ -1430,14 +1430,17 @@ match the [`--network` value of the connected Teku client](https://docs.teku.con
 
 Possible values are:
 
-| Network | Chain | Type | Description |
-| :-- | :-- | :-- | :-- |
-| `mainnet` | Consensus layer | Production | Main network. |
-| `minimal` | Consensus layer | Test | Used for local testing and development networks. |
-| `goerli` | Consensus layer | Test | Multi-client testnet. |
-| `kiln` | Consensus layer | Test | Multi-client testnet. |
-| `ropsten` | Consensus layer | Test | Multi-client testnet. |
-| `gnosis` | Consensus layer | Test | Multi-client testnet. |
+| Network    | Chain            | Type       | Description                                      |
+| :--------- | :--------------- | :--------- | :----------------------------------------------- |
+| `mainnet`  | Consensus layer  | Production | Ethereum main network.                           |
+| `minimal`  | Consensus layer  | Test       | Used for local testing and development networks. |
+| `goerli`   | Consensus layer  | Test       | Multi-client testnet.                            |
+| `holesky`  | Consensus layer  | Test       | Multi-client testnet.                            |
+| `lukso`    | Consensus layer  | Test       | Multi-client testnet.                            |
+| `kiln`     | Consensus layer  | Test       | Multi-client testnet.                            |
+| `ropsten`  | Consensus layer  | Test       | Multi-client testnet.                            |
+| `gnosis`   | Consensus layer  | Production | Gnosis main network.                             |
+| `chiado`   | Consensus layer  | Test       | Multi-client Gnosis testnet.                     |
 
 #### `slashing-protection-db-health-check-interval-milliseconds`
 
