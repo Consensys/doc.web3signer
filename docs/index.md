@@ -7,6 +7,14 @@ slug: /
 
 # Web3Signer
 
+:::caution Filecoin deprecation notice
+
+Web3Signer has deprecated Filecoin and will remove it in a future release. If you still require this feature, we encourage
+community members to maintain the code by creating a fork and submitting pull requests. Alternatively, you can continue
+using an older version of Web3Signer that still supports Filecoin.
+
+:::
+
 Web3Signer is an open-source signing service developed under the Apache 2.0 license and written in Java.
 
 ## What can you do with Web3Signer?
