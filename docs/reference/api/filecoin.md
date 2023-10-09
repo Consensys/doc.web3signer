@@ -6,7 +6,7 @@ toc_max_heading_level: 2
 
 # Filecoin JSON-RPC API
 
-:::caution "Filecoin deprecation notice"
+:::caution Filecoin deprecation notice
 
 Web3Signer has deprecated Filecoin and will remove it in a future release. If you still require this feature, we encourage
 community members to maintain the code by creating a fork and submitting pull requests. Alternatively, you can continue
