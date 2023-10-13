@@ -51,6 +51,7 @@ changefreq
 changeme
 chedeau
 cheng
+chiado
 clément
 clsx
 codegen
@@ -150,6 +151,7 @@ heuristical
 hideable
 hikari
 hola
+holesky
 horiz
 hostman
 hostnames
@@ -204,6 +206,7 @@ lorber
 lowercased
 lqip
 lunrjs
+lukso
 mapbox
 marcey
 marocchino
