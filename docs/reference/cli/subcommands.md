@@ -1538,7 +1538,7 @@ WEB3SIGNER_ETH2_NETWORK=mainnet
 # Configuration file
 
 ```bash
-network: "mainnet"
+eth2.network: "mainnet"
 ```
 
 <!--/tabs-->
