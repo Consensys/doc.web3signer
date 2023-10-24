@@ -2195,6 +2195,70 @@ watermark-repair.slot: 20000
 
 Low watermark to set the block slot to.
 
+#### `remove-high-watermark`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--remove-high-watermark=<BOOL>
+```
+
+# Example
+
+```bash
+--remove-high-watermark=true
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_REMOVE_HIGH_WATERMARK=true
+```
+
+# Configuration file
+
+```bash
+watermark-repair.remove-high-watermark: true
+```
+
+<!--/tabs-->
+
+Removes high watermark. When set to true, all other subcommand options are ignored.(Default: false)
+
+#### `set-high-watermark`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--set-high-watermark=<BOOL>
+```
+
+# Example
+
+```bash
+--set-high-watermark=true
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_SET_HIGH_WATERMARK=true
+```
+
+# Configuration file
+
+```bash
+watermark-repair.set-high-watermark: true
+```
+
+<!--/tabs-->
+
+Sets high watermark to given epoch and slot. (Sets low watermark when --set-high-watermark=false(Default: false)
+
 #### `validator-ids`
 
 <!--tabs-->
