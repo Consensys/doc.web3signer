@@ -2128,8 +2128,13 @@ The default is `TESTNET`.
 
 ### `watermark-repair`
 
-Updates the [slashing protection low watermark](https://eips.ethereum.org/EIPS/eip-3076) for validators.
-You can only increase the low watermark, not decrease it.
+Updates the [slashing protection low watermark or high watermark](https://eips.ethereum.org/EIPS/eip-3076) for all validators.
+This will not move the low watermark lower, the low watermark can only be increased. If setting the high watermark, 
+care should be taken to set this to a future epoch and slot. Setting a high watermark will prevent the validator from signing at or beyond this point.
+
+:::caution
+We only recommend this subcommand for advanced users.
+:::
 
 #### `epoch`
 
@@ -2161,7 +2166,7 @@ watermark-repair.epoch: 30000
 
 <!--/tabs-->
 
-Low watermark to set the attestation source and target to.
+Low watermark to set the attestation source and target to. (Sets high watermark epoch when --set-high-watermark=true).
 
 #### `slot`
 
@@ -2193,7 +2198,7 @@ watermark-repair.slot: 20000
 
 <!--/tabs-->
 
-Low watermark to set the block slot to.
+Low watermark to set the block slot to. (Sets high watermark slot when --set-high-watermark=true).
 
 #### `remove-high-watermark`
 
@@ -2225,7 +2230,7 @@ watermark-repair.remove-high-watermark: true
 
 <!--/tabs-->
 
-Removes high watermark. When set to true, all other subcommand options are ignored.(Default: false)
+Removes high watermark. When set to true, all other subcommand options are ignored. (Default: false)
 
 #### `set-high-watermark`
 
@@ -2257,40 +2262,7 @@ watermark-repair.set-high-watermark: true
 
 <!--/tabs-->
 
-Sets high watermark to given epoch and slot. (Sets low watermark when --set-high-watermark=false(Default: false)
-
-#### `validator-ids`
-
-<!--tabs-->
-
-# Syntax
-
-```bash
---validator-ids=<KEY>[,<KEY>,...]
-```
-
-# Example
-
-```bash
---validator-ids=0x8f3f44b74d316c3293cced0c48c72e021ef8d145d136f2908931090e7181c3b777498128a348d07b0b9cd3921b5ca537,0x98d083489b3b06b8740da2dfec5cc3c01b2086363fe023a9d7dc1f907633b1ff11f7b99b19e0533e969862270061d884
-```
-
-# Environment variable
-
-```bash
-WEB3SIGNER_WATERMARK_REPAIR_VALIDATOR_IDS=0x8f3f44b74d316c3293cced0c48c72e021ef8d145d136f2908931090e7181c3b777498128a348d07b0b9cd3921b5ca537,0x98d083489b3b06b8740da2dfec5cc3c01b2086363fe023a9d7dc1f907633b1ff11f7b99b19e0533e969862270061d884
-```
-
-# Configuration file
-
-```bash
-watermark-repair.validator-ids: ["0x8f3f44b74d316c3293cced0c48c72e021ef8d145d136f2908931090e7181c3b777498128a348d07b0b9cd3921b5ca537", "0x98d083489b3b06b8740da2dfec5cc3c01b2086363fe023a9d7dc1f907633b1ff11f7b99b19e0533e969862270061d884"]
-```
-
-<!--/tabs-->
-
-List of validator public keys as hexadecimal to apply low watermark update to.
-If none are specified, the low watermark is updated for all validators.
+Sets high watermark to given epoch and slot. (Sets low watermark when --set-high-watermark=false). (Default: false)
 
 <!-- links -->
 
