@@ -2128,9 +2128,10 @@ The default is `TESTNET`.
 
 ### `watermark-repair`
 
-Updates the [slashing protection low watermark or high watermark](https://eips.ethereum.org/EIPS/eip-3076) for all validators.
-This will not move the low watermark lower, the low watermark can only be increased. If setting the high watermark, 
-care should be taken to set this to a future epoch and slot. Setting a high watermark will prevent the validator from signing at or beyond this point.
+Updates the [slashing protection low or high watermark](https://eips.ethereum.org/EIPS/eip-3076) for all validators.
+You can only increase the low watermark, not decrease it.
+If you set the high watermark, you should set this to a future epoch and slot.
+Setting a high watermark prevents the validator from signing at or beyond this point.
 
 :::caution
 We only recommend this subcommand for advanced users.
@@ -2166,7 +2167,8 @@ watermark-repair.epoch: 30000
 
 <!--/tabs-->
 
-Low watermark to set the attestation source and target to. (Sets high watermark epoch when --set-high-watermark=true).
+Low watermark to set the attestation source and target to.
+(Sets the high watermark epoch when [`--set-high-watermark`](#set-high-watermark) is `true`.)
 
 #### `slot`
 
@@ -2198,7 +2200,8 @@ watermark-repair.slot: 20000
 
 <!--/tabs-->
 
-Low watermark to set the block slot to. (Sets high watermark slot when --set-high-watermark=true).
+Low watermark to set the block slot to.
+(Sets the high watermark slot when [`--set-high-watermark`](#set-high-watermark) is `true`.)
 
 #### `remove-high-watermark`
 
@@ -2207,7 +2210,7 @@ Low watermark to set the block slot to. (Sets high watermark slot when --set-hig
 # Syntax
 
 ```bash
---remove-high-watermark=<BOOL>
+--remove-high-watermark=<BOOLEAN>
 ```
 
 # Example
@@ -2230,7 +2233,9 @@ watermark-repair.remove-high-watermark: true
 
 <!--/tabs-->
 
-Removes high watermark. When set to true, all other subcommand options are ignored. (Default: false)
+Removes the high watermark.
+When set to `true`, all other `watermark-repair` options are ignored.
+The default is `false`.
 
 #### `set-high-watermark`
 
@@ -2239,7 +2244,7 @@ Removes high watermark. When set to true, all other subcommand options are ignor
 # Syntax
 
 ```bash
---set-high-watermark=<BOOL>
+--set-high-watermark=<BOOLEAN>
 ```
 
 # Example
@@ -2262,7 +2267,9 @@ watermark-repair.set-high-watermark: true
 
 <!--/tabs-->
 
-Sets high watermark to given epoch and slot. (Sets low watermark when --set-high-watermark=false). (Default: false)
+Sets the high watermark to the specified [epoch](#epoch) and [slot](#slot).
+(Sets the low watermark when [`--set-high-watermark`](#set-high-watermark) is `false`.)
+The default is `false`.
 
 <!-- links -->
 
