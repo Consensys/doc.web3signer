@@ -442,6 +442,7 @@ usbarmory
 vannicatte
 vercel
 verifymethod
+vertx
 vetter
 vfile
 vicenti

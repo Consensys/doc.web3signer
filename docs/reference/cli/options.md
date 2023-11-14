@@ -738,6 +738,39 @@ tls-allow-ca-clients
 
 Allows clients signed with trusted CA certificates to connect.
 
+### `vertx-worker-pool-size`
+
+<!--tabs-->
+
+# Syntax
+
+```bash title="Syntax"
+--vertx-worker-pool-size=<INTEGER>
+```
+
+# Example
+
+```bash
+--vertx-worker-pool-size=40
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_VERTX_WORKER_POOL_SIZE=40
+```
+
+# Configuration file
+
+```bash
+vertx-worker-pool-size: 40
+```
+
+<!--/tabs-->
+
+Vert.x worker pool size used for processing requests.
+The default is `20`.
+
 ### `help`
 
 ```bash title="Syntax"
