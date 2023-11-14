@@ -768,9 +768,8 @@ vertx-worker-pool-size: 40
 
 <!--/tabs-->
 
-Configure the Vert.x worker pool size used for processing requests.
-
-The default value is 20.
+Vert.x worker pool size used for processing requests.
+The default is `20`.
 
 ### `help`
 
