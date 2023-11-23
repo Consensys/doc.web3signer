@@ -81,13 +81,13 @@ To view the command line help for the subcommands:
 # Environment variable
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_VAULT_ENABLED=true
+WEB3SIGNER_ETH1_AZURE_VAULT_ENABLED=true
 ```
 
 # Configuration file
 
 ```bash
-eth2.azure-vault-enabled: true
+eth1.azure-vault-enabled: true
 ```
 
 <!--/tabs-->
@@ -114,13 +114,13 @@ The default is `false`.
 # Environment variable
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_CLIENT_ID=87efaa5b-4029-4b54-98bb2e2e8a11
+WEB3SIGNER_ETH1_AZURE_CLIENT_ID=87efaa5b-4029-4b54-98bb2e2e8a11
 ```
 
 # Configuration file
 
 ```bash
-eth2.azure-client-id: "87efaa5b-4029-4b54-98bb2e2e8a11"
+eth1.azure-client-id: "87efaa5b-4029-4b54-98bb2e2e8a11"
 ```
 
 <!--/tabs-->
@@ -149,18 +149,50 @@ Required when [`--azure-vault-auth-mode`](#azure-vault-auth-mode) is `CLIENT_SEC
 # Environment variable
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_CLIENT_SECRET=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
+WEB3SIGNER_ETH1_AZURE_CLIENT_SECRET=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
 ```
 
 # Configuration file
 
 ```bash
-eth2.azure-client-secret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
+eth1.azure-client-secret: "40"
 ```
 
 <!--/tabs-->
 
 The secret used to access the vault along with the ID specified in [`azure-client-id`](#azure-client-id).
+
+#### `azure-response-timeout`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--azure-response-timeout=<AZURE_RESPONSE_TIMEOUT>
+```
+
+# Example
+
+```bash
+--azure-response-timeout=40
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_AZURE_RESPONSE_TIMEOUT=40
+```
+
+# Configuration file
+
+```bash
+eth1.azure-response-timeout: "40"
+```
+
+<!--/tabs-->
+
+The response timeout used by the HTTP client (in seconds). The default is 60. The timeout can also be set using the `timeout` field in the Azure metadata file. 
 
 #### `azure-tags`
 
@@ -181,13 +213,13 @@ The secret used to access the vault along with the ID specified in [`azure-clien
 # Environment variable
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_TAGS=ENV=prod
+WEB3SIGNER_ETH1_AZURE_TAGS=ENV=prod
 ```
 
 # Configuration file
 
 ```bash
-eth2.azure-tags: "ENV=prod"
+eth1.azure-tags: "ENV=prod"
 ```
 
 <!--/tabs-->
@@ -213,13 +245,13 @@ Tags to filter on with Azure Key Vault.
 # Environment variable
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_TENANT_ID=34255fb0-379b-4a1a-bd47-d211ab86df81
+WEB3SIGNER_ETH1_AZURE_TENANT_ID=34255fb0-379b-4a1a-bd47-d211ab86df81
 ```
 
 # Configuration file
 
 ```bash
-eth2.azure-tenant-id: "34255fb0-379b-4a1a-bd47-d211ab86df81"
+eth1.azure-tenant-id: "34255fb0-379b-4a1a-bd47-d211ab86df81"
 ```
 
 <!--/tabs-->
@@ -245,13 +277,13 @@ The tenant ID of the Azure Portal instance being used.
 # Environment variable
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_VAULT_AUTH_MODE=USER_ASSIGNED_MANAGED_IDENTITY
+WEB3SIGNER_ETH1_AZURE_VAULT_AUTH_MODE=USER_ASSIGNED_MANAGED_IDENTITY
 ```
 
 # Configuration file
 
 ```bash
-eth2.azure-vault-auth-mode: "USER_ASSIGNED_MANAGED_IDENTITY"
+eth1.azure-vault-auth-mode: "USER_ASSIGNED_MANAGED_IDENTITY"
 ```
 
 <!--/tabs-->
@@ -281,13 +313,13 @@ Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or `USER_AS
 # Environment variable
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_VAULT_NAME=AzureKeyVault
+WEB3SIGNER_ETH1_AZURE_VAULT_NAME=AzureKeyVault
 ```
 
 # Configuration file
 
 ```bash
-eth2.azure-vault-name: "AzureKeyVault"
+eth1.azure-vault-name: "AzureKeyVault"
 ```
 
 <!--/tabs-->
@@ -615,7 +647,7 @@ The default is `false`.
 # Environment variable
 
 ```bash
-WEB3SIGNER_DOWNSTREAM_HTTP_TLS_KNOWN_SERVERS_FILE=/Users/me/my_node/knownServers
+WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_TLS_KNOWN_SERVERS_FILE=/Users/me/my_node/knownServers
 ```
 
 # Configuration file
@@ -1224,6 +1256,38 @@ eth2.azure-client-secret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
 <!--/tabs-->
 
 The secret used to access the vault along with the ID specified in [`azure-client-id`](#azure-client-id).
+
+#### `azure-response-timeout`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--azure-response-timeout=<AZURE_RESPONSE_TIMEOUT>
+```
+
+# Example
+
+```bash
+--azure-response-timeout=40
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_AZURE_RESPONSE_TIMEOUT=40
+```
+
+# Configuration file
+
+```bash
+eth2.azure-response-timeout: "40"
+```
+
+<!--/tabs-->
+
+The response timeout used by the HTTP client (in seconds). The default is 60. The timeout can also be set using the `timeout` field in the Azure metadata file.
 
 #### `azure-tags`
 
