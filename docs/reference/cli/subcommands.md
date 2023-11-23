@@ -155,7 +155,7 @@ WEB3SIGNER_ETH1_AZURE_CLIENT_SECRET=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
 # Configuration file
 
 ```bash
-eth1.azure-client-secret: "40"
+eth1.azure-client-secret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
 ```
 
 <!--/tabs-->
