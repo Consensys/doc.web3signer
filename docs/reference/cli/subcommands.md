@@ -295,6 +295,38 @@ eth2.azure-vault-name: "AzureKeyVault"
 Name of the vault to access.
 Subdomain of `vault.azure.net`.
 
+#### `chain-id`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--chain-id=<LONG>
+```
+
+# Example
+
+```bash
+--chain-id=2017
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_CHAIN_ID=2017
+```
+
+# Configuration file
+
+```bash
+eth1.chain-id: "2017"
+```
+
+<!--/tabs-->
+
+Chain ID of the chain intended to receive the signed transactions. The Besu documentation lists [chain IDs for public networks](https://besu.hyperledger.org/development/public-networks/concepts/network-and-chain-id). 
+
 #### `downstream-http-host`
 
 <!--tabs-->
