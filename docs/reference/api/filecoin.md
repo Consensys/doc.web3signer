@@ -1,5 +1,5 @@
 ---
-description: Filecoin JSON-RPC API reference
+description: This API has been deprecated
 sidebar_position: 3
 toc_max_heading_level: 2
 ---

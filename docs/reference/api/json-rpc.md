@@ -1,5 +1,5 @@
 ---
-description: Web3Signer JSON-RPC API reference
+description: Use for signing execution layer payloads 
 sidebar_position: 1
 ---
 
