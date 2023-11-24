@@ -62,6 +62,342 @@ To view the command line help for the subcommands:
 
 ### `eth1`
 
+#### `aws-connection-cache-size`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-connection-cache-size=<LONG>
+```
+
+# Example
+
+```bash
+--aws-connection-cache-size=5
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_AWS_CONNECTION_CACHE_SIZE=5
+```
+
+# Configuration file
+
+```bash
+eth1.aws-connection-cache-size: 5
+```
+
+<!--/tabs-->
+
+When [loading multiple keys from AWS Secrets
+Manager](../../how-to/store-keys-vaults/aws.md#cache-aws-secrets-manager-when-loading-multiple-keys),
+set to the maximum number of connections to cache.
+The default is 1.
+
+#### `aws-endpoint-override`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-endpoint-override=<ENDPOINT_URL>
+```
+
+# Example
+
+```bash
+--aws-endpoint-override=http://localstack:4566
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_AWS_ENDPOINT_OVERRIDE=http://localstack:4566
+```
+
+# Configuration file
+
+```bash
+eth1.aws-endpoint-override="http://localstack:4566"
+```
+
+<!--/tabs-->
+
+Endpoint override for AWS KMS.
+This is useful for local testing against LocalStack.
+
+#### `aws-kms-access-key-id`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-kms-access-key-id=<STRING>
+```
+
+# Example
+
+```bash
+--aws-kms-access-key-id=AKIA...EXAMPLE
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_AWS_KMS_ACCESS_KEY_ID=AKIA...EXAMPLE
+```
+
+# Configuration file
+
+```bash
+eth1.aws-kms-access-key-id: "AKIA...EXAMPLE"
+```
+
+<!--/tabs-->
+
+AWS Access Key ID to authenticate AWS KMS. Required for `SPECIFIED` authentication mode.
+
+#### `aws-kms-auth-mode`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-kms-auth-mode=<STRING>
+```
+
+# Example
+
+```bash
+--aws-kms-auth-mode=ENVIRONMENT
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_AWS_SECRETS_AUTH_MODE=ENVIRONMENT
+```
+
+# Configuration file
+
+```bash
+eth1.aws-secrets-auth-mode: "ENVIRONMENT"
+```
+
+<!--/tabs-->
+
+Authentication mode for AWS KMS.
+Options are `SPECIFIED` and `ENVIRONMENT`.
+The default is `SPECIFIED`.
+
+Set [`--aws-kms-access-key-id`](#aws-kms-access-key-id),
+[`--aws-kms-secret-access-key`](#aws-kms-secret-access-key), and
+[`--aws-kms-region`](#aws-kms-region) if using `SPECIFIED`.
+
+#### `aws-kms-client-cache-size`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-kms-client-cache-size=<LONG>
+```
+
+# Example
+
+```bash
+--aws-kms-client-cache-size=5
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_AWS_KMS_CLIENT_CACHE_SIZE=5
+```
+
+# Configuration file
+
+```bash
+eth1.aws-kms-client-cache-size: "5"
+```
+
+<!--/tabs-->
+
+Specifies the AWS KMS client cache size. Set based on the number of credentials 
+used to access the service, plus the number of regions the service is accessed from. The default is 1.
+
+#### `aws-kms-enabled`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-kms-enabled=<BOOLEAN>
+```
+
+# Example
+
+```bash
+--aws-kms-enabled=true
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_AWS_KMS_ENABLED=true
+```
+
+# Configuration file
+
+```bash
+eth1.aws-kms-enabled: "true"
+```
+
+<!--/tabs-->
+
+Set to true to enable bulk loading from the AWS KMS. The default is false. 
+
+#### `aws-kms-region`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-kms-region=<STRING>
+```
+
+# Example
+
+```bash
+--aws-kms-region=us-east-2
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_AWS_KMS_REGION=us-east-2
+```
+
+# Configuration file
+
+```bash
+eth1.aws-kms-region: "us-east-2"
+```
+
+<!--/tabs-->
+
+AWS region where AWS KMS is available.
+
+Required when [`--aws-kms-auth-mode`](#aws-kms-auth-mode) is `SPECIFIED`.
+
+#### `aws-kms-secret-access-key`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-kms-secret-access-key=<STRING>
+```
+
+# Example
+
+```bash
+--aws-kms-secret-access-key=sk...EXAMPLE
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_AWS_KMS_SECRET_ACCESS_KEY=sk...EXAMPLE
+```
+
+# Configuration file
+
+```bash
+eth1.aws-kms-secret-access-key: "sk...EXAMPLE"
+```
+
+<!--/tabs-->
+
+AWS secret access key to authenticate AWS KMS. Required for [`SPECIFIED`](#aws-kms-auth-mode) authentication mode.
+
+#### `aws-kms-tag-names-filter`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-kms-tag-names-filter=<STRING>[,<STRING>,...]
+```
+
+# Example
+
+```bash
+--aws-kms-tag-names-filter=tagName1,tagName2
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_AWS_KMS_TAG_NAMES_FILTER=tagName1,tagName2
+```
+
+# Configuration file
+
+```bash
+eth1.aws-kms-tag-names-filter: ["tagName1","tagName2"]
+
+```
+
+<!--/tabs-->
+
+Optional comma-separated list of tag names filter to apply while fetching key IDs from AWS KMS.
+Applied as `AND` operation with other filters.
+
+#### `aws-kms-tag-values-filter`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--aws-kms-tag-values-filter=<STRING>[,<STRING>,...]
+```
+
+# Example
+
+```bash
+--aws-kms-tag-values-filter=tagValue1,tagValue2
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH1_AWS_KMS_TAG_VALUES_FILTER=tagValue1,tagValue2
+```
+
+# Configuration file
+
+```bash
+eth1.aws-kms-tag-values-filter: ["tagValue1","tagValue2"]
+```
+
+<!--/tabs-->
+
+Optional comma-separated list of tag values filter to apply while fetching key IDs from AWS KMS.
+Applied as `AND` operation with other filters.
+
 #### `azure-vault-enabled`
 
 <!--tabs-->
