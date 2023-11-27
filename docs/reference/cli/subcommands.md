@@ -192,7 +192,7 @@ eth1.azure-response-timeout: "40"
 
 <!--/tabs-->
 
-The response timeout used by the HTTP client (in seconds). The default is 60. The timeout can also be set using the `timeout` field in the Azure metadata file. 
+The response timeout used by the HTTP client (in seconds). The default is 60. You can also set the timeout using the `timeout` field in the Azure metadata file. 
 
 #### `azure-tags`
 
@@ -1287,7 +1287,7 @@ eth2.azure-response-timeout: "40"
 
 <!--/tabs-->
 
-The response timeout used by the HTTP client (in seconds). The default is 60. The timeout can also be set using the `timeout` field in the Azure metadata file.
+The response timeout used by the HTTP client (in seconds). The default is 60. You can also set the timeout using the `timeout` field in the Azure metadata file.
 
 #### `azure-tags`
 
