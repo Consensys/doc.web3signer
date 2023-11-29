@@ -14,4 +14,4 @@ The server (in this example, [Hyperledger Besu](https://besu.hyperledger.org/)) 
 to accept TLS connections.
 
 Use the command line options to configure TLS on [HTTP JSON-RPC requests](../how-to/configure-tls.md)
-and [HashiCorp Vault](../how-to/store-keys-vaults/hashicorp.md).
+and [HashiCorp Vault](../how-to/store-keys-vaults/hashicorp.mdx).

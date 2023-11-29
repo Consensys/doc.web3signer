@@ -3,6 +3,8 @@ title: Use signing keys
 description: Use BLS12-381 and secp256k1 signing keys.
 sidebar_position: 2
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Use signing keys
 
@@ -11,7 +13,7 @@ Web3Signer supports BLS12-381 or secp256k1 signing keys stored in:
 - Raw unencrypted files
 - [Keystore files](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md)
 - Vaults:
-  - [HashiCorp Vault](store-keys-vaults/hashicorp.md)
+  - [HashiCorp Vault](store-keys-vaults/hashicorp.mdx)
   - [Azure Key Vault](store-keys-vaults/azure.md)
   - [AWS Secrets Manager](store-keys-vaults/aws.md)
 - Hardware Security Modules (HSMs):
@@ -21,10 +23,10 @@ Web3Signer supports BLS12-381 or secp256k1 signing keys stored in:
 You can configure access to the signing key by:
 
 - [Creating a key configuration file].
-- Using the [`eth2` subcommand options](../reference/cli/subcommands.md#eth2) to bulk load consensus
+- Using the [`eth2` subcommand options](../reference/cli/subcommands#eth2) to bulk load consensus
   layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Secrets Manager](#aws-secrets-manager),
   or [keystore files](#keystore-files).
-- Using the [`eth1` subcommand options](../reference/cli/subcommands.md#eth1) to bulk load execution
+- Using the [`eth1` subcommand options](../reference/cli/subcommands#eth1) to bulk load execution
     layer signing keys stored in [Azure Key Vault](#azure-key-vault) or [keystore files](#keystore-files).
 
 :::note
@@ -41,7 +43,7 @@ single file by adding a triple-dash separator (`---`) between configurations.
 The configuration file must be YAML-formatted, and can use any naming format, but must have the `.yaml` extension.
 
 Place one or more key configuration files in a single directory which you specify when starting Web3Signer.
-Use the [`--key-store-path`](../reference/cli/options.md#key-store-path) option to specify the
+Use the [`--key-store-path`](../reference/cli/options#key-store-path) option to specify the
 location of the key configuration files.
 
 ```bash
@@ -53,12 +55,12 @@ web3signer --key-store-path=/Users/me/keyFiles/ eth2
 ### Azure Key Vault
 
 You can bulk load keys that are stored in Azure Key Vault using the Web3Signer
-[`eth1` subcommand options](../reference/cli/subcommands.md#eth1) or
-[`eth2` subcommand options](../reference/cli/subcommands.md#eth2).
+[`eth1` subcommand options](../reference/cli/subcommands#eth1) or
+[`eth2` subcommand options](../reference/cli/subcommands#eth2).
 
-<!--tabs-->
+<Tabs>
 
-# Consensus layer client
+  <TabItem value="Consensus layer client" label="Consensus layer client" default>
 
 ```bash
 web3signer eth2 --azure-vault-enabled=true --azure-client-id=87efaa5b-4029-4b54-98bb2e2e8a11 \
@@ -67,7 +69,8 @@ web3signer eth2 --azure-vault-enabled=true --azure-client-id=87efaa5b-4029-4b54-
 --azure-vault-name=AzureKeyVault
 ```
 
-# Execution layer client
+  </TabItem>
+  <TabItem value="Execution layer client" label="Execution layer client" default>
 
 ```bash
 web3signer eth1 --azure-vault-enabled=true --azure-client-id=87efaa5b-4029-4b54-98bb2e2e8a11 \
@@ -76,12 +79,13 @@ web3signer eth1 --azure-vault-enabled=true --azure-client-id=87efaa5b-4029-4b54-
 --azure-vault-name=AzureKeyVault
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 ### AWS Secrets Manager
 
 You can bulk load consensus layer keys that are stored in AWS Secrets Manager using the Web3Signer
-[`eth2` subcommand options](../reference/cli/subcommands.md#eth2).
+[`eth2` subcommand options](../reference/cli/subcommands#eth2).
 
 The AWS bulk load mode supports loading multiple consensus layer keys from the same secret, if keys
 are stored with a line terminating character such as `\n`.
@@ -97,26 +101,28 @@ web3signer eth2 --aws-secrets-enabled=true --aws-secrets-access-key-id=AKIA...EX
 ### Keystore files
 
 You can bulk load consensus layer or execution layer keys that are stored as keystore files using the Web3Signer
-[`eth1` subcommand options](../reference/cli/subcommands.md#eth1) or
-[`eth2` subcommand options](../reference/cli/subcommands.md#eth2).
+[`eth1` subcommand options](../reference/cli/subcommands#eth1) or
+[`eth2` subcommand options](../reference/cli/subcommands#eth2).
 
-<!--tabs-->
+<Tabs>
 
-# Consensus layer client
+  <TabItem value="Consensus layer client" label="Consensus layer client" default>
 
 ```bash
 web3signer eth2 --keystores-path=/Users/me/keystores \
 --keystores-passwords-path=/Users/me/passwds
 ```
 
-# Execution layer client
+  </TabItem>
+  <TabItem value="Execution layer client" label="Execution layer client" default>
 
 ```bash
 web3signer eth1 --keystores-path=/Users/me/keystores \
 --keystores-passwords-path=/Users/me/passwds
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Use the `eth1` or `eth2` `--keystores-password-file` or `--keystores-passwords-path` command line option to specify
 keystore passwords.
@@ -128,21 +134,23 @@ the keys to ensure Web3Signer registers the new or modified keys.
 Use the [`reload`](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Reload-Signer-Keys)
 endpoint to reload the keys in Web3Signer.
 
-<!--tabs-->
+<Tabs>
 
-# curl request
+  <TabItem value="curl request" label="curl request" default>
 
 ```bash
 curl -X POST http://localhost:9000/reload
 ```
 
-# Result
+  </TabItem>
+  <TabItem value="Result" label="Result" default>
 
 ```json
 200 Call is successful
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 ## Manage keys
 
@@ -151,7 +159,7 @@ endpoints](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Keyma
 You can [list keys](#list-keys), [import keystores](#import-keystores), and [delete keys](#delete-keys).
 
 Enable the key manager API by running Web3Signer using the
-[`--key-manager-api-enabled`](../reference/cli/subcommands.md#key-manager-api-enabled) subcommand option.
+[`--key-manager-api-enabled`](../reference/cli/subcommands#key-manager-api-enabled) subcommand option.
 
 :::caution warning
 The key manager API is an early access feature and is still in development.
@@ -162,15 +170,16 @@ The key manager API is an early access feature and is still in development.
 List all validating public keys known to and decrypted by the keystore using the
 [`list keys` endpoint](https://consensys.github.io/web3signer/web3signer-eth2.html#operation/KEYMANAGER_LIST).
 
-<!--tabs-->
+<Tabs>
 
-# curl request
+  <TabItem value="curl request" label="curl request" default>
 
 ```bash
 curl -X GET http://localhost:9000/eth/v1/keystores
 ```
 
-# Result
+  </TabItem>
+  <TabItem value="Result" label="Result" default>
 
 ```json
 {
@@ -184,16 +193,17 @@ curl -X GET http://localhost:9000/eth/v1/keystores
 }
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 ### Import keystores
 
 Import keystores generated by the consensus layer deposit CLI tooling using the
 [`import keystores` endpoint](https://consensys.github.io/web3signer/web3signer-eth2.html#operation/KEYMANAGER_IMPORT).
 
-<!--tabs-->
+<Tabs>
 
-# curl request
+  <TabItem value="curl request" label="curl request" default>
 
 ```bash
 curl -X POST http://127.0.0.1:9000/eth/v1/keystores --header "Content-Type: application/json"
@@ -208,7 +218,8 @@ curl -X POST http://127.0.0.1:9000/eth/v1/keystores --header "Content-Type: appl
   }'
 ```
 
-# Result
+  </TabItem>
+  <TabItem value="Result" label="Result" default>
 
 ```json
 {
@@ -221,22 +232,24 @@ curl -X POST http://127.0.0.1:9000/eth/v1/keystores --header "Content-Type: appl
 }
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 ### Delete keys
 
 Delete keys using the [`delete keys`
 endpoint](https://consensys.github.io/web3signer/web3signer-eth2.html#operation/KEYMANAGER_DELETE).
 
-<!--tabs-->
+<Tabs>
 
-# curl request
+  <TabItem value="curl request" label="curl request" default>
 
-```bash
+ ```bash
 curl -X DELETE http://localhost:9000/eth/v1/keystores --data '{"pubkeys": ["0x93247f2209abcacf57b75a51dafae777f9dd38bc7053d1af526f220a7489a6d3a2753e5f3e8b1cfe39b56f43611df74a"]}'
 ```
 
-# Result
+  </TabItem>
+  <TabItem value="Result" label="Result" default>
 
 ```json
 {
@@ -250,9 +263,10 @@ curl -X DELETE http://localhost:9000/eth/v1/keystores --data '{"pubkeys": ["0x93
 }
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 <!-- Link -->
 
-[key configuration file]: ../reference/key-config-file-params.md
+[key configuration file]: ../reference/key-config-file-params.mdx
 [Creating a key configuration file]: #use-key-configuration-files

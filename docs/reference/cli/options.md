@@ -4,6 +4,9 @@ description: Web3Signer command line options reference
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Web3Signer command line options
 
 This reference describes the syntax of the Web3Signer Command Line Interface (CLI) options.
@@ -29,157 +32,174 @@ variable, configuration file.
 Path to the [YAML configuration file](../../how-to/use-configuration-file.md).
 The default is `none`.
 
-<!--tabs-->
-
-# Syntax
+<Tabs>
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --config-file=<FILE>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --config-file=/home/me/me_node/config.yaml
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_CONFIG_FILE=/home/me/me_node/config.yaml
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 ### `data-path`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --data-path=<PATH>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --data-path=/Users/me/my_node/data
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_DATA_PATH=/Users/me/my_node/data
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 data-path: "/Users/me/my_node/data"
 ```
-
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Directory in which to store temporary files.
 
 ### `key-config-path`, `key-store-path`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --key-config-path=<PATH>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --key-config-path=/Users/me/keys
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_KEY_CONFIG_PATH=/Users/me/keys
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 key-config-path: "/Users/me/keys"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Path to the directory containing the [YAML files required to access keys].
 
 ### `key-store-config-file-max-size`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --key-store-config-file-max-size=<INTEGER>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --key-store-config-file-max-size=158000000
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_KEY_STORE_CONFIG_FILE_MAX_SIZE=158000000
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 key-store-config-file-max-size: 158000000
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The maximum signing key configuration file size in bytes.
 This is useful when you're loading a large number of [signing key configurations from a single
-file](../key-config-file-params.md).
+file](../key-config-file-params).
 
 The default size is 104857600 bytes (100 MB).
 
 ### `logging`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 -l, --logging=<LEVEL>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --logging=DEBUG
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_LOGGING=DEBUG
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 logging: "DEBUG"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Sets logging verbosity.
 Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, `TRACE`, `ALL`.
@@ -187,33 +207,37 @@ The default is `INFO`.
 
 ### `http-cors-origins`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --http-cors-origins=<httpListenHost>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --http-cors-origins=""http://medomain.com"
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_HTTP_CORS_ORIGINS=""http://medomain.com"
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 http-cors-origins=["https://meotherdomain.com"]
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 A list of domain URLs for CORS validation.
 You must enclose the URLs in double quotes and separate them with commas.
@@ -231,99 +255,111 @@ We don't recommend accepting requests from any domain for production environment
 
 ### `http-listen-host`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --http-listen-host=<httpListenHost>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --http-listen-host=8.8.8.8
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_HTTP_LISTEN_HOST=8.8.8.8
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 http-listen-host: "8.8.8.8"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Host on which HTTP listens.
 The default is `localhost`.
 
 ### `http-listen-port`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --http-listen-port=<httpListenPort>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --http-listen-port=6174
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_HTTP_LISTEN_PORT=6174
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 http-listen-port: 6174
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Port on which HTTP listens.
 The default is 9000.
 
 ### `http-host-allowlist`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --http-host-allowlist=<hostname>[,<hostname>...]... or "*"
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --http-host-allowlist=medomain.com,meotherdomain.com
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_HTTP_HOST_ALLOWLIST=medomain.com,meotherdomain.com
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 http-host-allowlist: ["medomain.com", "meotherdomain.com"]
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 A comma-separated list of hostnames to allow access to the REST APIs.
 By default, Web3Signer accepts access from `localhost` and `127.0.0.1`.
@@ -335,198 +371,222 @@ We don't recommend allowing all hostnames for production environments.
 
 ### `idle-connection-timeout-seconds`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --idle-connection-timeout-seconds=<TIMEOUT>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --idle-connection-timeout-seconds=60
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_IDLE_CONNECTION_TIMEOUT_SECONDS=60
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 idle-connection-timeout-seconds: 60
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Number of seconds to wait before terminating an idle connection.
 The default is 30.
 
 ### `metrics-enabled`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --metrics-enabled[=<BOOLEAN>]
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --metrics-enabled=true
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_METRICS_ENABLED=true
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 metrics-enabled: true
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Enables the metrics exporter.
 The default is `false`.
 
 ### `metrics-host`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --metrics-host=<HOST>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --metrics-host=186.10.10.1
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_METRICS_HOST=186.10.10.1
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 metrics-host: "186.10.10.1"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The host on which [Prometheus](https://prometheus.io/) accesses metrics.
 The default is `127.0.0.1`.
 
 ### `metrics-port`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --metrics-port=<PORT>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --metrics-port=6174
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_METRICS_PORT=6174
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 metrics-port: 6174
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The port (TCP) on which [Prometheus](https://prometheus.io/) accesses metrics.
 The default is `9001`.
 
 ### `metrics-category`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --metrics-category=<metrics-category>[,metrics-category...]...
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --metrics-category=HTTP,SIGNING,JVM
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_METRICS_CATEGORY=HTTP,SIGNING,JVM
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 metrics-category: ["HTTP", "SIGNING", "JVM"]
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 A comma-separated list of categories for which to track metrics.
 The defaults are `HTTP`, `SIGNING`, `FILECOIN`, `ETH2_SLASHING_PROTECTION`, `JVM`, `PROCESS`.
 
 ### `metrics-host-allowlist`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --metrics-host-allowlist=<hostname>[,<hostname>...]... or "*"
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --metrics-host-allowlist=medomain.com,meotherdomain.com
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_METRICS_HOST_ALLOWLIST=medomain.com,meotherdomain.com
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 metrics-host-allowlist: ["medomain.com", "meotherdomain.com"]
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 A comma-separated list of hostnames to allow access to the [Web3Signer metrics].
 By default, Web3Signer accepts access from `localhost` and `127.0.0.1`.
@@ -538,33 +598,37 @@ We don't recommend allowing all hostnames for production environments.
 
 ### `swagger-ui-enabled`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --swagger-ui-enabled[=<BOOLEAN>]
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --swagger-ui-enabled
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_SWAGGER-UI_ENABLED=true
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 swagger-ui-enabled: true
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Set to true to interact with APIs using [Swagger UI].
 The default is `false`.
@@ -578,98 +642,110 @@ The default location is `http://localhost:9000/swagger-ui`.
 
 ### `tls-keystore-file`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --tls-keystore-file=<keystoreFile>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --tls-keystore-file=/Users/me/my_node/certificate.pfx
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_TLS_KEYSTORE_FILE=/Users/me/my_node/certificate.pfx
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 tls-keystore-file: "/Users/me/my_node/certificate.pfx"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 PKCS #12 formatted keystore.
 Used to enable TLS for [client connections](../../how-to/configure-tls.md).
 
 ### `tls-keystore-password-file`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --tls-keystore-password-file=<passwordFile>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --tls-keystore-password-file=/Users/me/my_node/password.txt
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_TLS_KEYSTORE_PASSWORD_FILE=/Users/me/my_node/password.txt
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 tls-keystore-password-file: "/Users/me/my_node/password.txt"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Password file used to decrypt the keystore.
 
 ### `tls-allow-any-client`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --tls-allow-any-client=<BOOLEAN>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --tls-allow-any-client=true
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_TLS_ALLOW_ANY_CLIENT=true
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 tls-allow-any-client: true
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Allows any client to connect.
 The default is `false`.
@@ -681,92 +757,103 @@ You can't use this option with [`--tls-allow-ca-clients`](#tls-allow-ca-clients)
 
 ### `tls-known-clients-file`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --tls-known-clients-file=<clientsFile>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --tls-known-clients-file=/Users/me/my_node/knownClients.txt
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_TLS_KNOWN_CLIENTS_FILE=/Users/me/my_node/knownClients.txt
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 tls-known-clients-file: "/Users/me/my_node/knownClients.txt"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 File containing the Common Names and SHA-256 fingerprints of [authorized
-clients](../../how-to/configure-tls.md#create-the-known-clients-file).
+clients](../../how-to/configure-tls#create-the-known-clients-file).
 
 ### `tls-allow-ca-clients`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --tls-allow-ca-clients
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_TLS_ALLOW_CA_CLIENTS
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 tls-allow-ca-clients
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Allows clients signed with trusted CA certificates to connect.
 
 ### `vertx-worker-pool-size`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash title="Syntax"
 --vertx-worker-pool-size=<INTEGER>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" default>
 
 ```bash
 --vertx-worker-pool-size=40
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" default>
 
 ```bash
 WEB3SIGNER_VERTX_WORKER_POOL_SIZE=40
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" default>
 
 ```bash
 vertx-worker-pool-size: 40
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Vert.x worker pool size used for processing requests.
 The default is `20`.
@@ -789,6 +876,6 @@ Displays the version and exits.
 
 <!-- links -->
 
-[YAML files required to access keys]: ../key-config-file-params.md
+[YAML files required to access keys]: ../key-config-file-params
 [Web3Signer metrics]: ../../how-to/monitor/metrics.md
 [Swagger UI]: https://swagger.io/tools/swagger-ui/

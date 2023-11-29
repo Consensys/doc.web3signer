@@ -14,7 +14,7 @@ A slashing protection database records each block and attestation signed by a va
 
 Slashing protection is enabled by default, and you are responsible for [creating and maintaining]
 the required PostgreSQL database, or you can disable slashing protection by setting
-[`--slashing-protection-enabled`](../reference/cli/subcommands.md#slashing-protection-enabled) to `false`.
+[`--slashing-protection-enabled`](../reference/cli/subcommands#slashing-protection-enabled) to `false`.
 
 :::info
 Web3Signer only supports PostgreSQL for creating the slashing protection database.
@@ -26,4 +26,4 @@ instance actually signs.
 
 <!--links-->
 
-[creating and maintaining]: ../how-to/configure-slashing-protection.md
+[creating and maintaining]: ../how-to/configure-slashing-protection.mdx

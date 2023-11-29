@@ -4,6 +4,9 @@ description: Signing key configuration file parameters
 sidebar_position: 3
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Signing key configuration file parameters
 
 A [signing key configuration file] is a YAML file that defines the parameters to access one or more
@@ -14,7 +17,7 @@ You can specify multiple key configurations in a single configuration file by ad
 separator (`---`) between configurations.
 
 Specify a maximum file size limit for your signing key configuration file with the
-[`--key-store-config-file-max-size`](cli/options.md#key-store-config-file-max-size) command line option.
+[`--key-store-config-file-max-size`](cli/options#key-store-config-file-max-size) command line option.
 The default size is 100 MB.
 :::
 
@@ -54,7 +57,7 @@ keystorePasswordFile: "95e57532ede3c1dd879061153f9cfdcdefa9dc5fb9c954a6677bc6641
 
 ## HashiCorp Vault
 
-Use the private key stored in [HashiCorp Vault](../how-to/store-keys-vaults/hashicorp.md).
+Use the private key stored in [HashiCorp Vault](../how-to/store-keys-vaults/hashicorp.mdx).
 
 ```bash
 type: "hashicorp"
@@ -93,10 +96,9 @@ Supports two signing options:
 - `azure-secret` - Web3Signer fetches the keys from the vault and signs locally.
   Supports SECP256K1 and BLS12-381 signing keys.
 
-<!--tabs-->
+<Tabs>
 
-# azure-secret
-
+   <TabItem value="azure-secret" label="azure-secret" default>
 ```
 type: "azure-secret"
 keyType: "BLS"
@@ -107,7 +109,8 @@ vaultName: "AzureKeyVault"
 secretName: "SecretName"
 ```
 
-# azure-key
+  </TabItem>
+   <TabItem value="azure-key" label="azure-key" default>
 
 ```
 type: "azure-key"
@@ -117,8 +120,8 @@ tenantId: "***"
 vaultName: "AzureKeyVault"
 keyName: "KeyName"
 ```
-
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 | Key | Description |
 | --- | --- |
@@ -209,9 +212,9 @@ keyPath: /key1.txt
 
 <!-- Links -->
 
-[signing key configuration file]: ../how-to/use-signing-keys.md
+[signing key configuration file]: ../how-to/use-signing-keys.mdx
 [keystore file]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md
 [PKCS#11 module]: https://developers.yubico.com/YubiHSM2/Component_Reference/PKCS_11/
 [connector service]: https://developers.yubico.com/yubihsm-connector/
 [Interlock application]: https://github.com/f-secure-foundry/interlock/blob/master/README.md
-[File used by Web3Signer]: ../how-to/store-keys-hsm/usb-armory.md#known-server-file
+[File used by Web3Signer]: ../how-to/store-keys-hsm/usb-armory#known-server-file
