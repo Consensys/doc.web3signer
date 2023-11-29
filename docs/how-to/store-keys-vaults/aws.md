@@ -75,6 +75,6 @@ When loading multiple keys from AWS Secrets Manager, the AWS client is created e
 You can improve performance by caching and reusing the same AWS Secrets Manager for each key that
 uses the same access key ID and region.
 
-Set the [`eth2 --aws-connection-cache-size`](../../reference/cli/subcommands#aws-connection-cache-size)
+Set the [`eth2 --aws-connection-cache-size`](../../reference/cli/subcommands.mdx#aws-connection-cache-size)
 option to the maximum number of AWS Secrets Manager connections to cache.
 The default is 1.

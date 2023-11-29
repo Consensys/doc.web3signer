@@ -84,7 +84,7 @@ web3signer --key-store-path=/Users/me/keys eth2 --network=goerli --slashing-prot
 ```
 
 :::note
-Set the [`--slashing-protection-enabled`](../reference/cli/subcommands#slashing-protection-enabled)
+Set the [`--slashing-protection-enabled`](../reference/cli/subcommands.mdx#slashing-protection-enabled)
 `eth2` subcommand option to `false` to disable slashing protection.
 However, we don't recommend this on Mainnet.
 :::
