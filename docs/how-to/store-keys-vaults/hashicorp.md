@@ -60,7 +60,7 @@ After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-sta
    value    17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
    ```
    </TabItem>
-   <TabItem value="Result if v1" label="Result if v1" default>
+   <TabItem value="Result if v1" label="Result if v1" >
 
    ```text
    ==== Data ====
@@ -84,7 +84,7 @@ After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-sta
    ```
 
   </TabItem>
-  <TabItem value="Example" label="Example" default>
+  <TabItem value="Example" label="Example" >
 
    ```bash
    vault kv put secret/web3signerSigningKey value=17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
@@ -96,10 +96,10 @@ After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-sta
 ## Create the known servers file
 
 The known servers file is required if TLS is enabled, to disable TLS set
-[`tlsEnabled`](../../reference/key-config-file-params#hashicorp-vault) to `false`.
+[`tlsEnabled`](../../reference/key-config-file-params.md#hashicorp-vault) to `false`.
 
 Specify the location of the known servers file in the
-[`tlsKnownServersPath`](../../reference/key-config-file-params#hashicorp-vault) option of the
+[`tlsKnownServersPath`](../../reference/key-config-file-params.md#hashicorp-vault) option of the
 [signing key configuration file].
 
 The file contents use the format `<hostname>:<port> <hex-string>` where:
@@ -117,6 +117,6 @@ localhost:8200 7C:B3:3E:F9:98:43:5E:62:69:9F:A9:9D:41:14:03:BA:83:24:AC:04:CE:BD
 
 <!-- Links -->
 
-[signing key configuration file]: ../use-signing-keys.mdx
+[signing key configuration file]: ../use-signing-keys.md
 [Start Teku]: https://docs.teku.consensys.net/get-started/start-teku
-[Start Web3Signer and specify the location of the signing key configuration file]: ../../get-started/start-web3signer.mdx
+[Start Web3Signer and specify the location of the signing key configuration file]: ../../get-started/start-web3signer.md

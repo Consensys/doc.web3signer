@@ -35,7 +35,7 @@ bin/web3signer --help
 ```
 
   </TabItem>
-  <TabItem value="Windows" label="Windows" default>
+  <TabItem value="Windows" label="Windows">
 
 ```bat
 bin\web3signer --help

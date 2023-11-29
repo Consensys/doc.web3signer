@@ -12,8 +12,8 @@ Web3Signer provides two methods to configure logging:
 
 ## Basic log level setting
 
-Use the [`--logging`](../../reference/cli/options.mdx#logging) command line option to specify logging verbosity.
-The [`--logging`](../../reference/cli/options.mdx#logging) option changes the volume of events
+Use the [`--logging`](../../reference/cli/options.md#logging) command line option to specify logging verbosity.
+The [`--logging`](../../reference/cli/options.md#logging) option changes the volume of events
 displayed in the log.
 Valid log levels are `OFF`, `FATAL`, `ERROR`, `WARN`, `INFO`, `DEBUG`, `TRACE`, `ALL`.
 The default level is `INFO`.

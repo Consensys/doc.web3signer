@@ -19,8 +19,8 @@ using an older version of Web3Signer that still supports Filecoin.
 
 Access Filecoin JSON-RPC API methods at `http://<HOST>:<PORT>/rpc/v1/filecoin`, where:
 
-- `<HOST>` is specified using [`--http-listen-host`](../cli/options.mdx#http-listen-host).
-- `<PORT>` is specified using [`--http-listen-port`](../cli/options.mdx#http-listen-port).
+- `<HOST>` is specified using [`--http-listen-host`](../cli/options.md#http-listen-host).
+- `<PORT>` is specified using [`--http-listen-port`](../cli/options.md#http-listen-port).
 
 The default location is `http://127.0.0.1:9000/rpc/v1/filecoin`.
 
@@ -45,7 +45,7 @@ curl -X POST --data '{"jsonrpc": "2.0", "method": "Filecoin.WalletHas", "params"
 ```
 
   </TabItem>
-  <TabItem value="JSON result" label="JSON result" default>
+  <TabItem value="JSON result" label="JSON result" >
 
 ```json
 {
@@ -81,7 +81,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"Filecoin.WalletList","params":[]
 ```
 
   </TabItem>
-  <TabItem value="JSON result" label="JSON result" default>
+  <TabItem value="JSON result" label="JSON result" >
 
 ```json
 {
@@ -120,7 +120,7 @@ curl -X POST --data '{"jsonrpc": "2.0", "method": "Filecoin.WalletSign", "params
 ```
 
   </TabItem>
-  <TabItem value="JSON result" label="JSON result" default>
+  <TabItem value="JSON result" label="JSON result" >
 
 ```json
 {
@@ -159,7 +159,7 @@ curl -X POST --data '{"jsonrpc": "2.0", "method": "Filecoin.WalletSignMessage", 
 ```
 
   </TabItem>
-  <TabItem value="JSON result" label="JSON result" default>
+  <TabItem value="JSON result" label="JSON result" >
 
 ```json
 {
@@ -217,7 +217,7 @@ curl -X POST --data '{"jsonrpc": "2.0", "method": "Filecoin.WalletVerify", "para
 ```
 
   </TabItem>
-  <TabItem value="JSON result" label="JSON result" default>
+  <TabItem value="JSON result" label="JSON result" >
 
 ```json
 {

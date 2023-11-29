@@ -38,7 +38,7 @@ password must be specified in the [key configuration files] for a given device.
 [Store private keys in the device]: https://developers.yubico.com/YubiHSM2/Commands/Put_Opaque.html
 [YubiHSM 2 SDK]: https://developers.yubico.com/YubiHSM2/Releases/
 [Opaque Data algorithm]: https://developers.yubico.com/YubiHSM2/Concepts/Algorithms.html
-[Configure a signing key configuration file]: ../use-signing-keys.mdx
+[Configure a signing key configuration file]: ../use-signing-keys.md
 [YubiHSM connector]: https://developers.yubico.com/yubihsm-connector/
 [PKCS#11 module]: https://developers.yubico.com/YubiHSM2/Component_Reference/PKCS_11/
-[key configuration files]: ../../reference/key-config-file-params#yubihsm-2
+[key configuration files]: ../../reference/key-config-file-params.md#yubihsm-2

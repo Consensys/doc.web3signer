@@ -7,7 +7,7 @@ sidebar_position: 1
 # Use metrics to monitor performance
 
 Enable the [Prometheus](https://prometheus.io/) monitoring and alerting service for Web3Signer
-metrics using the [`--metrics-enabled`](../../reference/cli/options.mdx#metrics-enabled) option.
+metrics using the [`--metrics-enabled`](../../reference/cli/options.md#metrics-enabled) option.
 
 Web3Signer provides metrics for secp256k1 and BLS12-381 key types.
 
@@ -44,14 +44,14 @@ To configure Prometheus and run with Web3Signer:
 
 2. [Start Teku] by specifying the Web3Signer details.
 
-3. Start Web3Signer with the [`--metrics-enabled`](../../reference/cli/options.mdx#metrics-enabled) option.
+3. Start Web3Signer with the [`--metrics-enabled`](../../reference/cli/options.md#metrics-enabled) option.
 
     ```bash
     web3signer --key-store-path=/Users/me/keyFiles/ --metrics-enabled
     ```
 
     The `HTTP`, `SIGNING`, `JVM`, and `PROCESS` metrics categories are enabled by default.
-    Use the [`--metrics-category`](../../reference/cli/options.mdx#metrics-category) command line
+    Use the [`--metrics-category`](../../reference/cli/options.md#metrics-category) command line
     option to update the available categories.
 
 4. In another terminal, run Prometheus specifying the `prometheus.yml` file:
@@ -115,5 +115,5 @@ dashboard](https://grafana.com/grafana/dashboards/13687).
 <!-- Links -->
 
 [Start Teku]: https://docs.teku.consensys.net/how-to/use-external-signer/use-web3signer
-[BLS signing keys]: ../use-signing-keys.mdx
+[BLS signing keys]: ../use-signing-keys.md
 [Grafana]: https://grafana.com/docs/grafana/latest/guides/getting_started/

@@ -18,15 +18,13 @@
     "lint:js": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
     "lint:spelling": "cspell \"**\" --no-progress",
     "lint:style": "stylelint \"**/*.css\"",
-    "lint:fix": "npm run lint:js -- --fix",
-    "format": "prettier --write '{blog,docs,src,static}/**/*.{md,mdx,ts,js,tsx,jsx,json}'"
+    "lint:fix": "npm run lint:js -- --fix"
   },
   "lint-staged": {
     "src/**/*.{ts,js,jsx,tsx}": "npm run lint:fix",
     "**/*.{ts,tsx}": "npm run typecheck-staged",
     "**/*.css": "npm run lint:style",
-    "**/*.{md,mdx}": "npm run lint:spelling",
-    "**/*.{md,mdx,ts,js,tsx,jsx,json}": "npm run format"
+    "**/*.{md,mdx}": "npm run lint:spelling"
   },
   "dependencies": {
     "@docusaurus/core": "^3.0.0",

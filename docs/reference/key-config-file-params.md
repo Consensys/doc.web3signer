@@ -17,7 +17,7 @@ You can specify multiple key configurations in a single configuration file by ad
 separator (`---`) between configurations.
 
 Specify a maximum file size limit for your signing key configuration file with the
-[`--key-store-config-file-max-size`](cli/options.mdx#key-store-config-file-max-size) command line option.
+[`--key-store-config-file-max-size`](cli/options.md#key-store-config-file-max-size) command line option.
 The default size is 100 MB.
 :::
 
@@ -57,7 +57,7 @@ keystorePasswordFile: "95e57532ede3c1dd879061153f9cfdcdefa9dc5fb9c954a6677bc6641
 
 ## HashiCorp Vault
 
-Use the private key stored in [HashiCorp Vault](../how-to/store-keys-vaults/hashicorp.mdx).
+Use the private key stored in [HashiCorp Vault](../how-to/store-keys-vaults/hashicorp.md).
 
 ```bash
 type: "hashicorp"
@@ -110,7 +110,7 @@ secretName: "SecretName"
 ```
 
   </TabItem>
-   <TabItem value="azure-key" label="azure-key" default>
+   <TabItem value="azure-key" label="azure-key" >
 
 ```
 type: "azure-key"
@@ -212,9 +212,9 @@ keyPath: /key1.txt
 
 <!-- Links -->
 
-[signing key configuration file]: ../how-to/use-signing-keys.mdx
+[signing key configuration file]: ../how-to/use-signing-keys.md
 [keystore file]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md
 [PKCS#11 module]: https://developers.yubico.com/YubiHSM2/Component_Reference/PKCS_11/
 [connector service]: https://developers.yubico.com/yubihsm-connector/
 [Interlock application]: https://github.com/f-secure-foundry/interlock/blob/master/README.md
-[File used by Web3Signer]: ../how-to/store-keys-hsm/usb-armory#known-server-file
+[File used by Web3Signer]: ../how-to/store-keys-hsm/usb-armory.md#known-server-file

@@ -36,7 +36,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1
 ```
 
   </TabItem>
-  <TabItem value="JSON result" label="JSON result" default>
+  <TabItem value="JSON result" label="JSON result" >
 
 ```json
 {
@@ -78,7 +78,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sign","params":["0x78e6e2365
 ```
 
   </TabItem>
-  <TabItem value="JSON result" label="JSON result" default>
+  <TabItem value="JSON result" label="JSON result" >
 
 ```json
 {
@@ -125,7 +125,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_signTransaction","params":[{
 ```
 
   </TabItem>
-  <TabItem value="JSON result" label="JSON result" default>
+  <TabItem value="JSON result" label="JSON result" >
 
 ```json
 {
@@ -179,7 +179,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{
 ```
 
   </TabItem>
-  <TabItem value="JSON result" label="JSON result" default>
+  <TabItem value="JSON result" label="JSON result" >
 
 ```json
 {

@@ -194,11 +194,11 @@ const config = {
             items: [
               {
                 label: "Command line options",
-                to: "/reference/cli/options.mdx",
+                to: "/reference/cli/options",
               },
               {
                 label: "Subcommands",
-                to: "/reference/cli/subcommands.mdx",
+                to: "/reference/cli/subcommands",
               },
               {
                 label: "JSON-RPC API",
@@ -341,11 +341,11 @@ const config = {
           },
           {
             from: "/Reference/CLI/CLI-Syntax",
-            to: "/reference/cli/options.mdx",
+            to: "/reference/cli/options",
           },
           {
             from: "/Reference/CLI/CLI-Subcommands",
-            to: "/reference/cli/subcommands.mdx",
+            to: "/reference/cli/subcommands",
           },
           {
             from: "/Reference/Key-Configuration-Files",

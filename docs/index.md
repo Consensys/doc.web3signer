@@ -32,5 +32,5 @@ Web3Signer can sign payloads using secp256k1 and BLS12-381 signing keys, and sup
 Get started by running Web3Signer with Docker or installing Web3Signer. You can:
 
 - [Run Web3Signer from a Docker image](get-started/use-docker.md)
-- [Install the binary distribution](get-started/install-binaries.mdx)
+- [Install the binary distribution](get-started/install-binaries.md)
 - [Build from source](get-started/build-from-source.md)
