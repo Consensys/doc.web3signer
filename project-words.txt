@@ -319,6 +319,7 @@ psql
 pubkeys
 pyltsyn
 pubkey
+pushgateway
 qjpuv
 qovery
 quasis

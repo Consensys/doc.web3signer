@@ -536,6 +536,175 @@ To allow all hostnames, use `"*"`.
 We don't recommend allowing all hostnames for production environments.
 :::
 
+### `metrics-push-enabled`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--metrics-push-enabled[=<true|false>]
+```
+
+# Example
+
+```bash
+--metrics-push-enabled=true
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_METRICS_PUSH_ENABLED=true
+```
+
+# Configuration file
+
+```bash
+metrics-push-enabled=true
+```
+
+<!--/tabs-->
+
+Enables or disables [push gateway integration](../../how-to/monitor/metrics.md#run-prometheus-with-web3signer-in-push-mode).
+
+You can't specify `--metrics-push-enabled` with [`--metrics-enabled`](#metrics-enabled). That is, you can enable either Prometheus polling or Prometheus push gateway support, but not both at once.
+
+### `metrics-push-host`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--metrics-push-host=<HOST>
+```
+
+# Example
+
+```bash
+--metrics-push-host=127.0.0.1
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_METRICS_PUSH_HOST=127.0.0.1
+```
+
+# Configuration file
+
+```bash
+metrics-push-host="127.0.0.1"
+```
+
+<!--/tabs-->
+
+The host of the [Prometheus Push Gateway](https://github.com/prometheus/pushgateway). The default is `127.0.0.1`. The metrics server respects the [`--metrics-host-allowlist` option](#metrics-host-allowlist).
+
+:::note
+
+When pushing metrics, ensure you set `--metrics-push-host` to the machine on which the push gateway is. Generally, this is a different machine to the machine on which Web3Signer is running.
+
+:::
+
+### `metrics-push-interval`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--metrics-push-interval=<INTEGER>
+```
+
+# Example
+
+```bash
+--metrics-push-interval=30
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_METRICS_PUSH_INTERVAL=30
+```
+
+# Configuration file
+
+```bash
+metrics-push-interval=30
+```
+
+<!--/tabs-->
+
+The interval, in seconds, to push metrics when in `push` mode. The default is 15.
+
+### `metrics-push-port`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--metrics-push-port=<PORT>
+```
+
+# Example
+
+```bash
+--metrics-push-port=6174
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_METRICS_PUSH_PORT=6174
+```
+
+# Configuration file
+
+```bash
+metrics-push-port="6174"
+```
+
+<!--/tabs-->
+
+The port (TCP) of the [Prometheus Push Gateway](https://github.com/prometheus/pushgateway). The default is `9001`.
+
+### `metrics-push-prometheus-job`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--metrics-push-prometheus-job=<metricsPrometheusJob>
+```
+
+# Example
+
+```bash
+--metrics-push-prometheus-job="my-custom-job"
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_METRICS_PUSH_PROMETHEUS_JOB="my-custom-job"
+```
+
+# Configuration file
+
+```bash
+metrics-push-prometheus-job="my-custom-job"
+```
+
+<!--/tabs-->
+
+The job name when in `push` mode. The default is `web3signer-job`.
+
+
 ### `swagger-ui-enabled`
 
 <!--tabs-->
