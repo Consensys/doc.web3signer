@@ -4,6 +4,9 @@ description: Sign transactions with keys stored in HashiCorp Vault.
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Use Web3Signer with HashiCorp Vault
 
 Web3Signer supports storing the signing key in [HashiCorp Vault](https://www.hashicorp.com/products/vault/).
@@ -38,9 +41,9 @@ After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-sta
    vault kv get /secret/web3signerSigningKey
    ```
 
-   <!--tabs-->
+<Tabs>
 
-   # Result if v2 (with metadata)
+   <TabItem value="Result if v2 (with metadata)" label="Result if v2 (with metadata)" default>
 
    ```text
    ====== Metadata ======
@@ -56,8 +59,8 @@ After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-sta
    ---      -----
    value    17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
    ```
-
-   # Result if v1
+   </TabItem>
+   <TabItem value="Result if v1" label="Result if v1" >
 
    ```text
    ==== Data ====
@@ -66,26 +69,29 @@ After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-sta
    value    17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
    ```
 
-   <!--/tabs-->
+  </TabItem>
+</Tabs>
 
 4. [Write the key in HashiCorp Vault](https://learn.hashicorp.com/vault/getting-started/first-secret)
    as a hex string (without `0x` prefix):
 
-   <!--tabs-->
+<Tabs>
 
-   # Command
+  <TabItem value="Command" label="Command" default>
 
    ```bash
    vault kv put secret/web3signerSigningKey value=<Private Key without 0x prefix>
    ```
 
-   # Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
    ```bash
    vault kv put secret/web3signerSigningKey value=17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
    ```
 
-   <!--/tabs-->
+  </TabItem>
+</Tabs>
 
 ## Create the known servers file
 

@@ -9,7 +9,7 @@ At Consensys, security is a priority. But regardless of how much effort we put i
 
 Please do the following:
 
-- Email your findings to <mailto:security-quorum@consensys.net>. Provide sufficient information to reproduce the problem, so we can resolve it as quickly as possible.
+- Email your findings to `security-quorum@consensys.net`. Provide sufficient information to reproduce the problem, so we can resolve it as quickly as possible.
 - Do not take advantage of the vulnerability you have discovered.
 - Practice responsible disclosure. That is, don’t reveal the problem to others until either:
   - We have released a fix for the disclosure, or

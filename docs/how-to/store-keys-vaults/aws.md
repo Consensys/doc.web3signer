@@ -59,8 +59,7 @@ final CreateSecretRequest secretRequest =
 secretsManagerClient.createSecret(secretRequest);
 ```
 
-Specify the following when [configuring the signing key configuration
-file](../use-signing-keys.md#use-key-configuration-files):
+Specify the following when [configuring the signing key configuration file](../use-signing-keys.md#use-key-configuration-files):
 
 - Authentication mode.
   Valid options are `ENVIRONMENT` and `SPECIFIED`.

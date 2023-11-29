@@ -4,6 +4,9 @@ description: Signing key configuration file parameters
 sidebar_position: 3
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Signing key configuration file parameters
 
 A [signing key configuration file] is a YAML file that defines the parameters to access one or more
@@ -93,10 +96,9 @@ Supports two signing options:
 - `azure-secret` - Web3Signer fetches the keys from the vault and signs locally.
   Supports SECP256K1 and BLS12-381 signing keys.
 
-<!--tabs-->
+<Tabs>
 
-# azure-secret
-
+   <TabItem value="azure-secret" label="azure-secret" default>
 ```
 type: "azure-secret"
 keyType: "BLS"
@@ -107,7 +109,8 @@ vaultName: "AzureKeyVault"
 secretName: "SecretName"
 ```
 
-# azure-key
+  </TabItem>
+   <TabItem value="azure-key" label="azure-key" >
 
 ```
 type: "azure-key"
@@ -117,8 +120,8 @@ tenantId: "***"
 vaultName: "AzureKeyVault"
 keyName: "KeyName"
 ```
-
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 | Key | Description |
 | --- | --- |

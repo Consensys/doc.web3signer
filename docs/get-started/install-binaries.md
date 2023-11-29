@@ -4,6 +4,9 @@ description: Install Web3Signer from a binary distribution.
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Install binary distribution
 
 ## Prerequisites
@@ -24,18 +27,19 @@ Unpack the downloaded files and change into the `web3signer-<release>` directory
 
 Display Web3Signer command line help to confirm installation:
 
-<!--tabs-->
-
-# Linux or MacOS
+<Tabs>
+  <TabItem value="Linux or MacOS" label="Linux or MacOS" default>
 
 ```bash
 bin/web3signer --help
 ```
 
-# Windows
+  </TabItem>
+  <TabItem value="Windows" label="Windows">
 
 ```bat
 bin\web3signer --help
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
