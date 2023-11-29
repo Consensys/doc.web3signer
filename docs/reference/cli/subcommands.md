@@ -1454,6 +1454,106 @@ eth2.azure-vault-name: "AzureKeyVault"
 Name of the vault to access.
 Subdomain of `vault.azure.net`.
 
+#### `gcp-project-id`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--gcp-project-id=<STRING>
+```
+
+# Example
+
+```bash
+--gcp-project-id=my-project
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_GCP_PROJECT_ID=my-project
+```
+
+# Configuration file
+
+```bash
+eth2.gcp-project-id: "my-project"
+```
+
+<!--/tabs-->
+
+Globally unique identifier for the Google Cloud Platform (GCP) project where the
+secrets to be used by Web3Signer are stored.
+
+#### `gcp-secrets-enabled`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--gcp-secrets-enabled=<BOOLEAN>
+```
+
+# Example
+
+```bash
+--gcp-secrets-enabled=true
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_GCP_SECRETS_ENABLED=true
+```
+
+# Configuration file
+
+```bash
+eth2.gcp-secrets-enabled: true
+```
+
+<!--/tabs-->
+
+Set to `true` to enable bulk loading from the GCP Secrets Manager service. The default is `false`. 
+
+#### `gcp-secrets-filter`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--gcp-secrets-filter=<STRING>
+```
+
+# Example
+
+```bash
+--gcp-secrets-filter=my-secrets-filter
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_GCP_SECRETS_FILTER=my-secrets-filter
+```
+
+# Configuration file
+
+```bash
+eth2.gcp-secrets-filter: "my-secrets-filter"
+```
+
+<!--/tabs-->
+
+Use to filter secrets loaded into Web3Signer. [List operation filtering](https://cloud.google.com/secret-manager/docs/filtering) is applied
+
+Only secrets matching the filter are loaded. If not specified, all secrets from the project identified by
+[`--gcp-project-id`](#gcp-project-id) are loaded.
+
 #### `key-manager-api-enabled`
 
 <!--tabs-->
