@@ -281,6 +281,10 @@ const config = {
             to: "/get-started/install-binaries",
           },
           {
+            from: "/reference/api/filecoin",
+            to: "/index",
+          },
+          {
             from: "/HowTo/Get-Started/Build-From-Source",
             to: "/get-started/build-from-source",
           },
