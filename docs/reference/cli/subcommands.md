@@ -128,7 +128,7 @@ eth1.aws-endpoint-override="http://localstack:4566"
 <!--/tabs-->
 
 Endpoint override for AWS KMS.
-This is useful for local testing against LocalStack.
+Useful for local testing against LocalStack.
 
 #### `aws-kms-access-key-id`
 
@@ -160,7 +160,7 @@ eth1.aws-kms-access-key-id: "AKIA...EXAMPLE"
 
 <!--/tabs-->
 
-AWS Access Key ID to authenticate AWS KMS. Required for `SPECIFIED` authentication mode.
+AWS Access Key ID to authenticate AWS KMS. Required for `SPECIFIED` [authentication mode](#aws-kms-auth-mode).
 
 #### `aws-kms-auth-mode`
 
@@ -230,8 +230,8 @@ eth1.aws-kms-client-cache-size: "5"
 
 <!--/tabs-->
 
-Specifies the AWS KMS client cache size. Set based on the number of credentials 
-used to access the service, plus the number of regions the service is accessed from. The default is 1.
+Specifies the AWS KMS client cache size. Set to the total number of credentials 
+used to access the service plus the number of regions the service is accessed from. The default is 1.
 
 #### `aws-kms-enabled`
 
