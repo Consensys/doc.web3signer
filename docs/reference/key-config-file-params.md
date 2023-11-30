@@ -57,7 +57,7 @@ keystorePasswordFile: "95e57532ede3c1dd879061153f9cfdcdefa9dc5fb9c954a6677bc6641
 
 ## HashiCorp Vault
 
-Use the private key stored in [HashiCorp Vault](../how-to/store-keys/store-keys-vaults/hashicorp.md).
+Use the private key stored in [HashiCorp Vault](../how-to/store-keys/vaults/hashicorp.md).
 
 ```bash
 type: "hashicorp"
@@ -88,7 +88,7 @@ token: "s.MuZwBqZ0iE1HzvD64v3HMlhT”
 
 ## Azure Key Vault
 
-Use the private key stored in [Azure Key Vault](../how-to/store-keys/store-keys-vaults/azure.md).
+Use the private key stored in [Azure Key Vault](../how-to/store-keys/vaults/azure.md).
 Supports two signing options:
 
 - `azure-key` - Performs the signing in Azure Key Vault.
@@ -137,7 +137,7 @@ keyName: "KeyName"
 
 ## AWS Secrets Manager
 
-Use the private key stored in [AWS Secrets Manager](../how-to/store-keys/store-keys-vaults/aws.md).
+Use the private key stored in [AWS Secrets Manager](../how-to/store-keys/vaults/aws.md).
 
 ```bash
 type: "aws-secret"
@@ -161,7 +161,7 @@ region: "us-west-2"
 
 ## YubiHSM 2
 
-Use the private key stored in the [YubiHSM 2 hardware security module](../how-to/store-keys/store-keys-hsm/yubihsm2.md).
+Use the private key stored in the [YubiHSM 2 hardware security module](../how-to/store-keys/hsm/yubihsm2.md).
 
 ```yaml
 type: yubihsm2
@@ -187,7 +187,7 @@ additionalInitConfig: debug libdebug timeout=5
 
 ## USB Armory Mk II
 
-Use the private key stored in the [USB Armory Mk II hardware security module](../how-to/store-keys/store-keys-hsm/usb-armory.md).
+Use the private key stored in the [USB Armory Mk II hardware security module](../how-to/store-keys/hsm/usb-armory.md).
 Web3Signer requires access to the [Interlock application] which must be installed on the device in
 order to access the keys.
 
@@ -217,4 +217,4 @@ keyPath: /key1.txt
 [PKCS#11 module]: https://developers.yubico.com/YubiHSM2/Component_Reference/PKCS_11/
 [connector service]: https://developers.yubico.com/yubihsm-connector/
 [Interlock application]: https://github.com/f-secure-foundry/interlock/blob/master/README.md
-[File used by Web3Signer]: ../how-to/store-keys/store-keys-hsm/usb-armory.md#known-server-file
+[File used by Web3Signer]: ../how-to/store-keys/hsm/usb-armory.md#known-server-file

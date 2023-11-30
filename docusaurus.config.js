@@ -301,23 +301,23 @@ const config = {
           },
           {
             from: "/HowTo/Store-Keys-HSM/Use-USB-Armory",
-            to: "/how-to/store-keys-hsm/usb-armory",
+            to: "/how-to/store-keys/hsm/usb-armory",
           },
           {
             from: "/HowTo/Store-Keys-HSM/Use-YubiHSM2",
-            to: "/how-to/store-keys-hsm/yubihsm2",
+            to: "/how-to/store-keys/hsm/yubihsm2",
           },
           {
             from: "/HowTo/Store-Keys-Vaults/Use-AWS",
-            to: "/how-to/store-keys-vaults/aws",
+            to: "/how-to/store-keys/vaults/aws",
           },
           {
             from: "/HowTo/Store-Keys-Vaults/Use-Azure",
-            to: "/how-to/store-keys-vaults/azure",
+            to: "/how-to/store-keys/vaults/azure",
           },
           {
             from: "/HowTo/Store-Keys-Vaults/Use-Hashicorp",
-            to: "/how-to/store-keys-vaults/hashicorp",
+            to: "/how-to/store-keys/vaults/hashicorp",
           },
           {
             from: "/HowTo/Configure-Slashing-Protection",
@@ -333,7 +333,7 @@ const config = {
           },
           {
             from: "/HowTo/Use-Configuration-File",
-            to: "/how-to/use-configuration-file",
+            to: "/how-to/use-configuration-file-starting-web3signer",
           },
           {
             from: "/HowTo/Use-Signing-Keys",
@@ -381,11 +381,11 @@ const config = {
           },
           {
             from: "/category/store-keys-in-an-hsm-device",
-            to: "/how-to/store-keys-hsm",
+            to: "/how-to/store-keys/hsm",
           },
           {
             from: "/category/store-keys-in-an-external-vault",
-            to: "/how-to/store-keys-vaults",
+            to: "/how-to/store-keys/vaults",
           },
           {
             from: "/category/apis",
@@ -396,40 +396,36 @@ const config = {
             to: "/reference/cli",
           },
           {
-            from: "/how-to/store-keys-hsm/_category_.json",
-            to: "/how-to/store-keys/store-keys-hsm/_category_.json",
+            from: "/how-to/store-keys-hsm",
+            to: "/how-to/store-keys/hsm",
           },
           {
-            from: "/how-to/store-keys-hsm/usb-armory.md",
-            to: "/how-to/store-keys/store-keys-hsm/usb-armory.md",
+            from: "/how-to/store-keys-hsm/usb-armory",
+            to: "/how-to/store-keys/hsm/usb-armory",
           },
           {
-            from: "/how-to/store-keys-hsm/yubihsm2.md",
-            to: "/how-to/store-keys/store-keys-hsm/yubihsm2.md",
+            from: "/how-to/store-keys-hsm/yubihsm2",
+            to: "/how-to/store-keys/hsm/yubihsm2",
           },
           {
-            from: "/how-to/store-keys-vaults/_category_.json",
-            to: "/how-to/store-keys/store-keys-vaults/_category_.json",
+            from: "/how-to/store-keys-vaults",
+            to: "/how-to/store-keys/vaults",
           },
           {
-            from: "/how-to/store-keys-vaults/aws.md",
-            to: "/how-to/store-keys/store-keys-vaults/aws.md",
+            from: "/how-to/store-keys-vaults/aws",
+            to: "/how-to/store-keys/vaults/aws",
           },
           {
-            from: "/how-to/store-keys-vaults/azure.md",
-            to: "/how-to/store-keys/store-keys-vaults/azure.md",
+            from: "/how-to/store-keys-vaults/azure",
+            to: "/how-to/store-keys/vaults/azure",
           },
           {
-            from: "/how-to/store-keys-vaults/hashicorp.md",
-            to: "/how-to/store-keys/store-keys-vaults/hashicorp.md",
+            from: "/how-to/store-keys-vaults/hashicorp",
+            to: "/how-to/store-keys/vaults/hashicorp",
           },
           {
-            from: "/how-to/use-configuration-file.md",
-            to: "/how-to/use-configuration-file-starting-web3signer.md",
-          },
-          {
-            from: "/how-to/use-signing-keys.md",
-            to: "/how-to/store-keys.md",
+            from: "/how-to/use-configuration-file",
+            to: "/how-to/use-configuration-file-starting-web3signer",
           },
           {
             from: "/how-to/deploy-with-kubernetes",
