@@ -40,7 +40,7 @@ The subcommand must be specified on the command line, but the subcommand options
   - Uppercase.
   - `_` replaces `-`.
   - Has a `WEB3SIGNER_` + `<SIGNING_OPTION>_` prefix.
-- In a [YAML configuration file](../../how-to/use-configuration-file.md).
+- In a [YAML configuration file](../../how-to/use-configuration-file-starting-web3signer.md).
 
 For example, you can set the `--chain-id` option for the `eth1` subcommand in an environment
 variable `export WEB3SIGNER_ETH1_CHAIN_ID=2017`, but the subcommand must be specified in the

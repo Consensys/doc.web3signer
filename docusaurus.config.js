@@ -281,7 +281,7 @@ const config = {
           },
           {
             from: "/reference/api/filecoin",
-            to: "/index",
+            to: "/reference/api",
           },
           {
             from: "/HowTo/Get-Started/Build-From-Source",
