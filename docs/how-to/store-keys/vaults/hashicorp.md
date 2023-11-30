@@ -4,6 +4,9 @@ description: Sign transactions with keys stored in HashiCorp Vault.
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Use Web3Signer with HashiCorp Vault
 
 Web3Signer supports storing the signing key in [HashiCorp Vault](https://www.hashicorp.com/products/vault/).
@@ -38,9 +41,9 @@ After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-sta
    vault kv get /secret/web3signerSigningKey
    ```
 
-   <!--tabs-->
+<Tabs>
 
-   # Result if v2 (with metadata)
+   <TabItem value="Result if v2 (with metadata)" label="Result if v2 (with metadata)" default>
 
    ```text
    ====== Metadata ======
@@ -56,8 +59,8 @@ After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-sta
    ---      -----
    value    17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
    ```
-
-   # Result if v1
+   </TabItem>
+   <TabItem value="Result if v1" label="Result if v1" >
 
    ```text
    ==== Data ====
@@ -66,34 +69,37 @@ After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-sta
    value    17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
    ```
 
-   <!--/tabs-->
+  </TabItem>
+</Tabs>
 
 4. [Write the key in HashiCorp Vault](https://learn.hashicorp.com/vault/getting-started/first-secret)
    as a hex string (without `0x` prefix):
 
-   <!--tabs-->
+<Tabs>
 
-   # Command
+  <TabItem value="Command" label="Command" default>
 
    ```bash
    vault kv put secret/web3signerSigningKey value=<Private Key without 0x prefix>
    ```
 
-   # Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
    ```bash
    vault kv put secret/web3signerSigningKey value=17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
    ```
 
-   <!--/tabs-->
+  </TabItem>
+</Tabs>
 
 ## Create the known servers file
 
 The known servers file is required if TLS is enabled, to disable TLS set
-[`tlsEnabled`](../../reference/key-config-file-params.md#hashicorp-vault) to `false`.
+[`tlsEnabled`](../../../reference/key-config-file-params.md#hashicorp-vault) to `false`.
 
 Specify the location of the known servers file in the
-[`tlsKnownServersPath`](../../reference/key-config-file-params.md#hashicorp-vault) option of the
+[`tlsKnownServersPath`](../../../reference/key-config-file-params.md#hashicorp-vault) option of the
 [signing key configuration file].
 
 The file contents use the format `<hostname>:<port> <hex-string>` where:
@@ -111,6 +117,6 @@ localhost:8200 7C:B3:3E:F9:98:43:5E:62:69:9F:A9:9D:41:14:03:BA:83:24:AC:04:CE:BD
 
 <!-- Links -->
 
-[signing key configuration file]: ../use-signing-keys.md
+[signing key configuration file]: ../../use-signing-keys.md
 [Start Teku]: https://docs.teku.consensys.net/get-started/start-teku
-[Start Web3Signer and specify the location of the signing key configuration file]: ../../get-started/start-web3signer.md
+[Start Web3Signer and specify the location of the signing key configuration file]: ../../../get-started/start-web3signer.md

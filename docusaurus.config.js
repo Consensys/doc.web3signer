@@ -1,49 +1,49 @@
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const lightCodeTheme = require("prism-react-renderer").themes.github;
+const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 
 const isDev = process.env.NODE_ENV === "development";
 const baseUrl = isDev ? "/" : "/";
 
-/**
- * @type {import('redocusaurus').PresetEntry}
- */
-const redocusaurus = [
-  "redocusaurus",
-  {
-    specs: [
-      {
-        id: "using-remote-url",
-        // Remote File
-        spec: "https://raw.githubusercontent.com/rohit-gohri/redocusaurus/main/website/openapi/single-file/openapi.yaml",
-        route: "/api/",
-      },
-    ],
-    theme: {
-      /**
-       * Highlight color for docs
-       */
-      primaryColor: "#3655d5",
-      primaryColorDark: "#a2aeec",
-      /**
-       * Options to pass to redoc
-       * @see https://github.com/redocly/redoc#redoc-options-object
-       */
-      options: { disableSearch: true },
-      /**
-       * Options to pass to override RedocThemeObject
-       * @see https://github.com/Redocly/redoc#redoc-theme-object
-       */
-      theme: {},
-    },
-  },
-];
+// /**
+//  * @type {import('redocusaurus').PresetEntry}
+//  */
+// const redocusaurus = [
+//   "redocusaurus",
+//   {
+//     specs: [
+//       {
+//         id: "using-remote-url",
+//         // Remote File
+//         spec: "https://raw.githubusercontent.com/rohit-gohri/redocusaurus/main/website/openapi/single-file/openapi.yaml",
+//         route: "/api/",
+//       },
+//     ],
+//     theme: {
+//       /**
+//        * Highlight color for docs
+//        */
+//       primaryColor: "#3655d5",
+//       primaryColorDark: "#a2aeec",
+//       /**
+//        * Options to pass to redoc
+//        * @see https://github.com/redocly/redoc#redoc-options-object
+//        */
+//       options: { disableSearch: true },
+//       /**
+//        * Options to pass to override RedocThemeObject
+//        * @see https://github.com/Redocly/redoc#redoc-theme-object
+//        */
+//       theme: {},
+//     },
+//   },
+// ];
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Consensys Web3Signer",
   tagline:
     "An open-source, client-agnostic, Ethereum signing service written in Java that is capable of signing on multiple platforms..",
-  url: "https://docs.web3signer.consensys.net",
+  url: "https://docs.web3signer.consensys.io",
   baseUrl,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
@@ -76,7 +76,6 @@ const config = {
           routeBasePath: "/",
           // @ts-ignore
           // eslint-disable-next-line global-require
-          remarkPlugins: [require("remark-docusaurus-tabs")],
           include: ["**/*.md", "**/*.mdx"],
           exclude: [
             "**/_*.{js,jsx,ts,tsx,md,mdx}",
@@ -93,7 +92,7 @@ const config = {
         },
       },
     ],
-    redocusaurus,
+    // redocusaurus,
   ],
 
   themeConfig:
@@ -306,23 +305,23 @@ const config = {
           },
           {
             from: "/HowTo/Store-Keys-HSM/Use-USB-Armory",
-            to: "/how-to/store-keys-hsm/usb-armory",
+            to: "/how-to/store-keys/hsm/usb-armory",
           },
           {
             from: "/HowTo/Store-Keys-HSM/Use-YubiHSM2",
-            to: "/how-to/store-keys-hsm/yubihsm2",
+            to: "/how-to/store-keys/hsm/yubihsm2",
           },
           {
             from: "/HowTo/Store-Keys-Vaults/Use-AWS",
-            to: "/how-to/store-keys-vaults/aws",
+            to: "/how-to/store-keys/vaults/aws",
           },
           {
             from: "/HowTo/Store-Keys-Vaults/Use-Azure",
-            to: "/how-to/store-keys-vaults/azure",
+            to: "/how-to/store-keys/vaults/azure",
           },
           {
             from: "/HowTo/Store-Keys-Vaults/Use-Hashicorp",
-            to: "/how-to/store-keys-vaults/hashicorp",
+            to: "/how-to/store-keys/vaults/hashicorp",
           },
           {
             from: "/HowTo/Configure-Slashing-Protection",
@@ -338,7 +337,7 @@ const config = {
           },
           {
             from: "/HowTo/Use-Configuration-File",
-            to: "/how-to/use-configuration-file",
+            to: "/how-to/use-configuration-file-starting-web3signer",
           },
           {
             from: "/HowTo/Use-Signing-Keys",
@@ -386,11 +385,11 @@ const config = {
           },
           {
             from: "/category/store-keys-in-an-hsm-device",
-            to: "/how-to/store-keys-hsm",
+            to: "/how-to/store-keys/hsm",
           },
           {
             from: "/category/store-keys-in-an-external-vault",
-            to: "/how-to/store-keys-vaults",
+            to: "/how-to/store-keys/vaults",
           },
           {
             from: "/category/apis",
@@ -399,6 +398,38 @@ const config = {
           {
             from: "/category/command-line",
             to: "/reference/cli",
+          },
+          {
+            from: "/how-to/store-keys-hsm",
+            to: "/how-to/store-keys/hsm",
+          },
+          {
+            from: "/how-to/store-keys-hsm/usb-armory",
+            to: "/how-to/store-keys/hsm/usb-armory",
+          },
+          {
+            from: "/how-to/store-keys-hsm/yubihsm2",
+            to: "/how-to/store-keys/hsm/yubihsm2",
+          },
+          {
+            from: "/how-to/store-keys-vaults",
+            to: "/how-to/store-keys/vaults",
+          },
+          {
+            from: "/how-to/store-keys-vaults/aws",
+            to: "/how-to/store-keys/vaults/aws",
+          },
+          {
+            from: "/how-to/store-keys-vaults/azure",
+            to: "/how-to/store-keys/vaults/azure",
+          },
+          {
+            from: "/how-to/store-keys-vaults/hashicorp",
+            to: "/how-to/store-keys/vaults/hashicorp",
+          },
+          {
+            from: "/how-to/use-configuration-file",
+            to: "/how-to/use-configuration-file-starting-web3signer",
           },
           {
             from: "/how-to/deploy-with-kubernetes",
