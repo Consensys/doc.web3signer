@@ -1,33 +1,18 @@
 ---
-sidebar_label: Use AWS Secrets Manager and KMS
-description: Sign transactions with keys stored in AWS.
+sidebar_label: Use AWS Secrets Manager
+description: Sign transactions with keys stored in AWS Secrets Manager.
 sidebar_position: 3
 ---
 
-# Use Web3Signer with AWS
+# Use Web3Signer with AWS Secrets Manager
 
-Web3Signer supports signing: 
-* [Execution layer payloads](#use-aws-key-management-service-for-execution-layer-payloads-) with secp256k1 keys stored in [AWS Key Management Service](https://aws.amazon.com/kms/). 
-* [Consensus layer payloads](#use-aws-secret-manager-for-consensus-layer-payloads-) with BLS private keys stored as secrets in [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/).
-
-## Use AWS Key Management Service for execution layer payloads
-
-The [AWS Key Management Service (KMS) documentation](https://docs.aws.amazon.com/kms/) provides the information you need to get started. 
-
-### Store a private key in AWS KMS 
-
-You need an AWS profile to use AWS KMS. 
-
-
-
-MM_TODO - up to here
-
-## Use AWS Secret Manager for consensus layer payloads 
+Web3Signer supports signing with BLS private keys stored as secrets in [AWS Secrets
+Manager](https://aws.amazon.com/secrets-manager/).
 
 The [AWS Secrets Manager documentation](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html)
 provides the information you need to get started.
 
-### Store a private key in AWS Secrets Manager
+## Store a private key in AWS Secrets Manager
 
 You need an AWS profile to use AWS Secrets Manager.
 
@@ -84,7 +69,7 @@ file](../use-signing-keys.md#use-key-configuration-files):
 - Secret name.
 - Region to connect to.
 
-### Cache AWS Secrets Manager when loading multiple keys
+## Cache AWS Secrets Manager when loading multiple keys
 
 When loading multiple keys from AWS Secrets Manager, the AWS client is created each time.
 You can improve performance by caching and reusing the same AWS Secrets Manager for each key that
