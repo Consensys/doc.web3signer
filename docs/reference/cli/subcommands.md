@@ -1656,10 +1656,6 @@ eth2.key-manager-api-enabled: true
 Enables the [key manager API](../../how-to/use-signing-keys.md#manage-keys).
 The default is `false`.
 
-:::caution Warning
-The key manager API is an early access feature and is still in development.
-:::
-
 #### `keystores-password-file`
 
 <Tabs>
