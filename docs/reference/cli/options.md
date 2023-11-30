@@ -552,7 +552,7 @@ metrics-category: ["HTTP", "SIGNING", "JVM"]
 </Tabs>
 
 A comma-separated list of categories for which to track metrics.
-The defaults are `HTTP`, `SIGNING`, `FILECOIN`, `ETH2_SLASHING_PROTECTION`, `JVM`, `PROCESS`.
+The defaults are `HTTP`, `SIGNING`, `ETH2_SLASHING_PROTECTION`, `JVM`, `PROCESS`.
 
 ### `metrics-host-allowlist`
 

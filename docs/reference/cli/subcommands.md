@@ -23,8 +23,6 @@ Use the Web3Signer subcommands to specify the platform being used:
 - `web3signer [options] eth2 export [Eth2 export options]`
 - `web3signer [options] eth2 import [Eth2 import options]`
 - `web3signer [options] eth1`
-- `web3signer [options] filecoin [Filecoin options]`
-- `web3signer [options] watermark-repair [watermark repair options]`
 
 :::note
 This documentation has been updated in line with the name changes [recommended by the Ethereum
@@ -42,15 +40,11 @@ The subcommand must be specified on the command line, but the subcommand options
   - Uppercase.
   - `_` replaces `-`.
   - Has a `WEB3SIGNER_` + `<SIGNING_OPTION>_` prefix.
-- In a YAML configuration file.
+- In a [YAML configuration file](../../how-to/use-configuration-file-starting-web3signer.md).
 
-For example, you can set the `--network` option for the `filecoin` subcommand in an environment
-variable `export WEB3SIGNER_FILECOIN_NETWORK=TESTNET`, but the subcommand must be specified in the
+For example, you can set the `--chain-id` option for the `eth1` subcommand in an environment
+variable `export WEB3SIGNER_ETH1_CHAIN_ID=2017`, but the subcommand must be specified in the
 command line.
-
-```bash
-web3signer --key-store-path=/Users/me/keyFiles/ filecoin
-```
 
 ## View help
 
@@ -58,8 +52,6 @@ To view the command line help for the subcommands:
 
 - [`web3signer help eth1`](#eth1)
 - [`web3signer help eth2`](#eth2)
-- [`web3signer help filecoin`](#filecoin)
-- [`web3signer help watermark-repair`](#watermark-repair)
 
 ## Options
 
@@ -2425,207 +2417,6 @@ eth2.import.from: /Users/me/my_node/interchange.json
 
 The file to import the slashing protection database from.
 The file must be formatted in the [validator client interchange format].
-
-### `filecoin`
-
-#### `network`
-
-<Tabs>
-
-  <TabItem value="Syntax" label="Syntax" default>
-
-```bash
---network=<NETWORK>
-```
-
-  </TabItem>
-  <TabItem value="Example" label="Example" >
-
-```bash
---network=TESTNET
-```
-
-  </TabItem>
-  <TabItem value="Environment variable" label="Environment variable" >
-
-```bash
-WEB3SIGNER_FILECOIN_NETWORK=TESTNET
-```
-
-  </TabItem>
-  <TabItem value="Configuration file" label="Configuration file" >
-
-```bash
-filecoin.network: "TESTNET"
-```
-
-  </TabItem>
-</Tabs>
-
-Predefined network configuration.
-Accepts a predefined network name.
-The default is `TESTNET`.
-
-### `watermark-repair`
-
-Updates the [slashing protection low or high watermark](https://eips.ethereum.org/EIPS/eip-3076) for all validators.
-You can only increase the low watermark, not decrease it.
-If you set the high watermark, you should set this to a future epoch and slot.
-Setting a high watermark prevents the validator from signing at or beyond this point.
-
-:::caution
-We only recommend this subcommand for advanced users.
-:::
-
-#### `epoch`
-
-<Tabs>
-
-  <TabItem value="Syntax" label="Syntax" default>
-
-```bash
---epoch=<LONG>
-```
-
-  </TabItem>
-  <TabItem value="Example" label="Example" >
-
-```bash
---epoch=30000
-```
-
-  </TabItem>
-  <TabItem value="Environment variable" label="Environment variable" >
-
-```bash
-WEB3SIGNER_WATERMARK_REPAIR_EPOCH=30000
-```
-
-  </TabItem>
-  <TabItem value="Configuration file" label="Configuration file" >
-
-```bash
-watermark-repair.epoch: 30000
-```
-
-  </TabItem>
-</Tabs>
-
-Low watermark to set the attestation source and target to.
-(Sets the high watermark epoch when [`--set-high-watermark`](#set-high-watermark) is `true`.)
-
-#### `slot`
-
-<Tabs>
-
-  <TabItem value="Syntax" label="Syntax" default>
-
-```bash
---slot=<LONG>
-```
-
-  </TabItem>
-  <TabItem value="Example" label="Example" >
-
-```bash
---slot=20000
-```
-
-  </TabItem>
-  <TabItem value="Environment variable" label="Environment variable" >
-
-```bash
-WEB3SIGNER_WATERMARK_REPAIR_SLOT=20000
-```
-
-  </TabItem>
-  <TabItem value="Configuration file" label="Configuration file" >
-
-```bash
-watermark-repair.slot: 20000
-```
-
-  </TabItem>
-</Tabs>
-
-Low watermark to set the block slot to.
-(Sets the high watermark slot when [`--set-high-watermark`](#set-high-watermark) is `true`.)
-
-#### `remove-high-watermark`
-
-<Tabs>
-
-  <TabItem value="Syntax" label="Syntax" default>
-
-```bash
---remove-high-watermark=<BOOLEAN>
-```
-
-  </TabItem>
-  <TabItem value="Example" label="Example" >
-
-```bash
---remove-high-watermark=true
-```
-
-  </TabItem>
-  <TabItem value="Environment variable" label="Environment variable" >
-
-```bash
-WEB3SIGNER_REMOVE_HIGH_WATERMARK=true
-```
-
-  </TabItem>
-  <TabItem value="Configuration file" label="Configuration file" >
-
-```bash
-watermark-repair.remove-high-watermark: true
-```
-
-  </TabItem>
-</Tabs>
-
-Removes the high watermark.
-When set to `true`, all other `watermark-repair` options are ignored.
-The default is `false`.
-
-#### `set-high-watermark`
-
-<Tabs>
-
-  <TabItem value="Syntax" label="Syntax" default>
-
-```bash
---set-high-watermark=<BOOLEAN>
-```
-
-  </TabItem>
-  <TabItem value="Example" label="Example" >
-
-```bash
---set-high-watermark=true
-```
-
-  </TabItem>
-  <TabItem value="Environment variable" label="Environment variable" >
-
-```bash
-WEB3SIGNER_SET_HIGH_WATERMARK=true
-```
-
-  </TabItem>
-  <TabItem value="Configuration file" label="Configuration file" >
-
-```bash
-watermark-repair.set-high-watermark: true
-```
-
-  </TabItem>
-</Tabs>
-
-Sets the high watermark to the specified [epoch](#epoch) and [slot](#slot).
-(Sets the low watermark when [`--set-high-watermark`](#set-high-watermark) is `false`.)
-The default is `false`.
 
 <!-- links -->
 

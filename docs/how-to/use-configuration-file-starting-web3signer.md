@@ -21,7 +21,7 @@ variable, configuration file.
 The configuration file must be a valid YAML file composed of key/value pairs.
 Each key is the same as the corresponding command line option name without the leading dashes (`--`).
 For [subcommand options], prefix the key with the name of the subcommand.
-For example, `filecoin.network=<NETWORK>`
+For example, `eth1.network=<NETWORK>`
 
 :::info
 You can't specify subcommands in the configuration file, you can only specify a subcommand's
@@ -41,22 +41,16 @@ The [command line reference](../reference/cli/options.md) includes configuration
 
 ```yaml title="Sample YAML configuration file"
 # Chain
-chain-id: 2017
-
-# Path
-data-path: "~/web3signerdata" # Path
+eth1.chain-id: 2017
 
 # Signing key locations
 key-store-path: "/Users/me/keys"
-
-# Filecoin network
-filecoin.network: "TESTNET"
 ```
 
 Start Web3Signer with a configuration file:
 
 ```bash
-web3signer --config-file=/home/me/me_node/config.yaml filecoin
+web3signer --config-file=/home/me/config.yaml eth1
 ```
 
 <!-- links -->

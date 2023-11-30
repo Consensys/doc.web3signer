@@ -110,17 +110,6 @@ To configure Prometheus and run with Web3Signer pushing to a push gateway:
 
 The following Web3Signer metrics are available.
 
-**Filecoin JSON RPC metrics:**
-
-| Name | Definition |
-| --- | --- |
-| `<keytype>_signing_request_count` | Number of signing requests made for the key type. |
-| `wallet_list_count` | Number of `Filecoin.WalletList` API requests received. |
-| `wallet_has_count` | Number of `Filecoin.WalletHas` API requests received. |
-| `wallet_sign_message_count` | Number of `Filecoin.WalletSignMessage` API requests received. |
-| `wallet_sign_duration` | The duration of signing operations. |
-| `total_request_count` | Total number of Filecoin requests received. |
-
 **HTTP API metrics:**
 
 | Name | Definition |

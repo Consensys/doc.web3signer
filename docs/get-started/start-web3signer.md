@@ -19,7 +19,7 @@ The execution layer is formerly "Ethereum 1.0." The consensus layer is formerly 
 
 - [Signing key configuration files] to access the required signing keys.
 
-Web3Signer supports consensus layer clients, execution layer clients, and Filecoin platforms, so you
+Web3Signer supports consensus layer clients, and execution layer clients, so you
 must specify the signing mode, and the location of the signing key configuration files when starting Web3Signer.
 
 <Tabs>
@@ -37,13 +37,6 @@ web3signer --key-store-path=/Users/me/keyFiles/ eth1
 ```
 
   </TabItem>
-  <TabItem value="Filecoin" label="Filecoin" >
-
-```bash
-web3signer --key-store-path=/Users/me/keyFiles/ filecoin
-```
-
-  </TabItem>
 </Tabs>
 
 In the command line:
@@ -51,7 +44,7 @@ In the command line:
 - Use the [`--key-store-path`](../reference/cli/options.md#key-store-path) option to specify the
   location of the signing key configuration files.
 - Specify the [subcommand] to indicate which signing mode to use.
-  Valid subcommands are `eth2`, `eth1`, and `filecoin`.
+  Valid subcommands are `eth2` and `eth1`.
   You can only specify one signing mode when starting Web3Signer.
 
 ## Consensus layer considerations
@@ -112,7 +105,7 @@ curl -X GET http://localhost:9000/upcheck
 </Tabs>
 
 Web3Signer by default also performs a health check on the
-[slashing protection database](../how-to/configure-slashing-protection.md)
+[slashing protection database].
 
 <!-- Links -->
 
