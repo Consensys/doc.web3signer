@@ -396,6 +396,42 @@ const config = {
             to: "/reference/cli",
           },
           {
+            from: "/how-to/store-keys-hsm/_category_.json",
+            to: "/how-to/store-keys/store-keys-hsm/_category_.json",
+          },
+          {
+            from: "/how-to/store-keys-hsm/usb-armory.md",
+            to: "/how-to/store-keys/store-keys-hsm/usb-armory.md",
+          },
+          {
+            from: "/how-to/store-keys-hsm/yubihsm2.md",
+            to: "/how-to/store-keys/store-keys-hsm/yubihsm2.md",
+          },
+          {
+            from: "/how-to/store-keys-vaults/_category_.json",
+            to: "/how-to/store-keys/store-keys-vaults/_category_.json",
+          },
+          {
+            from: "/how-to/store-keys-vaults/aws.md",
+            to: "/how-to/store-keys/store-keys-vaults/aws.md",
+          },
+          {
+            from: "/how-to/store-keys-vaults/azure.md",
+            to: "/how-to/store-keys/store-keys-vaults/azure.md",
+          },
+          {
+            from: "/how-to/store-keys-vaults/hashicorp.md",
+            to: "/how-to/store-keys/store-keys-vaults/hashicorp.md",
+          },
+          {
+            from: "/how-to/use-configuration-file.md",
+            to: "/how-to/use-configuration-file-starting-web3signer.md",
+          },
+          {
+            from: "/how-to/use-signing-keys.md",
+            to: "/how-to/store-keys.md",
+          },
+          {
             from: "/how-to/deploy-with-kubernetes",
             to: "/how-to",
           },

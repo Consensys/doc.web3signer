@@ -1,5 +1,5 @@
 ---
-sidebar_label: Use a configuration file
+sidebar_label: Use a configuration file for starting Web3Signer
 description: Use the Web3Signer configuration file.
 sidebar_position: 5
 ---

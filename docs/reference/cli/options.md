@@ -29,7 +29,7 @@ variable, configuration file.
 
 ### `config-file`
 
-Path to the [YAML configuration file](../../how-to/use-configuration-file.md).
+Path to the [YAML configuration file](../../how-to/use-configuration-file-starting-web3signer.md).
 The default is `none`.
 
 <Tabs>
