@@ -1549,7 +1549,7 @@ eth2.gcp-secrets-filter: "my-secrets-filter"
 
 <!--/tabs-->
 
-Use to filter secrets loaded into Web3Signer. [List operation filtering](https://cloud.google.com/secret-manager/docs/filtering) is applied
+Filter to use when loading secrets into Web3Signer. [List operation filtering](https://cloud.google.com/secret-manager/docs/filtering) is applied.
 
 Only secrets matching the filter are loaded. If not specified, all secrets from the project identified by
 [`--gcp-project-id`](#gcp-project-id) are loaded.
