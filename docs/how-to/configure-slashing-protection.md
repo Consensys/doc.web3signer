@@ -4,6 +4,9 @@ description: Configure consensus layer slashing protection.
 sidebar_position: 6
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Configure consensus layer slashing protection
 
 Configure [slashing protection] to prevent consensus layer validators from being penalized for
@@ -66,21 +69,21 @@ For example `V1_initial.sql`, `V2__removeUniqueConstraints.sql`, then `V3__addLo
 Use the [Flyway] migration tool to automatically load them in order.
 :::
 
-<!--tabs-->
+<Tabs>
 
-# Flyway DB migration tool
+  <TabItem value="Flyway DB migration tool" label="Flyway DB migration tool" default>
 
 ```bash
 flyway migrate -url="jdbc:postgresql://localhost/web3signer" -locations="filesystem:/Users/me/web3signer-0.2.1-SNAPSHOT/migrations/postgresql"
 ```
-
-# Postgres command line
+  </TabItem>
+  <TabItem value="Postgres command line" label="Postgres command line" >
 
 ```bash
 psql --echo-all --host=localhost --port=5432 --dbname=web3signer --username=postgres -f /Users/me/web3signer-0.2.1-SNAPSHOT/migrations/postgresql/postgresql/V1__initial.sql
 ```
-
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 :::note
 If using the PostgreSQL command line inside a docker container, ensure you mount the

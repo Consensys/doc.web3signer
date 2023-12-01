@@ -1,9 +1,15 @@
 ---
-description: Web3Signer REST API reference
+description: Use for signing consensus layer payloads
 sidebar_position: 2
 ---
 
-# REST API
+# Web3Signer REST API
+
+The Web3Signer REST API contains an ETH2 (that is, consensus layer) API, and an ETH1 (that is, execution layer) API. 
+Use the ETH2 API for signing consensus layer payloads. 
+
+We recommend using the [Web3Signer JSON-RPC API](json-rpc.md) for signing execution layer payloads. The ETH1 REST API contains a basic signing method but does not implement transaction encoding
+or create an an Ethereum signature. 
 
 ## View the REST API documentation
 

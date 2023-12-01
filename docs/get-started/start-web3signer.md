@@ -4,6 +4,9 @@ description: Start Web3Signer.
 sidebar_position: 4
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Start Web3Signer
 
 :::note
@@ -16,37 +19,32 @@ The execution layer is formerly "Ethereum 1.0." The consensus layer is formerly 
 
 - [Signing key configuration files] to access the required signing keys.
 
-Web3Signer supports consensus layer clients, execution layer clients, and Filecoin platforms, so you
+Web3Signer supports consensus layer clients, and execution layer clients, so you
 must specify the signing mode, and the location of the signing key configuration files when starting Web3Signer.
 
-<!--tabs-->
-
-# Consensus layer client
+<Tabs>
+  <TabItem value="Consensus layer client" label="Consensus layer client" default>
 
 ```bash
 web3signer --key-store-path=/Users/me/keyFiles/ eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
 ```
 
-# Execution layer client
+  </TabItem>
+  <TabItem value="Execution layer client" label="Execution layer client" >
 
 ```bash
 web3signer --key-store-path=/Users/me/keyFiles/ eth1
 ```
 
-# Filecoin
-
-```bash
-web3signer --key-store-path=/Users/me/keyFiles/ filecoin
-```
-
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 In the command line:
 
 - Use the [`--key-store-path`](../reference/cli/options.md#key-store-path) option to specify the
   location of the signing key configuration files.
 - Specify the [subcommand] to indicate which signing mode to use.
-  Valid subcommands are `eth2`, `eth1`, and `filecoin`.
+  Valid subcommands are `eth2` and `eth1`.
   You can only specify one signing mode when starting Web3Signer.
 
 ## Consensus layer considerations
@@ -89,24 +87,25 @@ about this option and the supported networks.
 Use the [`upcheck`](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Server-Status)
 endpoint to confirm Web3Signer is connected and running.
 
-<!--tabs-->
-
-# curl request
+<Tabs>
+  <TabItem value="curl request" label="curl request" default>
 
 ```bash
 curl -X GET http://localhost:9000/upcheck
 ```
 
-# Result
+  </TabItem>
+  <TabItem value="Result" label="Result" >
 
 ```json
 200 OK
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
-Web3Signer by default also performs a health check on the [slashing protection
-database](../how-to/configure-slashing-protection.md).
+Web3Signer by default also performs a health check on the
+[slashing protection database].
 
 <!-- Links -->
 

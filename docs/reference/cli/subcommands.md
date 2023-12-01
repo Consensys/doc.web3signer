@@ -4,6 +4,9 @@ description: Web3Signer subcommands reference
 sidebar_position: 2
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Subcommands
 
 :::caution Filecoin deprecation notice
@@ -20,8 +23,6 @@ Use the Web3Signer subcommands to specify the platform being used:
 - `web3signer [options] eth2 export [Eth2 export options]`
 - `web3signer [options] eth2 import [Eth2 import options]`
 - `web3signer [options] eth1`
-- `web3signer [options] filecoin [Filecoin options]`
-- `web3signer [options] watermark-repair [watermark repair options]`
 
 :::note
 This documentation has been updated in line with the name changes [recommended by the Ethereum
@@ -39,15 +40,11 @@ The subcommand must be specified on the command line, but the subcommand options
   - Uppercase.
   - `_` replaces `-`.
   - Has a `WEB3SIGNER_` + `<SIGNING_OPTION>_` prefix.
-- In a YAML configuration file.
+- In a [YAML configuration file](../../how-to/use-configuration-file-starting-web3signer.md).
 
-For example, you can set the `--network` option for the `filecoin` subcommand in an environment
-variable `export WEB3SIGNER_FILECOIN_NETWORK=TESTNET`, but the subcommand must be specified in the
+For example, you can set the `--chain-id` option for the `eth1` subcommand in an environment
+variable `export WEB3SIGNER_ETH1_CHAIN_ID=2017`, but the subcommand must be specified in the
 command line.
-
-```bash
-web3signer --key-store-path=/Users/me/keyFiles/ filecoin
-```
 
 ## View help
 
@@ -55,8 +52,6 @@ To view the command line help for the subcommands:
 
 - [`web3signer help eth1`](#eth1)
 - [`web3signer help eth2`](#eth2)
-- [`web3signer help filecoin`](#filecoin)
-- [`web3signer help watermark-repair`](#watermark-repair)
 
 ## Options
 
@@ -400,66 +395,74 @@ Applied as `AND` operation with other filters.
 
 #### `azure-vault-enabled`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --azure-vault-enabled=<BOOLEAN>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --azure-vault-enabled=true
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_VAULT_ENABLED=true
+WEB3SIGNER_ETH1_AZURE_VAULT_ENABLED=true
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
-eth2.azure-vault-enabled: true
+eth1.azure-vault-enabled: true
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Enables [bulk loading keys from Azure Key Vault](../../how-to/use-signing-keys.md#azure-key-vault).
 The default is `false`.
 
 #### `azure-client-id`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --azure-client-id=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --azure-client-id=87efaa5b-4029-4b54-98bb2e2e8a11
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_CLIENT_ID=87efaa5b-4029-4b54-98bb2e2e8a11
+WEB3SIGNER_ETH1_AZURE_CLIENT_ID=87efaa5b-4029-4b54-98bb2e2e8a11
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
-eth2.azure-client-id: "87efaa5b-4029-4b54-98bb2e2e8a11"
+eth1.azure-client-id: "87efaa5b-4029-4b54-98bb2e2e8a11"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 ID used to authenticate with Azure Key Vault.
 
@@ -468,129 +471,181 @@ Required when [`--azure-vault-auth-mode`](#azure-vault-auth-mode) is `CLIENT_SEC
 
 #### `azure-client-secret`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --azure-client-secret=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --azure-client-secret=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_CLIENT_SECRET=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
+WEB3SIGNER_ETH1_AZURE_CLIENT_SECRET=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
-eth2.azure-client-secret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
+eth1.azure-client-secret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The secret used to access the vault along with the ID specified in [`azure-client-id`](#azure-client-id).
 
+#### `azure-response-timeout`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--azure-response-timeout=<AZURE_RESPONSE_TIMEOUT>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example" >
+
+```bash
+--azure-response-timeout=40
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
+
+```bash
+WEB3SIGNER_ETH1_AZURE_RESPONSE_TIMEOUT=40
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
+
+```bash
+eth1.azure-response-timeout: "40"
+```
+
+  </TabItem>
+</Tabs>
+
+The response timeout used by the HTTP client (in seconds). The default is 60. You can also set the timeout using the `timeout` field in the Azure metadata file. 
+
 #### `azure-tags`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --azure-tags=<TAG_NAME=TAG_VALUE>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --azure-tags=ENV=prod
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_TAGS=ENV=prod
+WEB3SIGNER_ETH1_AZURE_TAGS=ENV=prod
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
-eth2.azure-tags: "ENV=prod"
+eth1.azure-tags: "ENV=prod"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Tags to filter on with Azure Key Vault.
 
 #### `azure-tenant-id`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --azure-tenant-id=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --azure-tenant-id=34255fb0-379b-4a1a-bd47-d211ab86df81
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_TENANT_ID=34255fb0-379b-4a1a-bd47-d211ab86df81
+WEB3SIGNER_ETH1_AZURE_TENANT_ID=34255fb0-379b-4a1a-bd47-d211ab86df81
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
-eth2.azure-tenant-id: "34255fb0-379b-4a1a-bd47-d211ab86df81"
+eth1.azure-tenant-id: "34255fb0-379b-4a1a-bd47-d211ab86df81"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The tenant ID of the Azure Portal instance being used.
 
 #### `azure-vault-auth-mode`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --azure-vault-auth-mode=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --azure-vault-auth-mode=USER_ASSIGNED_MANAGED_IDENTITY
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_VAULT_AUTH_MODE=USER_ASSIGNED_MANAGED_IDENTITY
+WEB3SIGNER_ETH1_AZURE_VAULT_AUTH_MODE=USER_ASSIGNED_MANAGED_IDENTITY
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
-eth2.azure-vault-auth-mode: "USER_ASSIGNED_MANAGED_IDENTITY"
+eth1.azure-vault-auth-mode: "USER_ASSIGNED_MANAGED_IDENTITY"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Authentication mode for Azure Vault.
 Options are `CLIENT_SECRET`, `SYSTEM_ASSIGNED_MANAGED_IDENTITY`, and `USER_ASSIGNED_MANAGED_IDENTITY`.
@@ -600,99 +655,147 @@ Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or `USER_AS
 
 #### `azure-vault-name`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --azure-vault-name=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --azure-vault-name=AzureKeyVault
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
-WEB3SIGNER_ETH2_AZURE_VAULT_NAME=AzureKeyVault
+WEB3SIGNER_ETH1_AZURE_VAULT_NAME=AzureKeyVault
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
-eth2.azure-vault-name: "AzureKeyVault"
+eth1.azure-vault-name: "AzureKeyVault"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Name of the vault to access.
 Subdomain of `vault.azure.net`.
 
+#### `chain-id`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--chain-id=<LONG>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example" >
+
+```bash
+--chain-id=2017
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
+
+```bash
+WEB3SIGNER_ETH1_CHAIN_ID=2017
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
+
+```bash
+eth1.chain-id: "2017"
+```
+
+  </TabItem>
+</Tabs>
+
+ID of the chain to receive the signed transactions. The Besu documentation lists [chain IDs for public networks](https://besu.hyperledger.org/development/public-networks/concepts/network-and-chain-id). 
+
 #### `downstream-http-host`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --downstream-http-host=<downstreamHttpHost>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --downstream-http-host=192.168.05.14
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_HOST=192.168.05.14
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.downstream-http-host="192.168.05.14"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Host to which received requests are forwarded.
 The default is `localhost`.
 
 #### `downstream-http-path`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --downstream-http-path=<downstreamHttpPath>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --downstream-http-path=/v3/d0e63ca5bb1e4eef2284422efbc51a56
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PATH=/v3/d0e63ca5bb1e4eef2284422efbc51a56
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.downstream-http-path="/v3/d0e63ca5bb1e4eef2284422efbc51a56"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Path to which received requests are forwarded.
 The default is `/`.
@@ -701,65 +804,73 @@ This might be required if connecting to a cloud-based Ethereum client such as [I
 
 #### `downstream-http-port`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --downstream-http-port=<downstreamHttpPort>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --downstream-http-port=6174
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PORT=6174
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.downstream-http-port: 6174
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Port to which received requests are forwarded.
 
 #### `downstream-http-proxy-host`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --downstream-http-proxy-host=<HOST>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --downstream-http-proxy-host=192.168.05.14
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PROXY_HOST=192.168.05.14
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.downstream-http-proxy-host: "192.168.05.14"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Hostname for proxy.
 There's no proxy if set to `null`.
@@ -767,66 +878,74 @@ The default is `null`.
 
 #### `downstream-http-proxy-port`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --downstream-http-proxy-port=<PORT>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --downstream-http-proxy-port=8545
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PROXY_PORT=8545
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.downstream-http-proxy-port: 8545
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Port for proxy.
 The default is `80`.
 
 #### `downstream-http-proxy-username`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --downstream-http-proxy-username=<username>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --downstream-http-proxy-username=user
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PROXY_USERNAME=user
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.downstream-http-proxy-username: "user"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Username for proxy.
 There's no authentication if set to `null`.
@@ -834,33 +953,37 @@ The default is `null`.
 
 #### `downstream-http-proxy-password`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --downstream-http-proxy-password=<password>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --downstream-http-proxy-password=password
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_PROXY_PASSWORD=password
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.downstream-http-proxy-password: "password"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Password for proxy.
 There's no authentication if set to `null`.
@@ -868,165 +991,185 @@ The default is `null`.
 
 #### `downstream-http-request-timeout`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --downstream-http-request-timeout=<downstreamHttpRequestTimeout>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --downstream-http-request-timeout=3000
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_REQUEST_TIMEOUT=3000
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.downstream-http-request-timeout: 3000
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Timeout period (in milliseconds) for downstream requests.
 The default is 5000.
 
 #### `downstream-http-tls-enabled`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --downstream-http-tls-enabled=<BOOLEAN>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --downstream-http-tls-enabled=true
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_TLS_ENABLED=true
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.downstream-http-tls-enabled: true
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Enables or disables [TLS for server connections](../../concepts/tls.md).
 The default is `false`.
 
 #### `downstream-http-tls-known-servers-file`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --downstream-http-tls-known-servers-file=<FILE>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --downstream-http-tls-known-servers-file=/Users/me/my_node/knownServers
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
-WEB3SIGNER_DOWNSTREAM_HTTP_TLS_KNOWN_SERVERS_FILE=/Users/me/my_node/knownServers
+WEB3SIGNER_ETH1_DOWNSTREAM_HTTP_TLS_KNOWN_SERVERS_FILE=/Users/me/my_node/knownServers
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.downstream-http-tls-known-servers-file=/Users/me/my_node/knownServers
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
-File containing the hostnames, ports, and SHA256 certificate fingerprints of [trusted
-servers](../../how-to/configure-tls.md#create-the-known-servers-file).
+File containing the hostnames, ports, and SHA256 certificate fingerprints of
+[trusted servers](../../how-to/configure-tls.md#create-the-known-servers-file).
 
 #### `downstream-http-tls-ca-auth-enabled`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --downstream-http-tls-ca-auth-enabled=<BOOLEAN>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --downstream-http-tls-ca-auth-enabled=false
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_HTTP_TLS_CA_AUTH_ENABLED=false
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.downstream-http-tls-ca-auth-enabled: false
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Enables or disables connections to servers with trusted CAs.
 The default is `true`.
 
 #### `keystores-password-file`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --keystores-password-file=<FILE>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --keystores-password-file=/Users/me/passwds/keystore_passwords.txt
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_KEYSTORES_PASSWORD_FILE=/Users/me/passwds/keystore_passwords.txt
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.keystores-password-file: "/Users/me/passwds/keystore_passwords.txt"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 File that contains the password used by all keystores.
 Cannot be set if [`--keystores-passwords-path`](#keystores-passwords-path) is also specified.
@@ -1038,33 +1181,37 @@ containing a separate password file for each keystore.
 
 #### `keystores-passwords-path`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --keystores-passwords-path=<PATH>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --keystores-passwords-path=/Users/me/passwds
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_KEYSTORES_PASSWORDS_PATH=/Users/me/passwds
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.keystores-passwords-path: "/Users/me/passwds"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Directory containing password files for corresponding keystores.
 Each password file name must match the corresponding keystore filename, but with a `.txt` extension.
@@ -1078,33 +1225,37 @@ password file that contains the password used by all keystores.
 
 #### `keystores-path`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --keystores-path=<PATH>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --keystores-path=/Users/me/keystores
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_KEYSTORES_PATH=/Users/me/keystores
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.keystores-path: "/Users/me/keystores"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Directory that stores the keystore files.
 Keystore files must use a `.json` file extension.
@@ -1120,135 +1271,149 @@ Restart Web3Signer if you want to pick up new keystores added to the directory s
 
 #### `aws-connection-cache-size`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-connection-cache-size=<LONG>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-connection-cache-size=5
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AWS_CONNECTION_CACHE_SIZE=5
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.aws-connection-cache-size: 5
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
-When [loading multiple keys from AWS Secrets
-Manager](../../how-to/store-keys-vaults/aws.md#cache-aws-secrets-manager-when-loading-multiple-keys),
+When [loading multiple keys from AWS Secrets Manager](../../how-to/store-keys/vaults/aws.md#cache-aws-secrets-manager-when-loading-multiple-keys),
 set to the maximum number of connections to cache.
 The default is 1.
 
 #### `aws-endpoint-override`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-endpoint-override=<ENDPOINT_URL>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-endpoint-override=http://localstack:4566
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AWS_ENDPOINT_OVERRIDE=http://localstack:4566
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.aws-endpoint-override="http://localstack:4566"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Endpoint override for AWS Secrets Manager.
 This is useful for local testing against LocalStack.
 
 #### `aws-secrets-enabled`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-secrets-enabled=<BOOLEAN>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-secrets-enabled=true
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AWS_SECRETS_ENABLED=true
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.aws-secrets-enabled: true
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
-Enables or disables [bulk loading keys from AWS Secrets
-Manager](../../how-to/use-signing-keys.md#aws-secrets-manager).
+Enables or disables [bulk loading keys from AWS Secrets Manager](../../how-to/use-signing-keys.md#aws-secrets-manager).
 The default is `false`.
 
 #### `aws-secrets-auth-mode`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-secrets-auth-mode=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-secrets-auth-mode=ENVIRONMENT
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AWS_SECRETS_AUTH_MODE=ENVIRONMENT
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.aws-secrets-auth-mode: "ENVIRONMENT"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Authentication mode for AWS Secrets Manager.
 Options are `SPECIFIED` and `ENVIRONMENT`.
@@ -1260,33 +1425,37 @@ Set [`--aws-secrets-access-key-id`](#aws-secrets-access-key-id),
 
 #### `aws-secrets-access-key-id`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-secrets-access-key-id=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-secrets-access-key-id=AKIA...EXAMPLE
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AWS_SECRETS_ACCESS_KEY_ID=AKIA...EXAMPLE
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.aws-secrets-access-key-id: "AKIA...EXAMPLE"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 AWS access key ID to authenticate AWS Secrets Manager.
 
@@ -1294,33 +1463,37 @@ Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`
 
 #### `aws-secrets-secret-access-key`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-secrets-secret-access-key=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-secrets-secret-access-key=sk...EXAMPLE
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AWS_SECRETS_SECRET_ACCESS_KEY=sk...EXAMPLE
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.aws-secrets-secret-access-key: "sk...EXAMPLE"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 AWS secret access key to authenticate AWS Secrets Manager.
 
@@ -1328,33 +1501,37 @@ Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`
 
 #### `aws-secrets-region`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-secrets-region=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-secrets-region=us-east-2
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AWS_SECRETS_REGION=us-east-2
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.aws-secrets-region: "us-east-2"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 AWS region where AWS Secrets Manager is available.
 
@@ -1362,33 +1539,37 @@ Required when [`--aws-secrets-auth-mode`](#aws-secrets-auth-mode) is `SPECIFIED`
 
 #### `aws-secrets-prefixes-filter`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-secrets-prefixes-filter=<STRING>[,<STRING>,...]
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-secrets-prefixes-filter=prefix1,prefix2
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AWS_SECRETS_PREFIXES_FILTER=prefix1,prefix2
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.aws-secrets-prefixes-filter: ["prefix1","prefix2"]
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Optional comma-separated list of secret name prefixes filter to apply while fetching secrets from
 AWS Secrets Manager.
@@ -1396,133 +1577,149 @@ Applied as `AND` operation with other filters.
 
 #### `aws-secrets-tag-names-filter`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-secrets-tag-names-filter=<STRING>[,<STRING>,...]
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-secrets-tag-names-filter=tagName1,tagName2
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AWS_SECRETS_TAG_NAMES_FILTER=tagName1,tagName2
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.aws-secrets-tag-names-filter: ["tagName1","tagName2"]
 
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Optional comma-separated list of tag names filter to apply while fetching secrets from AWS Secrets Manager.
 Applied as `AND` operation with other filters.
 
 #### `aws-secrets-tag-values-filter`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-secrets-tag-values-filter=<STRING>[,<STRING>,...]
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-secrets-tag-values-filter=tagValue1,tagValue2
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AWS_SECRETS_TAG_VALUES_FILTER=tagValue1,tagValue2
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.aws-secrets-tag-values-filter: ["tagValue1","tagValue2"]
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Optional comma-separated list of tag values filter to apply while fetching secrets from AWS Secrets Manager.
 Applied as `AND` operation with other filters.
 
 #### `azure-vault-enabled`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --azure-vault-enabled=<BOOLEAN>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --azure-vault-enabled=true
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AZURE_VAULT_ENABLED=true
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.azure-vault-enabled: true
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Enables [bulk loading keys from Azure Key Vault](../../how-to/use-signing-keys.md#azure-key-vault).
 The default is `false`.
 
 #### `azure-client-id`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --azure-client-id=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --azure-client-id=87efaa5b-4029-4b54-98bb2e2e8a11
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AZURE_CLIENT_ID=87efaa5b-4029-4b54-98bb2e2e8a11
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.azure-client-id: "87efaa5b-4029-4b54-98bb2e2e8a11"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 ID used to authenticate with Azure Key Vault.
 
@@ -1531,129 +1728,181 @@ Required when [`--azure-vault-auth-mode`](#azure-vault-auth-mode) is `CLIENT_SEC
 
 #### `azure-client-secret`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --azure-client-secret=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --azure-client-secret=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AZURE_CLIENT_SECRET=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.azure-client-secret: "0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The secret used to access the vault along with the ID specified in [`azure-client-id`](#azure-client-id).
 
+#### `azure-response-timeout`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--azure-response-timeout=<AZURE_RESPONSE_TIMEOUT>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example" >
+
+```bash
+--azure-response-timeout=40
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
+
+```bash
+WEB3SIGNER_ETH2_AZURE_RESPONSE_TIMEOUT=40
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
+
+```bash
+eth2.azure-response-timeout: "40"
+```
+
+  </TabItem>
+</Tabs>
+
+The response timeout used by the HTTP client (in seconds). The default is 60. You can also set the timeout using the `timeout` field in the Azure metadata file.
+
 #### `azure-tags`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --azure-tags=<TAG_NAME=TAG_VALUE>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --azure-tags=ENV=prod
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AZURE_TAGS=ENV=prod
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.azure-tags: "ENV=prod"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Tags to filter on using Azure Key Vault.
 
 #### `azure-tenant-id`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --azure-tenant-id=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --azure-tenant-id=34255fb0-379b-4a1a-bd47-d211ab86df81
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AZURE_TENANT_ID=34255fb0-379b-4a1a-bd47-d211ab86df81
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.azure-tenant-id: "34255fb0-379b-4a1a-bd47-d211ab86df81"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The tenant ID of the Azure Portal instance being used.
 
 #### `azure-vault-auth-mode`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --azure-vault-auth-mode=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --azure-vault-auth-mode=USER_ASSIGNED_MANAGED_IDENTITY
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AZURE_VAULT_AUTH_MODE=USER_ASSIGNED_MANAGED_IDENTITY
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.azure-vault-auth-mode: "USER_ASSIGNED_MANAGED_IDENTITY"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Authentication mode for Azure Vault.
 Options are `CLIENT_SECRET`, `SYSTEM_ASSIGNED_MANAGED_IDENTITY`, and `USER_ASSIGNED_MANAGED_IDENTITY`.
@@ -1663,103 +1912,211 @@ Set [`--azure-client-id`](#azure-client-id) if using `CLIENT_SECRET` or `USER_AS
 
 #### `azure-vault-name`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --azure-vault-name=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --azure-vault-name=AzureKeyVault
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_AZURE_VAULT_NAME=AzureKeyVault
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.azure-vault-name: "AzureKeyVault"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Name of the vault to access.
 Subdomain of `vault.azure.net`.
 
-#### `key-manager-api-enabled`
+#### `gcp-project-id`
 
 <!--tabs-->
 
 # Syntax
+
+```bash
+--gcp-project-id=<STRING>
+```
+
+# Example
+
+```bash
+--gcp-project-id=my-project
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_GCP_PROJECT_ID=my-project
+```
+
+# Configuration file
+
+```bash
+eth2.gcp-project-id: "my-project"
+```
+
+<!--/tabs-->
+
+Globally unique identifier for the Google Cloud Platform (GCP) project where the
+secrets to be used by Web3Signer are stored.
+
+#### `gcp-secrets-enabled`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--gcp-secrets-enabled=<BOOLEAN>
+```
+
+# Example
+
+```bash
+--gcp-secrets-enabled=true
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_GCP_SECRETS_ENABLED=true
+```
+
+# Configuration file
+
+```bash
+eth2.gcp-secrets-enabled: true
+```
+
+<!--/tabs-->
+
+Set to `true` to enable bulk loading from the GCP Secrets Manager service. The default is `false`. 
+
+#### `gcp-secrets-filter`
+
+<!--tabs-->
+
+# Syntax
+
+```bash
+--gcp-secrets-filter=<STRING>
+```
+
+# Example
+
+```bash
+--gcp-secrets-filter=my-secrets-filter
+```
+
+# Environment variable
+
+```bash
+WEB3SIGNER_ETH2_GCP_SECRETS_FILTER=my-secrets-filter
+```
+
+# Configuration file
+
+```bash
+eth2.gcp-secrets-filter: "my-secrets-filter"
+```
+
+<!--/tabs-->
+
+Filter to use when loading secrets into Web3Signer. [List operation filtering](https://cloud.google.com/secret-manager/docs/filtering) is applied.
+
+Only secrets matching the filter are loaded. If not specified, all secrets from the project identified by
+[`--gcp-project-id`](#gcp-project-id) are loaded.
+
+#### `key-manager-api-enabled`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --key-manager-api-enabled=<BOOLEAN>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --key-manager-api-enabled=true
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_KEY_MANAGER_API_ENABLED=true
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.key-manager-api-enabled: true
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Enables the [key manager API](../../how-to/use-signing-keys.md#manage-keys).
 The default is `false`.
 
-:::caution Warning
-The key manager API is an early access feature and is still in development.
-:::
-
 #### `keystores-password-file`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --keystores-password-file=<FILE>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --keystores-password-file=/Users/me/passwds/keystore_passwords.txt
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_KEYSTORES_PASSWORD_FILE=/Users/me/passwds/keystore_passwords.txt
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.keystores-password-file: "/Users/me/passwds/keystore_passwords.txt"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 File that contains the password used by all keystores.
 Cannot be set if [`--keystores-passwords-path`](#keystores-passwords-path) is also specified.
@@ -1771,33 +2128,37 @@ containing a separate password file for each keystore.
 
 #### `keystores-passwords-path`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --keystores-passwords-path=<PATH>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --keystores-passwords-path=/Users/me/passwds
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_KEYSTORES_PASSWORDS_PATH=/Users/me/passwds
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.keystores-passwords-path: "/Users/me/passwds"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Directory containing password files for corresponding keystores.
 Each password file name must match the corresponding keystore filename, but with a `.txt` extension.
@@ -1811,33 +2172,37 @@ password file that contains the password used by all keystores.
 
 #### `keystores-path`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --keystores-path=<PATH>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --keystores-path=/Users/me/keystores
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_KEYSTORES_PATH=/Users/me/keystores
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.keystores-path: "/Users/me/keystores"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Directory that stores the keystore files.
 Keystore files must use a `.json` file extension.
@@ -1851,33 +2216,37 @@ Restart Web3Signer if you want to pick up new keystores added to the directory s
 
 #### `network`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --network=<NETWORK>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --network=mainnet
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_NETWORK=mainnet
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.network: "mainnet"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Predefined network configuration.
 Accepts a predefined network name, or file path or URL to a YAML configuration file.
@@ -1904,33 +2273,37 @@ Possible values are:
 
 #### `slashing-protection-db-health-check-interval-milliseconds`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --slashing-protection-db-health-check-interval-milliseconds=<INTERVAL>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --slashing-protection-db-health-check-interval-milliseconds=20000
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_HEALTH_CHECK_INTERVAL_MILLISECONDS=20000
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.slashing-protection-db-health-check-interval-milliseconds: 20000
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Milliseconds between the slashing protection database health checks.
 The default is 30000.
@@ -1939,33 +2312,37 @@ The service responds with a `200` message if healthy, and `503` if unhealthy.
 
 #### `slashing-protection-db-health-check-timeout-milliseconds`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --slashing-protection-db-health-check-timeout-milliseconds=<INTERVAL>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --slashing-protection-db-health-check-timeout-milliseconds=2000
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_HEALTH_CHECK_TIMEOUT_MILLISECONDS=2000
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.slashing-protection-db-health-check-timeout-milliseconds: 2000
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Milliseconds after which to fail the database health check.
 For example, if the health check connects to the slashing protection database, but does not report
@@ -1975,65 +2352,73 @@ The default is 3000.
 
 #### `slashing-protection-db-password`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --slashing-protection-db-password=<PASSWORD>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --slashing-protection-db-password=changeme
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_PASSWORD=changeme
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.slashing-protection-db-password: "changeme"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The password to connect to the slashing protection database.
 
 #### `slashing-protection-db-pool-configuration-file`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --slashing-protection-db-pool-configuration-file=<FILE>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --slashing-protection-db-pool-configuration-file=/Users/me/config/HikariConfig.properties
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_POOL_CONFIGURATION_FILE=/Users/me/config/HikariConfig.properties
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.slashing-protection-db-pool-configuration-file: "/Users/me/config/HikariConfig.properties"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 [HikariCP connection pool configuration file](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby).
 
@@ -2042,33 +2427,37 @@ The defaults perform well in most deployments, but you can override them using t
 
 #### `slashing-protection-db-url`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --slashing-protection-db-url=<JDBC_URL>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --slashing-protection-db-url=jdbc:postgresql://localhost/web3signer
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_URL=jdbc:postgresql://localhost/web3signer
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.slashing-protection-db-url: "jdbc:postgresql://localhost/web3signer"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The Java Database Connectivity (JDBC) URL of the slashing protection database.
 
@@ -2078,65 +2467,73 @@ If using a non-default port number for your PostgreSQL database, then [include t
 
 #### `slashing-protection-db-username`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --slashing-protection-db-username=<USERNAME>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --slashing-protection-db-username=postgres
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_SLASHING_PROTECTION_DB_USERNAME=postgres
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.slashing-protection-db-username: "postgres"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The username to use when connecting to the slashing protection database.
 
 #### `slashing-protection-enabled`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --slashing-protection-enabled=<BOOLEAN>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --slashing-protection-enabled=false
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_SLASHING_PROTECTION_ENABLED=false
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.slashing-protection-enabled: false
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Enables Web3Signer [slashing protection].
 If `true`, then all signing operations are validated against historical data before signing.
@@ -2145,69 +2542,76 @@ The default is `true`.
 
 #### `slashing-protection-pruning-at-boot-enabled`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --slashing-protection-pruning-at-boot-enabled=<BOOLEAN>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --slashing-protection-pruning-at-boot-enabled=true
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_AT_BOOT_ENABLED=true
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```yaml
 eth2.slashing-protection-pruning-at-boot-enabled: true
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
-When set to `true`, [slashing protection database
-pruning](../../how-to/configure-slashing-protection.md#prune-the-slashing-protection-database) is
-enabled at startup and at the defined [pruning intervals](#slashing-protection-pruning-interval).
+When set to `true`, [slashing protection database pruning](../../how-to/configure-slashing-protection.md#prune-the-slashing-protection-database)
+is enabled at startup and at the defined [pruning intervals](#slashing-protection-pruning-interval).
 
 The default is `false`.
 
 #### `slashing-protection-pruning-db-pool-configuration-file`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --slashing-protection-pruning-db-pool-configuration-file=<FILE>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --slashing-protection-pruning-db-pool-configuration-file=/Users/me/config/HikariConfig.properties
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_DB_POOL_CONFIGURATION_FILE=/Users/me/config/HikariConfig.properties
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.slashing-protection-pruning-db-pool-configuration-file: "/Users/me/config/HikariConfig.properties"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 [HikariCP connection pool configuration file](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby)
 used by the pruning process.
@@ -2217,66 +2621,74 @@ The defaults perform well in most deployments, but you can override them using t
 
 #### `slashing-protection-pruning-enabled`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --slashing-protection-pruning-enabled=<BOOLEAN>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --slashing-protection-pruning-enabled=true
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_ENABLED=true
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```yaml
 eth2.slashing-protection-pruning-enabled: true
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Enables [slashing protection database pruning](../../how-to/configure-slashing-protection.md#prune-the-slashing-protection-database).
 The default is `false`.
 
 #### `slashing-protection-pruning-epochs-to-keep`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --slashing-protection-pruning-epochs-to-keep=<LONG>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --slashing-protection-pruning-epochs-to-keep=64
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_EPOCHS_TO_KEEP=64
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```yaml
 eth2.slashing-protection-pruning-epochs-to-keep: 64
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Number of epochs to keep when pruning the slashing protection database.
 
@@ -2284,33 +2696,37 @@ The default is 250.
 
 #### `slashing-protection-pruning-interval`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --slashing-protection-pruning-interval=<LONG>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --slashing-protection-pruning-interval=48
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_INTERVAL=48
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```yaml
 eth2.slashing-protection-pruning-interval: 48
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Hours between slashing protection database pruning operations.
 
@@ -2318,33 +2734,37 @@ The default is 24.
 
 #### `slashing-protection-pruning-slots-per-epoch`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --slashing-protection-pruning-slots-per-epoch=<LONG>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --slashing-protection-pruning-slots-per-epoch=20
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_SLASHING_PROTECTION_PRUNING_SLOTS_PER_EPOCH=20
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```yaml
 eth2.slashing-protection-pruning-slots-per-epoch: 20
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Number of slots per epoch.
 This number multiplied by the number of epochs to keep determines what blocks to keep when pruning
@@ -2358,33 +2778,37 @@ Exports the slashing protection database to a file.
 
 #### `to`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --to=<FILE>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --to=/Users/me/my_node/interchange.json
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_EXPORT_TO=/Users/me/my_node/interchange.json
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.export.to: /Users/me/my_node/interchange.json
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The file to export the slashing protection database to.
 The exported file uses the [validator client interchange format].
@@ -2395,217 +2819,40 @@ Imports a slashing protection database from a file.
 
 #### `from`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --from=<FILE>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --from=/Users/me/my_node/interchange.json
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_IMPORT_FROM=/Users/me/my_node/interchange.json
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.import.from: /Users/me/my_node/interchange.json
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The file to import the slashing protection database from.
 The file must be formatted in the [validator client interchange format].
-
-### `filecoin`
-
-#### `network`
-
-<!--tabs-->
-
-# Syntax
-
-```bash
---network=<NETWORK>
-```
-
-# Example
-
-```bash
---network=TESTNET
-```
-
-# Environment variable
-
-```bash
-WEB3SIGNER_FILECOIN_NETWORK=TESTNET
-```
-
-# Configuration file
-
-```bash
-filecoin.network: "TESTNET"
-```
-
-<!--/tabs-->
-
-Predefined network configuration.
-Accepts a predefined network name.
-The default is `TESTNET`.
-
-### `watermark-repair`
-
-Updates the [slashing protection low or high watermark](https://eips.ethereum.org/EIPS/eip-3076) for all validators.
-You can only increase the low watermark, not decrease it.
-If you set the high watermark, you should set this to a future epoch and slot.
-Setting a high watermark prevents the validator from signing at or beyond this point.
-
-:::caution
-We only recommend this subcommand for advanced users.
-:::
-
-#### `epoch`
-
-<!--tabs-->
-
-# Syntax
-
-```bash
---epoch=<LONG>
-```
-
-# Example
-
-```bash
---epoch=30000
-```
-
-# Environment variable
-
-```bash
-WEB3SIGNER_WATERMARK_REPAIR_EPOCH=30000
-```
-
-# Configuration file
-
-```bash
-watermark-repair.epoch: 30000
-```
-
-<!--/tabs-->
-
-Low watermark to set the attestation source and target to.
-(Sets the high watermark epoch when [`--set-high-watermark`](#set-high-watermark) is `true`.)
-
-#### `slot`
-
-<!--tabs-->
-
-# Syntax
-
-```bash
---slot=<LONG>
-```
-
-# Example
-
-```bash
---slot=20000
-```
-
-# Environment variable
-
-```bash
-WEB3SIGNER_WATERMARK_REPAIR_SLOT=20000
-```
-
-# Configuration file
-
-```bash
-watermark-repair.slot: 20000
-```
-
-<!--/tabs-->
-
-Low watermark to set the block slot to.
-(Sets the high watermark slot when [`--set-high-watermark`](#set-high-watermark) is `true`.)
-
-#### `remove-high-watermark`
-
-<!--tabs-->
-
-# Syntax
-
-```bash
---remove-high-watermark=<BOOLEAN>
-```
-
-# Example
-
-```bash
---remove-high-watermark=true
-```
-
-# Environment variable
-
-```bash
-WEB3SIGNER_REMOVE_HIGH_WATERMARK=true
-```
-
-# Configuration file
-
-```bash
-watermark-repair.remove-high-watermark: true
-```
-
-<!--/tabs-->
-
-Removes the high watermark.
-When set to `true`, all other `watermark-repair` options are ignored.
-The default is `false`.
-
-#### `set-high-watermark`
-
-<!--tabs-->
-
-# Syntax
-
-```bash
---set-high-watermark=<BOOLEAN>
-```
-
-# Example
-
-```bash
---set-high-watermark=true
-```
-
-# Environment variable
-
-```bash
-WEB3SIGNER_SET_HIGH_WATERMARK=true
-```
-
-# Configuration file
-
-```bash
-watermark-repair.set-high-watermark: true
-```
-
-<!--/tabs-->
-
-Sets the high watermark to the specified [epoch](#epoch) and [slot](#slot).
-(Sets the low watermark when [`--set-high-watermark`](#set-high-watermark) is `false`.)
-The default is `false`.
 
 <!-- links -->
 
