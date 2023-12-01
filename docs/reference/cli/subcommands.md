@@ -90,7 +90,7 @@ eth1.aws-connection-cache-size: 5
 When [loading multiple keys from AWS Secrets
 Manager](../../how-to/store-keys/vaults/aws.md#cache-aws-secrets-manager-when-loading-multiple-keys),
 set to the maximum number of connections to cache.
-The default is 1.
+The default is `1`.
 
 #### `aws-endpoint-override`
 
@@ -155,7 +155,8 @@ eth1.aws-kms-access-key-id: "AKIA...EXAMPLE"
 
 <!--/tabs-->
 
-AWS Access Key ID to authenticate AWS KMS. Required for `SPECIFIED` [authentication mode](#aws-kms-auth-mode).
+AWS Access Key ID to authenticate AWS KMS.
+Required when [`--aws-kms-auth-mode`](#aws-kms-auth-mode) is `SPECIFIED`.
 
 #### `aws-kms-auth-mode`
 
@@ -225,8 +226,8 @@ eth1.aws-kms-client-cache-size: "5"
 
 <!--/tabs-->
 
-Specifies the AWS KMS client cache size. Set to the total number of credentials 
-used to access the service plus the number of regions the service is accessed from. The default is 1.
+AWS KMS client cache size. Set to the total number of credentials 
+used to access the service plus the number of regions the service is accessed from. The default is `1`.
 
 #### `aws-kms-enabled`
 
@@ -258,7 +259,7 @@ eth1.aws-kms-enabled: "true"
 
 <!--/tabs-->
 
-Set to true to enable bulk loading from the AWS KMS. The default is false. 
+Set to `true` to enable bulk loading from the AWS KMS. The default is `false`. 
 
 #### `aws-kms-region`
 
@@ -324,7 +325,8 @@ eth1.aws-kms-secret-access-key: "sk...EXAMPLE"
 
 <!--/tabs-->
 
-AWS secret access key to authenticate AWS KMS. Required for [`SPECIFIED`](#aws-kms-auth-mode) authentication mode.
+AWS secret access key to authenticate AWS KMS.
+Required when [`--aws-kms-auth-mode`](#aws-kms-auth-mode) is `SPECIFIED`.
 
 #### `aws-kms-tag-names-filter`
 
