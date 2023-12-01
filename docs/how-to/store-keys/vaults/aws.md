@@ -76,4 +76,4 @@ uses the same access key ID and region.
 
 Set the [`eth2 --aws-connection-cache-size`](../../../reference/cli/subcommands.md#aws-connection-cache-size)
 option to the maximum number of AWS Secrets Manager connections to cache.
-The default is 1.
+The default is `1`.
