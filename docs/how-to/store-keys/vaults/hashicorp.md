@@ -117,6 +117,6 @@ localhost:8200 7C:B3:3E:F9:98:43:5E:62:69:9F:A9:9D:41:14:03:BA:83:24:AC:04:CE:BD
 
 <!-- Links -->
 
-[signing key configuration file]: ../../use-signing-keys.md
+[signing key configuration file]: ../../configure-access-keys.md#use-key-configuration-files
 [Start Teku]: https://docs.teku.consensys.net/get-started/start-teku
 [Start Web3Signer and specify the location of the signing key configuration file]: ../../../get-started/start-web3signer.md

@@ -212,7 +212,7 @@ keyPath: /key1.txt
 
 <!-- Links -->
 
-[signing key configuration file]: ../how-to/use-signing-keys.md
+[signing key configuration file]: ../how-to/configure-access-keys.md#use-key-configuration-files
 [keystore file]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md
 [PKCS#11 module]: https://developers.yubico.com/YubiHSM2/Component_Reference/PKCS_11/
 [connector service]: https://developers.yubico.com/yubihsm-connector/

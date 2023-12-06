@@ -408,6 +408,10 @@ const config = {
             to: "/how-to/store-keys/hsm/usb-armory",
           },
           {
+            from: "/how-to/use-signing-keys",
+            to: "/how-to/configure-access-keys",
+          },
+          {
             from: "/how-to/store-keys-hsm/yubihsm2",
             to: "/how-to/store-keys/hsm/yubihsm2",
           },

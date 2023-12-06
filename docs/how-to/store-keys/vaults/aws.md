@@ -36,7 +36,7 @@ secretsManagerClient.createSecret(secretRequest);
 ```
 
 You can also store multiple BLS private keys under same secret name when using
-[AWS bulk loading mode](../../use-signing-keys.md#aws-secrets-manager).
+[AWS bulk loading mode](../../configure-access-keys.md#aws-secrets-manager).
 
 The keys must be separated with a line terminating character such as `\n`.
 This saves cost when dealing with a large number of keys. Up to 200 keys can be stored under same
@@ -59,7 +59,7 @@ final CreateSecretRequest secretRequest =
 secretsManagerClient.createSecret(secretRequest);
 ```
 
-Specify the following when [configuring the signing key configuration file](../../use-signing-keys.md#use-key-configuration-files):
+Specify the following when [configuring the signing key configuration file](../../configure-access-keys.md#use-key-configuration-files):
 
 - Authentication mode.
   Valid options are `ENVIRONMENT` and `SPECIFIED`.
