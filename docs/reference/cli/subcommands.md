@@ -429,7 +429,7 @@ eth1.azure-vault-enabled: true
   </TabItem>
 </Tabs>
 
-Enables [bulk loading keys from Azure Key Vault](../../how-to/use-signing-keys.md#azure-key-vault).
+Enables [bulk loading keys from Azure Key Vault](../../how-to/configure-access-keys.md#azure-key-vault).
 The default is `false`.
 
 #### `azure-client-id`
@@ -1380,7 +1380,7 @@ eth2.aws-secrets-enabled: true
   </TabItem>
 </Tabs>
 
-Enables or disables [bulk loading keys from AWS Secrets Manager](../../how-to/use-signing-keys.md#aws-secrets-manager).
+Enables or disables [bulk loading keys from AWS Secrets Manager](../../how-to/configure-access-keys.md#aws-secrets-manager).
 The default is `false`.
 
 #### `aws-secrets-auth-mode`
@@ -1686,7 +1686,7 @@ eth2.azure-vault-enabled: true
   </TabItem>
 </Tabs>
 
-Enables [bulk loading keys from Azure Key Vault](../../how-to/use-signing-keys.md#azure-key-vault).
+Enables [bulk loading keys from Azure Key Vault](../../how-to/configure-access-keys.md#azure-key-vault).
 The default is `false`.
 
 #### `azure-client-id`
@@ -2083,7 +2083,7 @@ eth2.key-manager-api-enabled: true
   </TabItem>
 </Tabs>
 
-Enables the [key manager API](../../how-to/use-signing-keys.md#manage-keys).
+Enables the [key manager API](../../how-to/manage-keys.md).
 The default is `false`.
 
 #### `keystores-password-file`

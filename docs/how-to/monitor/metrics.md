@@ -118,7 +118,7 @@ The following Web3Signer metrics are available.
 | `<keytype>_signing_duration` | Duration of a signing event. |
 | `<keytype>_missing_identifier_count` | Number of signing requests for which no keys were available. |
 | `signers_loaded_count` | Total number of SECP256k1 and BLS12-381 keys loaded. |
-| `signing_private_key_retrieval_time` | Time taken to retrieve [BLS signing keys]. |
+| `signing_private_key_retrieval_time` | Time taken to retrieve BLS signing keys. |
 
 **Eth2 Slashing protection metrics:**
 
@@ -141,5 +141,4 @@ dashboard](https://grafana.com/grafana/dashboards/13687).
 <!-- Links -->
 
 [Start Teku]: https://docs.teku.consensys.net/how-to/use-external-signer/use-web3signer
-[BLS signing keys]: ../use-signing-keys.md
 [Grafana]: https://grafana.com/docs/grafana/latest/guides/getting_started/

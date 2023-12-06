@@ -341,7 +341,7 @@ const config = {
           },
           {
             from: "/HowTo/Use-Signing-Keys",
-            to: "/how-to/use-signing-keys",
+            to: "/how-to/configure-access-keys",
           },
           {
             from: "/Reference/CLI/CLI-Syntax",
@@ -406,6 +406,10 @@ const config = {
           {
             from: "/how-to/store-keys-hsm/usb-armory",
             to: "/how-to/store-keys/hsm/usb-armory",
+          },
+          {
+            from: "/how-to/use-signing-keys",
+            to: "/how-to/configure-access-keys",
           },
           {
             from: "/how-to/store-keys-hsm/yubihsm2",
