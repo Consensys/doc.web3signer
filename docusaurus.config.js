@@ -341,7 +341,7 @@ const config = {
           },
           {
             from: "/HowTo/Use-Signing-Keys",
-            to: "/how-to/use-signing-keys",
+            to: "/how-to/configure-access-keys",
           },
           {
             from: "/Reference/CLI/CLI-Syntax",
