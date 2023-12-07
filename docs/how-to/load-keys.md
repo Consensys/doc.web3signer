@@ -1,24 +1,25 @@
 ---
-title: Configure access to signing keys
-description: Configure access to BLS12-381 and secp256k1 signing keys.
+title: Load signing keys
+description: Load BLS12-381 and secp256k1 signing keys.
 sidebar_position: 3
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Configure access to signing keys
+# Loading signing keys
 
-You can configure access to the signing key by:
+You can load signing keys by:
 
-- [Creating a key configuration file].
+- [Creating a key configuration file]. Key configuration files can be used to load all types of signing keys supported by Web3Signer.
 - Using the [`eth2` subcommand options](../reference/cli/subcommands.md#eth2) to bulk load consensus
   layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Secrets Manager](#aws-secrets-manager),
   or [keystore files](#keystore-files).
 - Using the [`eth1` subcommand options](../reference/cli/subcommands.md#eth1) to bulk load execution
-  layer signing keys stored in [Azure Key Vault](#azure-key-vault) or [keystore files](#keystore-files).
+  layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Key Management Service(KMS)](#bulk-load-keys)
+  or [keystore files](#keystore-files).
 
 :::note
-Bulk loading is only available when using keys stored in Azure Key Vault, AWS Secrets Manager,
+Bulk loading is only available when using keys stored in Azure Key Vault, AWS Secrets Manager or KMS,
 or keystore files, and can be used in combination with key configuration files.
 :::
 
@@ -83,6 +84,17 @@ Up to 200 keys can be stored under a secret name.
 ```bash
 web3signer eth2 --aws-secrets-enabled=true --aws-secrets-access-key-id=AKIA...EXAMPLE \
 --aws-secrets-secret-access-key=sk...EXAMPLE \
+--aws-secrets-region=us-east-2
+```
+
+### AWS Key Management Service
+
+You can bulk load execution layer keys that are stored in the AWS Key Management Service(KMS) using
+the Web3Signer [`eth1` subcommand options](../reference/cli/subcommands.md#eth1).
+
+```bash 
+web3signer eth1 --aws-kms-enabled=true --aws-kms-access-key-id=AKIA...EXAMPLE \
+--aws-kms-secret-access-key=sk...EXAMPLE \
 --aws-secrets-region=us-east-2
 ```
 

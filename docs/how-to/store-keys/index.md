@@ -15,9 +15,9 @@ Web3Signer supports BLS12-381 or secp256k1 signing keys stored in:
 - Vaults:
   - [HashiCorp Vault](vaults/hashicorp.md)
   - [Azure Key Vault](vaults/azure.md)
-  - [AWS Secrets Manager](vaults/aws.md)
+  - [AWS Secrets Manager](vaults/aws/aws-secrets-manager-consensuslayer.md)
 - Hardware Security Modules (HSMs):
   - [YubiHSM 2](hsm/yubihsm2.md)
   - [USB Armory Mk II](hsm/usb-armory.md)
 
-
+After storing keys, [load keys into Web3Signer](../load-keys.md).

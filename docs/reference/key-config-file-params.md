@@ -137,7 +137,8 @@ keyName: "KeyName"
 
 ## AWS Secrets Manager
 
-Use the private key stored in [AWS Secrets Manager](../how-to/store-keys/vaults/aws.md).
+Use the private key stored in [AWS Secrets Manager](../how-to/store-keys/vaults/aws/aws-secrets-manager-consensuslayer.md).
+Supports BLS keys for consensus layer signing. 
 
 ```bash
 type: "aws-secret"
@@ -158,6 +159,33 @@ region: "us-west-2"
 | **secretAccessKey** | Your secret access key. |
 | **secretName** | Name of the secret. |
 | **region** | Region to connect to. |
+
+## AWS Key Management Service. 
+
+Use the private key stored in [AWS Key Management Service (KMS)](../how-to/store-keys/vaults/aws/aws-kms-execution-layer.md). 
+Supports SECP256K1 keys for execution layer signing. 
+
+```bash
+type: "aws-kms"
+authenticationMode: "SPECIFIED"
+accessKeyId: "acc_key_id"
+secretAccessKey: "foo"
+sessionToken: "sess_token"
+kmsKeyId: "bar"
+region: "us-east-2"
+endpointOverride: "http://localhost:4566"
+```
+
+| Key                    | Description                                                                                                                                                                                                                                                                                                                             |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **type**               | Type of configuration file. Use `aws-kms`.                                                                                                                                                                                                                                                                                              |
+| **authenticationMode** | Authentication type being used. Valid options are `ENVIRONMENT` and `SPECIFIED`. If using `ENVIRONMENT`, credentials are authenticated using the [default credential provider chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default). The default authentication type is `SPECIFIED`. |
+| **accessKeyId**        | Access key ID.                                                                                                                                                                                                                                                                                                                          |
+| **secretAccessKey**    | Secret access key.                                                                                                                                                                                                                                                                                                                      |
+| **sessionToken**       | Token provided by [AWS Security Token Service(STS)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html).                                                                                                                                                                                          |
+| **kmsKeyId**           | AWS Access Key ID to authenticate AWS KMS.                                                                                                                                                                                                                                                                                              |
+| **region**             | Region to connect to.                                                                                                                                                                                                                                                                                                                   |
+| **endpointOverride**   | Endpoint override for AWS KMS. Useful for local testing against LocalStack.                                                                                                                                                                                                                                                             |
 
 ## YubiHSM 2
 
@@ -212,7 +240,7 @@ keyPath: /key1.txt
 
 <!-- Links -->
 
-[signing key configuration file]: ../how-to/configure-access-keys.md#use-key-configuration-files
+[signing key configuration file]: ../how-to/load-keys.md#use-key-configuration-files
 [keystore file]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md
 [PKCS#11 module]: https://developers.yubico.com/YubiHSM2/Component_Reference/PKCS_11/
 [connector service]: https://developers.yubico.com/yubihsm-connector/

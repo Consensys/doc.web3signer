@@ -412,6 +412,14 @@ const config = {
             to: "/how-to/configure-access-keys",
           },
           {
+            from: "/how-to/store-keys/vaults/aws",
+            to: "/how-to/store-keys/vaults/aws/aws-secrets-manager-consensuslayer",
+          },
+          {
+            from: "/how-to/configure-access-keys",
+            to: "/how-to/load-keys",
+          },
+          {
             from: "/how-to/store-keys-hsm/yubihsm2",
             to: "/how-to/store-keys/hsm/yubihsm2",
           },
