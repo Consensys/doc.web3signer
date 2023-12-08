@@ -6,7 +6,7 @@ sidebar_position: 3
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Loading signing keys
+# Load signing keys
 
 You can load signing keys by:
 

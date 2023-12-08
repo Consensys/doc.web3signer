@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # Use Web3Signer with AWS Key Management Service
 
-Web3Signer supports excecution layer signing with secp256k1 keys stored in 
+Web3Signer supports execution layer signing with secp256k1 keys stored in 
 [AWS Key Management Service(KMS)](https://aws.amazon.com/kms/).
 
 The [AWS KMS documentation](https://aws.amazon.com/kms/getting-started/)
