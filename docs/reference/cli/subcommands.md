@@ -88,7 +88,7 @@ eth1.aws-connection-cache-size: 5
 <!--/tabs-->
 
 <!-- markdown-link-check-disable-next-line -->
-When [loading multiple keys from AWS Secrets Manager](../../how-to/store-keys/vaults/aws/aws-secrets-manager-consensuslayer.md#cache-aws-secrets-manager-when-loading-multiple-keys),
+When [loading multiple keys from AWS Secrets Manager](../../how-to/store-keys/vaults/aws/secrets-manager-consensus-layer.md#cache-aws-secrets-manager-when-loading-multiple-keys),
 set to the maximum number of connections to cache.
 The default is `1`.
 
@@ -1305,7 +1305,7 @@ eth2.aws-connection-cache-size: 5
   </TabItem>
 </Tabs>
 
-When [loading multiple keys from AWS Secrets Manager](../../how-to/store-keys/vaults/aws/aws-secrets-manager-consensuslayer.md#cache-aws-secrets-manager-when-loading-multiple-keys),
+When [loading multiple keys from AWS Secrets Manager](../../how-to/store-keys/vaults/aws/secrets-manager-consensus-layer.md#cache-aws-secrets-manager-when-loading-multiple-keys),
 set to the maximum number of connections to cache.
 The default is 1.
 

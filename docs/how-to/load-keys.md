@@ -15,7 +15,7 @@ You can load signing keys by:
   layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Secrets Manager](#aws-secrets-manager),
   or [keystore files](#keystore-files).
 - Using the [`eth1` subcommand options](../reference/cli/subcommands.md#eth1) to bulk load execution
-  layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Key Management Service(KMS)](#bulk-load-keys)
+  layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Key Management Service (KMS)](#bulk-load-keys)
   or [keystore files](#keystore-files).
 
 :::note
@@ -89,7 +89,7 @@ web3signer eth2 --aws-secrets-enabled=true --aws-secrets-access-key-id=AKIA...EX
 
 ### AWS Key Management Service
 
-You can bulk load execution layer keys that are stored in the AWS Key Management Service(KMS) using
+You can bulk load execution layer keys that are stored in the AWS Key Management Service (KMS) using
 the Web3Signer [`eth1` subcommand options](../reference/cli/subcommands.md#eth1).
 
 ```bash 

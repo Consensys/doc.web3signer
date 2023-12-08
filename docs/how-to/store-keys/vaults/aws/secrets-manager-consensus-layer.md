@@ -42,7 +42,7 @@ The keys must be separated with a line terminating character such as `\n`.
 This saves cost when dealing with a large number of keys. Up to 200 keys can be stored under same
 secret name.
 
-Following Java program is a modification of above program to store two BLS keys under same secret name:
+The following Java program is modifies the previous example to store two BLS keys under same secret name:
 
 ```java
 final String AWS_REGION = "us-east-2";

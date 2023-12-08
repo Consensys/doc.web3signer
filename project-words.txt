@@ -361,6 +361,7 @@ sebastienlorber
 SECP
 sensical
 serializers
+sess
 setaf
 setext
 shiki

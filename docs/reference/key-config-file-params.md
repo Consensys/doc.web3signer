@@ -137,7 +137,7 @@ keyName: "KeyName"
 
 ## AWS Secrets Manager
 
-Use the private key stored in [AWS Secrets Manager](../how-to/store-keys/vaults/aws/aws-secrets-manager-consensuslayer.md).
+Use the private key stored in [AWS Secrets Manager](../how-to/store-keys/vaults/aws/secrets-manager-consensus-layer.md).
 Supports BLS keys for consensus layer signing. 
 
 ```bash
@@ -162,7 +162,7 @@ region: "us-west-2"
 
 ## AWS Key Management Service
 
-Use the private key stored in [AWS Key Management Service (KMS)](../how-to/store-keys/vaults/aws/aws-kms-execution-layer.md). 
+Use the private key stored in [AWS Key Management Service (KMS)](../how-to/store-keys/vaults/aws/kms-execution-layer.md). 
 Supports SECP256K1 keys for execution layer signing. 
 
 ```bash
