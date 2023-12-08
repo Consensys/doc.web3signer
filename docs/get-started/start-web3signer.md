@@ -109,9 +109,9 @@ Web3Signer by default also performs a health check on the
 
 <!-- Links -->
 
-[Signing key configuration files]: ../how-to/configure-access-keys.md#use-key-configuration-files
+[Signing key configuration files]: ../how-to/load-keys.md#use-key-configuration-files
 [Teku]: https://docs.teku.consensys.net/how-to/use-external-signer/use-web3signer
 [subcommand]: ../reference/cli/subcommands.md
-[bulk load signing keys]: ../how-to/configure-access-keys.md#bulk-load-keys
+[bulk load signing keys]: ../how-to/load-keys.md#bulk-load-keys
 [slashing protection]: ../concepts/slashing-protection.md
 [slashing protection database]: ../how-to/configure-slashing-protection.md

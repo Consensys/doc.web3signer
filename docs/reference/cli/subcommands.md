@@ -90,7 +90,7 @@ eth1.aws-connection-cache-size: 5
 <!--/tabs-->
 
 <!-- markdown-link-check-disable-next-line -->
-When [loading multiple keys from AWS Secrets Manager](../../how-to/store-keys/vaults/aws.md#cache-aws-secrets-manager-when-loading-multiple-keys),
+When [loading multiple keys from AWS Secrets Manager](../../how-to/store-keys/vaults/aws/secrets-manager-consensus-layer.md#cache-aws-secrets-manager-when-loading-multiple-keys),
 set to the maximum number of connections to cache.
 The default is `1`.
 
@@ -431,7 +431,7 @@ eth1.azure-vault-enabled: true
   </TabItem>
 </Tabs>
 
-Enables [bulk loading keys from Azure Key Vault](../../how-to/configure-access-keys.md#azure-key-vault).
+Enables [bulk loading keys from Azure Key Vault](../../how-to/load-keys.md#azure-key-vault).
 The default is `false`.
 
 #### `azure-client-id`
@@ -1307,7 +1307,7 @@ eth2.aws-connection-cache-size: 5
   </TabItem>
 </Tabs>
 
-When [loading multiple keys from AWS Secrets Manager](../../how-to/store-keys/vaults/aws.md#cache-aws-secrets-manager-when-loading-multiple-keys),
+When [loading multiple keys from AWS Secrets Manager](../../how-to/store-keys/vaults/aws/secrets-manager-consensus-layer.md#cache-aws-secrets-manager-when-loading-multiple-keys),
 set to the maximum number of connections to cache.
 The default is 1.
 
@@ -1382,7 +1382,7 @@ eth2.aws-secrets-enabled: true
   </TabItem>
 </Tabs>
 
-Enables or disables [bulk loading keys from AWS Secrets Manager](../../how-to/configure-access-keys.md#aws-secrets-manager).
+Enables or disables [bulk loading keys from AWS Secrets Manager](../../how-to/load-keys.md#aws-secrets-manager).
 The default is `false`.
 
 #### `aws-secrets-auth-mode`
@@ -1688,7 +1688,7 @@ eth2.azure-vault-enabled: true
   </TabItem>
 </Tabs>
 
-Enables [bulk loading keys from Azure Key Vault](../../how-to/configure-access-keys.md#azure-key-vault).
+Enables [bulk loading keys from Azure Key Vault](../../how-to/load-keys.md#azure-key-vault).
 The default is `false`.
 
 #### `azure-client-id`

@@ -1,12 +1,12 @@
 ---
 sidebar_label: Use AWS Secrets Manager
-description: Sign transactions with keys stored in AWS Secrets Manager.
-sidebar_position: 3
+description: Sign consensus layer transactions with keys stored in AWS Secrets Manager.
+sidebar_position: 1
 ---
 
 # Use Web3Signer with AWS Secrets Manager
 
-Web3Signer supports signing with BLS private keys stored as secrets in [AWS Secrets
+Web3Signer supports consensus layer signing with BLS private keys stored as secrets in [AWS Secrets
 Manager](https://aws.amazon.com/secrets-manager/).
 
 The [AWS Secrets Manager documentation](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html)
@@ -36,13 +36,13 @@ secretsManagerClient.createSecret(secretRequest);
 ```
 
 You can also store multiple BLS private keys under same secret name when using
-[AWS bulk loading mode](../../configure-access-keys.md#aws-secrets-manager).
+[AWS bulk loading mode](../../../load-keys.md#aws-secrets-manager).
 
 The keys must be separated with a line terminating character such as `\n`.
 This saves cost when dealing with a large number of keys. Up to 200 keys can be stored under same
 secret name.
 
-Following Java program is a modification of above program to store two BLS keys under same secret name:
+The following Java program modifies the previous example to store two BLS keys under same secret name:
 
 ```java
 final String AWS_REGION = "us-east-2";
@@ -59,7 +59,7 @@ final CreateSecretRequest secretRequest =
 secretsManagerClient.createSecret(secretRequest);
 ```
 
-Specify the following when [configuring the signing key configuration file](../../configure-access-keys.md#use-key-configuration-files):
+Specify the following when [configuring the signing key configuration file](../../../load-keys.md#use-key-configuration-files):
 
 - Authentication mode.
   Valid options are `ENVIRONMENT` and `SPECIFIED`.
@@ -74,6 +74,8 @@ When loading multiple keys from AWS Secrets Manager, the AWS client is created e
 You can improve performance by caching and reusing the same AWS Secrets Manager for each key that
 uses the same access key ID and region.
 
-Set the [`eth2 --aws-connection-cache-size`](../../../reference/cli/subcommands.md#aws-connection-cache-size)
+Set the [`eth2 --aws-connection-cache-size`](../../../../reference/cli/subcommands.md#aws-connection-cache-size)
 option to the maximum number of AWS Secrets Manager connections to cache.
 The default is `1`.
+
+After storing keys, [load keys into Web3Signer using a key configuration file, or bulk loading keys](../../../load-keys.md).

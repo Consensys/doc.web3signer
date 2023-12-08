@@ -74,6 +74,7 @@ const config = {
           editUrl: "https://github.com/Consensys/doc.web3signer/tree/main/",
           path: "docs",
           routeBasePath: "/",
+          breadcrumbs: false,
           // @ts-ignore
           // eslint-disable-next-line global-require
           include: ["**/*.md", "**/*.mdx"],
@@ -341,7 +342,7 @@ const config = {
           },
           {
             from: "/HowTo/Use-Signing-Keys",
-            to: "/how-to/configure-access-keys",
+            to: "/how-to/load-keys",
           },
           {
             from: "/Reference/CLI/CLI-Syntax",
@@ -409,7 +410,11 @@ const config = {
           },
           {
             from: "/how-to/use-signing-keys",
-            to: "/how-to/configure-access-keys",
+            to: "/how-to/load-keys",
+          },
+          {
+            from: "/how-to/configure-access-keys",
+            to: "/how-to/load-keys",
           },
           {
             from: "/how-to/store-keys-hsm/yubihsm2",

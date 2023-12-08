@@ -1,6 +1,6 @@
 ---
 sidebar_label: Use Azure Key Vault
-description: Sign transactions with keys stored in Azure Key Vault.
+description: Store keys in Azure Key Vault.
 sidebar_position: 2
 ---
 
@@ -43,10 +43,12 @@ Depending on the authentication mode, not all client credentials are available.
 
 - Key name, which is the name of the secret.
 
+After storing keys, [load keys into Web3Signer using a key configuration file, or bulk loading keys](../../load-keys.md).
+
 <!-- links -->
 
-[configuring the signing key configuration file]: ../../configure-access-keys.md#use-key-configuration-files
-[bulk loading signing keys]: ../../configure-access-keys.md#azure-key-vault
+[configuring the signing key configuration file]: ../../load-keys.md#use-key-configuration-files
+[bulk loading signing keys]: ../../load-keys.md#azure-key-vault
 [Register Web3Signer as an application]: https://docs.microsoft.com/en-us/azure/key-vault/general/authentication
 [add a signing key in Azure Key Vault]: https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal#add-a-secret-to-key-vault
 [Client secret]: https://docs.microsoft.com/en-us/azure/key-vault/secrets/about-secrets
