@@ -187,6 +187,33 @@ endpointOverride: "http://localhost:4566"
 | **region**             | Region to connect to.                                                                                                                                                                                                                                                                                                                  |
 | **endpointOverride**   | Endpoint override for AWS KMS. Useful for local testing against LocalStack.                                                                                                                                                                                                                                                            |
 
+## Google Cloud Platform Secret Manager
+
+Use the private key stored in [Google Cloud Platform (GCP) Secret Manager](../how-to/store-keys/vaults/gcp.md).
+Supports BLS keys for consensus layer signing.
+
+```bash
+type: "aws-kms"
+authenticationMode: "SPECIFIED"
+accessKeyId: "acc_key_id"
+secretAccessKey: "foo"
+sessionToken: "sess_token"
+kmsKeyId: "bar"
+region: "us-east-2"
+endpointOverride: "http://localhost:4566"
+```
+
+| Key                    | Description                                                                                                                                                                                                                                                                                                                            |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **type**               | Type of configuration file. Use `aws-kms`.                                                                                                                                                                                                                                                                                             |
+| **authenticationMode** | Authentication type being used. Valid options are `ENVIRONMENT` and `SPECIFIED`. If using `ENVIRONMENT`, credentials are authenticated using the [default credential provider chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default). The default authentication type is `SPECIFIED`. |
+| **accessKeyId**        | Access key ID.                                                                                                                                                                                                                                                                                                                         |
+| **secretAccessKey**    | Secret access key.                                                                                                                                                                                                                                                                                                                     |
+| **sessionToken**       | Token provided by [AWS Security Token Service (STS)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html). Optional depending on AWS configuration.                                                                                                                                                |
+| **kmsKeyId**           | AWS Access Key ID to authenticate AWS KMS.                                                                                                                                                                                                                                                                                             |
+| **region**             | Region to connect to.                                                                                                                                                                                                                                                                                                                  |
+| **endpointOverride**   | Endpoint override for AWS KMS. Useful for local testing against LocalStack.                                                                                                                                                                                                                                                            |
+
 ## YubiHSM 2
 
 Use the private key stored in the [YubiHSM 2 hardware security module](../how-to/store-keys/hsm/yubihsm2.md).
