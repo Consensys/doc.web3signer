@@ -193,26 +193,16 @@ Use the private key stored in [Google Cloud Platform (GCP) Secret Manager](../ho
 Supports BLS keys for consensus layer signing.
 
 ```bash
-type: "aws-kms"
-authenticationMode: "SPECIFIED"
-accessKeyId: "acc_key_id"
-secretAccessKey: "foo"
-sessionToken: "sess_token"
-kmsKeyId: "bar"
-region: "us-east-2"
-endpointOverride: "http://localhost:4566"
+type: "gcp-secret"
+gcpProjectId: "project_id"
+gcpSecretsFilter: "my_secrets_filter"
 ```
 
-| Key                    | Description                                                                                                                                                                                                                                                                                                                            |
-|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **type**               | Type of configuration file. Use `aws-kms`.                                                                                                                                                                                                                                                                                             |
-| **authenticationMode** | Authentication type being used. Valid options are `ENVIRONMENT` and `SPECIFIED`. If using `ENVIRONMENT`, credentials are authenticated using the [default credential provider chain](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default). The default authentication type is `SPECIFIED`. |
-| **accessKeyId**        | Access key ID.                                                                                                                                                                                                                                                                                                                         |
-| **secretAccessKey**    | Secret access key.                                                                                                                                                                                                                                                                                                                     |
-| **sessionToken**       | Token provided by [AWS Security Token Service (STS)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html). Optional depending on AWS configuration.                                                                                                                                                |
-| **kmsKeyId**           | AWS Access Key ID to authenticate AWS KMS.                                                                                                                                                                                                                                                                                             |
-| **region**             | Region to connect to.                                                                                                                                                                                                                                                                                                                  |
-| **endpointOverride**   | Endpoint override for AWS KMS. Useful for local testing against LocalStack.                                                                                                                                                                                                                                                            |
+| Key                  | Description                                                                                                                   |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| **type**             | Type of configuration file. Use `gcp-secret`.                                                                                 |
+| **gcpProjectId**     | Globally unique identifier for the Google Cloud Platform (GCP) project where the secrets to be used by Web3Signer are stored. |
+| **gcpSecretsFilter** | Filter to use when loading secrets into Web3Signer. [List operation filtering](https://cloud.google.com/secret-manager/docs/filtering) is applied.                                  |
 
 ## YubiHSM 2
 

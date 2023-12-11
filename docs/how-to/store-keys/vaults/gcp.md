@@ -15,7 +15,7 @@ provides the information you need to get started.
 ## Authentication 
 
 Web3Signer uses [Application Default Credentials (ADC)](https://cloud.google.com/docs/authentication#adc)
-to authenticate with GCP Secret Manager. ADC automatically finds credentials and manages token retrieval enabling
+to authenticate with GCP Secret Manager. ADC automatically finds credentials and manages token retrieval, enabling
 the authentication code to operate across various deployment options without modification.
 
 ## Load keys from GCP Secret Manager
