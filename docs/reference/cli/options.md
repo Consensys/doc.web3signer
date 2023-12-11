@@ -598,33 +598,37 @@ We don't recommend allowing all hostnames for production environments.
 
 ### `metrics-push-enabled`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --metrics-push-enabled[=<true|false>]
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --metrics-push-enabled=true
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_METRICS_PUSH_ENABLED=true
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 metrics-push-enabled=true
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Enables or disables [push gateway integration](../../how-to/monitor/metrics.md#run-prometheus-with-web3signer-in-push-mode).
 
@@ -632,33 +636,37 @@ You can't specify `--metrics-push-enabled` with [`--metrics-enabled`](#metrics-e
 
 ### `metrics-push-host`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --metrics-push-host=<HOST>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --metrics-push-host=127.0.0.1
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_METRICS_PUSH_HOST=127.0.0.1
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 metrics-push-host="127.0.0.1"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The host of the [Prometheus Push Gateway](https://github.com/prometheus/pushgateway). The default is `127.0.0.1`. The metrics server respects the [`--metrics-host-allowlist` option](#metrics-host-allowlist).
 
@@ -670,100 +678,111 @@ When pushing metrics, ensure you set `--metrics-push-host` to the machine on whi
 
 ### `metrics-push-interval`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --metrics-push-interval=<INTEGER>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --metrics-push-interval=30
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_METRICS_PUSH_INTERVAL=30
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 metrics-push-interval=30
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The interval, in seconds, to push metrics when in `push` mode. The default is 15.
 
 ### `metrics-push-port`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --metrics-push-port=<PORT>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --metrics-push-port=6174
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_METRICS_PUSH_PORT=6174
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 metrics-push-port="6174"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The port (TCP) of the [Prometheus Push Gateway](https://github.com/prometheus/pushgateway). The default is `9001`.
 
 ### `metrics-push-prometheus-job`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --metrics-push-prometheus-job=<metricsPrometheusJob>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --metrics-push-prometheus-job="my-custom-job"
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_METRICS_PUSH_PROMETHEUS_JOB="my-custom-job"
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 metrics-push-prometheus-job="my-custom-job"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 The job name when in `push` mode. The default is `web3signer-job`.
-
 
 ### `swagger-ui-enabled`
 
