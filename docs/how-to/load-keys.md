@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 You can load signing keys by:
 
-- [Creating a key configuration file]. Key configuration files can be used to load all types of signing keys supported by Web3Signer.
+- [Creating a key configuration file]. Key configuration files can be used to load all types of signing keys supported by Web3Signer, except for keys stored in GCP Secret Manager.
 - Using the [`eth2` subcommand options](../reference/cli/subcommands.md#eth2) to bulk load consensus
   layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Secrets Manager](#aws-secrets-manager), [GCP Secret Manager](#gcp-secret-manager),
   or [keystore files](#keystore-files).

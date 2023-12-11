@@ -187,23 +187,6 @@ endpointOverride: "http://localhost:4566"
 | **region**             | Region to connect to.                                                                                                                                                                                                                                                                                                                  |
 | **endpointOverride**   | Endpoint override for AWS KMS. Useful for local testing against LocalStack.                                                                                                                                                                                                                                                            |
 
-## Google Cloud Platform Secret Manager
-
-Use the private key stored in [Google Cloud Platform (GCP) Secret Manager](../how-to/store-keys/vaults/gcp.md).
-Supports BLS keys for consensus layer signing.
-
-```bash
-type: "gcp-secret"
-gcpProjectId: "project_id"
-gcpSecretsFilter: "my_secrets_filter"
-```
-
-| Key                  | Description                                                                                                                   |
-|----------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| **type**             | Type of configuration file. Use `gcp-secret`.                                                                                 |
-| **gcpProjectId**     | Globally unique identifier for the Google Cloud Platform (GCP) project where the secrets to be used by Web3Signer are stored. |
-| **gcpSecretsFilter** | Filter to use when loading secrets into Web3Signer. [List operation filtering](https://cloud.google.com/secret-manager/docs/filtering) is applied.                                  |
-
 ## YubiHSM 2
 
 Use the private key stored in the [YubiHSM 2 hardware security module](../how-to/store-keys/hsm/yubihsm2.md).

@@ -20,7 +20,5 @@ the authentication code to operate across various deployment options without mod
 
 ## Load keys from GCP Secret Manager
 
-Keys stored in GCP Secret Manager can be loaded into Web3Signer by:
-
-* Using a [key configuration file](../../load-keys.md#use-key-configuration-files).
-* Bulk loading using the [`eth2` subcommand](../../load-keys.md#gcp-secret-manager).
+Load keys stored in GCP Secret Manager into Web3Signer using the [`eth2` subcommand](../../load-keys.md#gcp-secret-manager)
+to bulk load keys.
