@@ -8,16 +8,33 @@ import TabItem from '@theme/TabItem';
 
 # Store signing keys
 
-Web3Signer supports BLS12-381 or secp256k1 signing keys stored in:
+Web3Signer supports BLS12-381 or secp256k1 signing keys stored in the following ways:
 
-- Raw unencrypted files
-- [Keystore files](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md)
-- Vaults:
-  - [HashiCorp Vault](vaults/hashicorp.md)
-  - [Azure Key Vault](vaults/azure.md)
-  - [AWS Secrets Manager](vaults/aws/secrets-manager-consensus-layer.md)
-- Hardware Security Modules (HSMs):
-  - [YubiHSM 2](hsm/yubihsm2.md)
-  - [USB Armory Mk II](hsm/usb-armory.md)
+| Key storage                          | SECP256K1 | BLS |
+|--------------------------------------|:---------:|:---:|
+| Raw files                            |     x     |  x  |
+| [Keystore files]                     |     x     |  x  | 
+| **Vaults**                           |
+| [Hashicorp Vault]                    |     x     |  x  | 
+| [Azure Key Vault]                    |     x     |  x  | 
+| [AWS Secrets Manager]                |           |  x  | 
+| [AWS KMS]                            |     x     |     | 
+| [GCP Secret Manager]                 |           |  x  |
+| **Hardware Security Modules (HSMs)** |           |     |
+| [YubiHSM 2]                          |     x     |  x  |
+| [USB Armory Mk II]                   |     x     |  x  |
 
 After storing keys, [load keys into Web3Signer](../load-keys.md).
+
+<!-- links -->
+
+[Keystore files]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md
+[HashiCorp Vault]: vaults/hashicorp.md
+[Azure Key Vault]: vaults/azure.md
+[AWS Secrets Manager]: vaults/aws/secrets-manager-consensus-layer.md
+[AWS KMS]: vaults/aws/kms-execution-layer.md
+[GCP Secret Manager]: vaults/gcp.md
+[YubiHSM 2]: hsm/yubihsm2.md
+[USB Armory Mk II]: hsm/usb-armory.md
+
+

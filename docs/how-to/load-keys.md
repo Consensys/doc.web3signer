@@ -8,19 +8,24 @@ import TabItem from '@theme/TabItem';
 
 # Load signing keys
 
-You can load signing keys by:
+Load signing keys using a [key configuration file], or bulk load using the [`eth1` and `eth2` subcommands]. 
+Web3Signer supports loading keys with the following methods: 
 
-- [Creating a key configuration file]. Key configuration files can be used to load all types of signing keys supported by Web3Signer, except for keys stored in GCP Secret Manager.
-- Using the [`eth2` subcommand options](../reference/cli/subcommands.md#eth2) to bulk load consensus
-  layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Secrets Manager](#aws-secrets-manager), [GCP Secret Manager](#gcp-secret-manager),
-  or [keystore files](#keystore-files).
-- Using the [`eth1` subcommand options](../reference/cli/subcommands.md#eth1) to bulk load execution
-  layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Key Management Service (KMS)](#bulk-load-keys)
-  or [keystore files](#keystore-files).
+| Key storage                          | Key configuration file | Bulk load with `eth1` | Bulk load with `eth2` | 
+|--------------------------------------|:----------------------:|:---------------------:|:---------------------:|
+| [Keystore files]                     |           x            |           x           |           x           | 
+| **Vaults**                           | 
+| [Hashicorp Vault]                    |           x            |                       |                       | 
+| [Azure Key Vault]                    |           x            |           x           |           x           | 
+| [AWS Secrets Manager]                |           x            |                       |           x           | 
+| [AWS KMS]                            |           x            |           x           |                       | 
+| [GCP Secret Manager]                 |                        |                       |           x           | 
+| **Hardware Security Modules (HSMs)** |           
+| [USB Armory Mk II]                   |           x            |                       |                       |
+| [YubiHSM 2]                          |           x            |                       |                       |
 
 :::note
-Bulk loading is only available when using keys stored in Azure Key Vault, AWS Secrets Manager or KMS, GCP Secret Manager, 
-or keystore files, and can be used in combination with key configuration files.
+You can bulk load in combination with using key configuration files.
 :::
 
 ## Use key configuration files
@@ -46,6 +51,14 @@ web3signer --key-store-path=/Users/me/keyFiles/ eth2
 You can bulk load keys that are stored in Azure Key Vault using the Web3Signer
 [`eth1` subcommand options](../reference/cli/subcommands.md#eth1) or
 [`eth2` subcommand options](../reference/cli/subcommands.md#eth2).
+
+For `eth1` bulk loading, Web3Signer creates Azure keys connections in bulk mode. The Azure keys
+connections are used to perform remote signing using SECP keys. Web3Signer does not download the private keys for `eth1` bulk loading with Azure.
+
+For `eth2` bulk loading, Web3Signer bulk loads the BLS keys from Azure Secrets. The bulk loading
+mode supports loading multiple consensus layer keys from the same Azure secret, if keys are stored with a line terminating character such as `\n`.
+This saves cost when dealing with a large number of keys.
+Up to 200 keys can be stored under a secret name.
 
 <Tabs>
 
@@ -140,3 +153,13 @@ keystore passwords.
 
 [key configuration file]: ../reference/key-config-file-params.md
 [Creating a key configuration file]: #use-key-configuration-files
+[`eth1` and `eth2` subcommands]: ../reference/cli/subcommands.md
+[Azure Key Vault]: #azure-key-vault
+[AWS Secrets Manager]: #aws-secrets-manager
+[keystore files]: #keystore-files
+[AWS KMS]: #aws-key-management-service
+[GCP Secret Manager]: #gcp-secret-manager
+[keystore files]: #keystore-files
+[Hashicorp Vault]: #use-key-configuration-files
+[USB Armory Mk II]: #use-key-configuration-files
+[YubiHSM 2]: #use-key-configuration-files
