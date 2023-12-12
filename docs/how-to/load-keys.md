@@ -19,7 +19,7 @@ Web3Signer supports loading keys with the following methods:
 | [Azure Key Vault]                    |           x            |                  x                  |                  x                  | 
 | [AWS Secrets Manager]                |           x            |                                     |                  x                  | 
 | [AWS KMS]                            |           x            |                  x                  |                                     | 
-| [GCP Secret Manager]                 |           ?            |                                     |                  x                  | 
+| [GCP Secret Manager]                 |                        |                                     |                  x                  | 
 | **Hardware Security Modules (HSMs)** |           
 | [USB Armory Mk II]                   |           x            |                                     |                                     |
 | [YubiHSM 2]                          |           x            |                                     |                                     |
@@ -158,6 +158,7 @@ keystore passwords.
 [AWS Secrets Manager]: #aws-secrets-manager
 [keystore files]: #keystore-files
 [AWS KMS]: #aws-key-management-service
+[GCP Secret Manager]: #gcp-secret-manager
 [keystore files]: #keystore-files
 [Hashicorp Vault]: #use-key-configuration-files
 [USB Armory Mk II]: #use-key-configuration-files
