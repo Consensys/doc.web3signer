@@ -61,33 +61,37 @@ To view the command line help for the subcommands:
 
 #### `aws-connection-cache-size`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-connection-cache-size=<LONG>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-connection-cache-size=5
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_AWS_CONNECTION_CACHE_SIZE=5
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.aws-connection-cache-size: 5
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 <!-- markdown-link-check-disable-next-line -->
 When [loading multiple keys from AWS Secrets Manager](../../how-to/store-keys/vaults/aws/secrets-manager-consensus-layer.md#cache-aws-secrets-manager-when-loading-multiple-keys),
@@ -96,99 +100,111 @@ The default is `1`.
 
 #### `aws-endpoint-override`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-endpoint-override=<ENDPOINT_URL>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-endpoint-override=http://localstack:4566
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_AWS_ENDPOINT_OVERRIDE=http://localstack:4566
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.aws-endpoint-override="http://localstack:4566"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Endpoint override for AWS KMS.
 Useful for local testing against LocalStack.
 
 #### `aws-kms-access-key-id`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-kms-access-key-id=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-kms-access-key-id=AKIA...EXAMPLE
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_AWS_KMS_ACCESS_KEY_ID=AKIA...EXAMPLE
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.aws-kms-access-key-id: "AKIA...EXAMPLE"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 AWS Access Key ID to authenticate AWS KMS.
 Required when [`--aws-kms-auth-mode`](#aws-kms-auth-mode) is `SPECIFIED`.
 
 #### `aws-kms-auth-mode`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-kms-auth-mode=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-kms-auth-mode=ENVIRONMENT
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
-WEB3SIGNER_ETH1_AWS_SECRETS_AUTH_MODE=ENVIRONMENT
+WEB3SIGNER_ETH1_AWS_KMS_AUTH_MODE=ENVIRONMENT
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
-eth1.aws-secrets-auth-mode: "ENVIRONMENT"
+eth1.aws-kms-auth-mode: "ENVIRONMENT"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Authentication mode for AWS KMS.
 Options are `SPECIFIED` and `ENVIRONMENT`.
@@ -200,98 +216,110 @@ Set [`--aws-kms-access-key-id`](#aws-kms-access-key-id),
 
 #### `aws-kms-client-cache-size`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-kms-client-cache-size=<LONG>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-kms-client-cache-size=5
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_AWS_KMS_CLIENT_CACHE_SIZE=5
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.aws-kms-client-cache-size: "5"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 AWS KMS client cache size. Set to the total number of credentials 
 used to access the service plus the number of regions the service is accessed from. The default is `1`.
 
 #### `aws-kms-enabled`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-kms-enabled=<BOOLEAN>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-kms-enabled=true
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_AWS_KMS_ENABLED=true
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.aws-kms-enabled: "true"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Set to `true` to enable bulk loading from the AWS KMS. The default is `false`. 
 
 #### `aws-kms-region`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-kms-region=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-kms-region=us-east-2
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_AWS_KMS_REGION=us-east-2
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.aws-kms-region: "us-east-2"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 AWS region where AWS KMS is available.
 
@@ -299,100 +327,111 @@ Required when [`--aws-kms-auth-mode`](#aws-kms-auth-mode) is `SPECIFIED`.
 
 #### `aws-kms-secret-access-key`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-kms-secret-access-key=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-kms-secret-access-key=sk...EXAMPLE
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_AWS_KMS_SECRET_ACCESS_KEY=sk...EXAMPLE
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.aws-kms-secret-access-key: "sk...EXAMPLE"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 AWS secret access key to authenticate AWS KMS.
 Required when [`--aws-kms-auth-mode`](#aws-kms-auth-mode) is `SPECIFIED`.
 
 #### `aws-kms-tag-names-filter`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-kms-tag-names-filter=<STRING>[,<STRING>,...]
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-kms-tag-names-filter=tagName1,tagName2
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_AWS_KMS_TAG_NAMES_FILTER=tagName1,tagName2
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.aws-kms-tag-names-filter: ["tagName1","tagName2"]
-
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Optional comma-separated list of tag names filter to apply while fetching key IDs from AWS KMS.
 Applied as `AND` operation with other filters.
 
 #### `aws-kms-tag-values-filter`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --aws-kms-tag-values-filter=<STRING>[,<STRING>,...]
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --aws-kms-tag-values-filter=tagValue1,tagValue2
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH1_AWS_KMS_TAG_VALUES_FILTER=tagValue1,tagValue2
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth1.aws-kms-tag-values-filter: ["tagValue1","tagValue2"]
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Optional comma-separated list of tag values filter to apply while fetching key IDs from AWS KMS.
 Applied as `AND` operation with other filters.
