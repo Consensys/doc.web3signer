@@ -10,16 +10,16 @@ import TabItem from '@theme/TabItem';
 
 You can load signing keys by:
 
-- [Creating a key configuration file]. Key configuration files can be used to load all types of signing keys supported by Web3Signer.
+- [Creating a key configuration file]. Key configuration files can be used to load all types of signing keys supported by Web3Signer, except for keys stored in GCP Secret Manager.
 - Using the [`eth2` subcommand options](../reference/cli/subcommands.md#eth2) to bulk load consensus
-  layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Secrets Manager](#aws-secrets-manager),
+  layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Secrets Manager](#aws-secrets-manager), [GCP Secret Manager](#gcp-secret-manager),
   or [keystore files](#keystore-files).
 - Using the [`eth1` subcommand options](../reference/cli/subcommands.md#eth1) to bulk load execution
   layer signing keys stored in [Azure Key Vault](#azure-key-vault), [AWS Key Management Service (KMS)](#bulk-load-keys)
   or [keystore files](#keystore-files).
 
 :::note
-Bulk loading is only available when using keys stored in Azure Key Vault, AWS Secrets Manager or KMS,
+Bulk loading is only available when using keys stored in Azure Key Vault, AWS Secrets Manager or KMS, GCP Secret Manager, 
 or keystore files, and can be used in combination with key configuration files.
 :::
 
@@ -96,6 +96,15 @@ the Web3Signer [`eth1` subcommand options](../reference/cli/subcommands.md#eth1)
 web3signer eth1 --aws-kms-enabled=true --aws-kms-access-key-id=AKIA...EXAMPLE \
 --aws-kms-secret-access-key=sk...EXAMPLE \
 --aws-secrets-region=us-east-2
+```
+
+### GCP Secret Manager
+
+You can bulk load consensus layer keys that are stored in the GCP Secret Manager using 
+the Web3Signer [`eth2` subcommand options](../reference/cli/subcommands.md#eth2). 
+
+```bash 
+web3signer eth2 --gcp-secrets-enabled=true --gcp-project-id=AKIA...EXAMPLE
 ```
 
 ### Keystore files
