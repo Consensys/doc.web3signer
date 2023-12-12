@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Store signing keys
 
-Web3Signer supports BLS12-381 or secp256k1 signing keys stored in:
+Web3Signer supports BLS12-381 or secp256k1 signing keys stored in the following ways:
 
 | Key storage                          | SECP256K1 | BLS |
 |--------------------------------------|:---------:|:---:|
