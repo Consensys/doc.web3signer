@@ -1992,98 +1992,110 @@ Subdomain of `vault.azure.net`.
 
 #### `gcp-project-id`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --gcp-project-id=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --gcp-project-id=my-project
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_GCP_PROJECT_ID=my-project
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.gcp-project-id: "my-project"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Globally unique identifier for the Google Cloud Platform (GCP) project where the
 secrets to be used by Web3Signer are stored.
 
 #### `gcp-secrets-enabled`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --gcp-secrets-enabled=<BOOLEAN>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --gcp-secrets-enabled=true
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_GCP_SECRETS_ENABLED=true
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.gcp-secrets-enabled: true
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Set to `true` to enable bulk loading from the GCP Secrets Manager service. The default is `false`. 
 
 #### `gcp-secrets-filter`
 
-<!--tabs-->
+<Tabs>
 
-# Syntax
+  <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
 --gcp-secrets-filter=<STRING>
 ```
 
-# Example
+  </TabItem>
+  <TabItem value="Example" label="Example" >
 
 ```bash
 --gcp-secrets-filter=my-secrets-filter
 ```
 
-# Environment variable
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_ETH2_GCP_SECRETS_FILTER=my-secrets-filter
 ```
 
-# Configuration file
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
 eth2.gcp-secrets-filter: "my-secrets-filter"
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 Filter to use when loading secrets into Web3Signer. [List operation filtering](https://cloud.google.com/secret-manager/docs/filtering) is applied.
 
