@@ -111,6 +111,15 @@ web3signer eth1 --aws-kms-enabled=true --aws-kms-access-key-id=AKIA...EXAMPLE \
 --aws-secrets-region=us-east-2
 ```
 
+### GCP Secret Manager
+
+You can bulk load consensus layer keys that are stored in the GCP Secret Manager using 
+the Web3Signer [`eth2` subcommand options](../reference/cli/subcommands.md#eth2). 
+
+```bash 
+web3signer eth2 --gcp-secrets-enabled=true --gcp-project-id=AKIA...EXAMPLE
+```
+
 ### Keystore files
 
 You can bulk load consensus layer or execution layer keys that are stored as keystore files using the Web3Signer
