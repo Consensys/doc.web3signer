@@ -195,23 +195,23 @@ Use the private key stored in the [YubiHSM 2 hardware security module](../how-to
 type: yubihsm2
 keyType: SECP256K1
 connectorUrl: http://localhost:12345
-authKey: 2
+authId: 2
 password: changeme
-opaqueObjId: 5
+opaqueDataId: 5
 pkcs11ModulePath: /usr/bin/yubihsm-sdk/lib/pkcs11/yubihsm_pkcs11.so
 additionalInitConfig: debug libdebug timeout=5
 ```
 
-| Key | Description |
-| --- | --- |
-| **type** | Type of configuration file. Use `yubihsm2`. |
-| **keyType** | Signing key type. Valid options are `BLS` or `SECP256K1`. The default is `BLS`. |
-| **connectorUrl** | URL of the YubiHSM service. Accepts a URL (`http://host:12345`) or USB URL (`yhusb://serial=13201047`) You need a running [connector service] if you specify an HTTP address. If you specify `yhusb://`, then Web3Signer picks the first YubiHSM device automatically. |
-| **authKey** | Authentication key ID used to open a user session, in decimal format. |
-| **password** | The password for the authentication key. |
-| **opaqueObjId** | The object ID of the stored key, in decimal format. |
-| **pkcs11ModulePath** | Path the [PKCS#11 module]. |
-| **additionalInitConfig** | Optional. Configuration options for the [PKCS#11 module]. |
+| Key                      | Description                                                                                                                                                                                                                                                            |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **type**                 | Type of configuration file. Use `yubihsm2`.                                                                                                                                                                                                                            |
+| **keyType**              | Signing key type. Valid options are `BLS` or `SECP256K1`. The default is `BLS`.                                                                                                                                                                                        |
+| **connectorUrl**         | URL of the YubiHSM service. Accepts a URL (`http://host:12345`) or USB URL (`yhusb://serial=13201047`) You need a running [connector service] if you specify an HTTP address. If you specify `yhusb://`, then Web3Signer picks the first YubiHSM device automatically. |
+| **authId**               | Authentication key ID used to open a user session, in decimal format.                                                                                                                                                                                                  |
+| **password**             | Password for the authentication key.                                                                                                                                                                                                                                   |
+| **opaqueDataId**         | Object ID of the stored key, in decimal format.                                                                                                                                                                                                                        |
+| **pkcs11ModulePath**     | Path the [PKCS#11 module].                                                                                                                                                                                                                                             |
+| **additionalInitConfig** | Optional. Configuration options for the [PKCS#11 module].                                                                                                                                                                                                              |
 
 ## USB Armory Mk II
 

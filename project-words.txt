@@ -22,6 +22,7 @@ applanga
 architecting
 astro
 atrule
+authkey
 autoconverted
 autogen
 autogenerating
@@ -100,6 +101,7 @@ doesn
 dogfood
 dogfooding
 dojocat
+dylib
 dyte
 easyops
 endi
@@ -163,6 +165,7 @@ ianad
 idempotency
 immer
 infima
+informat
 inlines
 intelli
 interactiveness
@@ -196,6 +199,8 @@ koyeb
 kubernetes
 lamana
 libdebug
+libusb
+libyubihsm
 lifecycles
 lighthouserc
 linenums
@@ -269,6 +274,7 @@ optimizt
 optind
 orta
 outerbounds
+outformat
 overrideable
 pageview
 palenight
