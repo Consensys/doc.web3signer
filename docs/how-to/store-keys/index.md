@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Store signing keys
 
-Web3Signer supports BLS12-381 or secp256k1 signing keys stored in the following ways:
+Web3Signer supports BLS12-381 (`Eth2`) or secp256k1 (`Eth1`) signing keys stored in the following ways:
 
 | Key storage                          | SECP256K1 | BLS |
 |--------------------------------------|:---------:|:---:|
@@ -23,6 +23,8 @@ Web3Signer supports BLS12-381 or secp256k1 signing keys stored in the following 
 | **Hardware Security Modules (HSMs)** |           |     |
 | [YubiHSM 2]                          |     x     |  x  |
 | [USB Armory Mk II]                   |     x     |  x  |
+
+Web3Signer supports `Eth1` signing from HSMs and Vaults, but needs to load private keys into memory for `Eth2` signing.  Make sure to follow [best practices](../../get-started/key-best-practices.md) when storing private keys.
 
 After storing keys, [load keys into Web3Signer](../load-keys.md).
 
