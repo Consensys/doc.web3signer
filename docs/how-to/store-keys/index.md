@@ -1,7 +1,8 @@
 ---
 title: Store signing keys
-description: Store BLS12-381 and secp256k1 signing keys.
+description: Store BLS12-381 and secp256k1 signing keys in Web3Signer.
 sidebar_position: 2
+keywords: [Hashicorp Vault, Azure Key Vault, AWS Secrets Manager, GCP Secret Manager, YubiHSM, USB Armory Mk II]
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

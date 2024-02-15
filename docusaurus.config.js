@@ -129,6 +129,9 @@ const config = {
       //   textColor: "#091E42",
       //   isCloseable: false,
       // },
+      metadata: [
+        {name: 'keywords', content: 'remote signer, remote signing, key management, signing keys, vault support, Ethereum, secure signing'},
+      ],
       colorMode: {
         defaultMode: "light",
         disableSwitch: false,
