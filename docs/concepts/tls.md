@@ -1,5 +1,5 @@
 ---
-description: Learn about secure communication using TLS.
+description: Learn about secure communication using TLS in Web3Signer.
 sidebar_position: 2
 ---
 

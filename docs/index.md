@@ -1,8 +1,9 @@
 ---
 title: Web3Signer
-description: Web3Signer is an open-source signing service developed under the Apache 2.0 license and written in Java.
+description: Web3Signer is an open-source remote signing service for Ethereum. 
 sidebar_position: 1
 slug: /
+keywords: [Ethereum remote signer service, external vault support, HSM device support]
 ---
 
 # Web3Signer
@@ -15,7 +16,7 @@ using an older version of Web3Signer that still supports Filecoin.
 
 :::
 
-Web3Signer is an open-source signing service developed under the Apache 2.0 license and written in Java.
+Web3Signer is an open-source remote signing service developed under the Apache 2.0 license and written in Java.
 
 ## What can you do with Web3Signer?
 
