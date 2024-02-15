@@ -4,6 +4,39 @@ const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 const isDev = process.env.NODE_ENV === "development";
 const baseUrl = isDev ? "/" : "/";
 
+// /**
+//  * @type {import('redocusaurus').PresetEntry}
+//  */
+// const redocusaurus = [
+//   "redocusaurus",
+//   {
+//     specs: [
+//       {
+//         id: "using-remote-url",
+//         // Remote File
+//         spec: "https://raw.githubusercontent.com/rohit-gohri/redocusaurus/main/website/openapi/single-file/openapi.yaml",
+//         route: "/api/",
+//       },
+//     ],
+//     theme: {
+//       /**
+//        * Highlight color for docs
+//        */
+//       primaryColor: "#3655d5",
+//       primaryColorDark: "#a2aeec",
+//       /**
+//        * Options to pass to redoc
+//        * @see https://github.com/redocly/redoc#redoc-options-object
+//        */
+//       options: { disableSearch: true },
+//       /**
+//        * Options to pass to override RedocThemeObject
+//        * @see https://github.com/Redocly/redoc#redoc-theme-object
+//        */
+//       theme: {},
+//     },
+//   },
+// ];
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -65,7 +98,6 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    
     ({
       algolia: {
         // The application ID provided by Algolia
@@ -88,8 +120,17 @@ const config = {
         // Optional: path for search page that enabled by default (`false` to disable it)
         searchPagePath: "search",
 
+        // ... other Algolia params
+      },
+      // announcementBar: {
+      //   id: "announcement_bar",
+      //   content: "⛔️ This documentation site is still under construction! 🚧",
+      //   backgroundColor: "#fafbfc",
+      //   textColor: "#091E42",
+      //   isCloseable: false,
+      // },
       metadata: [
-         {name: 'keywords', content: 'remote signer, remote signing, key management, signing keys, vault support, Ethereum, secure signing'},
+        {name: 'keywords', content: 'remote signer, remote signing, key management, signing keys, vault support, Ethereum, secure signing'},
       ],
       colorMode: {
         defaultMode: "light",
