@@ -17,7 +17,7 @@ Horizontal scale helps with request latency on Web3Signer. Connecting these inst
 
 ## Database Proximity
 
-The [slashing database]((./configure-slashing-protection.md)) is crucial to managing many validators safely. Reducing latency and overhead on this database will greatly improve performance. 
+The [slashing database](./configure-slashing-protection.md) is crucial to managing many validators safely. Reducing latency and overhead on this database will greatly improve performance. 
 
 * **Reduced Geographic Latency**: Strategically place Web3Signer instances to ensure minimal distance to the slashing protection database.
 * **Performance Tuning**: Optimize database configurations for rapid access, considering factors like indexing and connection pooling.
