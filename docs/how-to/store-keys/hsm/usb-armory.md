@@ -53,7 +53,7 @@ After storing keys, [load keys into Web3Signer using a key configuration file](.
 
 <!-- links -->
 
-[USB Armory Mk II device]: https://www.f-secure.com/en/consulting/foundry/usb-armory
+[USB Armory Mk II device]: https://www.withsecure.com/en/solutions/innovative-security-hardware/usb-armory
 [Interlock application]: https://github.com/f-secure-foundry/interlock/blob/master/README.md
 [Configure a signing key configuration file]: ../../load-keys.md#use-key-configuration-files
 [key configuration file]: ../../../reference/key-config-file-params.md#usb-armory-mk-ii
