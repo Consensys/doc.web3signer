@@ -87,6 +87,19 @@ const config = {
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           includeCurrentVersion: true,
+          lastVersion: "24.6.0",
+          versions: {
+            //defaults to the ./docs folder
+            // using 'development' instead of 'next' as path
+            current: {
+              label: "development",
+              path: "development",
+            },
+            //the last stable release in the versioned_docs/version-1.0
+            "24.6.0": {
+              label: "stable (24.6.0)",
+            },
+          },
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -157,6 +170,11 @@ const config = {
           height: 32,
         },
         items: [
+          {
+            type: "docsVersionDropdown",
+            position: "right",
+            dropdownActiveClassDisabled: true,
+          },
           {
             href: "/chatbot",
             className: "header-chatbot-link",

@@ -1,0 +1,8 @@
+{
+  "label": "Use AWS",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "slug": "/how-to/store-keys/vaults/aws"
+  }
+}
