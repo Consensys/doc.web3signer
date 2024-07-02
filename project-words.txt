@@ -366,6 +366,7 @@ sébastien
 sebastienlorber
 SECP
 sensical
+sepolia
 serializers
 sess
 setaf

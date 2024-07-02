@@ -10,7 +10,7 @@ The Staking Launchpad tool is used to create validators that participate in the 
 proof-of-stake network. The tool generates an encrypted keystore file containing the validator details.
 Load this keystore into Web3Signer to sign attestations and blocks with the validator details.
 
-This tutorial uses Teku and Web3Signer to run validators created on the `goerli` testnet.
+This tutorial uses Teku and Web3Signer to run validators created on the `holesky` testnet.
 
 **Prerequisites**:
 
@@ -24,13 +24,13 @@ Sync the Teku beacon chain node before submitting your deposit to avoid incurrin
 penalties if the validator is unable to perform its duties when the deposit is processed and activated.
 
 ```bash
-teku --network=goerli --metrics-enabled --rest-api-enabled
+teku --network=holesky --metrics-enabled --rest-api-enabled
 ```
 
 ## 2. Generate validators
 
-This step generates a validator on the `goerli` testnet.
-Use the [Goerli Staking Launchpad](https://goerli.launchpad.ethereum.org/) and follow the
+This step generates a validator on the `holesky` testnet.
+Use the [Holesky Staking Launchpad](https://holesky.launchpad.ethereum.org/en/) and follow the
 step-by-step process to deposit your funds and generate the keystore.
 
 The process includes installing the consensus layer deposit CLI tool, to generate your validator
@@ -80,7 +80,7 @@ You can use any naming format, but it must have the `.yaml` extension.
 Start Web3Signer and specify the location of the key configuration files and [slashing protection database].
 
 ```bash
-web3signer --key-store-path=/Users/me/keys eth2 --network=goerli --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
+web3signer --key-store-path=/Users/me/keys eth2 --network=holesky --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
 ```
 
 :::note
@@ -95,7 +95,7 @@ Start Teku and specify the public keys of the validators that Web3Signer signs a
 blocks for, and specify the Web3Signer address.
 
 ```bash
-teku --network=goerli \
+teku --network=holesky \
 --eth1-endpoint=http://localhost:8545 \
 --validators-external-signer-public-keys=0xa99a...e44c,0xb89b...4a0b \
 --validators-external-signer-url=http://localhost:9000

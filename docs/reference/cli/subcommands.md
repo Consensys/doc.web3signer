@@ -2320,7 +2320,7 @@ Possible values are:
 | :--------- | :--------------- | :--------- | :----------------------------------------------- |
 | `mainnet`  | Consensus layer  | Production | Ethereum main network.                           |
 | `minimal`  | Consensus layer  | Test       | Used for local testing and development networks. |
-| `goerli`   | Consensus layer  | Test       | Multi-client testnet.                            |
+| `sepolia`   | Consensus layer  | Test       | Multi-client testnet.                            |
 | `holesky`  | Consensus layer  | Test       | Multi-client testnet.                            |
 | `lukso`    | Consensus layer  | Production | Lukso main network.                              |
 | `gnosis`   | Consensus layer  | Production | Gnosis main network.                             |
