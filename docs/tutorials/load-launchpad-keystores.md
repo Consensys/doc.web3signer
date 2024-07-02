@@ -30,7 +30,7 @@ teku --network=sepolia --metrics-enabled --rest-api-enabled
 ## 2. Generate validators
 
 This step generates a validator on the `sepolia` testnet.
-Use the [Holeksy Staking Launchpad](https://holesky.launchpad.ethereum.org/en/) and follow the
+Use the [Holesky Staking Launchpad](https://holesky.launchpad.ethereum.org/en/) and follow the
 step-by-step process to deposit your funds and generate the keystore.
 
 The process includes installing the consensus layer deposit CLI tool, to generate your validator
