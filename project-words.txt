@@ -154,6 +154,7 @@ hideable
 hikari
 hola
 holesky
+Holeksy
 horiz
 hostman
 hostnames
@@ -289,6 +290,7 @@ paularmstrong
 pbcopy
 pcss
 peaceiris
+permissioned
 petstore
 philpl
 photoshop
@@ -366,6 +368,7 @@ sébastien
 sebastienlorber
 SECP
 sensical
+sepolia
 serializers
 sess
 setaf
