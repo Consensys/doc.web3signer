@@ -71,12 +71,12 @@ the network used by the Teku client.
 If you are running Web3Signer `eth2` mode on a public testnet, then you must specify the `network` option.
 It's important that this network matches the one you set up for your validator client.
 For example, if you have [Teku set up to run on
-Sepolia](https://docs.teku.consensys.net/get-started/connect/testnet#sync-the-execution-layer-network)
-then you must configure Web3Signer with the Sepolia network under the `eth2` subcommand, as in the
+Holesky](https://docs.teku.consensys.net/get-started/connect/testnet#sync-the-execution-layer-network)
+then you must configure Web3Signer with the Holesky network under the `eth2` subcommand, as in the
 following example.
 
 ```bash
-web3signer --key-store-path=/Users/me/keyFiles/ eth2 --network=sepolia --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
+web3signer --key-store-path=/Users/me/keyFiles/ eth2 --network=holesky --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
 ```
 
 See the [`--network` documentation](../reference/cli/subcommands.md#network) for more information

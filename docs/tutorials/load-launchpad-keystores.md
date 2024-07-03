@@ -10,7 +10,7 @@ The Staking Launchpad tool is used to create validators that participate in the 
 proof-of-stake network. The tool generates an encrypted keystore file containing the validator details.
 Load this keystore into Web3Signer to sign attestations and blocks with the validator details.
 
-This tutorial uses Teku and Web3Signer to run validators created on the `sepolia` testnet.
+This tutorial uses Teku and Web3Signer to run validators created on the `holesky` testnet.
 
 **Prerequisites**:
 
@@ -24,12 +24,12 @@ Sync the Teku beacon chain node before submitting your deposit to avoid incurrin
 penalties if the validator is unable to perform its duties when the deposit is processed and activated.
 
 ```bash
-teku --network=sepolia --metrics-enabled --rest-api-enabled
+teku --network=holesky --metrics-enabled --rest-api-enabled
 ```
 
 ## 2. Generate validators
 
-This step generates a validator on the `sepolia` testnet.
+This step generates a validator on the `holesky` testnet.
 Use the [Holeksy Staking Launchpad](https://holesky.launchpad.ethereum.org/en/) and follow the
 step-by-step process to deposit your funds and generate the keystore.
 
