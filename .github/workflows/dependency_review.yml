@@ -8,7 +8,7 @@ on:
 
 jobs:
   case:
-    name: Check for case being inconsistent
+    name: Check for licences not being allowed
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -16,11 +16,9 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
-      - name: Case check action
-        uses: ConsenSys/docs-gha/case@main
+      - name: Dependency review
+        uses: ConsenSys/docs-gha/dependency-review@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DOC_DIR: ${{ matrix.folder }}
-          SKIP_TEST: true
