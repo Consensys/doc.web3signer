@@ -12,7 +12,6 @@ The following guidelines help protect your staked assets and supports Ethereum n
 ## 1. Generate secure BLS keys
 
 - Use cryptographically secure random number generators for key generation.
-- Implement key derivation functions (KDFs) to strengthen key material.
 - Consider using hardware security modules (HSMs) for key generation to ensure physical security.
 - Implement proper key rotation policies to limit the impact of potential key compromises.
 
