@@ -8,11 +8,11 @@ sidebar_position: 3
 
 ## Prerequisites
 
-- [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [Java JDK](https://jdk.java.net/21/)
 
 :::caution Important
 
-Web3Signer requires Java 17 or later releases.
+Web3Signer requires Java 21 or later releases.
 
 :::
 
