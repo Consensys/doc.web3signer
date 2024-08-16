@@ -8,7 +8,7 @@ sidebar_position: 3
 
 ## Prerequisites
 
-- [Java JDK](https://jdk.java.net/21/)
+- [Java JDK](https://jdk.java.net/)
 
 :::caution Important
 
