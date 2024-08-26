@@ -1,6 +1,6 @@
 ---
 description: Learn more about Web3Signer's architecture.
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 # Architecture 
@@ -13,11 +13,14 @@ Web3Signer is a remote signing client comprised of three main components:
 
 ## The remote signer
 
-The remote signer [loads private keys](../how-to/load-keys.md) into memory and responds to signature requests. If you are using an [HSM](../how-to/store-keys/hsm/_category_.json) or a [vault](../how-to/store-keys/vaults/_category_.json) for Execution Layer signing, the keys remain at rest. This component communicates with the slashing database, the APIs, and with the keystore, if used, to coordinate remote signing. 
+The remote signer [loads private keys](../how-to/load-keys.md) into memory and responds to signature requests. 
+If you are using an [HSM](../how-to/store-keys/hsm/_category_.json) or a [vault](../how-to/store-keys/vaults/_category_.json) for execution layer signing, the keys stay at rest. 
+This component communicates with the slashing database, the APIs, and the keystore (if used), to coordinate remote signing.
 
 ## The slashing database
 
-The [slashing database](./slashing-protection.md) is a a Postgres database that tracks which keys have signed messages. Database locking ensures that when multiple Web3Signer instances load the same keys, only one instance is permitted to sign.
+The [slashing database](./slashing-protection.md) is a Postgres database that tracks which keys have signed messages. 
+Database locking ensures that when multiple Web3Signer instances load the same keys, only one instance is permitted to sign.
 
 ## The APIs
 

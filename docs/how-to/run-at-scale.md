@@ -7,7 +7,8 @@ sidebar_position: 8
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Running Web3Signer at scale
+# Run Web3Signer at scale
+
 When running Web3Signer at scale with hundreds or thousands of keys, several factors affect attestation performance on validators. 
 Horizontal scaling reduces request latency on Web3Signer. To maintain low signing latency and high safety, connect multiple Web3Signer instances to the same slashing database.
 
@@ -22,7 +23,7 @@ Balancing these factors optimizes system performance and responsiveness. Regular
 The [slashing database](./configure-slashing-protection.md) ensures the safe management of multiple validators. Optimizing the slashing database reduces latency and overhead, improving overall system performance.
 
 - **Reduced geographic latency**: Strategically place Web3Signer instances to ensure minimal distance to the slashing protection database.
-- **Performance tuning**: Optimize database configurations for rapid access, considering factors like indexing and connection pooling.
+- **Performance tuning**: Optimize database configurations for rapid access, considering factors such as indexing and connection pooling.
 
 ## Threading model optimization
 
@@ -37,7 +38,7 @@ You can use the following [metrics](./monitor/metrics.md):
 - `http_vertx_worker_queue_delay`: The request queue waiting time before processing.
 - `http_vertx_worker_pool_completed_total`: The number of queries processed by Web3Signer.
 
-## Load Balancing
+## Load balancing
 
 At scale, deploy multiple Web3Signer instances behind a load balancer. This setup ensures balanced request distribution.
 Use an ingress load balancer to spread requests evenly across instances. This prevents overloading of single instances.
@@ -47,12 +48,12 @@ For more information, see the [Kiln article](https://www.kiln.fi/post/learnings-
 
 ## Hardware recommendations
 
-Tests run nodes managing 10,000 keys on various testnets. For example, a single Azure Standard D8as v5 VM (8 vCPUs, 32 GiB memory) can host Besu, Teku, and Web3Signer simultaneously. 
-Your specific use case may require less powerful hardware.
+The Web3Signer team runs nodes managing 10,000 keys on various testnets. For example, a single Azure Standard D8as v5 VM (8 vCPUs, 32 GiB memory) can host Besu, Teku, and Web3Signer simultaneously. 
+Your specific use case might require less powerful hardware.
 
 ![Dashboard for Web3Signer](../../static/img/dashboard_hw.png)
 
-Web3Signer consumes less than 2GB of JVM heap while managing 10,000 keys in this setup.
+Web3Signer consumes less than 2 GB of JVM heap while managing 10,000 keys in this setup.
 
-The test configuration connects one validator client to Web3Signer. Using multiple validator clients may change resource requirements. 
+The test configuration connects one validator client to Web3Signer. Using multiple validator clients might change resource requirements. 
 Distributing the same 10,000 keys across multiple clients maintains the total number of requests to Web3Signer.
