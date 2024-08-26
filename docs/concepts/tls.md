@@ -1,6 +1,6 @@
 ---
 description: Learn about secure communication using TLS in Web3Signer.
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # TLS communication

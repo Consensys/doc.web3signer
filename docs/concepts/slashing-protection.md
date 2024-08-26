@@ -1,6 +1,6 @@
 ---
 description: Learn how slashing protection works in Web3Signer.
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Slashing protection
@@ -17,7 +17,9 @@ the required PostgreSQL database, or you can disable slashing protection by sett
 [`--slashing-protection-enabled`](../reference/cli/subcommands.md#slashing-protection-enabled) to `false`.
 
 :::info
+
 Web3Signer only supports PostgreSQL for creating the slashing protection database.
+
 :::
 
 Multiple Web3Signer instances can connect to the same slashing protection database.
