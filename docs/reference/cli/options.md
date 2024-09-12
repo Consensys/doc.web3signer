@@ -4,10 +4,10 @@ description: Web3Signer command line options reference
 sidebar_position: 1
 ---
 
+# Web3Signer command line options
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Web3Signer command line options
 
 This reference describes the syntax of the Web3Signer Command Line Interface (CLI) options.
 
@@ -86,6 +86,7 @@ WEB3SIGNER_DATA_PATH=/Users/me/my_node/data
 ```bash
 data-path: "/Users/me/my_node/data"
 ```
+
   </TabItem>
 </Tabs>
 
@@ -162,7 +163,7 @@ key-store-config-file-max-size: 158000000
 </Tabs>
 
 The maximum signing key configuration file size in bytes.
-This is useful when you're loading a large number of 
+This is useful when you're loading a large number of
 [signing key configurations from a single file](../key-config-file-params.md)
 
 The default size is 104857600 bytes (100 MB).
@@ -977,7 +978,7 @@ tls-known-clients-file: "/Users/me/my_node/knownClients.txt"
   </TabItem>
 </Tabs>
 
-File containing the Common Names and SHA-256 fingerprints of 
+File containing the Common Names and SHA-256 fingerprints of
 [authorized clients](../../how-to/configure-tls.md#create-the-known-clients-file).
 
 ### `tls-allow-ca-clients`

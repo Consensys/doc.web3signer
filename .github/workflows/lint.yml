@@ -21,6 +21,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Lint markdown
-        uses: ConsenSys/docs-gha/lint-markdown@mdlint
+        uses: ConsenSys/docs-gha/lint-markdown@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

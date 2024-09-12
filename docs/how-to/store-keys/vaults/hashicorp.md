@@ -4,10 +4,10 @@ description: Store keys in HashiCorp Vault.
 sidebar_position: 1
 ---
 
+# Use Web3Signer with HashiCorp Vault
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Use Web3Signer with HashiCorp Vault
 
 Web3Signer supports storing the signing key in [HashiCorp Vault](https://www.hashicorp.com/products/vault/).
 
@@ -15,6 +15,8 @@ Web3Signer supports storing the signing key in [HashiCorp Vault](https://www.has
 
 After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-started/install) and
 [starting the server](https://learn.hashicorp.com/vault/getting-started/dev-server):
+
+<!-- markdownlint-disable -->
 
 1. Set the `VAULT_ADDR` environment variable using the command displayed after starting the server:
 
@@ -59,6 +61,7 @@ After installing [HashiCorp Vault](https://learn.hashicorp.com/vault/getting-sta
    ---      -----
    value    17079f966aa2d5db1678ed32467165bbbd640868e7371ade8d5812ea856d2bbf
    ```
+
    </TabItem>
    <TabItem value="Result if v1" label="Result if v1" >
 
@@ -118,5 +121,6 @@ localhost:8200 7C:B3:3E:F9:98:43:5E:62:69:9F:A9:9D:41:14:03:BA:83:24:AC:04:CE:BD
 <!-- Links -->
 
 [signing key configuration file]: ../../load-keys.md#use-key-configuration-files
-[Start Teku]: https://docs.teku.consensys.net/get-started/start-teku
 [Start Web3Signer and specify the location of the signing key configuration file]: ../../../get-started/start-web3signer.md
+
+<!-- markdownlint-enable -->

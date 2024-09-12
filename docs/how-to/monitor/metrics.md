@@ -64,11 +64,16 @@ To configure Prometheus and run with Web3Signer:
 
 ## Run Prometheus with Web3Signer in push mode
 
-The [`--metrics-enabled`](../../reference/cli/options.md#metrics-enabled) option enables Prometheus polling of Besu, but sometimes metrics are hard to poll (for example, when running inside Docker containers with varying IP addresses). To enable Besu to push metrics to a [Prometheus push gateway](https://github.com/prometheus/pushgateway), use the [`--metrics-push-enabled`](../../reference/cli/options.md#metrics-push-enabled) option.
+The [`--metrics-enabled`](../../reference/cli/options.md#metrics-enabled) option enables Prometheus
+polling of Besu, but sometimes metrics are hard to poll (for example, when running inside Docker
+containers with varying IP addresses). To enable Besu to push metrics to a
+[Prometheus push gateway](https://github.com/prometheus/pushgateway), use
+the [`--metrics-push-enabled`](../../reference/cli/options.md#metrics-push-enabled) option.
 
 To configure Prometheus and run with Web3Signer pushing to a push gateway:
 
-1.  Configure Prometheus to read from a push gateway. For example, add the following YAML fragment to the `scrape_configs` block of the `prometheus.yml` file:
+1. Configure Prometheus to read from a push gateway. For example, add the following YAML fragment to
+the `scrape_configs` block of the `prometheus.yml` file:
 
     ```yml
     - job_name: push-gateway
@@ -79,25 +84,25 @@ To configure Prometheus and run with Web3Signer pushing to a push gateway:
             - localhost:9091
     ```
 
-1.  Start the push gateway. You can deploy the push gateway using the Docker image:
+1. Start the push gateway. You can deploy the push gateway using the Docker image:
 
     ```bash
     docker pull prom/pushgateway
     docker run -d -p 9091:9091 prom/pushgateway
     ```
 
-1.  Start Web3Signer specifying options:
-    * [`--metrics-push-enabled`](../../reference/cli/options.md#metrics-push-enabled) 
+1. Start Web3Signer specifying options:
+    * [`--metrics-push-enabled`](../../reference/cli/options.md#metrics-push-enabled)
     * [`--metrics-push-port`](../../reference/cli/options.md#metrics-push-enabled)
     * [`--metrics-push-host`](../../reference/cli/options.md#metrics-push-host)
 
-1.  In another terminal, run Prometheus specifying the `prometheus.yml` file:
+1. In another terminal, run Prometheus specifying the `prometheus.yml` file:
 
     ```bash
     prometheus --config.file=prometheus.yml
     ```
 
-1.  View the [Prometheus graphical interface](#view-prometheus-graphical-interface).
+1. View the [Prometheus graphical interface](#view-prometheus-graphical-interface).
 
 ## View Prometheus graphical interface
 

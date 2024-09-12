@@ -4,10 +4,10 @@ description: Configure consensus layer slashing protection.
 sidebar_position: 6
 ---
 
+# Configure consensus layer slashing protection
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Configure consensus layer slashing protection
 
 Configure [slashing protection] to prevent consensus layer validators from being penalized for
 signing conflicting blocks or attestations.
@@ -74,14 +74,18 @@ Use the [Flyway] migration tool to automatically load them in order.
   <TabItem value="Flyway DB migration tool" label="Flyway DB migration tool" default>
 
 ```bash
-flyway migrate -url="jdbc:postgresql://localhost/web3signer" -locations="filesystem:/Users/me/web3signer-0.2.1-SNAPSHOT/migrations/postgresql"
+flyway migrate -url="jdbc:postgresql://localhost/web3signer" \
+-locations="filesystem:/Users/me/web3signer-0.2.1-SNAPSHOT/migrations/postgresql"
 ```
+
   </TabItem>
   <TabItem value="Postgres command line" label="Postgres command line" >
 
 ```bash
-psql --echo-all --host=localhost --port=5432 --dbname=web3signer --username=postgres -f /Users/me/web3signer-0.2.1-SNAPSHOT/migrations/postgresql/postgresql/V1__initial.sql
+psql --echo-all --host=localhost --port=5432 --dbname=web3signer --username=postgres \
+-f /Users/me/web3signer-0.2.1-SNAPSHOT/migrations/postgresql/postgresql/V1__initial.sql
 ```
+
   </TabItem>
 </Tabs>
 
@@ -95,7 +99,9 @@ If using the PostgreSQL command line inside a docker container, ensure you mount
 Start Web3Signer and specify the PostgreSQL connection options.
 
 ```bash
-web3signer --key-store-path=/Users/me/keys eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password --slashing-protection-pruning-enabled=true
+web3signer --key-store-path=/Users/me/keys eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" \
+--slashing-protection-db-username=postgres --slashing-protection-db-password=password \
+--slashing-protection-pruning-enabled=true
 ```
 
 :::note
@@ -121,13 +127,17 @@ Use the [`eth2 import`](../reference/cli/subcommands.md#eth2-import) and
 To import a slashing protection database file into the Postgres database, run:
 
 ```bash
-web3signer eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password import --from=/Users/me/my_node/interchange.json
+web3signer eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" \
+--slashing-protection-db-username=postgres \
+--slashing-protection-db-password=password import --from=/Users/me/my_node/interchange.json
 ```
 
 To export the Postgres database to a file run:
 
 ```bash
-web3signer eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password export --to=/Users/me/my_node/interchange.json
+web3signer eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" \
+--slashing-protection-db-username=postgres \
+--slashing-protection-db-password=password export --to=/Users/me/my_node/interchange.json
 ```
 
 You must supply the Postgres database connection details when importing or exporting the slashing
@@ -150,7 +160,10 @@ You can include additional optional pruning configuration options.
 For example, run:
 
 ```bash
-web3signer eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password --slashing-protection-pruning-enabled=true --slashing-protection-pruning-at-boot-enabled=true --slashing-protection-pruning-epochs-to-keep=5000 --slashing-protection-pruning-interval=18
+web3signer eth2 --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" \
+--slashing-protection-db-username=postgres --slashing-protection-db-password=password \
+--slashing-protection-pruning-enabled=true --slashing-protection-pruning-at-boot-enabled=true \
+--slashing-protection-pruning-epochs-to-keep=5000 --slashing-protection-pruning-interval=18
 ```
 
 :::caution Warning

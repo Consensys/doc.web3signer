@@ -49,7 +49,9 @@ Alternatively you can manually create the file and add the certificate details i
 ```bash
 10.0.0.1:443 DF:65:B8:02:08:5E:91:82:0F:91:F5:1C:96:56:92:C4:1A:F6:C6:27:FD:6C:FC:31:F2:BB:90:17:22:59:5B:50
 ```
-After storing keys, [load keys into Web3Signer using a key configuration file](../../load-keys.md#use-key-configuration-files).
+
+After storing keys,
+[load keys into Web3Signer using a key configuration file](../../load-keys.md#use-key-configuration-files).
 
 <!-- links -->
 

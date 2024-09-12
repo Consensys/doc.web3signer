@@ -12,7 +12,7 @@ Web3Signer supports consensus layer signing with BLS keys stored in
 The [GCP Secret Manager documentation](https://cloud.google.com/secret-manager/docs)
 provides the information you need to get started.
 
-## Authentication 
+## Authentication
 
 Web3Signer uses [Application Default Credentials (ADC)](https://cloud.google.com/docs/authentication#adc)
 to authenticate with GCP Secret Manager. ADC automatically finds credentials and manages token retrieval, enabling
