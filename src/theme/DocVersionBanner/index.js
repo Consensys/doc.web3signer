@@ -10,7 +10,6 @@ import {
 import {ThemeClassNames} from '@docusaurus/theme-common';
 import {
   useDocsPreferredVersion,
-  useDocsVersion,
 } from '@docusaurus/theme-common/internal';
 function UnreleasedVersionLabel({siteTitle, versionMetadata}) {
   return (
@@ -112,7 +111,7 @@ function DocVersionBannerEnabled({className, versionMetadata}) {
   );
 }
 export default function DocVersionBanner({className}) {
-  const versionMetadata = useDocsVersion();
+  const versionMetadata = useDocsPreferredVersion();
   if (versionMetadata.banner) {
     return (
       <DocVersionBannerEnabled
