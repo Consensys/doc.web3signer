@@ -1,9 +1,9 @@
-const {themes} = require("prism-react-renderer");
-const lightCodeTheme = themes.github;
-const darkCodeTheme = themes.dracula;
+const lightCodeTheme = require("prism-react-renderer").themes.github;
+const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 
 const isDev = process.env.NODE_ENV === "development";
 const baseUrl = isDev ? "/" : "/";
+
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -33,7 +33,7 @@ const config = {
 
   presets: [
     [
-     "classic",
+      "classic",
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
@@ -41,21 +41,7 @@ const config = {
           editUrl: "https://github.com/Consensys/doc.web3signer/tree/main/",
           path: "docs",
           routeBasePath: "/",
-          path: "./docs",
           breadcrumbs: false,
-          // lastVersion: "current",
-          // versions: {
-          //   //defaults to the ./docs folder
-          //   // using 'development' instead of 'next' as path
-          //   current: {
-          //     label: "development",
-          //     path: "development",
-          //   },
-          //   //the last stable release in the versioned_docs/version-1.0
-          //   "24.6.0": {
-          //     label: "stable (24.6.0)",
-          //   },
-          // },
           // @ts-ignore
           // eslint-disable-next-line global-require
           include: ["**/*.md", "**/*.mdx"],
@@ -68,13 +54,25 @@ const config = {
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           includeCurrentVersion: true,
+          lastVersion: "24.6.0",
+          versions: {
+            //defaults to the ./docs folder
+            // using 'development' instead of 'next' as path
+            current: {
+              label: "development",
+              path: "development",
+            },
+            //the last stable release in the versioned_docs/version-1.0
+            "24.6.0": {
+              label: "stable (24.6.0)",
+            },
+          },
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],
-    // redocusaurus,
   ],
 
   themeConfig:
@@ -266,7 +264,181 @@ const config = {
         containerId: "GTM-PJ8HNLB",
       },
     ],
-    
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            from: "/HowTo/Get-Started/Install-Binaries",
+            to: "/get-started/install-binaries",
+          },
+          {
+            from: "/reference/api/filecoin",
+            to: "/reference/api",
+          },
+          {
+            from: "/HowTo/Get-Started/Build-From-Source",
+            to: "/get-started/build-from-source",
+          },
+          {
+            from: "/HowTo/Get-Started/Use-Docker",
+            to: "/get-started/use-docker",
+          },
+          {
+            from: "/HowTo/Get-Started/Start-Web3Signer",
+            to: "/get-started/start-web3signer",
+          },
+          {
+            from: "/HowTo/Monitor/Logging",
+            to: "/how-to/monitor/logging",
+          },
+          {
+            from: "/HowTo/Monitor/Metrics",
+            to: "/how-to/monitor/metrics",
+          },
+          {
+            from: "/HowTo/Store-Keys-HSM/Use-USB-Armory",
+            to: "/how-to/store-keys/hsm/usb-armory",
+          },
+          {
+            from: "/HowTo/Store-Keys-HSM/Use-YubiHSM2",
+            to: "/how-to/store-keys/hsm/yubihsm2",
+          },
+          {
+            from: "/HowTo/Store-Keys-Vaults/Use-AWS",
+            to: "/how-to/store-keys/vaults/aws",
+          },
+          {
+            from: "/HowTo/Store-Keys-Vaults/Use-Azure",
+            to: "/how-to/store-keys/vaults/azure",
+          },
+          {
+            from: "/HowTo/Store-Keys-Vaults/Use-Hashicorp",
+            to: "/how-to/store-keys/vaults/hashicorp",
+          },
+          {
+            from: "/HowTo/Configure-Slashing-Protection",
+            to: "/how-to/configure-slashing-protection",
+          },
+          {
+            from: "/HowTo/Configure-TLS",
+            to: "/how-to/configure-tls",
+          },
+          {
+            from: "/HowTo/Deploy-With-Kubernetes",
+            to: "/how-to",
+          },
+          {
+            from: "/HowTo/Use-Configuration-File",
+            to: "/how-to/use-configuration-file-starting-web3signer",
+          },
+          {
+            from: "/HowTo/Use-Signing-Keys",
+            to: "/how-to/load-keys",
+          },
+          {
+            from: "/Reference/CLI/CLI-Syntax",
+            to: "/reference/cli/options",
+          },
+          {
+            from: "/Reference/CLI/CLI-Subcommands",
+            to: "/reference/cli/subcommands",
+          },
+          {
+            from: "/Reference/Key-Configuration-Files",
+            to: "/reference/key-config-file-params",
+          },
+          {
+            from: "/Reference/Responsible-Disclosure",
+            to: "/reference/security-disclosure",
+          },
+          {
+            from: "/Tutorials/Launchpad-Keystores",
+            to: "/tutorials/load-launchpad-keystores",
+          },
+          {
+            from: "/category/get-started",
+            to: "/get-started",
+          },
+          {
+            from: "/category/how-to",
+            to: "/how-to",
+          },
+          {
+            from: "/category/tutorials",
+            to: "/tutorials",
+          },
+          {
+            from: "/category/reference",
+            to: "/reference",
+          },
+          {
+            from: "/category/monitor-nodes",
+            to: "/how-to/monitor",
+          },
+          {
+            from: "/category/store-keys-in-an-hsm-device",
+            to: "/how-to/store-keys/hsm",
+          },
+          {
+            from: "/category/store-keys-in-an-external-vault",
+            to: "/how-to/store-keys/vaults",
+          },
+          {
+            from: "/category/apis",
+            to: "/reference/api",
+          },
+          {
+            from: "/category/command-line",
+            to: "/reference/cli",
+          },
+          {
+            from: "/how-to/store-keys-hsm",
+            to: "/how-to/store-keys/hsm",
+          },
+          {
+            from: "/how-to/store-keys-hsm/usb-armory",
+            to: "/how-to/store-keys/hsm/usb-armory",
+          },
+          {
+            from: "/how-to/use-signing-keys",
+            to: "/how-to/load-keys",
+          },
+          {
+            from: "/how-to/configure-access-keys",
+            to: "/how-to/load-keys",
+          },
+          {
+            from: "/how-to/store-keys-hsm/yubihsm2",
+            to: "/how-to/store-keys/hsm/yubihsm2",
+          },
+          {
+            from: "/how-to/store-keys-vaults",
+            to: "/how-to/store-keys/vaults",
+          },
+          {
+            from: "/how-to/store-keys-vaults/aws",
+            to: "/how-to/store-keys/vaults/aws",
+          },
+          {
+            from: "/how-to/store-keys-vaults/azure",
+            to: "/how-to/store-keys/vaults/azure",
+          },
+          {
+            from: "/how-to/store-keys-vaults/hashicorp",
+            to: "/how-to/store-keys/vaults/hashicorp",
+          },
+          {
+            from: "/how-to/use-configuration-file",
+            to: "/how-to/use-configuration-file-starting-web3signer",
+          },
+          {
+            from: "/how-to/deploy-with-kubernetes",
+            to: "/how-to",
+          },
+        ],
+      },
+    ],
   ],
   themes: [
     [
