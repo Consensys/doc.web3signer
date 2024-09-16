@@ -4,10 +4,11 @@ description: Store BLS12-381 and secp256k1 signing keys in Web3Signer.
 sidebar_position: 2
 keywords: [Hashicorp Vault, Azure Key Vault, AWS Secrets Manager, GCP Secret Manager, YubiHSM, USB Armory Mk II]
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # Store signing keys
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 Web3Signer supports BLS12-381 or secp256k1 signing keys stored in the following ways:
 

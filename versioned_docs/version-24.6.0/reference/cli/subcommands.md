@@ -4,10 +4,10 @@ description: Web3Signer subcommands reference
 sidebar_position: 2
 ---
 
+# Subcommands
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Subcommands
 
 :::caution Filecoin deprecation notice
 

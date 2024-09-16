@@ -4,10 +4,10 @@ description: Start Web3Signer.
 sidebar_position: 4
 ---
 
+# Start Web3Signer
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Start Web3Signer
 
 :::note
 This documentation has been updated in line with the name changes [recommended by the Ethereum

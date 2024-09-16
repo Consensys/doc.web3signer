@@ -3,10 +3,11 @@ title: Manage consensus layer signing keys
 description: Manage consensus layer signing keys.
 sidebar_position: 4
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 ## Reload new keys
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 If you add new keys to an existing set of validators, or modify the key configuration files, reload
 the keys to ensure Web3Signer registers the new or modified keys.

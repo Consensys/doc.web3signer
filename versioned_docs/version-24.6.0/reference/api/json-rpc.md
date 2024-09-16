@@ -3,10 +3,12 @@ description: Use for signing execution layer payloads
 sidebar_position: 1
 ---
 
+# Web3Signer JSON-RPC API
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Web3Signer JSON-RPC API
+<!-- markdownlint-disable -->
 
 :::note
 - All JSON-RPC HTTP examples use the default host and port endpoint `http://127.0.0.1:8545`.
@@ -140,7 +142,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_signTransaction","params":[{
 
 ## `eth_signTypedData`
 
-`eth_signTypedData` is the same as [`eth_sign`](#ethsign) except a typed data structure is specified as the object to be signed instead of a data string. 
+`eth_signTypedData` is the same as `eth_sign` except a typed data structure is specified as the object to be signed instead of a data string. 
 
 Calculates an Ethereum specific signature using
 `sign(keccak256("\x19Ethereum Signed Message:\n" + len(message) + message)))."`
@@ -192,9 +194,12 @@ The JSON schema for the typed data structure to sign is:
 
 `DATA` - Signature
 
-<!--tabs-->
+<Tabs>
 
-# curl HTTP request
+  <TabItem value="curl HTTP request" label="curl HTTP request" default>
+
+  </TabItem>
+  <TabItem value="JSON result" label="JSON result" >
 
 ```bash
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_signTypedData","params":["0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826", {"types":{"EIP712Domain":[{"name":"name","type":"string"},{"name":"version","type":"string"},{"name":"chainId","type":"uint256"},{"name":"verifyingContract","type":"address"}],"Person":[{"name":"name","type":"string"},{"name":"wallet","type":"address"}],"Mail":[{"name":"from","type":"Person"},{"name":"to","type":"Person"},{"name":"contents","type":"string"}]},"primaryType":"Mail","domain":{"name":"Ether Mail","version":"1","chainId":1,"verifyingContract":"0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC"},"message":{"from":{"name":"Cow","wallet":"0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826"},"to":{"name":"Bob","wallet":"0xbBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB"},"contents":"Hello, Bob!"}}],"id":1}'
@@ -210,7 +215,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_signTypedData","params":["0x
 }
 ```
 
-<!--/tabs-->
+  </TabItem>
+</Tabs>
 
 ## `eth_sendTransaction`
 
@@ -269,3 +275,5 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{
 <!--links-->
 
 [EIP-1559]: https://eips.ethereum.org/EIPS/eip-1559
+
+<!-- markdownlint-enable -->

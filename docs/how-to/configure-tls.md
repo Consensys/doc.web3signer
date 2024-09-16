@@ -45,7 +45,7 @@ The file contents use the format `<common_name> <hex-string>` where:
 - `<common_name>` is the Common Name used for the client's keystore
 - `<hex-string>` is the SHA-256 fingerprint of the client's keystore.
 
-```
+```bash
 curl_client DF:65:B8:02:08:5E:91:82:0F:91:F5:1C:96:56:92:C4:1A:F6:C6:27:FD:6C:FC:31:F2:BB:90:17:22:59:5B:50
 ```
 
@@ -54,7 +54,7 @@ You can use [OpenSSL](https://www.openssl.org/) or
 client's Common Name and fingerprint.
 For example:
 
-```
+```bash
 keytool -list -v -keystore <keystore> -storetype PKCS12 -storepass <password>
 ```
 
@@ -110,7 +110,7 @@ The file contents use the format `<hostname>:<port> <hex-string>` where:
 - `<port>` is the port used for communication
 - `<hex-string>` is the SHA-256 fingerprint of the server's certificate.
 
-```
+```bash
 localhost:8590 6C:B2:3E:F9:88:43:5E:62:69:9F:A9:9D:41:14:03:BA:83:24:AC:04:CE:BD:92:49:1B:8D:B2:A4:86:39:4C:BB
 127.0.0.1:8590 6C:B2:3E:F9:88:43:5E:62:69:9F:A9:9D:41:14:03:BA:83:24:AC:04:CE:BD:92:49:1B:8D:B2:A4:86:39:4C:BB
 ```
@@ -122,7 +122,10 @@ Specify both hostname and IP address in the file if unsure which is used in requ
 ### Start Web3Signer
 
 ```bash
-web3signer eth1 --downstream-http-tls-enabled --downstream-http-tls-keystore-file=/Users/me/my_node/keystore.pfx --downstream-http-tls-keystore-password-file=/Users/me/my_node/keyPassword --downstream-http-tls-known-servers-file=/Users/me/my_node/knownServers
+web3signer eth1 --downstream-http-tls-enabled \
+--downstream-http-tls-keystore-file=/Users/me/my_node/keystore.pfx \
+--downstream-http-tls-keystore-password-file=/Users/me/my_node/keyPassword \
+--downstream-http-tls-known-servers-file=/Users/me/my_node/knownServers
 ```
 
 The command line:

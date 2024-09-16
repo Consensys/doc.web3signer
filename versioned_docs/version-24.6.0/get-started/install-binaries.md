@@ -4,10 +4,10 @@ description: Install Web3Signer from a binary distribution.
 sidebar_position: 1
 ---
 
+# Install binary distribution
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Install binary distribution
 
 ## Prerequisites
 

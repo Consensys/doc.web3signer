@@ -4,10 +4,10 @@ description: Configure consensus layer slashing protection.
 sidebar_position: 6
 ---
 
+# Configure consensus layer slashing protection
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Configure consensus layer slashing protection
 
 Configure [slashing protection] to prevent consensus layer validators from being penalized for
 signing conflicting blocks or attestations.

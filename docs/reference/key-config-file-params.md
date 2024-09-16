@@ -4,10 +4,10 @@ description: Signing key configuration file parameters
 sidebar_position: 3
 ---
 
+# Signing key configuration file parameters
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Signing key configuration file parameters
 
 A [signing key configuration file] is a YAML file that defines the parameters to access one or more
 signing keys.
@@ -112,7 +112,7 @@ secretName: "SecretName"
   </TabItem>
    <TabItem value="azure-key" label="azure-key" >
 
-```
+```yml
 type: "azure-key"
 clientId: "***"
 clientSecret: "***"
@@ -120,8 +120,11 @@ tenantId: "***"
 vaultName: "AzureKeyVault"
 keyName: "KeyName"
 ```
+
   </TabItem>
 </Tabs>
+
+<!-- markdownlint-disable -->
 
 | Key | Description |
 | --- | --- |
@@ -135,10 +138,12 @@ keyName: "KeyName"
 | **secretName** | Name of the key stored in the Azure Key Vault under Secrets settings. Required when using the `azure-secret` type. |
 | **keyName** | Name of the key stored in the Azure Key Vault under Keys settings. Required when using the `azure-key` type. |
 
+<!-- markdownlint-enable -->
+
 ## AWS Secrets Manager
 
 Use the private key stored in [AWS Secrets Manager](../how-to/store-keys/vaults/aws/secrets-manager-consensus-layer.md).
-Supports BLS keys for consensus layer signing. 
+Supports BLS keys for consensus layer signing.
 
 ```bash
 type: "aws-secret"
@@ -162,8 +167,8 @@ region: "us-west-2"
 
 ## AWS Key Management Service
 
-Use the private key stored in [AWS Key Management Service (KMS)](../how-to/store-keys/vaults/aws/kms-execution-layer.md). 
-Supports SECP256K1 keys for execution layer signing. 
+Use the private key stored in [AWS Key Management Service (KMS)](../how-to/store-keys/vaults/aws/kms-execution-layer.md).
+Supports SECP256K1 keys for execution layer signing.
 
 ```bash
 type: "aws-kms"
@@ -176,6 +181,8 @@ region: "us-east-2"
 endpointOverride: "http://localhost:4566"
 ```
 
+<!-- markdownlint-disable -->
+
 | Key                    | Description                                                                                                                                                                                                                                                                                                                            |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **type**               | Type of configuration file. Use `aws-kms`.                                                                                                                                                                                                                                                                                             |
@@ -186,6 +193,7 @@ endpointOverride: "http://localhost:4566"
 | **kmsKeyId**           | AWS Access Key ID to authenticate AWS KMS.                                                                                                                                                                                                                                                                                             |
 | **region**             | Region to connect to.                                                                                                                                                                                                                                                                                                                  |
 | **endpointOverride**   | Endpoint override for AWS KMS. Useful for local testing against LocalStack.                                                                                                                                                                                                                                                            |
+<!-- markdownlint-enable -->
 
 ## YubiHSM 2
 
@@ -202,6 +210,8 @@ pkcs11ModulePath: /usr/bin/yubihsm-sdk/lib/pkcs11/yubihsm_pkcs11.so
 additionalInitConfig: debug libdebug timeout=5
 ```
 
+<!-- markdownlint-disable -->
+
 | Key                      | Description                                                                                                                                                                                                                                                            |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **type**                 | Type of configuration file. Use `yubihsm2`.                                                                                                                                                                                                                            |
@@ -212,6 +222,8 @@ additionalInitConfig: debug libdebug timeout=5
 | **opaqueDataId**         | Object ID of the stored key, in decimal format.                                                                                                                                                                                                                        |
 | **pkcs11ModulePath**     | Path the [PKCS#11 module].                                                                                                                                                                                                                                             |
 | **additionalInitConfig** | Optional. Configuration options for the [PKCS#11 module].                                                                                                                                                                                                              |
+
+<!-- markdownlint-enable -->
 
 ## USB Armory Mk II
 
@@ -228,6 +240,8 @@ password: usbarmory
 keyPath: /key1.txt
 ```
 
+<!-- markdownlint-disable -->
+
 | Key | Description |
 | --- | --- |
 | **type** | Type of configuration file. Use `interlock`. |
@@ -237,6 +251,8 @@ keyPath: /key1.txt
 | **volume** | Name of the Interlock volume. |
 | **password** | Password used to access the Interlock volume. |
 | **keyPath** | Path to the text file containing the BLS or SECP private key (as a HEX encoded string) on the Interlock file manager. These files can be created directly using Interlock from a browser. |
+
+<!-- markdownlint-enable -->
 
 <!-- Links -->
 

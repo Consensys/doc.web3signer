@@ -5,8 +5,8 @@ sidebar_position: 5
 
 # Private key management best practices
 
-Web3Signer manages validator keys for Ethereum 2.0 staking. 
-This document outlines best practices for key generation, storage, access control, and system security when using Web3Signer. 
+Web3Signer manages validator keys for Ethereum 2.0 staking.
+This document outlines best practices for key generation, storage, access control, and system security when using Web3Signer.
 The following guidelines help protect your staked assets and supports Ethereum network integrity.
 
 ## Generate secure BLS keys
