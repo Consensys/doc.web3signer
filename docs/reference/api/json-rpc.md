@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 :::note
 - All JSON-RPC HTTP examples use the default host and port endpoint `http://127.0.0.1:8545`.
-- The examples use Hyperledger Besu, but you can use any Ethereum execution client.
+- The examples use Besu, but you can use any Ethereum execution client.
 :::
 
 ## `eth_accounts`
