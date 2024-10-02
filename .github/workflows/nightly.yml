@@ -35,7 +35,7 @@
       runs-on: ubuntu-latest
       steps:
         - name: Slack Notification
-          uses: slackapi/slack-github-action@2a8087d4af6f83146a87539a70defe909fe6dbe6
+          uses: slackapi/slack-github-action@v1.27.0
           with:
             payload: |
               {
