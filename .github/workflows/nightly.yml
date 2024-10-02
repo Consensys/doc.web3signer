@@ -1,0 +1,46 @@
+---
+  name: Nightly check
+  
+  on:
+    schedule:
+      - cron: "0 0 * * *"
+    workflow_dispatch: {}
+  
+  concurrency:
+    group: nightly-${{ github.ref }}
+    cancel-in-progress: true
+  
+  jobs:
+    linkCheck:
+      name: Run link check
+      runs-on: ubuntu-latest
+      permissions:
+        contents: read
+      steps:
+        - uses: actions/checkout@v4
+        - name: LinkCheck
+          id: linkcheck
+          uses: gaurav-nelson/github-action-markdown-link-check@v1
+          with:
+            use-quiet-mode: 'yes'
+            use-verbose-mode: 'yes'
+            folder-path: './docs'
+            check-modified-files-only: 'no'
+            base-branch: main
+            config-file: './.github/workflows/link-check.json'
+  
+    slackNotification:
+      needs: linkCheck
+      if: ${{ always() }}
+      runs-on: ubuntu-latest
+      steps:
+        - name: Slack Notification
+          uses: slackapi/slack-github-action@2a8087d4af6f83146a87539a70defe909fe6dbe6
+          with:
+            payload: |
+              {
+                "channel": "#doc-ci-alerts",
+                "text": "<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|${{ github.workflow }} workflow failed> on ${{ github.ref }} branch in the ${{ github.repository }} repository!"
+              }
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
