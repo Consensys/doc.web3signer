@@ -3,10 +3,11 @@ title: Load signing keys
 description: Load BLS12-381 and secp256k1 signing keys.
 sidebar_position: 3
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # Load signing keys
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 Load signing keys using a [key configuration file], or bulk load using the [`eth1` and `eth2` subcommands]. 
 Web3Signer supports loading keys with the following methods: 

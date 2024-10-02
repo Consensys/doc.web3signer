@@ -4,10 +4,10 @@ description: Signing key configuration file parameters
 sidebar_position: 3
 ---
 
+# Signing key configuration file parameters
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Signing key configuration file parameters
 
 A [signing key configuration file] is a YAML file that defines the parameters to access one or more
 signing keys.

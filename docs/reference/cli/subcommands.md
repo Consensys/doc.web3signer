@@ -4,10 +4,10 @@ description: Web3Signer subcommands reference
 sidebar_position: 2
 ---
 
+# Subcommands
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Subcommands
 
 :::caution Filecoin deprecation notice
 
@@ -248,7 +248,7 @@ eth1.aws-kms-client-cache-size: "5"
   </TabItem>
 </Tabs>
 
-AWS KMS client cache size. Set to the total number of credentials 
+AWS KMS client cache size. Set to the total number of credentials
 used to access the service plus the number of regions the service is accessed from. The default is `1`.
 
 #### `aws-kms-enabled`
@@ -285,7 +285,7 @@ eth1.aws-kms-enabled: "true"
   </TabItem>
 </Tabs>
 
-Set to `true` to enable bulk loading from the AWS KMS. The default is `false`. 
+Set to `true` to enable bulk loading from the AWS KMS. The default is `false`.
 
 #### `aws-kms-region`
 
@@ -582,7 +582,8 @@ eth1.azure-response-timeout: "40"
   </TabItem>
 </Tabs>
 
-The response timeout used by the HTTP client (in seconds). The default is 60. You can also set the timeout using the `timeout` field in the Azure metadata file. 
+The response timeout used by the HTTP client (in seconds). The default is 60. You can also set the timeout using
+the `timeout` field in the Azure metadata file.
 
 #### `azure-tags`
 
@@ -767,7 +768,8 @@ eth1.chain-id: "2017"
   </TabItem>
 </Tabs>
 
-ID of the chain to receive the signed transactions. The Besu documentation lists [chain IDs for public networks](https://besu.hyperledger.org/development/public-networks/concepts/network-and-chain-id). 
+ID of the chain to receive the signed transactions. The Besu documentation
+lists [chain IDs for public networks](https://besu.hyperledger.org/development/public-networks/concepts/network-and-chain-id).
 
 #### `downstream-http-host`
 
@@ -2061,7 +2063,7 @@ eth2.gcp-secrets-enabled: true
   </TabItem>
 </Tabs>
 
-Set to `true` to enable bulk loading from the GCP Secrets Manager service. The default is `false`. 
+Set to `true` to enable bulk loading from the GCP Secrets Manager service. The default is `false`.
 
 #### `gcp-secrets-filter`
 

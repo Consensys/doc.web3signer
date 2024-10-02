@@ -4,10 +4,10 @@ description: Web3Signer command line options reference
 sidebar_position: 1
 ---
 
+# Web3Signer command line options
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Web3Signer command line options
 
 This reference describes the syntax of the Web3Signer Command Line Interface (CLI) options.
 

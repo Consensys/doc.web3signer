@@ -4,10 +4,10 @@ description: Configure Web3Signer to use a YubiHSM 2 device.
 sidebar_position: 1
 ---
 
+# Use Web3Signer with YubiHSM 2
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Use Web3Signer with YubiHSM 2
 
 Web3Signer can sign payloads using private keys stored in the [YubiHSM 2 hardware security module]. Web3Signer
 supports using the device as a secure key storage only.

@@ -4,10 +4,10 @@ description: Store keys in HashiCorp Vault.
 sidebar_position: 1
 ---
 
+# Use Web3Signer with HashiCorp Vault
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Use Web3Signer with HashiCorp Vault
 
 Web3Signer supports storing the signing key in [HashiCorp Vault](https://www.hashicorp.com/products/vault/).
 
