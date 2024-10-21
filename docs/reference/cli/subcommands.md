@@ -9,14 +9,6 @@ sidebar_position: 2
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::caution Filecoin deprecation notice
-
-Web3Signer has deprecated Filecoin and will remove it in a future release. If you still require this feature, we encourage
-community members to maintain the code by creating a fork and submitting pull requests. Alternatively, you can continue
-using an older version of Web3Signer that still supports Filecoin.
-
-:::
-
 Use the Web3Signer subcommands to specify the platform being used:
 
 - `web3signer [options] eth2 [Eth2 options]`
