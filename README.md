@@ -8,3 +8,4 @@ site is published at [`docs.web3signer.consensys.net`](https://docs.web3signer.c
 
 View the [ConsenSys doc contribution guidelines](https://docs-template.consensys.net/) for
 information about submitting documentation changes and previewing the site locally.
+  
