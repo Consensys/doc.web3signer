@@ -47,7 +47,7 @@ The default is `none`.
 ```
 
   </TabItem>
-  <TabItem value="Environment variable" label="Environment variable" >
+  <TabItem value="Environment variable" label="Environment variable">
 
 ```bash
 WEB3SIGNER_CONFIG_FILE=/home/me/me_node/config.yaml
@@ -55,6 +55,46 @@ WEB3SIGNER_CONFIG_FILE=/home/me/me_node/config.yaml
 
   </TabItem>
 </Tabs>
+
+### `commit-boost-api-enabled`
+
+<Tabs>
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--commit-boost-api-enabled[=<BOOLEAN>]
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example">
+
+```bash
+--commit-boost-api-enabled=true
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable">
+
+```bash
+TEKU_COMMIT_BOOST_API_ENABLED=true
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file">
+
+```bash
+commit-boost-api-enabled: true
+```
+
+  </TabItem>
+</Tabs>
+
+Enables or disables the [Commit-Boost API](https://commit-boost.github.io/commit-boost-client/api).
+The default is `false`.
+
+You can specify proxy keystores for Commit-Boost using
+[`--proxy-keystores-path`](#proxy-keystores-path) and
+[`--proxy-keystores-password-file`](#proxy-keystores-password-file).
 
 ### `data-path`
 
@@ -784,6 +824,88 @@ metrics-push-prometheus-job="my-custom-job"
 </Tabs>
 
 The job name when in `push` mode. The default is `web3signer-job`.
+
+### `proxy-keystores-password-file`
+
+<Tabs>
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--proxy-keystores-password-file=<FILE>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example">
+
+```bash
+--proxy-keystores-password-file=password.txt
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable">
+
+```bash
+TEKU_PROXY_KEYSTORES_PASSWORD_FILE=password.txt
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file">
+
+```bash
+proxy-keystores-password-file: "password.txt"
+```
+
+  </TabItem>
+</Tabs>
+
+The path to the password file used to encrypt or decrypt the proxy keystores
+specified by [`--proxy-keystores-path`](#proxy-keystores-path),
+when using the [Commit-Boost API](https://commit-boost.github.io/commit-boost-client/api).
+
+[`--commit-boost-api-enabled`](#commit-boost-api-enabled) must be set
+to `true`.
+
+### `proxy-keystores-path`
+
+<Tabs>
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--proxy-keystores-path=<PATH>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example">
+
+```bash
+--proxy-keystores-path=/home/me/proxy-keystores
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable">
+
+```bash
+TEKU_PROXY_KEYSTORES_PATH=/home/me/proxy-keystores
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file">
+
+```bash
+proxy-keystores-path: "/home/me/proxy-keystores"
+```
+
+  </TabItem>
+</Tabs>
+
+The path to a writeable directory to store v3 and v4 proxy keystores
+when using the [Commit-Boost API](https://commit-boost.github.io/commit-boost-client/api).
+
+[`--commit-boost-api-enabled`](#commit-boost-api-enabled) must be set
+to `true`.
+
+Specify a password file for the proxy keystores using
+[`--proxy-keystores-password-file`](#proxy-keystores-password-file).
 
 ### `swagger-ui-enabled`
 
