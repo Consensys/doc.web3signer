@@ -47,7 +47,7 @@ The default is `none`.
 ```
 
   </TabItem>
-  <TabItem value="Environment variable" label="Environment variable">
+  <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
 WEB3SIGNER_CONFIG_FILE=/home/me/me_node/config.yaml
