@@ -2004,7 +2004,7 @@ Subdomain of `vault.azure.net`.
   <TabItem value="Environment variable" label="Environment variable">
 
 ```bash
-WEB3SIGNER_ETH2__COMMIT_BOOST_API_ENABLED=true
+WEB3SIGNER_ETH2_COMMIT_BOOST_API_ENABLED=true
 ```
 
   </TabItem>
@@ -2432,7 +2432,7 @@ eth2.proxy-keystores-path: "/home/me/proxy-keystores"
   </TabItem>
 </Tabs>
 
-The path to a directory to store the generated v3 and v4 proxy keystores when using the
+The path to a directory to store the generated proxy keystores when using the
 [Commit-Boost API](https://commit-boost.github.io/commit-boost-client/api).
 The Web3Signer process should have read-write access to this directory.
 
