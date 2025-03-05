@@ -1984,6 +1984,45 @@ eth2.azure-vault-name: "AzureKeyVault"
 Name of the vault to access.
 Subdomain of `vault.azure.net`.
 
+#### `commit-boost-api-enabled`
+
+<Tabs>
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--commit-boost-api-enabled[=<BOOLEAN>]
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example">
+
+```bash
+--commit-boost-api-enabled=true
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable">
+
+```bash
+WEB3SIGNER_ETH2_COMMIT_BOOST_API_ENABLED=true
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file">
+
+```bash
+eth2.commit-boost-api-enabled: true
+```
+
+  </TabItem>
+</Tabs>
+
+Enables or disables the [Commit-Boost API](https://commit-boost.github.io/commit-boost-client/api).
+The default is `false`.
+
+You can specify the directory to store the generated Commit-Boost proxy keystores using
+[`--proxy-keystores-path`](#proxy-keystores-path).
+
 #### `gcp-project-id`
 
 <Tabs>
@@ -2319,6 +2358,89 @@ Possible values are:
 | `lukso`    | Consensus layer  | Production | Lukso main network.                              |
 | `gnosis`   | Consensus layer  | Production | Gnosis main network.                             |
 | `chiado`   | Consensus layer  | Test       | Multi-client Gnosis testnet.                     |
+
+#### `proxy-keystores-password-file`
+
+<Tabs>
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--proxy-keystores-password-file=<FILE>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example">
+
+```bash
+--proxy-keystores-password-file=password.txt
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable">
+
+```bash
+WEB3SIGNER_ETH2_PROXY_KEYSTORES_PASSWORD_FILE=password.txt
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file">
+
+```bash
+eth2.proxy-keystores-password-file: "password.txt"
+```
+
+  </TabItem>
+</Tabs>
+
+The path to the password file used to encrypt or decrypt the proxy keystores
+located at [`--proxy-keystores-path`](#proxy-keystores-path),
+when using the [Commit-Boost API](https://commit-boost.github.io/commit-boost-client/api).
+
+[`--commit-boost-api-enabled`](#commit-boost-api-enabled) must be set
+to `true`.
+
+#### `proxy-keystores-path`
+
+<Tabs>
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--proxy-keystores-path=<PATH>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example">
+
+```bash
+--proxy-keystores-path=/home/me/proxy-keystores
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable">
+
+```bash
+WEB3SIGNER_ETH2_PROXY_KEYSTORES_PATH=/home/me/proxy-keystores
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file">
+
+```bash
+eth2.proxy-keystores-path: "/home/me/proxy-keystores"
+```
+
+  </TabItem>
+</Tabs>
+
+The path to a directory to store the generated proxy keystores when using the
+[Commit-Boost API](https://commit-boost.github.io/commit-boost-client/api).
+The Web3Signer process should have read-write access to this directory.
+
+[`--commit-boost-api-enabled`](#commit-boost-api-enabled) must be set
+to `true`.
+
+Specify a password file for the proxy keystores using
+[`--proxy-keystores-password-file`](#proxy-keystores-password-file).
 
 #### `slashing-protection-db-health-check-interval-milliseconds`
 
