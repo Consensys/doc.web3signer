@@ -64,7 +64,7 @@ The Web3Signer team runs nodes managing 10,000 keys on various testnets. For exa
 Standard D8as v5 VM (8 vCPUs, 32 GiB memory) can host Besu, Teku, and Web3Signer simultaneously.
 Your specific use case might require less powerful hardware.
 
-![Dashboard for Web3Signer](../../static/img/dashboard_hw.png)
+![Dashboard for Web3Signer](../../../static/img/dashboard_hw.png)
 
 Web3Signer consumes less than 2 GB of JVM heap while managing 10,000 keys in this setup.
 
