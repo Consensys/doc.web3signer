@@ -10,6 +10,13 @@ keywords: [Hashicorp Vault, Azure Key Vault, AWS Secrets Manager, GCP Secret Man
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+:::caution YubiHSM 2 and USB Armory Mk II deprecation notice
+Web3Signer has deprecated private keys storage support from YubiHSM 2 and USB Armory Mk II, and will remove
+it in a future release. If you still require this feature, we encourage community members to maintain the code by
+creating a fork and submitting pull requests. Alternatively, you can continue using an older version of
+Web3Signer that still supports these storage mechanisms.
+:::
+
 Web3Signer supports BLS12-381 (`Eth2`) or secp256k1 (`Eth1`) signing keys stored in the following ways:
 
 | Key storage                          | SECP256K1 | BLS |

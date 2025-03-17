@@ -8,6 +8,13 @@ keywords: [Ethereum remote signer service, external vault support, HSM device su
 
 # Web3Signer
 
+:::caution YubiHSM 2 and USB Armory Mk II deprecation notice
+Web3Signer has deprecated private keys storage support from YubiHSM 2 and USB Armory Mk II, and will remove
+it in a future release. If you still require this feature, we encourage community members to maintain the code by
+creating a fork and submitting pull requests. Alternatively, you can continue using an older version of
+Web3Signer that still supports these storage mechanisms.
+:::
+
 Web3Signer is an open-source remote signing service developed under the Apache 2.0 license and written in Java.
 
 ## What can you do with Web3Signer?
