@@ -9,6 +9,13 @@ sidebar_position: 1
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+:::caution YubiHSM 2 deprecation notice
+Web3Signer has deprecated private key storage support on YubiHSM 2 and will remove it in a future release.
+
+If you need this feature, consider maintaining a fork and submitting pull requests. Alternatively, you can
+use an older Web3Signer version that supports these storage mechanisms.
+:::
+
 Web3Signer can sign payloads using private keys stored in the [YubiHSM 2 hardware security module].
 Web3Signer supports using the device as a secure key storage only.
 
