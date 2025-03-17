@@ -7,10 +7,10 @@ sidebar_position: 2
 # Use Web3Signer with USB Armory Mk II
 
 :::caution USB Armory Mk II deprecation notice
-Web3Signer has deprecated private keys storage support from USB Armory Mk II and will remove it in a future release.
-If you still require this feature, we encourage community members to maintain the code by creating a fork and
-submitting pull requests. Alternatively, you can continue using an older version of Web3Signer that
-still supports these storage mechanisms.
+Web3Signer has deprecated private key storage support on USB Armory Mk II and will remove it in a future release.
+
+If you need this feature, consider maintaining a fork and submitting pull requests. Alternatively, you can
+use an older Web3Signer version that supports these storage mechanisms.
 :::
 
 Web3Signer can sign payloads using private keys stored in a [USB Armory Mk II device].
