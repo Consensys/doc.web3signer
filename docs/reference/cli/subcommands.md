@@ -354,79 +354,45 @@ eth1.aws-kms-secret-access-key: "sk...EXAMPLE"
 AWS secret access key to authenticate AWS KMS.
 Required when [`--aws-kms-auth-mode`](#aws-kms-auth-mode) is `SPECIFIED`.
 
-#### `aws-kms-tag-names-filter`
+#### `aws-kms-tag`
 
 <Tabs>
 
   <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
---aws-kms-tag-names-filter=<STRING>[,<STRING>,...]
+--aws-kms-tag <NAME>=<VALUE> [--aws-kms-tag <NAME>=<VALUE> ...]
 ```
 
   </TabItem>
   <TabItem value="Example" label="Example" >
 
 ```bash
---aws-kms-tag-names-filter=tagName1,tagName2
+--aws-kms-tag tagName1=tagValue1 --aws-kms-tag tagName2=tagValue2
 ```
 
   </TabItem>
   <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
-WEB3SIGNER_ETH1_AWS_KMS_TAG_NAMES_FILTER=tagName1,tagName2
+WEB3SIGNER_ETH1_AWS_KMS_TAG="tagName1=tagValue1|tagName2=tagValue2"
 ```
 
   </TabItem>
   <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
-eth1.aws-kms-tag-names-filter: ["tagName1","tagName2"]
+eth1.aws-kms-tag: "tagName1=tagValue1|tagName2=tagValue2"
 ```
 
   </TabItem>
 </Tabs>
 
-Optional comma-separated list of tag names filter to apply while fetching key IDs from AWS KMS.
-Applied as `AND` operation with other filters.
+Optional tag name and value filters to apply while fetching key IDs from AWS KMS.
 
-#### `aws-kms-tag-values-filter`
-
-<Tabs>
-
-  <TabItem value="Syntax" label="Syntax" default>
-
-```bash
---aws-kms-tag-values-filter=<STRING>[,<STRING>,...]
-```
-
-  </TabItem>
-  <TabItem value="Example" label="Example" >
-
-```bash
---aws-kms-tag-values-filter=tagValue1,tagValue2
-```
-
-  </TabItem>
-  <TabItem value="Environment variable" label="Environment variable" >
-
-```bash
-WEB3SIGNER_ETH1_AWS_KMS_TAG_VALUES_FILTER=tagValue1,tagValue2
-```
-
-  </TabItem>
-  <TabItem value="Configuration file" label="Configuration file" >
-
-```bash
-eth1.aws-kms-tag-values-filter: ["tagValue1","tagValue2"]
-```
-
-  </TabItem>
-</Tabs>
-
-Optional comma-separated list of tag values filter to apply while fetching key IDs from AWS KMS.
-Applied as `AND` operation with other filters.
+On the command line, use `--aws-kms-tag` multiple times to specify multiple filters.
+As an environment variable and in the configuration file, use a pipe `|` to specify multiple filters in a single line.
+Multiple filters are applied as an `AND` operation.
 
 #### `azure-vault-enabled`
 
@@ -1612,80 +1578,45 @@ Optional comma-separated list of secret name prefixes filter to apply while fetc
 AWS Secrets Manager.
 Applied as `AND` operation with other filters.
 
-#### `aws-secrets-tag-names-filter`
+#### `aws-secrets-tag`
 
 <Tabs>
 
   <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
---aws-secrets-tag-names-filter=<STRING>[,<STRING>,...]
+--aws-secrets-tag <NAME>=<VALUE> [--aws-kms-tag <NAME>=<VALUE> ...]
 ```
 
   </TabItem>
   <TabItem value="Example" label="Example" >
 
 ```bash
---aws-secrets-tag-names-filter=tagName1,tagName2
+--aws-secrets-tag tagName1=tagValue1 --aws-kms-tag tagName2=tagValue2
 ```
 
   </TabItem>
   <TabItem value="Environment variable" label="Environment variable" >
 
 ```bash
-WEB3SIGNER_ETH2_AWS_SECRETS_TAG_NAMES_FILTER=tagName1,tagName2
+WEB3SIGNER_ETH2_AWS_SECRETS_TAG="tagName1=tagValue1|tagName2=tagValue2"
 ```
 
   </TabItem>
   <TabItem value="Configuration file" label="Configuration file" >
 
 ```bash
-eth2.aws-secrets-tag-names-filter: ["tagName1","tagName2"]
-
+eth2.aws-secrets-tag: "tagName1=tagValue1|tagName2=tagValue2"
 ```
 
   </TabItem>
 </Tabs>
 
-Optional comma-separated list of tag names filter to apply while fetching secrets from AWS Secrets Manager.
-Applied as `AND` operation with other filters.
+Optional tag name and value filters to apply while fetching secrets from AWS Secrets Manager.
 
-#### `aws-secrets-tag-values-filter`
-
-<Tabs>
-
-  <TabItem value="Syntax" label="Syntax" default>
-
-```bash
---aws-secrets-tag-values-filter=<STRING>[,<STRING>,...]
-```
-
-  </TabItem>
-  <TabItem value="Example" label="Example" >
-
-```bash
---aws-secrets-tag-values-filter=tagValue1,tagValue2
-```
-
-  </TabItem>
-  <TabItem value="Environment variable" label="Environment variable" >
-
-```bash
-WEB3SIGNER_ETH2_AWS_SECRETS_TAG_VALUES_FILTER=tagValue1,tagValue2
-```
-
-  </TabItem>
-  <TabItem value="Configuration file" label="Configuration file" >
-
-```bash
-eth2.aws-secrets-tag-values-filter: ["tagValue1","tagValue2"]
-```
-
-  </TabItem>
-</Tabs>
-
-Optional comma-separated list of tag values filter to apply while fetching secrets from AWS Secrets Manager.
-Applied as `AND` operation with other filters.
+On the command line, use `--aws-secrets-tag` multiple times to specify multiple filters.
+As an environment variable and in the configuration file, use a pipe `|` to specify multiple filters in a single line.
+Multiple filters are applied as an `AND` operation.
 
 #### `azure-vault-enabled`
 
