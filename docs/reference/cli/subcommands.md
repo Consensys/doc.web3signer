@@ -1585,14 +1585,14 @@ Applied as `AND` operation with other filters.
   <TabItem value="Syntax" label="Syntax" default>
 
 ```bash
---aws-secrets-tag <NAME>=<VALUE> [--aws-kms-tag <NAME>=<VALUE> ...]
+--aws-secrets-tag <NAME>=<VALUE> [--aws-secrets-tag <NAME>=<VALUE> ...]
 ```
 
   </TabItem>
   <TabItem value="Example" label="Example" >
 
 ```bash
---aws-secrets-tag tagName1=tagValue1 --aws-kms-tag tagName2=tagValue2
+--aws-secrets-tag tagName1=tagValue1 --aws-secrets-tag tagName2=tagValue2
 ```
 
   </TabItem>
