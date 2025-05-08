@@ -1,0 +1,30 @@
+---
+name: Check for lint/build errors
+
+on:
+  push:
+    branches:
+      - firecrawl
+  # pull_request:
+  #   branches:
+  #     - main
+  # workflow_call:
+
+jobs:
+  llms:
+    
+    name: Lint Code Base, Spelling
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: firecrawl
+        uses: ConsenSys/github-actions/docs-firecrawl-llm@firecrawl
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FIRECRAWL_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_URL: "https://docs.gator.metamask.io/development"
+          MAX_URLS: 25
+          SHOW_FULL_TEXT: true
