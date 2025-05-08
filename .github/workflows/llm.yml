@@ -1,5 +1,5 @@
 ---
-name: Check for lint/build errors
+name: generate llm text
 
 on:
   push:
@@ -16,15 +16,17 @@ jobs:
     name: Lint Code Base, Spelling
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v3
 
-      - name: firecrawl
+      - name: generate-llms
         uses: ConsenSys/github-actions/docs-firecrawl-llm@firecrawl
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FIRECRAWL_API_KEY: ${{ secrets.GITHUB_TOKEN }}
-          TARGET_URL: "https://docs.gator.metamask.io/development"
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          TARGET_URL: "https://docs.web3signer.consensys.io/development"
           MAX_URLS: 25
           SHOW_FULL_TEXT: true
+
