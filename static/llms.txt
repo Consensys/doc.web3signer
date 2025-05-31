@@ -1,0 +1,27 @@
+# https://docs.web3signer.consensys.io/development llms.txt
+
+- [Web3Signer Development Guide](https://docs.web3signer.consensys.io/development): Web3Signer documentation for development version features and usage.
+- [Web3Signer TLS Configuration](https://docs.web3signer.consensys.io/development/concepts/tls): Secure TLS setup for Web3Signer and HashiCorp Vault.
+- [Web3Signer Architecture](https://docs.web3signer.consensys.io/development/concepts/architecture): Web3Signer architecture overview with key components explained.
+- [Web3Signer REST API](https://docs.web3signer.consensys.io/development/reference/api/rest): Explore Web3Signer REST API for ETH1 and ETH2 functionalities.
+- [Slashing Protection Overview](https://docs.web3signer.consensys.io/development/concepts/slashing-protection): Web3Signer prevents validator penalties with slashing protection.
+- [Web3Signer Metrics Monitoring](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics): Learn to monitor Web3Signer metrics using Prometheus setup.
+- [Web3Signer Docker Guide](https://docs.web3signer.consensys.io/development/get-started/use-docker): Learn to run Web3Signer using Docker on MacOS/Linux.
+- [Load Launchpad Keystores](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores): Learn to load keystores for validator setup in Web3Signer.
+- [Web3Signer Key Management](https://docs.web3signer.consensys.io/development/how-to/manage-keys): Manage keys in Web3Signer using API endpoints effectively.
+- [Ethereum JSON-RPC API](https://docs.web3signer.consensys.io/development/reference/api/json-rpc): Explore JSON-RPC API methods for Ethereum transactions.
+- [Key Storage Overview](https://docs.web3signer.consensys.io/development/how-to/store-keys): Web3Signer key storage methods and deprecation notice.
+- [Web3Signer Installation Guide](https://docs.web3signer.consensys.io/development/get-started/install-binaries): Guide to install Web3Signer binaries and prerequisites.
+- [Web3 Signer Chatbot](https://docs.web3signer.consensys.io/development/chatbot): Explore the development documentation for Web3 Signer chatbot features.
+- [Web3Signer Development Docs](https://docs.web3signer.consensys.io/development/reference): Explore Web3Signer development documentation, CLI, APIs, and security.
+- [Ethereum Key Management](https://docs.web3signer.consensys.io/development/get-started/key-best-practices): Best practices for managing Ethereum validator keys securely.
+- [Web3Signer Development Tutorials](https://docs.web3signer.consensys.io/development/tutorials): Explore tutorials for using Web3Signer in development.
+- [Build Web3Signer Source](https://docs.web3signer.consensys.io/development/get-started/build-from-source): Guide to build Web3Signer from source on various platforms.
+- [Web3Signer at Scale](https://docs.web3signer.consensys.io/development/how-to/run-at-scale): Optimize Web3Signer performance for large-scale key management.
+- [Web3Signer Concepts](https://docs.web3signer.consensys.io/development/concepts): Explore Web3Signer's architecture, slashing protection, and TLS.
+- [YubiHSM 2 Key Storage](https://docs.web3signer.consensys.io/development/how-to/store-keys/hsm/yubihsm2): Guide for storing keys in YubiHSM 2 with Web3Signer.
+- [Web3Signer CLI Reference](https://docs.web3signer.consensys.io/development/reference/cli): Comprehensive CLI options and subcommands for Web3Signer.
+- [Web3Signer Development Guide](https://docs.web3signer.consensys.io/development/how-to): Comprehensive guide for managing Web3Signer keys and configurations.
+- [GCP Secret Manager Guide](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/gcp): Guide to store BLS keys in GCP Secret Manager.
+- [Web3Signer API Documentation](https://docs.web3signer.consensys.io/development/reference/api): Documentation for Web3Signer APIs for signing payloads.
+- [Web3Signer Development Guide](https://docs.web3signer.consensys.io/development/get-started): Comprehensive guide to installing and running Web3Signer.
