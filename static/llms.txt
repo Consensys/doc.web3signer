@@ -1,0 +1,27 @@
+# https://docs.web3signer.consensys.io/development llms.txt
+
+- [Web3Signer Development Guide](https://docs.web3signer.consensys.io/development): Web3Signer documentation for development version features and usage.
+- [Web3Signer Architecture](https://docs.web3signer.consensys.io/development/concepts/architecture): Web3Signer architecture overview with key components explained.
+- [Web3Signer TLS Guide](https://docs.web3signer.consensys.io/development/concepts/tls): Web3Signer documentation on securing TLS connections effectively.
+- [Web3Signer REST API](https://docs.web3signer.consensys.io/development/reference/api/rest): Explore Web3Signer REST API for ETH1 and ETH2 functionalities.
+- [Slashing Protection Overview](https://docs.web3signer.consensys.io/development/concepts/slashing-protection): Web3Signer prevents validator penalties with slashing protection.
+- [Web3Signer Metrics Monitoring](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics): Learn to monitor Web3Signer metrics using Prometheus setup.
+- [Load Signing Keys](https://docs.web3signer.consensys.io/development/how-to/load-keys): Learn to load signing keys using various methods.
+- [Key Storage in Web3Signer](https://docs.web3signer.consensys.io/development/how-to/store-keys): Guide to storing keys securely in Web3Signer.
+- [Configure Web3Signer TLS](https://docs.web3signer.consensys.io/development/how-to/configure-tls): Guide to configure TLS communication for Web3Signer clients.
+- [Load Launchpad Keystores](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores): Learn to load keystores for validators in Web3Signer.
+- [Web3Signer Key Management](https://docs.web3signer.consensys.io/development/how-to/manage-keys): Manage keys effectively using Web3Signer Key Manager API.
+- [Ethereum JSON-RPC API](https://docs.web3signer.consensys.io/development/reference/api/json-rpc): Explore JSON-RPC API methods for Ethereum transactions.
+- [Web3Signer Docker Guide](https://docs.web3signer.consensys.io/development/get-started/use-docker): Learn to run Web3Signer using Docker on MacOS/Linux.
+- [Web3Signer Installation Guide](https://docs.web3signer.consensys.io/development/get-started/install-binaries): Guide to install Web3Signer binaries and prerequisites.
+- [Consensys Docsbot](https://docs.web3signer.consensys.io/development/chatbot): AI chatbot for Consensys Web3Signer assistance and guidance.
+- [Slashing Protection Setup](https://docs.web3signer.consensys.io/development/how-to/configure-slashing-protection): Guide to configure slashing protection for Web3Signer.
+- [Web3Signer Development Docs](https://docs.web3signer.consensys.io/development/reference): Explore Web3Signer development documentation and features.
+- [Ethereum Key Management](https://docs.web3signer.consensys.io/development/get-started/key-best-practices): Best practices for managing Ethereum validator keys securely.
+- [Web3Signer Tutorials](https://docs.web3signer.consensys.io/development/tutorials): Explore tutorials for using Web3Signer development features.
+- [Build Web3Signer Source](https://docs.web3signer.consensys.io/development/get-started/build-from-source): Guide to build Web3Signer from source on various platforms.
+- [Web3Signer at Scale](https://docs.web3signer.consensys.io/development/how-to/run-at-scale): Optimize Web3Signer performance for large-scale key management.
+- [Web3Signer Concepts](https://docs.web3signer.consensys.io/development/concepts): Explore Web3Signer's architecture, slashing protection, and TLS.
+- [Web3Signer Development Guide](https://docs.web3signer.consensys.io/development/how-to): Comprehensive guide for managing Web3Signer keys and configurations.
+- [Store Keys in Vault](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/hashicorp): Learn to store signing keys securely in HashiCorp Vault.
+- [Azure Key Vault Keys](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/azure): Learn to store keys in Azure Key Vault for Web3Signer.
