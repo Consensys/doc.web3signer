@@ -1,0 +1,27 @@
+# https://docs.web3signer.consensys.io/development llms.txt
+
+- [Web3Signer Development Guide](https://docs.web3signer.consensys.io/development): Web3Signer documentation for development version features and usage.
+- [Web3Signer Key Management](https://docs.web3signer.consensys.io/development/how-to/manage-keys): Manage keys effectively with Web3Signer Key Manager API.
+- [Configure Web3Signer TLS](https://docs.web3signer.consensys.io/development/how-to/configure-tls): Guide to configure TLS for secure Web3Signer communication.
+- [Web3Signer Metrics Monitoring](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics): Learn to monitor Web3Signer metrics using Prometheus setup.
+- [Load Launchpad Keystores](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores): Learn to load keystores for Web3Signer and Teku.
+- [Web3Signer TLS Guide](https://docs.web3signer.consensys.io/development/concepts/tls): Web3Signer documentation on securing TLS connections effectively.
+- [Web3Signer Architecture](https://docs.web3signer.consensys.io/development/concepts/architecture): Web3Signer architecture overview with components and APIs.
+- [Slashing Protection Overview](https://docs.web3signer.consensys.io/development/concepts/slashing-protection): Web3Signer prevents validator penalties with slashing protection.
+- [Load Signing Keys](https://docs.web3signer.consensys.io/development/how-to/load-keys): Learn how to load signing keys using various methods.
+- [Web3Signer REST API](https://docs.web3signer.consensys.io/development/reference/api/rest): Explore Web3Signer REST API for ETH1 and ETH2 functionalities.
+- [Ethereum JSON-RPC API](https://docs.web3signer.consensys.io/development/reference/api/json-rpc): Explore JSON-RPC API methods for Ethereum transactions.
+- [Key Storage Methods](https://docs.web3signer.consensys.io/development/how-to/store-keys): Web3Signer key storage methods and deprecation notice.
+- [Web3Signer Docker Setup](https://docs.web3signer.consensys.io/development/get-started/use-docker): Learn to run Web3Signer using Docker on MacOS/Linux.
+- [Web3Signer Installation Guide](https://docs.web3signer.consensys.io/development/get-started/install-binaries): Guide to install Web3Signer binaries and prerequisites.
+- [Slashing Protection Setup](https://docs.web3signer.consensys.io/development/how-to/configure-slashing-protection): Guide to configure slashing protection for Web3Signer.
+- [Web3 Signer Chatbot](https://docs.web3signer.consensys.io/development/chatbot): Explore the development documentation for Web3 Signer chatbot features.
+- [Web3Signer Development Docs](https://docs.web3signer.consensys.io/development/reference): Explore Web3Signer development documentation and features.
+- [Ethereum Key Management](https://docs.web3signer.consensys.io/development/get-started/key-best-practices): Best practices for managing Ethereum validator keys securely.
+- [Web3Signer Tutorials](https://docs.web3signer.consensys.io/development/tutorials): Explore tutorials for using Web3Signer development features.
+- [Build Web3Signer from Source](https://docs.web3signer.consensys.io/development/get-started/build-from-source): Guide to build Web3Signer from source on various platforms.
+- [Web3Signer at Scale](https://docs.web3signer.consensys.io/development/how-to/run-at-scale): Optimize Web3Signer performance for large-scale key management.
+- [Web3Signer Concepts](https://docs.web3signer.consensys.io/development/concepts): Explore Web3Signer's architecture, slashing protection, and TLS.
+- [Store Keys in Vault](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/hashicorp): Learn to store signing keys in HashiCorp Vault securely.
+- [Azure Key Vault Signing](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/azure): Learn to use Azure Key Vault for signing operations.
+- [YubiHSM 2 Key Storage](https://docs.web3signer.consensys.io/development/how-to/store-keys/hsm/yubihsm2): Guide for storing keys in YubiHSM 2 with Web3Signer.
