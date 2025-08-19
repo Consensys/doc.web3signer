@@ -3,7 +3,8 @@ name: generate llm text
 
 on:
   schedule:
-    - cron: "0 22 * * 6"
+    # min, hour, day_of_month, month, day_of_week 
+    - cron: "0 2 1 * *"    
   workflow_dispatch:
 
 jobs:
