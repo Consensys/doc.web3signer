@@ -1,0 +1,1883 @@
+# https://docs.web3signer.consensys.io/development llms-full.txt
+
+## Web3Signer Development Guide
+[Skip to main content](https://docs.web3signer.consensys.io/development#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+YubiHSM 2 and USB Armory Mk II deprecation notice
+
+Web3Signer has deprecated private key storage support on USB Armory Mk II and YubiHSM 2, and will remove it in a future release.
+
+If you need this feature, consider maintaining a fork and submitting pull requests. Alternatively, you can
+use an older Web3Signer version that supports these storage mechanisms.
+
+Web3Signer is an open-source remote signing service developed under the Apache 2.0 license and written in Java.
+
+## What can you do with Web3Signer? [​](https://docs.web3signer.consensys.io/development\#what-can-you-do-with-web3signer "Direct link to What can you do with Web3Signer?")
+
+Web3Signer can sign on multiple platforms using private keys stored in an external vault, or encrypted on a disk.
+
+Web3Signer can sign payloads using secp256k1 and BLS12-381 signing keys, and supports the following platforms:
+
+- Execution layer (formerly called Ethereum 1.0)
+- Consensus layer (formerly called Ethereum 2.0).
+
+## New to Web3Signer? [​](https://docs.web3signer.consensys.io/development\#new-to-web3signer "Direct link to New to Web3Signer?")
+
+Get started by running Web3Signer with Docker or installing Web3Signer. You can:
+
+- [Run Web3Signer from a Docker image](https://docs.web3signer.consensys.io/development/get-started/use-docker)
+- [Install the binary distribution](https://docs.web3signer.consensys.io/development/get-started/install-binaries)
+- [Build from source](https://docs.web3signer.consensys.io/development/get-started/build-from-source)
+
+- [What can you do with Web3Signer?](https://docs.web3signer.consensys.io/development#what-can-you-do-with-web3signer)
+- [New to Web3Signer?](https://docs.web3signer.consensys.io/development#new-to-web3signer)
+
+## Web3Signer Architecture
+[Skip to main content](https://docs.web3signer.consensys.io/development/concepts/architecture#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/concepts/architecture)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+Web3Signer is a remote signing client comprised of three main components:
+
+- Remote signer
+- Slashing database
+- APIs
+
+## The remote signer [​](https://docs.web3signer.consensys.io/development/concepts/architecture\#the-remote-signer "Direct link to The remote signer")
+
+The remote signer [loads private keys](https://docs.web3signer.consensys.io/development/how-to/load-keys) into memory and responds to signature requests.
+If you are using an [HSM](https://docs.web3signer.consensys.io/assets/files/_category_-3bfa326d69fe895e11ff6970ab99e2a8.json) or a [vault](https://docs.web3signer.consensys.io/assets/files/_category_-d40a928d31eb61463b09b9213761f52b.json) for execution layer signing, the keys stay at rest.
+This component communicates with the slashing database, the APIs, and the keystore (if used), to coordinate remote signing.
+
+## The slashing database [​](https://docs.web3signer.consensys.io/development/concepts/architecture\#the-slashing-database "Direct link to The slashing database")
+
+The [slashing database](https://docs.web3signer.consensys.io/development/concepts/slashing-protection) is a Postgres database that tracks which keys have signed messages.
+Database locking ensures that when multiple Web3Signer instances load the same keys, only one instance is permitted to sign.
+
+## The APIs [​](https://docs.web3signer.consensys.io/development/concepts/architecture\#the-apis "Direct link to The APIs")
+
+Web3Signer supports REST and [JSON-RPC APIs](https://docs.web3signer.consensys.io/assets/files/_category_-9c5ac3d350a88dab893fbe8160a1768f.json) to sign consensus layer and execution layer payloads
+respectively. These connections should be carefully secured. Web3Signer offers [TLS communication](https://docs.web3signer.consensys.io/development/how-to/configure-tls).
+
+- [The remote signer](https://docs.web3signer.consensys.io/development/concepts/architecture#the-remote-signer)
+- [The slashing database](https://docs.web3signer.consensys.io/development/concepts/architecture#the-slashing-database)
+- [The APIs](https://docs.web3signer.consensys.io/development/concepts/architecture#the-apis)
+
+## TLS Configuration Guide
+[Skip to main content](https://docs.web3signer.consensys.io/development/concepts/tls#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/concepts/tls)** (stable (25.3.0)).
+
+Version: development
+
+Web3Signer supports TLS to secure inbound and outbound HTTP JSON-RPC requests, and communication
+with HashiCorp Vault.
+
+Private keys and certificates for client and server TLS connections must be stored in
+password-protected PKCS #12 keystores.
+You must configure the server (in this example, [Besu](https://besu.hyperledger.org/)) to accept TLS connections.
+
+Use the command line options to configure TLS on [HTTP JSON-RPC requests](https://docs.web3signer.consensys.io/development/how-to/configure-tls)
+and [HashiCorp Vault](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/hashicorp).
+
+## Web3Signer REST API
+[Skip to main content](https://docs.web3signer.consensys.io/development/reference/api/rest#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/reference/api/rest)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+The Web3Signer REST API contains an ETH2 (that is, consensus layer) API, and an ETH1 (that is, execution layer) API.
+Use the ETH2 API for signing consensus layer payloads.
+
+We recommend using the [Web3Signer JSON-RPC API](https://docs.web3signer.consensys.io/development/reference/api/json-rpc) for signing execution layer payloads. The ETH1 REST API
+contains a basic signing method but does not implement transaction encoding or create an Ethereum signature.
+
+## View the REST API documentation [​](https://docs.web3signer.consensys.io/development/reference/api/rest\#view-the-rest-api-documentation "Direct link to View the REST API documentation")
+
+View the [REST API documentation](https://consensys.github.io/web3signer/) for more information about the available APIs.
+
+## Enable Swagger UI [​](https://docs.web3signer.consensys.io/development/reference/api/rest\#enable-swagger-ui "Direct link to Enable Swagger UI")
+
+You can interact with APIs using [Swagger UI](https://swagger.io/tools/swagger-ui/).
+To do this, set [`--swagger-ui-enabled`](https://docs.web3signer.consensys.io/development/reference/cli/options#swagger-ui-enabled) to `true`.
+
+Access Swagger UI at `http:<interface>:<port>/swagger-ui` where:
+
+- `interface` is specified using [`--http-listen-host`](https://docs.web3signer.consensys.io/development/reference/cli/options#http-listen-host).
+- `port` is specified using [`http-listen-port`](https://docs.web3signer.consensys.io/development/reference/cli/options#http-listen-port).
+
+The default location is `http://localhost:9000/swagger-ui`.
+
+You can also use tools such as [Postman](https://www.postman.com/) or [curl](https://curl.haxx.se/) to interact with Web3Signer APIs.
+
+- [View the REST API documentation](https://docs.web3signer.consensys.io/development/reference/api/rest#view-the-rest-api-documentation)
+- [Enable Swagger UI](https://docs.web3signer.consensys.io/development/reference/api/rest#enable-swagger-ui)
+
+## Slashing Protection Overview
+[Skip to main content](https://docs.web3signer.consensys.io/development/concepts/slashing-protection#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/concepts/slashing-protection)** (stable (25.3.0)).
+
+Version: development
+
+Slashing refers to penalties that are applied to consensus layer validators that sign conflicting
+blocks or attestations.
+
+Web3Signer provides slashing protection to prevent validators from signing blocks and attestations
+based on what it knows has already been signed.
+A slashing protection database records each block and attestation signed by a validator.
+
+Slashing protection is enabled by default, and you are responsible for [creating and maintaining](https://docs.web3signer.consensys.io/development/how-to/configure-slashing-protection)
+the required PostgreSQL database, or you can disable slashing protection by setting
+[`--slashing-protection-enabled`](https://docs.web3signer.consensys.io/development/reference/cli/subcommands#slashing-protection-enabled) to `false`.
+
+info
+
+Web3Signer only supports PostgreSQL for creating the slashing protection database.
+
+Multiple Web3Signer instances can connect to the same slashing protection database.
+Database locking ensures that if Web3signer instances load the same keys, only one Web3signer
+instance actually signs.
+
+## Web3Signer Metrics Monitoring
+[Skip to main content](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/how-to/monitor/metrics)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+Enable the [Prometheus](https://prometheus.io/) monitoring and alerting service for Web3Signer
+metrics using the [`--metrics-enabled`](https://docs.web3signer.consensys.io/development/reference/cli/options#metrics-enabled) option.
+
+Web3Signer provides metrics for secp256k1 and BLS12-381 key types.
+
+## Install Prometheus [​](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics\#install-prometheus "Direct link to Install Prometheus")
+
+To use Prometheus with Web3Signer, install the [Prometheus main component](https://prometheus.io/download/).
+On MacOS, install with [Homebrew](https://formulae.brew.sh/formula/prometheus):
+
+```codeBlockLines_e6Vv
+brew install prometheus
+
+```
+
+## Setting up and running Prometheus with Web3Signer [​](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics\#setting-up-and-running-prometheus-with-web3signer "Direct link to Setting up and running Prometheus with Web3Signer")
+
+To configure Prometheus and run with Web3Signer:
+
+1. Configure Prometheus to poll Web3Signer.
+For example, add the following YAML fragment to the `scrape_configs` block of the `prometheus.yml` file:
+
+
+
+Example configuration
+
+
+
+
+
+```codeBlockLines_e6Vv
+global:
+     scrape_interval: 15s
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+  - job_name: "web3signer-dev"
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    scheme: http
+    static_configs:
+      - targets: ["localhost:9001"]
+
+```
+
+2. [Start Teku](https://docs.teku.consensys.net/how-to/use-external-signer/use-web3signer) by specifying the Web3Signer details.
+
+3. Start Web3Signer with the [`--metrics-enabled`](https://docs.web3signer.consensys.io/development/reference/cli/options#metrics-enabled) option.
+
+
+
+
+
+```codeBlockLines_e6Vv
+web3signer --key-store-path=/Users/me/keyFiles/ --metrics-enabled
+
+```
+
+
+
+
+
+
+
+
+
+The `HTTP`, `SIGNING`, `JVM`, and `PROCESS` metrics categories are enabled by default.
+Use the [`--metrics-category`](https://docs.web3signer.consensys.io/development/reference/cli/options#metrics-category) command line
+option to update the available categories.
+
+4. In another terminal, run Prometheus specifying the `prometheus.yml` file:
+
+
+
+
+
+```codeBlockLines_e6Vv
+prometheus --config.file=prometheus.yml
+
+```
+
+5. View the [Prometheus graphical interface](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics#view-prometheus-graphical-interface).
+
+
+## Run Prometheus with Web3Signer in push mode [​](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics\#run-prometheus-with-web3signer-in-push-mode "Direct link to Run Prometheus with Web3Signer in push mode")
+
+The [`--metrics-enabled`](https://docs.web3signer.consensys.io/development/reference/cli/options#metrics-enabled) option enables Prometheus
+polling of Besu, but sometimes metrics are hard to poll (for example, when running inside Docker
+containers with varying IP addresses). To enable Besu to push metrics to a
+[Prometheus push gateway](https://github.com/prometheus/pushgateway), use
+the [`--metrics-push-enabled`](https://docs.web3signer.consensys.io/development/reference/cli/options#metrics-push-enabled) option.
+
+To configure Prometheus and run with Web3Signer pushing to a push gateway:
+
+1. Configure Prometheus to read from a push gateway. For example, add the following YAML fragment to
+the `scrape_configs` block of the `prometheus.yml` file:
+
+
+
+
+
+```codeBlockLines_e6Vv
+- job_name: push-gateway
+metrics_path: /metrics
+scheme: http
+static_configs:
+    - targets:
+        - localhost:9091
+
+```
+
+2. Start the push gateway. You can deploy the push gateway using the Docker image:
+
+
+
+
+
+```codeBlockLines_e6Vv
+docker pull prom/pushgateway
+docker run -d -p 9091:9091 prom/pushgateway
+
+```
+
+3. Start Web3Signer specifying options:
+   - [`--metrics-push-enabled`](https://docs.web3signer.consensys.io/development/reference/cli/options#metrics-push-enabled)
+   - [`--metrics-push-port`](https://docs.web3signer.consensys.io/development/reference/cli/options#metrics-push-enabled)
+   - [`--metrics-push-host`](https://docs.web3signer.consensys.io/development/reference/cli/options#metrics-push-host)
+4. In another terminal, run Prometheus specifying the `prometheus.yml` file:
+
+
+
+
+
+```codeBlockLines_e6Vv
+prometheus --config.file=prometheus.yml
+
+```
+
+5. View the [Prometheus graphical interface](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics#view-prometheus-graphical-interface).
+
+
+## View Prometheus graphical interface [​](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics\#view-prometheus-graphical-interface "Direct link to View Prometheus graphical interface")
+
+1. Open a web browser to `http://localhost:9090` to view the Prometheus graphical interface.
+
+2. Choose **Graph** from the menu bar and click the **Console** tab below.
+
+3. From the **Insert metric at cursor** drop-down, select a metric and click **Execute**.
+The values display.
+
+
+The following Web3Signer metrics are available.
+
+**HTTP API metrics:**
+
+| Name | Definition |
+| --- | --- |
+| `<keytype>_malformed_request_count` | Number of requests received which had illegally formatted body. |
+| `<keytype>_signing_duration` | Duration of a signing event. |
+| `<keytype>_missing_identifier_count` | Number of signing requests for which no keys were available. |
+| `signers_loaded_count` | Total number of SECP256k1 and BLS12-381 keys loaded. |
+| `signing_private_key_retrieval_time` | Time taken to retrieve BLS signing keys. |
+
+**Eth2 Slashing protection metrics:**
+
+| Name | Definition |
+| --- | --- |
+| `permitted_signings` | The number of slashing checks which have reported 'safe to sign'. |
+| `prevented_signings` | The number of prevented signings due to violation of slashing conditions. |
+
+**Process metrics:**
+
+| Name | Definition |
+| --- | --- |
+| `process_release` | The number of the release version running. |
+
+## Visualize collected data [​](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics\#visualize-collected-data "Direct link to Visualize collected data")
+
+Use [Grafana](https://grafana.com/docs/grafana/latest/guides/getting_started/) to visualize the collected data. See the sample [Web3Signer Grafana\\
+dashboard](https://grafana.com/grafana/dashboards/13687).
+
+- [Install Prometheus](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics#install-prometheus)
+- [Setting up and running Prometheus with Web3Signer](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics#setting-up-and-running-prometheus-with-web3signer)
+- [Run Prometheus with Web3Signer in push mode](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics#run-prometheus-with-web3signer-in-push-mode)
+- [View Prometheus graphical interface](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics#view-prometheus-graphical-interface)
+- [Visualize collected data](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics#visualize-collected-data)
+
+## Load Signing Keys
+[Skip to main content](https://docs.web3signer.consensys.io/development/how-to/load-keys#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/how-to/load-keys)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+Load signing keys using a [key configuration file](https://docs.web3signer.consensys.io/development/reference/key-config-file-params), or bulk load using the [`eth1` and `eth2` subcommands](https://docs.web3signer.consensys.io/development/reference/cli/subcommands).
+Web3Signer supports loading keys with the following methods:
+
+| Key storage | Key configuration file | Bulk load with `eth1` | Bulk load with `eth2` |
+| --- | --- | --- | --- |
+| [Keystore files](https://docs.web3signer.consensys.io/development/how-to/load-keys#keystore-files) | x | x | x |
+| **Vaults** |  |  |  |
+| [Hashicorp Vault](https://docs.web3signer.consensys.io/development/how-to/load-keys#use-key-configuration-files) | x |  |  |
+| [Azure Key Vault](https://docs.web3signer.consensys.io/development/how-to/load-keys#azure-key-vault) | x | x | x |
+| [AWS Secrets Manager](https://docs.web3signer.consensys.io/development/how-to/load-keys#aws-secrets-manager) | x |  | x |
+| [AWS KMS](https://docs.web3signer.consensys.io/development/how-to/load-keys#aws-key-management-service) | x | x |  |
+| [GCP Secret Manager](https://docs.web3signer.consensys.io/development/how-to/load-keys#gcp-secret-manager) |  |  | x |
+| **Hardware Security Modules (HSMs)** |  |  |  |
+| [USB Armory Mk II](https://docs.web3signer.consensys.io/development/how-to/load-keys#use-key-configuration-files) | x |  |  |
+| [YubiHSM 2](https://docs.web3signer.consensys.io/development/how-to/load-keys#use-key-configuration-files) | x |  |  |
+
+note
+
+You can bulk load in combination with using key configuration files.
+
+## Use key configuration files [​](https://docs.web3signer.consensys.io/development/how-to/load-keys\#use-key-configuration-files "Direct link to Use key configuration files")
+
+For each signing key, define the parameters to access the key in a [key configuration file](https://docs.web3signer.consensys.io/development/reference/key-config-file-params).
+You can create a separate configuration file for each key, or specify multiple configurations in a
+single file by adding a triple-dash separator ( `---`) between configurations.
+
+The configuration file must be YAML-formatted, and can use any naming format, but must have the `.yaml` extension.
+
+Place one or more key configuration files in a single directory which you specify when starting Web3Signer.
+Use the [`--key-store-path`](https://docs.web3signer.consensys.io/development/reference/cli/options#key-store-path) option to specify the
+location of the key configuration files.
+
+```codeBlockLines_e6Vv
+web3signer --key-store-path=/Users/me/keyFiles/ eth2
+
+```
+
+## Bulk load keys [​](https://docs.web3signer.consensys.io/development/how-to/load-keys\#bulk-load-keys "Direct link to Bulk load keys")
+
+### Azure Key Vault [​](https://docs.web3signer.consensys.io/development/how-to/load-keys\#azure-key-vault "Direct link to Azure Key Vault")
+
+You can bulk load keys that are stored in Azure Key Vault using the Web3Signer
+[`eth1` subcommand options](https://docs.web3signer.consensys.io/development/reference/cli/subcommands#eth1) or
+[`eth2` subcommand options](https://docs.web3signer.consensys.io/development/reference/cli/subcommands#eth2).
+
+For `eth1` bulk loading, Web3Signer creates Azure keys connections in bulk mode. The Azure keys
+connections are used to perform remote signing using SECP keys. Web3Signer does not download the private keys
+for `eth1` bulk loading with Azure.
+
+For `eth2` bulk loading, Web3Signer bulk loads the BLS keys from Azure Secrets. The bulk loading
+mode supports loading multiple consensus layer keys from the same Azure secret, if keys are stored with a line
+terminating character such as `\n`.
+This saves cost when dealing with a large number of keys.
+Up to 200 keys can be stored under a secret name.
+
+- Consensus layer client
+- Execution layer client
+
+```codeBlockLines_e6Vv
+web3signer eth2 --azure-vault-enabled=true --azure-client-id=87efaa5b-4029-4b54-98bb2e2e8a11 \
+--azure-client-secret=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z \
+--azure-tenant-id=34255fb0-379b-4a1a-bd47-d211ab86df81 \
+--azure-vault-name=AzureKeyVault
+
+```
+
+```codeBlockLines_e6Vv
+web3signer eth1 --azure-vault-enabled=true --azure-client-id=87efaa5b-4029-4b54-98bb2e2e8a11 \
+--azure-client-secret=0DgK4V_YA99RPk7.f_1op0-em_a46wSe.Z \
+--azure-tenant-id=34255fb0-379b-4a1a-bd47-d211ab86df81 \
+--azure-vault-name=AzureKeyVault
+
+```
+
+### AWS Secrets Manager [​](https://docs.web3signer.consensys.io/development/how-to/load-keys\#aws-secrets-manager "Direct link to AWS Secrets Manager")
+
+You can bulk load consensus layer keys that are stored in AWS Secrets Manager using the Web3Signer
+[`eth2` subcommand options](https://docs.web3signer.consensys.io/development/reference/cli/subcommands#eth2).
+
+The AWS bulk load mode supports loading multiple consensus layer keys from the same secret, if keys
+are stored with a line terminating character such as `\n`.
+This saves cost when dealing with a large number of keys.
+Up to 200 keys can be stored under a secret name.
+
+```codeBlockLines_e6Vv
+web3signer eth2 --aws-secrets-enabled=true --aws-secrets-access-key-id=AKIA...EXAMPLE \
+--aws-secrets-secret-access-key=sk...EXAMPLE \
+--aws-secrets-region=us-east-2
+
+```
+
+### AWS Key Management Service [​](https://docs.web3signer.consensys.io/development/how-to/load-keys\#aws-key-management-service "Direct link to AWS Key Management Service")
+
+You can bulk load execution layer keys that are stored in the AWS Key Management Service (KMS) using
+the Web3Signer [`eth1` subcommand options](https://docs.web3signer.consensys.io/development/reference/cli/subcommands#eth1).
+
+```codeBlockLines_e6Vv
+web3signer eth1 --aws-kms-enabled=true --aws-kms-access-key-id=AKIA...EXAMPLE \
+--aws-kms-secret-access-key=sk...EXAMPLE \
+--aws-secrets-region=us-east-2
+
+```
+
+### GCP Secret Manager [​](https://docs.web3signer.consensys.io/development/how-to/load-keys\#gcp-secret-manager "Direct link to GCP Secret Manager")
+
+You can bulk load consensus layer keys that are stored in the GCP Secret Manager using
+the Web3Signer [`eth2` subcommand options](https://docs.web3signer.consensys.io/development/reference/cli/subcommands#eth2).
+
+```codeBlockLines_e6Vv
+web3signer eth2 --gcp-secrets-enabled=true --gcp-project-id=AKIA...EXAMPLE
+
+```
+
+### Keystore files [​](https://docs.web3signer.consensys.io/development/how-to/load-keys\#keystore-files "Direct link to Keystore files")
+
+You can bulk load consensus layer or execution layer keys that are stored as keystore files using the Web3Signer
+[`eth1` subcommand options](https://docs.web3signer.consensys.io/development/reference/cli/subcommands#eth1) or
+[`eth2` subcommand options](https://docs.web3signer.consensys.io/development/reference/cli/subcommands#eth2).
+
+- Consensus layer client
+- Execution layer client
+
+```codeBlockLines_e6Vv
+web3signer eth2 --keystores-path=/Users/me/keystores \
+--keystores-passwords-path=/Users/me/passwds
+
+```
+
+```codeBlockLines_e6Vv
+web3signer eth1 --keystores-path=/Users/me/keystores \
+--keystores-passwords-path=/Users/me/passwds
+
+```
+
+Use the `eth1` or `eth2` `--keystores-password-file` or `--keystores-passwords-path` command line option to specify
+keystore passwords.
+
+- [Use key configuration files](https://docs.web3signer.consensys.io/development/how-to/load-keys#use-key-configuration-files)
+- [Bulk load keys](https://docs.web3signer.consensys.io/development/how-to/load-keys#bulk-load-keys)
+  - [Azure Key Vault](https://docs.web3signer.consensys.io/development/how-to/load-keys#azure-key-vault)
+  - [AWS Secrets Manager](https://docs.web3signer.consensys.io/development/how-to/load-keys#aws-secrets-manager)
+  - [AWS Key Management Service](https://docs.web3signer.consensys.io/development/how-to/load-keys#aws-key-management-service)
+  - [GCP Secret Manager](https://docs.web3signer.consensys.io/development/how-to/load-keys#gcp-secret-manager)
+  - [Keystore files](https://docs.web3signer.consensys.io/development/how-to/load-keys#keystore-files)
+
+## Load Launchpad Keystores
+[Skip to main content](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/tutorials/load-launchpad-keystores)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+The Staking Launchpad tool is used to create validators that participate in the consensus layer
+proof-of-stake network. The tool generates an encrypted keystore file containing the validator details.
+Load this keystore into Web3Signer to sign attestations and blocks with the validator details.
+
+This tutorial uses Teku and Web3Signer to run validators created on the `holesky` testnet.
+
+**Prerequisites**:
+
+- [Teku installed](https://docs.teku.consensys.net/get-started/install/install-binaries).
+- [Web3Signer installed](https://docs.web3signer.consensys.io/development/get-started/install-binaries).
+- Web3Signer [slashing protection database](https://docs.web3signer.consensys.io/development/how-to/configure-slashing-protection).
+
+## 1\. Sync the Teku beacon node [​](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores\#1-sync-the-teku-beacon-node "Direct link to 1. Sync the Teku beacon node")
+
+Sync the Teku beacon chain node before submitting your deposit to avoid incurring inactivity
+penalties if the validator is unable to perform its duties when the deposit is processed and activated.
+
+```codeBlockLines_e6Vv
+teku --network=holesky --metrics-enabled --rest-api-enabled
+
+```
+
+## 2\. Generate validators [​](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores\#2-generate-validators "Direct link to 2. Generate validators")
+
+This step generates a validator on the `holesky` testnet.
+Use the [Holeksy Staking Launchpad](https://holesky.launchpad.ethereum.org/en/) and follow the
+step-by-step process to deposit your funds and generate the keystore.
+
+The process includes installing the consensus layer deposit CLI tool, to generate your validator
+keystores locally.
+Keystores are generated in the `eth2deposit-cli-<version>/validator_keys` folder.
+In this example we generated a keystore named `keystore-m_12381_3600_0_0_0-1606109670.json`
+
+important
+
+Remember the password used to create the keystore because you'll need it later.
+
+## 3\. Create password file [​](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores\#3-create-password-file "Direct link to 3. Create password file")
+
+Create a plain text file that stores the password to decrypt the keystore.
+In this example we create the `keystore-m_12381_3600_0_0_0-1606109670.txt` file in the
+`eth2deposit-cli-<version>/validator_keys` directory:
+
+keystore-m\_12381\_3600\_0\_0\_0-1606109670.txt
+
+```codeBlockLines_e6Vv
+validatorPassword
+
+```
+
+note
+
+If using Linux or macOS, we recommend setting the file ownership and permission to `400` for
+the user running Web3Signer.
+
+## 4\. Create the key configuration file [​](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores\#4-create-the-key-configuration-file "Direct link to 4. Create the key configuration file")
+
+Create a [key configuration file](https://docs.web3signer.consensys.io/development/reference/key-config-file-params) for each keystore file.
+The key configuration file defines the type of signing key being used, and access details.
+Store all key configuration files in a single directory.
+In this example, the files are stored in `Users/me/keys`:
+
+validator.yaml
+
+```codeBlockLines_e6Vv
+type: "file-keystore"
+keystoreFile: "/Users/me/eth2deposit-cli-ed5a6d3-darwin-amd64/validator_keys/validator_keys/keystore-m_12381_3600_0_0_0-1606109670.json"
+keystorePasswordFile: "/Users/me/eth2deposit-cli-ed5a6d3-darwin-amd64/validator_keys/validator_keys/keystore-m_12381_3600_0_0_0-1606109670.txt"
+
+```
+
+important
+
+The configuration files must be YAML-formatted.
+You can use any naming format, but it must have the `.yaml` extension.
+
+## 5\. Start Web3Signer [​](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores\#5-start-web3signer "Direct link to 5. Start Web3Signer")
+
+Start Web3Signer and specify the location of the key configuration files and [slashing protection database](https://docs.web3signer.consensys.io/development/how-to/configure-slashing-protection).
+
+```codeBlockLines_e6Vv
+web3signer --key-store-path=/Users/me/keys eth2 --network=holesky --slashing-protection-db-url="jdbc:postgresql://localhost/web3signer" --slashing-protection-db-username=postgres --slashing-protection-db-password=password
+
+```
+
+note
+
+Set the [`--slashing-protection-enabled`](https://docs.web3signer.consensys.io/development/reference/cli/subcommands#slashing-protection-enabled) `eth2` subcommand option to `false` to disable slashing protection.
+However, we don't recommend this on Mainnet.
+
+## 5\. Start Teku [​](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores\#5-start-teku "Direct link to 5. Start Teku")
+
+Start Teku and specify the public keys of the validators that Web3Signer signs attestations and
+blocks for, and specify the Web3Signer address.
+
+```codeBlockLines_e6Vv
+teku --network=holesky \
+--eth1-endpoint=http://localhost:8545 \
+--validators-external-signer-public-keys=0xa99a...e44c,0xb89b...4a0b \
+--validators-external-signer-url=http://localhost:9000
+
+```
+
+- [1\. Sync the Teku beacon node](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores#1-sync-the-teku-beacon-node)
+- [2\. Generate validators](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores#2-generate-validators)
+- [3\. Create password file](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores#3-create-password-file)
+- [4\. Create the key configuration file](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores#4-create-the-key-configuration-file)
+- [5\. Start Web3Signer](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores#5-start-web3signer)
+- [5\. Start Teku](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores#5-start-teku)
+
+## Web3Signer Key Management
+[Skip to main content](https://docs.web3signer.consensys.io/development/how-to/manage-keys#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/how-to/manage-keys)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+## Reload new keys [​](https://docs.web3signer.consensys.io/development/how-to/manage-keys\#reload-new-keys "Direct link to Reload new keys")
+
+If you add new keys to an existing set of validators, or modify the key configuration files, reload
+the keys to ensure Web3Signer registers the new or modified keys.
+Use the [`reload`](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Reload-Signer-Keys)
+endpoint to reload the keys in Web3Signer.
+
+- curl request
+- Result
+
+```codeBlockLines_e6Vv
+curl -X POST http://localhost:9000/reload
+
+```
+
+```codeBlockLines_e6Vv
+200 Call is successful
+
+```
+
+## Manage keys using Key Manager API [​](https://docs.web3signer.consensys.io/development/how-to/manage-keys\#manage-keys-using-key-manager-api "Direct link to Manage keys using Key Manager API")
+
+You can manage your keys using the [Key Manager API\\
+endpoints](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Keymanager).
+You can [list keys](https://docs.web3signer.consensys.io/development/how-to/manage-keys#list-keys), [import keystores](https://docs.web3signer.consensys.io/development/how-to/manage-keys#import-keystores), and [delete keys](https://docs.web3signer.consensys.io/development/how-to/manage-keys#delete-keys).
+
+Enable the key manager API by running Web3Signer using the
+[`--key-manager-api-enabled`](https://docs.web3signer.consensys.io/development/reference/cli/subcommands#key-manager-api-enabled) subcommand option.
+
+### List keys [​](https://docs.web3signer.consensys.io/development/how-to/manage-keys\#list-keys "Direct link to List keys")
+
+List all validating public keys known to and decrypted by the keystore using the
+[`list keys` endpoint](https://consensys.github.io/web3signer/web3signer-eth2.html#operation/KEYMANAGER_LIST).
+
+- curl request
+- Result
+
+```codeBlockLines_e6Vv
+curl -X GET http://localhost:9000/eth/v1/keystores
+
+```
+
+```codeBlockLines_e6Vv
+{
+  "data": [\
+    {\
+      "validating_pubkey": "0x93247f2209abcacf57b75a51dafae777f9dd38bc7053d1af526f220a7489a6d3a2753e5f3e8b1cfe39b56f43611df74a",\
+      "derivation_path": "m/12381/3600/0/0/0",\
+      "readonly": true\
+    }\
+  ]
+}
+
+```
+
+### Import keystores [​](https://docs.web3signer.consensys.io/development/how-to/manage-keys\#import-keystores "Direct link to Import keystores")
+
+Import keystores generated by the consensus layer deposit CLI tooling using the
+[`import keystores` endpoint](https://consensys.github.io/web3signer/web3signer-eth2.html#operation/KEYMANAGER_IMPORT).
+
+- curl request
+- Result
+
+```codeBlockLines_e6Vv
+curl -X POST http://127.0.0.1:9000/eth/v1/keystores --header "Content-Type: application/json"
+--data '{
+  "keystores": [\
+    "{\"version\":4,\"uuid\":\"9f75a3fa-1e5a-49f9-be3d-f5a19779c6fa\",\"path\":\"m/12381/3600/0/0/0\",\"pubkey\":\"0x93247f2209abcacf57b75a51dafae777f9dd38bc7053d1af526f220a7489a6d3a2753e5f3e8b1cfe39b56f43611df74a\",\"crypto\":{\"kdf\":{\"function\":\"pbkdf2\",\"params\":{\"dklen\":32,\"c\":262144,\"prf\":\"hmac-sha256\",\"salt\":\"8ff8f22ef522a40f99c6ce07fdcfc1db489d54dfbc6ec35613edf5d836fa1407\"},\"message\":\"\"},\"checksum\":{\"function\":\"sha256\",\"params\":{},\"message\":\"9678a69833d2576e3461dd5fa80f6ac73935ae30d69d07659a709b3cd3eddbe3\"},\"cipher\":{\"function\":\"aes-128-ctr\",\"params\":{\"iv\":\"31b69f0ac97261e44141b26aa0da693f\"},\"message\":\"e8228bafec4fcbaca3b827e586daad381d53339155b034e5eaae676b715ab05e\"}}}"\
+  ],
+  "passwords": [\
+    "ABCDEFGH01234567ABCDEFGH01234567"\
+  ],
+    "slashing_protection": "{\"metadata\":{\"interchange_format_version\":\"5\",\"genesis_validators_root\":\"0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2\"},\"data\":[{\"pubkey\":\"0x93247f2209abcacf57b75a51dafae777f9dd38bc7053d1af526f220a7489a6d3a2753e5f3e8b1cfe39b56f43611df74a\",\"signed_blocks\":[],\"signed_attestations\":[]}]}"
+  }'
+
+```
+
+```codeBlockLines_e6Vv
+{
+  "data": [\
+    {\
+      "status": "imported",\
+      "message": "string"\
+    }\
+  ]
+}
+
+```
+
+### Delete keys [​](https://docs.web3signer.consensys.io/development/how-to/manage-keys\#delete-keys "Direct link to Delete keys")
+
+Delete keys using the [`delete keys`\\
+endpoint](https://consensys.github.io/web3signer/web3signer-eth2.html#operation/KEYMANAGER_DELETE).
+
+- curl request
+- Result
+
+```codeBlockLines_e6Vv
+curl -X DELETE http://localhost:9000/eth/v1/keystores --data '{"pubkeys": ["0x93247f2209abcacf57b75a51dafae777f9dd38bc7053d1af526f220a7489a6d3a2753e5f3e8b1cfe39b56f43611df74a"]}'
+
+```
+
+```codeBlockLines_e6Vv
+{
+  "data": [\
+    {\
+      "status": "deleted",\
+      "message": "string"\
+    }\
+  ],
+  "slashing_protection": "{\"metadata\":{\"interchange_format_version\":\"5\",\"genesis_validators_root\":\"0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2\"},\"data\":[{\"pubkey\":\"0x93247f2209abcacf57b75a51dafae777f9dd38bc7053d1af526f220a7489a6d3a2753e5f3e8b1cfe39b56f43611df74a\",\"signed_blocks\":[],\"signed_attestations\":[]}]}"
+}
+
+```
+
+- [Reload new keys](https://docs.web3signer.consensys.io/development/how-to/manage-keys#reload-new-keys)
+- [Manage keys using Key Manager API](https://docs.web3signer.consensys.io/development/how-to/manage-keys#manage-keys-using-key-manager-api)
+  - [List keys](https://docs.web3signer.consensys.io/development/how-to/manage-keys#list-keys)
+  - [Import keystores](https://docs.web3signer.consensys.io/development/how-to/manage-keys#import-keystores)
+  - [Delete keys](https://docs.web3signer.consensys.io/development/how-to/manage-keys#delete-keys)
+
+## Ethereum JSON-RPC API
+[Skip to main content](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/reference/api/json-rpc)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+note
+
+- All JSON-RPC HTTP examples use the default host and port endpoint `http://127.0.0.1:8545`.
+- The examples use Besu, but you can use any Ethereum execution client.
+
+## `eth_accounts` [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#eth_accounts "Direct link to eth_accounts")
+
+Returns the account address with which Web3Signer is signing transactions.
+
+Returns multiple accounts if multiple signers are configured.
+
+### Parameters [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#parameters "Direct link to Parameters")
+
+None
+
+### Returns [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#returns "Direct link to Returns")
+
+`Array of data` \- Account address with which Web3Signer is signing transactions
+
+- curl HTTP request
+- JSON result
+
+```codeBlockLines_e6Vv
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1}' http://127.0.0.1:8545
+
+```
+
+```codeBlockLines_e6Vv
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": ["0xfe3b557e8fb62b89f4916b721be55ceb828dbd73"]
+}
+
+```
+
+## `eth_sign` [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#eth_sign "Direct link to eth_sign")
+
+Calculates an Ethereum specific signature using
+`sign(keccak256("\x19Ethereum Signed Message:\n" + len(message) + message)))."`
+
+Adds a prefix to the message that makes the calculated signature recognizable as an Ethereum
+specific signature.
+This prevents malicious dapps from signing arbitrary data (for example, a transaction) and using the
+signature to impersonate the victim.
+
+### Parameters [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#parameters-1 "Direct link to Parameters")
+
+`DATA` \- 20-byte account address
+
+`DATA` \- Data string to sign
+
+### Returns [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#returns-1 "Direct link to Returns")
+
+`DATA` \- Signature
+
+- curl HTTP request
+- JSON result
+
+```codeBlockLines_e6Vv
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sign","params":["0x78e6e236592597c09d5c137c2af40aecd42d12a2", "0x2eadbe1f"], "id":1}' http://127.0.0.1:8545
+
+```
+
+```codeBlockLines_e6Vv
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0xa6122e277f46fea78f3e97d3354a03ad20b2296733dfefbadc7305c80e70ce9826d44f12ab5aa488689744657491c70d3b654d7f60f8f50beefac9abcf02a4cf1b"
+}
+
+```
+
+## `eth_signTransaction` [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#eth_signtransaction "Direct link to eth_signtransaction")
+
+Signs a transaction that you can submit to Besu at a later time using
+[`eth_sendRawTransaction`](https://besu.hyperledger.org/stable/public-networks/reference/api#eth_sendrawtransaction).
+
+### Parameters [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#parameters-2 "Direct link to Parameters")
+
+Transaction object:
+
+| Key | Type | Required/Optional | Value |
+| --- | --- | --- | --- |
+| `from` | Data, 20 bytes | Required | Address of the sender. |
+| `to` | Data, 20 bytes | Optional for contract creation | Address of the receiver. `null` if this is a contract creation transaction. |
+| `gas` | Quantity | Optional | Gas provided by the sender. The default is `90000`. |
+| `gasPrice` | Quantity | Optional | Gas price provided by the sender in Wei. The default is `0`. Used only in non [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) transactions. |
+| `maxPriorityFeePerGas` | Quantity | Optional | Maximum fee, in Wei, the sender is willing to pay above the base fee. Used only in [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) transactions. |
+| `maxFeePerGas` | Quantity | Optional | Maximum total fee (base fee + priority fee), in Wei, the sender is willing to pay. Used only in [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) transactions. |
+| `nonce` | Quantity | Optional | Number of transactions made by the sender before this one. Must be specified if using [GoQuorum](https://docs.goquorum.consensys.net/). |
+| `value` | Quantity | Optional | Value transferred in Wei. |
+| `data` | Quantity | Optional | Compiled contract code or hash of the invoked method signature and encoded parameters. |
+
+### Returns [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#returns-2 "Direct link to Returns")
+
+`result` : `data` \- The signed transaction object.
+
+- curl HTTP request
+- JSON result
+
+```codeBlockLines_e6Vv
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_signTransaction","params":[{"from": "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73","to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567","gas": "0x7600","gasPrice": "0x9184e72a000","value": "0x9184e72a", "nonce":"0x46"}], "id":1}' http://127.0.0.1:8545
+
+```
+
+```codeBlockLines_e6Vv
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0xa3f20717a250c2b0b729b7e5becbff67fdaef7e0699da4de7ca5895b02a170a12d887fd3b17bfdce3481f10bea41f45ba9f709d39ce8325427b57afcfc994cee1b"
+}
+
+```
+
+## `eth_signTypedData` [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#eth_signtypeddata "Direct link to eth_signtypeddata")
+
+`eth_signTypedData` is the same as `ethsign` except a typed data structure is specified
+as the object to be signed instead of a data string.
+
+Calculates an Ethereum specific signature using
+`sign(keccak256("\x19Ethereum Signed Message:\n" + len(message) + message)))."`
+
+Adds a prefix to the message that makes the calculated signature recognizable as an Ethereum
+specific signature.
+This prevents malicious dapps from signing arbitrary data (for example, a transaction) and using the
+signature to impersonate the victim.
+
+The JSON schema for the typed data structure to sign is:
+
+```codeBlockLines_e6Vv
+{
+  type: 'object',
+  properties: {
+    types: {
+      type: 'object',
+      properties: {
+        EIP712Domain: {type: 'array'},
+      },
+      additionalProperties: {
+        type: 'array',
+        items: {
+          type: 'object',
+          properties: {
+            name: {type: 'string'},
+            type: {type: 'string'}
+          },
+          required: ['name', 'type']
+        }
+      },
+      required: ['EIP712Domain']
+    },
+    primaryType: {type: 'string'},
+    domain: {type: 'object'},
+    message: {type: 'object'}
+  },
+  required: ['types', 'primaryType', 'domain', 'message']
+}
+
+```
+
+### Parameters [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#parameters-3 "Direct link to Parameters")
+
+`DATA` \- 20-byte account address
+
+`TYPEDDATA` \- Typed data structure to sign
+
+### Returns [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#returns-3 "Direct link to Returns")
+
+`DATA` \- Signature
+
+- curl HTTP request
+- JSON result
+
+```codeBlockLines_e6Vv
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_signTypedData","params":["0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826", {"types":{"EIP712Domain":[{"name":"name","type":"string"},{"name":"version","type":"string"},{"name":"chainId","type":"uint256"},{"name":"verifyingContract","type":"address"}],"Person":[{"name":"name","type":"string"},{"name":"wallet","type":"address"}],"Mail":[{"name":"from","type":"Person"},{"name":"to","type":"Person"},{"name":"contents","type":"string"}]},"primaryType":"Mail","domain":{"name":"Ether Mail","version":"1","chainId":1,"verifyingContract":"0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC"},"message":{"from":{"name":"Cow","wallet":"0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826"},"to":{"name":"Bob","wallet":"0xbBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB"},"contents":"Hello, Bob!"}}],"id":1}'
+
+```
+
+```codeBlockLines_e6Vv
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x4355c47d63924e8a72e509b65029052eb6c299d53a04e167c5775fd466751c9d07299936d304c153f6443dfa05f40ff007d72911b6f72307f996231605b915621c"
+}
+
+```
+
+## `eth_sendTransaction` [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#eth_sendtransaction "Direct link to eth_sendtransaction")
+
+Creates and signs a transaction using the signing key.
+
+Web3Signer submits the signed transaction to Besu using
+[`eth_sendRawTransaction`](https://besu.hyperledger.org/stable/public-networks/reference/api#eth_sendrawtransaction).
+
+### Parameters [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#parameters-4 "Direct link to Parameters")
+
+Transaction object:
+
+| Key | Type | Required/Optional | Value |
+| --- | --- | --- | --- |
+| `from` | Data, 20 bytes | Required | Address of the sender. |
+| `to` | Data, 20 bytes | Optional for contract creation | Address of the receiver. `null` if this is a contract creation transaction. |
+| `gas` | Quantity | Optional | Gas provided by the sender. The default is `90000`. |
+| `gasPrice` | Quantity | Optional | Gas price provided by the sender in Wei. The default is `0`. Used only in non [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) transactions. |
+| `maxPriorityFeePerGas` | Quantity | Optional | Maximum fee, in Wei, the sender is willing to pay above the base fee. Used only in [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) transactions. |
+| `maxFeePerGas` | Quantity | Optional | Maximum total fee (base fee + priority fee), in Wei, the sender is willing to pay. Used only in [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) transactions. |
+| `nonce` | Quantity | Optional | Number of transactions made by the sender before this one. Must be specified if using [GoQuorum](https://consensys.net/docs/goquorum/). |
+| `value` | Quantity | Optional | Value transferred in Wei. |
+| `data` | Quantity | Optional | Compiled contract code or hash of the invoked method signature and encoded parameters. |
+
+tip
+
+Submitting a transaction with the same nonce as a pending transaction and a higher gas price replaces the pending transaction with the new one.
+
+### Returns [​](https://docs.web3signer.consensys.io/development/reference/api/json-rpc\#returns-4 "Direct link to Returns")
+
+`result` : `data` \- 32-byte transaction hash
+
+- curl HTTP request
+- JSON result
+
+```codeBlockLines_e6Vv
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{"from": "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73","to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567","gas": "0x7600","gasPrice": "0x9184e72a000","value": "0x9184e72a"}], "id":1}' http://127.0.0.1:8545
+
+```
+
+```codeBlockLines_e6Vv
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x6052dd2131667ef3e0a0666f2812db2defceaec91c470bb43de92268e8306778"
+}
+
+```
+
+- [`eth_accounts`](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#eth_accounts)
+  - [Parameters](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#parameters)
+  - [Returns](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#returns)
+- [`eth_sign`](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#eth_sign)
+  - [Parameters](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#parameters-1)
+  - [Returns](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#returns-1)
+- [`eth_signTransaction`](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#eth_signtransaction)
+  - [Parameters](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#parameters-2)
+  - [Returns](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#returns-2)
+- [`eth_signTypedData`](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#eth_signtypeddata)
+  - [Parameters](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#parameters-3)
+  - [Returns](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#returns-3)
+- [`eth_sendTransaction`](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#eth_sendtransaction)
+  - [Parameters](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#parameters-4)
+  - [Returns](https://docs.web3signer.consensys.io/development/reference/api/json-rpc#returns-4)
+
+## Web3Signer Key Storage
+[Skip to main content](https://docs.web3signer.consensys.io/development/how-to/store-keys#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/how-to/store-keys)** (stable (25.3.0)).
+
+Version: development
+
+YubiHSM 2 and USB Armory Mk II deprecation notice
+
+Web3Signer has deprecated private key storage support on USB Armory Mk II and YubiHSM 2, and will remove it in a future release.
+
+If you need this feature, consider maintaining a fork and submitting pull requests. Alternatively, you can
+use an older Web3Signer version that supports these storage mechanisms.
+
+Web3Signer supports BLS12-381 ( `Eth2`) or secp256k1 ( `Eth1`) signing keys stored in the following ways:
+
+| Key storage | SECP256K1 | BLS |
+| --- | --- | --- |
+| Raw files | x | x |
+| [Keystore files](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md) | x | x |
+| **Vaults** |  |  |
+| [Hashicorp Vault](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/hashicorp) | x | x |
+| [Azure Key Vault](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/azure) | x | x |
+| [AWS Secrets Manager](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/aws/secrets-manager-consensus-layer) |  | x |
+| [AWS KMS](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/aws/kms-execution-layer) | x |  |
+| [GCP Secret Manager](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/gcp) |  | x |
+| **Hardware Security Modules (HSMs)** |  |  |
+| [YubiHSM 2](https://docs.web3signer.consensys.io/development/how-to/store-keys/hsm/yubihsm2) | x | x |
+| [USB Armory Mk II](https://docs.web3signer.consensys.io/development/how-to/store-keys/hsm/usb-armory) | x | x |
+
+Web3Signer supports `Eth1` signing from HSMs and vaults, but must load private keys into memory for `Eth2` signing.
+Follow [best practices](https://docs.web3signer.consensys.io/development/get-started/key-best-practices) when storing private keys.
+
+After storing keys, [load keys into Web3Signer](https://docs.web3signer.consensys.io/development/how-to/load-keys).
+
+## Web3Signer Docker Guide
+[Skip to main content](https://docs.web3signer.consensys.io/development/get-started/use-docker#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/get-started/use-docker)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+A Docker image is provided to run Web3Signer in a Docker container.
+
+## Prerequisites [​](https://docs.web3signer.consensys.io/development/get-started/use-docker\#prerequisites "Direct link to Prerequisites")
+
+- [Docker](https://docs.docker.com/install/)
+
+- MacOS or Linux
+
+
+Important
+
+The Docker image does not run on Windows.
+
+## Run Docker image [​](https://docs.web3signer.consensys.io/development/get-started/use-docker\#run-docker-image "Direct link to Run Docker image")
+
+Display the Web3Signer command line help using the Docker image:
+
+```codeBlockLines_e6Vv
+docker run consensys/web3signer:develop --help
+
+```
+
+## Expose listening port [​](https://docs.web3signer.consensys.io/development/get-started/use-docker\#expose-listening-port "Direct link to Expose listening port")
+
+To use the default listening port ( `9000`) or the port specified using `--http-listen-port`, you must expose the listening port.
+
+To run Web3Signer exposing listening port for access:
+
+```codeBlockLines_e6Vv
+docker run -p <listenPort>:9000 consensys/web3signer:develop [options] [subcommand] [options]
+
+```
+
+- [Prerequisites](https://docs.web3signer.consensys.io/development/get-started/use-docker#prerequisites)
+- [Run Docker image](https://docs.web3signer.consensys.io/development/get-started/use-docker#run-docker-image)
+- [Expose listening port](https://docs.web3signer.consensys.io/development/get-started/use-docker#expose-listening-port)
+
+## Web3Signer Installation Guide
+[Skip to main content](https://docs.web3signer.consensys.io/development/get-started/install-binaries#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/get-started/install-binaries)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+## Prerequisites [​](https://docs.web3signer.consensys.io/development/get-started/install-binaries\#prerequisites "Direct link to Prerequisites")
+
+- [Java JDK](https://jdk.java.net/)
+
+Important
+
+Web3Signer requires Java 21 or later releases.
+
+## Install binaries [​](https://docs.web3signer.consensys.io/development/get-started/install-binaries\#install-binaries "Direct link to Install binaries")
+
+Download the Web3Signer [packaged binaries](https://github.com/Consensys/web3signer/releases/latest).
+
+tip
+
+View the [**Releases** page](https://github.com/Consensys/web3signer/releases) to download a specific version.
+
+Unpack the downloaded files and change into the `web3signer-<release>` directory.
+
+Display Web3Signer command line help to confirm installation:
+
+- Linux or MacOS
+- Windows
+
+```codeBlockLines_e6Vv
+bin/web3signer --help
+
+```
+
+```codeBlockLines_e6Vv
+bin\web3signer --help
+
+```
+
+- [Prerequisites](https://docs.web3signer.consensys.io/development/get-started/install-binaries#prerequisites)
+- [Install binaries](https://docs.web3signer.consensys.io/development/get-started/install-binaries#install-binaries)
+
+## Consensys Docsbot
+[Skip to main content](https://docs.web3signer.consensys.io/development/chatbot#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/chatbot)** (stable (25.3.0)).
+
+Version: development
+
+Consensys Docsbot
+
+### Consensys Documentation Chatbot
+
+* * *
+
+Hello I am an AI chatbot! My features are still experimental and I can provide assistance with questions about Consensys Web3Signer, its features or usage instructions. Be sure to check the source documentation links that I provide for full details. Please help me enhance my AI's effectiveness by clicking 👍 for helpful responses and 👎 for inaccurate ones.
+
+Please do not input any of your own or another's personal information. If you need support and do not want to engage with me, please reach out to us via [Discord](https://discord.com/invite/bZwrf3x4Vs). I am powered by Microsoft and any information that you provide is not used for training my AI systems. For details on our data handling practices, see our [Privacy Policy](https://consensys.io/privacy-policy)
+
+By proceeding you acknowledge the above.
+
+Proceed
+
+Not sure what to ask? Try the following:
+
+- What can I do with Web3signer?
+- How do I use Web3signer as a key store for Teku?
+
+## Web3Signer Development Docs
+[Skip to main content](https://docs.web3signer.consensys.io/development/reference#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/reference)** (stable (25.3.0)).
+
+Version: development[**🗃️Command line** \\
+2 items](https://docs.web3signer.consensys.io/development/reference/cli)[**🗃️APIs** \\
+2 items](https://docs.web3signer.consensys.io/development/reference/api)[**📄️Key configuration file parameters** \\
+Signing key configuration file parameters](https://docs.web3signer.consensys.io/development/reference/key-config-file-params)[**📄️Security disclosure policy** \\
+Web3signer security disclosure policy statement](https://docs.web3signer.consensys.io/development/reference/security-disclosure)
+
+## Web3Signer Key Management
+[Skip to main content](https://docs.web3signer.consensys.io/development/get-started/key-best-practices#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/get-started/key-best-practices)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+Web3Signer manages validator keys for Ethereum 2.0 staking.
+This document outlines best practices for key generation, storage, access control, and system security when using Web3Signer.
+The following guidelines help protect your staked assets and supports Ethereum network integrity.
+
+## Generate secure BLS keys [​](https://docs.web3signer.consensys.io/development/get-started/key-best-practices\#generate-secure-bls-keys "Direct link to Generate secure BLS keys")
+
+- Use cryptographically secure random number generators for key generation.
+- Consider using hardware security modules (HSMs) for key generation to ensure physical security.
+- Implement proper key rotation policies to limit the impact of potential key compromises.
+
+## Store keys in a vault or HSM [​](https://docs.web3signer.consensys.io/development/get-started/key-best-practices\#store-keys-in-a-vault-or-hsm "Direct link to Store keys in a vault or HSM")
+
+- Use dedicated key management solutions such as HashiCorp Vault or AWS Key Management Service (KMS).
+
+- Implement encryption for keys at rest and in transit.
+
+
+
+note
+
+
+
+
+
+Currently, Web3Signer doesn't support direct encryption of keys in storage. This is a known limitation that should be addressed in future updates.
+
+- Use hardware security modules (HSMs) for the highest level of key protection, ensuring keys never leave the secure hardware.
+
+
+## Use environment authentication for vaults or HSMs [​](https://docs.web3signer.consensys.io/development/get-started/key-best-practices\#use-environment-authentication-for-vaults-or-hsms "Direct link to Use environment authentication for vaults or HSMs")
+
+- Use environment variables for authentication credentials instead of hardcoding them.
+- Implement IAM roles and policies for cloud-based solutions, for example AWS IAM roles for EC2 instances.
+- Use Kubernetes secrets or similar container orchestration tools for managing environment variables securely.
+- Regularly rotate authentication credentials and limit their scope to the minimum required permissions.
+
+## Expose validator signing API on necessary network interfaces only [​](https://docs.web3signer.consensys.io/development/get-started/key-best-practices\#expose-validator-signing-api-on-necessary-network-interfaces-only "Direct link to Expose validator signing API on necessary network interfaces only")
+
+- Configure Web3Signer to bind only to specific IP addresses or network interfaces.
+- Use firewalls or security groups to restrict inbound traffic to the signing API.
+- Implement network segmentation to isolate the signing service from other components.
+- Use a reverse proxy to add another layer of security and control.
+
+## Enable TLS authentication between validator client and Web3Signer [​](https://docs.web3signer.consensys.io/development/get-started/key-best-practices\#enable-tls-authentication-between-validator-client-and-web3signer "Direct link to Enable TLS authentication between validator client and Web3Signer")
+
+- Generate and use strong SSL/TLS certificates for all communications.
+- Implement mutual TLS (mTLS) for bidirectional authentication.
+- Regularly update and rotate TLS certificates.
+- Configure proper cipher suites and TLS versions to ensure strong encryption.
+
+## Restrict host access with `--http-host-allowlist` [​](https://docs.web3signer.consensys.io/development/get-started/key-best-practices\#restrict-host-access-with---http-host-allowlist "Direct link to restrict-host-access-with---http-host-allowlist")
+
+- Use the `--http-host-allowlist` option to specify which hostnames are allowed to access the Web3Signer API.
+- Regularly review and update the allowlist to maintain tight access control.
+- Implement additional network-level access controls to complement this feature.
+- Monitor and log all access attempts, especially those from non-allowlisted hosts.
+
+## Disable the key manager API or restrict access [​](https://docs.web3signer.consensys.io/development/get-started/key-best-practices\#disable-the-key-manager-api-or-restrict-access "Direct link to Disable the key manager API or restrict access")
+
+- If you don't need the key manager API, disable it completely using the appropriate configuration option.
+- If required, implement strict access controls for the key manager API:
+  - Use IP allowlisting.
+  - Implement strong authentication mechanisms, for example API keys and OAuth.
+  - Apply rate limiting to prevent overuse.
+- Regularly audit access logs for the key manager API.
+
+## Configure Postgres database with TLS authentication [​](https://docs.web3signer.consensys.io/development/get-started/key-best-practices\#configure-postgres-database-with-tls-authentication "Direct link to Configure Postgres database with TLS authentication")
+
+- Enable SSL/TLS for all database connections.
+- Use strong, unique client certificates for each Web3Signer instance.
+- Implement proper certificate validation on both client and server sides.
+- Regularly rotate database credentials and certificates.
+- Use tools such as pgBouncer with TLS support for connection pooling and additional security.
+
+## Restrict access to the key config [​](https://docs.web3signer.consensys.io/development/get-started/key-best-practices\#restrict-access-to-the-key-config "Direct link to Restrict access to the key config")
+
+- Implement file system-level permissions to limit read access to only Web3Signer.
+- Use encrypted file systems or volume-level encryption for additional protection.
+- Implement audit logging for all access attempts to key configuration files.
+- Use a secrets management solution to dynamically provide key configurations to Web3Signer.
+
+## Run Web3Signer in a secure enclave [​](https://docs.web3signer.consensys.io/development/get-started/key-best-practices\#run-web3signer-in-a-secure-enclave "Direct link to Run Web3Signer in a secure enclave")
+
+- Use AWS Nitro Enclaves or similar secure computing environments.
+- Implement attestation mechanisms to verify the integrity of the enclave.
+- Use encrypted communication channels between the enclave and other components.
+- Regularly update and patch the enclave environment to address security vulnerabilities.
+- Implement proper logging and monitoring solutions that respect the enclave's security boundaries.
+
+- [Generate secure BLS keys](https://docs.web3signer.consensys.io/development/get-started/key-best-practices#generate-secure-bls-keys)
+- [Store keys in a vault or HSM](https://docs.web3signer.consensys.io/development/get-started/key-best-practices#store-keys-in-a-vault-or-hsm)
+- [Use environment authentication for vaults or HSMs](https://docs.web3signer.consensys.io/development/get-started/key-best-practices#use-environment-authentication-for-vaults-or-hsms)
+- [Expose validator signing API on necessary network interfaces only](https://docs.web3signer.consensys.io/development/get-started/key-best-practices#expose-validator-signing-api-on-necessary-network-interfaces-only)
+- [Enable TLS authentication between validator client and Web3Signer](https://docs.web3signer.consensys.io/development/get-started/key-best-practices#enable-tls-authentication-between-validator-client-and-web3signer)
+- [Restrict host access with `--http-host-allowlist`](https://docs.web3signer.consensys.io/development/get-started/key-best-practices#restrict-host-access-with---http-host-allowlist)
+- [Disable the key manager API or restrict access](https://docs.web3signer.consensys.io/development/get-started/key-best-practices#disable-the-key-manager-api-or-restrict-access)
+- [Configure Postgres database with TLS authentication](https://docs.web3signer.consensys.io/development/get-started/key-best-practices#configure-postgres-database-with-tls-authentication)
+- [Restrict access to the key config](https://docs.web3signer.consensys.io/development/get-started/key-best-practices#restrict-access-to-the-key-config)
+- [Run Web3Signer in a secure enclave](https://docs.web3signer.consensys.io/development/get-started/key-best-practices#run-web3signer-in-a-secure-enclave)
+
+## Web3Signer Tutorials
+[Skip to main content](https://docs.web3signer.consensys.io/development/tutorials#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/tutorials)** (stable (25.3.0)).
+
+Version: development[**📄️Load Launchpad keystores** \\
+Load keystores generated using the consensus layer Launchpad tool.](https://docs.web3signer.consensys.io/development/tutorials/load-launchpad-keystores)
+
+## Build Web3Signer Source
+[Skip to main content](https://docs.web3signer.consensys.io/development/get-started/build-from-source#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/get-started/build-from-source)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+## Prerequisites [​](https://docs.web3signer.consensys.io/development/get-started/build-from-source\#prerequisites "Direct link to Prerequisites")
+
+- [Java JDK](https://jdk.java.net/)
+
+Important
+
+Web3Signer requires Java 21 or later releases.
+
+- [Git](https://git-scm.com/downloads) or [GitHub Desktop](https://desktop.github.com/)
+
+## Installation on Linux / Unix / macOS [​](https://docs.web3signer.consensys.io/development/get-started/build-from-source\#installation-on-linux--unix--macos "Direct link to Installation on Linux / Unix / macOS")
+
+### Clone the Web3Signer repository [​](https://docs.web3signer.consensys.io/development/get-started/build-from-source\#clone-the-web3signer-repository "Direct link to Clone the Web3Signer repository")
+
+Clone the `Consensys/web3signer` repository:
+
+```codeBlockLines_e6Vv
+git clone --recursive https://github.com/Consensys/web3signer.git
+
+```
+
+### Build Web3Signer [​](https://docs.web3signer.consensys.io/development/get-started/build-from-source\#build-web3signer "Direct link to Build Web3Signer")
+
+After cloning, go to the `web3signer` directory.
+
+```codeBlockLines_e6Vv
+cd web3signer
+
+```
+
+Build Web3Signer with the Gradle wrapper `gradlew`:
+
+```codeBlockLines_e6Vv
+./gradlew build
+
+```
+
+Go to the distribution directory:
+
+```codeBlockLines_e6Vv
+cd build/distributions/
+
+```
+
+Expand the distribution archive:
+
+```codeBlockLines_e6Vv
+tar -xzf web3signer-<version>.tar.gz
+
+```
+
+Move to the expanded folder and display the Web3Signer help to confirm installation.
+
+```codeBlockLines_e6Vv
+cd web3signer-<version>/
+bin/web3signer --help
+
+```
+
+## Installation on Windows [​](https://docs.web3signer.consensys.io/development/get-started/build-from-source\#installation-on-windows "Direct link to Installation on Windows")
+
+### Install Web3Signer [​](https://docs.web3signer.consensys.io/development/get-started/build-from-source\#install-web3signer "Direct link to Install Web3Signer")
+
+Clone the `Consensys/web3signer` repository:
+
+```codeBlockLines_e6Vv
+git clone --recursive https://github.com/Consensys/web3signer.git
+
+```
+
+### Build Web3Signer [​](https://docs.web3signer.consensys.io/development/get-started/build-from-source\#build-web3signer-1 "Direct link to Build Web3Signer")
+
+Go to the `web3signer` directory:
+
+```codeBlockLines_e6Vv
+cd web3signer
+
+```
+
+Build Web3Signer with the Gradle wrapper `gradlew`:
+
+```codeBlockLines_e6Vv
+./gradlew build
+
+```
+
+note
+
+To run `gradlew`, you must have the **JAVA\_HOME** system variable set to the Java installation directory. For example: `JAVA_HOME = C:\Program Files\Java\jdk1.8.0_181`.
+
+Go to the distribution directory:
+
+```codeBlockLines_e6Vv
+cd build/distributions
+
+```
+
+Expand the distribution archive:
+
+```codeBlockLines_e6Vv
+tar -xzf web3signer-<version>.tar.gz
+
+```
+
+Go to the expanded folder and display the Web3Signer help to confirm installation.
+
+```codeBlockLines_e6Vv
+cd web3signer-<version>
+bin/web3signer --help
+
+```
+
+- [Prerequisites](https://docs.web3signer.consensys.io/development/get-started/build-from-source#prerequisites)
+- [Installation on Linux / Unix / macOS](https://docs.web3signer.consensys.io/development/get-started/build-from-source#installation-on-linux--unix--macos)
+  - [Clone the Web3Signer repository](https://docs.web3signer.consensys.io/development/get-started/build-from-source#clone-the-web3signer-repository)
+  - [Build Web3Signer](https://docs.web3signer.consensys.io/development/get-started/build-from-source#build-web3signer)
+- [Installation on Windows](https://docs.web3signer.consensys.io/development/get-started/build-from-source#installation-on-windows)
+  - [Install Web3Signer](https://docs.web3signer.consensys.io/development/get-started/build-from-source#install-web3signer)
+  - [Build Web3Signer](https://docs.web3signer.consensys.io/development/get-started/build-from-source#build-web3signer-1)
+
+## Web3Signer at Scale
+[Skip to main content](https://docs.web3signer.consensys.io/development/how-to/run-at-scale#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/how-to/run-at-scale)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+When running Web3Signer at scale with hundreds or thousands of keys, several factors affect attestation
+performance on validators. Horizontal scaling reduces request latency on Web3Signer. To maintain low
+signing latency and high safety, connect multiple Web3Signer instances to the same slashing database.
+
+The primary performance cost occurs during startup. More keys increase Web3Signer's startup time, representing
+a one-time cost per restart.
+
+When configuring your environment, consider the startup delay, the number of keys managed, and available system
+resources.
+
+Balancing these factors optimizes system performance and responsiveness. Regular monitoring and tuning
+are necessary as the number of managed keys grows or network conditions change.
+
+## Database proximity [​](https://docs.web3signer.consensys.io/development/how-to/run-at-scale\#database-proximity "Direct link to Database proximity")
+
+The [slashing database](https://docs.web3signer.consensys.io/development/how-to/configure-slashing-protection) ensures the safe management of multiple
+validators. Optimizing the slashing database reduces latency and overhead, improving overall system performance.
+
+- **Reduced geographic latency**: Strategically place Web3Signer instances to ensure minimal distance to the slashing protection database.
+- **Performance tuning**: Optimize database configurations for rapid access, considering factors such as indexing and connection pooling.
+
+## Threading model optimization [​](https://docs.web3signer.consensys.io/development/how-to/run-at-scale\#threading-model-optimization "Direct link to Threading model optimization")
+
+Web3Signer uses [Vertx](https://vertx.io/docs/vertx-core/java/) as its threading framework. While powerful,
+Vertx requires proper configuration for optimal performance in different environments. If you encounter
+request latency or blocked threads, adjust the [worker pool size](https://docs.web3signer.consensys.io/development/reference/cli/options#vertx-worker-pool-size).
+
+To manage concurrency, tailor Web3Signer's thread pool size to your expected load. Increase the pool
+size if you observe decreased attestation performance during peak signing loads.
+
+You can implement monitoring tools for dynamic thread adjustments based on current demand and workload.
+Measure spikes and adjust the pool accordingly.
+
+You can use the following [metrics](https://docs.web3signer.consensys.io/development/how-to/monitor/metrics):
+
+- `http_vertx_worker_queue_delay`: The request queue waiting time before processing.
+- `http_vertx_worker_pool_completed_total`: The number of queries processed by Web3Signer.
+
+## Load balancing [​](https://docs.web3signer.consensys.io/development/how-to/run-at-scale\#load-balancing "Direct link to Load balancing")
+
+At scale, deploy multiple Web3Signer instances behind a load balancer. This setup ensures balanced
+request distribution. Use an ingress load balancer to spread requests evenly across instances. This
+prevents overloading of single instances. Connect all Web3Signer instances to the same slashing database.
+This allows parallel signing without slashing risk.
+
+For more information, see
+the [Kiln article](https://www.kiln.fi/post/learnings-from-running-web3signer-at-scale-on-holesky) on
+running Web3Signer at scale.
+
+## Hardware recommendations [​](https://docs.web3signer.consensys.io/development/how-to/run-at-scale\#hardware-recommendations "Direct link to Hardware recommendations")
+
+The Web3Signer team runs nodes managing 10,000 keys on various testnets. For example, a single Azure
+Standard D8as v5 VM (8 vCPUs, 32 GiB memory) can host Besu, Teku, and Web3Signer simultaneously.
+Your specific use case might require less powerful hardware.
+
+![Dashboard for Web3Signer](https://docs.web3signer.consensys.io/assets/images/dashboard_hw-53d8730eac3844adeb181cdf87e567db.png)
+
+Web3Signer consumes less than 2 GB of JVM heap while managing 10,000 keys in this setup.
+
+The test configuration connects one validator client to Web3Signer. Using multiple validator
+clients might change resource requirements. Distributing the same 10,000 keys across multiple clients
+maintains the total number of requests to Web3Signer.
+
+- [Database proximity](https://docs.web3signer.consensys.io/development/how-to/run-at-scale#database-proximity)
+- [Threading model optimization](https://docs.web3signer.consensys.io/development/how-to/run-at-scale#threading-model-optimization)
+- [Load balancing](https://docs.web3signer.consensys.io/development/how-to/run-at-scale#load-balancing)
+- [Hardware recommendations](https://docs.web3signer.consensys.io/development/how-to/run-at-scale#hardware-recommendations)
+
+## Web3Signer Concepts
+[Skip to main content](https://docs.web3signer.consensys.io/development/concepts#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/concepts)** (stable (25.3.0)).
+
+Version: development[**📄️Architecture** \\
+Learn more about Web3Signer's architecture.](https://docs.web3signer.consensys.io/development/concepts/architecture)[**📄️Slashing protection** \\
+Learn how slashing protection works in Web3Signer.](https://docs.web3signer.consensys.io/development/concepts/slashing-protection)[**📄️TLS communication** \\
+Learn about secure communication using TLS in Web3Signer.](https://docs.web3signer.consensys.io/development/concepts/tls)
+
+## Azure Key Vault Signing
+[Skip to main content](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/azure#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/how-to/store-keys/vaults/azure)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+Web3Signer supports using [Azure Key Vault](https://azure.microsoft.com/en-au/services/key-vault/)
+to sign payloads in the following ways:
+
+- Using Azure Key Vault to perform the signing operation. Supports SECP256K1 signing keys only.
+- Fetching the keys from Azure Key Vault and signing locally.
+
+Web3Signer supports the following authentication modes:
+
+- [Azure Active Directory managed identity](https://docs.microsoft.com/en-us/azure/app-service/overview-managed-identity?tabs=dotnet):
+  - System-assigned identities
+  - User-assigned identities
+- [Client secret](https://docs.microsoft.com/en-us/azure/key-vault/secrets/about-secrets).
+
+Important
+
+The Azure Active Directory managed identity authentication modes can only be used when fetching keys
+from Azure Key Vault and signing locally with Web3Signer.
+
+## Store a private key in Azure Key Vault [​](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/azure\#store-a-private-key-in-azure-key-vault "Direct link to Store a private key in Azure Key Vault")
+
+[Register Web3Signer as an application](https://docs.microsoft.com/en-us/azure/key-vault/general/authentication) and [add a signing key in Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal#add-a-secret-to-key-vault).
+
+Take note of the following to specify when [configuring the signing key configuration file](https://docs.web3signer.consensys.io/development/how-to/load-keys#use-key-configuration-files) or
+[bulk loading signing keys](https://docs.web3signer.consensys.io/development/how-to/load-keys#azure-key-vault):
+
+- Vault name, which is part of the URL (for example `https://<vaultname>.vault.azure.net`).
+- Client credentials, which can include:
+  - Client ID
+  - Client secret
+  - Tenant ID
+
+note
+
+Depending on the authentication mode, not all client credentials are available.
+
+- Key name, which is the name of the secret.
+
+After storing keys, [load keys into Web3Signer using a key configuration file, or bulk loading keys](https://docs.web3signer.consensys.io/development/how-to/load-keys).
+
+- [Store a private key in Azure Key Vault](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/azure#store-a-private-key-in-azure-key-vault)
+
+## YubiHSM 2 Key Storage
+[Skip to main content](https://docs.web3signer.consensys.io/development/how-to/store-keys/hsm/yubihsm2#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/how-to/store-keys/hsm/yubihsm2)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+YubiHSM 2 deprecation notice
+
+Web3Signer has deprecated private key storage support on YubiHSM 2 and will remove it in a future release.
+
+If you need this feature, consider maintaining a fork and submitting pull requests. Alternatively, you can
+use an older Web3Signer version that supports these storage mechanisms.
+
+Web3Signer can sign payloads using private keys stored in the [YubiHSM 2 hardware security module](https://developers.yubico.com/YubiHSM2/).
+Web3Signer supports using the device as a secure key storage only.
+
+## Prerequisites [​](https://docs.web3signer.consensys.io/development/how-to/store-keys/hsm/yubihsm2\#prerequisites "Direct link to Prerequisites")
+
+Install the [YubiHSM 2 SDK](https://developers.yubico.com/YubiHSM2/Releases/) on the Web3Signer machine.
+
+## Store private keys in YubiHSM 2 [​](https://docs.web3signer.consensys.io/development/how-to/store-keys/hsm/yubihsm2\#store-private-keys-in-yubihsm-2 "Direct link to Store private keys in YubiHSM 2")
+
+[Store private keys in the device](https://developers.yubico.com/YubiHSM2/Commands/Put_Opaque.html) using the `opaque-data` algorithm in `hex` format.
+All private keys on the device must be accessible using the same authentication key ID and password.
+
+The following steps show an example of storing a key in YubiHSM:
+
+1. Store a private key in YubiHSM with `object-id=3` and `new-password=password3`, using the
+YubiHSM default credentials of `authkey=1` and `password=password`:
+
+
+
+- Command
+- Output
+
+```codeBlockLines_e6Vv
+yubihsm-shell \
+  --connector=yhusb://                                            \
+  --authkey=1                                                     \
+  --password=password                                             \
+  --action=put-authentication-key                                 \
+  --new-password=password3                                        \
+  --object-id=3                                                   \
+  --domains=1,2,3                                                 \
+  --delegated=exportable-under-wrap,export-wrapped,import-wrapped \
+  --capabilities=get-opaque,put-opaque,delete-opaque,export-wrapped,get-pseudo-random,put-wrap-key,import-wrapped
+
+```
+
+```codeBlockLines_e6Vv
+Created session 0
+Stored Authentication key 0x0003
+
+```
+
+2. Put the opaque data using `authkey=3` with the opaque `object-ID=15`:
+
+
+
+- Command
+- Output
+
+```codeBlockLines_e6Vv
+yubihsm-shell \
+  --connector=yhusb://    \
+  --authkey=3             \
+  --password=password3    \
+  --action=put-opaque     \
+  --object-id=15          \
+  --label="bls_key_1"     \
+  --domains=1,2,3         \
+  --algorithm=opaque-data \
+  --capabilities=none     \
+  --informat=hex --in=5e8d5667ce78982a07242739ab03dc63c91e830c80a5b6adca777e3f216a405d
+
+```
+
+```codeBlockLines_e6Vv
+Session keepalive set up to run every 15 seconds
+Created session 0
+Stored 32 bytes to Opaque object 0x000f
+
+```
+
+3. Use `authkey=1` to view the inserted data:
+
+
+
+- Command
+- Output
+
+```codeBlockLines_e6Vv
+yubihsm-shell \
+  --connector=yhusb:// \
+  --authkey=1          \
+  --password=password  \
+  --action=get-opaque  \
+  --object-id=15       \
+  --outformat=hex
+
+```
+
+```codeBlockLines_e6Vv
+Session keepalive set up to run every 15 seconds
+Created session 0
+5e8d5667ce78982a07242739ab03dc63c91e830c80a5b6adca777e3f216a405d
+
+```
+
+4. Identify the location of the `yubihsm_pkcs11` dynamic library.
+For example, on Mac, it is installed at `/usr/local/lib/pkcs11/yubihsm_pkcs11.dylib` using the
+latest YubiHSM release.
+
+
+
+Note for Mac only
+
+
+
+
+
+Due to a bug in how the YubiHSM libraries are generated, copy the file to the parent directory ( `/usr/local/lib`):
+
+
+
+
+
+
+
+```codeBlockLines_e6Vv
+sudo cp /usr/local/lib/pkcs11/yubihsm_pkcs11.dylib /usr/local/lib/
+
+```
+
+
+
+
+
+
+
+
+
+
+
+Create a soft link in the directory from where Web3Signer is running:
+
+
+
+
+
+
+
+```codeBlockLines_e6Vv
+ln -s /usr/local/lib/libyubihsm_usb.2.dylib ./libyubihsm_usb.2.dylib
+
+```
+
+5. Create a [key configuration file for YubiHSM](https://docs.web3signer.consensys.io/development/reference/key-config-file-params#yubihsm-2)
+in the `keys` subdirectory.
+
+
+
+
+
+```codeBlockLines_e6Vv
+type: yubihsm
+connectorUrl: yhusb://
+authId: 3
+password: password3
+opaqueDataId: 15
+pkcs11ModulePath: /usr/local/lib/yubihsm_pkcs11.dylib
+additionalInitConfig: debug libdebug timeout=5
+
+```
+
+6. Specify the `key-store-path` as the `keys` subdirectory when starting Web3Signer.
+
+The output displayed indicates one key has been loaded:
+
+
+
+
+
+```codeBlockLines_e6Vv
+2023-10-04 15:30:27.761+10:00 | pool-2-thread-1 | INFO  | SignerLoader | Converting signing metadata to Artifact Signer using parallel streams ...
+[P11 - INF 15:30:27.769485] yubihsm_pkcs11.c:266 (C_Initialize): Found 1 configured connector(s)
+[LIB - INF 15:30:27.769505] yubihsm.c:4426 (yh_init_connector): Loading usb backend
+[LIB - INF 15:30:27.770065] yubihsm_libusb.c:61 (backend_create): backend_create
+[LIB - INF 15:30:27.772352] yubihsm_usb.c:48 (backend_connect): backend_connect
+[LIB - INF 15:30:27.772364] lib_util.c:178 (parse_usb_url): USB url parsed with serial decimal 0.
+...
+2023-10-04 15:30:28.176+10:00 | pool-2-thread-1 | INFO  | DefaultArtifactSignerProvider | Total signers (keys) currently loaded in memory: 1
+
+```
+
+
+## PKCS\#11 driver [​](https://docs.web3signer.consensys.io/development/how-to/store-keys/hsm/yubihsm2\#pkcs11-driver "Direct link to PKCS\#11 driver")
+
+To communicate with the YubiHSM 2 device, Web3Signer uses the PKCS#11 driver to load the
+[PKCS#11 module](https://developers.yubico.com/YubiHSM2/Component_Reference/PKCS_11/) in the SDK.
+
+Important
+
+A limitation of the PKCS#11 driver is that it communicates with only one device by loading one
+instance of the PKCS#11 module.
+If using multiple YubiHSM 2 devices then you must have additional copies of the SDK installation.
+
+Additionally, the loaded PKCS#11 module can open only one session when communicating with a YubiHSM
+2 device.
+Because [key configuration files](https://docs.web3signer.consensys.io/development/reference/key-config-file-params#yubihsm-2) are parsed in parallel, the same authentication key ID and
+password must be specified in the [key configuration files](https://docs.web3signer.consensys.io/development/reference/key-config-file-params#yubihsm-2) for a given device.
+
+- [Prerequisites](https://docs.web3signer.consensys.io/development/how-to/store-keys/hsm/yubihsm2#prerequisites)
+- [Store private keys in YubiHSM 2](https://docs.web3signer.consensys.io/development/how-to/store-keys/hsm/yubihsm2#store-private-keys-in-yubihsm-2)
+- [PKCS#11 driver](https://docs.web3signer.consensys.io/development/how-to/store-keys/hsm/yubihsm2#pkcs11-driver)
+
+## GCP Key Storage Guide
+[Skip to main content](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/gcp#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/how-to/store-keys/vaults/gcp)** (stable (25.3.0)).
+
+Version: development
+
+On this page
+
+Web3Signer supports consensus layer signing with BLS keys stored in
+[Google Cloud Platform (GCP) Secret Manager](https://cloud.google.com/secret-manager).
+
+The [GCP Secret Manager documentation](https://cloud.google.com/secret-manager/docs)
+provides the information you need to get started.
+
+## Authentication [​](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/gcp\#authentication "Direct link to Authentication")
+
+Web3Signer uses [Application Default Credentials (ADC)](https://cloud.google.com/docs/authentication#adc)
+to authenticate with GCP Secret Manager. ADC automatically finds credentials and manages token retrieval, enabling
+the authentication code to operate across various deployment options without modification.
+
+## Load keys from GCP Secret Manager [​](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/gcp\#load-keys-from-gcp-secret-manager "Direct link to Load keys from GCP Secret Manager")
+
+Load keys stored in GCP Secret Manager into Web3Signer using the [`eth2` subcommand](https://docs.web3signer.consensys.io/development/how-to/load-keys#gcp-secret-manager)
+to bulk load keys.
+
+- [Authentication](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/gcp#authentication)
+- [Load keys from GCP Secret Manager](https://docs.web3signer.consensys.io/development/how-to/store-keys/vaults/gcp#load-keys-from-gcp-secret-manager)
+
+## Web3Signer Development Guide
+[Skip to main content](https://docs.web3signer.consensys.io/development/how-to#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/how-to)** (stable (25.3.0)).
+
+Version: development[**🗃️Store signing keys** \\
+2 items](https://docs.web3signer.consensys.io/development/how-to/store-keys)[**📄️Load signing keys** \\
+Load BLS12-381 and secp256k1 signing keys.](https://docs.web3signer.consensys.io/development/how-to/load-keys)[**📄️Manage consensus layer signing keys** \\
+Manage consensus layer signing keys.](https://docs.web3signer.consensys.io/development/how-to/manage-keys)[**📄️Use a configuration file for starting Web3Signer** \\
+Use the Web3Signer configuration file.](https://docs.web3signer.consensys.io/development/how-to/use-configuration-file-starting-web3signer)[**📄️Configure slashing protection** \\
+Configure consensus layer slashing protection.](https://docs.web3signer.consensys.io/development/how-to/configure-slashing-protection)[**📄️Configure TLS** \\
+Configure secure communication using TLS.](https://docs.web3signer.consensys.io/development/how-to/configure-tls)[**🗃️Monitor nodes** \\
+2 items](https://docs.web3signer.consensys.io/development/how-to/monitor)[**📄️Run Web3Signer at scale** \\
+Configure your instance for better performance at scale.](https://docs.web3signer.consensys.io/development/how-to/run-at-scale)
+
+## Web3Signer API Documentation
+[Skip to main content](https://docs.web3signer.consensys.io/development/reference/api#__docusaurus_skipToContent_fallback)
+
+This is the development version of the documentation and some features may not yet be available in the stable release.
+
+You can switch to the **[latest version](https://docs.web3signer.consensys.io/reference/api)** (stable (25.3.0)).
+
+Version: development[**📄️Web3Signer JSON-RPC API** \\
+Use for signing execution layer payloads](https://docs.web3signer.consensys.io/development/reference/api/json-rpc)[**📄️Web3Signer REST API** \\
+Use for signing consensus layer payloads](https://docs.web3signer.consensys.io/development/reference/api/rest)
+
