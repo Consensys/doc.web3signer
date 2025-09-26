@@ -44,7 +44,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "result": ["0xfe3b557e8fb62b89f4916b721be55ceb828dbd73"]
+  "result": ["0x00000000219ab540356cbb839cbe05303d7705fa"]
 }
 ```
 
@@ -125,7 +125,7 @@ Transaction object:
   <TabItem value="curl HTTP request" label="curl HTTP request" default>
 
 ```bash
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_signTransaction","params":[{"from": "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73","to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567","gas": "0x7600","gasPrice": "0x9184e72a000","value": "0x9184e72a", "nonce":"0x46"}], "id":1}' http://127.0.0.1:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_signTransaction","params":[{"from": "0x00000000219ab540356cbb839cbe05303d7705fa","to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567","gas": "0x7600","gasPrice": "0x9184e72a000","value": "0x9184e72a", "nonce":"0x46"}], "id":1}' http://127.0.0.1:8545
 ```
 
   </TabItem>
@@ -259,7 +259,7 @@ Submitting a transaction with the same nonce as a pending transaction and a high
   <TabItem value="curl HTTP request" label="curl HTTP request" default>
 
 ```bash
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{"from": "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73","to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567","gas": "0x7600","gasPrice": "0x9184e72a000","value": "0x9184e72a"}], "id":1}' http://127.0.0.1:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{"from": "0x00000000219ab540356cbb839cbe05303d7705fa","to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567","gas": "0x7600","gasPrice": "0x9184e72a000","value": "0x9184e72a"}], "id":1}' http://127.0.0.1:8545
 ```
 
   </TabItem>
