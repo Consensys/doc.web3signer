@@ -70,7 +70,7 @@ web3signer --key-store-path=/Users/me/keyFiles/ \
 The command line:
 
 - Specifies the location of the signing key configuration files using the
-  [`--key-store-path`](../reference/cli/options.md#key-store-path) option.
+  [`--key-store-path`](../reference/cli/options.md#key-config-path-key-store-path) option.
 - Specifies the Web3Signer keystore using the
   [`--tls-keystore-file`](../reference/cli/options.md#tls-keystore-file) option.
 - Specifies the file that contains the password to decrypt the keystore using the
