@@ -38,7 +38,7 @@ single file by adding a triple-dash separator (`---`) between configurations.
 The configuration file must be YAML-formatted, and can use any naming format, but must have the `.yaml` extension.
 
 Place one or more key configuration files in a single directory which you specify when starting Web3Signer.
-Use the [`--key-store-path`](../reference/cli/options.md#key-store-path) option to specify the
+Use the [`--key-store-path`](../reference/cli/options.md#key-config-path-key-store-path) option to specify the
 location of the key configuration files.
 
 ```bash
