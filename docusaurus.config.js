@@ -13,7 +13,11 @@ const config = {
   url: "https://docs.web3signer.consensys.io",
   baseUrl,
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "throw",
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "throw",
+    }
+  },
   favicon: "img/favicon.ico",
   trailingSlash: false,
 
