@@ -96,7 +96,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sign","params":["0x78e6e2365
 ## `eth_signTransaction`
 
 Signs a transaction that you can submit to Besu at a later time using
-[`eth_sendRawTransaction`](https://besu.hyperledger.org/stable/public-networks/reference/api#eth_sendrawtransaction).
+[`eth_sendRawTransaction`](https://besu.hyperledger.org/public-networks/reference/api#eth_sendrawtransaction).
 
 ### Parameters
 
@@ -226,7 +226,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_signTypedData","params":["0x
 Creates and signs a transaction using the signing key.
 
 Web3Signer submits the signed transaction to Besu using
-[`eth_sendRawTransaction`](https://besu.hyperledger.org/stable/public-networks/reference/api#eth_sendrawtransaction).
+[`eth_sendRawTransaction`](https://besu.hyperledger.org/public-networks/reference/api#eth_sendrawtransaction).
 
 ### Parameters
 

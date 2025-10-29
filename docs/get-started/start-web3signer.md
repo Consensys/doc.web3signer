@@ -41,7 +41,7 @@ web3signer --key-store-path=/Users/me/keyFiles/ eth1
 
 In the command line:
 
-- Use the [`--key-store-path`](../reference/cli/options.md#key-store-path) option to specify the
+- Use the [`--key-store-path`](../reference/cli/options.md#key-config-path-key-store-path) option to specify the
   location of the signing key configuration files.
 - Specify the [subcommand] to indicate which signing mode to use.
   Valid subcommands are `eth2` and `eth1`.

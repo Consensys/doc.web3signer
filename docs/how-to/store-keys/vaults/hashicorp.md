@@ -9,7 +9,7 @@ sidebar_position: 1
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Web3Signer supports storing the signing key in [HashiCorp Vault](https://www.hashicorp.com/products/vault/).
+Web3Signer supports storing the signing key in [HashiCorp Vault](https://www.hashicorp.com/en/products/vault).
 
 ## Store a private key in HashiCorp Vault
 

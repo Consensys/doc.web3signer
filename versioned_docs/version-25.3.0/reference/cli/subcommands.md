@@ -761,7 +761,7 @@ eth1.chain-id: "2017"
 </Tabs>
 
 ID of the chain to receive the signed transactions. The Besu documentation
-lists [chain IDs for public networks](https://besu.hyperledger.org/development/public-networks/concepts/network-and-chain-id).
+lists [chain IDs for public networks](https://besu.hyperledger.org/public-networks/concepts/network-and-chain-id).
 
 #### `downstream-http-host`
 
