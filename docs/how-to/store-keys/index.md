@@ -9,6 +9,7 @@ keywords: [Hashicorp Vault, Azure Key Vault, AWS Secrets Manager, GCP Secret Man
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Supported from '@site/src/components/Supported';
 
 :::caution YubiHSM 2 and USB Armory Mk II deprecation notice
 Web3Signer has deprecated private key storage support on USB Armory Mk II and YubiHSM 2, and will remove it in a future release.
@@ -19,19 +20,19 @@ use an older Web3Signer version that supports these storage mechanisms.
 
 Web3Signer supports BLS12-381 (`Eth2`) or secp256k1 (`Eth1`) signing keys stored in the following ways:
 
-| Key storage                          | SECP256K1 | BLS |
-|--------------------------------------|:---------:|:---:|
-| Raw files                            |     x     |  x  |
-| [Keystore files]                     |     x     |  x  |
-| **Vaults**                           |           |     |
-| [Hashicorp Vault]                    |     x     |  x  |
-| [Azure Key Vault]                    |     x     |  x  |
-| [AWS Secrets Manager]                |           |  x  |
-| [AWS KMS]                            |     x     |     |
-| [GCP Secret Manager]                 |           |  x  |
-| **Hardware Security Modules (HSMs)** |           |     |
-| [YubiHSM 2]                          |     x     |  x  |
-| [USB Armory Mk II]                   |     x     |  x  |
+| Key storage                          | SECP256K1     | BLS          |
+|--------------------------------------|:-------------:|:------------:|
+| Raw files                            | <Supported /> | <Supported /> |
+| [Keystore files]                     | <Supported /> | <Supported /> |
+| **Vaults**                           |               |              |
+| [Hashicorp Vault]                    | <Supported /> | <Supported /> |
+| [Azure Key Vault]                    | <Supported /> | <Supported /> |
+| [AWS Secrets Manager]                |               | <Supported /> |
+| [AWS KMS]                            | <Supported /> |               |
+| [GCP Secret Manager]                 |               | <Supported /> |
+| **Hardware Security Modules (HSMs)** |               |              |
+| [YubiHSM 2]                          | <Supported /> | <Supported /> |
+| [USB Armory Mk II]                   | <Supported /> | <Supported /> |
 
 Web3Signer supports `Eth1` signing from HSMs and vaults, but must load private keys into memory for `Eth2` signing.
 Follow [best practices](../../get-started/key-best-practices.md) when storing private keys.
