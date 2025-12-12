@@ -315,11 +315,11 @@ const config = {
           },
           {
             from: "/reference/api/eth2/web-3-signer-eth-2-api",
-            to: "/reference/api/eth2",
+            to: "/development/reference/api/eth2",
           },
           {
             from: "/reference/api/eth1/web-3-signer-eth-1-api",
-            to: "/reference/api/eth1",
+            to: "/development/reference/api/eth1",
           },
           {
             from: "/HowTo/Get-Started/Build-From-Source",
