@@ -4,6 +4,30 @@ const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 const isDev = process.env.NODE_ENV === "development";
 const baseUrl = isDev ? "/" : "/";
 
+// OpenAPI plugin configuration
+const openApiConfig = {
+  eth2Api: {
+    specPath: "src/openapi-specs/eth2-bundled.yaml",
+    outputDir: "docs/reference/api/eth2",
+    sidebarOptions: {
+      groupPathsBy: "tag",
+      categoryLinkSource: "tag",
+    },
+    hideSendButton: true,
+    showSchemas: false,
+  },
+  eth1Api: {
+    specPath: "src/openapi-specs/eth1-bundled.yaml",
+    outputDir: "docs/reference/api/eth1",
+    sidebarOptions: {
+      groupPathsBy: "tag",
+      categoryLinkSource: "tag",
+    },
+    hideSendButton: true,
+    showSchemas: false,
+  },
+};
+
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -46,6 +70,7 @@ const config = {
           path: "docs",
           routeBasePath: "/",
           breadcrumbs: false,
+          docItemComponent: "@theme/ApiItem",
           // @ts-ignore
           // eslint-disable-next-line global-require
           include: ["**/*.md", "**/*.mdx"],
@@ -256,6 +281,14 @@ const config = {
     }),
   plugins: [
     [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "openapi",
+        docsPluginId: "classic",
+        config: openApiConfig,
+      },
+    ],
+    [
       "@docusaurus/plugin-google-gtag",
       {
         trackingID: "G-159G82NNKS",
@@ -279,6 +312,14 @@ const config = {
           {
             from: "/reference/api/filecoin",
             to: "/reference/api",
+          },
+          {
+            from: "/reference/api/eth2/web-3-signer-eth-2-api",
+            to: "/reference/api/eth2",
+          },
+          {
+            from: "/reference/api/eth1/web-3-signer-eth-1-api",
+            to: "/reference/api/eth1",
           },
           {
             from: "/HowTo/Get-Started/Build-From-Source",
@@ -445,6 +486,7 @@ const config = {
     ],
   ],
   themes: [
+    "docusaurus-theme-openapi-docs",
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {

@@ -14,7 +14,7 @@ Web3Signer is a remote signing client comprised of three main components:
 ## The remote signer
 
 The remote signer [loads private keys](../how-to/load-keys.md) into memory and responds to signature requests.
-If you are using an [HSM](../how-to/store-keys/hsm/_category_.json) or a [vault](../how-to/store-keys/vaults/_category_.json) for execution layer signing, the keys stay at rest.
+If you are using an [HSM](/how-to/store-keys/hsm) or a [vault](/how-to/store-keys/vaults) for execution layer signing, the keys stay at rest.
 This component communicates with the slashing database, the APIs, and the keystore (if used), to coordinate remote signing.
 
 ## The slashing database
@@ -24,5 +24,5 @@ Database locking ensures that when multiple Web3Signer instances load the same k
 
 ## The APIs
 
-Web3Signer supports REST and [JSON-RPC APIs](../reference/api/_category_.json) to sign consensus layer and execution layer payloads
+Web3Signer supports REST and [JSON-RPC APIs](../reference/api/json-rpc.md) to sign consensus layer and execution layer payloads
 respectively. These connections should be carefully secured. Web3Signer offers [TLS communication](../how-to/configure-tls.md).

@@ -1,0 +1,64 @@
+---
+id: healthcheck
+title: "Server Health Status"
+description: "Web3Signer server health status"
+sidebar_label: "Server Health Status"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVMGK2zAQ/RUzZzX2ZumhvoUQmtClFLKlh5CDIs/G2pUlVRonDcb/XsZWu0l2YUtvhZ4kNHpPb+aNpgOS+wjlBtYYDhiyJUpDdbYmSW2ErYAKowrak3YWSviGu9u13lsMWRwB9QiII0CA8xgk315VUMJyMbu7X86Xi/knEBAwemcjRig7mBYFL5f861MkbDIdE+8JBChnCS3xZem90Wqgzx8jIzqIqsZG8o5OHqEEt3tERSDABxZDenwvKXy+Fylou4frFC8T6gWoGtXTOVCGIE8vcEZHytxDAmYJJUATNgP6Uo6u3paSqHTFMv5Sf9/3AlxLyjX4NphqzNwBgzQmSyDOKXEOOQETkibDNGO7zNM5R94Xty9tnVFmUHJ9LGY+OIVVG5Btbu1/o/9Fo3sBDVLt+JPvcTBBUg0l5CPFyCBgnBI8YTpog4ESoBe/tjWRL/PcOCVN7SKVH4qigH4rQNsHNySRnj+bO4v75U02+7J6kRLHUzSQfpCK2BV+fYzfTG4mBQgwWqGNQ42s5FrBzEtVYzYdwhfSjsfjRA7RiQv7PEFjfreaLz6vF++mk2JSU2OGWnkXqZH2jPjVoXqlu3vu+z8Yr8lVwh+UeyO15Y4ZJHfJgQ2cO7AVwJXl467byYhfg+l7Pv7eYjhBudkKOMig5Y4Lvdn2gvEVhsGyJzxxfZRCzx4fpGmHj3H9Pdmz3/3wcXEPff8TDxUxHw==
+sidebar_class_name: "get api-method"
+info_path: reference/api/eth1/web-3-signer-eth-1-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Server Health Status"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/healthcheck"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Web3Signer server health status
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"System is healthy","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"string","description":"health status"},"checks":{"type":"array","description":"list of status checks","items":{"properties":{"id":{"type":"string","description":"status id"},"status":{"type":"string","description":"health status"}}}},"outcome":{"type":"string","description":"the overall outcome of health check"}},"title":"HealthCheck"}}}},"503":{"description":"At least one procedure is unhealthy","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"string","description":"health status"},"checks":{"type":"array","description":"list of status checks","items":{"properties":{"id":{"type":"string","description":"status id"},"status":{"type":"string","description":"health status"}}}},"outcome":{"type":"string","description":"the overall outcome of health check"}},"title":"HealthCheck"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
