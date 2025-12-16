@@ -62,7 +62,7 @@ After storing keys,
 
 <!-- links -->
 
-[USB Armory Mk II device]: https://www.withsecure.com/en/solutions/innovative-security-hardware/usb-armory
+[USB Armory Mk II device]: https://www2.withsecure.com/en/solutions/innovative-security-hardware/armory-drive
 [Interlock application]: https://github.com/f-secure-foundry/interlock/blob/master/README.md
 [Configure a signing key configuration file]: ../../load-keys.md#use-key-configuration-files
 [key configuration file]: ../../../reference/key-config-file-params.md#usb-armory-mk-ii
