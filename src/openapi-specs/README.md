@@ -1,4 +1,4 @@
-# OpenAPI Specifications
+# OpenAPI specifications
 
 This directory contains OpenAPI specifications synced from the [Web3Signer repository](https://github.com/Consensys/web3signer).
 
@@ -18,14 +18,21 @@ These files are automatically synced from the Web3Signer repository via the `syn
 To manually sync:
 
 1. Run the workflow from the Actions tab, or
-2. Run locally:
+2. Run locally (fetch + normalize + bundle + regenerate):
+
    ```bash
-   npm run gen-api-docs
+   # From the repo root
+   cd doc.web3signer
+
+   # One-shot manual sync (fetches from upstream, normalizes servers, bundles, cleans, regenerates)
+   node src/scripts/manual_sync_openapi.cjs
    ```
 
-## Generated Documentation
+> Note: `src/openapi-specs/**` is intentionally ignored by git (build-time input only). The committed output is `docs/reference/api/**`.
+
+## Generated documentation
 
 The generated API documentation is output to:
+
 - `docs/reference/api/eth2/` - Consensus layer API docs
 - `docs/reference/api/eth1/` - Execution layer API docs
-

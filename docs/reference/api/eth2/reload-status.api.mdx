@@ -1,0 +1,71 @@
+---
+id: reload-status
+title: "Get reload operation status"
+description: "Returns the current status of the reload operation. Use this to monitor background reload progress."
+sidebar_label: "Get reload operation status"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVsFu2zgQ/RViTgkg24qLLra6GVmjG2yQLGIHBZoECS2NJbYSqZKjOIbhf18MJdmWrXR72dvmEpniPL6ZefPEDZBMHUQPcIe5kYmYqVSjFX/h2sFTAAm62KqSlNEQwR1SZbUTlKGIK2tRk3AkqXLCLP2qrVFMiVZy0FDcOxSUKSfIiMJoRcaKhYy/p9ZUOmkDSmtSi84NH/WjnmfYwqJOSqM08YZXlaATr8qphcoVrYXSZKJHPRBfMqQMrZAtnHItv5y37eB586yKY3ROGCuWUuWVxZZ8Lh2dZMAhN1WxQMvbXF0e3qJ0KtBaY5llbCpNaDERZ2oppF6fc9xcFehIFmXnhANoCGD36yrhCk+vbyd/PM/mk/n9DAKw6EqjHTqINjAOQ/7X7cll04eGd103CCA2mlATB8iyzFXsDxl9cxy1ARdnWEh+onWJEIFZfMOY/JE/KmUxYVE0aE8BlJaJkqqZNOv7aEdW6RQCQF0VHKmSHBms0rp+EZuizJEwOXx+XinKnusqQgDcD0xOdXd5orXjLnkZvPChL5G4Me37TDqxQNSCrEpT3581UsC9d2tHWIhvlfO4ljDxGA3jl0jcHZ3xU1W97HJ6icT1gZB268LVwltWeb4WnLjQplFQF+GwKu+iLSoSzhTYSjI2eqnSqqbqRF1KHjqO8/j10hFgsy+pkPcqvbTSka1i4rnwFMQZDtNhIPAN44qn12UVJWalzx81bANgTd+2NWLF98liaWwhCSJIJOGAeNdxkzvD0juKdZ9GTQ144exqdjv4/bfwQtQHnA/FZOFYKmrJ1f2pDIYt+ymn2ce6S9BvY+mspGWJiAKdkymKpTVFP+Oh+Nui57PKsBFpLeIXVtO+JZdGk1TaHXegdagESarcnQC8p5kdnjemHudqgB37bVMyptiOGGP7aQr2E+HH5kDnQ+7/dhsAvkle837g554doioKadcQwZVWpGTukVEMDtrS6QYE8CrzCg/tpUbjI1of6SA3A3owib0gew/qkSqMw/HHwcV4cBHOL8LoQxiF4Vd/5N6wOofOdlPcptEd5V4Kh+b3SyQuPh6R6DhlXxXedYZjL/g5wSNH/jWy46/QmaRTTr5GH3o/n2fu3KfamH9fbv9uUr1JNYi/mkX4ThY1TCSmOwNE+6piFJWWr1LlcuFF6v8CKJAyw5/y1Gu6lJRBBKNaKxAAByP38GEDlc0hAtgG7WNGVEajUW5imWfGUfQpDEPYPgWg9NJ4i1LEAwZfcPGhuatN53+OxaRUJ4bF78WUsrGYWFJLGZNXJ1pXvx8Pw2HIOasYtfO109IXZ1LKOEMx9q871Far1VD6t0Nj01ET6kbXV5fTm9l0wJgZFblvaWkcFVIfAH/Gfluv7ywd+pv9Feb/i+d/cPFsPnaEbzQqc6n8x9z3etOo9gEa1T4FwGrklc1mIR3e23y75eUfFfKgPjzx/FnlRyF6eNoGkKFM0HqZf0ee5UkcY3lg86fXUtb5bnw+T+ew3f4Dned2XA==
+sidebar_class_name: "get api-method"
+info_path: reference/api/eth2/web-3-signer-eth-2-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get reload operation status"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/reload"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the current status of the reload operation. Use this to monitor background reload progress.
+
+The status endpoint provides visibility into:
+- Whether a reload is currently in progress
+- Success or failure of the last reload operation
+- Number of signer loading errors encountered (if any)
+- Timestamp of the last operation
+
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Current reload status","content":{"application/json":{"schema":{"type":"object","required":["status"],"properties":{"status":{"type":"string","enum":["idle","running","completed","completed_with_errors","failed"],"description":"Current status of reload operation:\n- `idle`: No reload has been triggered yet, or system just started\n- `running`: Reload operation is currently in progress\n- `completed`: Last reload completed successfully with no errors\n- `completed_with_errors`: Last reload completed but some signer configurations failed to load\n- `failed`: Last reload failed due to infrastructure error (e.g., executor shutdown)\n"},"lastOperationTime":{"type":"string","format":"date-time","description":"Timestamp of last reload operation start/completion (ISO-8601 format). Absent if no reload has been triggered yet."},"lastError":{"type":"string","description":"Error or warning message from last reload operation. Present when:\n- `status` is `failed`: Contains infrastructure failure details\n- `status` is `completed_with_errors`: Contains count of signer loading failures\n\nAbsent when status is `idle`, `running`, or `completed`.\n"}}},"examples":{"idle":{"summary":"Initial state - no reload triggered yet","value":{"status":"idle"}},"running":{"summary":"Reload in progress","value":{"status":"running","lastOperationTime":"2025-12-10T10:30:00Z"}},"completed":{"summary":"Successful reload with no errors","value":{"status":"completed","lastOperationTime":"2025-12-10T10:30:15Z"}},"completed_with_errors":{"summary":"Reload completed but some signers failed to load","value":{"status":"completed_with_errors","lastOperationTime":"2025-12-10T10:30:12Z","lastError":"Reload completed with 3 signer loading error(s)"}},"failed":{"summary":"Reload failed due to infrastructure error","value":{"status":"failed","lastOperationTime":"2025-12-10T10:30:10Z","lastError":"Reload failed: Executor service unavailable"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

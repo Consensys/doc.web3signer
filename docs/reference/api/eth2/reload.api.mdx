@@ -1,11 +1,11 @@
 ---
 id: reload
 title: "Reload signer keys asynchronously"
-description: "Reloads signer keys asynchronously. This is used after adding new keys to a current set of validators."
+description: "Reloads signer keys asynchronously in the background. This endpoint is used after adding, removing,"
 sidebar_label: "Reload signer keys asynchronously"
 hide_title: true
 hide_table_of_contents: true
-api: eJzdUk2P0zAQ/SujOZs0KuJAbtVSiYrVLqJFHEoPU2faWOvawTPZEkX578htEN0V/AFOtubjzZs3b0Clo2C1xS/sI9WwdsfACT5xL7gzWLPY5Fp1MWA11QjIteiJewGSPtgmxRA78X0Bm8YJOIFOuAY6KCegunbhCIHP1xaNQGC7lDgoCCvEAzyTdzVpTFJ8D5uGwZL3kKaB2vA0LdRwoicW+Mb7txMPOlPiDJLLbEPhyAU8RL1y2Pd/wMF6x0HzDDQYW06UV1vVebnl/ePiAxpMLG0MwoLVgPOyzM9LHe4yNycgnbUscug8jgbf/a10FZRTIH/hO4krnJ45AacUE46jwRNrEzOHNoqiwZa0wQpn1/XR4LUj32nALnmsEEfz+9uottVs5qMl30TR6n1ZljjuDLpwiJmSOvWMFd5wWG4+zmHROnx945yHpTZzWCR1B7IqaDBPv+bnRVmUaNA7y0E4wwc6ZfRFS7ZhmF/SL6idz+eCLtkipuNsapXZ/epu+bBevsmYjZ78RYyswYnCDfBkzX+77vUSA9oYlIP+f57Vvs2SKP/UWevJhey8i9jDZJstTrbZGcx2yJFh2JPw1+THMYd/dJx6rLY7g8+UHO2zO7a7Wyd+flxvcBx/AfmfbG0=
+api: eJztVsFu20YQ/ZXBnlqDlgU1PUQ3IxUao2kSxA56iA1kRI7IjZez9M5QiiDo34tZSpZiJUWAXooiJ1Hc5cyb92be7sYp1uKmH9w7ChEruPY1U4I/aC3urnAVSZl8pz6ym+72CMiw6Z7WAihrLpsUOfYS1uAZtCGYY3lfp9hzNYKbxgsQV130rOAFeqEKcKGUAKvKc11AojYu89MtxwRtrPxi7bnOOTQmgoUPJKARWrwn+Ivmv+yg4goTQVzkvGWDXJPAymsTe4VEopjUcz265Vu+aQjSUGjsKKHVNb3lc7gukQUwBCgjL3zdJ6oOuSufqNSYPAkgVxmtEiyxDyr2+atMyxKDr/bk7OPkHLtNtcAKE3uuBRYxAbIRNnz25X74qcWwiKmlaqi8eNxoqAogLUc/W9Q/8Z4EpC9LEln0IazB6qM9EAFcog84D5Rz2lsj9rH+jO0daZ9YwLctVR6VwjpzCJPxBC7LkjqlClaNDwRdipbLgpSR1XNPcqq70X12dtV2MSmyAkclmZ6dWbY3HNYQ+VQLKJEh9QyogKC+JfhJ+rnQQ09saj70JCqQMlx4Nn4OLyIvgi81k3HFlV/6qsewl8HiG9IF+tAnEqiiQYESe6EMmVh9eoSiMW+1YO+F4OPvsxu4GNY+2mLZUHkPoqj90AuUUjS1ex5a4fqflEh0pAYticEvQGJLT+UfMBiDr6MOAzNfDw2GavmCJ1Y5O4NzUJsvb2gAq9azF7UwSzoMnQnPsaId0zHJ6JZd4R6Jv6psvGev3lz+5gqXSLrIQuKmGzcZT+zna06wFwRw3yHGiBeTMDfZSVe4wlnPEKvFxK4LvswALj6JBd44KRtq0Z503ZGbujj/RKVmVA+9T1SZWw0CuMK1JII1mVd1ycpRP8De7TjEEU2ea1c44r61GHvQX/O547KQS9op7raHjF+J/GWUl32LfJ4Iqyz37rthrDyLpr4cxH7SVm673RaOPmPbBTou5YD4CMVeisMMfbcYo9ziRx3+FMnIoGwL92z8/LQFLk+n15owWMH5HOhSrBOJ/Jc0z9N6KvgsD/G/13gwg/3X39RxQHEs4neTOYK3gdCsK60Ba/QMAZXSXqpfx+NTqa5YKTGG42NTKC0p7RCfZ8Oh3ACevdoJcILIbTMz2kQziy6KCdShNm7qdg3kCjfEtSvFxvUpuKlz22L/2Kh204uLEEsMTRSdPh+Px257VzjPi5jp9mpkuSOks5uXE7js/An5tg4zbSZwmdQvsFTrDss+rE9G49HYFS74kliyBIxtprvDsiGY5OUvoK1WqxHm1VFM9cXuU7l4dfVi9vp6dm4xG21DJsM4aJGPAu+G8dsXpKdFbA6z8eN69eN69eN69X+6Xu3ODqXPetEF9GxnS7abzc44P7idcd4VzgzR3mw2cxR6n8J2a68fekprN/1wV7glJm+12b9t4RrCilJ22ntam63lTjIPxNBb5pPD1qz20cLfvrm+cdvt3xGdA68=
 sidebar_class_name: "post api-method"
 info_path: reference/api/eth2/web-3-signer-eth-2-api
 custom_edit_url: null
@@ -37,8 +37,23 @@ import Heading from "@theme/Heading";
 
 
 
-Reloads signer keys asynchronously. This is used after adding new keys to a current set of validators.
-The call reloads the keys and makes Web3signer aware of the change. Not used by validator clients.
+Reloads signer keys asynchronously in the background. This endpoint is used after adding, removing, 
+or modifying keystore files to make Web3Signer aware of the changes without restarting.
+
+The reload operation:
+- Scans all configured keystore directories and remote vaults
+- Loads valid signer configurations
+- Logs warnings for any invalid configurations (malformed files, invalid keys, etc.)
+- Makes successfully loaded signers available for signing operations
+- Returns immediately with 202 Accepted while processing continues in the background
+
+**Important notes:**
+- Only one reload operation can run at a time (subsequent requests return 409 Conflict)
+- Individual signer loading failures do not cause the entire reload to fail
+- Use `GET /reload` to check status and error counts
+- Successfully loaded signers are available even if some configurations fail
+
+**Not used by validator clients** - this is an administrative endpoint for node operators.
 
 
 <ParamsDetails
@@ -57,7 +72,7 @@ The call reloads the keys and makes Web3signer aware of the change. Not used by 
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"Call is successful"},"500":{"description":"Internal Web3Signer server error"}}}
+  responses={{"202":{"description":"Reload request accepted and is running in the background","content":{"application/json":{"schema":{"type":"object","required":["status","message"],"properties":{"status":{"type":"string","enum":["accepted"],"description":"Request acceptance status"},"message":{"type":"string","description":"Human-readable message with instructions to check status"}}},"example":{"status":"accepted","message":"Reload operation accepted and is running in the background. Use GET /reload to check status."}}}},"409":{"description":"A reload operation is already in progress","content":{"application/json":{"schema":{"type":"object","required":["status","message"],"properties":{"status":{"type":"string","enum":["error"],"description":"Error status"},"message":{"type":"string","description":"Human-readable error message"}}},"example":{"status":"error","message":"A reload operation is already in progress. Please try again later."}}}},"500":{"description":"Internal Web3Signer server error - failed to initiate reload operation"}}}
 >
   
 </StatusCodes>

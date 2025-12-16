@@ -1,12 +1,10 @@
 /**
  * Normalize OpenAPI `servers` values for this documentation site.
  *
- * Why:
- * - Upstream specs often include `url: /` and/or `url: http://localhost:9000/`.
- * - The docs theme can display `//path` when a base URL ends with `/` and the path begins with `/`.
+ * Upstream specs often include `url: /` and/or `url: http://localhost:9000/`.
+ * Those can lead to `//path` being displayed when concatenated with operation paths.
  *
- * What this script does:
- * - Replaces the entire `servers:` block with:
+ * This script rewrites the `servers:` block to:
  *   - url: ""
  *   - url: http://localhost:9000
  *
@@ -18,17 +16,19 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
-const repoRoot = path.resolve(__dirname, "..");
+// scripts live under `src/scripts/` → repo root is two levels up
+const repoRoot = path.resolve(__dirname, "../..");
+
 const targets = [
   path.join(repoRoot, "src", "openapi-specs", "eth1", "web3signer.yaml"),
   path.join(repoRoot, "src", "openapi-specs", "eth2", "web3signer.yaml"),
 ];
 
 const normalizedBlock = [
-  'servers:',
+  "servers:",
   '  - url: ""',
-  '  - url: http://localhost:9000',
-  '',
+  "  - url: http://localhost:9000",
+  "",
 ].join("\n");
 
 const serversRe = /^servers:\n(?:^[ \t].*\n)*/m;
@@ -49,10 +49,12 @@ function normalizeServers(text) {
 }
 
 let changed = 0;
+let failed = false;
+
 for (const filePath of targets) {
   if (!fs.existsSync(filePath)) {
     console.error(`normalize_openapi_servers: missing file: ${filePath}`);
-    process.exitCode = 2;
+    failed = true;
     continue;
   }
   const before = fs.readFileSync(filePath, "utf8");
@@ -66,10 +68,7 @@ for (const filePath of targets) {
   }
 }
 
-if (process.exitCode && process.exitCode !== 0) {
-  // keep exitCode
-} else if (changed === 0) {
-  console.log("normalize_openapi_servers: no changes needed");
-}
+if (failed) process.exit(2);
+if (changed === 0) console.log("normalize_openapi_servers: no changes needed");
 
 

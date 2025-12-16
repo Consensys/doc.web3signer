@@ -18,7 +18,7 @@
     "lint:js": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
     "lint:style": "stylelint \"**/*.css\"",
     "lint:fix": "npm run lint:js -- --fix",
-    "gen-api-docs": "docusaurus gen-api-docs all && rm -f docs/reference/api/eth1/*.info.mdx docs/reference/api/eth2/*.info.mdx",
+    "gen-api-docs": "docusaurus gen-api-docs all",
     "clean-api-docs": "docusaurus clean-api-docs all"
   },
   "lint-staged": {
@@ -58,6 +58,7 @@
     "@typescript-eslint/parser": "^6.13.1",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
+    "@redocly/cli": "2.12.6",
     "semantic-release": "^25.0.0",
     "stylelint": "^16.13.0 ",
     "stylelint-config-standard": "^39.0.0",

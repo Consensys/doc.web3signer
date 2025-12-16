@@ -4,25 +4,17 @@ const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 const isDev = process.env.NODE_ENV === "development";
 const baseUrl = isDev ? "/" : "/";
 
-// OpenAPI plugin configuration
+// OpenAPI plugin configuration (generated docs live under docs/reference/api/**)
 const openApiConfig = {
   eth2Api: {
     specPath: "src/openapi-specs/eth2-bundled.yaml",
     outputDir: "docs/reference/api/eth2",
-    sidebarOptions: {
-      groupPathsBy: "tag",
-      categoryLinkSource: "tag",
-    },
     hideSendButton: true,
     showSchemas: false,
   },
   eth1Api: {
     specPath: "src/openapi-specs/eth1-bundled.yaml",
     outputDir: "docs/reference/api/eth1",
-    sidebarOptions: {
-      groupPathsBy: "tag",
-      categoryLinkSource: "tag",
-    },
     hideSendButton: true,
     showSchemas: false,
   },
@@ -70,6 +62,7 @@ const config = {
           path: "docs",
           routeBasePath: "/",
           breadcrumbs: false,
+          // Render OpenAPI pages with the right-panel explorer UI
           docItemComponent: "@theme/ApiItem",
           // @ts-ignore
           // eslint-disable-next-line global-require
@@ -79,6 +72,7 @@ const config = {
             "**/_*/**",
             "**/*.test.{js,jsx,ts,tsx}",
             "**/__tests__/**",
+            '**/*.info.mdx',
           ],
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
@@ -312,14 +306,6 @@ const config = {
           {
             from: "/reference/api/filecoin",
             to: "/reference/api",
-          },
-          {
-            from: "/reference/api/eth2/web-3-signer-eth-2-api",
-            to: "/development/reference/api/eth2",
-          },
-          {
-            from: "/reference/api/eth1/web-3-signer-eth-1-api",
-            to: "/development/reference/api/eth1",
           },
           {
             from: "/HowTo/Get-Started/Build-From-Source",

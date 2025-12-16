@@ -39,7 +39,7 @@ jobs:
           git sparse-checkout set openapi-specs
           cd ..
 
-          # Copy the specs to local directory used by the docs generator
+          # Copy the specs to the build-time directory used by the docs generator
           rm -rf src/openapi-specs/eth1 src/openapi-specs/eth2
           cp -r temp-web3signer/openapi-specs/eth1 src/openapi-specs/
           cp -r temp-web3signer/openapi-specs/eth2 src/openapi-specs/
@@ -49,7 +49,7 @@ jobs:
 
       - name: Bundle OpenAPI specs
         run: |
-          node scripts/normalize_openapi_servers.cjs
+          node src/scripts/normalize_openapi_servers.cjs
           npx --yes @redocly/cli@2.12.6 bundle src/openapi-specs/eth2/web3signer.yaml -o src/openapi-specs/eth2-bundled.yaml
           npx --yes @redocly/cli@2.12.6 bundle src/openapi-specs/eth1/web3signer.yaml -o src/openapi-specs/eth1-bundled.yaml
 
