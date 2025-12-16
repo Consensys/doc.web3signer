@@ -4,6 +4,22 @@ const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 const isDev = process.env.NODE_ENV === "development";
 const baseUrl = isDev ? "/" : "/";
 
+// OpenAPI plugin configuration (generated docs live under docs/reference/api/**)
+const openApiConfig = {
+  eth2Api: {
+    specPath: "src/openapi-specs/eth2-bundled.yaml",
+    outputDir: "docs/reference/api/eth2",
+    hideSendButton: true,
+    showSchemas: false,
+  },
+  eth1Api: {
+    specPath: "src/openapi-specs/eth1-bundled.yaml",
+    outputDir: "docs/reference/api/eth1",
+    hideSendButton: true,
+    showSchemas: false,
+  },
+};
+
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -46,6 +62,8 @@ const config = {
           path: "docs",
           routeBasePath: "/",
           breadcrumbs: false,
+          // Render OpenAPI pages with the right-panel explorer UI
+          docItemComponent: "@theme/ApiItem",
           // @ts-ignore
           // eslint-disable-next-line global-require
           include: ["**/*.md", "**/*.mdx"],
@@ -54,6 +72,7 @@ const config = {
             "**/_*/**",
             "**/*.test.{js,jsx,ts,tsx}",
             "**/__tests__/**",
+            '**/*.info.mdx',
           ],
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
@@ -256,6 +275,14 @@ const config = {
     }),
   plugins: [
     [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "openapi",
+        docsPluginId: "classic",
+        config: openApiConfig,
+      },
+    ],
+    [
       "@docusaurus/plugin-google-gtag",
       {
         trackingID: "G-159G82NNKS",
@@ -445,6 +472,7 @@ const config = {
     ],
   ],
   themes: [
+    "docusaurus-theme-openapi-docs",
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {

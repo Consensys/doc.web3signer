@@ -1,0 +1,64 @@
+---
+id: public-key-list
+title: "List of available BLS Public Keys"
+description: "Returns a hex-encoded list of BLS public keys for the private keys that have been loaded into Remote Signer."
+sidebar_label: "List of available BLS Public Keys"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9U9tu2zAM/RWBz27s2HHc+K0tgi1oMBRLi2EoioK26VirLakSkyYI/O+DnHS9oM/ziyVeDqnDwwMwrh3k93CzKVpZimvaw0MAFbnSSsNSK8jhJ/HGKidQNLQ7I1XqiirRSsdC1+JyuRLmmP1EeydqbQU3JIyVW2Q6GrlBFg1uSRRESrQaPYRUrMVP6jSTWMm1IjuCALQhi770ooIcbu4ul4urx+v578flYnULAVhyRitHDvIDxFHkfx8bfm3tXVsQQKkVk2Ifjsa0shyKhH+czzmAKxvq0J94bwhyQGtxDwFIps69szu2Uq0hANphZ1pvinazJJ5kdRxHMyxKLOs0K7IU03GFNVKWZfWsqpLzosyiNKnGWKfx1EdjNjmf4bRKMM7ShNI6ofNiXNaUzIp0Wk+S6Xhc1dkEofdfAJOv3nuJlbD0vCHHnv4OGfoA0q9CF4rJKmyFI7slK8habcEjd8SN9oyviSEAg9xADiEaGW7HIXETh0c+r490HgG8eA6wsS3kAH3wemyYTR6GrS6xbbTjfBZFEfQPAUhV64FMyQN1v6hIjrMX89vvsbgwEj4L0PvFnJtYXFiWNZbsG/DVj/54FI0iCKCVJSlHHl5h59EvDJYNiXhwf2jt5eVlhIN3pO06PKW6cLm4mv9Yzc88ZsNdO3BjtOMO1Tvg5UliuEXZYtHSsAdvW+Q+P+Lwpr//vVAn3TLtODQtSuXVMZBxOI35HnCgfTv2suYm9gJ4G/ZDAH6IPu5wKNDRnW373pufN2T3kN8/BLBFKz0R/tYH0BBWZAd1PNHej6IsyXhlbbHdDPv1eQm9PP6p8Nv8Fvr+L7gQiYM=
+sidebar_class_name: "get api-method"
+info_path: reference/api/eth2/web-3-signer-eth-2-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List of available BLS Public Keys"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/eth2/publicKeys"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns a hex-encoded list of BLS public keys for the private keys that have been loaded into Remote Signer.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"list of public keys","content":{"application/json":{"schema":{"type":"array","items":{"type":"string","example":"0x93247f2209abcacf57b75a51dafae777f9dd38bc7053d1af526f220a7489a6d3a2753e5f3e8b1cfe39b56f43611df74a"}}}}},"400":{"description":"Bad request format"},"500":{"description":"Internal server error"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,64 @@
+---
+id: high-watermark
+title: "The High Watermark epoch and slot applicable to all validators"
+description: "Returns the uint64 epoch and slot of the high watermark. Signing of attestations or blocks are only allowed when they are lower than this high watermark. If no high watermark is set, an empty JSON object will be returned."
+sidebar_label: "The High Watermark epoch and slot applicable to all validators"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVE1v2zAM/SsEz1qcZt2A+ZYNQZN9dEDbIYciGBSbidTKkioxyYLA/32gk25J2sPO88UyST0+ko/eIetlxvIex3ZpYKqZUqPTI84U1pSrZCPb4LHEG+JV8hnYEKys5/eXQDFUBrSvIbvAEBad0wjQ5hmoB7d26a1filszU2YtiBlCgrkL1WMGnQiCd1vQzoUN1bAx5AVr27nEloCNFpvNLxJMFuDDmRVshkysQHugJvIWPt9+v4Ywf6CKYWOdgzlB6mqiuocKQ6TUMZvUWOJ4cjX+OR3ejW6+DW++oMJEOQafKWO5w0G/L6/TBp0SQIVV8EyeJVLH6GzVwRcPWcJ3mCtDjZYTbyNhiXtyqDAmIcN2n6zr8lFY5mT9EhUuQmo0Y4n7cWCrUObwT6Hdo/DytUI+6hoSPa0oMxwutgrfvRY68UzJawdTmr+VQVOCTGlNCSilkFCSNMQmSFOX1FWn2WCJhY62WF8UxGZQSO+mR63bY4gud7hKDkvEVj0fDXMsi8KFSjsTMpcf+v0+tjOF1i9CV75lJ/UfsRrdjQcwjBbPdS1+GLEZwDCxXeiKMyqU7Hv/oNfv9VGhsxX5TALvdSPow6grQzDo3CfUNptNT3feXkjL4nA1F18nn0bXt6M3gmm4cV17YsjcaH8EfGcITtfxfNUOepo7Ag6yNrDWztaaQ8rnFe7+CvG/X+KD7pl+cRGdtl6U241md9DdPepOBOsLVCjaQ4Wn6pspFFVJ6G4315l+JNe2Yn5aUdpieT9TuNbJSvvlq1VoSNeUOrk+0la0UVUURe1r7VZC6cUfQPT6ZzOuRnfYtr8BkOnmyw==
+sidebar_class_name: "get api-method"
+info_path: reference/api/eth2/web-3-signer-eth-2-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"The High Watermark epoch and slot applicable to all validators"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/eth2/highWatermark"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the uint64 epoch and slot of the high watermark. Signing of attestations or blocks are only allowed when they are lower than this high watermark. If no high watermark is set, an empty JSON object will be returned.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"high watermark","content":{"application/json":{"schema":{"type":"object","properties":{"epoch":{"type":"string","format":"uint64"},"slot":{"type":"string","format":"uint64"}}}}}},"400":{"description":"Bad request format"},"500":{"description":"Internal Web3Signer server error"}}}
+>
+  
+</StatusCodes>
+
+
+      
