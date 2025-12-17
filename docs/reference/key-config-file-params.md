@@ -193,86 +193,8 @@ endpointOverride: "http://localhost:4566"
 | **kmsKeyId**           | AWS Access Key ID to authenticate AWS KMS.                                                                                                                                                                                                                                                                                             |
 | **region**             | Region to connect to.                                                                                                                                                                                                                                                                                                                  |
 | **endpointOverride**   | Endpoint override for AWS KMS. Useful for local testing against LocalStack.                                                                                                                                                                                                                                                            |
-<!-- markdownlint-enable -->
-
-## YubiHSM 2
-
-:::caution YubiHSM 2 deprecation notice
-Web3Signer has deprecated private key storage support on YubiHSM 2 and will remove it in a future release.
-
-If you need this feature, consider maintaining a fork and submitting pull requests. Alternatively, you can
-use an older Web3Signer version that supports these storage mechanisms.
-:::
-
-Use the private key stored in the [YubiHSM 2 hardware security module](../how-to/store-keys/hsm/yubihsm2.md).
-
-```yaml
-type: yubihsm2
-keyType: SECP256K1
-connectorUrl: http://localhost:12345
-authId: 2
-password: changeme
-opaqueDataId: 5
-pkcs11ModulePath: /usr/bin/yubihsm-sdk/lib/pkcs11/yubihsm_pkcs11.so
-additionalInitConfig: debug libdebug timeout=5
-```
-
-<!-- markdownlint-disable -->
-
-| Key                      | Description                                                                                                                                                                                                                                                            |
-|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **type**                 | Type of configuration file. Use `yubihsm2`.                                                                                                                                                                                                                            |
-| **keyType**              | Signing key type. Valid options are `BLS` or `SECP256K1`. The default is `BLS`.                                                                                                                                                                                        |
-| **connectorUrl**         | URL of the YubiHSM service. Accepts a URL (`http://host:12345`) or USB URL (`yhusb://serial=13201047`) You need a running [connector service] if you specify an HTTP address. If you specify `yhusb://`, then Web3Signer picks the first YubiHSM device automatically. |
-| **authId**               | Authentication key ID used to open a user session, in decimal format.                                                                                                                                                                                                  |
-| **password**             | Password for the authentication key.                                                                                                                                                                                                                                   |
-| **opaqueDataId**         | Object ID of the stored key, in decimal format.                                                                                                                                                                                                                        |
-| **pkcs11ModulePath**     | Path the [PKCS#11 module].                                                                                                                                                                                                                                             |
-| **additionalInitConfig** | Optional. Configuration options for the [PKCS#11 module].                                                                                                                                                                                                              |
-
-<!-- markdownlint-enable -->
-
-## USB Armory Mk II
-
-:::caution USB Armory Mk II deprecation notice
-Web3Signer has deprecated private key storage support on USB Armory Mk II and will remove it in a future release.
-
-If you need this feature, consider maintaining a fork and submitting pull requests. Alternatively, you can
-use an older Web3Signer version that supports these storage mechanisms.
-:::
-
-Use the private key stored in the [USB Armory Mk II hardware security module](../how-to/store-keys/hsm/usb-armory.md).
-Web3Signer requires access to the [Interlock application] which must be installed on the device in
-order to access the keys.
-
-```yaml
-type: interlock
-interlockUrl: https://10.0.0.1
-knownServersFile: ./knownServers.txt
-volume: armory
-password: usbarmory
-keyPath: /key1.txt
-```
-
-<!-- markdownlint-disable -->
-
-| Key | Description |
-| --- | --- |
-| **type** | Type of configuration file. Use `interlock`. |
-| **keyType** | Signing key type. Valid options are `BLS` or `SECP256K1`. The default is `BLS`. |
-| **interlockUrl** | URL of the Interlock web-based file manager. The default is `https://10.0.0.1`. |
-| **knownServersFile** | [File used by Web3Signer] to trust the Interlock server certificate. This file is automatically generated if it does not already exist. |
-| **volume** | Name of the Interlock volume. |
-| **password** | Password used to access the Interlock volume. |
-| **keyPath** | Path to the text file containing the BLS or SECP private key (as a HEX encoded string) on the Interlock file manager. These files can be created directly using Interlock from a browser. |
-
-<!-- markdownlint-enable -->
 
 <!-- Links -->
 
 [signing key configuration file]: ../how-to/load-keys.md#use-key-configuration-files
 [keystore file]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2335.md
-[PKCS#11 module]: https://developers.yubico.com/YubiHSM2/Component_Reference/PKCS_11/
-[connector service]: https://developers.yubico.com/yubihsm-connector/
-[Interlock application]: https://github.com/f-secure-foundry/interlock/blob/master/README.md
-[File used by Web3Signer]: ../how-to/store-keys/hsm/usb-armory.md#known-server-file
