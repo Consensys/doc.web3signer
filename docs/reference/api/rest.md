@@ -35,4 +35,3 @@ View the [REST API documentation] for more information about the available APIs.
 <!-- Links -->
 
 [REST API documentation]: https://consensys.github.io/web3signer/
-
