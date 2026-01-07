@@ -30,6 +30,14 @@
       if: ${{ failure() }}
       runs-on: ubuntu-latest
       steps:
+        - name: Debug secret
+          run: |
+            if [ -n "${{ secrets.SLACK_WEBHOOK }}" ]; then
+              echo "SLACK_WEBHOOK is set"
+            else
+              echo "SLACK_WEBHOOK is empty"
+            fi
+
         - name: Slack Notification
           uses: ConsenSys/github-actions/slack-notify@main
           env:
