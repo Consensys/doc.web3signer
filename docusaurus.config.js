@@ -58,7 +58,7 @@ const config = {
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           includeCurrentVersion: true,
-          lastVersion: "25.3.0",
+          lastVersion: "25.12.0",
           versions: {
             //defaults to the ./docs folder
             // using 'development' instead of 'next' as path
@@ -67,8 +67,8 @@ const config = {
               path: "development",
             },
             //the last stable release in the versioned_docs/version-1.0
-            "25.3.0": {
-              label: "stable (25.3.0)",
+            "25.12.0": {
+              label: "stable (25.12.0)",
             },
           },
         },
@@ -302,11 +302,11 @@ const config = {
           },
           {
             from: "/HowTo/Store-Keys-HSM/Use-USB-Armory",
-            to: "/how-to/store-keys/hsm/usb-armory",
+            to: "/",
           },
           {
             from: "/HowTo/Store-Keys-HSM/Use-YubiHSM2",
-            to: "/how-to/store-keys/hsm/yubihsm2",
+            to: "/",
           },
           {
             from: "/HowTo/Store-Keys-Vaults/Use-AWS",
@@ -382,7 +382,7 @@ const config = {
           },
           {
             from: "/category/store-keys-in-an-hsm-device",
-            to: "/how-to/store-keys/hsm",
+            to: "/",
           },
           {
             from: "/category/store-keys-in-an-external-vault",
@@ -398,11 +398,11 @@ const config = {
           },
           {
             from: "/how-to/store-keys-hsm",
-            to: "/how-to/store-keys/hsm",
+            to: "/",
           },
           {
             from: "/how-to/store-keys-hsm/usb-armory",
-            to: "/how-to/store-keys/hsm/usb-armory",
+            to: "/",
           },
           {
             from: "/how-to/use-signing-keys",
@@ -414,7 +414,7 @@ const config = {
           },
           {
             from: "/how-to/store-keys-hsm/yubihsm2",
-            to: "/how-to/store-keys/hsm/yubihsm2",
+            to: "/",
           },
           {
             from: "/how-to/store-keys-vaults",

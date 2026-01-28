@@ -785,50 +785,6 @@ metrics-push-prometheus-job="my-custom-job"
 
 The job name when in `push` mode. The default is `web3signer-job`.
 
-### `swagger-ui-enabled`
-
-<Tabs>
-
-  <TabItem value="Syntax" label="Syntax" default>
-
-```bash
---swagger-ui-enabled[=<BOOLEAN>]
-```
-
-  </TabItem>
-  <TabItem value="Example" label="Example" >
-
-```bash
---swagger-ui-enabled
-```
-
-  </TabItem>
-  <TabItem value="Environment variable" label="Environment variable" >
-
-```bash
-WEB3SIGNER_SWAGGER-UI_ENABLED=true
-```
-
-  </TabItem>
-  <TabItem value="Configuration file" label="Configuration file" >
-
-```bash
-swagger-ui-enabled: true
-```
-
-  </TabItem>
-</Tabs>
-
-Set to true to interact with APIs using [Swagger UI].
-The default is `false`.
-
-Access Swagger UI at `http:<interface>:<port>/swagger-ui` where:
-
-- `interface` is specified using [`--http-listen-host`](#http-listen-host).
-- `port` is specified using [`http-listen-port`](#http-listen-port).
-
-The default location is `http://localhost:9000/swagger-ui`.
-
 ### `tls-keystore-file`
 
 <Tabs>
@@ -1067,4 +1023,3 @@ Displays the version and exits.
 
 [YAML files required to access keys]: ../key-config-file-params.md
 [Web3Signer metrics]: ../../how-to/monitor/metrics.md
-[Swagger UI]: https://swagger.io/tools/swagger-ui/
