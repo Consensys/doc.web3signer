@@ -84,7 +84,7 @@ about this option and the supported networks.
 
 ## Confirm Web3Signer is running
 
-Use the [`upcheck`](https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Server-Status)
+Use the [`upcheck`](https://consensys.github.io/web3signer/#tag/Server-Status/operation/UPCHECK)
 endpoint to confirm Web3Signer is connected and running.
 
 <Tabs>

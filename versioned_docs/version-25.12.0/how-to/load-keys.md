@@ -8,22 +8,23 @@ sidebar_position: 3
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Supported from '@site/src/components/Supported';
 
 Load signing keys using a [key configuration file], or bulk load using the [`eth1` and `eth2` subcommands].
 Web3Signer supports loading keys with the following methods:
 
 | Key storage                          | Key configuration file | Bulk load with `eth1` | Bulk load with `eth2` |
 |--------------------------------------|:----------------------:|:---------------------:|:---------------------:|
-| [Keystore files]                     |           x            |           x           |           x           |
+| [Keystore files]                     |      <Supported />     |      <Supported />     |      <Supported />     |
 | **Vaults**                           |                        |                       |                       |
-| [Hashicorp Vault]                    |           x            |                       |                       |
-| [Azure Key Vault]                    |           x            |           x           |           x           |
-| [AWS Secrets Manager]                |           x            |                       |           x           |
-| [AWS KMS]                            |           x            |           x           |                       |
-| [GCP Secret Manager]                 |                        |                       |           x           |
+| [Hashicorp Vault]                    |      <Supported />     |                       |                       |
+| [Azure Key Vault]                    |      <Supported />     |      <Supported />     |      <Supported />     |
+| [AWS Secrets Manager]                |      <Supported />     |                       |      <Supported />     |
+| [AWS KMS]                            |      <Supported />     |      <Supported />     |                       |
+| [GCP Secret Manager]                 |                        |                       |      <Supported />     |
 | **Hardware Security Modules (HSMs)** |                        |                       |                       |
-| [USB Armory Mk II]                   |           x            |                       |                       |
-| [YubiHSM 2]                          |           x            |                       |                       |
+| USB Armory Mk II                   |      <Supported />     |                       |                       |
+| YubiHSM 2                          |      <Supported />     |                       |                       |
 
 :::note
 You can bulk load in combination with using key configuration files.
@@ -162,5 +163,3 @@ keystore passwords.
 [AWS KMS]: #aws-key-management-service
 [GCP Secret Manager]: #gcp-secret-manager
 [Hashicorp Vault]: #use-key-configuration-files
-[USB Armory Mk II]: #use-key-configuration-files
-[YubiHSM 2]: #use-key-configuration-files

@@ -12,10 +12,9 @@ The following guidelines help protect your staked assets and supports Ethereum n
 ## Generate secure BLS keys
 
 - Use cryptographically secure random number generators for key generation.
-- Consider using hardware security modules (HSMs) for key generation to ensure physical security.
 - Implement proper key rotation policies to limit the impact of potential key compromises.
 
-## Store keys in a vault or HSM
+## Store keys in a vault 
 
 - Use dedicated key management solutions such as HashiCorp Vault or AWS Key Management Service (KMS).
 - Implement encryption for keys at rest and in transit.
@@ -26,9 +25,7 @@ The following guidelines help protect your staked assets and supports Ethereum n
 
   :::
 
-- Use hardware security modules (HSMs) for the highest level of key protection, ensuring keys never leave the secure hardware.
-
-## Use environment authentication for vaults or HSMs
+## Use environment authentication for vaults
 
 - Use environment variables for authentication credentials instead of hardcoding them.
 - Implement IAM roles and policies for cloud-based solutions, for example AWS IAM roles for EC2 instances.
