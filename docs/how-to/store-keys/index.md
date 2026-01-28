@@ -23,9 +23,6 @@ Web3Signer supports BLS12-381 (`Eth2`) or secp256k1 (`Eth1`) signing keys stored
 | [AWS Secrets Manager]                |               | <Supported /> |
 | [AWS KMS]                            | <Supported /> |               |
 | [GCP Secret Manager]                 |               | <Supported /> |
-| **Hardware Security Modules (HSMs)** |               |              |
-| YubiHSM 2                            | <Supported /> | <Supported /> |
-| USB Armory Mk II                     | <Supported /> | <Supported /> |
 
 Web3Signer supports `Eth1` signing from vaults, but must load private keys into memory for `Eth2` signing.
 Follow [best practices](../../get-started/key-best-practices.md) when storing private keys.
