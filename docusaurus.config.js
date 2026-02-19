@@ -453,13 +453,7 @@ const config = {
         indexBlog: false,
         askAi: {
           project: "web3signer",                 
-          apiUrl: process.env.ASK_AI_API_URL || "http://localhost:5000/api/stream", 
-          fetchOptions: {
-            headers: {
-              'Authorization': `Bearer ${process.env.ASK_AI_API_KEY}`,
-              'Content-Type': 'application/json',
-            },
-          },
+          apiUrl: process.env.ASK_AI_API_URL || "http://localhost:5000/api/stream?api_key=....",
           hotkey: "cmd+k",
           texts: {
             welcomeMessage:
