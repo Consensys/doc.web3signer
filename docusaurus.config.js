@@ -146,11 +146,6 @@ const config = {
             dropdownActiveClassDisabled: true,
           },
           {
-            href: "/chatbot",
-            className: "header-chatbot-link",
-            position: "right",
-          },
-          {
             href: "https://github.com/Consensys/web3signer",
             className: "header-github-link",
             position: "right",

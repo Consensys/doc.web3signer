@@ -79,7 +79,6 @@ const sidebars = {
         },
       ],
     },
-    "chatbot"
   ],
 };
 

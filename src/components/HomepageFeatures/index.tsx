@@ -20,18 +20,6 @@ type CardItem = {
 
 const CardList: CardItem[] = [
   {
-    title: "🤖 Chatbot",
-    link: "/chatbot",
-    description: (
-      <>
-        Use the Documentation Chatbot to get assistance with questions about
-        Web3Signer or usage instructions
-      </>
-    ),
-    buttonName: "Go to installation",
-    buttonType: "success",
-  },
-  {
     title: "💭 Use Signing Keys",
     link: "/HowTo/Use-Signing-Keys",
     description: (
