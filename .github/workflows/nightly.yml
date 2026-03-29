@@ -18,10 +18,10 @@
         contents: read
       steps:
         - name: Checkout repository
-          uses: actions/checkout@v6
+          uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
         - name: LinkCheck
-          uses: ConsenSys/github-actions/docs-link-check@main
+          uses: ConsenSys/github-actions/docs-link-check@60d442d6d385b414c8e00eb049a85f56f9fd7be7 # main
           with:
             CONFIG_FILE: .linkspector.yml
 
@@ -39,7 +39,7 @@
             fi
 
         - name: Slack Notification
-          uses: ConsenSys/github-actions/slack-notify@main
+          uses: ConsenSys/github-actions/slack-notify@60d442d6d385b414c8e00eb049a85f56f9fd7be7 # main
           env:
             SLACK_CHANNEL: doc-ci-alerts
             SLACK_COLOR: danger
