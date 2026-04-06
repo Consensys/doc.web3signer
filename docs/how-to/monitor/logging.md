@@ -20,7 +20,7 @@ This option changes the volume of events displayed in the log.
 Valid log levels are `OFF`, `FATAL`, `ERROR`, `WARN`, `INFO`, `DEBUG`, `TRACE`, `ALL`.
 The default level is `INFO`.
 
-Use the [`--logging-format`](../../reference/cli/options.md#logging-format) option to select a structured JSON output format. 
+Use the [`--logging-format`](../../reference/cli/options.md#logging-format) option to select a structured JSON output format.
 Structured logging emits each log record as a JSON object in a well-defined format, making logs consistent and machine-readable.
 Valid formats are `PLAIN`, `ECS`, `GCP`, `LOGSTASH`, `GELF`.
 The default format is `PLAIN`, which specifies traditional pattern-based text logging.
@@ -32,8 +32,10 @@ You can provide your own logging configuration using the standard Log4J2 configu
 Web3Signer includes the Log4J JSON Template Layout library, which enables production-ready templates for each structured logging format.
 Specify `JsonTemplateLayout` in your configuration file to use the Log4J templates.
 
-The following is an example of a custom configuration file, a configuration file using the default Elastic Common Schema (ECS) template, and a configuration file using the Google Cloud Platform (GCP) template.
-For more information, see the Log4j [configuration file](https://logging.apache.org/log4j/2.x/manual/configuration.html) and [event templates](https://logging.apache.org/log4j/2.x/manual/json-template-layout.html#event-templates) documentation.
+The following is an example of a custom configuration file, a configuration file using the default Elastic Common Schema (ECS) template,
+and a configuration file using the Google Cloud Platform (GCP) template.
+For more information, see the Log4j [configuration file](https://logging.apache.org/log4j/2.x/manual/configuration.html) and
+[event templates](https://logging.apache.org/log4j/2.x/manual/json-template-layout.html#event-templates) documentation.
 
 <Tabs>
 <TabItem value="Custom configuration">
