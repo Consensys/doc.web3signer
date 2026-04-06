@@ -407,6 +407,52 @@ idle-connection-timeout-seconds: 60
 Number of seconds to wait before terminating an idle connection.
 The default is 30.
 
+### `logging-format`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--logging-format=<FORMAT>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example" >
+
+```bash
+--logging-format=ECS
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
+
+```bash
+WEB3SIGNER_LOGGING_FORMAT=ECS
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
+
+```bash
+logging-format: "ECS"
+```
+
+  </TabItem>
+</Tabs>
+
+Structured logging format.
+Possible values are:
+
+- `PLAIN` (default) - Traditional pattern-based console logging
+- `ECS` - Elastic Common Schema JSON format
+- `GCP` - Google Cloud Platform JSON format
+- `LOGSTASH` - Logstash JSON Event Layout V1
+- `GELF` - Graylog Extended Log Format
+
+This enables users to select the format without requiring custom Log4j2 configuration files.
+This is useful in containerized and cloud environments where injecting configuration files is cumbersome.
+
 ### `metrics-enabled`
 
 <Tabs>
