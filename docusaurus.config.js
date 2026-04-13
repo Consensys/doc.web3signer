@@ -1,9 +1,6 @@
+const fs = require("fs");
 const lightCodeTheme = require("prism-react-renderer").themes.github;
 const darkCodeTheme = require("prism-react-renderer").themes.dracula;
-
-const isDev = process.env.NODE_ENV === "development";
-const baseUrl = isDev ? "/" : "/";
-
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -11,7 +8,7 @@ const config = {
   tagline:
     "An open-source, client-agnostic, Ethereum signing service written in Java that is capable of signing on multiple platforms..",
   url: "https://docs.web3signer.consensys.io",
-  baseUrl,
+  baseUrl: "/",
   onBrokenLinks: "throw",
   markdown: {
     hooks: {
@@ -55,7 +52,7 @@ const config = {
             "**/*.test.{js,jsx,ts,tsx}",
             "**/__tests__/**",
           ],
-          showLastUpdateAuthor: true,
+          showLastUpdateAuthor: false,
           showLastUpdateTime: true,
           includeCurrentVersion: true,
           lastVersion: "25.12.0",
@@ -225,6 +222,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ["solidity", "toml"],
       },
       languageTabs: [
         {
