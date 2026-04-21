@@ -27,6 +27,43 @@ variable, configuration file.
 
 ## Options
 
+### `access-logs-enabled`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--access-logs-enabled[=<BOOLEAN>]
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example" >
+
+```bash
+--access-logs-enabled=true
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
+
+```bash
+WEB3SIGNER_ACCESS_LOGS_ENABLED=true
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
+
+```bash
+access-logs-enabled-enabled: true
+```
+
+  </TabItem>
+</Tabs>
+
+Enables or disables access logs.
+The default is `false`.
+
 ### `config-file`
 
 Path to the [YAML configuration file](../../how-to/use-configuration-file-starting-web3signer.md).
@@ -784,6 +821,196 @@ metrics-push-prometheus-job="my-custom-job"
 </Tabs>
 
 The job name when in `push` mode. The default is `web3signer-job`.
+
+### `reload-timeout`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--reload-timeout=<MINUTES>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example" >
+
+```bash
+--reload-timeout=45
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
+
+```bash
+WEB3SIGNER_RELOAD_TIMEOUT=45
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
+
+```bash
+reload-timeout: "45"
+```
+
+  </TabItem>
+</Tabs>
+
+Maximum time, in minutes, allowed for the entire reload operation using the [`reload`](https://consensys.github.io/web3signer/#tag/Reload-Signer-Keys) endpoint.
+This includes loading from all sources (for example, file system or key vaults).
+The default is 30.
+
+### `signer-load-batch-size`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--signer-load-batch-size=<COUNT>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example" >
+
+```bash
+--signer-load-batch-size=300
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
+
+```bash
+WEB3SIGNER_SIGNER_LOAD_BATCH_SIZE=300
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
+
+```bash
+signer-load-batch-size: "300"
+```
+
+  </TabItem>
+</Tabs>
+
+Number of signer configuration files to process per batch during parallel loading.
+Reduce this number if you hit OS file descriptor limits.
+The default is 500, and the minimum value is 100.
+
+### `signer-load-parallel`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--signer-load-parallel[=<BOOLEAN>]
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example" >
+
+```bash
+--signer-load-parallel=false
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
+
+```bash
+WEB3SIGNER_SIGNER_LOAD_PARALLEL=false
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
+
+```bash
+signer-load-parallel: false
+```
+
+  </TabItem>
+</Tabs>
+
+Enables or disables parallel processing of signer configuration files.
+Set to `false` for sequential processing.
+The default is `true`.
+
+### `signer-load-sequential-threshold`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--signer-load-sequential-threshold=<COUNT>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example" >
+
+```bash
+--signer-load-sequential-threshold=50
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
+
+```bash
+WEB3SIGNER_SIGNER_LOAD_SEQUENTIAL_THRESHOLD=50
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
+
+```bash
+signer-load-sequential-threshold: "50"
+```
+
+  </TabItem>
+</Tabs>
+
+Minimum number of files required to use parallel processing.
+Files below this threshold are processed sequentially.
+The default is 100, and the minimum value is 1.
+
+### `signer-load-timeout`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--signer-load-timeout=<SECONDS>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example" >
+
+```bash
+--signer-load-timeout=120
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
+
+```bash
+WEB3SIGNER_SIGNER_LOAD_TIMEOUT=120
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
+
+```bash
+signer-load-timeout: "120"
+```
+
+  </TabItem>
+</Tabs>
+
+Maximum time, in seconds, for processing each individual signer configuration file.
+This applies during parallel processing of files from the file system.
+The default is 60.
 
 ### `tls-keystore-file`
 
