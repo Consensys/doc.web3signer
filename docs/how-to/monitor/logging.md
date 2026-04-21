@@ -20,8 +20,8 @@ This option changes the volume of events displayed in the log.
 Valid log levels are `OFF`, `FATAL`, `ERROR`, `WARN`, `INFO`, `DEBUG`, `TRACE`, `ALL`.
 The default level is `INFO`.
 
-Use the [`--logging-format`](../../reference/cli/options.md#logging-format) option to select a structured JSON output format.
-Structured logging emits each log record as a JSON object in a well-defined format, making logs consistent and machine-readable.
+Use the [`--logging-format`](../../reference/cli/options.md#logging-format) option to specify the logging format.
+You can select a structured logging format, which emits each log record as a JSON object in a well-defined format, making logs consistent and machine-readable.
 Valid formats are `PLAIN`, `ECS`, `GCP`, `LOGSTASH`, `GELF`.
 The default format is `PLAIN`, which specifies traditional pattern-based text logging.
 
@@ -143,3 +143,7 @@ setting it before starting Web3Signer.
 ```bash title="Set the custom logging and start Web3Signer"
 JAVA_OPTS="-Dlog4j.configurationFile=/Users/me/debug.xml" web3signer --key-store-path=/Users/me/keyFiles/ eth2
 ```
+
+:::info Note
+When a custom Log4j2 configuration file is provided, it takes precedence over the [logging command line options](#basic-log-level-setting).
+:::
