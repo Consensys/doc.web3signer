@@ -129,120 +129,6 @@ data-path: "/Users/me/my_node/data"
 
 Directory in which to store temporary files.
 
-### `key-config-path`, `key-store-path`
-
-<Tabs>
-
-  <TabItem value="Syntax" label="Syntax" default>
-
-```bash
---key-config-path=<PATH>
-```
-
-  </TabItem>
-  <TabItem value="Example" label="Example" >
-
-```bash
---key-config-path=/Users/me/keys
-```
-
-  </TabItem>
-  <TabItem value="Environment variable" label="Environment variable" >
-
-```bash
-WEB3SIGNER_KEY_CONFIG_PATH=/Users/me/keys
-```
-
-  </TabItem>
-  <TabItem value="Configuration file" label="Configuration file" >
-
-```bash
-key-config-path: "/Users/me/keys"
-```
-
-  </TabItem>
-</Tabs>
-
-Path to the directory containing the [YAML files required to access keys].
-
-### `key-store-config-file-max-size`
-
-<Tabs>
-
-  <TabItem value="Syntax" label="Syntax" default>
-
-```bash
---key-store-config-file-max-size=<INTEGER>
-```
-
-  </TabItem>
-  <TabItem value="Example" label="Example" >
-
-```bash
---key-store-config-file-max-size=158000000
-```
-
-  </TabItem>
-  <TabItem value="Environment variable" label="Environment variable" >
-
-```bash
-WEB3SIGNER_KEY_STORE_CONFIG_FILE_MAX_SIZE=158000000
-```
-
-  </TabItem>
-  <TabItem value="Configuration file" label="Configuration file" >
-
-```bash
-key-store-config-file-max-size: 158000000
-```
-
-  </TabItem>
-</Tabs>
-
-The maximum signing key configuration file size in bytes.
-This is useful when you're loading a large number of
-[signing key configurations from a single file](../key-config-file-params.md)
-
-The default size is 104857600 bytes (100 MB).
-
-### `logging`
-
-<Tabs>
-
-  <TabItem value="Syntax" label="Syntax" default>
-
-```bash
--l, --logging=<LEVEL>
-```
-
-  </TabItem>
-  <TabItem value="Example" label="Example" >
-
-```bash
---logging=DEBUG
-```
-
-  </TabItem>
-  <TabItem value="Environment variable" label="Environment variable" >
-
-```bash
-WEB3SIGNER_LOGGING=DEBUG
-```
-
-  </TabItem>
-  <TabItem value="Configuration file" label="Configuration file" >
-
-```bash
-logging: "DEBUG"
-```
-
-  </TabItem>
-</Tabs>
-
-Sets logging verbosity.
-Log levels are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, `TRACE`, `ALL`.
-The default is `INFO`.
-
 ### `http-cors-origins`
 
 <Tabs>
@@ -443,6 +329,167 @@ idle-connection-timeout-seconds: 60
 
 Number of seconds to wait before terminating an idle connection.
 The default is 30.
+
+### `key-config-path`, `key-store-path`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--key-config-path=<PATH>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example" >
+
+```bash
+--key-config-path=/Users/me/keys
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
+
+```bash
+WEB3SIGNER_KEY_CONFIG_PATH=/Users/me/keys
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
+
+```bash
+key-config-path: "/Users/me/keys"
+```
+
+  </TabItem>
+</Tabs>
+
+Path to the directory containing the [YAML files required to access keys].
+
+### `key-store-config-file-max-size`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--key-store-config-file-max-size=<INTEGER>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example" >
+
+```bash
+--key-store-config-file-max-size=158000000
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
+
+```bash
+WEB3SIGNER_KEY_STORE_CONFIG_FILE_MAX_SIZE=158000000
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
+
+```bash
+key-store-config-file-max-size: 158000000
+```
+
+  </TabItem>
+</Tabs>
+
+The maximum signing key configuration file size in bytes.
+This is useful when you're loading a large number of
+[signing key configurations from a single file](../key-config-file-params.md)
+
+The default size is 104857600 bytes (100 MB).
+
+### `logging`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+-l, --logging=<LEVEL>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example" >
+
+```bash
+--logging=DEBUG
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
+
+```bash
+WEB3SIGNER_LOGGING=DEBUG
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
+
+```bash
+logging: "DEBUG"
+```
+
+  </TabItem>
+</Tabs>
+
+Logging verbosity level.
+Possible values are `OFF`, `FATAL`, `WARN`, `INFO`, `DEBUG`, `TRACE`, `ALL`.
+The default is `INFO`.
+
+### `logging-format`
+
+<Tabs>
+
+  <TabItem value="Syntax" label="Syntax" default>
+
+```bash
+--logging-format=<FORMAT>
+```
+
+  </TabItem>
+  <TabItem value="Example" label="Example" >
+
+```bash
+--logging-format=ECS
+```
+
+  </TabItem>
+  <TabItem value="Environment variable" label="Environment variable" >
+
+```bash
+WEB3SIGNER_LOGGING_FORMAT=ECS
+```
+
+  </TabItem>
+  <TabItem value="Configuration file" label="Configuration file" >
+
+```bash
+logging-format: "ECS"
+```
+
+  </TabItem>
+</Tabs>
+
+Logging format.
+This option includes standard JSON structured logging formats.
+Possible values are:
+
+- `PLAIN` (default) - Traditional pattern-based console logging
+- `ECS` - Elastic Common Schema JSON format
+- `GCP` - Google Cloud Platform JSON format
+- `LOGSTASH` - Logstash JSON Event Layout V1
+- `GELF` - Graylog Extended Log Format
+
+This enables users to select the format without requiring custom Log4j2 configuration files.
+This is useful in containerized and cloud environments where injecting configuration files is cumbersome.
 
 ### `metrics-enabled`
 
