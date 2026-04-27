@@ -55,7 +55,7 @@ const config = {
           showLastUpdateAuthor: false,
           showLastUpdateTime: true,
           includeCurrentVersion: true,
-          lastVersion: "25.12.0",
+          lastVersion: "26.4.2",
           versions: {
             //defaults to the ./docs folder
             // using 'development' instead of 'next' as path
@@ -64,8 +64,8 @@ const config = {
               path: "development",
             },
             //the last stable release in the versioned_docs/version-1.0
-            "25.12.0": {
-              label: "stable (25.12.0)",
+            "26.4.2": {
+              label: "stable (26.4.2)",
             },
           },
         },
