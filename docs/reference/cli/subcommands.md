@@ -1100,7 +1100,7 @@ eth1.downstream-http-tls-keystore-file: /Users/me/my_node/keystore.pfx
   </TabItem>
 </Tabs>
 
-PKCS #12 formatted keystore used to present during TLS client authentication with the downstream server.
+Keystore used to present during TLS client authentication with the downstream server.
 
 #### `downstream-http-tls-keystore-password-file`
 
