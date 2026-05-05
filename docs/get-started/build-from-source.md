@@ -39,7 +39,7 @@ cd web3signer
 Build Web3Signer with the Gradle wrapper `gradlew`:
 
 ```bash
-./gradlew build
+./gradlew distTar
 ```
 
 Go to the distribution directory:
@@ -82,7 +82,7 @@ cd web3signer
 Build Web3Signer with the Gradle wrapper `gradlew`:
 
 ```bat
-./gradlew build
+./gradlew distZip
 ```
 
 :::note
