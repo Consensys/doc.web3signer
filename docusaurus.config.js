@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 const config = {
   title: "Consensys Web3Signer",
   tagline:
-    "An open-source, client-agnostic, Ethereum signing service written in Java that is capable of signing on multiple platforms..",
+    "An open-source, client-agnostic, Ethereum signing service written in Java that is capable of signing on multiple platforms.",
   url: "https://docs.web3signer.consensys.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -261,6 +261,28 @@ const config = {
         containerId: "GTM-PJ8HNLB",
       },
     ],
+    [
+      "docusaurus-plugin-llms",
+      {
+        docsDir: "docs",
+        generateLLMsTxt: true,
+        generateLLMsFullTxt: true,
+        title: "Web3Signer documentation",
+        description:
+          "An open-source, client-agnostic, Ethereum signing service written in Java that is capable of signing on multiple platforms.",
+        excludeImports: true,
+        removeDuplicateHeadings: true,
+        logLevel: process.env.CI ? "quiet" : "normal",
+        ignoreFiles: ["img/**"],
+        includeOrder: [
+          "get-started/**/*",
+          "concepts/**/*",
+          "how-to/**/*",
+          "tutorials/**/*",
+          "reference/**/*",
+        ],
+      },
+    ],    
     [
       "@docusaurus/plugin-client-redirects",
       {
