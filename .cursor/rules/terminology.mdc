@@ -1,0 +1,31 @@
+---
+description: Required spelling and casing for Web3Signer product names and related Ethereum terms.
+globs: ["**/*.md", "**/*.mdx"]
+alwaysApply: false
+---
+
+# Terminology
+
+Use the following terms consistently.
+Do not use listed variants unless they appear in code, URLs, or direct quotations.
+
+| Required term         | Do not use                                    |
+|-----------------------|-----------------------------------------------|
+| Web3Signer            | web3signer, Web3signer, web3Signer           |
+| JSON-RPC              | json-rpc, Json-RPC, JSONRPC                   |
+| REST API              | rest api, Rest API                            |
+| key manager API       | keymanager API                                |
+| slashing protection   | slash protection                              |
+| Ethereum mainnet      | Mainnet (without "Ethereum" on first mention) |
+| validator key         | validator private key (unless distinction needed) |
+| TLS                   | tls (except in code/config snippets)          |
+
+## Standards and specifications
+
+On first mention in a page, spell out standards with identifier in parentheses.
+Use the short form after first use.
+
+Examples:
+
+- First use: "Ethereum Improvement Proposal 2335 (EIP-2335)"
+- Subsequent: "EIP-2335"

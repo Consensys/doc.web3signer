@@ -1,7 +1,9 @@
 # https://www.rfc-editor.org/rfc/rfc9309
-# Teku documentation — allow indexing and AI crawlers.
+# https://contentsignals.org/
+# Web3Signer documentation — allow indexing and AI crawlers.
 
 User-agent: *
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
 User-agent: GPTBot
