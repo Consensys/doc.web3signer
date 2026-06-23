@@ -4,10 +4,10 @@
  * build output so that appending ".md" to any documentation URL returns the raw
  * markdown source.
  *
- * doc.web3signer is versioned. The stable version (the first entry in
- * versions.json, set as `lastVersion` in docusaurus.config.js) is served at the
- * site root. Its source lives in `versioned_docs/version-<stable>/`, NOT in
- * `docs/` (which is the development version served under /development/).
+ * doc.web3signer is versioned. The stable version (the one `lastVersion` points
+ * to in docusaurus.config.js) is served at the site root. Its source lives in
+ * `versioned_docs/version-<stable>/`, NOT in `docs/` (which is the development
+ * version served under /development/).
  *
  * Docusaurus URL mapping (routeBasePath "/", stable version at root):
  *   versioned_docs/version-<stable>/path/to/page.md       → build/path/to/page.md
@@ -30,6 +30,7 @@ const path = require("path");
 
 const ROOT_DIR = path.join(__dirname, "..");
 const VERSIONS_JSON = path.join(ROOT_DIR, "versions.json");
+const CONFIG_FILE = path.join(ROOT_DIR, "docusaurus.config.js");
 const VERSIONED_DOCS_DIR = path.join(ROOT_DIR, "versioned_docs");
 const BUILD_DIR = path.join(ROOT_DIR, "build");
 
@@ -47,12 +48,26 @@ let copied = 0;
 let skipped = 0;
 
 function getStableVersion() {
+  // The site root serves whatever `lastVersion` points to in
+  // docusaurus.config.js, so derive the stable version from that. This keeps the
+  // raw .md export aligned with the HTML served at / even right after a new
+  // version is frozen (prepended to versions.json) but before `lastVersion` is
+  // bumped to match.
+  const config = fs.readFileSync(CONFIG_FILE, "utf8");
+  const match = config.match(/lastVersion:\s*["']([^"']+)["']/);
+  if (match) {
+    return match[1];
+  }
+
+  // Fallback: when `lastVersion` is unset, Docusaurus serves the latest frozen
+  // version (the first entry in versions.json) at the site root.
   const versions = JSON.parse(fs.readFileSync(VERSIONS_JSON, "utf8"));
-  // The first entry is the latest frozen version, which Docusaurus serves as
-  // `lastVersion` at the site root.
   const stable = Array.isArray(versions) ? versions[0] : undefined;
   if (!stable) {
-    throw new Error("copy-md-to-build: no stable version found in versions.json");
+    throw new Error(
+      "copy-md-to-build: no stable version found (no lastVersion in " +
+        "docusaurus.config.js and versions.json is empty)"
+    );
   }
   return stable;
 }
