@@ -240,7 +240,7 @@ Transaction object:
 | `gasPrice` | Quantity | Optional | Gas price provided by the sender in Wei. The default is `0`. Used only in non [EIP-1559] transactions. |
 | `maxPriorityFeePerGas` | Quantity | Optional | Maximum fee, in Wei, the sender is willing to pay above the base fee. Used only in [EIP-1559] transactions. |
 | `maxFeePerGas` | Quantity | Optional | Maximum total fee (base fee + priority fee), in Wei, the sender is willing to pay. Used only in [EIP-1559] transactions. |
-| `nonce` | Quantity | Optional | Number of transactions made by the sender before this one. Must be specified if using [GoQuorum](https://consensys.net/docs/goquorum/). |
+| `nonce` | Quantity | Optional | Number of transactions made by the sender before this one. |
 | `value` | Quantity | Optional | Value transferred in Wei. |
 | `data` | Quantity | Optional | Compiled contract code or hash of the invoked method signature and encoded parameters. |
 
