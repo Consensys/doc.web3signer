@@ -53,7 +53,7 @@ const config = {
             "**/__tests__/**",
           ],
           showLastUpdateAuthor: false,
-          showLastUpdateTime: true,
+          showLastUpdateTime: false,
           includeCurrentVersion: true,
           lastVersion: "26.4.2",
           versions: {
