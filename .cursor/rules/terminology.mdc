@@ -1,0 +1,44 @@
+---
+description: Required spelling and casing for Web3Signer product names, Ethereum signing terms, and standards used across this repository.
+globs: ["**/*.md", "**/*.mdx"]
+alwaysApply: false
+---
+
+# Terminology
+
+Use the following terms consistently.
+Do not use listed variants unless they appear in code, URLs, or direct quotations.
+
+| Required term                         | Do not use                                              |
+|---------------------------------------|---------------------------------------------------------|
+| Web3Signer                            | web3signer, Web3signer, WEB3SIGNER (except in code/URLs/CLI) |
+| Consensys Web3Signer                  | ConsenSys Web3Signer                                     |
+| remote signing service                | remote signer service (unless quoting)                  |
+| signing service                       | signer service                                           |
+| key management                        | keys management                                          |
+| keystore                              | key store, key-store                                     |
+| slashing protection                   | slash protection                                         |
+| validator client                      | validator node (unless explicitly discussing nodes)     |
+| execution layer                       | Ethereum 1.0 (note former name on first use only)       |
+| consensus layer                       | Ethereum 2.0 (note former name on first use only)       |
+| fee recipient                         | feeRecipient                                             |
+| JSON-RPC                              | json-rpc, Json-RPC, JSONRPC                              |
+| REST API                              | rest api, REST endpoints API                            |
+
+## Key types and vaults
+
+- Write signing key types as `secp256k1` and `BLS12-381`.
+- Capitalize vault product names as their vendors do: HashiCorp, Azure Key Vault,
+  AWS Secrets Manager, AWS KMS, Google Cloud Secret Manager.
+
+## Standards and specifications
+
+On first mention in a page, spell out standards with identifier in parentheses.
+Use the short form after first use.
+
+Examples:
+
+- First use: "Ethereum Improvement Proposal 3076 (EIP-3076)"
+- Subsequent: "EIP-3076"
+- First use: "Engine API specification"
+- Subsequent: "Engine API"
