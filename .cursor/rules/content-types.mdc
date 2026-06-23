@@ -25,11 +25,11 @@ The folder a file lives in determines the expected structure and writing style.
 - List prerequisites before the first step.
 - Use numbered steps for action sequences.
 - Avoid long conceptual digressions.
-- Example: `docs/how-to/configure-slashing-protection.md`
+- Example: `docs/how-to/load-keys.md`
 
 ### `get-started/` - Onboarding
 
-- Cover first-run essentials such as install, start, and key setup.
+- Cover first-run essentials such as install and start-up.
 - Match the local structure used by neighboring pages.
 - Example: `docs/get-started/start-web3signer.md`
 

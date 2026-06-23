@@ -20,7 +20,7 @@ From the file path, determine:
 
 ## Step 2: Run lint tooling if available
 
-Try project lint checks for markdown/style where practical.
+Try project lint checks for Markdown/style where practical.
 If unavailable, continue with manual review and note the limitation.
 
 ## Step 3: Review against rules

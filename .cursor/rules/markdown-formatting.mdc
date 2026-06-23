@@ -48,7 +48,3 @@ The rules below cover common conventions in this repository.
 ## File and folder names
 
 - Use lowercase and dashes only.
-
-## Diagrams
-
-- Use Mermaid where diagrams are needed and the page already follows that pattern.

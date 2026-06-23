@@ -1,5 +1,5 @@
 ---
-description: Product-specific guidance for Web3Signer documentation, including scope, key concepts, and reference conventions.
+description: Product-specific guidance for Web3Signer documentation, including key management and API conventions.
 globs: ['docs/**/*.md', 'docs/**/*.mdx']
 alwaysApply: false
 ---
@@ -8,47 +8,39 @@ alwaysApply: false
 
 ## Scope
 
-This repository documents Web3Signer as an open source, client-agnostic Ethereum remote signing
-service.
-Content includes installation, key storage and management, configuration, operations,
-troubleshooting, and reference material.
+This repository documents Web3Signer as an Ethereum signing service.
+Content includes installation, key loading and storage, API usage, and operational hardening.
 
 ## Key concepts
 
-- **Signing**: Web3Signer signs payloads using `secp256k1` and `BLS12-381` keys on the execution
-  layer and consensus layer.
-- **Key storage**: keys can be stored in external vaults (HashiCorp, Azure Key Vault, AWS Secrets
-  Manager, AWS KMS, Google Cloud Secret Manager) or encrypted on disk.
-- **Slashing protection**: consensus layer signing supports slashing protection backed by a
-  database. Use precise wording for slashing protection behavior.
+- **Remote signing**: Web3Signer signs requests without exposing raw key material to clients.
+- **Key storage backends**: file-based keystores and external vault integrations.
 - **Reference areas**:
-  - CLI reference lives under `docs/reference/cli/`.
-  - API reference lives under `docs/reference/api/` (REST and JSON-RPC).
-  - Key configuration file parameters live in `docs/reference/key-config-file-params.md`.
-- **Security-sensitive topics**: key management, slashing protection, and TLS configuration require
-  precise wording.
+  - CLI options and subcommands under `docs/reference/cli/`.
+  - API reference under `docs/reference/api/`.
+  - Key configuration reference under `docs/reference/key-config-file-params.md`.
+- **Security-sensitive topics**: key management, TLS, and slashing protection require precise wording.
 
 ## Content organization
 
-- `concepts/`: explanation (architecture, slashing protection, TLS).
-- `get-started/`: onboarding (install, start, key best practices).
-- `how-to/`: goal-driven operations (store keys, manage keys, configure slashing protection, monitor).
-- `reference/`: CLI, API, and key configuration reference.
+- `concepts/`: explanation (architecture, TLS, slashing protection).
+- `get-started/`: onboarding (install, start, and operational prerequisites).
+- `how-to/`: goal-driven operations and configuration.
+- `reference/`: CLI, JSON-RPC, REST, and key config reference pages.
 - `tutorials/`: end-to-end walkthroughs.
 
 ## Reference conventions
 
 ### CLI
 
-- Keep CLI option and subcommand pages under `docs/reference/cli/`.
-- Follow the existing local pattern for option and flag documentation.
-- Prefer consistency with adjacent reference pages over introducing new formats.
+- Keep command and option docs consistent with neighboring sections.
+- Document constraints, defaults, and mutually exclusive flags explicitly.
 
-### API
+### APIs
 
-- Keep REST and JSON-RPC reference under `docs/reference/api/`.
-- Do not invent endpoints, parameters, or response fields. Verify against the published reference or
-  source before documenting API behavior.
+- Keep JSON-RPC docs in `docs/reference/api/json-rpc.md`.
+- Keep REST docs in `docs/reference/api/rest.md`.
+- Include method or endpoint, required parameters, and response behavior.
 
 ## Sidebar and redirects
 

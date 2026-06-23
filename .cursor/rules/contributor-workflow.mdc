@@ -27,7 +27,7 @@ Broken links fail builds (`onBrokenLinks: "throw"`).
 
 ## Factual accuracy
 
-Do not invent CLI flags, REST API fields, defaults, or operational behavior.
+Do not invent CLI flags, API fields, defaults, or operational behavior.
 If uncertain, flag the uncertainty for review.
 
 ## Issue intake
