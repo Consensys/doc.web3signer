@@ -42,7 +42,7 @@ const config = {
           editUrl: "https://github.com/Consensys/doc.web3signer/tree/main/",
           path: "docs",
           routeBasePath: "/",
-          breadcrumbs: false,
+          breadcrumbs: true,
           // @ts-ignore
           // eslint-disable-next-line global-require
           include: ["**/*.md", "**/*.mdx"],
@@ -53,7 +53,7 @@ const config = {
             "**/__tests__/**",
           ],
           showLastUpdateAuthor: false,
-          showLastUpdateTime: true,
+          showLastUpdateTime: false,
           includeCurrentVersion: true,
           lastVersion: "26.4.2",
           versions: {
