@@ -64,6 +64,8 @@ Supports two authentication methods:
 - `KUBERNETES` - Authenticate using the pod's Kubernetes service account. Web3Signer exchanges the
   service account token for a short-lived Vault client token.
 
+<!-- markdownlint-disable -->
+
 <Tabs>
 
   <TabItem value="token" label="TOKEN" default>
@@ -101,8 +103,6 @@ kubernetesRole: "web3signer-role"
   </TabItem>
 </Tabs>
 
-<!-- markdownlint-disable -->
-
 | Key | Description |
 | --- | --- |
 | **type** | Type of configuration file. Use `hashicorp`. |
@@ -133,6 +133,8 @@ Supports two signing options:
 - `azure-secret` - Web3Signer fetches the keys from the vault and signs locally.
   Supports SECP256K1 and BLS12-381 signing keys.
 
+<!-- markdownlint-disable -->
+
 <Tabs>
 
    <TabItem value="azure-secret" label="azure-secret" default>
@@ -160,8 +162,6 @@ keyName: "KeyName"
 
   </TabItem>
 </Tabs>
-
-<!-- markdownlint-disable -->
 
 | Key | Description |
 | --- | --- |
